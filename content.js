@@ -45,19 +45,19 @@ const IMG = {
 
 // Curated YouTube videos — channel-page vouched, no API quota needed
 const YT = {
-  // Bishop Barron
-  barron_beauty: "cEpdfJjzb-Y",
-  barron_aquinas: "VYmwYYZk1Hs",
-  // Peterson
-  peterson_meaning: "GsjsXzsZcow",
+  // Bishop Barron (verified Oct 2026)
+  barron_beauty: "bBMOwZFpZX0",      // Evangelizing Through Beauty
+  barron_aquinas: "iUBNTNiqn60",      // Catholicism and Beauty — LA 2018
+  // Jordan Peterson
+  peterson_meaning: "fIoDbudTNqI",    // Take Responsibility for Yourself
   // Jonathan Pageau
-  pageau_symbolic: "oLn3SyFCrLE",
+  pageau_symbolic: "lT_ZkFwjzqM",     // The Symbolic World
   // Fr. Mike Schmitz
-  mike_prayer: "fIBPhWz0Ryk",
-  // Scruton — Why Beauty Matters, uploads vary; use a stable upload if needed
-  scruton_beauty: "LpBqdthLZwI",
+  mike_prayer: "4K06yPO7KcE",         // From Saying Prayers to Praying
+  // Roger Scruton (archive upload)
+  scruton_beauty: "OlXuDCkhVLw",      // Sir Roger Scruton & Beauty
   // Pints with Aquinas (Matt Fradd)
-  pints_god: "6Yr93t87m50"
+  pints_god: "Rhf4X2w7QAA"            // How Reason & Logic Lead to Christianity
 };
 
 const AXIOMS = [
@@ -525,6 +525,13 @@ const FOLIOS = [
 {slug:"video-mike-prayer", type:"visio", f:"T", title:"Fr. Mike Schmitz on Prayer",
  body:"If you have never had a serious prayer life — or if yours has gone quiet — start here. Twelve minutes.",
  ytId:YT.mike_prayer, src:"Fr. Mike Schmitz — Ascension Presents"},
+{slug:"video-scruton-beauty", type:"visio", f:"P", rare:1, title:"Scruton on Beauty",
+ body:"The man himself, on the thesis that gives Pulchrum its whole shape. Watch this one slowly — ideally twice.",
+ ytId:YT.scruton_beauty, src:"Sir Roger Scruton"},
+
+{slug:"video-barron-la", type:"visio", f:"P", title:"Barron: Catholicism and Beauty",
+ body:"Bishop Barron's 2018 Los Angeles Religious Congress talk — the fullest statement of his 'beauty-first' approach to evangelization.",
+ ytId:YT.barron_aquinas, src:"Bishop Robert Barron"},
 
 ];
 
