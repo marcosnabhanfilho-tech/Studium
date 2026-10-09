@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#14100C">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Studium Generale</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- =========== TOP BAR =========== -->
+<header id="topbar">
+  <button id="menu-btn" aria-label="Menu">☰</button>
+  <div class="brand">STVDIVM</div>
+  <div class="top-right">
+    <button id="snd-btn" aria-label="Sound">♪</button>
+    <button id="profile-btn" aria-label="Profile">◉</button>
+  </div>
+</header>
+
+<!-- =========== FACULTY CHIPS =========== -->
+<nav id="facbar" aria-label="Faculties"></nav>
+
+<!-- =========== RULE PROGRESS BAR =========== -->
+<div id="rulebar"><div id="rulefill"></div></div>
+
+<!-- =========== THE REEL =========== -->
+<main id="reel" aria-label="Lectio reel"></main>
+
+<!-- =========== OVERLAYS =========== -->
+<div id="seal-flash" aria-hidden="true">✦</div>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<!-- Menu drawer -->
+<aside id="menu" class="drawer">
+  <h2>Studium Generale</h2>
+  <p class="motto">a scroll that forms you</p>
+  <nav class="menu-list">
+    <button data-view="reel" class="active">▸ Lectio</button>
+    <button data-view="thesaurus">✦ Thesaurus · <span id="thes-n">0</span></button>
+    <button data-view="wings">◇ Wings · progress</button>
+    <button data-view="rule">⚑ The Rule · today</button>
+    <button data-view="about">¶ About</button>
+  </nav>
+  <div class="menu-foot">
+    <div id="auth-area"></div>
+    <div class="small">v1 · built in a weekend · all glory to God</div>
+  </div>
+</aside>
+
+<!-- Thesaurus view -->
+<section id="view-thesaurus" class="view">
+  <header class="view-h"><button class="back">←</button><h3>Thesaurus</h3></header>
+  <p class="view-sub">What you have kept. Double-tap any folio in the Reel to keep it.</p>
+  <div id="thes-list"></div>
+</section>
+
+<!-- Wings view -->
+<section id="view-wings" class="view">
+  <header class="view-h"><button class="back">←</button><h3>The Wings</h3></header>
+  <p class="view-sub">Every folio you have seen is permanently collected. Finish a wing for its degree.</p>
+  <div id="wings-list"></div>
+</section>
+
+<!-- Rule view -->
+<section id="view-rule" class="view">
+  <header class="view-h"><button class="back">←</button><h3>The Rule</h3></header>
+  <div id="rule-today"></div>
+</section>
+
+<!-- About view -->
+<section id="view-about" class="view">
+  <header class="view-h"><button class="back">←</button><h3>About</h3></header>
+  <div class="about-body">
+    <p><strong>Studium Generale</strong> is the medieval name for a university — a studium open to scholars from everywhere. This one is a reel: swipe through folios drawn from Aquinas, Chesterton, Newman, Scruton, Mises, Hayek, Buffett, Munger, Vermeer, Caravaggio, Mozart, Doyle, and Burke.</p>
+    <p>A folio you view is permanently added to its Wing. Double-tap to keep one in your Thesaurus. Finish ten folios in a day to keep the Rule. There is no infinite scroll — once the Rule is kept, the day's work is done.</p>
+    <p class="motto">Nulla dies sine linea.<br>Sapientis est ordinare.</p>
+  </div>
+</section>
+
+<!-- Auth modal -->
+<div id="auth-modal" class="modal">
+  <div class="modal-inner">
+    <h3>Enter the Studium</h3>
+    <p>A sign-in link will arrive in your inbox. Your progress will sync across devices.</p>
+    <input type="email" id="email-in" placeholder="your email">
+    <button id="send-link" class="btn btn-primary">Send me the link</button>
+    <button id="auth-skip" class="btn-ghost">Continue without an account</button>
+    <p class="small" id="auth-status"></p>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="content.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
