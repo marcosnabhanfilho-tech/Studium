@@ -137,6 +137,20 @@ function railHTML(slug){
   </div>`;
 }
 
+
+function classifyDensity(folio){
+  // Heuristic for the short/medium/long typography tiers.
+  if(folio.type === "visio" || folio.ytId) return "long";       // videos always long
+  if(folio.img) return "medium";                                 // images give structure
+  if(folio.type === "quaestio" || folio.type === "exercitium") return "medium";
+  if(folio.type === "suffragium") return "medium";
+  const body = (folio.body || "").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+  const words = body.split(" ").length;
+  if(words < 55) return "short";
+  if(words < 180) return "medium";
+  return "long";
+}
+
 // ============== SLIDE BUILDERS ==============
 function slideHTML(folio){
   seq++;
@@ -160,8 +174,13 @@ function slideHTML(folio){
   if(folio.img){
     fig = `<figure class="s-img pan"><img src="${folio.img}" alt="${esc(folio.title)}" loading="lazy" onerror="this.parentElement.style.display='none'"></figure>`;
   } else if(folio.ytId){
-    fig = `<div class="lite-yt" data-yt="${folio.ytId}" role="button" aria-label="Play video">
-      <img src="https://i.ytimg.com/vi/${folio.ytId}/hqdefault.jpg" loading="lazy" alt="" onerror="this.style.opacity=.3">
+    const vClass = folio.ytShort ? "short" : "wide";
+    const thumbUrl = folio.ytShort
+      ? `https://i.ytimg.com/vi/${folio.ytId}/oar2.jpg`
+      : `https://i.ytimg.com/vi/${folio.ytId}/hqdefault.jpg`;
+    fig = `<div class="lite-yt ${vClass}" data-yt="${folio.ytId}" data-short="${folio.ytShort?1:0}" role="button" aria-label="Play video">
+      <img src="${thumbUrl}" loading="lazy" alt="" onerror="this.src='https://i.ytimg.com/vi/${folio.ytId}/hqdefault.jpg'">
+      <a class="yt-fallback" href="https://youtube.com/${folio.ytShort?'shorts/':'watch?v='}${folio.ytId}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Watch on YouTube ↗</a>
     </div>`;
   }
 
@@ -195,7 +214,8 @@ function slideHTML(folio){
     body += `</div>`;
   }
 
-  return `<section class="slide${gold}" data-slug="${folio.slug}" data-type="${folio.type}" data-fac="${folio.f}">
+  const density = classifyDensity(folio);
+  return `<section class="slide ${density}${gold}" data-slug="${folio.slug}" data-type="${folio.type}" data-fac="${folio.f}">
     <div class="sframe">
       <div class="s-top"><span class="s-fac">${esc(fac.name)}</span><span class="s-typ">${esc(typLabel)}${folio.rare?" · gold leaf":""}</span></div>
       <h2>${esc(folio.title)}</h2>
@@ -365,7 +385,8 @@ async function renderTallies(slug){
 function upgradeYT(el){
   const id = el.dataset.yt;
   if(!id) return;
-  el.innerHTML = `<iframe src="https://www.youtube.com/embed/${id}?autoplay=1&playsinline=1&rel=0&modestbranding=1" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+  // Use youtube-nocookie.com — strict-privacy mode, embeds more reliably on some locked videos
+  el.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&playsinline=1&rel=0&modestbranding=1" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>`;
 }
 
 // ============== PERSIST TO SUPABASE ==============
