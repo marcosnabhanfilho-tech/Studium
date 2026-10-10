@@ -44,20 +44,22 @@ const IMG = {
 };
 
 // Curated YouTube videos — channel-page vouched, no API quota needed
+// Each video: {id, short:true} = vertical YouTube Short (embeds reliably)
+//              {id, short:false} = regular 16:9 video
+// Shorts almost always allow embedding; full-length third-party uploads often don't.
 const YT = {
-  // Bishop Barron (verified Oct 2026)
-  barron_beauty: "bBMOwZFpZX0",      // Evangelizing Through Beauty
-  barron_aquinas: "iUBNTNiqn60",      // Catholicism and Beauty — LA 2018
-  // Jordan Peterson
-  peterson_meaning: "fIoDbudTNqI",    // Take Responsibility for Yourself
-  // Jonathan Pageau
-  pageau_symbolic: "lT_ZkFwjzqM",     // The Symbolic World
-  // Fr. Mike Schmitz
-  mike_prayer: "4K06yPO7KcE",         // From Saying Prayers to Praying
-  // Roger Scruton (archive upload)
-  scruton_beauty: "OlXuDCkhVLw",      // Sir Roger Scruton & Beauty
-  // Pints with Aquinas (Matt Fradd)
-  pints_god: "Rhf4X2w7QAA"            // How Reason & Logic Lead to Christianity
+  // Bishop Barron — official shorts
+  barron_short1: {id:"zYK_Wr3T5Y0", short:true},     // "Nothing but you, Lord"
+  barron_short2: {id:"HqCwXfB49JI", short:true},     // "You're Not in Control" w/ Fr. Mike
+  // Jordan Peterson Shorts
+  peterson_resp: {id:"MWvb9bvNXFE", short:true},     // Take responsibility for your life
+  peterson_adv:  {id:"UUPsCyLzQNA", short:true},     // Responsibility is Adventure
+  // Jonathan Pageau — full video (lectio-type long form)
+  pageau_symbolic: {id:"lT_ZkFwjzqM", short:false},  // The Symbolic World
+  // Fr. Mike Schmitz / Ascension short
+  mike_imitation:  {id:"-X6do4iM5AY", short:true},   // Imitation of Christ series tease
+  // Matt Fradd (Pints with Aquinas) short
+  pints_name:      {id:"b6l4_1LNpsc", short:true}    // How Pints with Aquinas got its name
 };
 
 const AXIOMS = [
@@ -505,33 +507,34 @@ const FOLIOS = [
 <p>Virgil's untranslatable phrase. The world weeps at itself. The sadness is <em>in the things</em>. One of the pieces of poetry that teaches a reader what a civilization is.</p>`,
  src:"Virgil, Aeneid I.462"},
 
-// =============== VIDEOS ===============
-{slug:"video-barron-beauty", type:"visio", f:"P", title:"Bishop Barron on Beauty",
- body:"The surest way to the modern soul, Barron argues, is through beauty. Watch this one on your lunch break.",
- ytId:YT.barron_beauty, src:"Bishop Robert Barron — Word on Fire"},
+// =============== VIDEOS (verified embeddable Shorts) ===============
+{slug:"video-barron-1", type:"visio", f:"T", title:"Nothing but You, Lord",
+ body:"A one-minute meditation from Bishop Barron. Watch, then sit with it.",
+ ytId:YT.barron_short1.id, ytShort:true, src:"Bishop Robert Barron"},
 
-{slug:"video-pageau-symbolic", type:"visio", f:"T", title:"Jonathan Pageau: The Symbolic World",
+{slug:"video-barron-2", type:"visio", f:"T", title:"You're Not in Control",
+ body:"Bishop Barron and Fr. Mike Schmitz, on the single hardest truth to receive. One minute.",
+ ytId:YT.barron_short2.id, ytShort:true, src:"Bishop Barron & Fr. Mike Schmitz"},
+
+{slug:"video-peterson-resp", type:"visio", f:"F", title:"Take Responsibility",
+ body:"Peterson, compressed. The single sentence of his entire corpus. Thirty seconds.",
+ ytId:YT.peterson_resp.id, ytShort:true, src:"Jordan B. Peterson"},
+
+{slug:"video-peterson-adv", type:"visio", f:"F", title:"Responsibility is Adventure",
+ body:"Peterson on why 'be a good person' doesn't move you but 'bear the heaviest thing you can' does. With Rogan.",
+ ytId:YT.peterson_adv.id, ytShort:true, src:"Jordan B. Peterson"},
+
+{slug:"video-pageau-symbolic", type:"visio", f:"T", title:"The Symbolic World",
  body:"Pageau on why pre-modern people saw a world of meaning where moderns see a world of mechanism — and why the symbolic view is making a comeback.",
- ytId:YT.pageau_symbolic, src:"Jonathan Pageau"},
+ ytId:YT.pageau_symbolic.id, ytShort:false, src:"Jonathan Pageau"},
 
-{slug:"video-peterson-meaning", type:"visio", f:"F", title:"Peterson on Meaning",
- body:"Peterson at his most lucid: meaning as what emerges when responsibility, suffering, and love intersect. Secular in vocabulary, surprisingly Catholic in architecture.",
- ytId:YT.peterson_meaning, src:"Jordan B. Peterson"},
+{slug:"video-mike-imitation", type:"visio", f:"T", title:"Fr. Mike on The Imitation of Christ",
+ body:"The 15th-century classic that reshaped more interior lives than almost any book save Scripture. Fr. Mike on why to read it.",
+ ytId:YT.mike_imitation.id, ytShort:true, src:"Fr. Mike Schmitz — Ascension"},
 
-{slug:"video-pints-god", type:"visio", f:"T", title:"Pints with Aquinas: Does God Exist?",
- body:"Matt Fradd on the classical arguments — presented not as proofs you win with but as paths you walk down.",
- ytId:YT.pints_god, src:"Matt Fradd — Pints with Aquinas"},
-
-{slug:"video-mike-prayer", type:"visio", f:"T", title:"Fr. Mike Schmitz on Prayer",
- body:"If you have never had a serious prayer life — or if yours has gone quiet — start here. Twelve minutes.",
- ytId:YT.mike_prayer, src:"Fr. Mike Schmitz — Ascension Presents"},
-{slug:"video-scruton-beauty", type:"visio", f:"P", rare:1, title:"Scruton on Beauty",
- body:"The man himself, on the thesis that gives Pulchrum its whole shape. Watch this one slowly — ideally twice.",
- ytId:YT.scruton_beauty, src:"Sir Roger Scruton"},
-
-{slug:"video-barron-la", type:"visio", f:"P", title:"Barron: Catholicism and Beauty",
- body:"Bishop Barron's 2018 Los Angeles Religious Congress talk — the fullest statement of his 'beauty-first' approach to evangelization.",
- ytId:YT.barron_aquinas, src:"Bishop Robert Barron"},
+{slug:"video-pints-name", type:"visio", f:"T", title:"How Pints with Aquinas Got Its Name",
+ body:"Matt Fradd tells the origin story in sixty seconds. Why pints, why Aquinas.",
+ ytId:YT.pints_name.id, ytShort:true, src:"Matt Fradd — Pints With Aquinas"},
 
 ];
 
