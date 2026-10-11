@@ -64,10 +64,11 @@ function tone(freq, delay, dur, vol, type){
     o.start(t); o.stop(t+dur+0.05);
   }catch(e){}
 }
-const sndTick = () => tone(1180, 0, 0.08, 0.04, "triangle");
-const sndSeal = () => { tone(660, 0, 0.35, 0.14); tone(990, 0.11, 0.5, 0.1); };
-const sndBell = () => { tone(587, 0, 1.4, 0.15); tone(1174, 0, 1.1, 0.05); };
-const sndWing = () => { [0,.8,1.6].forEach(d=>{ tone(587,d,1.5,.14); tone(1174,d,1.2,.05); }); };
+// Sound: subtle only. Per-swipe tick removed entirely. Keep bell softened. Milestone is ONE chime, not three.
+const sndTick = () => {};  // was annoying — now silent
+const sndSeal = () => { tone(880, 0, 0.6, 0.08, "sine"); };  // single soft chime on Keep
+const sndBell = () => { tone(659, 0, 1.6, 0.09, "sine"); };  // single warm bell at milestone
+const sndWing = () => { tone(523, 0, 0.4, 0.09); tone(659, 0.25, 0.6, 0.08); tone(784, 0.5, 1.2, 0.07); };  // chord, only on wing complete
 
 // ============== HAPTIC ==============
 const haptic = n => { if(navigator.vibrate) try{ navigator.vibrate(n); }catch(e){} };
@@ -290,9 +291,9 @@ function updateRule(){
     fill.classList.toggle("kept", n >= RULE_TARGET);
   }
   if(n === RULE_TARGET){
-    toast("The Rule is kept ✦");
+    // No "stop" moment. Just a quiet gold flash on the rule bar.
     sndBell();
-    haptic(40);
+    haptic(20);
   }
 }
 
@@ -385,8 +386,9 @@ async function renderTallies(slug){
 function upgradeYT(el){
   const id = el.dataset.yt;
   if(!id) return;
-  // Use youtube-nocookie.com — strict-privacy mode, embeds more reliably on some locked videos
-  el.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&playsinline=1&rel=0&modestbranding=1" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>`;
+  // Load the iframe WITHOUT autoplay. User taps YouTube's own play button once loaded.
+  // This is the single most-reliable mobile embed path — autoplay triggers "video unavailable" on iOS.
+  el.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${id}?playsinline=1&rel=0&modestbranding=1&enablejsapi=0" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen loading="lazy"></iframe>`;
 }
 
 // ============== PERSIST TO SUPABASE ==============
@@ -494,6 +496,39 @@ async function sendMagicLink(){
   }catch(e){
     st.textContent = "Could not send: " + e.message;
   }
+}
+
+// ============== CHROME AUTO-HIDE (Shorts-style full-screen) ==============
+let hideT = null, lastReelScroll = 0;
+function initChromeAutoHide(){
+  const reel = document.getElementById("reel");
+  const chrome = [document.getElementById("topbar"), document.getElementById("facbar"), document.getElementById("rulebar")];
+  function showChrome(){
+    document.body.classList.remove("chrome-hidden");
+  }
+  function hideChrome(){
+    // Don't hide while a drawer, view, or modal is open
+    if(document.querySelector(".drawer.open, .view.open, .modal.open")) return;
+    document.body.classList.add("chrome-hidden");
+  }
+  function schedule(){
+    clearTimeout(hideT);
+    hideT = setTimeout(hideChrome, 2200);
+  }
+  reel.addEventListener("scroll", ()=>{
+    const t = reel.scrollTop;
+    const dir = t - lastReelScroll;
+    lastReelScroll = t;
+    if(Math.abs(dir) > 8){ hideChrome(); schedule(); }
+    else { showChrome(); schedule(); }
+  }, {passive:true});
+  reel.addEventListener("touchstart", ()=>{ showChrome(); schedule(); }, {passive:true});
+  // Tap anywhere in top area reveals chrome
+  document.addEventListener("click", e=>{
+    if(e.clientY < 110) showChrome();
+    schedule();
+  }, {passive:true});
+  schedule();
 }
 
 // ============== DRAWER + VIEWS ==============
@@ -699,8 +734,16 @@ async function init(){
     }
   });
 
-  // Service worker
+  initChromeAutoHide();
+
+  // Service worker: on activate, auto-reload the page so new cache takes effect
   if("serviceWorker" in navigator){
+    let refreshing = false;
+    navigator.serviceWorker.addEventListener("controllerchange", ()=>{
+      if(refreshing) return;
+      refreshing = true;
+      location.reload();
+    });
     navigator.serviceWorker.register("sw.js").catch(()=>{});
   }
 
