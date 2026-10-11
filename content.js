@@ -55,7 +55,7 @@ const YT = {
   peterson_resp: {id:"MWvb9bvNXFE", short:true},     // Take responsibility for your life
   peterson_adv:  {id:"UUPsCyLzQNA", short:true},     // Responsibility is Adventure
   // Jonathan Pageau — full video (lectio-type long form)
-  pageau_symbolic: {id:"lT_ZkFwjzqM", short:false},  // The Symbolic World
+  pageau_fairy:    {id:"2hPjpyRrlyk", short:true},   // Fairy tales are TRUE?
   // Fr. Mike Schmitz / Ascension short
   mike_imitation:  {id:"-X6do4iM5AY", short:true},   // Imitation of Christ series tease
   // Matt Fradd (Pints with Aquinas) short
@@ -164,10 +164,11 @@ const FOLIOS = [
 <p>Curiosity is not survival that overshot. It is the signature of a rational nature. Your presence in this reel is Exhibit A.</p>`,
  src:"Aristotle, Metaphysics I.1 (980a)", img:IMG.raphael_athens},
 
-{slug:"act-potency", type:"lectio", f:"F", title:"Act and Potency",
- body:`<p>Parmenides argued change is impossible: being cannot come from being (it already is) nor from non-being (nothing comes from nothing). Greek philosophy choked for a century on his argument.</p>
-<p>Aristotle's answer founded metaphysics. Between pure being and sheer nothing stands <em>potency</em> — real capacity not yet realized. The acorn is not an oak, but it is not <em>nothing</em> with respect to the oak.</p>
-<p>Change is the actualization of a potency. One distinction, and the world becomes intelligible again: motion, growth, learning, grace.</p>`,
+{slug:"act-potency", type:"lectio", f:"F", title:"How Aristotle Saved Reality",
+ body:`<p>An ancient Greek named Parmenides argued that change can't happen. Think about it: something either <em>is</em> or <em>isn't</em>. If it is, it already exists — no change needed. If it isn't, nothing comes from nothing. So change is an illusion.</p>
+<p>Greek philosophy choked on this for a century.</p>
+<p>Aristotle's fix: there's a middle category — <em>potency</em>. An acorn isn't an oak. But it's not <em>nothing</em> relative to oak-ness either. It <em>can become</em> one. Change is just potential being realized.</p>
+<p>One idea. The world is intelligible again. Everything — a plant growing, you learning, grace working — fits.</p>`,
  src:"Aristotle, Physics I; Aquinas, De Principiis Naturae"},
 
 {slug:"four-causes", type:"lectio", f:"F", title:"The Four Causes of a Statue",
@@ -177,10 +178,10 @@ const FOLIOS = [
 <p>To explain fully is to give all four.</p>`,
  src:"Aristotle, Physics II.3"},
 
-{slug:"transcendentals", type:"lectio", f:"F", title:"The Transcendentals",
- body:`<p>Some predicates outrun every category. Whatever exists is <strong>one</strong> (undivided in itself), <strong>true</strong> (intelligible to mind), and <strong>good</strong> (desirable as an end). Many add <strong>beautiful</strong> — the good and the true made splendid to perception.</p>
-<p>These are convertible with being itself: to the degree a thing <em>is</em>, it is one, true, good.</p>
-<p>Consequence: evil, falsehood and ugliness are not rival substances but <em>privations</em> — holes in being. The dark has no wattage of its own.</p>`,
+{slug:"transcendentals", type:"lectio", f:"F", title:"Why Evil Isn't a Thing",
+ body:`<p>Here's a wild claim from Aquinas: every single thing that exists is <strong>one</strong> (it's itself), <strong>true</strong> (you can know it), and <strong>good</strong> (you'd want it, correctly understood). Many add <strong>beautiful</strong> too.</p>
+<p>These aren't properties <em>added</em> to things. They're the same as <em>being</em>, seen from different angles. The more something <em>is</em>, the more it's all four.</p>
+<p>The payoff: evil doesn't actually exist. It's a <em>hole</em> in something good. Darkness isn't a thing — it's just missing light. Blindness isn't an organ — it's a missing one. All evil is a lack. That's why the devil can't create anything, only corrupt.</p>`,
  src:"Aquinas, De Veritate q.1; Summa I, q.5"},
 
 {slug:"q-non-contradiction", type:"quaestio", f:"F",
@@ -212,10 +213,10 @@ const FOLIOS = [
  reveal:`<p>Anscombe's criterion: intentional actions are those to which the question <em>Why?</em> — asking for a reason, not a cause — has application.</p><p>The contract has an answer (<em>to close the deal</em>). The spilled glass has only a mechanism. Responsibility, praise, blame, sin and merit all live inside the territory this small question marks out.</p>`,
  src:"G. E. M. Anscombe, Intention (1957)"},
 
-{slug:"essence-existence", type:"lectio", f:"F", title:"Essence and Existence",
- body:`<p>What a thing <em>is</em>, and <em>that</em> it is, are distinct. You can know perfectly what a phoenix would be while knowing none exists.</p>
-<p>In every creature, essence <em>receives</em> existence from outside itself. Nothing about <em>what</em> you are explains <em>that</em> you are.</p>
-<p>Aquinas's God is the single case where the distinction collapses: His essence is to exist — <em>ipsum esse subsistens</em>. Which is why everything else must be held in being, moment by moment, like a song held in voice.</p>`,
+{slug:"essence-existence", type:"lectio", f:"F", title:"Why Anything Exists",
+ body:`<p>You can perfectly describe a <em>phoenix</em> — fiery, immortal, reborn from ash — while knowing none exist. So <em>what something is</em> is one thing. <em>Whether it exists</em> is another.</p>
+<p>Now the kicker: this is true of you too. Nothing about <em>what</em> you are — human, male, 20, Catholic — explains <em>that</em> you are. Existence was handed to you.</p>
+<p>Aquinas: only one being doesn't need existence handed to it. The one whose essence <em>is</em> to exist. Everything else is held in being right now, like a song held in a voice. Stop singing, song's gone.</p>`,
  src:"Aquinas, De Ente et Essentia"},
 
 {slug:"square-opposition", type:"exercitium", f:"F", title:"The Square of Opposition",
@@ -244,10 +245,10 @@ const FOLIOS = [
 <p>The price system is a <em>communication system</em>: it tells the farmer that copper is scarce in a factory he's never heard of, by making wire more expensive. Socialism's defect is not moral; it is epistemic.</p>`,
  src:"F. A. Hayek, 'The Use of Knowledge in Society' (1945)", img:IMG.hayek},
 
-{slug:"calculation-problem", type:"lectio", f:"O", title:"The Calculation Problem",
- body:`<p>Mises in 1920: without private ownership of the means of production, there are no prices for capital goods; without those prices, there is no way to calculate whether one method of production uses resources better than another.</p>
-<p>The socialist can know that an orphanage needs beds. He cannot know whether to make them of pine, steel, or 3D-printed polymer — because he has no price for pine, steel, or polymer relative to a thousand other uses.</p>
-<p>The twentieth century ran the experiment. The verdict is in.</p>`,
+{slug:"calculation-problem", type:"lectio", f:"O", title:"Why Central Planning Fails",
+ body:`<p>Picture this: you're the central planner. An orphanage needs beds. Easy — order a thousand beds.</p>
+<p>But <em>what kind</em>? Pine? Steel? Plastic? You have no prices for any of it, because the government owns all the lumber mills, steel plants, factories. So you have no way to know which raw material is scarcer, more valuable, better used elsewhere.</p>
+<p>Mises saw this in 1920. He said: without prices, socialism isn't just inefficient — it's <em>blind</em>. The 20th century ran the experiment with millions of lives. He was right.</p>`,
  src:"Mises, Economic Calculation in the Socialist Commonwealth (1920)"},
 
 {slug:"q-cantillon", type:"quaestio", f:"O",
@@ -307,11 +308,13 @@ const FOLIOS = [
  src:"financial statements · the integration check"},
 
 {slug:"second-level", type:"quaestio", f:"N",
- title:"Good company, bad stock?",
- body:`<p>A wonderful company that everyone agrees is wonderful trades at 60× earnings. First-level thought: "Great company — buy." Howard Marks: this is <em>first-level</em> thinking, and the market has already priced it. What is the second-level question?</p>`,
- opts:["Is it a great company?","Is it better than the price already assumes?","Will the stock go up?"],
+ title:"Can You Lose Money on a 'Great' Company?",
+ body:`<p>Here's a trick question. Everyone agrees Company X is wonderful. Best brand, best moat, best management. It trades at 60× earnings. Your buddy says "obvious buy." Howard Marks says: that's <em>first-level</em> thinking. What's the real question?</p>`,
+ opts:["Is it a great company?","Is it <em>better</em> than the price already assumes?","Will the stock go up?"],
  correct:1,
- reveal:`<p>Returns come from the gap between <em>reality</em> and <em>expectation</em>. A consensus "wonderful" is already in the price. You profit when the future is better than the consensus thought — which may happen with a mediocre company priced for apocalypse as readily as with a great one priced for miracles.</p><p>Quality matters. You pay for it in advance.</p>`,
+ reveal:`<p>Your returns don't come from the company being great. They come from the <em>gap</em> between what reality turns out to be and what the market already expects.</p>
+<p>If everyone thinks it's wonderful and prices it accordingly, you need it to be <em>even better</em> than wonderful to make money. Meanwhile a mediocre company priced for the apocalypse can double if things turn out just OK.</p>
+<p>Quality is real. The market just makes you pay for it in advance.</p>`,
  src:"after Howard Marks, The Most Important Thing"},
 
 {slug:"mr-market", type:"lectio", f:"N", title:"Mr. Market",
@@ -328,11 +331,13 @@ const FOLIOS = [
  src:"Charles T. Munger, Poor Charlie's Almanack"},
 
 {slug:"q-why-equity-costs-more", type:"quaestio", f:"N",
- title:"Why does equity cost more than debt?",
- body:`<p>Every WACC calculation assumes it. State the reason precisely — why must shareholders demand <em>more</em> than lenders from the very same firm, with the very same cash flows?</p>`,
- opts:["Because stocks are riskier in general","Because equity is the residual claim — paid last, junior in bankruptcy","Because of taxes"],
+ title:"Why Does Equity Cost More Than Debt?",
+ body:`<p>Walk up to any CFO: "cost of equity > cost of debt" — they'll agree instantly. But <em>why</em>? Same company, same cash flows, same risk from the outside. Why do shareholders demand more than lenders?</p>`,
+ opts:["Stocks are riskier in general — intuition","Shareholders get paid last if things go bad","Taxes"],
  correct:1,
- reveal:`<p>The lender has a contract: fixed coupons, repayment, first claim in bankruptcy. The shareholder is the <em>residual</em>: paid last, whatever is left, if anything is.</p><p>Same firm, same cash flows — but the equity holder absorbs the variance. Higher risk borne demands higher return promised. Add the tax shield (interest deductible, dividends not) and debt is doubly cheaper — until leverage makes both claims riskier.</p>`,
+ reveal:`<p>Lenders have a <em>contract</em>: here's your coupon, here's your repayment date, and if the company goes bankrupt, you get paid first out of what's left.</p>
+<p>Shareholders have no contract. They get whatever is <em>left over</em> after everyone else is paid. If nothing's left — they get nothing. Same company, same cash flows, but all the variance lands on them.</p>
+<p>More risk → demand more return. Plus interest is tax-deductible, dividends aren't, so debt is doubly cheaper. Until you borrow too much and both claims get riskier.</p>`,
  src:"cost of capital"},
 
 {slug:"risk-not-vol", type:"lectio", f:"N", title:"Risk is not volatility",
@@ -524,9 +529,9 @@ const FOLIOS = [
  body:"Peterson on why 'be a good person' doesn't move you but 'bear the heaviest thing you can' does. With Rogan.",
  ytId:YT.peterson_adv.id, ytShort:true, src:"Jordan B. Peterson"},
 
-{slug:"video-pageau-symbolic", type:"visio", f:"T", title:"The Symbolic World",
- body:"Pageau on why pre-modern people saw a world of meaning where moderns see a world of mechanism — and why the symbolic view is making a comeback.",
- ytId:YT.pageau_symbolic.id, ytShort:false, src:"Jonathan Pageau"},
+{slug:"video-pageau-fairy", type:"visio", f:"T", title:"Fairy Tales Are True?",
+ body:"Pageau on why the stories you heard as a child weren't entertainment — they were a map of the world.",
+ ytId:YT.pageau_fairy.id, ytShort:true, src:"Jonathan Pageau"},
 
 {slug:"video-mike-imitation", type:"visio", f:"T", title:"Fr. Mike on The Imitation of Christ",
  body:"The 15th-century classic that reshaped more interior lives than almost any book save Scripture. Fr. Mike on why to read it.",
