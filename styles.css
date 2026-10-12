@@ -117,63 +117,117 @@ body.chrome-shown #topbar{transform:translateY(0);opacity:1;pointer-events:auto}
   height:100dvh;min-height:100svh;
   scroll-snap-align:start;scroll-snap-stop:always;
   position:relative;display:flex;flex-direction:column;padding:0;
+  background:var(--bg);overflow:hidden;
 }
 
-/* ============ SFRAME ============ */
-.sframe{
-  flex:1;overflow-y:auto;scrollbar-width:none;
-  border:none;background:var(--bg);position:relative;
+/* ============ PAGER — Instagram-stories style horizontal paging within a folio ============
+   Long bodies are split into pages. Swipe horizontally through the pages of a folio,
+   swipe vertically between folios. This eliminates the confusing dual-scroll problem.
+*/
+.pager{
+  flex:1;width:100%;
+  display:flex;flex-direction:row;
+  overflow-x:auto;overflow-y:hidden;
+  scroll-snap-type:x mandatory;scroll-snap-stop:always;
+  overscroll-behavior-x:contain;
+  scrollbar-width:none;-webkit-overflow-scrolling:touch;
+  scroll-behavior:smooth;
+}
+.pager::-webkit-scrollbar{display:none}
+
+.page{
+  flex:0 0 100%;width:100%;height:100%;
+  scroll-snap-align:start;scroll-snap-stop:always;
+  position:relative;
   display:flex;flex-direction:column;
   justify-content:center;
-  padding:calc(42px + var(--sat-top)) 22px calc(90px + var(--sat-bot)) 22px;
+  padding:calc(68px + var(--sat-top)) 22px calc(88px + var(--sat-bot)) 22px;
+  /* HARD rule: no vertical scroll inside a page. Horizontal pagination handles
+     long text; vertical scroll is reserved for moving between folios.
+     This fixes the dual-scroll problem the user reported. */
+  overflow:hidden;
 }
-.sframe::-webkit-scrollbar{display:none}
-.sframe::before{
+
+/* Density tiers — how to vertically align content in a page */
+.slide.short .page,
+.slide.medium .page{justify-content:center}
+.slide.long .page{justify-content:flex-start}
+/* Continuation pages are always top-aligned so the reader keeps their place */
+.slide.long .page:not(.first){justify-content:flex-start}
+
+/* Fallback gradient wash on the page itself */
+.page::before{
   content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
   background:
     radial-gradient(ellipse at top, rgba(163,230,53,.025) 0%, transparent 60%),
     radial-gradient(ellipse at bottom right, rgba(250,204,21,.02) 0%, transparent 55%);
 }
-.sframe > *{position:relative;z-index:1}
+.page > *{position:relative;z-index:1}
 
-.slide.long .sframe,
-.slide.dense .sframe{justify-content:flex-start}
+/* Faculty-colored left edge now on the page itself */
+.slide[data-fac="T"] .page{border-left:2px solid rgba(248,113,113,.3)}
+.slide[data-fac="F"] .page{border-left:2px solid rgba(167,139,250,.3)}
+.slide[data-fac="O"] .page{border-left:2px solid rgba(148,163,184,.25)}
+.slide[data-fac="N"] .page{border-left:2px solid rgba(254,243,199,.2)}
+.slide[data-fac="P"] .page{border-left:2px solid rgba(167,139,250,.3)}
+.slide[data-fac="C"] .page{border-left:2px solid rgba(148,163,184,.25)}
+.slide[data-fac="H"] .page{border-left:2px solid rgba(254,243,199,.2)}
+.slide[data-fac="A"] .page{border-left:3px solid var(--gold)}
 
-/* Faculty-colored left edge — kept neutral, slight tint */
-.slide[data-fac="T"] .sframe{border-left:2px solid rgba(248,113,113,.3)}
-.slide[data-fac="F"] .sframe{border-left:2px solid rgba(167,139,250,.3)}
-.slide[data-fac="O"] .sframe{border-left:2px solid rgba(148,163,184,.25)}
-.slide[data-fac="N"] .sframe{border-left:2px solid rgba(254,243,199,.2)}
-.slide[data-fac="P"] .sframe{border-left:2px solid rgba(167,139,250,.3)}
-.slide[data-fac="C"] .sframe{border-left:2px solid rgba(148,163,184,.25)}
-.slide[data-fac="H"] .sframe{border-left:2px solid rgba(254,243,199,.2)}
-.slide[data-fac="A"] .sframe{border-left:3px solid var(--gold)}
-
-.slide.aurum .sframe{
+.slide.aurum .page{
   background:
     radial-gradient(ellipse at top left, rgba(250,204,21,.08) 0%, transparent 55%),
     radial-gradient(ellipse at bottom right, rgba(250,204,21,.04) 0%, transparent 55%),
-    var(--bg);
+    transparent;
   border-left:2px solid var(--gold);
 }
-.slide.aurum .sframe::after{
+.slide.aurum .page::after{
   content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
   background:linear-gradient(115deg, transparent 20%, rgba(250,204,21,.06) 50%, transparent 80%);
   background-size:300% 100%;background-position:100% 0;animation:shimmer 5s ease-in-out infinite;
 }
+
+/* Continuation marker on non-first pages */
+.pg-cont{
+  position:absolute;top:calc(14px + var(--sat-top));left:50%;transform:translateX(-50%);
+  font-family:var(--serif);font-variant:small-caps;letter-spacing:.22em;
+  font-size:.7rem;color:var(--ink3);font-style:italic;z-index:3;
+}
+
+/* ============ PAGE DOTS — bottom-center, shows which page of the folio you're on ============ */
+.page-dots{
+  position:absolute;bottom:calc(18px + var(--sat-bot));left:50%;transform:translateX(-50%);
+  display:flex;gap:6px;z-index:6;pointer-events:none;
+}
+.page-dots span{
+  width:6px;height:6px;border-radius:50%;
+  background:rgba(148,163,184,.35);
+  transition:all .3s cubic-bezier(.3,.7,.3,1);
+}
+.page-dots span.on{
+  background:var(--pulse);
+  box-shadow:0 0 8px var(--pulse-glow);
+  width:18px;border-radius:3px;
+}
 @keyframes shimmer{0%,100%{background-position:100% 0}50%{background-position:0 0}}
-@media (prefers-reduced-motion:reduce){.slide.aurum .sframe::after{animation:none}}
+@media (prefers-reduced-motion:reduce){.slide.aurum .page::after{animation:none}}
 
 /* ============ TYPOGRAPHY — FLUID with clamp() ============ */
-.s-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px;flex-shrink:0}
+.s-top{
+  display:flex;justify-content:center;align-items:baseline;gap:14px;
+  margin-bottom:18px;flex-shrink:0;text-align:center;
+}
 .s-fac{font-variant:small-caps;letter-spacing:.3em;font-size:.72rem;color:var(--ink2);font-weight:600}
 .slide.aurum .s-fac{color:var(--gold)}
 .slide.aurum .s-fac::before{content:"✦ "}
 .s-typ{font-style:italic;font-size:.78rem;color:var(--ink3);letter-spacing:.02em}
 
+/* All titles centered — the floating menu button sits top-left,
+   centered titles never overlap it. */
 .slide h2{
   font-family:var(--display);font-weight:600;line-height:1.1;
   color:var(--ink);margin-bottom:18px;flex-shrink:0;letter-spacing:-.005em;
+  text-align:center;
 }
 .slide.aurum h2{color:var(--gold);text-shadow:0 1px 20px rgba(250,204,21,.15)}
 
@@ -214,7 +268,7 @@ body.chrome-shown #topbar{transform:translateY(0);opacity:1;pointer-events:auto}
 
 .s-src{
   font-size:.78rem;color:var(--ink3);font-style:italic;margin-top:18px;
-  text-align:right;flex-shrink:0;letter-spacing:.02em;
+  text-align:center;flex-shrink:0;letter-spacing:.02em;
   padding-top:14px;border-top:1px solid var(--line);
 }
 
@@ -295,7 +349,7 @@ body.chrome-shown #topbar{transform:translateY(0);opacity:1;pointer-events:auto}
 
 /* ============ SENTENTIA ============ */
 .slide.ax{justify-content:center}
-.slide.ax .sframe{
+.slide.ax .page{
   background:radial-gradient(circle at center, rgba(250,204,21,.08) 0%, var(--bg) 70%);
   border:none;align-items:center;justify-content:center;text-align:center;
 }
@@ -542,8 +596,8 @@ body.chrome-shown #topbar{transform:translateY(0);opacity:1;pointer-events:auto}
 /* ================================================================
    IMAGINES — "How to Read a Painting" (pictura type)
    ================================================================ */
-.slide[data-fac="I"] .sframe{border-left:3px solid var(--violet)}
-.slide.pictura .sframe{padding-top:calc(28px + var(--sat-top));justify-content:flex-start}
+.slide[data-fac="I"] .page{border-left:3px solid var(--violet)}
+.slide.pictura .page{padding-top:calc(56px + var(--sat-top));justify-content:flex-start}
 
 .pictura-box{
   width:calc(100% + 44px);margin:0 -22px 16px;
@@ -591,7 +645,7 @@ body.chrome-shown #topbar{transform:translateY(0);opacity:1;pointer-events:auto}
 /* ================================================================
    LUDUS — interactive games (match + sort)
    ================================================================ */
-.slide.ludus .sframe{justify-content:flex-start}
+.slide.ludus .page{justify-content:flex-start}
 .slide.ludus .s-body{font-size:1rem;color:var(--ink2);margin-bottom:16px;font-style:italic}
 
 /* ---- MATCH mode: two columns of taps ---- */
@@ -813,7 +867,7 @@ body.chrome-shown #topbar{transform:translateY(0);opacity:1;pointer-events:auto}
 
 @media (max-width:380px){
   body{font-size:19px}
-  .sframe{padding-top:calc(42px + var(--sat-top));padding-bottom:calc(76px + var(--sat-bot));padding-left:18px;padding-right:18px}
+  .page{padding-top:calc(60px + var(--sat-top));padding-bottom:calc(80px + var(--sat-bot));padding-left:18px;padding-right:18px}
   .s-img, .lite-yt, .pictura-box{margin-left:-18px;margin-right:-18px}
   .lite-yt, .pictura-box{width:calc(100% + 36px)}
   .daily-grid{grid-template-columns:1fr}
