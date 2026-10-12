@@ -15,6 +15,14 @@ const sb = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE
 const $ = s => document.querySelector(s);
 const $$ = s => Array.from(document.querySelectorAll(s));
 const esc = s => String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+// Like esc(), but allows a small whitelist of inline formatting tags (<em>, <strong>, <i>, <b>).
+// Use this for strings that go into clickable UI items where the author may want light emphasis.
+const escOpt = s => esc(s).replace(/&lt;(\/?)(em|strong|i|b)&gt;/gi, "<$1$2>");
+// Pick a language-specific field if available, falling back to the base field.
+function L(folio, key){
+  if(state.lang === "pt" && folio[key+"_pt"]) return folio[key+"_pt"];
+  return folio[key];
+}
 const pad = n => String(n).padStart(2,"0");
 const todayKey = d => { d=d||new Date(); return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate()); };
 const roman = n => { const m=[[1000,"M"],[900,"CM"],[500,"D"],[400,"CD"],[100,"C"],[90,"XC"],[50,"L"],[40,"XL"],[10,"X"],[9,"IX"],[5,"V"],[4,"IV"],[1,"I"]]; let o=""; for(const [v,s] of m){ while(n>=v){ o+=s; n-=v; } } return o||"·"; };
@@ -241,19 +249,20 @@ function slideHTML(folio){
 
   // Sententia — body is {latin, english}; render centered like an axiom but with faculty + rail + source
   if(folio.type === "sententia" && folio.body && typeof folio.body === "object"){
+    const bodyObj = L(folio, "body") || folio.body;
     return `<section class="slide ax${gold}" data-slug="${folio.slug}" data-type="sententia" data-fac="${folio.f}">
       <div class="sframe">
         <div class="s-top" style="width:100%"><span class="s-fac">${esc(fac.name)}</span><span class="s-typ">${esc(typLabel)}${folio.rare?" · gold leaf":""}</span></div>
-        <div class="ax-lat">${esc(folio.body.latin || "")}</div>
-        <div class="ax-en">${esc(folio.body.english || "")}</div>
+        <div class="ax-lat">${esc(bodyObj.latin || "")}</div>
+        <div class="ax-en">${esc(bodyObj.english || "")}</div>
         <div class="ax-orn">❧ ❧ ❧</div>
-        <div class="s-src" style="margin-top:28px;border-top:none">— ${esc(folio.src||"")}</div>
+        <div class="s-src" style="margin-top:28px;border-top:none">— ${esc(L(folio,"src")||"")}</div>
       </div>
       ${railHTML(folio.slug)}
     </section>`;
   }
 
-  // Pictura — a Google-Arts-style walkthrough panel: big image, zoom to detail, caption.
+  // Pictura — Google-Arts-style walkthrough: big image zoomed to a detail + caption.
   if(folio.type === "pictura"){
     const z = folio.zoom || {x:50, y:50, scale:1};
     const dots = Array.from({length:folio.steps||1}, (_,i) =>
@@ -261,15 +270,15 @@ function slideHTML(folio){
     return `<section class="slide pictura${gold}" data-slug="${folio.slug}" data-type="pictura" data-fac="${folio.f}" data-series="${esc(folio.series||'')}">
       <div class="sframe">
         <div class="pictura-box">
-          <img src="${folio.img}" alt="${esc(folio.title)}" loading="lazy"
+          <img src="${folio.img}" alt="${esc(L(folio,"title"))}" loading="lazy"
             style="--zx:${z.x}%; --zy:${z.y}%; --zs:${z.scale};"
             onerror="this.parentElement.style.background='#1E293B'">
           <div class="pic-step">${esc(fac.name)} · ${folio.step||1} / ${folio.steps||1}</div>
           <div class="pic-dots">${dots}</div>
         </div>
-        <h2>${esc(folio.title)}</h2>
-        <div class="s-body">${folio.body}</div>
-        <div class="s-src">— ${esc(folio.src||"")}</div>
+        <h2>${esc(L(folio,"title"))}</h2>
+        <div class="s-body">${L(folio,"body")}</div>
+        <div class="s-src">— ${esc(L(folio,"src")||"")}</div>
       </div>
       ${railHTML(folio.slug)}
     </section>`;
@@ -279,26 +288,27 @@ function slideHTML(folio){
   if(folio.type === "ludus"){
     const mode = folio.mode || "match";
     let gameHTML = "";
-    if(mode === "match" && folio.pairs){
-      // Build two columns of taps. Shuffle each independently by generating a shuffled index order.
-      const n = folio.pairs.length;
+    const pairs = L(folio, "pairs") || folio.pairs;
+    const items = L(folio, "items") || folio.items;
+    if(mode === "match" && pairs){
+      const n = pairs.length;
       const leftOrder = shuffledIdx(n), rightOrder = shuffledIdx(n);
       gameHTML = `<div class="ludus-match" data-slug="${folio.slug}">
         <div class="lm-col lm-q">${
-          leftOrder.map(i => `<button class="lm-item" data-side="q" data-idx="${i}">${esc(folio.pairs[i].q)}</button>`).join("")
+          leftOrder.map(i => `<button class="lm-item" data-side="q" data-idx="${i}">${escOpt(pairs[i].q)}</button>`).join("")
         }</div>
         <div class="lm-col lm-a">${
-          rightOrder.map(i => `<button class="lm-item" data-side="a" data-idx="${i}">${esc(folio.pairs[i].a)}</button>`).join("")
+          rightOrder.map(i => `<button class="lm-item" data-side="a" data-idx="${i}">${escOpt(pairs[i].a)}</button>`).join("")
         }</div>
       </div>
       <div class="ludus-score">0 / ${n}</div>
       <div class="ludus-win">${esc(t("correct_label","Correct"))} ✦</div>`;
-    } else if(mode === "sort" && folio.items){
-      const n = folio.items.length;
+    } else if(mode === "sort" && items){
+      const n = items.length;
       const order = shuffledIdx(n);
       gameHTML = `<div class="ludus-sort" data-slug="${folio.slug}">
         <div class="ls-items">${
-          order.map(i => `<button class="ls-item" data-idx="${i}" data-year="${folio.items[i].year}"><span class="ls-num">·</span><span class="ls-lbl">${esc(folio.items[i].label)}</span></button>`).join("")
+          order.map(i => `<button class="ls-item" data-idx="${i}" data-year="${items[i].year}"><span class="ls-num">·</span><span class="ls-lbl">${escOpt(items[i].label)}</span></button>`).join("")
         }</div>
         <button class="btn ls-reset" style="margin-top:14px;display:none">${esc(t("play_again","Play again"))}</button>
       </div>
@@ -307,10 +317,10 @@ function slideHTML(folio){
     return `<section class="slide ludus medium${gold}" data-slug="${folio.slug}" data-type="ludus" data-mode="${mode}" data-fac="${folio.f}">
       <div class="sframe">
         <div class="s-top"><span class="s-fac">${esc(fac.name)}</span><span class="s-typ">${esc(typLabel)}${folio.rare?" · gold leaf":""}</span></div>
-        <h2>${esc(folio.title)}</h2>
-        <div class="s-body">${folio.body}</div>
+        <h2>${esc(L(folio,"title"))}</h2>
+        <div class="s-body">${L(folio,"body")}</div>
         ${gameHTML}
-        <div class="s-src">— ${esc(folio.src||"")}</div>
+        <div class="s-src">— ${esc(L(folio,"src")||"")}</div>
       </div>
       ${railHTML(folio.slug)}
     </section>`;
@@ -318,7 +328,7 @@ function slideHTML(folio){
 
   let fig = "";
   if(folio.img){
-    fig = `<figure class="s-img pan"><img src="${folio.img}" alt="${esc(folio.title)}" loading="lazy" onerror="this.parentElement.style.display='none'"></figure>`;
+    fig = `<figure class="s-img pan"><img src="${folio.img}" alt="${esc(L(folio,"title"))}" loading="lazy" onerror="this.parentElement.style.display='none'"></figure>`;
   } else if(folio.ytId){
     const vClass = folio.ytShort ? "short" : "wide";
     const thumbUrl = folio.ytShort
@@ -330,31 +340,36 @@ function slideHTML(folio){
     </div>`;
   }
 
-  let body = `<div class="s-body">${folio.body}</div>`;
+  const bodyHTML = L(folio, "body");
+  let body = `<div class="s-body">${bodyHTML}</div>`;
+  const opts = L(folio, "opts") || folio.opts;
+  const revealHTML = L(folio, "reveal");
+  const revealMoreLabel = t("reveal_more","Reveal more");
+  const revealLabel = t("reveal","Reveal");
 
   // Quaestio & exercitium: options + reveal
-  if(folio.type === "quaestio" && folio.opts){
+  if(folio.type === "quaestio" && opts){
     body += `<div class="q-opts">`;
-    folio.opts.forEach((o,i)=>{
-      body += `<button class="q-opt" data-slug="${folio.slug}" data-i="${i}" data-correct="${folio.correct}">${esc(o)}</button>`;
+    opts.forEach((o,i)=>{
+      body += `<button class="q-opt" data-slug="${folio.slug}" data-i="${i}" data-correct="${folio.correct}">${escOpt(o)}</button>`;
     });
-    body += `</div><div class="answer" id="ans-${seq}">${folio.reveal||""}</div>`;
+    body += `</div><div class="answer" id="ans-${seq}">${revealHTML||""}</div>`;
   } else if(folio.type === "exercitium"){
-    body += `<div class="reveal-wrap"><button class="btn q-reveal" data-t="ans-${seq}">Reveal</button></div>`;
-    if(folio.reveal) body += `<div class="answer" id="ans-${seq}">${folio.reveal}</div>`;
-  } else if(folio.reveal){
-    body += `<div class="reveal-wrap"><button class="btn q-reveal" data-t="ans-${seq}">Reveal more</button></div>
-      <div class="answer" id="ans-${seq}">${folio.reveal}</div>`;
+    body += `<div class="reveal-wrap"><button class="btn q-reveal" data-t="ans-${seq}">${esc(revealLabel)}</button></div>`;
+    if(revealHTML) body += `<div class="answer" id="ans-${seq}">${revealHTML}</div>`;
+  } else if(revealHTML){
+    body += `<div class="reveal-wrap"><button class="btn q-reveal" data-t="ans-${seq}">${esc(revealMoreLabel)}</button></div>
+      <div class="answer" id="ans-${seq}">${revealHTML}</div>`;
   }
 
   // Suffragium (poll)
-  if(folio.type === "suffragium" && folio.opts){
+  if(folio.type === "suffragium" && opts){
     const myVote = state.votes[folio.slug];
-    body = `<div class="s-body">${folio.body}</div><div class="poll-opts" data-slug="${folio.slug}">`;
-    folio.opts.forEach((o,i)=>{
+    body = `<div class="s-body">${bodyHTML}</div><div class="poll-opts" data-slug="${folio.slug}">`;
+    opts.forEach((o,i)=>{
       const mine = myVote === i;
       body += `<button class="poll-opt ${mine?"mine":""}" data-slug="${folio.slug}" data-i="${i}">
-        <div class="bar"></div><span class="lbl">${esc(o)}</span><span class="pct"></span>
+        <div class="bar"></div><span class="lbl">${escOpt(o)}</span><span class="pct"></span>
       </button>`;
     });
     body += `</div>`;
@@ -364,9 +379,9 @@ function slideHTML(folio){
   return `<section class="slide ${density}${gold}" data-slug="${folio.slug}" data-type="${folio.type}" data-fac="${folio.f}">
     <div class="sframe">
       <div class="s-top"><span class="s-fac">${esc(fac.name)}</span><span class="s-typ">${esc(typLabel)}${folio.rare?" · gold leaf":""}</span></div>
-      <h2>${esc(folio.title)}</h2>
+      <h2>${esc(L(folio,"title"))}</h2>
       ${fig}${body}
-      <div class="s-src">— ${esc(folio.src||"")}</div>
+      <div class="s-src">— ${esc(L(folio,"src")||"")}</div>
     </div>
     ${railHTML(folio.slug)}
   </section>`;
