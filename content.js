@@ -73,7 +73,19 @@ const I18N = {
     daily_desc_P:   "Pulchrum — Scruton, Vermeer, Caravaggio, Mozart",
     daily_desc_C:   "Perceptio — Holmes, Doyle, close reading, the trained eye",
     daily_desc_H:   "Historia — Burke, revolutions, the long war",
-    daily_desc_I:   "Imagines — read a painting the way they used to be read"
+    daily_desc_I:   "Imagines — read a painting the way they used to be read",
+    // === ONBOARDING ===
+    ob_skip: "Skip",
+    ob_next: "Next",
+    ob_begin: "Begin",
+    ob_1_title: "Swipe up",
+    ob_1_body: "Each folio is one page. Swipe up to go to the next. The reel does not end on its own, you decide when enough is enough for today.",
+    ob_2_title: "Double-tap to keep",
+    ob_2_body: "If a folio strikes you, double-tap anywhere on it. The gold star saves it to your Thesaurus so you can find it again later.",
+    ob_3_title: "The menu",
+    ob_3_body: "Tap the circle in the top-left to open the menu. From there you can change wings, change the language, and see what you have kept.",
+    ob_4_title: "The Rule",
+    ob_4_body: "The thin lime bar at the top of your screen fills as you read. Finish ten folios in a day and the Rule is kept. One honest day of study at a time."
   },
   pt: {
     appTitle: "Studium Generale",
@@ -133,7 +145,19 @@ const I18N = {
     daily_desc_P:   "Pulchrum — Scruton, Vermeer, Caravaggio, Mozart",
     daily_desc_C:   "Perceptio — Holmes, Doyle, leitura atenta, o olho treinado",
     daily_desc_H:   "Historia — Burke, revoluções, a longa guerra",
-    daily_desc_I:   "Imagines — leia um quadro como se lia antigamente"
+    daily_desc_I:   "Imagines — leia um quadro como se lia antigamente",
+    // === ONBOARDING ===
+    ob_skip: "Pular",
+    ob_next: "Próximo",
+    ob_begin: "Começar",
+    ob_1_title: "Deslize para cima",
+    ob_1_body: "Cada fólio é uma página. Deslize para cima para ir ao próximo. O rolo não termina sozinho, você decide quando já foi o suficiente hoje.",
+    ob_2_title: "Toque duas vezes para guardar",
+    ob_2_body: "Se um fólio te atingir, toque duas vezes em qualquer lugar dele. A estrela dourada o guarda no seu Thesaurus para você achar depois.",
+    ob_3_title: "O menu",
+    ob_3_body: "Toque no círculo no canto superior esquerdo para abrir o menu. Dali você muda de ala, muda o idioma, e vê o que já guardou.",
+    ob_4_title: "A Regra",
+    ob_4_body: "A barra fina verde-limão no topo da tela se enche à medida que você lê. Termine dez fólios num dia e a Regra está cumprida. Um dia honesto de estudo por vez."
   }
 };
 
