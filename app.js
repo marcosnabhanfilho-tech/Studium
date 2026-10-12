@@ -100,7 +100,7 @@ function nextFolio(){
   return order[ptr++];
 }
 
-// ============== FACULTY CHIPS ==============
+// ============== FACULTY CHIPS (now in drawer only) ==============
 const FACTOTAL = {};
 POOL.forEach(f=>{ FACTOTAL[f.f] = (FACTOTAL[f.f]||0)+1; });
 
@@ -108,15 +108,17 @@ function seenInFaculty(code){
   let n = 0; POOL.forEach(f=>{ if(f.f===code && state.seen[f.slug]) n++; }); return n;
 }
 function renderChips(){
-  const bar = $("#facbar");
-  const totalSeen = Object.keys(state.seen).length;
-  let html = `<button class="chip ${state.filter==="ALL"?"active":""}" data-f="ALL"><span class="cn">Omnia</span><span class="cp">${totalSeen} / ${POOL.length}</span></button>`;
+  // Render into the DRAWER's fac grid, since the topbar chips are gone.
+  const grid = document.getElementById("menu-fac-grid");
+  if(!grid) return;
+  const totalSeen = Object.keys(state.seen).filter(k=>!k.includes(":")&&!k.startsWith("_")).length;
+  let html = `<button class="menu-fac ${state.filter==="ALL"?"active":""}" data-f="ALL" style="flex:1 1 100%"><span class="mfn">Omnia · all</span><span class="mfp">${totalSeen} / ${POOL.length} seen</span></button>`;
   for(const k of ["A","T","F","O","N","P","C","H"]){
     const s = seenInFaculty(k), t = FACTOTAL[k];
     const complete = s>=t;
-    html += `<button class="chip ${state.filter===k?"active":""} ${complete?"complete":""}" data-f="${k}"><span class="cn">${FAC[k].name}</span><span class="cp">${s} / ${t}${complete?" ✦":""}</span></button>`;
+    html += `<button class="menu-fac ${state.filter===k?"active":""} ${complete?"complete":""}" data-f="${k}"><span class="mfn">${FAC[k].name}</span><span class="mfp">${s} / ${t}${complete?" ✦":""}</span></button>`;
   }
-  bar.innerHTML = html;
+  grid.innerHTML = html;
 }
 function setFilter(code){
   if(state.filter === code) return;
@@ -500,37 +502,13 @@ async function sendMagicLink(){
   }
 }
 
-// ============== CHROME AUTO-HIDE (Shorts-style full-screen) ==============
-let hideT = null, lastReelScroll = 0;
-function initChromeAutoHide(){
-  const reel = document.getElementById("reel");
-  const chrome = [document.getElementById("topbar"), document.getElementById("facbar"), document.getElementById("rulebar")];
-  function showChrome(){
-    document.body.classList.remove("chrome-hidden");
-  }
-  function hideChrome(){
-    // Don't hide while a drawer, view, or modal is open
-    if(document.querySelector(".drawer.open, .view.open, .modal.open")) return;
-    document.body.classList.add("chrome-hidden");
-  }
-  function schedule(){
-    clearTimeout(hideT);
-    hideT = setTimeout(hideChrome, 2200);
-  }
-  reel.addEventListener("scroll", ()=>{
-    const t = reel.scrollTop;
-    const dir = t - lastReelScroll;
-    lastReelScroll = t;
-    if(Math.abs(dir) > 8){ hideChrome(); schedule(); }
-    else { showChrome(); schedule(); }
-  }, {passive:true});
-  reel.addEventListener("touchstart", ()=>{ showChrome(); schedule(); }, {passive:true});
-  // Tap anywhere in top area reveals chrome
-  document.addEventListener("click", e=>{
-    if(e.clientY < 110) showChrome();
-    schedule();
-  }, {passive:true});
-  schedule();
+// ============== CHROME — permanently hidden (reveal only via hamburger) ==============
+// The topbar is hidden by default. Only the thin rule bar at the very top and
+// the floating hamburger button are visible. Tapping the floating hamburger
+// opens the menu drawer directly; the topbar remains hidden.
+function initChrome(){
+  // No-op in the new model: there is no auto-hide timer, no scroll listener on reel.
+  // The floating menu button handles its own visibility.
 }
 
 // ============== DRAWER + VIEWS ==============
@@ -598,6 +576,78 @@ function renderRuleView(){
       <div class="r-sub">${Object.keys(state.seen).filter(k=>!k.includes(":") && !k.startsWith("_")).length} / ${POOL.length} folios seen, all time.</div>
     </div>
   `;
+}
+
+// ============== DAILY TOPIC CHOOSER ==============
+// On app launch: once per day, show a modal asking which wing to study today.
+// The choice sets the filter and is remembered for the day in localStorage.
+const DAILY_KEY = "studium_daily_choice";
+
+const DAILY_DESCRIPTIONS = {
+  "ALL": "Everything — a fair rotation across all wings",
+  "A":   "Your own essays — Arsenal · verbatim passages from what you wrote",
+  "T":   "Theology & metaphysics — Aquinas, Chesterton, Newman, the Church",
+  "F":   "Finance & markets — Buffett, Munger, EMH, behavioral",
+  "O":   "Austrian economics — Mises, Hayek, Rothbard, time preference",
+  "N":   "Nature of man — political philosophy, culture, demographics",
+  "P":   "Perception — Holmes, Doyle, close reading, the trained eye",
+  "C":   "Culture & aesthetics — Scruton, Vermeer, Caravaggio, Mozart",
+  "H":   "History — Burke, revolutions, counter-revolutions, the long war"
+};
+
+function dailyChoiceToday(){
+  try{
+    const v = JSON.parse(localStorage.getItem(DAILY_KEY) || "null");
+    if(v && v.day === todayKey()) return v.filter;
+  }catch(e){}
+  return null;
+}
+function recordDailyChoice(filter){
+  try{ localStorage.setItem(DAILY_KEY, JSON.stringify({day:todayKey(), filter})); }catch(e){}
+}
+
+function initDailyChooser(){
+  const modal = document.getElementById("daily-modal");
+  if(!modal) return;
+
+  const prior = dailyChoiceToday();
+  if(prior){
+    // Already chose today — apply silently and skip the modal
+    if(prior !== state.filter) setFilter(prior);
+    return;
+  }
+
+  // Build buttons: Omnia on top, Arsenal (A) next, then alphabetical
+  const grid = document.getElementById("daily-grid");
+  const order = ["ALL","A","T","F","O","N","P","C","H"];
+  grid.innerHTML = order.map(k=>{
+    const name = k === "ALL" ? "Omnia · all wings" : FAC[k].name;
+    const desc = DAILY_DESCRIPTIONS[k] || "";
+    const cls = k === "ALL" ? "omnia" : (k === "A" ? "arsenal" : "");
+    return `<button data-f="${k}" class="${cls}"><span class="dn">${esc(name)}</span><span class="dd">${esc(desc)}</span></button>`;
+  }).join("");
+
+  grid.addEventListener("click", e=>{
+    const b = e.target.closest("button[data-f]"); if(!b) return;
+    const f = b.dataset.f;
+    recordDailyChoice(f);
+    if(f !== state.filter) setFilter(f);
+    modal.classList.remove("open");
+    sndSeal();
+    haptic(16);
+    setTimeout(()=>{
+      const name = f === "ALL" ? "Omnia" : FAC[f].name;
+      toast("Today: " + name);
+    }, 300);
+  });
+
+  document.getElementById("daily-skip").onclick = ()=>{
+    recordDailyChoice("ALL");
+    modal.classList.remove("open");
+  };
+
+  // Open the modal
+  modal.classList.add("open");
 }
 
 // ============== INIT ==============
@@ -678,7 +728,11 @@ async function init(){
     handleTap(e);
   });
 
-  // Top bar
+  // Floating hamburger — the only visible chrome; opens the drawer directly
+  const fm = $("#float-menu");
+  if(fm) fm.onclick = openMenu;
+
+  // Hidden top bar (reachable only inside the drawer via "Change wing" — we keep its buttons wired in case)
   $("#menu-btn").onclick = openMenu;
   $("#profile-btn").onclick = ()=>{
     if(state.user){ openMenu(); }
@@ -691,6 +745,19 @@ async function init(){
     if(state.sound) sndSeal();
   };
   if(!state.sound) $("#snd-btn").classList.add("muted");
+
+  // Drawer sound toggle (the one actually reachable since topbar is hidden)
+  const drawerSnd = document.getElementById("drawer-snd");
+  function refreshDrawerSnd(){
+    if(drawerSnd) drawerSnd.textContent = state.sound ? "♪ Sound: on" : "♪ Sound: off";
+  }
+  refreshDrawerSnd();
+  if(drawerSnd) drawerSnd.onclick = ()=>{
+    state.sound = !state.sound;
+    saveLocal();
+    refreshDrawerSnd();
+    if(state.sound) sndSeal();
+  };
 
   // Audio unlock on first gesture
   document.addEventListener("pointerdown", ()=>audio(), {once:true, passive:true});
@@ -708,9 +775,14 @@ async function init(){
   // View back buttons
   $$(".view .back").forEach(b=> b.onclick = closeAllViews);
 
-  // Chip clicks
-  $("#facbar").addEventListener("click", e=>{
-    const c = e.target.closest(".chip"); if(c) setFilter(c.dataset.f);
+  // Drawer faculty filter chips
+  const mfg = document.getElementById("menu-fac-grid");
+  if(mfg) mfg.addEventListener("click", e=>{
+    const c = e.target.closest(".menu-fac"); if(!c) return;
+    setFilter(c.dataset.f);
+    renderChips();
+    closeMenu();
+    toast(c.dataset.f === "ALL" ? "Omnia — all wings" : FAC[c.dataset.f].name);
   });
 
   // Auth modal
@@ -736,7 +808,8 @@ async function init(){
     }
   });
 
-  initChromeAutoHide();
+  initChrome();
+  initDailyChooser();
 
   // Service worker: on activate, auto-reload the page so new cache takes effect
   if("serviceWorker" in navigator){
