@@ -111,7 +111,7 @@ function renderChips(){
   const bar = $("#facbar");
   const totalSeen = Object.keys(state.seen).length;
   let html = `<button class="chip ${state.filter==="ALL"?"active":""}" data-f="ALL"><span class="cn">Omnia</span><span class="cp">${totalSeen} / ${POOL.length}</span></button>`;
-  for(const k of ["T","F","O","N","P","C","H"]){
+  for(const k of ["A","T","F","O","N","P","C","H"]){
     const s = seenInFaculty(k), t = FACTOTAL[k];
     const complete = s>=t;
     html += `<button class="chip ${state.filter===k?"active":""} ${complete?"complete":""}" data-f="${k}"><span class="cn">${FAC[k].name}</span><span class="cp">${s} / ${t}${complete?" ✦":""}</span></button>`;
@@ -141,11 +141,13 @@ function railHTML(slug){
 
 function classifyDensity(folio){
   // Heuristic for the short/medium/long typography tiers.
-  if(folio.type === "visio" || folio.ytId) return "long";       // videos always long
+  if(folio.type === "sententia") return "short";                 // axioms always short
+  if(folio.type === "visio" || folio.ytId) return "long";        // videos always long
   if(folio.img) return "medium";                                 // images give structure
   if(folio.type === "quaestio" || folio.type === "exercitium") return "medium";
   if(folio.type === "suffragium") return "medium";
-  const body = (folio.body || "").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+  const raw = typeof folio.body === "string" ? folio.body : "";
+  const body = raw.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
   const words = body.split(" ").length;
   if(words < 55) return "short";
   if(words < 180) return "medium";
@@ -563,7 +565,7 @@ function degreeFor(ratio){ return DEGREES[Math.min(Math.floor(ratio * DEGREES.le
 function renderWings(){
   const list = $("#wings-list");
   let html = "";
-  for(const k of ["T","F","O","N","P","C","H"]){
+  for(const k of ["A","T","F","O","N","P","C","H"]){
     const s = seenInFaculty(k), t = FACTOTAL[k];
     const ratio = t ? s/t : 0;
     const deg = DEGREES[Math.min(Math.floor(ratio * DEGREES.length), DEGREES.length-1)];
