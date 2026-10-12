@@ -655,6 +655,133 @@ body.chrome-shown #topbar{transform:translateY(0);opacity:1;pointer-events:auto}
 .ls-reset{margin-top:12px;max-width:none}
 
 /* ================================================================
+   ONBOARDING — four-step first-launch coachmark
+   ================================================================ */
+#onboarding{
+  position:fixed;inset:0;z-index:115;
+  background:linear-gradient(180deg, rgba(15,23,42,.97) 0%, rgba(15,23,42,.99) 100%);
+  display:none;flex-direction:column;align-items:center;justify-content:center;
+  padding:calc(40px + var(--sat-top)) 24px calc(40px + var(--sat-bot));
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+}
+#onboarding.open{display:flex;animation:obIn .5s cubic-bezier(.3,.7,.3,1)}
+@keyframes obIn{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
+.ob-wrap{max-width:420px;width:100%;text-align:center}
+
+.ob-visual{
+  height:120px;display:flex;align-items:center;justify-content:center;
+  margin-bottom:28px;
+}
+.ob-visual .ob-ic{
+  width:88px;height:88px;border-radius:50%;
+  background:linear-gradient(135deg, rgba(163,230,53,.18), rgba(163,230,53,.06));
+  border:1.5px solid var(--pulse);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--display);font-weight:600;font-size:2.4rem;color:var(--pulse);
+  box-shadow:0 0 32px rgba(163,230,53,.28);
+}
+/* step 1: upward arrow with bounce */
+.ob-visual .ob-arrow{
+  width:72px;height:120px;position:relative;
+  animation:obSwipe 1.6s cubic-bezier(.5,.1,.5,1) infinite;
+}
+.ob-visual .ob-arrow::before{
+  content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:0;height:0;border-left:16px solid transparent;border-right:16px solid transparent;
+  border-bottom:22px solid var(--pulse);
+  filter:drop-shadow(0 0 12px var(--pulse-glow));
+}
+.ob-visual .ob-arrow::after{
+  content:"";position:absolute;top:18px;left:50%;transform:translateX(-50%);
+  width:4px;height:72px;background:linear-gradient(180deg, var(--pulse), transparent);
+  border-radius:2px;
+}
+@keyframes obSwipe{
+  0%,100%{transform:translateY(10px);opacity:.6}
+  50%{transform:translateY(-10px);opacity:1}
+}
+/* step 2: double-tap pulse */
+.ob-visual .ob-tap{
+  width:84px;height:84px;border-radius:50%;position:relative;
+  background:transparent;border:2px solid var(--pulse);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--display);font-size:2.6rem;color:var(--pulse);font-weight:600;
+}
+.ob-visual .ob-tap::before,
+.ob-visual .ob-tap::after{
+  content:"";position:absolute;inset:-4px;border:2px solid var(--pulse);border-radius:50%;
+  opacity:0;animation:obRipple 1.6s ease-out infinite;
+}
+.ob-visual .ob-tap::after{animation-delay:.5s}
+@keyframes obRipple{
+  0%{transform:scale(.95);opacity:.8}
+  100%{transform:scale(1.6);opacity:0}
+}
+/* step 3: menu button mock */
+.ob-visual .ob-menu{
+  width:60px;height:60px;border-radius:50%;
+  background:rgba(23,32,51,.85);border:1.5px solid var(--pulse);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.6rem;color:var(--pulse);
+  box-shadow:0 0 24px var(--pulse-glow);
+  animation:obMenuBeat 1.8s ease-in-out infinite;
+}
+@keyframes obMenuBeat{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.1)}
+}
+/* step 4: progress bar fill */
+.ob-visual .ob-rule{
+  width:260px;height:16px;background:rgba(30,41,59,.6);border-radius:2px;
+  overflow:hidden;position:relative;
+  box-shadow:inset 0 0 0 1px var(--line2);
+}
+.ob-visual .ob-rule::after{
+  content:"";position:absolute;inset:0 50% 0 0;
+  background:linear-gradient(90deg, var(--pulse2), var(--pulse));
+  box-shadow:0 0 16px var(--pulse-glow);
+  animation:obFill 2s cubic-bezier(.3,.7,.3,1) infinite;
+}
+@keyframes obFill{
+  0%{right:100%}
+  60%{right:0}
+  100%{right:0}
+}
+
+.ob-title{
+  font-family:var(--display);font-weight:600;
+  font-size:clamp(1.75rem, 5.8vw, 2.3rem);
+  color:var(--ink);line-height:1.15;margin-bottom:14px;
+  letter-spacing:-.005em;
+}
+.ob-body{
+  font-size:clamp(1rem, 3vw, 1.15rem);color:var(--ink2);
+  line-height:1.52;margin-bottom:30px;font-style:italic;
+}
+.ob-dots{
+  display:flex;gap:8px;justify-content:center;margin-bottom:22px;
+}
+.ob-dots span{
+  width:6px;height:6px;border-radius:50%;background:var(--line2);transition:all .3s ease;
+}
+.ob-dots span.on{background:var(--pulse);box-shadow:0 0 10px var(--pulse-glow);transform:scale(1.3)}
+.ob-next{
+  font-family:var(--serif);font-variant:small-caps;letter-spacing:.2em;
+  font-size:1rem;background:var(--pulse);color:var(--bg);
+  border:none;padding:14px 36px;cursor:pointer;border-radius:3px;
+  min-width:160px;font-weight:600;
+  box-shadow:0 0 28px var(--pulse-glow);
+  transition:all .18s ease;
+}
+.ob-next:active{transform:scale(.97);background:var(--pulse2)}
+.ob-skip{
+  display:block;margin-top:18px;
+  font-size:.82rem;color:var(--ink3);font-style:italic;
+  text-decoration:underline;cursor:pointer;
+}
+.ob-skip:active{color:var(--ink2)}
+
+/* ================================================================
    LANGUAGE CHOOSER (first-launch, before daily chooser)
    ================================================================ */
 #lang-modal{
