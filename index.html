@@ -15,13 +15,13 @@
 </head>
 <body>
 
-<!-- Thin top progress bar — ONLY static chrome -->
+<!-- Thin top progress bar -->
 <div id="rulebar"><div id="rulefill"></div></div>
 
-<!-- Floating menu button (always visible — the only visible chrome) -->
+<!-- Floating menu button (always visible) -->
 <button id="float-menu" aria-label="Menu">☰</button>
 
-<!-- Hidden top bar — only shown when menu button tapped or from drawer -->
+<!-- Hidden top bar — kept for programmatic reach, never shown -->
 <header id="topbar">
   <button id="menu-btn" aria-label="Menu">☰</button>
   <div class="brand">STVDIVM</div>
@@ -31,7 +31,6 @@
   </div>
 </header>
 
-<!-- Faculty chips: NO LONGER rendered as a top bar; moved into drawer -->
 <nav id="facbar" aria-hidden="true" style="display:none"></nav>
 
 <!-- =========== THE REEL =========== -->
@@ -41,33 +40,49 @@
 <div id="seal-flash" aria-hidden="true">✦</div>
 <div id="toast" role="status" aria-live="polite"></div>
 
+<!-- =========== LANGUAGE CHOOSER (first launch ever) =========== -->
+<div id="lang-modal" aria-label="Choose language">
+  <div class="lang-wrap">
+    <div class="lang-greet">Studium Generale</div>
+    <h2 class="lang-q" data-i18n="chooseLang">Choose your language</h2>
+    <p class="lang-sub" data-i18n="chooseLangSub">You can change this anytime from the menu.</p>
+    <div class="lang-grid">
+      <button data-lang="en"><span class="ln">English</span><span class="ld">continue in English</span></button>
+      <button data-lang="pt"><span class="ln">Português</span><span class="ld">continuar em português</span></button>
+    </div>
+  </div>
+</div>
+
 <!-- =========== DAILY TOPIC CHOOSER =========== -->
 <div id="daily-modal" aria-label="Daily topic">
   <div class="daily-wrap">
-    <div class="daily-greet">Studium Generale</div>
-    <h2 class="daily-q">What do you want to study today?</h2>
-    <p class="daily-sub">Pick a wing. You can switch inside the menu whenever you like.</p>
+    <div class="daily-greet" data-i18n="dailyGreet">Studium Generale</div>
+    <h2 class="daily-q" data-i18n="dailyQ">What do you want to study today?</h2>
+    <p class="daily-sub" data-i18n="dailySub">Pick a wing. You can switch inside the menu whenever you like.</p>
     <div class="daily-grid" id="daily-grid"></div>
     <div class="daily-foot">
-      <a id="daily-skip">Skip — surprise me</a>
+      <a id="daily-skip" data-i18n="dailySkip">Skip — surprise me</a>
     </div>
   </div>
 </div>
 
 <!-- Menu drawer -->
 <aside id="menu" class="drawer">
-  <h2>Studium Generale</h2>
-  <p class="motto">a scroll that forms you</p>
+  <h2 data-i18n="appTitle">Studium Generale</h2>
+  <p class="motto" data-i18n="motto">a scroll that forms you</p>
   <nav class="menu-list">
-    <button data-view="reel" class="active">▸ Lectio</button>
-    <button data-view="thesaurus">✦ Thesaurus · <span id="thes-n">0</span></button>
-    <button data-view="wings">◇ Wings · progress</button>
-    <button data-view="rule">⚑ The Rule · today</button>
-    <button data-view="about">¶ About</button>
+    <button data-view="reel" class="active" data-i18n="menu_lectio">▸ Lectio</button>
+    <button data-view="thesaurus"><span data-i18n="menu_thesaurus">✦ Thesaurus</span> · <span id="thes-n">0</span></button>
+    <button data-view="wings" data-i18n="menu_wings">◇ Wings · progress</button>
+    <button data-view="rule" data-i18n="menu_rule">⚑ The Rule · today</button>
+    <button data-view="about" data-i18n="menu_about">¶ About</button>
   </nav>
 
-  <div class="menu-section-h">Change wing</div>
+  <div class="menu-section-h" data-i18n="menu_changewing">Change wing</div>
   <div class="menu-fac-grid" id="menu-fac-grid"></div>
+
+  <div class="menu-section-h" data-i18n="menu_lang">Language</div>
+  <div class="menu-fac-grid" id="menu-lang-grid" style="margin-bottom:14px"></div>
 
   <div class="menu-foot">
     <div id="auth-area"></div>
@@ -78,32 +93,28 @@
 
 <!-- Thesaurus view -->
 <section id="view-thesaurus" class="view">
-  <header class="view-h"><button class="back">←</button><h3>Thesaurus</h3></header>
-  <p class="view-sub">What you have kept. Double-tap any folio in the Reel to keep it.</p>
+  <header class="view-h"><button class="back">←</button><h3 data-i18n="thesaurus_title">Thesaurus</h3></header>
+  <p class="view-sub" data-i18n="thesaurus_sub">What you have kept. Double-tap any folio in the Reel to keep it.</p>
   <div id="thes-list"></div>
 </section>
 
 <!-- Wings view -->
 <section id="view-wings" class="view">
-  <header class="view-h"><button class="back">←</button><h3>The Wings</h3></header>
-  <p class="view-sub">Every folio you have seen is permanently collected. Finish a wing for its degree.</p>
+  <header class="view-h"><button class="back">←</button><h3 data-i18n="wings_title">The Wings</h3></header>
+  <p class="view-sub" data-i18n="wings_sub">Every folio you have seen is permanently collected. Finish a wing for its degree.</p>
   <div id="wings-list"></div>
 </section>
 
 <!-- Rule view -->
 <section id="view-rule" class="view">
-  <header class="view-h"><button class="back">←</button><h3>The Rule</h3></header>
+  <header class="view-h"><button class="back">←</button><h3 data-i18n="menu_rule">The Rule</h3></header>
   <div id="rule-today"></div>
 </section>
 
 <!-- About view -->
 <section id="view-about" class="view">
-  <header class="view-h"><button class="back">←</button><h3>About</h3></header>
-  <div class="about-body">
-    <p><strong>Studium Generale</strong> is the medieval name for a university — a studium open to scholars from everywhere. This one is a reel: swipe through folios drawn from Aquinas, Chesterton, Newman, Scruton, Mises, Hayek, Buffett, Munger, Vermeer, Caravaggio, Mozart, Doyle, Burke, and your own Arsenal essays.</p>
-    <p>A folio you view is permanently added to its Wing. Double-tap to keep one in your Thesaurus. Finish ten folios in a day to keep the Rule. There is no infinite scroll — once the Rule is kept, the day's work is done.</p>
-    <p class="motto">Nulla dies sine linea.<br>Sapientis est ordinare.</p>
-  </div>
+  <header class="view-h"><button class="back">←</button><h3 data-i18n="menu_about">About</h3></header>
+  <div class="about-body" id="about-body"></div>
 </section>
 
 <!-- Auth modal -->
