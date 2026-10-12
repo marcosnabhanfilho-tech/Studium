@@ -952,76 +952,219 @@ const IMAGINES = [
   {slug:"i-ver-bal-01", type:"pictura", f:"I", series:"vermeer_balance", step:1, steps:5,
    img:IMG.vermeer_balance, zoom:{x:50, y:50, scale:1},
    title:"The Whole · Woman Holding a Balance",
-   body:`<p>Before you look at any part, look at the whole. A woman stands by a window, calm, in late pregnancy, holding an empty balance between her finger and thumb. On the wall behind her — a <em>Last Judgment</em>. On the table — gold, pearls, a mirror.</p>
-<p>Everything in this painting is weighed. The pearls will be weighed. The balance pans are empty — nothing is on them yet. Behind her, Christ is weighing souls. The woman stands at the exact axis of the painting. She is the <strong>fulcrum</strong>. Look longer.</p>`,
+   title_pt:"O Todo · Mulher com uma Balança",
+   body:`<p>Before you look at any part, look at the whole. A woman stands by a window, calm, in late pregnancy, holding an empty balance between her finger and thumb. On the wall behind her, a <em>Last Judgment</em>. On the table, gold, pearls, a mirror.</p>
+<p>Everything in this painting is weighed. The pearls will be weighed. The balance pans are empty, nothing on them yet. Behind her, Christ is weighing souls. The woman stands at the exact axis of the painting. She is the <strong>fulcrum</strong>. Look longer.</p>`,
+   body_pt:`<p>Antes de olhar qualquer parte, olhe o todo. Uma mulher está perto da janela, serena, no fim da gravidez, segurando uma balança vazia entre o dedo e o polegar. Na parede atrás dela, um <em>Juízo Final</em>. Na mesa, ouro, pérolas, um espelho.</p>
+<p>Tudo neste quadro está sendo pesado. As pérolas serão pesadas. Os pratos da balança estão vazios, ainda não há nada sobre eles. Atrás dela, Cristo pesa almas. A mulher está no eixo exato do quadro. Ela é o <strong>fulcro</strong>. Olhe por mais tempo.</p>`,
    src:"Vermeer, c. 1662-64 · National Gallery, Washington"},
 
   {slug:"i-ver-bal-02", type:"pictura", f:"I", series:"vermeer_balance", step:2, steps:5,
-   img:IMG.vermeer_balance, zoom:{x:38, y:52, scale:2.4},
+   img:IMG.vermeer_balance, zoom:{x:40, y:50, scale:2.3},
    title:"The Balance",
-   body:`<p>The pans are empty. This is the painting's quiet puzzle. For centuries scholars assumed she was weighing pearls — and then noticed the pans contain nothing. She is weighing <em>potential</em>: holding the instrument steady before anything is placed on it.</p>
+   title_pt:"A Balança",
+   body:`<p>The pans are empty. This is the painting's quiet puzzle. For centuries scholars assumed she was weighing pearls, and then noticed the pans contain nothing. She is weighing <em>potential</em>: holding the instrument steady before anything is placed on it.</p>
 <p>Her hand is relaxed. The finger-and-thumb grip is the exact gesture a jeweler uses. Vermeer painted this with the kind of attention that only a man who had held such an instrument himself could paint.</p>`,
+   body_pt:`<p>Os pratos estão vazios. Esse é o enigma silencioso do quadro. Por séculos, estudiosos imaginaram que ela estava pesando pérolas, e então notaram que os pratos não têm nada. Ela está pesando <em>potência</em>: segurando o instrumento firme antes de qualquer peso ser colocado nele.</p>
+<p>A mão está relaxada. O pegar com dedo e polegar é o gesto exato de um joalheiro. Vermeer pintou isso com a atenção que só um homem que já segurou um instrumento assim conseguiria pintar.</p>`,
    src:"Vermeer, detail · the balance"},
 
   {slug:"i-ver-bal-03", type:"pictura", f:"I", series:"vermeer_balance", step:3, steps:5,
-   img:IMG.vermeer_balance, zoom:{x:50, y:26, scale:2.6},
+   img:IMG.vermeer_balance, zoom:{x:44, y:20, scale:2.3},
    title:"The Face",
-   body:`<p>She is looking down. Her eyes are nearly closed. This is not vacancy — it is <strong>recollection</strong>, the medieval contemplative pose. The light from the window falls on her forehead, catches on the gold border of her headdress, and dies on her collar.</p>
+   title_pt:"O Rosto",
+   body:`<p>She is looking down. Her eyes are nearly closed. This is not vacancy, it is <strong>recollection</strong>, the medieval contemplative pose. The light from the window falls on her forehead, catches on the gold border of her headdress, and dies on her collar.</p>
 <p>Vermeer paints the exact edge where light stops being light and starts being dark. He is the greatest painter of that edge in Western art.</p>`,
+   body_pt:`<p>Ela está olhando para baixo. Os olhos quase fechados. Isto não é vazio, é <strong>recolhimento</strong>, a pose contemplativa medieval. A luz da janela cai na testa, se agarra à borda dourada do véu e morre no colarinho.</p>
+<p>Vermeer pinta o limite exato onde a luz deixa de ser luz e começa a ser sombra. Ele é o maior pintor desse limite em toda a arte ocidental.</p>`,
    src:"Vermeer, detail · the face"},
 
   {slug:"i-ver-bal-04", type:"pictura", f:"I", series:"vermeer_balance", step:4, steps:5,
    img:IMG.vermeer_balance, zoom:{x:72, y:38, scale:2.3},
    title:"The Last Judgment",
-   body:`<p>Over her shoulder, a painting-within-the-painting: Christ enthroned, dividing the saved from the damned. The <em>top</em> of the balance she holds in her hand aligns, almost exactly, with Christ's heart in the painting behind her.</p>
-<p>This is Vermeer telling you what the picture is <strong>about</strong>. Every mortal weighing — of a pearl, of a coin, of the day's work — happens under a greater weighing. She stands between the two. So do you.</p>`,
+   title_pt:"O Juízo Final",
+   body:`<p>Over her shoulder, a painting within the painting: Christ enthroned, dividing the saved from the damned. The <em>top</em> of the balance she holds in her hand aligns, almost exactly, with Christ's heart in the painting behind her.</p>
+<p>This is Vermeer telling you what the picture is <strong>about</strong>. Every mortal weighing, of a pearl, of a coin, of the day's work, happens under a greater weighing. She stands between the two. So do you.</p>`,
+   body_pt:`<p>Sobre o ombro dela, um quadro dentro do quadro: Cristo entronizado, separando os salvos dos condenados. O <em>topo</em> da balança que ela segura na mão se alinha, quase exatamente, com o coração de Cristo no quadro atrás.</p>
+<p>É Vermeer te dizendo <strong>do que</strong> o quadro trata. Todo pesar mortal, de uma pérola, de uma moeda, do trabalho do dia, acontece sob um pesar maior. Ela está entre os dois. Você também.</p>`,
    src:"Vermeer, detail · the painting behind her"},
 
   {slug:"i-ver-bal-05", type:"pictura", f:"I", series:"vermeer_balance", step:5, steps:5, rare:1,
-   img:IMG.vermeer_balance, zoom:{x:36, y:72, scale:2.9},
+   img:IMG.vermeer_balance, zoom:{x:36, y:70, scale:2.6},
    title:"What Is On the Table",
-   body:`<p>Gold chains spilled across the table. Pearls loose in their open boxes. A mirror — the symbol of vanity in Dutch painting. These are the things of the world, lovingly rendered, beautifully lit.</p>
-<p>Vermeer is not saying they are bad. He is saying they are to be <em>weighed</em>. The pearls catch the window-light with a specificity that proves he loved them — and the balance in her hand says: this love must be measured against the other weighing, the one behind her.</p>
+   title_pt:"O Que Está Sobre a Mesa",
+   body:`<p>Gold chains spilled across the table. Pearls loose in their open boxes. A mirror, the symbol of vanity in Dutch painting. These are the things of the world, lovingly rendered, beautifully lit.</p>
+<p>Vermeer is not saying they are bad. He is saying they are to be <em>weighed</em>. The pearls catch the window-light with a specificity that proves he loved them, and the balance in her hand says: this love must be measured against the other weighing, the one behind her.</p>
 <p>You have now read a painting. The whole, the hand, the face, the painting behind her, the table. This is what the eye does when it is taught.</p>`,
+   body_pt:`<p>Correntes de ouro espalhadas na mesa. Pérolas soltas em caixas abertas. Um espelho, o símbolo da vaidade na pintura holandesa. Estas são as coisas do mundo, pintadas com amor, iluminadas com cuidado.</p>
+<p>Vermeer não está dizendo que são ruins. Ele está dizendo que elas devem ser <em>pesadas</em>. As pérolas captam a luz da janela com uma precisão que prova que ele as amava, e a balança na mão dela diz: esse amor precisa ser medido contra o outro pesar, aquele atrás.</p>
+<p>Você acaba de ler um quadro. O todo, a mão, o rosto, o quadro atrás dela, a mesa. É isso que o olho faz quando é ensinado.</p>`,
    src:"Vermeer · the whole, finally seen"},
 
   // ===== CARAVAGGIO — Calling of St Matthew (1599-1600) =====
   {slug:"i-car-mat-01", type:"pictura", f:"I", series:"caravaggio_matthew", step:1, steps:5,
    img:IMG.caravaggio_matthew, zoom:{x:50, y:50, scale:1},
    title:"The Whole · The Calling of St Matthew",
-   body:`<p>A tax-collector's office. Four men counting money at a table. Two figures walk in from the right — barely visible, in shadow. One of them raises a hand.</p>
-<p>A beam of light enters with them. It is impossibly directed — not from a window, not natural. It falls across the room and lands on one specific face. That face is Matthew's.</p>
-<p>In the next four panels we will go to: the hand that calls, the hand that answers, the money being left behind, and the light that explains it all.</p>`,
+   title_pt:"O Todo · O Chamado de São Mateus",
+   body:`<p>A tax-collector's office. Four men counting money at a table. Two figures walk in from the right, barely visible, in shadow. One of them raises a hand.</p>
+<p>A beam of light enters with them. It is impossibly directed, not from a window, not natural. It falls across the room and lands on one specific face. That face is Matthew's.</p>
+<p>In the next four panels we go to: the hand that calls, the hand that answers, the money being left behind, and the light that explains it all.</p>`,
+   body_pt:`<p>Um escritório de cobrador de impostos. Quatro homens contam dinheiro em uma mesa. Duas figuras entram pela direita, mal visíveis, na sombra. Uma delas levanta a mão.</p>
+<p>Um feixe de luz entra com elas. Direcionado de forma impossível, não vem de janela, não é natural. Atravessa a sala e cai sobre um rosto específico. Esse rosto é de Mateus.</p>
+<p>Nos próximos quatro painéis vamos olhar: a mão que chama, a mão que responde, o dinheiro que será deixado, e a luz que explica tudo.</p>`,
    src:"Caravaggio, 1599-1600 · Contarelli Chapel, Rome"},
 
   {slug:"i-car-mat-02", type:"pictura", f:"I", series:"caravaggio_matthew", step:2, steps:5,
-   img:IMG.caravaggio_matthew, zoom:{x:78, y:46, scale:2.7},
+   img:IMG.caravaggio_matthew, zoom:{x:76, y:48, scale:2.4},
    title:"The Hand That Calls",
-   body:`<p>Christ's arm extends across the shadow. The hand is a direct quotation of Michelangelo's <em>Creation of Adam</em> on the Sistine ceiling — the same languid finger. Caravaggio knew exactly what he was doing. He is saying: a new creation is happening, right now, in this tax office.</p>
+   title_pt:"A Mão Que Chama",
+   body:`<p>Christ's arm extends across the shadow. The hand is a direct quotation of Michelangelo's <em>Creation of Adam</em> on the Sistine ceiling, the same languid finger. Caravaggio knew exactly what he was doing. He is saying: a new creation is happening, right now, in this tax office.</p>
 <p>The old creation gave life to the body. This one gives life to the soul. Same gesture, four generations apart.</p>`,
+   body_pt:`<p>O braço de Cristo se estende sobre a sombra. A mão é uma citação direta da <em>Criação de Adão</em> de Michelangelo no teto da Sistina, o mesmo dedo languido. Caravaggio sabia exatamente o que estava fazendo. Ele diz: uma nova criação acontece, agora, neste escritório de impostos.</p>
+<p>A criação antiga deu vida ao corpo. Esta aqui dá vida à alma. O mesmo gesto, com quatro gerações de distância.</p>`,
    src:"Caravaggio, detail · Christ's hand (echoing Michelangelo)"},
 
   {slug:"i-car-mat-03", type:"pictura", f:"I", series:"caravaggio_matthew", step:3, steps:5,
-   img:IMG.caravaggio_matthew, zoom:{x:42, y:50, scale:2.5},
+   img:IMG.caravaggio_matthew, zoom:{x:40, y:50, scale:2.4},
    title:"The Hand That Answers",
-   body:`<p>Matthew points. But to whom? For four centuries scholars have argued: at himself (astonished — <em>me?</em>), or at the young man beside him (<em>him? not me</em>).</p>
-<p>Caravaggio left it deliberately unresolved. The ambiguity is the point. The call is <strong>always</strong> felt first as a mistake — <em>surely you don't mean me</em>. The hand is the exact pictorial equivalent of that moment.</p>`,
-   src:"Caravaggio, detail · Matthew's gesture — the unresolved pointing"},
+   title_pt:"A Mão Que Responde",
+   body:`<p>Matthew points. But to whom? For four centuries scholars have argued: at himself (astonished, <em>me?</em>), or at the young man beside him (<em>him? not me</em>).</p>
+<p>Caravaggio left it deliberately unresolved. The ambiguity is the point. The call is <strong>always</strong> felt first as a mistake, <em>surely you don't mean me</em>. The hand is the exact pictorial equivalent of that moment.</p>`,
+   body_pt:`<p>Mateus aponta. Mas para quem? Por quatro séculos os estudiosos discutem: para si mesmo (atônito, <em>eu?</em>), ou para o jovem ao lado (<em>ele? não eu</em>).</p>
+<p>Caravaggio deixou isso de propósito sem resposta. A ambiguidade é o ponto. O chamado é <strong>sempre</strong> sentido primeiro como um engano, <em>o Senhor não pode estar falando comigo</em>. A mão é o equivalente pictórico exato desse instante.</p>`,
+   src:"Caravaggio, detail · Matthew's gesture"},
 
   {slug:"i-car-mat-04", type:"pictura", f:"I", series:"caravaggio_matthew", step:4, steps:5,
-   img:IMG.caravaggio_matthew, zoom:{x:30, y:76, scale:2.8},
+   img:IMG.caravaggio_matthew, zoom:{x:30, y:76, scale:2.6},
    title:"What Is Being Left Behind",
-   body:`<p>Coins. Stacked, counted, catalogued. The two men on the left are still looking at them — they haven't noticed the Christ yet. They are still inside the old life.</p>
-<p>Matthew will stand up. He will leave this. The money will stay on the table. Caravaggio is not moralizing; he is simply painting the <em>exact instant</em> at which a man's attention leaves one world for another. The coins don't know yet. The counters don't know yet. Matthew is already somewhere else.</p>`,
+   title_pt:"O Que Será Deixado",
+   body:`<p>Coins. Stacked, counted, catalogued. The two men on the left are still looking at them, they haven't noticed the Christ yet. They are still inside the old life.</p>
+<p>Matthew will stand up. He will leave this. The money will stay on the table. Caravaggio is not moralizing. He is simply painting the <em>exact instant</em> at which a man's attention leaves one world for another. The coins don't know yet. The counters don't know yet. Matthew is already somewhere else.</p>`,
+   body_pt:`<p>Moedas. Empilhadas, contadas, catalogadas. Os dois homens à esquerda ainda estão olhando para elas, ainda não notaram o Cristo. Continuam dentro da vida antiga.</p>
+<p>Mateus vai se levantar. Vai deixar isso. O dinheiro vai ficar na mesa. Caravaggio não está moralizando. Ele está pintando o <em>instante exato</em> em que a atenção de um homem deixa um mundo e vai para outro. As moedas ainda não sabem. Os contadores ainda não sabem. Mateus já está em outro lugar.</p>`,
    src:"Caravaggio, detail · the coins that will be left"},
 
   {slug:"i-car-mat-05", type:"pictura", f:"I", series:"caravaggio_matthew", step:5, steps:5, rare:1,
-   img:IMG.caravaggio_matthew, zoom:{x:85, y:28, scale:2.1},
+   img:IMG.caravaggio_matthew, zoom:{x:72, y:22, scale:2.1},
    title:"The Light",
-   body:`<p>Caravaggio invented a kind of light the Renaissance did not have. It does not illuminate the scene — it <em>interrogates</em> it. It picks out one face and leaves the rest in doubt.</p>
-<p>This is called <em>tenebrism</em> — the dramatic emergence of figures from near-black. But the theological point is older. It is John 1:5: <em>the light shines in the darkness, and the darkness has not comprehended it.</em> The men in shadow are the darkness. The light has walked in. One face has turned toward it. The painting is the exact instant of that turning.</p>
-<p>Now scroll back up to the first panel. You will see the whole picture differently. That is what reading a painting means.</p>`,
-   src:"Caravaggio · the light that explains everything"}
+   title_pt:"A Luz",
+   body:`<p>Caravaggio invented a kind of light the Renaissance did not have. It does not illuminate the scene, it <em>interrogates</em> it. It picks out one face and leaves the rest in doubt.</p>
+<p>This is called <em>tenebrism</em>, the dramatic emergence of figures from near-black. But the theological point is older. It is John 1:5: <em>the light shines in the darkness, and the darkness has not comprehended it.</em> The men in shadow are the darkness. The light has walked in. One face has turned toward it. The painting is the exact instant of that turning.</p>
+<p>Now scroll back and see the first panel again. You will see the whole picture differently. That is what reading a painting means.</p>`,
+   body_pt:`<p>Caravaggio inventou um tipo de luz que a Renascença não tinha. Ela não ilumina a cena, ela a <em>interroga</em>. Ela escolhe um rosto e deixa o resto em dúvida.</p>
+<p>Isso se chama <em>tenebrismo</em>, a emergência dramática das figuras a partir do quase-preto. Mas o ponto teológico é mais antigo. É João 1:5: <em>a luz brilha nas trevas, e as trevas não a compreenderam.</em> Os homens na sombra são as trevas. A luz entrou. Um rosto se voltou para ela. O quadro é o instante exato dessa virada.</p>
+<p>Agora volte e veja o primeiro painel. Você vai ver tudo diferente. Isso é o que significa ler um quadro.</p>`,
+   src:"Caravaggio · the light that explains everything"},
+
+  // ===== FRA ANGELICO — The Annunciation (c. 1437-46) =====
+  {slug:"i-ang-ann-01", type:"pictura", f:"I", series:"fra_angelico_annunciation", step:1, steps:5,
+   img:IMG.fra_angelico_annunciation, zoom:{x:50, y:50, scale:1},
+   title:"The Whole · The Annunciation",
+   title_pt:"O Todo · A Anunciação",
+   body:`<p>A loggia. A garden on the left, bathed in morning light. On the right, a seated young woman in blue, hands crossed in reception. An angel kneels before her, wings still folded from flight. Behind them both, a small barred window into a darker inner room.</p>
+<p>Fra Angelico painted this on the wall of a Dominican friar's cell at San Marco in Florence, so that every morning, when the friar woke, the first thing he saw was this moment: the instant the world was told it would be saved.</p>
+<p>The architecture is Florentine. The angel is from heaven. The woman is from Nazareth. The three worlds meet in one portico.</p>`,
+   body_pt:`<p>Uma loggia. Um jardim à esquerda, banhado em luz da manhã. À direita, uma jovem sentada de azul, com as mãos cruzadas em recepção. Um anjo se ajoelha diante dela, as asas ainda dobradas do voo. Atrás dos dois, uma pequena janela gradeada que dá para uma sala interior mais escura.</p>
+<p>Fra Angelico pintou isto na parede da cela de um frade dominicano em San Marco, Florença, para que toda manhã, quando o frade acordasse, a primeira coisa que visse fosse este instante: o momento em que o mundo foi avisado que seria salvo.</p>
+<p>A arquitetura é florentina. O anjo é do céu. A mulher é de Nazaré. Os três mundos se encontram em um pórtico só.</p>`,
+   src:"Fra Angelico, c. 1437-46 · Convent of San Marco, Florence"},
+
+  {slug:"i-ang-ann-02", type:"pictura", f:"I", series:"fra_angelico_annunciation", step:2, steps:5,
+   img:IMG.fra_angelico_annunciation, zoom:{x:30, y:50, scale:2.3},
+   title:"The Angel",
+   title_pt:"O Anjo",
+   body:`<p>Gabriel kneels. He is bigger than the human figure next to him, as beings from a higher order should be, but his bow is deeper than hers. Hierarchy and reverence are not opposites. He is proving it.</p>
+<p>The wings are pink and gold, pulled tight to the body. The halo is a flat disc of pure gold leaf, pressed into the plaster. Fra Angelico learned this technique as a young friar illuminating manuscripts. He never gave it up. For him, gold did not <em>represent</em> glory, it <em>was</em> glory.</p>`,
+   body_pt:`<p>Gabriel se ajoelha. Ele é maior que a figura humana ao lado, como seres de uma ordem superior devem ser, mas a reverência dele é mais profunda que a dela. Hierarquia e reverência não são contrários. Ele está provando isso.</p>
+<p>As asas são rosa e douradas, bem coladas ao corpo. A auréola é um disco liso de folha de ouro, pressionado no reboco. Fra Angelico aprendeu essa técnica quando jovem frade iluminando manuscritos. Nunca abandonou. Para ele, ouro não <em>representava</em> glória, ouro <em>era</em> glória.</p>`,
+   src:"Fra Angelico, detail · the angel Gabriel"},
+
+  {slug:"i-ang-ann-03", type:"pictura", f:"I", series:"fra_angelico_annunciation", step:3, steps:5,
+   img:IMG.fra_angelico_annunciation, zoom:{x:68, y:50, scale:2.3},
+   title:"The Hands",
+   title_pt:"As Mãos",
+   body:`<p>Her hands are crossed over her chest. This is the exact iconographic sign of a <em>fiat</em>, a yes, a full consent to what has just been proposed. In the medieval tradition, this crossing is also the pose of the dead being prepared for burial. The painter is already thinking about the Pietà, thirty-three years away.</p>
+<p>She has not spoken yet. The whole painting hangs on this gesture. Luke 1:38 is a moment later: <em>be it done to me according to thy word</em>. The hands get there first.</p>`,
+   body_pt:`<p>As mãos dela estão cruzadas sobre o peito. Esse é o sinal iconográfico exato de um <em>fiat</em>, de um sim, de um consentimento pleno ao que acabou de ser proposto. Na tradição medieval, esse cruzamento também é a pose dos mortos sendo preparados para o sepultamento. O pintor já está pensando na Pietà, trinta e três anos à frente.</p>
+<p>Ela ainda não falou. O quadro inteiro depende desse gesto. Lucas 1:38 é um instante depois: <em>faça-se em mim segundo a tua palavra</em>. As mãos chegam primeiro.</p>`,
+   src:"Fra Angelico, detail · the Virgin's hands"},
+
+  {slug:"i-ang-ann-04", type:"pictura", f:"I", series:"fra_angelico_annunciation", step:4, steps:5,
+   img:IMG.fra_angelico_annunciation, zoom:{x:14, y:35, scale:2.5},
+   title:"The Garden",
+   title_pt:"O Jardim",
+   body:`<p>Behind the angel, through the colonnade, a garden. This is not decoration. In medieval iconography, every Annunciation is set near a garden to recall <em>another</em> garden: Eden, where the first <em>no</em> was spoken by the first woman. The second woman is being asked, in the second garden, to say <em>yes</em>.</p>
+<p>Fra Angelico puts tiny white flowers on the garden floor and leaves the gate open. The viewer is meant to see both gardens at once, Eden and Nazareth, and understand that the second one is undoing the first.</p>`,
+   body_pt:`<p>Atrás do anjo, pela colunata, um jardim. Isso não é decoração. Na iconografia medieval, toda Anunciação é colocada perto de um jardim para lembrar <em>outro</em> jardim: o Éden, onde o primeiro <em>não</em> foi dito pela primeira mulher. À segunda mulher, no segundo jardim, está sendo pedido que diga <em>sim</em>.</p>
+<p>Fra Angelico coloca florzinhas brancas no chão do jardim e deixa o portão aberto. O espectador deve ver os dois jardins ao mesmo tempo, Éden e Nazaré, e entender que o segundo está desfazendo o primeiro.</p>`,
+   src:"Fra Angelico, detail · the garden"},
+
+  {slug:"i-ang-ann-05", type:"pictura", f:"I", series:"fra_angelico_annunciation", step:5, steps:5, rare:1,
+   img:IMG.fra_angelico_annunciation, zoom:{x:84, y:28, scale:2.4},
+   title:"The Barred Window",
+   title_pt:"A Janela Gradeada",
+   body:`<p>Just past Mary's shoulder: a small window with vertical bars, into a darker room. Easy to miss. Not accidental.</p>
+<p>Dominican friars reading this fresco knew what it meant. The inner room is her chamber, where she was praying when Gabriel came in. The bars are the virginity she brought to this moment and will keep through it. The darkness is the mystery she is being asked to carry. The painter has placed the whole theology of the moment in a window the size of a thumb.</p>
+<p>Go back to panel one. The window is still there. You will not stop seeing it. That is what Fra Angelico does to you.</p>`,
+   body_pt:`<p>Logo depois do ombro de Maria: uma pequena janela com barras verticais, dando para uma sala mais escura. Fácil de não notar. Nada aqui é por acidente.</p>
+<p>Os frades dominicanos que liam este afresco sabiam o que isso queria dizer. A sala interior é o quarto dela, onde ela orava quando Gabriel entrou. As barras são a virgindade que ela trouxe para este momento e vai manter através dele. A escuridão é o mistério que lhe está sendo pedido para carregar. O pintor colocou toda a teologia do momento numa janela do tamanho de um dedão.</p>
+<p>Volte ao primeiro painel. A janela ainda está lá. Você não vai parar de vê-la. É isso que Fra Angelico te faz.</p>`,
+   src:"Fra Angelico · the window of the inner room"},
+
+  // ===== VAN EYCK — The Arnolfini Portrait (1434) =====
+  {slug:"i-van-arn-01", type:"pictura", f:"I", series:"van_eyck_arnolfini", step:1, steps:5,
+   img:IMG.van_eyck_arnolfini, zoom:{x:50, y:50, scale:1},
+   title:"The Whole · The Arnolfini Portrait",
+   title_pt:"O Todo · O Retrato dos Arnolfini",
+   body:`<p>A merchant and his wife stand in a Flemish bedroom in 1434. He is in dark fur, she in deep green. Their hands are joined. Between them, in the back of the room, a small round mirror. Above the mirror, in careful Latin script: <em>Johannes de Eyck fuit hic</em>, Jan van Eyck was here.</p>
+<p>This is one of the most studied paintings in the world because every object in it means something, and because van Eyck invented the technical means (oil glazes, point-by-point optical realism) that would carry Western painting for the next four centuries. In four panels we will read the mirror, the dog, the shoes, and the signature.</p>`,
+   body_pt:`<p>Um mercador e sua esposa estão em um quarto flamengo em 1434. Ele de peles escuras, ela de verde profundo. As mãos deles estão juntas. Entre os dois, no fundo do quarto, um pequeno espelho redondo. Acima do espelho, em letra latina cuidadosa: <em>Johannes de Eyck fuit hic</em>, Jan van Eyck esteve aqui.</p>
+<p>Este é um dos quadros mais estudados do mundo porque cada objeto nele significa alguma coisa, e porque van Eyck inventou os meios técnicos (velaturas a óleo, realismo óptico ponto a ponto) que iriam carregar a pintura ocidental pelos próximos quatro séculos. Em quatro painéis vamos ler o espelho, o cachorro, os sapatos e a assinatura.</p>`,
+   src:"Jan van Eyck, 1434 · National Gallery, London"},
+
+  {slug:"i-van-arn-02", type:"pictura", f:"I", series:"van_eyck_arnolfini", step:2, steps:5,
+   img:IMG.van_eyck_arnolfini, zoom:{x:50, y:38, scale:2.9},
+   title:"The Mirror",
+   title_pt:"O Espelho",
+   body:`<p>In the back of the room, the convex mirror. In the mirror, if you look closely, you see the backs of the two subjects, and you see <em>two more figures</em> standing in the doorway, where you, the viewer, are standing.</p>
+<p>One of them is almost certainly van Eyck himself. He is painting a scene that includes him painting the scene. Four and a half centuries before <em>Las Meninas</em>, before any modernist self-reference, this Flemish master has already done the move.</p>
+<p>Around the mirror's frame: ten tiny roundels, each one a scene from the Passion of Christ. The miniature world in the mirror is embedded in the full theological world of the Gospel.</p>`,
+   body_pt:`<p>No fundo do quarto, o espelho convexo. No espelho, se você olhar bem, vê as costas dos dois modelos, e vê <em>mais duas figuras</em> na porta, onde você, o espectador, está.</p>
+<p>Uma delas é quase com certeza o próprio van Eyck. Ele está pintando uma cena que o inclui pintando a cena. Quatro séculos e meio antes de <em>Las Meninas</em>, antes de qualquer auto-referência modernista, este mestre flamengo já fez a jogada.</p>
+<p>Ao redor da moldura do espelho: dez pequenos medalhões, cada um uma cena da Paixão de Cristo. O mundo em miniatura dentro do espelho está encaixado no mundo teológico pleno do Evangelho.</p>`,
+   src:"Van Eyck, detail · the convex mirror"},
+
+  {slug:"i-van-arn-03", type:"pictura", f:"I", series:"van_eyck_arnolfini", step:3, steps:5,
+   img:IMG.van_eyck_arnolfini, zoom:{x:50, y:82, scale:2.6},
+   title:"The Dog",
+   title_pt:"O Cão",
+   body:`<p>Between their feet, a small Brussels griffon. Dogs in Flemish painting carry one meaning above all others: <em>fides</em>, fidelity. The dog is here because the painting is about a marriage, and a marriage is a vow of fidelity.</p>
+<p>Van Eyck painted every single hair on this dog. The specificity is theological: the virtue the dog symbolizes is not an abstraction, it is this animal, in this room, with these two people. Fidelity has fur. It stands between them.</p>`,
+   body_pt:`<p>Entre os pés dos dois, um pequeno grifão de Bruxelas. Cachorros na pintura flamenga carregam um sentido acima de todos: <em>fides</em>, fidelidade. O cachorro está aí porque o quadro trata de um casamento, e um casamento é um voto de fidelidade.</p>
+<p>Van Eyck pintou cada pelo deste cachorro. A especificidade é teológica: a virtude que o cachorro simboliza não é uma abstração, é este animal, neste quarto, com estas duas pessoas. A fidelidade tem pelo. E está parada entre eles.</p>`,
+   src:"Van Eyck, detail · the dog"},
+
+  {slug:"i-van-arn-04", type:"pictura", f:"I", series:"van_eyck_arnolfini", step:4, steps:5,
+   img:IMG.van_eyck_arnolfini, zoom:{x:28, y:88, scale:2.7},
+   title:"The Shoes",
+   title_pt:"Os Sapatos",
+   body:`<p>In the foreground, pushed to the corner, a pair of wooden pattens, taken off. The man is barefoot inside them. In the Hebrew tradition, which van Eyck knew through the Vulgate, taking off shoes marks sacred ground. <em>The place where thou standest is holy ground</em>, God tells Moses at the burning bush.</p>
+<p>Van Eyck is saying: this is a sacred space. This room, this marriage, this moment between two people, is a thing not less holy than Sinai. The Flemish merchant culture, which the modern eye tends to see as worldly, was in fact one of the most devout in European history, and it believed that daily life itself was sacred ground. The pattens are the proof.</p>`,
+   body_pt:`<p>No primeiro plano, empurrados para o canto, um par de tamancos de madeira, tirados. O homem está descalço dentro deles. Na tradição hebraica, que van Eyck conhecia pela Vulgata, tirar os sapatos marca o chão sagrado. <em>O lugar onde pisas é terra santa</em>, Deus diz a Moisés na sarça ardente.</p>
+<p>Van Eyck está dizendo: este é um espaço sagrado. Este quarto, este casamento, este momento entre duas pessoas, é tão santo quanto o Sinai. A cultura mercantil flamenga, que o olho moderno tende a ver como mundana, era de fato uma das mais devotas da história europeia, e acreditava que a vida cotidiana em si era chão sagrado. Os tamancos provam.</p>`,
+   src:"Van Eyck, detail · the discarded pattens"},
+
+  {slug:"i-van-arn-05", type:"pictura", f:"I", series:"van_eyck_arnolfini", step:5, steps:5, rare:1,
+   img:IMG.van_eyck_arnolfini, zoom:{x:50, y:33, scale:2.7},
+   title:"The Signature",
+   title_pt:"A Assinatura",
+   body:`<p>In exquisite Latin calligraphy above the mirror: <em>Johannes de Eyck fuit hic. 1434.</em> Jan van Eyck was here. 1434.</p>
+<p>Painters of his generation did not sign paintings like this. The signature is normally a tiny mark on the frame, a monogram in a dark corner. Van Eyck puts his name in Latin on the back wall of the room, in letters a saint would envy, as a witness: <em>I was present. This happened. I saw it.</em></p>
+<p>Scholars argue whether the painting records a wedding, a betrothal, or a legal declaration of some kind. What is not in doubt is that van Eyck is claiming the role of a witness to a sacrament. He is not just a painter. He is a notary of grace. The whole subsequent history of Western portraiture, every claim that a painted face bears witness to a soul, begins in that one line of script.</p>`,
+   body_pt:`<p>Em caligrafia latina belíssima, acima do espelho: <em>Johannes de Eyck fuit hic. 1434.</em> Jan van Eyck esteve aqui. 1434.</p>
+<p>Pintores da geração dele não assinavam quadros assim. A assinatura normal é uma marca pequena na moldura, um monograma em um canto escuro. Van Eyck coloca seu nome em latim na parede do fundo da sala, em letras que um santo invejaria, como testemunha: <em>eu estive presente. Isto aconteceu. Eu vi.</em></p>
+<p>Estudiosos discutem se o quadro registra um casamento, um noivado ou algum tipo de declaração legal. O que não se discute é que van Eyck está reivindicando o papel de testemunha de um sacramento. Ele não é só um pintor. É um notário da graça. Toda a história posterior do retrato ocidental, toda alegação de que um rosto pintado dá testemunho de uma alma, começa naquela linha de letra.</p>`,
+   src:"Van Eyck · the signature on the back wall"}
 ];
 
 // ================================================================
@@ -1105,8 +1248,515 @@ const LUDI = [
    src:"Thinker Match · from the Arsenal essays"}
 ];
 
-// Append IMAGINES + LUDI onto FOLIOS
-FOLIOS.push(...IMAGINES, ...LUDI);
+// ================================================================
+// HISTORIA — the Great Captains, the concepts, the chair, the councils.
+// Drawn from Marcos's own Art of War essay and from Chair-That-Does-Not-Fall.
+// Written in a Sowell-direct voice. Bilingual.
+// ================================================================
+const HISTORIA = [
+  {slug:"h-gaugamela", type:"lectio", f:"H", title:"Alexander Slept In",
+   title_pt:"Alexandre Dormiu Até Mais Tarde",
+   body:`<p>On the morning of October 1, 331 BC, Alexander of Macedon slept in. His officers were panicking. Twenty miles east stood two hundred thousand Persians on a plain Darius III had leveled with his own hands for his chariots to operate on. Alexander had forty-seven thousand.</p>
+<p>His general Parmenion begged him to attack at night. "I will not steal victory," Alexander said, and went to bed.</p>
+<p>He knew Darius would keep his huge army standing under arms all night expecting the attack. He knew an army that stood all night fights badly the next day. He knew his own line was so short that if a gap opened anywhere in the Persian wall, he could ride his Companion cavalry through it in a wedge, straight at Darius, and Darius would flee, and a Persian army whose king had fled dissolves. He knew exactly how the battle would unfold. He was rested. That is what genius looks like.</p>`,
+   body_pt:`<p>Na manhã de 1 de outubro de 331 a.C., Alexandre da Macedônia dormiu até mais tarde. Os oficiais estavam em pânico. A vinte milhas a leste havia duzentos mil persas numa planície que Dario III havia nivelado com as próprias mãos para que suas bigas pudessem manobrar. Alexandre tinha quarenta e sete mil homens.</p>
+<p>O general Parmênion implorou que atacasse à noite. "Não vou roubar a vitória", disse Alexandre, e foi dormir.</p>
+<p>Ele sabia que Dario manteria o enorme exército em armas a noite toda esperando o ataque. Sabia que um exército que fica a noite toda em armas luta mal no dia seguinte. Sabia que sua própria linha era tão curta que, se abrisse uma brecha em qualquer ponto da muralha persa, poderia atravessá-la em cunha com a cavalaria dos Companheiros, direto em Dario, e Dario fugiria, e um exército persa cujo rei fugiu se desfaz. Ele sabia exatamente como a batalha ia se desenrolar. E estava descansado. É assim que a genialidade se parece.</p>`,
+   src:"Art of War I · Alexander at Gaugamela, 331 BC"},
+
+  {slug:"h-cannae-template", type:"lectio", f:"H", rare:1,
+   title:"The Template · Cannae, 216 BC",
+   title_pt:"O Modelo · Cannas, 216 a.C.",
+   body:`<p>Hannibal placed his weakest troops in the center of his line and bent them forward in a shallow crescent. His best infantry he hid behind the wings, angled inward. His heavy cavalry he massed on the left.</p>
+<p>The Romans pressed into the bulging center. The weak center bent back and back, discipline holding, forming a bowl. The Roman army packed itself in, deeper and deeper. At the right moment the hidden wings wheeled ninety degrees inward and struck the exposed flanks. The cavalry, having smashed the Roman horse, rode around behind and sealed the rear.</p>
+<p>Between morning and late afternoon on August 2, Hannibal's fifty thousand killed sixty-plus thousand Romans. The highest per-hour kill rate in Western history until the first day of the Somme. Every German general staff officer from Moltke to Schlieffen to Guderian spent his career trying to reproduce this. Norman Schwarzkopf did reproduce it in 1991 with tanks. The template has a name: double envelopment. This is where it was born.</p>`,
+   body_pt:`<p>Aníbal colocou suas tropas mais fracas no centro da linha e as curvou para frente num crescente raso. A melhor infantaria ele escondeu atrás das pontas, angulada para dentro. A cavalaria pesada amassou à esquerda.</p>
+<p>Os romanos avançaram no centro saliente. O centro fraco cedeu, cedeu, cedeu, com a disciplina aguentando, formando uma tigela. O exército romano se compactou cada vez mais fundo. No momento certo, as pontas escondidas giraram noventa graus para dentro e golpearam os flancos expostos. A cavalaria, depois de esmagar a cavalaria romana, cavalgou por trás e selou a retaguarda.</p>
+<p>Entre a manhã e o fim da tarde de 2 de agosto, os cinquenta mil de Aníbal mataram mais de sessenta mil romanos. A maior taxa de mortes por hora na história ocidental até o primeiro dia do Somme. Todos os oficiais do estado-maior alemão, de Moltke a Schlieffen a Guderian, passaram a carreira tentando reproduzir isso. Norman Schwarzkopf reproduziu em 1991, com tanques. O modelo tem nome: duplo envolvimento. Foi aqui que nasceu.</p>`,
+   src:"Art of War I · Hannibal at Cannae"},
+
+  {slug:"h-maharbal", type:"sententia", f:"H",
+   body:{latin:"Vincere scis, Hannibal; victoria uti nescis.",
+         english:"You know how to win a victory, Hannibal; you do not know how to use one. — Maharbal to Hannibal, evening of Cannae"},
+   src:"Livy, History of Rome · the epitaph of a tactician who could not close at the strategic level"},
+
+  {slug:"h-zama", type:"lectio", f:"H",
+   title:"The Student Who Beat the Master",
+   title_pt:"O Discípulo Que Venceu o Mestre",
+   body:`<p>Publius Cornelius Scipio was eighteen years old at Cannae, one of the few Roman officers to escape the encirclement. For the next twelve years he watched Hannibal, studied him, learned him.</p>
+<p>When the Senate finally sent him to Spain in 210, he took New Carthage by wading through a lagoon at low tide, an approach the Carthaginians thought impossible. He won Ilipa by a double envelopment of his own, weakest troops in the center as Hannibal had done. He recruited Numidian cavalry, the very arm Hannibal had used against Rome. By 204 he had taken Spain.</p>
+<p>At Zama in 202, when Hannibal came home, Scipio arranged his cohorts in columns with wide corridors so Hannibal's elephants would run harmlessly through them. He had become Hannibal in order to beat Hannibal. The war ended that afternoon. To defeat a master, first become him. That is the method.</p>`,
+   body_pt:`<p>Públio Cornélio Cipião tinha dezoito anos em Cannas, um dos poucos oficiais romanos a escapar do cerco. Pelos doze anos seguintes ele observou Aníbal, estudou Aníbal, aprendeu Aníbal.</p>
+<p>Quando o Senado finalmente o mandou à Espanha em 210, ele tomou Nova Cartago atravessando uma laguna na maré baixa, uma rota que os cartagineses julgavam impossível. Venceu Ilipa com um duplo envolvimento próprio, com as tropas mais fracas no centro como Aníbal havia feito. Recrutou cavalaria númida, a mesma arma que Aníbal usara contra Roma. Em 204 tomou a Espanha.</p>
+<p>Em Zama, em 202, quando Aníbal voltou para casa, Cipião organizou os cohortes em colunas com corredores largos para que os elefantes de Aníbal corressem inofensivamente por entre eles. Tornou-se Aníbal para vencer Aníbal. A guerra terminou naquela tarde. Para derrotar um mestre, primeiro torne-se ele. Esse é o método.</p>`,
+   src:"Art of War I · Scipio Africanus at Zama, 202 BC"},
+
+  {slug:"h-three-levels", type:"lectio", f:"H", rare:1,
+   title:"The Three Levels of War",
+   title_pt:"Os Três Níveis da Guerra",
+   body:`<p>War has three levels, and confusing them is the most common error in popular history.</p>
+<p><strong>Tactics</strong> is the art of winning the fight in front of you. Where do the archers stand, when does the cavalry charge, which unit holds the ford.</p>
+<p><strong>Operations</strong> is the art of getting the right army to the right ground at the right time, so that the battle you are about to fight is one you have, in a sense, already won.</p>
+<p><strong>Strategy</strong> is the art of aligning the war with the political purpose it serves. What are we fighting for. What victory do we need. What victory would ruin us even in winning.</p>
+<p>A tactician wins the battle. An operational commander wins the campaign. A strategist wins the war. Rommel was a superb tactician, a competent operational commander, and a catastrophic strategist. He won battles Germany could not afford to fight. The greatest captains do all three at once.</p>`,
+   body_pt:`<p>A guerra tem três níveis, e confundi-los é o erro mais comum da história popular.</p>
+<p><strong>Tática</strong> é a arte de vencer o combate na sua frente. Onde ficam os arqueiros, quando a cavalaria carrega, qual unidade segura o vau.</p>
+<p><strong>Operações</strong> é a arte de levar o exército certo para o terreno certo na hora certa, para que a batalha que você vai lutar já esteja, em certo sentido, ganha.</p>
+<p><strong>Estratégia</strong> é a arte de alinhar a guerra ao propósito político a que ela serve. Pelo que estamos lutando. Qual vitória precisamos. Qual vitória nos arruinaria mesmo se vencêssemos.</p>
+<p>Um tático vence a batalha. Um comandante operacional vence a campanha. Um estrategista vence a guerra. Rommel era tático excelente, operacional competente, estrategista catastrófico. Ganhou batalhas que a Alemanha não podia bancar. Os maiores capitães fazem os três ao mesmo tempo.</p>`,
+   src:"Art of War I · Prologue, the working method"},
+
+  {slug:"h-moral-physical", type:"sententia", f:"H",
+   body:{latin:"Moralia ad physica sunt ut tria ad unum.",
+         english:"In war, the moral is to the physical as three to one. — Napoleon"},
+   src:"the ratio his rivals kept forgetting until it was too late"},
+
+  {slug:"h-pursuit", type:"lectio", f:"H",
+   title:"Pursuit Is the Battle",
+   title_pt:"A Perseguição É a Batalha",
+   body:`<p>Most ancient armies won battles and then stopped. They plundered the enemy camp, tended their wounded, and celebrated. The defeated army escaped into the countryside, was reconstituted the next year, and fought again. Even Cannae did not end Rome, because Hannibal did not pursue.</p>
+<p>Alexander pursued. He rode his cavalry east from Gaugamela without pause, changing horses, sleeping in the saddle, driving the men through country they had never seen after an enemy that was breaking apart as they chased him. He did not catch Darius, Darius's own satraps murdered him first. But he denied Persia the time it needed to raise another army. There would be no second battle.</p>
+<p>Clausewitz would later call this the annihilation of the enemy's forces as the true object of war. Winning the battle is only the beginning. Pursuing the beaten army until it cannot fight again is what turns a battle into a decision.</p>`,
+   body_pt:`<p>A maioria dos exércitos antigos vencia batalhas e parava. Saqueavam o acampamento inimigo, cuidavam dos feridos, comemoravam. O exército derrotado fugia para o campo, era reconstituído no ano seguinte, e lutava de novo. Mesmo Cannas não acabou com Roma, porque Aníbal não perseguiu.</p>
+<p>Alexandre perseguiu. Cavalgou com sua cavalaria para o leste de Gaugamela sem parar, trocando cavalos, dormindo na sela, forçando os homens por terras que nunca tinham visto atrás de um inimigo que se desfazia à medida que o perseguiam. Não pegou Dario, os próprios sátrapas de Dario o mataram antes. Mas negou à Pérsia o tempo necessário para levantar outro exército. Não haveria uma segunda batalha.</p>
+<p>Clausewitz chamaria mais tarde isso de aniquilação das forças inimigas como o verdadeiro objetivo da guerra. Vencer a batalha é só o começo. Perseguir o exército derrotado até não poder lutar de novo é o que transforma uma batalha em uma decisão.</p>`,
+   src:"Art of War I · the lesson Alexander teaches"},
+
+  {slug:"h-fabian", type:"lectio", f:"H",
+   title:"Fabian Strategy",
+   title_pt:"A Estratégia Fabiana",
+   body:`<p>After Trasimene in 217 BC, Rome made Quintus Fabius Maximus dictator. Fabius refused battle, shadowed Hannibal's army, cut its foraging parties, wore it down over time. The Romans hated it. They called him <em>Cunctator</em>, the delayer, and threw him out. They elected Varro, who marched to Cannae and lost fifty thousand men in an afternoon. Then they went back to Fabius, and by 203 BC they had strangled Hannibal's Italian campaign to nothing. Cunctator became a title of honor.</p>
+<p>Fabian strategy is the strategy of the weaker side against a superior enemy. Its logic: the enemy's greatest asset is his ability to bring you to battle on favorable terms. Deny him that battle and every other advantage becomes a liability. You do not have to beat him. You have to outlast him.</p>
+<p>Washington fought a Fabian war against the British. Skanderbeg in Albania against the Ottomans for twenty-five years. The Vietnamese against the French and then the Americans. It is the strategy of the patient against the impatient, of the defender against the invader. Very often it wins.</p>`,
+   body_pt:`<p>Depois do Trasimeno em 217 a.C., Roma fez Quinto Fábio Máximo ditador. Fábio recusou a batalha, seguiu de longe o exército de Aníbal, cortou seus grupos de forrageio, desgastou-o com o tempo. Os romanos odiaram. Chamaram-no <em>Cunctator</em>, o retardador, e o depuseram. Elegeram Varrão, que marchou a Cannas e perdeu cinquenta mil homens em uma tarde. Então voltaram a Fábio, e em 203 a.C. haviam estrangulado a campanha italiana de Aníbal até o nada. Cunctator virou título de honra.</p>
+<p>A estratégia fabiana é a estratégia do lado mais fraco contra um inimigo superior. A lógica: o maior ativo do inimigo é a capacidade de forçar batalha em termos favoráveis. Negue-lhe essa batalha e todas as outras vantagens viram passivos. Você não precisa derrotá-lo. Você precisa durar mais que ele.</p>
+<p>Washington lutou uma guerra fabiana contra os britânicos. Skanderbeg na Albânia contra os otomanos por vinte e cinco anos. Os vietnamitas contra os franceses e depois os americanos. É a estratégia do paciente contra o impaciente, do defensor contra o invasor. Muito frequentemente ela vence.</p>`,
+   src:"Art of War I · Concept 1 · Fabian strategy"},
+
+  {slug:"h-interior-lines", type:"lectio", f:"H",
+   title:"Interior Lines",
+   title_pt:"Linhas Interiores",
+   body:`<p>Imagine a circle. You stand at the center. Three enemies stand on the rim. Each enemy is closer to the other enemies along the rim than they are to you through the center. But you are closer to all of them than any of them is to the others.</p>
+<p>This is the geometry Frederick the Great and Napoleon turned into a method. If you move faster than your enemies can coordinate, you can strike one while the others are still marching to link up. You defeat him and turn to the next before the coalition consolidates. Numerically inferior against the whole, you are numerically superior against each part in sequence.</p>
+<p>Frederick survived the Seven Years' War against a coalition three times his size this way. Napoleon used the principle in Italy in 1796, in Germany in 1805, in France in 1814. When he lost the geometry at Leipzig in 1813 and Waterloo in 1815, he was finished. Encirclement looks disastrous on a map. On the ground, sometimes it is the position from which the encircled army can most damage its attackers.</p>`,
+   body_pt:`<p>Imagine um círculo. Você está no centro. Três inimigos estão na borda. Cada inimigo está mais perto dos outros inimigos pela borda do que de você pelo centro. Mas você está mais perto de todos eles do que qualquer um deles está dos outros.</p>
+<p>Essa é a geometria que Frederico o Grande e Napoleão transformaram em método. Se você se mover mais rápido do que seus inimigos conseguem se coordenar, pode atingir um enquanto os outros ainda estão marchando para se juntar. Vence esse e vira para o próximo antes que a coalizão se consolide. Inferior em número contra o todo, você é superior em número contra cada parte em sequência.</p>
+<p>Frederico sobreviveu à Guerra dos Sete Anos contra uma coalizão três vezes maior assim. Napoleão usou o princípio na Itália em 1796, na Alemanha em 1805, na França em 1814. Quando perdeu a geometria em Leipzig em 1813 e Waterloo em 1815, acabou. O cerco parece desastroso no mapa. No terreno, às vezes é a posição onde o exército cercado mais pode danificar seus atacantes.</p>`,
+   src:"Art of War I · Concept 3 · Interior lines"},
+
+  {slug:"h-auftragstaktik", type:"lectio", f:"H", rare:1,
+   title:"Auftragstaktik · Trust Your Captains",
+   title_pt:"Auftragstaktik · Confie Nos Seus Capitães",
+   body:`<p>Nineteenth-century industrial armies faced a problem their commanders had not faced before. Battles were fought across fronts miles wide by hundreds of thousands of men, in country the commanding general could not see. If subordinates waited for orders before they acted, the battle would be decided before the orders arrived. If they acted without orders, they might act against the overall design.</p>
+<p>Moltke's answer was to reframe what an order even was. A superior tells a subordinate what <em>result</em> he wants, not <em>how</em> to achieve it. The subordinate is trained to understand the commander's intent and then trusted to figure out on the ground how best to accomplish it. When the situation changes, he adapts without waiting.</p>
+<p>Prussian regulations were explicit: an officer who fails to act because he lacks orders is a worse officer than one who acts on his own judgment and errs. American doctrine formally adopted this in the 1980s under the name "commander's intent." It is, incidentally, an old Catholic principle dressed in Prussian uniform: subsidiarity applied to war.</p>`,
+   body_pt:`<p>Os exércitos industriais do século XIX enfrentaram um problema que seus comandantes nunca haviam enfrentado. Batalhas eram travadas em frentes de quilômetros de largura por centenas de milhares de homens, em terrenos que o general comandante não via. Se os subordinados esperassem ordens antes de agir, a batalha seria decidida antes das ordens chegarem. Se agissem sem ordens, podiam agir contra o plano geral.</p>
+<p>A resposta de Moltke foi redefinir o que é uma ordem. Um superior diz ao subordinado qual <em>resultado</em> quer, não <em>como</em> alcançá-lo. O subordinado é treinado para entender a intenção do comandante e então confia-se a ele descobrir no terreno a melhor forma de executá-la. Quando a situação muda, ele se adapta sem esperar.</p>
+<p>Os regulamentos prussianos eram explícitos: um oficial que falha em agir porque não tem ordens é pior do que um que age por conta própria e erra. A doutrina americana adotou isso formalmente nos anos 1980 sob o nome "intenção do comandante". É, aliás, um velho princípio católico vestido de uniforme prussiano: subsidiariedade aplicada à guerra.</p>`,
+   src:"Art of War I · Concept 7 · Mission command"},
+
+  {slug:"h-four-questions", type:"lectio", f:"H",
+   title:"Four Questions for Any Battle",
+   title_pt:"Quatro Perguntas Para Qualquer Batalha",
+   body:`<p>Every battle account becomes twice as intelligible if you approach it with four questions. Ask them in order.</p>
+<p><strong>1. What was each side trying to accomplish?</strong> Half the confusion in popular military history comes from assuming both sides wanted the same thing. They almost never did.</p>
+<p><strong>2. What did the ground do to their plans?</strong> Ground is never neutral. A hill favors defense, a river channels movement, a wood conceals reserves. Find the ground first.</p>
+<p><strong>3. Where was the decisive point?</strong> Every battle has one place and one moment where the outcome will be settled. It is almost never where the fighting is loudest.</p>
+<p><strong>4. What did the winner see that the loser did not?</strong> This is <em>coup d'oeil</em>. It is not clairvoyance. It is the discipline of seeing what is actually there when everyone around you is seeing what they expect to be there. Trained by reading old battles, applied in new ones.</p>`,
+   body_pt:`<p>Toda narrativa de batalha fica duas vezes mais inteligível se você a abordar com quatro perguntas. Faça-as em ordem.</p>
+<p><strong>1. O que cada lado tentava alcançar?</strong> Metade da confusão da história militar popular vem de supor que os dois lados queriam a mesma coisa. Quase nunca queriam.</p>
+<p><strong>2. O que o terreno fez com seus planos?</strong> O terreno nunca é neutro. Uma colina favorece a defesa, um rio canaliza o movimento, um bosque esconde reservas. Encontre o terreno primeiro.</p>
+<p><strong>3. Onde estava o ponto decisivo?</strong> Toda batalha tem um lugar e um momento em que o resultado será definido. Quase nunca onde a luta é mais barulhenta.</p>
+<p><strong>4. O que o vencedor viu que o perdedor não viu?</strong> Isso é <em>coup d'oeil</em>. Não é clarividência. É a disciplina de ver o que realmente está lá quando todos ao seu redor estão vendo o que esperam estar lá. Treinada lendo batalhas antigas, aplicada em novas.</p>`,
+   src:"Art of War I · the working method"},
+
+  {slug:"h-canossa", type:"lectio", f:"H", rare:1,
+   title:"The King in the Snow at Canossa",
+   title_pt:"O Rei na Neve em Canossa",
+   body:`<p>On December 3, 1075, a Roman monk named Hildebrand, now Pope Gregory VII, sat down and wrote the most consequential letter of the medieval world. Its recipient was Henry IV, King of the Germans. Its subject was a dispute over lay investiture few outside the twelfth century now remember. But at its core was a claim so audacious that it would reshape European civilization: that the successor of a Galilean fisherman held, by divine appointment, an authority higher than the crown of an emperor whose armies could sack Rome in a week.</p>
+<p>Henry defied it. In January 1076, the German bishops declared Gregory deposed. Gregory excommunicated the king, released his subjects from their oath of fealty, and at a stroke dissolved the political ground on which the Empire stood. Within a year Henry was in the snow at Canossa in a hair shirt, waiting three days on his knees for the Pope to grant him absolution. The medieval limit on secular power was born on that mountain.</p>`,
+   body_pt:`<p>Em 3 de dezembro de 1075, um monge romano chamado Hildebrando, agora Papa Gregório VII, sentou-se e escreveu a carta mais consequente do mundo medieval. O destinatário era Henrique IV, Rei dos Germanos. O assunto era uma disputa sobre investidura laica que poucos fora do século XII hoje lembram. Mas no núcleo havia uma reivindicação tão audaciosa que remodelaria a civilização europeia: a de que o sucessor de um pescador da Galileia tinha, por nomeação divina, autoridade mais alta do que a coroa de um imperador cujos exércitos podiam saquear Roma em uma semana.</p>
+<p>Henrique desafiou. Em janeiro de 1076, os bispos germânicos declararam Gregório deposto. Gregório excomungou o rei, liberou seus súditos do juramento de fidelidade, e, de um golpe, dissolveu o chão político sobre o qual o Império se apoiava. Em menos de um ano Henrique estava na neve de Canossa em um camisão de crina, esperando três dias de joelhos para o Papa lhe dar absolvição. O limite medieval ao poder secular nasceu naquela montanha.</p>`,
+   src:"The Chair That Does Not Fall · Prologue"},
+
+  {slug:"h-chalcedon", type:"lectio", f:"H",
+   title:"Peter Has Spoken Through Leo",
+   title_pt:"Pedro Falou Através de Leão",
+   body:`<p>At the Council of Chalcedon in 451, over five hundred bishops from every part of the Christian world gathered to settle the question of how Christ could be both God and man. The climactic moment came when Pope Leo I's <em>Tome to Flavian</em>, a doctrinal letter defining the two natures of Christ, was read aloud to the assembly.</p>
+<p>The response is recorded in the conciliar acts and is one of the most quoted lines in Church history:</p>
+<blockquote>Peter has spoken through Leo. Cyril and Leo have taught alike. This is the faith of the Fathers. This is the faith of the Apostles. We all believe thus. We orthodox believe thus. Anathema to him who does not so believe.</blockquote>
+<p>The bishops of Chalcedon, in 451, called the Bishop of Rome Peter's mouth in his generation. This is not a nineteenth-century Roman claim about the fifth century. This is what the bishops themselves said at the time, in the acts of a council every major Christian tradition accepts as authoritative.</p>`,
+   body_pt:`<p>No Concílio de Calcedônia em 451, mais de quinhentos bispos de todas as partes do mundo cristão se reuniram para resolver como Cristo podia ser Deus e homem. O momento culminante veio quando o <em>Tomo a Flaviano</em> do Papa Leão I, uma carta doutrinal definindo as duas naturezas de Cristo, foi lido em voz alta para a assembleia.</p>
+<p>A resposta está nos atos do concílio e é uma das linhas mais citadas da história da Igreja:</p>
+<blockquote>Pedro falou através de Leão. Cirilo e Leão ensinaram igual. Esta é a fé dos Padres. Esta é a fé dos Apóstolos. Nós todos cremos assim. Nós ortodoxos cremos assim. Anátema a quem não crê assim.</blockquote>
+<p>Os bispos de Calcedônia, em 451, chamaram o Bispo de Roma de boca de Pedro em sua geração. Isto não é uma reivindicação romana do século XIX sobre o século V. É o que os próprios bispos disseram na época, nos atos de um concílio que toda tradição cristã maior aceita como autoritativo.</p>`,
+   src:"The Chair That Does Not Fall · Movement II · Chalcedon, 451"},
+
+  {slug:"h-schism-recovery", type:"lectio", f:"H",
+   title:"The Schism That Survived",
+   title_pt:"O Cisma Que Sobreviveu",
+   body:`<p>From 1378 to 1417, there were at various times two claimants to the papacy at once, one in Rome and one in Avignon. For a period there were three, after Pisa in 1409 tried to depose the other two and only added a third. Different kingdoms recognized different popes. Catherine of Siena supported Urban VI. Vincent Ferrer at first supported Avignon. The whole Christian West was in canonical chaos for nearly forty years.</p>
+<p>The theological lesson of the Great Western Schism is not that the papacy failed. It is that the papacy <em>survived</em>. The Council of Constance (1414-1418), with the cooperation of the Roman claimant, deposed the Pisan and Avignon claimants, elected Martin V, and the universal Church accepted him. The succession from Martin V to the present has been continuous.</p>
+<p>No other ecclesiology recovered from a comparable crisis. The Orthodox never had one because they never claimed a single visible head. Protestant movements would fragment at their first significant disagreement. The Catholic Church, faced with what looked like an irrecoverable canonical wound, produced the recovery. Any historical hypothesis about ecclesial authority has to explain not just the trauma but the recovery.</p>`,
+   body_pt:`<p>De 1378 a 1417, houve em vários momentos dois pretendentes ao papado ao mesmo tempo, um em Roma e um em Avignon. Por um período houve três, depois que Pisa em 1409 tentou depor os dois outros e só adicionou um terceiro. Reinos diferentes reconheciam papas diferentes. Catarina de Sena apoiava Urbano VI. Vicente Ferrer no início apoiava Avignon. Todo o Ocidente cristão ficou em caos canônico por quase quarenta anos.</p>
+<p>A lição teológica do Grande Cisma do Ocidente não é que o papado falhou. É que o papado <em>sobreviveu</em>. O Concílio de Constança (1414-1418), com a cooperação do pretendente romano, depôs os pretendentes de Pisa e Avignon, elegeu Martinho V, e a Igreja universal o aceitou. A sucessão de Martinho V ao presente é contínua.</p>
+<p>Nenhuma outra eclesiologia se recuperou de uma crise comparável. Os ortodoxos nunca tiveram uma porque nunca reivindicaram uma só cabeça visível. Os movimentos protestantes se fragmentariam no primeiro desacordo significativo. A Igreja Católica, diante do que parecia uma ferida canônica irrecuperável, produziu a recuperação. Qualquer hipótese histórica sobre autoridade eclesial tem de explicar não só o trauma, mas a recuperação.</p>`,
+   src:"The Chair That Does Not Fall · Movement III · Hard Cases"},
+
+  {slug:"h-vienna-1683", type:"lectio", f:"H",
+   title:"Sobieski at Vienna, 1683",
+   title_pt:"Sobieski em Viena, 1683",
+   body:`<p>September 12, 1683. The Ottoman army had besieged Vienna for two months. The walls were about to fall. From the top of the Kahlenberg, a mountain north of the city, John III Sobieski, King of Poland, looked down at the Turkish camp with the largest cavalry force in Europe at his back.</p>
+<p>His men had marched three hundred miles in fifteen days to be there. He raised the standard of the Blessed Virgin, celebrated Mass on the mountain, and told his hussars that the fate of Christendom depended on the next twenty minutes. Then he charged.</p>
+<p>The Ottoman line, which had held two months of siege against everything Vienna could throw at it, broke inside an hour. This is Napoleon's ratio of moral to physical forces in its purest form. The Ottoman army was larger and better supplied. It broke because men who believe they are fighting for something greater than themselves break the men who do not. Europe was saved on a mountain by the belief of about twenty thousand Polish horsemen.</p>`,
+   body_pt:`<p>12 de setembro de 1683. O exército otomano havia cercado Viena por dois meses. As muralhas estavam prestes a cair. Do alto do Kahlenberg, uma montanha ao norte da cidade, João III Sobieski, Rei da Polônia, olhava para baixo, para o acampamento turco, com a maior força de cavalaria da Europa às suas costas.</p>
+<p>Seus homens haviam marchado trezentos milhas em quinze dias para estar ali. Ele ergueu o estandarte da Virgem Santíssima, celebrou missa na montanha, e disse aos seus hussardos que o destino da cristandade dependia dos próximos vinte minutos. Então carregou.</p>
+<p>A linha otomana, que havia aguentado dois meses de cerco contra tudo que Viena pôde atirar nela, quebrou em menos de uma hora. Esta é a proporção de Napoleão entre forças morais e físicas na forma mais pura. O exército otomano era maior e melhor abastecido. Quebrou porque homens que creem lutar por algo maior que si mesmos quebram homens que não. A Europa foi salva em uma montanha pela crença de cerca de vinte mil cavaleiros poloneses.</p>`,
+   src:"Siege of Vienna, September 1683"},
+
+  {slug:"h-genghis-raid", type:"lectio", f:"H",
+   title:"The Western Raid, 1220-1223",
+   title_pt:"A Incursão Ocidental, 1220-1223",
+   body:`<p>Genghis Khan sent two generals, Jebe and Subutai, west with twenty thousand horsemen on what he described as a reconnaissance. In three years they circumnavigated the Caspian Sea, defeated the armies of five separate kingdoms, won the Battle of the Kalka River against the combined forces of the Russian princes and the Cumans, and returned to Mongolia with intelligence that would guide the actual Mongol invasion of Europe eighteen years later.</p>
+<p>The raid was the longest sustained cavalry operation in history. It covered more than four thousand miles through hostile territory. The Mongol lesson is operational: speed, intelligence, and the willingness to detach small forces for enormous distances can produce strategic effects far out of proportion to their numbers.</p>
+<p>Twentieth-century mobile warfare, from Guderian's panzers to Patton's Third Army, is the industrialized form of the same insight. Jebe and Subutai got there first, on horseback, seven hundred years before Guderian was born.</p>`,
+   body_pt:`<p>Gêngis Khan mandou dois generais, Jebe e Subutai, para o oeste com vinte mil cavaleiros no que ele descreveu como um reconhecimento. Em três anos circunavegaram o Mar Cáspio, derrotaram os exércitos de cinco reinos separados, venceram a Batalha do Rio Kalka contra as forças combinadas dos príncipes russos e dos cumanos, e voltaram à Mongólia com inteligência que guiaria a invasão mongol efetiva da Europa dezoito anos depois.</p>
+<p>A incursão foi a mais longa operação sustentada de cavalaria da história. Cobriu mais de seis mil quilômetros em território hostil. A lição mongol é operacional: velocidade, inteligência e disposição para destacar forças pequenas em distâncias enormes podem produzir efeitos estratégicos muito acima do número.</p>
+<p>A guerra móvel do século XX, dos panzers de Guderian ao Terceiro Exército de Patton, é a forma industrializada da mesma intuição. Jebe e Subutai chegaram primeiro, a cavalo, setecentos anos antes de Guderian nascer.</p>`,
+   src:"Art of War I · Genghis Khan and Subutai"},
+
+  {slug:"h-defense-depth", type:"lectio", f:"H",
+   title:"Defense in Depth",
+   title_pt:"Defesa em Profundidade",
+   body:`<p>The naive theory of defense is a wall. The wall works or it does not. If it fails, the country behind it is lost. Hadrian's Wall. The Great Wall. The Maginot Line. Every reader of history knows walls, in the end, do not work.</p>
+<p>The sophisticated theory of defense is depth. Instead of one line to be held or lost, the defender builds a system: forward observation posts to detect the enemy's crossing, a series of fortified towns behind them to slow and channel his advance, mobile field armies positioned to strike his flanks as he penetrates, interior fortresses to hold if he reaches them, and behind everything, an economic base capable of recovering ground lost in the initial thrust.</p>
+<p>The late Roman Empire and the Byzantines built this on their eastern frontiers. Soldier-farmers held land in return for military service. Persian, Arab, and Turkish invasions rarely won on the day they crossed the frontier. They had to fight through hundreds of miles in which every village was a potential defender. Constantinople held from 330 to 1453 largely because of a defense in depth built over centuries. When it finally fell, the depth had been eroded and only the walls remained. Walls without depth eventually fail. The lesson is old and permanent.</p>`,
+   body_pt:`<p>A teoria ingênua da defesa é um muro. O muro funciona ou não. Se falha, o país atrás é perdido. Muralha de Adriano. Muralha da China. Linha Maginot. Todo leitor de história sabe que, no fim, muros não funcionam.</p>
+<p>A teoria sofisticada da defesa é a profundidade. Em vez de uma linha a ser mantida ou perdida, o defensor constrói um sistema: postos avançados de observação para detectar a travessia do inimigo, uma série de cidades fortificadas atrás para desacelerar e canalizar seu avanço, exércitos de campanha móveis posicionados para atacar seus flancos à medida que ele penetra, fortalezas interiores para segurar se ele chegar nelas, e, atrás de tudo, uma base econômica capaz de recuperar o terreno perdido no primeiro impulso.</p>
+<p>O Império Romano tardio e os bizantinos construíram isso nas fronteiras orientais. Soldados-camponeses mantinham terra em troca de serviço militar. Invasões persas, árabes e turcas raramente venciam no dia em que cruzavam a fronteira. Tinham que lutar por centenas de milhas em que cada vila era defensor em potencial. Constantinopla se manteve de 330 a 1453 em grande parte por uma defesa em profundidade construída ao longo dos séculos. Quando finalmente caiu, a profundidade havia erodido e só restavam as muralhas. Muros sem profundidade eventualmente falham. A lição é velha e permanente.</p>`,
+   src:"Art of War I · Concept 2 · Byzantine themes and Roman limes"},
+
+  // ============ HISTORICAL CHRONOLOGY GAMES (bilingual) ============
+];
+
+// ================================================================
+// NEGOTIUM / OECONOMIA EXPANSION — Thomas Sowell voice, Basic Economics,
+// plus the Human Relations Playbook (Voss, Navarro, Cialdini, Polyvagal).
+// No em dashes, direct, empirical. Each folio ends on a hard point.
+// ================================================================
+const NEGOTIUM_NEW = [
+  {slug:"n-sowell-tradeoffs", type:"lectio", f:"N", rare:1,
+   title:"There Are No Solutions, Only Trade-offs",
+   title_pt:"Não Existem Soluções, Só Trocas",
+   body:`<p>Thomas Sowell made a career of pointing at the one sentence that explains most political error: <em>there are no solutions, there are only trade-offs</em>.</p>
+<p>Every policy that fixes something breaks something else. Rent control makes rent cheaper for the tenants who already have apartments and makes apartments impossible to find for everyone else. Minimum wage raises pay for workers who keep their jobs and eliminates jobs for workers at the bottom of the skill ladder. Tariffs protect one domestic industry by raising input costs for every industry that uses its output.</p>
+<p>None of this means every trade-off is bad. It means every policy has a cost somewhere, and the test of a serious analyst is whether he can name the cost. If he cannot name the cost, he does not understand the policy. The honest question is never "is this a solution." The honest question is "what are we giving up to get this, and who is giving it up."</p>`,
+   body_pt:`<p>Thomas Sowell construiu uma carreira apontando para a frase que explica a maior parte do erro político: <em>não existem soluções, só trocas</em>.</p>
+<p>Toda política que conserta algo quebra outra coisa. Controle de aluguel barateia o aluguel para quem já tem apartamento e torna impossível achar apartamento para todo o resto. Salário mínimo aumenta o pagamento de quem mantém o emprego e elimina os empregos dos trabalhadores no fim da escada de habilidades. Tarifas protegem uma indústria doméstica aumentando o custo de insumos de toda indústria que usa o produto dela.</p>
+<p>Nada disso quer dizer que toda troca é ruim. Quer dizer que toda política tem um custo em algum lugar, e o teste do analista sério é se ele consegue nomear o custo. Se não consegue nomear o custo, não entende a política. A pergunta honesta nunca é "isto é uma solução". A pergunta honesta é "o que estamos entregando para conseguir isto, e quem está entregando".</p>`,
+   src:"after Thomas Sowell, A Conflict of Visions · Basic Economics"},
+
+  {slug:"n-sowell-three-q", type:"lectio", f:"N",
+   title:"Sowell's Three Questions",
+   title_pt:"As Três Perguntas de Sowell",
+   body:`<p>Sowell proposed three questions you can ask of any policy proposal. They are enough to filter out most bad ideas before they reach the question of whether they are good ones.</p>
+<p><strong>1. Compared to what?</strong> No policy is good or bad in the abstract. A policy is better or worse than the alternative. Any argument that praises a policy without naming the alternative being rejected is incomplete.</p>
+<p><strong>2. At what cost?</strong> Every benefit has a cost. Who bears it. How large is it. What else could the resources have done.</p>
+<p><strong>3. What hard evidence do you have?</strong> Not what the policy was <em>designed</em> to do. What has it actually done, where it has been tried, with results that can be measured.</p>
+<p>A policy that passes none of these is a slogan. A policy that passes all three is a candidate for serious discussion. Most things people fight about on television never get past question one.</p>`,
+   body_pt:`<p>Sowell propôs três perguntas que você pode fazer a qualquer proposta política. Bastam para filtrar a maioria das ideias ruins antes de chegar à questão de serem boas.</p>
+<p><strong>1. Comparado a quê?</strong> Nenhuma política é boa ou ruim no abstrato. Uma política é melhor ou pior que a alternativa. Qualquer argumento que elogia uma política sem nomear a alternativa rejeitada está incompleto.</p>
+<p><strong>2. A que custo?</strong> Todo benefício tem um custo. Quem o carrega. Qual o tamanho dele. Que outra coisa os recursos poderiam ter feito.</p>
+<p><strong>3. Que evidência dura você tem?</strong> Não o que a política foi <em>desenhada</em> para fazer. O que ela realmente fez, onde foi tentada, com resultados que podem ser medidos.</p>
+<p>Uma política que não passa em nenhuma é um slogan. Uma política que passa nas três é candidata a uma discussão séria. A maior parte do que as pessoas brigam na televisão nunca passa da primeira pergunta.</p>`,
+   src:"after Thomas Sowell"},
+
+  {slug:"n-rent-control", type:"lectio", f:"N",
+   title:"Rent Control, in Plain Numbers",
+   title_pt:"Controle de Aluguel, em Números Simples",
+   body:`<p>Rent control is the policy on which the economics profession has the highest agreement. A survey by the IGM Forum at the University of Chicago asked academic economists whether rent control had a negative effect on the quantity and quality of broadly affordable rental housing. Over ninety percent agreed. Fewer than two percent disagreed.</p>
+<p>The mechanism Sowell explains in <em>Basic Economics</em> is simple. If you cap the price landlords can charge below the market rate, three things happen in sequence. First, the people who already have apartments stay in them, since moving means giving up the controlled rate. Second, landlords stop building new rental housing, since the return no longer justifies the risk. Third, the housing stock that exists stops being maintained, since repairs no longer pay back.</p>
+<p>The result in every city that has tried it is the same: existing tenants are protected, new tenants cannot find anywhere to live, and the housing stock degrades over a generation. New York, San Francisco, Stockholm, Berlin. The policy is popular because the beneficiaries vote and the people it hurts, mostly young and mostly new to the city, do not know yet whom to blame.</p>`,
+   body_pt:`<p>Controle de aluguel é a política em que a profissão de economia tem o maior consenso. Uma pesquisa do IGM Forum da Universidade de Chicago perguntou a economistas acadêmicos se o controle de aluguel teve efeito negativo na quantidade e qualidade de moradia alugada acessível. Mais de noventa por cento concordaram. Menos de dois por cento discordaram.</p>
+<p>O mecanismo que Sowell explica em <em>Basic Economics</em> é simples. Se você teto o preço que os senhorios podem cobrar abaixo da taxa de mercado, três coisas acontecem em sequência. Primeiro, quem já tem apartamento fica, porque mudar significa perder a taxa controlada. Segundo, senhorios param de construir novos aluguéis, porque o retorno não justifica mais o risco. Terceiro, o estoque habitacional existente para de ser mantido, porque reparos não se pagam mais.</p>
+<p>O resultado em toda cidade que tentou é o mesmo: inquilinos existentes são protegidos, inquilinos novos não acham onde morar, e o estoque habitacional se degrada ao longo de uma geração. Nova York, San Francisco, Estocolmo, Berlim. A política é popular porque os beneficiados votam e os prejudicados, em geral jovens e novos na cidade, ainda não sabem a quem culpar.</p>`,
+   src:"Sowell, Basic Economics · the strongest empirical consensus in the field"},
+
+  {slug:"n-min-wage", type:"lectio", f:"N",
+   title:"Minimum Wage Hits the Lowest Skilled",
+   title_pt:"O Salário Mínimo Atinge os Menos Qualificados",
+   body:`<p>A minimum wage is a prohibition on hiring anyone whose productivity is below the mandated wage. If the law says you must pay fifteen dollars an hour, you cannot legally hire a worker whose labor is worth twelve dollars an hour to you. That worker is not helped by the law. He is unemployed by it.</p>
+<p>The workers whose labor is above the minimum are unaffected. The workers whose labor is comfortably above the minimum get a mild symbolic benefit. The workers whose productivity sits <em>around</em> the minimum, almost all of them teenagers, high-school dropouts, immigrants with weak English, and people with disabilities, lose their chance to get the first job that would have taught them to be worth more.</p>
+<p>Sowell: the first job teaches the attitudes, the punctuality, and the experience that produce the second job. Price the first job out of existence and you have not raised wages. You have blocked the ladder. The racial unemployment gap for young Black men in the United States went from near parity with whites in 1948, before meaningful minimum-wage enforcement, to roughly double by the 1970s. The policy is popular. Its victims are quiet, because they are not working.</p>`,
+   body_pt:`<p>O salário mínimo é uma proibição de contratar quem tem produtividade abaixo do salário imposto. Se a lei diz que você precisa pagar quinze dólares por hora, você não pode contratar legalmente um trabalhador cuja mão de obra vale doze dólares por hora para você. Esse trabalhador não é ajudado pela lei. Ele é desempregado por ela.</p>
+<p>Os trabalhadores cuja mão de obra está acima do mínimo não são afetados. Os cuja mão de obra está confortavelmente acima do mínimo recebem um benefício simbólico fraco. Os cuja produtividade fica <em>em torno</em> do mínimo, quase todos adolescentes, pessoas que não terminaram o ensino médio, imigrantes com inglês fraco, pessoas com deficiência, perdem a chance de pegar o primeiro emprego que lhes ensinaria a valer mais.</p>
+<p>Sowell: o primeiro emprego ensina as atitudes, a pontualidade e a experiência que produzem o segundo emprego. Preveja o primeiro emprego para fora da existência e você não aumentou salários. Você bloqueou a escada. A diferença de desemprego racial para jovens negros nos Estados Unidos passou de quase paridade com brancos em 1948, antes de aplicação significativa do salário mínimo, para aproximadamente o dobro nos anos 1970. A política é popular. As vítimas são silenciosas, porque não estão trabalhando.</p>`,
+   src:"Sowell, Basic Economics · the pattern replicates in every market"},
+
+  {slug:"n-seen-unseen", type:"lectio", f:"N", rare:1,
+   title:"The Seen and the Unseen",
+   title_pt:"O Visto e o Não Visto",
+   body:`<p>Frédéric Bastiat wrote in 1850 that the one thing separating a good economist from a bad economist is the ability to see what is not there.</p>
+<p>A broken window creates work for the glazier. That is seen. The money the shopkeeper spent on the window is money he did not spend on the pair of shoes he was going to buy. The shoemaker is poorer. That is not seen. The broken window has not stimulated the economy. It has shifted a transaction from a productive channel (shoes) to a repair channel (replacing what was already there). The town has the same window it already had, and no shoes. It is poorer by one pair of shoes.</p>
+<p>Every policy that produces a visible effect, a new job, a new building, a new program, must be examined for what it displaced. The jobs created are seen. The jobs that would have existed if the money had been left where it was, those are not seen. The economist's job is to see them anyway. Sowell is the clearest living teacher of this discipline. Bastiat is where it starts.</p>`,
+   body_pt:`<p>Frédéric Bastiat escreveu em 1850 que a única coisa que separa um bom economista de um mau economista é a capacidade de ver o que não está ali.</p>
+<p>Uma janela quebrada cria trabalho para o vidraceiro. Isso é visto. O dinheiro que o lojista gastou com a janela é dinheiro que ele não gastou com o par de sapatos que iria comprar. O sapateiro ficou mais pobre. Isso não é visto. A janela quebrada não estimulou a economia. Deslocou uma transação de um canal produtivo (sapatos) para um canal de reparo (substituindo o que já existia). A cidade tem a mesma janela que já tinha, e nenhum sapato. Está mais pobre em um par de sapatos.</p>
+<p>Toda política que produz um efeito visível, um emprego novo, um prédio novo, um programa novo, precisa ser examinada pelo que ela deslocou. Os empregos criados são vistos. Os empregos que teriam existido se o dinheiro tivesse ficado onde estava, esses não são vistos. O trabalho do economista é vê-los mesmo assim. Sowell é o professor vivo mais claro dessa disciplina. Bastiat é onde ela começa.</p>`,
+   src:"Bastiat, Ce qu'on voit et ce qu'on ne voit pas (1850), via Sowell"},
+
+  {slug:"n-knowledge-problem", type:"lectio", f:"N",
+   title:"The Knowledge Problem",
+   title_pt:"O Problema do Conhecimento",
+   body:`<p>Friedrich Hayek asked the question that broke socialism as a serious economic doctrine. He asked it in 1945 in a paper called <em>The Use of Knowledge in Society</em>. The question was: how does the economy know what to produce.</p>
+<p>No central planner knows how many pencils to make, or what color, or what wood. He does not know how many are needed in Phoenix next Tuesday. The information about what people want, where they are, how much they are willing to pay, how urgent the need, is scattered among hundreds of millions of individual minds. It is nowhere written down, and most of it changes faster than it could be collected.</p>
+<p>The price system solves this by not needing to collect the information at all. The price of a pencil rises when pencils are scarce and falls when they are abundant. The producer who sees the price rise makes more pencils without needing to know <em>why</em>. The consumer who sees the price rise uses the pencil more carefully without needing to know <em>why</em>. The system coordinates billions of decisions by letting each actor respond to a single number. No planner can match it, because no planner can hold the information in his head. This is why every attempted socialist economy has either collapsed into shortage or converted to market mechanisms by stealth. Not because the planners were evil. Because the problem is unsolvable.</p>`,
+   body_pt:`<p>Friedrich Hayek fez a pergunta que quebrou o socialismo como doutrina econômica séria. Fez em 1945, num artigo chamado <em>O Uso do Conhecimento na Sociedade</em>. A pergunta era: como a economia sabe o que produzir.</p>
+<p>Nenhum planejador central sabe quantos lápis fazer, nem de que cor, nem de qual madeira. Não sabe quantos são necessários em Phoenix na próxima terça. A informação sobre o que as pessoas querem, onde estão, quanto estão dispostas a pagar, quão urgente é a necessidade, está espalhada por centenas de milhões de mentes individuais. Não está escrita em lugar nenhum, e a maior parte muda mais rápido do que seria coletado.</p>
+<p>O sistema de preços resolve isso ao não precisar coletar a informação. O preço de um lápis sobe quando lápis estão escassos e desce quando estão abundantes. O produtor que vê o preço subir faz mais lápis sem precisar saber <em>por quê</em>. O consumidor que vê o preço subir usa o lápis com mais cuidado sem precisar saber <em>por quê</em>. O sistema coordena bilhões de decisões deixando cada ator responder a um único número. Nenhum planejador consegue igualar, porque nenhum planejador consegue segurar a informação na cabeça. É por isso que toda economia socialista tentada ou colapsou em escassez ou converteu-se em mecanismos de mercado por baixo dos panos. Não porque os planejadores eram maus. Porque o problema é insolúvel.</p>`,
+   src:"after Hayek, The Use of Knowledge in Society (1945)"},
+
+  {slug:"n-labor-value-wrong", type:"lectio", f:"N",
+   title:"Why the Labor Theory of Value Is Wrong",
+   title_pt:"Por Que a Teoria do Valor-Trabalho Está Errada",
+   body:`<p>Karl Marx argued that the value of a thing is the labor that went into producing it. If a chair takes four hours of work, its value is four hours of work. This is called the labor theory of value and it is the foundation of Marxist economics.</p>
+<p>It is false, and the test is simple. Consider a Stradivarius violin, built in the 1680s by one craftsman working with hand tools. The labor input was modest. A modern Chinese factory produces student violins in a day, with far more total labor-hours per instrument when assembly, materials, and shipping are counted. The Stradivarius sells for twenty million dollars. The student violin sells for two hundred. If labor were the source of value, the student violin would be worth more. It is worth less by a factor of a hundred thousand.</p>
+<p>Value is not labor. Value is the meeting of subjective preference with scarcity. People want a Stradivarius more than they want a student violin, and there are three hundred Stradivari and millions of student violins. Price is the market's reading of that ratio. Economists have known this since the marginal revolution of the 1870s. The policy consequences of pretending otherwise, which the twentieth century ran as an experiment on a hundred million lives, are visible in every mass grave from the Volga to the Mekong.</p>`,
+   body_pt:`<p>Karl Marx argumentava que o valor de uma coisa é o trabalho que entrou para produzi-la. Se uma cadeira leva quatro horas de trabalho, seu valor é quatro horas de trabalho. Isso se chama teoria do valor-trabalho e é o alicerce da economia marxista.</p>
+<p>É falsa, e o teste é simples. Considere um violino Stradivarius, construído nos anos 1680 por um artesão com ferramentas de mão. A entrada de trabalho foi modesta. Uma fábrica chinesa moderna produz violinos de estudante em um dia, com muito mais horas-trabalho totais por instrumento quando se contam montagem, materiais e logística. O Stradivarius vende por vinte milhões de dólares. O violino de estudante vende por duzentos. Se trabalho fosse a fonte do valor, o violino de estudante valeria mais. Vale menos por um fator de cem mil.</p>
+<p>Valor não é trabalho. Valor é o encontro da preferência subjetiva com a escassez. As pessoas querem um Stradivarius mais do que querem um violino de estudante, e existem trezentos Stradivari e milhões de violinos de estudante. Preço é a leitura que o mercado faz dessa razão. Economistas sabem disso desde a revolução marginalista dos anos 1870. As consequências políticas de fingir o contrário, que o século XX rodou como experimento em cem milhões de vidas, estão visíveis em cada vala comum do Volga ao Mekong.</p>`,
+   src:"marginal revolution (Menger, Jevons, Walras, 1870s)"},
+
+  {slug:"n-voss-mirror", type:"lectio", f:"N",
+   title:"Voss · The Mirror",
+   title_pt:"Voss · O Espelho",
+   body:`<p>Chris Voss spent twenty-four years in the FBI as a hostage negotiator. The single most underused technique in his toolkit is the mirror.</p>
+<p>Repeat the last one to three key words the other person just said, with an upward, curious inflection. That is it. Simple, powerful, almost universally underused.</p>
+<p>Example. Them: "I've had a really difficult year and I feel like you're not accounting for that." You: "You feel I'm not accounting for it?" (upward inflection, slight pause). Them: elaborates, reveals the real concern.</p>
+<p>The mirror works because people have a deep need to feel heard. The mirror gives them the signal they have been heard without you committing to anything. It also keeps them talking, and every extra sentence is a chance for them to tell you something they did not plan to tell you. In negotiation and in ordinary conversation, the move is the same. Say less. Repeat the last three words with curiosity. Wait.</p>`,
+   body_pt:`<p>Chris Voss passou vinte e quatro anos no FBI como negociador de reféns. A técnica mais subutilizada do kit dele é o espelho.</p>
+<p>Repita as últimas uma a três palavras-chave que a outra pessoa acabou de dizer, com uma inflexão para cima, curiosa. É isso. Simples, poderoso, quase universalmente subutilizado.</p>
+<p>Exemplo. Ela: "Eu tive um ano muito difícil e sinto que você não está levando isso em conta." Você: "Você sente que eu não estou levando em conta?" (inflexão para cima, pausa curta). Ela: elabora, revela a preocupação real.</p>
+<p>O espelho funciona porque as pessoas têm uma necessidade profunda de se sentir ouvidas. O espelho dá a elas o sinal de que foram ouvidas sem você se comprometer com nada. Também as mantém falando, e cada frase a mais é uma chance de te dizerem algo que não planejavam dizer. Em negociação e em conversa comum, o movimento é o mesmo. Fale menos. Repita as últimas três palavras com curiosidade. Espere.</p>`,
+   src:"Voss, Never Split the Difference · Section 5.2"},
+
+  {slug:"n-voss-label", type:"lectio", f:"N",
+   title:"Voss · Labeling",
+   title_pt:"Voss · Rotular",
+   body:`<p>A label is a verbal acknowledgment of what the other person seems to be feeling. "It seems like..." "It looks like..." "It sounds like..." Never start with "I". "I think you're feeling..." makes it about you. The label must face outward.</p>
+<p>It works because it verbally confirms the other person's emotional experience, which allows the amygdala to deactivate. The brain no longer needs to fight for recognition of the feeling, because the feeling has been named.</p>
+<p>Negative labels are especially powerful. Naming a negative emotion out loud often drains it of charge. "It seems like this has been really frustrating." "Yeah, it has." (tension deflates significantly). Even stronger: mislabeling on purpose to get a correction. "It seems like you're not sure about the terms." "No, it's not the terms, it's the timeline." You just found the real objection without asking a direct question.</p>`,
+   body_pt:`<p>Um rótulo é um reconhecimento verbal do que a outra pessoa parece estar sentindo. "Parece que..." "Soa como se..." "Dá a impressão que..." Nunca comece com "eu". "Eu acho que você está sentindo..." faz tudo girar em torno de você. O rótulo precisa apontar para fora.</p>
+<p>Funciona porque confirma verbalmente a experiência emocional da outra pessoa, o que permite à amígdala se desativar. O cérebro já não precisa brigar pelo reconhecimento do sentimento, porque o sentimento foi nomeado.</p>
+<p>Rótulos negativos são especialmente poderosos. Dizer em voz alta uma emoção negativa muitas vezes a esvazia de carga. "Parece que isso tem sido bem frustrante." "É, tem sido." (a tensão desinfla bastante). Ainda mais forte: errar o rótulo de propósito para forçar uma correção. "Parece que você não está certo sobre os termos." "Não, não são os termos, é o prazo." Você acabou de achar a objeção real sem fazer uma pergunta direta.</p>`,
+   src:"Voss, Never Split the Difference · Section 5.3"},
+
+  {slug:"n-voss-calib-q", type:"lectio", f:"N", rare:1,
+   title:"Calibrated Questions",
+   title_pt:"Perguntas Calibradas",
+   body:`<p>"Why" questions are accusatory. "Why did you do that" puts the other person on the defensive before they have said a word. Voss's substitute: "How" and "What" questions, designed for emotional impact, not just information.</p>
+<p>Three of them do most of the work:</p>
+<ul>
+<li>"How am I supposed to do that?"</li>
+<li>"What would need to be true for this to work?"</li>
+<li>"What's going to happen if we don't reach an agreement here?"</li>
+</ul>
+<p>They work because they give the other person the <em>illusion of control</em>, they feel like they are choosing the answer, while forcing them to inhabit your constraint. "How am I supposed to do that" is perhaps Voss's single most useful line. Said in a genuinely curious, non-aggressive tone, it forces the other party to solve your problem for you. It is not a complaint. It is an invitation to collaborate on your constraint.</p>`,
+   body_pt:`<p>Perguntas com "por quê" são acusatórias. "Por que você fez isso" coloca a outra pessoa na defensiva antes dela abrir a boca. O substituto de Voss: perguntas com "como" e "o quê", desenhadas para impacto emocional, não só para coletar informação.</p>
+<p>Três delas fazem a maior parte do trabalho:</p>
+<ul>
+<li>"Como eu deveria fazer isso?"</li>
+<li>"O que precisaria ser verdade para isto funcionar?"</li>
+<li>"O que vai acontecer se não chegarmos a um acordo aqui?"</li>
+</ul>
+<p>Funcionam porque dão à outra pessoa a <em>ilusão de controle</em>, ela sente que está escolhendo a resposta, ao mesmo tempo em que a força a habitar a sua restrição. "Como eu deveria fazer isso" talvez seja a frase mais útil de Voss. Dita num tom genuinamente curioso, não agressivo, obriga o outro lado a resolver o seu problema por você. Não é reclamação. É convite para colaborar na sua restrição.</p>`,
+   src:"Voss, Never Split the Difference · Section 5.5"},
+
+  {slug:"n-navarro-feet", type:"lectio", f:"N",
+   title:"Watch the Feet",
+   title_pt:"Observe os Pés",
+   body:`<p>Joe Navarro spent twenty-five years in the FBI reading people. His single most counterintuitive insight: stop watching the face and start watching the feet.</p>
+<p>The face is the <em>most</em> controlled and therefore <em>least</em> reliable channel for truth detection. People are trained from infancy to manage their facial expressions. The feet and legs are the most honest because no one thinks about them. Millions of years of evolution wired the brain to prepare the feet for action before conscious thought catches up. Feet point toward what we want to approach and away from what we want to escape.</p>
+<p>What to watch. Foot direction: if someone is talking to you but one or both feet are angled toward the door, they want to leave regardless of what their face is doing. Happy feet: slight rhythmic bouncing or wiggling means genuine excitement, almost impossible to fake. Foot retraction: feet suddenly pulling back or tucking under a chair means sudden discomfort, watch for this the moment you introduce a specific offer. Starter's position: one foot pointed toward the exit and one toward you means they are conflicted, part of them wants to leave but they are not gone yet. The window is closing. Address it now.</p>`,
+   body_pt:`<p>Joe Navarro passou vinte e cinco anos no FBI lendo pessoas. Seu insight mais contraintuitivo: pare de olhar o rosto e comece a olhar os pés.</p>
+<p>O rosto é o canal <em>mais</em> controlado e portanto <em>menos</em> confiável para detecção de verdade. As pessoas são treinadas desde a infância para gerenciar expressões faciais. Os pés e pernas são os mais honestos porque ninguém pensa neles. Milhões de anos de evolução conectaram o cérebro para preparar os pés para a ação antes que o pensamento consciente alcance. Os pés apontam para o que queremos abordar e para longe do que queremos escapar.</p>
+<p>O que observar. Direção dos pés: se alguém está falando com você mas um ou os dois pés estão angulados para a porta, essa pessoa quer sair, independentemente do que o rosto faz. Pés felizes: um pequeno bater ou mexer rítmico significa excitação genuína, quase impossível de fingir. Retração dos pés: pés que de repente puxam para trás ou se enfiam embaixo da cadeira significam desconforto súbito, repare nisso no instante em que você apresenta uma oferta específica. Posição de largada: um pé apontado para a saída e um para você significa que a pessoa está em conflito, parte dela quer sair mas ainda não foi. A janela está se fechando. Resolva agora.</p>`,
+   src:"Navarro, What Every BODY Is Saying · Section 3.3"},
+
+  {slug:"n-polyvagal-thermostat", type:"lectio", f:"N", rare:1,
+   title:"You Are the Thermostat",
+   title_pt:"Você É o Termostato",
+   body:`<p>Mirror neurons in the social brain mean that your emotional state is literally contagious. When you speak with anger, their amygdala fires. When you speak with calm, their nervous system down-regulates. This is not metaphor. It is the mechanism behind Chris Voss's Late-Night FM DJ voice: it directly hits the other person's mirror neurons and slows their brain.</p>
+<p>Practical consequence: you are always the emotional thermostat. If someone escalates, you do not match their energy. You absorb it and reflect back one level calmer.</p>
+<p>This is the single highest-leverage move in any conflict. The conversation you were about to have at four is now happening at three. The one you were about to have at three is happening at two. By the time you have done this twice, the other person is in a different nervous-system state than they were in a minute ago, and they do not know why, and the problem that could not be discussed can now be discussed. The calm person wins the room. Not by being louder. By being the only one who refuses to escalate.</p>`,
+   body_pt:`<p>Os neurônios-espelho no cérebro social fazem com que o seu estado emocional seja literalmente contagioso. Quando você fala com raiva, a amígdala do outro dispara. Quando você fala com calma, o sistema nervoso dele regula para baixo. Isso não é metáfora. É o mecanismo por trás da voz FM DJ de madrugada do Chris Voss: ela bate direto nos neurônios-espelho da outra pessoa e desacelera o cérebro dela.</p>
+<p>Consequência prática: você é sempre o termostato emocional. Se alguém escalar, você não iguala a energia. Você absorve e devolve um nível mais calmo.</p>
+<p>Este é o movimento de maior alavancagem em qualquer conflito. A conversa que você ia ter em quatro agora acontece em três. A que você ia ter em três acontece em dois. Depois que você faz isso duas vezes, a outra pessoa está num estado de sistema nervoso diferente do que estava um minuto atrás, e ela não sabe por quê, e o problema que não dava para discutir agora dá. A pessoa calma ganha a sala. Não por ser mais alta. Por ser a única que se recusa a escalar.</p>`,
+   src:"Human Relations Playbook · Polyvagal Theory applied"},
+
+  {slug:"n-cialdini-reciprocity", type:"lectio", f:"N",
+   title:"Cialdini · Reciprocity",
+   title_pt:"Cialdini · Reciprocidade",
+   body:`<p>Robert Cialdini spent thirty-five years studying the psychology of persuasion. His first principle is reciprocity: people feel compelled to return favors and gifts. The compulsion is nearly automatic. It operates below conscious reasoning.</p>
+<p>The key is in three words: give <em>first</em>, give <em>unexpectedly</em>, give <em>specifically</em>. A generic gift triggers less reciprocity than a specific one. A requested favor triggers less than an unprompted one. A delayed favor triggers less than one given before anything was asked for.</p>
+<p>Applied in negotiation: before you ask for anything, give something of real value. Information, access, a concession, your attention. Not as a tactic to announce. Done quietly, as if it were just the right thing. The other person's obligation response is largely automatic.</p>
+<p>Watch for it in reverse. If someone has given you something, your willingness to concede will be higher than it should be. Know this about yourself. Being aware of reciprocity does not stop it from working on you, but it slows it down enough that you can decide whether the concession is one you actually want to make.</p>`,
+   body_pt:`<p>Robert Cialdini passou trinta e cinco anos estudando a psicologia da persuasão. O primeiro princípio dele é a reciprocidade: pessoas se sentem compelidas a devolver favores e presentes. A compulsão é quase automática. Opera abaixo do raciocínio consciente.</p>
+<p>A chave está em três palavras: dê <em>primeiro</em>, dê de forma <em>inesperada</em>, dê de forma <em>específica</em>. Um presente genérico dispara menos reciprocidade que um específico. Um favor pedido dispara menos que um não solicitado. Um favor atrasado dispara menos que um dado antes de qualquer pedido.</p>
+<p>Aplicado em negociação: antes de pedir qualquer coisa, dê algo de valor real. Informação, acesso, uma concessão, sua atenção. Não como tática a anunciar. Feito em silêncio, como se fosse simplesmente a coisa certa a fazer. A resposta de obrigação do outro é em grande parte automática.</p>
+<p>Observe no sentido inverso. Se alguém te deu algo, sua disposição para ceder vai ser maior do que deveria. Saiba isso sobre si mesmo. Estar ciente da reciprocidade não impede que ela funcione em você, mas desacelera o bastante para você decidir se a concessão é mesmo uma que quer fazer.</p>`,
+   src:"Cialdini, Influence · Principle 1"},
+
+  {slug:"n-ackerman", type:"lectio", f:"N",
+   title:"The Ackerman System",
+   title_pt:"O Sistema Ackerman",
+   body:`<p>When bargaining is unavoidable, Voss's teachers at the FBI used the Ackerman System. It is a specific sequence that reads to the other side as a careful calculation rather than a random demand.</p>
+<p>Establish your target price internally. Then:</p>
+<ul>
+<li>Open at <strong>65%</strong> of target. An extreme anchor.</li>
+<li>If no deal, raise to <strong>85%</strong> (+20%).</li>
+<li>If no deal, raise to <strong>95%</strong> (+10%).</li>
+<li>If no deal, raise to <strong>100%</strong> (+5%).</li>
+<li>Final offer: odd, specific number (e.g. $37,893 not $38,000) plus some non-monetary element ("and I'll include X").</li>
+</ul>
+<p>The odd final number signals you have been calculating precisely. It reads as the absolute bottom of a real calculation, not a round number you chose arbitrarily. This reduces the impulse to counter dramatically.</p>
+<p>Use tactical empathy between every round. A label, a question, a moment of genuine acknowledgment. The system fails without the human element. The arithmetic is only the skeleton.</p>`,
+   body_pt:`<p>Quando negociar é inevitável, os professores do Voss no FBI usavam o Sistema Ackerman. É uma sequência específica que soa, para o outro lado, como um cálculo cuidadoso em vez de uma exigência aleatória.</p>
+<p>Estabeleça seu preço-alvo internamente. Então:</p>
+<ul>
+<li>Abra em <strong>65%</strong> do alvo. Uma âncora extrema.</li>
+<li>Sem acordo, suba para <strong>85%</strong> (+20%).</li>
+<li>Sem acordo, suba para <strong>95%</strong> (+10%).</li>
+<li>Sem acordo, suba para <strong>100%</strong> (+5%).</li>
+<li>Oferta final: número ímpar, específico (ex.: R$37.893, não R$38.000) mais algum elemento não monetário ("e vou incluir X").</li>
+</ul>
+<p>O número final estranho sinaliza que você vinha calculando com precisão. Lê-se como o fundo absoluto de um cálculo real, não um número redondo escolhido ao acaso. Reduz drasticamente o impulso de contra-oferta.</p>
+<p>Use empatia tática entre cada rodada. Um rótulo, uma pergunta, um momento de reconhecimento genuíno. O sistema falha sem o elemento humano. A aritmética é só o esqueleto.</p>`,
+   src:"Human Relations Playbook · Section 5.9"},
+
+  {slug:"n-fear-of-loss", type:"lectio", f:"N",
+   title:"Fear of Loss Beats Hope of Gain",
+   title_pt:"O Medo da Perda Vence a Esperança do Ganho",
+   body:`<p>Daniel Kahneman and Amos Tversky won a Nobel Prize for showing that people feel losses roughly twice as strongly as equivalent gains. A hundred dollars lost hurts about as much as two hundred dollars gained feels good.</p>
+<p>The practical consequence in negotiation and in life: people will walk away from a good deal if they feel treated unfairly. "Fair" becomes the entire negotiation once someone feels cornered.</p>
+<p>What to do when someone invokes fairness or looks cornered: stop all momentum. Soften completely. Invite them to speak. "I want to treat you fairly. Tell me where you feel I've missed something." Then actually listen. The goal is not to win the point about fairness. It is to deactivate the emotion. Once the fear-of-loss circuit has fired, no rational argument lands until that circuit cools down. You cannot persuade a person whose amygdala is on fire. You can only let the fire die down and then try again.</p>`,
+   body_pt:`<p>Daniel Kahneman e Amos Tversky ganharam um Nobel por mostrar que as pessoas sentem perdas com uma intensidade cerca de duas vezes maior que a de ganhos equivalentes. Perder cem dólares dói mais ou menos o quanto ganhar duzentos dá de alegria.</p>
+<p>A consequência prática em negociação e na vida: as pessoas abandonam um bom acordo se se sentirem tratadas injustamente. "Justo" vira a negociação inteira assim que alguém se sente encurralado.</p>
+<p>O que fazer quando alguém invoca justiça ou parece encurralado: pare todo o impulso. Suavize por completo. Convide a pessoa a falar. "Quero te tratar com justiça. Me diz onde você sente que eu deixei passar algo." E escute de verdade. O objetivo não é ganhar o ponto sobre justiça. É desativar a emoção. Depois que o circuito de medo da perda disparou, nenhum argumento racional pousa até esse circuito esfriar. Você não consegue persuadir uma pessoa com a amígdala em chamas. Só dá para deixar o fogo baixar e tentar de novo.</p>`,
+   src:"Kahneman, Thinking Fast and Slow · via Voss"},
+
+  {slug:"n-pre-interaction", type:"lectio", f:"N",
+   title:"The 60-Second Pre-Interaction Protocol",
+   title_pt:"O Protocolo de 60 Segundos Antes da Interação",
+   body:`<p>Do this before any important interaction. It takes a minute. It changes your state.</p>
+<p><strong>Breath.</strong> Four counts in through the nose, six counts out through the mouth. Three times. This activates ventral vagal mode. It drops cortisol. It physically softens jaw and shoulder tension.</p>
+<p><strong>Posture reset.</strong> Feet hip-width apart. Weight even. Shoulders back and <em>down</em>, not up in a stiff power pose. Sternum slightly lifted. Hands visible and still.</p>
+<p><strong>Face reset.</strong> Unclench the jaw. Let the lips part slightly. Soften the muscles around the eyes. This one change alone transforms how warm and approachable you appear.</p>
+<p><strong>Voice warm-up.</strong> Say a few sentences at your intended pace. Your voice should feel low, slow, resonant. If it sounds thin or tight, take two more slow breaths before going in.</p>
+<p><strong>Intention prime.</strong> Decide what state you want the other person to be in at the end of this interaction. Then decide what version of you produces that. Your body language will become naturally congruent.</p>`,
+   body_pt:`<p>Faça isto antes de qualquer interação importante. Leva um minuto. Muda o seu estado.</p>
+<p><strong>Respiração.</strong> Quatro tempos puxando pelo nariz, seis tempos soltando pela boca. Três vezes. Isso ativa o modo vagal ventral. Baixa o cortisol. Suaviza fisicamente a tensão da mandíbula e dos ombros.</p>
+<p><strong>Postura.</strong> Pés na largura do quadril. Peso igual nos dois. Ombros para trás e para <em>baixo</em>, não para cima numa pose de poder rígida. Esterno levemente erguido. Mãos visíveis e paradas.</p>
+<p><strong>Rosto.</strong> Solte a mandíbula. Deixe os lábios se abrirem um pouquinho. Suavize os músculos ao redor dos olhos. Essa única mudança transforma o quanto você parece caloroso e acessível.</p>
+<p><strong>Aquecer a voz.</strong> Diga algumas frases no ritmo que pretende usar. Sua voz deve soar grave, lenta, com ressonância. Se sair fina ou presa, faça mais duas respirações lentas antes de entrar.</p>
+<p><strong>Imprimir a intenção.</strong> Decida em que estado você quer que a outra pessoa esteja no fim desta interação. Depois decida qual versão sua produz isso. Sua linguagem corporal vai ficar naturalmente congruente.</p>`,
+   src:"Human Relations Playbook · Section 7.1"},
+
+  {slug:"n-trade-off-q", type:"quaestio", f:"N",
+   title:"Which Trade-off Is This?",
+   title_pt:"Qual Troca É Esta?",
+   body:`<p>A city proposes raising its minimum wage from $12 to $20 an hour. Supporters say it will help low-wage workers. Opponents say it will cost jobs. Which analysis is Sowell's?</p>`,
+   body_pt:`<p>Uma cidade propõe aumentar o salário mínimo de $12 para $20 por hora. Defensores dizem que vai ajudar trabalhadores de baixa renda. Opositores dizem que vai custar empregos. Qual análise é a de Sowell?</p>`,
+   opts:["Both are right about something; the question is which effect dominates and for whom","It will help workers; opposition is political","It will cost jobs; support is naive","Nobody can know; economics is unpredictable"],
+   opts_pt:["Os dois estão certos em alguma coisa; a questão é qual efeito domina e para quem","Vai ajudar trabalhadores; a oposição é política","Vai custar empregos; o apoio é ingênuo","Ninguém pode saber; economia é imprevisível"],
+   correct:0,
+   reveal:`<p>The honest Sowell answer: both. Workers whose productivity was already above $20 keep their jobs and might see small raises. Workers whose productivity sat between $12 and $20 lose their chance to be hired. The policy helps one group at the expense of another, and the question of whether this is good depends on which group you were trying to help. If the goal was to raise the floor for already-employed workers, it works. If the goal was to help the most vulnerable workers at the bottom of the skill ladder, it is the opposite of what you want. Most political arguments avoid naming which group they are helping. Sowell's whole project was to make them name it.</p>`,
+   reveal_pt:`<p>A resposta honesta de Sowell: os dois. Trabalhadores com produtividade já acima de $20 mantêm os empregos e podem ver aumentos pequenos. Trabalhadores com produtividade entre $12 e $20 perdem a chance de ser contratados. A política ajuda um grupo às custas de outro, e a pergunta de se isso é bom depende de qual grupo você estava tentando ajudar. Se o objetivo era levantar o piso para trabalhadores já empregados, funciona. Se o objetivo era ajudar os trabalhadores mais vulneráveis no fim da escada de habilidades, é o oposto do que você quer. A maioria dos argumentos políticos evita nomear qual grupo está ajudando. O projeto todo de Sowell era fazê-los nomear.</p>`,
+   src:"Sowell · Basic Economics on labor markets"},
+];
+
+// New ludus games for the newly-dense wings
+const LUDI_NEW = [
+  // History chronology — four more
+  {slug:"lu-hist-ancient", type:"ludus", mode:"sort", f:"H",
+   title:"Ludus · Ancient Battles in Order",
+   title_pt:"Ludus · Batalhas Antigas em Ordem",
+   body:`<p>Four decisive battles of the ancient world. Oldest first.</p>`,
+   body_pt:`<p>Quatro batalhas decisivas do mundo antigo. Mais antiga primeiro.</p>`,
+   items:[
+     {label:"Marathon · Greeks beat Persians", year:-490},
+     {label:"Gaugamela · Alexander beats Darius", year:-331},
+     {label:"Cannae · Hannibal destroys Rome's army", year:-216},
+     {label:"Zama · Scipio beats Hannibal", year:-202}
+   ],
+   items_pt:[
+     {label:"Maratona · gregos vencem persas", year:-490},
+     {label:"Gaugamela · Alexandre vence Dario", year:-331},
+     {label:"Cannas · Aníbal destrói o exército romano", year:-216},
+     {label:"Zama · Cipião vence Aníbal", year:-202}
+   ],
+   src:"Chronology · Historia II"},
+
+  {slug:"lu-hist-medieval", type:"ludus", mode:"sort", f:"H",
+   title:"Ludus · Christendom's Great Hinges",
+   title_pt:"Ludus · As Grandes Dobradiças da Cristandade",
+   body:`<p>Four moments that turned the course of Christendom. Oldest first.</p>`,
+   body_pt:`<p>Quatro momentos que viraram o rumo da cristandade. Mais antigo primeiro.</p>`,
+   items:[
+     {label:"Chalcedon · 'Peter has spoken through Leo'", year:451},
+     {label:"Canossa · the king in the snow", year:1077},
+     {label:"Constance · the Western Schism ends", year:1417},
+     {label:"Vienna · Sobieski charges the Ottomans", year:1683}
+   ],
+   items_pt:[
+     {label:"Calcedônia · 'Pedro falou por Leão'", year:451},
+     {label:"Canossa · o rei na neve", year:1077},
+     {label:"Constança · o Cisma do Ocidente acaba", year:1417},
+     {label:"Viena · Sobieski carrega os otomanos", year:1683}
+   ],
+   src:"Chronology · Historia III"},
+
+  // Business/econ match — thinkers to ideas
+  {slug:"lu-econ-ideas", type:"ludus", mode:"match", f:"N",
+   title:"Ludus · Ideas and Their Owners",
+   title_pt:"Ludus · Ideias e Seus Donos",
+   body:`<p>Four ideas, four names. Match them.</p>`,
+   body_pt:`<p>Quatro ideias, quatro nomes. Combine.</p>`,
+   pairs:[
+     {q:"There are no solutions, only trade-offs", a:"Sowell"},
+     {q:"The seen and the unseen", a:"Bastiat"},
+     {q:"Prices as the coordination of dispersed knowledge", a:"Hayek"},
+     {q:"Loss aversion: losses hurt twice as much as equivalent gains", a:"Kahneman"}
+   ],
+   pairs_pt:[
+     {q:"Não existem soluções, só trocas", a:"Sowell"},
+     {q:"O visto e o não visto", a:"Bastiat"},
+     {q:"Preços como coordenação de conhecimento disperso", a:"Hayek"},
+     {q:"Aversão à perda: perdas doem o dobro dos ganhos equivalentes", a:"Kahneman"}
+   ],
+   src:"Thinker Match · Economia"},
+
+  {slug:"lu-neg-tactics", type:"ludus", mode:"match", f:"N",
+   title:"Ludus · The Negotiator's Toolkit",
+   title_pt:"Ludus · O Kit do Negociador",
+   body:`<p>Four tactics, four authors who made them famous. Match.</p>`,
+   body_pt:`<p>Quatro táticas, quatro autores que as tornaram famosas. Combine.</p>`,
+   pairs:[
+     {q:"The Mirror · repeat the last 1-3 words", a:"Voss"},
+     {q:"Watch the feet, not the face", a:"Navarro"},
+     {q:"Reciprocity · give first, give unexpectedly", a:"Cialdini"},
+     {q:"You are the thermostat · absorb and reflect calmer", a:"Porges"}
+   ],
+   pairs_pt:[
+     {q:"O Espelho · repita as últimas 1 a 3 palavras", a:"Voss"},
+     {q:"Observe os pés, não o rosto", a:"Navarro"},
+     {q:"Reciprocidade · dê primeiro, dê inesperadamente", a:"Cialdini"},
+     {q:"Você é o termostato · absorva e devolva mais calmo", a:"Porges"}
+   ],
+   src:"Tactic Match · Negotium"}
+];
+
+// Append IMAGINES + LUDI + HISTORIA + NEGOTIUM_NEW + LUDI_NEW onto FOLIOS
+FOLIOS.push(...IMAGINES, ...LUDI, ...HISTORIA, ...NEGOTIUM_NEW, ...LUDI_NEW);
 
 const AXIOM_POOL = AXIOMS;
 
