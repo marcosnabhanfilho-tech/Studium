@@ -28,6 +28,71 @@ const todayKey = d => { d=d||new Date(); return d.getFullYear()+"-"+pad(d.getMon
 const roman = n => { const m=[[1000,"M"],[900,"CM"],[500,"D"],[400,"CD"],[100,"C"],[90,"XC"],[50,"L"],[40,"XL"],[10,"X"],[9,"IX"],[5,"V"],[4,"IV"],[1,"I"]]; let o=""; for(const [v,s] of m){ while(n>=v){ o+=s; n-=v; } } return o||"·"; };
 function shuffledIdx(n){ const a = Array.from({length:n},(_,i)=>i); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
 
+// Update which page-dot is .on, based on the pager's horizontal scroll position.
+function updatePagerDots(pager){
+  if(!pager) return;
+  const slide = pager.closest(".slide");
+  if(!slide) return;
+  const dotsRow = slide.querySelector(".page-dots");
+  if(!dotsRow) return;
+  const pageWidth = pager.offsetWidth || 1;
+  const idx = Math.round(pager.scrollLeft / pageWidth);
+  dotsRow.querySelectorAll("span").forEach((dot, i)=>{
+    dot.classList.toggle("on", i === idx);
+  });
+}
+
+// Jump the reel to a particular folio (used from the Thesaurus to open a kept folio).
+function jumpToFolio(slug){
+  const folio = POOL.find(f => f.slug === slug);
+  if(!folio) return;
+  const reel = $("#reel");
+  if(!reel) return;
+  closeAllViews();
+  closeMenu();
+  // Build the folio fresh and prepend it so it is the first slide in the reel.
+  const html = slideHTML(folio);
+  const tmp = document.createElement("div");
+  tmp.innerHTML = html;
+  const newSlide = tmp.firstChild;
+  reel.insertBefore(newSlide, reel.firstChild);
+  if(viewIO) viewIO.observe(newSlide);
+  const pager = newSlide.querySelector(".pager");
+  if(pager && pager.querySelectorAll(".page").length > 1){
+    pager.addEventListener("scroll", ()=>updatePagerDots(pager), {passive:true});
+  }
+  // Jump to top so the user lands on the folio they tapped
+  reel.scrollTop = 0;
+}
+
+// Split a body HTML string into pages, where each page is a group of
+// top-level block elements (<p>, <blockquote>, <ul>, <ol>, <h1>-<h6>)
+// that together are at most `maxWords` long. Instagram-stories style:
+// swipe horizontally through the pages of one folio, swipe up for next folio.
+function paginateBody(bodyHTML, firstMax, restMax){
+  if(!bodyHTML || typeof bodyHTML !== "string") return [bodyHTML || ""];
+  const blocks = bodyHTML.match(/<(p|blockquote|ul|ol|h[1-6])[\s\S]*?<\/\1>/gi);
+  if(!blocks || blocks.length === 0) return [bodyHTML];
+  const pages = [];
+  let current = "", currentWords = 0, isFirst = true;
+  for(const b of blocks){
+    const text = b.replace(/<[^>]+>/g, " ").replace(/\s+/g," ").trim();
+    const words = text ? text.split(" ").length : 0;
+    const limit = isFirst ? firstMax : restMax;
+    if(currentWords > 0 && currentWords + words > limit){
+      pages.push(current);
+      current = b;
+      currentWords = words;
+      isFirst = false;
+    } else {
+      current += b;
+      currentWords += words;
+    }
+  }
+  if(current) pages.push(current);
+  return pages;
+}
+
 // ============== STATE ==============
 let state = {
   user:null, filter:"ALL", lang:"en",
@@ -257,12 +322,12 @@ function slideHTML(folio){
   // Axiom palate cleanser every 8 slides
   if(seq % 8 === 0){
     const ax = AXIOM_POOL[(seq/8 - 1) % AXIOM_POOL.length];
-    return `<section class="slide ax" data-slug="ax-${seq}" data-type="ax">
-      <div class="sframe">
+    return `<section class="slide ax" data-slug="ax-${seq}" data-type="ax" data-pages="1">
+      <div class="pager"><div class="page first last">
         <div class="ax-lat">${esc(ax[0])}</div>
         <div class="ax-en">${esc(ax[1])}</div>
         <div class="ax-orn">❧ ❧ ❧</div>
-      </div>
+      </div></div>
     </section>`;
   }
 
@@ -270,28 +335,28 @@ function slideHTML(folio){
   const gold = folio.rare ? " aurum" : "";
   const typLabel = {lectio:"Lectio",opus:"Opus",visio:"Visio",quaestio:"Quaestio",exercitium:"Exercitium",suffragium:"Suffragium",sententia:"Sententia",pictura:"Pictura",ludus:"Ludus"}[folio.type] || folio.type;
 
-  // Sententia — body is {latin, english}; render centered like an axiom but with faculty + rail + source
+  // Sententia — body is {latin, english}; render centered like an axiom
   if(folio.type === "sententia" && folio.body && typeof folio.body === "object"){
     const bodyObj = L(folio, "body") || folio.body;
-    return `<section class="slide ax${gold}" data-slug="${folio.slug}" data-type="sententia" data-fac="${folio.f}">
-      <div class="sframe">
+    return `<section class="slide ax${gold}" data-slug="${folio.slug}" data-type="sententia" data-fac="${folio.f}" data-pages="1">
+      <div class="pager"><div class="page first last">
         <div class="s-top" style="width:100%"><span class="s-fac">${esc(fac.name)}</span><span class="s-typ">${esc(typLabel)}${folio.rare?" · gold leaf":""}</span></div>
         <div class="ax-lat">${esc(bodyObj.latin || "")}</div>
         <div class="ax-en">${esc(bodyObj.english || "")}</div>
         <div class="ax-orn">❧ ❧ ❧</div>
         <div class="s-src" style="margin-top:28px;border-top:none">— ${esc(L(folio,"src")||"")}</div>
-      </div>
+      </div></div>
       ${railHTML(folio.slug)}
     </section>`;
   }
 
-  // Pictura — Google-Arts-style walkthrough: big image zoomed to a detail + caption.
+  // Pictura — image + caption, single page
   if(folio.type === "pictura"){
     const z = folio.zoom || {x:50, y:50, scale:1};
     const dots = Array.from({length:folio.steps||1}, (_,i) =>
       `<span class="${(i+1)===(folio.step||1) ? 'on':''}"></span>`).join("");
-    return `<section class="slide pictura${gold}" data-slug="${folio.slug}" data-type="pictura" data-fac="${folio.f}" data-series="${esc(folio.series||'')}">
-      <div class="sframe">
+    return `<section class="slide pictura${gold}" data-slug="${folio.slug}" data-type="pictura" data-fac="${folio.f}" data-series="${esc(folio.series||'')}" data-pages="1">
+      <div class="pager"><div class="page first last">
         <div class="pictura-box">
           <img src="${folio.img}" alt="${esc(L(folio,"title"))}" loading="lazy"
             style="--zx:${z.x}%; --zy:${z.y}%; --zs:${z.scale};"
@@ -302,7 +367,7 @@ function slideHTML(folio){
         <h2>${esc(L(folio,"title"))}</h2>
         <div class="s-body">${L(folio,"body")}</div>
         <div class="s-src">— ${esc(L(folio,"src")||"")}</div>
-      </div>
+      </div></div>
       ${railHTML(folio.slug)}
     </section>`;
   }
@@ -337,14 +402,14 @@ function slideHTML(folio){
       </div>
       <div class="ludus-win" style="margin-top:14px">${esc(t("correct_label","Correct"))} ✦</div>`;
     }
-    return `<section class="slide ludus medium${gold}" data-slug="${folio.slug}" data-type="ludus" data-mode="${mode}" data-fac="${folio.f}">
-      <div class="sframe">
+    return `<section class="slide ludus medium${gold}" data-slug="${folio.slug}" data-type="ludus" data-mode="${mode}" data-fac="${folio.f}" data-pages="1">
+      <div class="pager"><div class="page first last">
         <div class="s-top"><span class="s-fac">${esc(fac.name)}</span><span class="s-typ">${esc(typLabel)}${folio.rare?" · gold leaf":""}</span></div>
         <h2>${esc(L(folio,"title"))}</h2>
         <div class="s-body">${L(folio,"body")}</div>
         ${gameHTML}
         <div class="s-src">— ${esc(L(folio,"src")||"")}</div>
-      </div>
+      </div></div>
       ${railHTML(folio.slug)}
     </section>`;
   }
@@ -363,49 +428,81 @@ function slideHTML(folio){
     </div>`;
   }
 
-  const bodyHTML = L(folio, "body");
-  let body = `<div class="s-body">${bodyHTML}</div>`;
+  const bodyHTML = L(folio, "body") || "";
   const opts = L(folio, "opts") || folio.opts;
   const revealHTML = L(folio, "reveal");
   const revealMoreLabel = t("reveal_more","Reveal more");
   const revealLabel = t("reveal","Reveal");
 
-  // Quaestio & exercitium: options + reveal
+  // Build interactive tail (quaestio opts, exercitium reveal, poll opts).
+  // This stays on the LAST page so the interaction is seen with the final text.
+  let interactiveTail = "";
+  let pollBodyReplace = null;
   if(folio.type === "quaestio" && opts){
-    body += `<div class="q-opts">`;
+    interactiveTail += `<div class="q-opts">`;
     opts.forEach((o,i)=>{
-      body += `<button class="q-opt" data-slug="${folio.slug}" data-i="${i}" data-correct="${folio.correct}">${escOpt(o)}</button>`;
+      interactiveTail += `<button class="q-opt" data-slug="${folio.slug}" data-i="${i}" data-correct="${folio.correct}">${escOpt(o)}</button>`;
     });
-    body += `</div><div class="answer" id="ans-${seq}">${revealHTML||""}</div>`;
+    interactiveTail += `</div><div class="answer" id="ans-${seq}">${revealHTML||""}</div>`;
   } else if(folio.type === "exercitium"){
-    body += `<div class="reveal-wrap"><button class="btn q-reveal" data-t="ans-${seq}">${esc(revealLabel)}</button></div>`;
-    if(revealHTML) body += `<div class="answer" id="ans-${seq}">${revealHTML}</div>`;
+    interactiveTail += `<div class="reveal-wrap"><button class="btn q-reveal" data-t="ans-${seq}">${esc(revealLabel)}</button></div>`;
+    if(revealHTML) interactiveTail += `<div class="answer" id="ans-${seq}">${revealHTML}</div>`;
   } else if(revealHTML){
-    body += `<div class="reveal-wrap"><button class="btn q-reveal" data-t="ans-${seq}">${esc(revealMoreLabel)}</button></div>
+    interactiveTail += `<div class="reveal-wrap"><button class="btn q-reveal" data-t="ans-${seq}">${esc(revealMoreLabel)}</button></div>
       <div class="answer" id="ans-${seq}">${revealHTML}</div>`;
   }
-
-  // Suffragium (poll)
   if(folio.type === "suffragium" && opts){
     const myVote = state.votes[folio.slug];
-    body = `<div class="s-body">${bodyHTML}</div><div class="poll-opts" data-slug="${folio.slug}">`;
+    pollBodyReplace = `<div class="poll-opts" data-slug="${folio.slug}">`;
     opts.forEach((o,i)=>{
       const mine = myVote === i;
-      body += `<button class="poll-opt ${mine?"mine":""}" data-slug="${folio.slug}" data-i="${i}">
+      pollBodyReplace += `<button class="poll-opt ${mine?"mine":""}" data-slug="${folio.slug}" data-i="${i}">
         <div class="bar"></div><span class="lbl">${escOpt(o)}</span><span class="pct"></span>
       </button>`;
     });
-    body += `</div>`;
+    pollBodyReplace += `</div>`;
   }
 
   const density = classifyDensity(folio);
-  return `<section class="slide ${density}${gold}" data-slug="${folio.slug}" data-type="${folio.type}" data-fac="${folio.f}">
-    <div class="sframe">
-      <div class="s-top"><span class="s-fac">${esc(fac.name)}</span><span class="s-typ">${esc(typLabel)}${folio.rare?" · gold leaf":""}</span></div>
-      <h2>${esc(L(folio,"title"))}</h2>
-      ${fig}${body}
-      <div class="s-src">— ${esc(L(folio,"src")||"")}</div>
-    </div>
+  // Decide pagination. Only long lectio / opus get paginated. Images, interactive elements,
+  // and short content stay as one page so structure doesn't fragment.
+  const canPaginate = (folio.type === "lectio" || folio.type === "opus") && !folio.img;
+  // Conservative word counts (page has NO vertical scroll, so content must fit).
+  // First page has title + s-top eating room; later pages have the whole screen for text.
+  const firstMax = 90;
+  const restMax = 140;
+  let pages;
+  if(canPaginate && density === "long"){
+    pages = paginateBody(bodyHTML, firstMax, restMax);
+  } else {
+    pages = [bodyHTML];
+  }
+
+  const sTopHTML = `<div class="s-top"><span class="s-fac">${esc(fac.name)}</span><span class="s-typ">${esc(typLabel)}${folio.rare?" · gold leaf":""}</span></div>`;
+  const titleHTML = `<h2>${esc(L(folio,"title"))}</h2>`;
+  const srcHTML   = `<div class="s-src">— ${esc(L(folio,"src")||"")}</div>`;
+
+  const pagerHTML = pages.map((pageBody, i)=>{
+    const isFirst = i === 0;
+    const isLast  = i === pages.length - 1;
+    const head = isFirst ? sTopHTML + titleHTML + fig : "";
+    const bodyWrap = pollBodyReplace && isLast
+      ? `<div class="s-body">${pageBody}</div>${pollBodyReplace}`
+      : `<div class="s-body">${pageBody}</div>`;
+    const tail = isLast ? (interactiveTail ? interactiveTail : "") + srcHTML : "";
+    const pageCont = (pages.length > 1 && !isFirst) ? `<div class="pg-cont">${esc(t("continuation","(continues)"))}</div>` : "";
+    return `<div class="page ${isFirst?"first":""} ${isLast?"last":""}" data-page="${i}">
+      ${pageCont}${head}${bodyWrap}${tail}
+    </div>`;
+  }).join("");
+
+  const dotsHTML = pages.length > 1
+    ? `<div class="page-dots">${pages.map((_,i)=>`<span class="${i===0?'on':''}" data-p="${i}"></span>`).join("")}</div>`
+    : "";
+
+  return `<section class="slide ${density}${gold}" data-slug="${folio.slug}" data-type="${folio.type}" data-fac="${folio.f}" data-pages="${pages.length}">
+    <div class="pager">${pagerHTML}</div>
+    ${dotsHTML}
     ${railHTML(folio.slug)}
   </section>`;
 }
@@ -420,8 +517,15 @@ function appendSlides(n){
   tmp.innerHTML = html;
   const added = [];
   while(tmp.firstChild){ added.push(tmp.firstChild); reel.appendChild(tmp.firstChild); }
-  added.forEach(el=>{ if(el.nodeType===1 && viewIO) viewIO.observe(el); });
-  // Keep endIO on the second-to-last slide so append triggers early
+  added.forEach(el=>{
+    if(el.nodeType !== 1) return;
+    if(viewIO) viewIO.observe(el);
+    // Attach the pager scroll listener directly to this slide's pager so page dots update
+    const pager = el.querySelector(".pager");
+    if(pager && pager.querySelectorAll(".page").length > 1){
+      pager.addEventListener("scroll", ()=>updatePagerDots(pager), {passive:true});
+    }
+  });
   if(endIO){
     endIO.disconnect();
     const nodes = reel.querySelectorAll(".slide");
@@ -504,11 +608,11 @@ function toggleSave(slug, viaDouble){
 }
 
 // Double-tap detection
-let lastTap = 0, lastKey = null;
+let lastTap = 0, lastKey = null, tapStartX = 0, tapStartY = 0;
 function handleTap(e){
   const slide = e.target.closest(".slide");
   if(!slide || slide.dataset.type === "ax") return;
-  if(e.target.closest("button, .lite-yt, .poll-opt, .q-opt")) return;
+  if(e.target.closest("button, .lite-yt, .poll-opt, .q-opt, .ls-item, .lm-item")) return;
   const now = Date.now();
   if(now - lastTap < 320 && lastKey === slide.dataset.slug){
     toggleSave(slide.dataset.slug, true);
@@ -1075,6 +1179,13 @@ async function init(){
       if(en.isIntersecting && en.intersectionRatio > 0.55){
         markSeen(en.target);
         sndTick();
+        // Reset the folio's horizontal pager to page 1 whenever it enters view.
+        // Without this, a half-scrolled pager from an earlier visit would land the
+        // user mid-folio and prevent them from scrolling further.
+        const pager = en.target.querySelector(".pager");
+        if(pager && pager.scrollLeft !== 0){
+          pager.scrollLeft = 0;
+        }
         // auto-render poll tallies for voted polls
         const slug = en.target.dataset.slug;
         if(en.target.dataset.type === "suffragium" && state.votes[slug] !== undefined){
@@ -1083,6 +1194,7 @@ async function init(){
       }
     });
   }, { threshold:[0, 0.55, 0.9] });
+
 
   endIO = new IntersectionObserver(entries=>{
     if(entries.some(e=>e.isIntersecting)) appendSlides(5);
@@ -1239,13 +1351,12 @@ async function init(){
     menu.classList.remove("open");
   });
 
-  // Thesaurus item -> toast its title (future: jump to slide)
+  // Thesaurus item click: open that folio in the reel.
   $("#thes-list").addEventListener("click", e=>{
     const ti = e.target.closest(".ti");
     if(ti){
       const slug = ti.dataset.slug;
-      // Un-save on long press? For now: show source
-      toast(state.saved[slug].title);
+      jumpToFolio(slug);
     }
   });
 
