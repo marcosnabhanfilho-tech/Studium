@@ -674,6 +674,72 @@ const FOLIOS = [
 <p>This is what the twentieth-century avant-garde announced was dead, bourgeois, oppressive, and ready for replacement. The question of this essay is: who told it that, why, and by what mechanisms was the replacement enforced?</p>`,
  src:"The Uglification of the West, Part I, §I"},
 
+// ============== NEW ARSENAL — from the newly-read essays ==============
+
+{slug:"a-beauvoir-tell", type:"lectio", f:"A", rare:1, title:"The Tell",
+ body:`<p>The most notorious of Beauvoir's statements does not appear in <em>The Second Sex</em> at all but in her 1975 interview with Betty Friedan. Asked whether women should have the choice to stay home and raise children, she answered:</p>
+<blockquote>"No woman should be authorized to stay at home to raise her children. Society should be totally different. Women should not have that choice, precisely because if there is such a choice, too many women will make that one."</blockquote>
+<p>This is not a statement about opportunities. It is a statement about coercion. It concedes, openly, that the woman's attraction to the maternal life is powerful enough that a free society will produce many mothers, and it concludes, without embarrassment, that the free society must therefore be replaced with an unfree one. The mask slips at exactly the right sentence. The whole edifice presumes that the sexed body's pull toward its own nature is so strong that the theory can be defended only by force.</p>`,
+ src:"The Long War on the Woman, Part Four"},
+
+{slug:"a-steering-wheel", type:"lectio", f:"A", rare:1, title:"The Steering Wheel",
+ body:`<p>If two people are driving the same car, and they each have a steering wheel, a brake pedal, and a gas pedal, what is going to happen? They are going to crash.</p>
+<p>Somebody has to be the steering wheel. The person who designed the car — in this case, God — did not designate one driver to oppress the other. He designated one driver because the function of the car requires it. The destination is the point.</p>
+<p>The husband is the steering wheel. The wife is in the passenger seat, fully present, fully active — noticing what the driver cannot notice, providing what the driver needs, raising what the driver missed. They are both indispensable. They are both directed toward the same destination. Without the order, they crash. With the order, they arrive.</p>`,
+ src:"The Demolition — Part Three, the master move"},
+
+{slug:"a-reimer-case", type:"lectio", f:"A", title:"The Case That Was in Every Textbook",
+ body:`<p>John Money's theory of psychosexual neutrality needed a test. The test arrived in 1966, in the person of a twenty-two-month-old Canadian boy named Bruce Reimer, whose penis had been destroyed in a botched circumcision. Money persuaded the boy's parents to raise Bruce as a girl — castrate him, give him a female name (Brenda), withhold the truth, and reinforce the female identity through the developmental years.</p>
+<p>Money published the case for twenty-five years as a triumph. Every psychology textbook reproduced it as proof of the plasticity of gender.</p>
+<p>It was false, and Money knew it. The child rejected the female identity from the start, was told the truth at fourteen, immediately reverted to his male identity, took the name David, and killed himself in 2004. His twin brother Brian, whose own deterioration Money never acknowledged, killed himself in 2002. The theory on which the modern transgender apparatus rests was founded on a case its own author knew to be a catastrophic falsification of the theory it was published to prove.</p>`,
+ src:"The Manufactured Sex, Part Three"},
+
+{slug:"a-the-table", type:"lectio", f:"A", rare:1, title:"The Table",
+ body:`<p>Twelve questions — the twelve questions that actually define what a political order is — and on every one of them, Marxism and fascism give the same answer.</p>
+<p><strong>The individual.</strong> No prior existence. Serves the collective. Both. <strong>The family.</strong> Bourgeois institution; children belong to the state. Both. <strong>The Church.</strong> Enemy. Both. <strong>The economy.</strong> State-controlled. Both. <strong>The party.</strong> One party; rivals banned. Both. <strong>Opponents.</strong> Imprisoned or killed. Both. <strong>Secret police.</strong> Yes. Both. <strong>The press.</strong> Instrument of the state. Both. <strong>The leader.</strong> Cult. Both. <strong>The goal.</strong> Transformation of human nature. Both. <strong>The method.</strong> Mass killing. Both.</p>
+<p>They are not opposites. They are the same answer to the same question, recited in two accents. The left-right line was drawn after 1945 by the surviving twin to launder its inheritance onto the conservative order that had been fascism's enemy and victim.</p>`,
+ src:"The Forbidden Symmetry, Part Two"},
+
+{slug:"a-cass-review", type:"lectio", f:"A", title:"The Verdict Already Rendered",
+ body:`<p>This is the development most Americans have not heard about, because the American press has been substantially silent on it.</p>
+<p>Between 2020 and 2024, the national health services of Sweden, Finland, Norway, and the United Kingdom commissioned systematic reviews of the entire evidence base for pediatric gender medicine. Every one of those reviews reached the same conclusion.</p>
+<p>The Cass Review, the largest ever conducted, found that the evidence for puberty blockers and cross-sex hormones in adolescents is of very low quality; that the claimed mental health benefits are not supported by the studies used to justify the interventions; that the practice had strayed far from the standards required of any other pediatric medicine. The NHS ended routine provision of puberty blockers to minors. Sweden, Finland, Norway followed.</p>
+<p>This is not a conservative finding. It is the verdict of the state medical establishments of the most progressive nations on earth.</p>`,
+ src:"The Manufactured Sex, Part Six · Cass Review (NHS England, April 2024)"},
+
+{slug:"a-twitter-files", type:"lectio", f:"A", title:"The System Documented",
+ body:`<p>The Twitter Files — released December 2022 and reported by Taibbi, Weiss, Shellenberger — demolished the claim that platform content moderation is neutral.</p>
+<p>Twitter maintained <em>visibility filtering</em> — the suppression of specific accounts' reach without notifying them — applied disproportionately to conservative accounts. The moderation of the Hunter Biden laptop story was executed within hours of the Post's publication, before any fact-checking.</p>
+<p>And this is the part that matters: the FBI had a standing relationship with Twitter's Trust and Safety team through which it regularly flagged accounts for action. A relationship that operated as a government speech censorship mechanism laundered through a private company's content moderation.</p>
+<p>The First Amendment prohibits the government from restricting speech. The FBI's practice of flagging accounts to Twitter for suppression circumvents that prohibition technically while defeating it practically. The government cannot silence a speaker. But it can tell a private company that the speaker is a threat, and the private company can silence them.</p>`,
+ src:"The Manufacturing of Reality, §IV"},
+
+{slug:"a-nobel-forty", type:"lectio", f:"A", title:"Forty Percent",
+ body:`<p>The Nobel Prize is awarded by a Swedish institution with no national interest in favoring the United States. Its consistent verdict, repeated across more than a century, is this:</p>
+<p>The United States has won approximately <strong>418 Nobel Prizes</strong> — roughly <strong>40 percent of every prize ever awarded</strong>. In economics specifically, 58 of 93 total laureates — 62 percent of every economics Nobel in history — were American.</p>
+<p>The nearest competitor (UK) has approximately 140 total, less than one-third. Germany has 115, less than 28 percent.</p>
+<p>This is a figure that should halt the "middle-tier" argument in its tracks. The country that ranks 34th on a math assessment for 15-year-olds also produces 40 percent of global Nobel laureates and houses 7 of the world's 10 most valuable companies. Any analytical framework that treats the former as the more informative metric has its priorities precisely inverted.</p>`,
+ src:"American Primacy, §III"},
+
+{slug:"a-sentent-chesterton", type:"sententia", f:"A", rare:1,
+ body:{latin:"Qui Deo non credunt, non nihil credunt — sed quodvis credere possunt.",
+       english:"When men choose not to believe in God, they do not thereafter believe in nothing — they then become capable of believing in anything."},
+ src:"G.K. Chesterton — the sociological prediction the 20th century confirmed at 100 million lives"},
+
+{slug:"a-subsidiarity", type:"lectio", f:"A", title:"Subsidiarity",
+ body:`<p>Against the centralizing engine, the Catholic social tradition sets a precise principle, given its sharpest statement by Pius XI in 1931:</p>
+<blockquote>It is a grave injustice to assign to a larger and higher association what a smaller and lower one can do for itself.</blockquote>
+<p>Do nothing at a higher level that can be done at a lower one. The family, the parish, the town, the guild, the province each has its own proper authority, and the state's role is to <em>help</em> these lesser communities flourish — <em>subsidium</em> means "help" — not to absorb their functions into itself.</p>
+<p>Subsidiarity is the exact inverse of Jouvenel's centralizing Power: it defends the intermediate bodies as the load-bearing walls of a free and human society. A healthy order is not one lone individual under one vast state, but a living hierarchy of smaller wholes, each doing what it is fitted to do. Centralization, by this light, is not efficiency. It is disorder — the hollowing-out of the body politic into a head and a heap.</p>`,
+ src:"The Theater and the Engine · Pius XI, Quadragesimo Anno §79 (1931)"},
+
+{slug:"a-daily-dress", type:"lectio", f:"A", title:"The Most Immediately Available Counter-Revolution",
+ body:`<p>Dressing well is the most immediately available, most personally accessible, most daily counter-revolutionary act available to any person. It does not require an institution. It does not require a movement. It does not require anyone else's cooperation.</p>
+<p>It requires only the decision, made every morning when you open your wardrobe, about what kind of person you are going to be in public — and what the people you encounter are worth to you.</p>
+<p>A jacket rather than a hoodie communicates that you are a person who takes the public world seriously. A tie rather than an open collar communicates that the occasion is worth a visible effort. The man who wears a jacket to Mass is making a statement about what the Eucharist is worth. The family that puts on their best clothes for a funeral is making a statement about what death and grief and the community of mourning are worth.</p>
+<p>Each is a small act. Cumulatively, they are the visible fabric of civilization — the "decent drapery of life" that Burke warned against tearing off. Put it back on.</p>`,
+ src:"The Unraveling, Part XI"},
+
 {slug:"a-poll-productive-shorts", type:"suffragium", f:"A",
  title:"Was it a program?",
  body:`<p>You've now read a run of my own writing. The thesis cuts across my essays: the collapse of beauty, the capture of institutions, the erosion of charity, the housing bubble — I argue these were not organic cultural evolutions but <em>deliberate programs</em>, documented in the perpetrators' own words. What's your read?</p>`,
