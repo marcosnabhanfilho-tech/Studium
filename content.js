@@ -85,7 +85,10 @@ const I18N = {
     ob_3_title: "The menu",
     ob_3_body: "Tap the circle in the top-left to open the menu. From there you can change wings, change the language, and see what you have kept.",
     ob_4_title: "The Rule",
-    ob_4_body: "The thin lime bar at the top of your screen fills as you read. Finish ten folios in a day and the Rule is kept. One honest day of study at a time."
+    ob_4_body: "The thin lime bar at the top of your screen fills as you read. Finish ten folios in a day and the Rule is kept. One honest day of study at a time.",
+    continuation: "(continues →)",
+    swipe_right_hint: "swipe for more →",
+    swipe_up_hint: "↑ next folio"
   },
   pt: {
     appTitle: "Studium Generale",
@@ -157,7 +160,10 @@ const I18N = {
     ob_3_title: "O menu",
     ob_3_body: "Toque no círculo no canto superior esquerdo para abrir o menu. Dali você muda de ala, muda o idioma, e vê o que já guardou.",
     ob_4_title: "A Regra",
-    ob_4_body: "A barra fina verde-limão no topo da tela se enche à medida que você lê. Termine dez fólios num dia e a Regra está cumprida. Um dia honesto de estudo por vez."
+    ob_4_body: "A barra fina verde-limão no topo da tela se enche à medida que você lê. Termine dez fólios num dia e a Regra está cumprida. Um dia honesto de estudo por vez.",
+    continuation: "(continua →)",
+    swipe_right_hint: "deslize para o lado →",
+    swipe_up_hint: "↑ próximo fólio"
   }
 };
 
