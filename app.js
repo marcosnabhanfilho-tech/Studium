@@ -788,13 +788,14 @@ function recordDailyChoice(filter){
   try{ localStorage.setItem(DAILY_KEY, JSON.stringify({day:todayKey(), filter})); }catch(e){}
 }
 
-function initDailyChooser(){
+function initDailyChooser(onDone){
   const modal = document.getElementById("daily-modal");
-  if(!modal) return;
+  if(!modal){ onDone && onDone(); return; }
 
   const prior = dailyChoiceToday();
   if(prior){
     if(prior !== state.filter) setFilter(prior);
+    onDone && onDone();
     return;
   }
 
@@ -823,13 +824,77 @@ function initDailyChooser(){
       const name = f === "ALL" ? t("omnia","Omnia") : FAC[f].name;
       toast(t("today_label","Today") + ": " + name);
     }, 300);
+    onDone && onDone();
   });
 
   document.getElementById("daily-skip").onclick = ()=>{
     recordDailyChoice("ALL");
     modal.classList.remove("open");
+    onDone && onDone();
   };
 
+  modal.classList.add("open");
+}
+
+// ============== ONBOARDING (first launch only) ==============
+// Four coachmarks shown once, ever, to teach the four core actions:
+// 1) swipe up for next, 2) double-tap to keep, 3) menu, 4) the Rule bar.
+// Dismissal recorded in localStorage so it never shows again.
+const OB_KEY = "studium_onboarded";
+function alreadyOnboarded(){
+  try{ return !!localStorage.getItem(OB_KEY); }catch(e){ return false; }
+}
+function markOnboarded(){
+  try{ localStorage.setItem(OB_KEY, "1"); }catch(e){}
+}
+
+const OB_STEPS = [
+  { key:"1", visual:`<div class="ob-arrow"></div>` },
+  { key:"2", visual:`<div class="ob-tap">✦</div>` },
+  { key:"3", visual:`<div class="ob-menu">☰</div>` },
+  { key:"4", visual:`<div class="ob-rule"></div>` }
+];
+
+function initOnboarding(onDone){
+  const modal = document.getElementById("onboarding");
+  if(!modal){ onDone && onDone(); return; }
+  if(alreadyOnboarded()){ onDone && onDone(); return; }
+
+  let step = 0;
+  const titleEl = document.getElementById("ob-title");
+  const bodyEl = document.getElementById("ob-body");
+  const visualEl = document.getElementById("ob-visual");
+  const dotsEl = document.getElementById("ob-dots");
+  const nextBtn = document.getElementById("ob-next");
+  const skipBtn = document.getElementById("ob-skip");
+
+  function render(){
+    const s = OB_STEPS[step];
+    visualEl.innerHTML = s.visual;
+    titleEl.textContent = t("ob_"+s.key+"_title", "");
+    bodyEl.textContent = t("ob_"+s.key+"_body", "");
+    dotsEl.innerHTML = OB_STEPS.map((_,i) =>
+      `<span class="${i===step?'on':''}"></span>`).join("");
+    const isLast = step === OB_STEPS.length - 1;
+    nextBtn.textContent = isLast ? t("ob_begin","Begin") : t("ob_next","Next");
+    skipBtn.textContent = isLast ? "" : t("ob_skip","Skip");
+    skipBtn.style.display = isLast ? "none" : "block";
+  }
+  function finish(){
+    markOnboarded();
+    modal.classList.remove("open");
+    sndSeal();
+    haptic(14);
+    onDone && onDone();
+  }
+  nextBtn.onclick = ()=>{
+    haptic(8);
+    if(step === OB_STEPS.length - 1){ finish(); }
+    else { step++; render(); }
+  };
+  skipBtn.onclick = finish;
+
+  render();
   modal.classList.add("open");
 }
 
@@ -1188,13 +1253,13 @@ async function init(){
   applyI18n();
   renderMenuLang();
 
-  // Flow: language first (one-time), then daily topic.
-  // CRITICAL: if the user picks a language in the chooser, the 8 slides already
-  // rendered are in the old language. Rebuild the reel so the whole app is in one language.
+  // Launch flow: language → daily topic → onboarding (first time only).
   initLanguageChooser((changed)=>{
-    renderChips();            // refresh with translated omnia label
-    if(changed) rebuildReel(); // user picked in the modal; existing slides are stale
-    initDailyChooser();
+    renderChips();
+    if(changed) rebuildReel();
+    initDailyChooser(()=>{
+      initOnboarding(); // shows only on first ever launch
+    });
   });
 
   // Drawer language picker — user can switch mid-session
