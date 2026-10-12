@@ -2,6 +2,7 @@
 // 7 faculties, ~90 folios, mix of lectio/opus/visio/quaestio/exercitium/suffragium/sententia
 
 const FAC = {
+  A: {name:"Arsenal", color:"#E6C178"},
   T: {name:"Theologia", color:"#C8515F"},
   F: {name:"Philosophia", color:"#B08D57"},
   O: {name:"Oeconomia", color:"#8FA68E"},
@@ -540,6 +541,210 @@ const FOLIOS = [
 {slug:"video-pints-name", type:"visio", f:"T", title:"How Pints with Aquinas Got Its Name",
  body:"Matt Fradd tells the origin story in sixty seconds. Why pints, why Aquinas.",
  ytId:YT.pints_name.id, ytShort:true, src:"Matt Fradd — Pints With Aquinas"},
+// =============== ARSENAL — Marcos's own writing ===============
+// Verbatim passages from his essays. His voice, lightly framed.
+
+{slug:"a-restless-heart-aim", type:"lectio", f:"A", rare:1, title:"The Right Standard",
+ body:`<blockquote>The aim is not to make the argument unbeatable, but to make the cost of resisting it explicit, large, and unavoidable.</blockquote>
+<p>From the preface to the Argument from Derivative Existence. The right standard for metaphysics at this level is not <em>no rational denial is possible</em>. It is: <em>the rational denier must pay a specific metaphysical price, and the price must be legible.</em></p>`,
+ src:"The Argument from Derivative Existence, preface"},
+
+{slug:"a-borrowing-chain", type:"lectio", f:"A", title:"A Chain Without a Lender",
+ body:`<blockquote>A chain of pure borrowing is a chain with nothing to be borrowed, which is to say nothing is in fact lent.</blockquote>
+<p>The foundationalist intuition compressed into one line. An infinite regress of derivative beings does not escape the question; it just restages it. Each link borrows from the next. If no link is unborrowed, there is no original lender. Mutual support among the unsupported is not support.</p>`,
+ src:"The Argument from Derivative Existence, §5.3"},
+
+{slug:"a-the-cost-of-refusal", type:"lectio", f:"A", title:"To the Resister",
+ body:`<p>If you reject this conclusion, you are not unintelligible, but you are committed. You hold one or more of: that contingency is metaphysically thinner than the analysis suggests; that derivative existence does not require a non-derivative source; that grounding chains can be self-sustaining without a foundation; that an impersonal foundation can ground contingent reality without either necessitating it or operating mind-like; or that explanatory demand simply has no purchase at the foundation.</p>
+<p><em>Each is a position. Each carries a metaphysical price. The argument does not force assent. It does fix the cost of refusal. That is what the argument can give, and what it should aim to give. The rest is not philosophy.</em></p>`,
+ src:"The Argument from Derivative Existence, §9"},
+
+{slug:"a-genealogy-of-institutions", type:"lectio", f:"A", rare:1, title:"The Genealogy You Were Taught to Forget",
+ body:`<p>The university in which the modern skeptic sits to dismiss the Middle Ages is itself a medieval invention — born in Bologna and Paris, not in Athens or ancient Alexandria. The hospital in which the modern patient receives care traces its institutional lineage to the <em>xenodocheia</em> of the fourth-century Church and to the nursing sisters of the Hôtel-Dieu.</p>
+<p>The scientific method that the modern scientist employs was forged in the disputations of medieval Oxford and Paris by Franciscan friars and Dominican bishops. The language of universal human rights that the modern political theorist deploys has its deepest conceptual roots in the doctrine of <em>imago Dei</em>.</p>
+<p>These are not matters of sentiment. They are matters of historical fact.</p>`,
+ src:"The Civilizational Achievement of Medieval Christendom, §X"},
+
+{slug:"a-julian-admits", type:"lectio", f:"A", title:"What a Pagan Emperor Admitted",
+ body:`<p>Julian the Apostate reigned 361–363 AD and spent that reign trying to roll back Christianization. In a letter to his pagan high priest in Galatia, he wrote:</p>
+<blockquote>It is disgraceful that, when no Jew ever has to beg, and the impious Galilaeans support not only their own poor but ours as well, all men see that our people lack aid from us.</blockquote>
+<p>The most hostile possible witness was forced to admit it: Christian charitable organization had no pagan equivalent. His pagan counterpart institutions failed. The charitable infrastructure of medieval Christendom did not emerge from nowhere; it grew from this root.</p>`,
+ src:"The Civilizational Achievement of Medieval Christendom, §II"},
+
+{slug:"a-oresme-bishop", type:"lectio", f:"A", title:"The Bishop Who Warned Against God-of-the-Gaps",
+ body:`<p>Nicole Oresme, a 14th-century Roman Catholic bishop and one of the most original scientific minds of any century, developed arguments for the Earth's rotation long before Copernicus. On how to do natural philosophy, he wrote:</p>
+<blockquote>There is no reason to take recourse to the heavens, the last refuge of the weak, or demons, or to our glorious God as if He would produce these effects directly.</blockquote>
+<p>A medieval bishop explicitly warning against invoking God as an explanatory shortcut in natural philosophy. The Enlightenment did not create rational inquiry. It inherited it.</p>`,
+ src:"The Civilizational Achievement of Medieval Christendom, §V"},
+
+{slug:"a-mean-speed-theorem", type:"lectio", f:"A", title:"What Galileo Did Not Discover",
+ body:`<p>Clifford Truesdell, one of the most rigorous historians of mechanics, was unequivocal:</p>
+<blockquote>The now published sources prove to us, beyond contention, that the main kinematical properties of uniformly accelerated motions, still attributed to Galileo by the physics texts, were discovered and proved by scholars of Merton College.</blockquote>
+<p>Galileo's law of falling bodies — one of the foundational achievements of the Scientific Revolution — had been demonstrated three centuries earlier in a medieval Oxford college by scholars whose names most educated people have never encountered. Thomas Bradwardine. William Heytesbury. Richard Swineshead. Say their names.</p>`,
+ src:"The Civilizational Achievement of Medieval Christendom, §V"},
+
+{slug:"a-reason-central", type:"lectio", f:"A", title:"An Unprecedented Institution",
+ body:`<p>Edward Grant's assessment of the medieval university — the self-governing <em>universitas magistrorum et scholarium</em>, the invention of Bologna and Paris in the twelfth century — carries the full weight of the historical record:</p>
+<blockquote>In all the history of human civilization, reason had never been accorded such a central role, one that involved so many people over such a wide area for such an extended period.</blockquote>
+<p>Plato's Academy was a philosophical school around one master. Alexandria was a research library. The madrasa was religious. None had the corporate autonomy, standardized curricula, degree system, and license to teach that defined the university. The modern world has never seen fit to abandon the form.</p>`,
+ src:"The Civilizational Achievement of Medieval Christendom, §IV"},
+
+{slug:"a-fasting", type:"lectio", f:"A", title:"The Social Class of the Saints",
+ body:`<p>The modern caricature imagines medieval monks as the lazy poor finding comfort in the cloister. Research into the social origins of medieval ascetics demonstrates the opposite: they were disproportionately drawn from the <em>upper classes</em>. The vow of poverty was embraced by people who had the option of wealth.</p>
+<blockquote>Fasting seems not to appeal to people who have often been hungry.</blockquote>
+<p>Voluntary poverty is a serious act when the alternative is a manor house. It is a radical one. The embrace of it by the medieval elite is not a sign of ignorance. It is a sign that something was being taken seriously that we no longer take seriously at all.</p>`,
+ src:"The Civilizational Achievement of Medieval Christendom, §VII"},
+
+{slug:"a-picasso-weapon", type:"lectio", f:"A", rare:1, title:"Picasso Was Transparent",
+ body:`<p>October 29, 1944. Four days after joining the French Communist Party, Picasso publishes his statement on it in <em>L'Humanité</em> and <em>New Masses</em>:</p>
+<blockquote>I am proud of having said by means of my drawings and my colors, since my first attempts at expression, that I have always considered painting not as an ornamental art, not as a pleasure for the eyes, nor as a passionate or rationalizing emotion, but as an offensive and defensive weapon against the enemy.</blockquote>
+<p>He is saying, in plain language, that he has always considered painting a weapon. Against the enemy. The enemy, in context, is bourgeois Christian civilization — the civilization that produced the classical tradition he had spent his career dismantling. We are not inferring his intentions. We are reading his announcement.</p>`,
+ src:"The Uglification of the West, Part I, §IV"},
+
+{slug:"a-picasso-trocadero", type:"lectio", f:"A", title:"The Trocadéro Confession",
+ body:`<p>Picasso on his 1907 encounter with African masks that shaped Les Demoiselles d'Avignon and all of Cubism:</p>
+<blockquote>The masks weren't just like any other pieces of sculpture. Not at all. They were magic things… intercessors against everything — against unknown, threatening spirits. I always looked at fetishes. I understood; I too am against everything. I too believe that everything is unknown, that everything is an enemy! Everything! They were weapons.</blockquote>
+<p>His art is a weapon against the unknown and threatening forces of the world. Not in the service of beauty. Not in the service of truth. In the service of spiritual independence from forces he conceives as hostile. This is not the vocation of the Western artist. This is the vocation of the shaman.</p>`,
+ src:"The Uglification of the West, Part I, §IV"},
+
+{slug:"a-adorno-the-false", type:"sententia", f:"A",
+ body:{latin:"Das Ganze ist das Unwahre.", english:"The whole is the false. — Theodor Adorno"}},
+
+{slug:"a-komar-melamid", type:"lectio", f:"A", title:"What People Actually Want",
+ body:`<p>In 1993–94 the artists Komar and Melamid used professional polling firms in fourteen countries — America, Russia, China, France, Kenya, Iceland, Turkey, Portugal, Ghana — to ask what people wanted in a painting.</p>
+<p>Across every culture surveyed, the answer was <em>the same</em>: a landscape with water, in natural colors, with a small human group and animals, representational, in a realist tradition. They painted what the data said. The results looked like 19th-century Hudson River School paintings.</p>
+<p>They also painted the "most unwanted" paintings — the preferences of the smallest minority. The result in every country looked like what hangs in the contemporary art galleries of New York, Paris, and London. The gap between what humans find beautiful and what institutional art produces is not aesthetic philistinism. It is one of the most honest measurements of elite capture ever conducted.</p>`,
+ src:"The Uglification of the West, Part I, §X"},
+
+{slug:"a-scruton-not-tired", type:"lectio", f:"A", title:"Scruton on What Happened",
+ body:`<blockquote>The modernist revolution in the arts was not a response to a public that had grown tired of beauty. It was a revolution imposed on a public by an avant-garde that had decided, for ideological reasons, that beauty was either impossible or undesirable.</blockquote>
+<p>You are not wrong to find most contemporary architecture ugly. You are not wrong to be bored by atonal music. You are not wrong to find the gallery incomprehensible. These are not failures of your education. They are failures of their programs. The institution calling your taste reactionary is the party with something to defend.</p>`,
+ src:"Roger Scruton; cited in The Uglification of the West, Part I, §X"},
+
+{slug:"a-cia-frankfurt-converge", type:"lectio", f:"A", title:"The CIA and the Frankfurt School Were Promoting the Same Art",
+ body:`<p>The CIA, through the Congress for Cultural Freedom (1950–1967), covertly funded Abstract Expressionism as a Cold War weapon: proof that American freedom produced richer culture than Soviet Socialist Realism.</p>
+<p>The Frankfurt School — Adorno, Benjamin, Marcuse — had been promoting the same aesthetic program since the 1930s, for the opposite ideological reason: beautiful traditional art is false consciousness; the destruction of beauty is revolutionary praxis.</p>
+<p>The American intelligence establishment and the Marxist cultural theorists, from opposite ends of the political spectrum, with incompatible goals, converged on the <em>same</em> art. The practical result was unified institutional pressure on Western culture in a direction neither the public nor any democratic institution had chosen.</p>`,
+ src:"The Uglification of the West, Part I, §VI"},
+
+{slug:"a-pruitt-igoe", type:"lectio", f:"A", title:"The Death of Modern Architecture",
+ body:`<p>Pruitt-Igoe was Le Corbusier's doctrine made concrete, in St. Louis, in 1954–56. Thirty-three eleven-story towers built on his tower-in-the-park model to house the Black working poor. Within a decade it had become uninhabitable — a sink of crime, vandalism, and concentrated misery.</p>
+<p>The housing authority dynamited it in three phases between 1972 and 1976. The architectural critic Charles Jencks declared the moment of its demolition — <em>July 15, 1972, 3:32 PM</em> — "the death of modern architecture."</p>
+<p>He was too optimistic. The theory that killed Pruitt-Igoe is still taught in architecture schools. Its graduates are still building its successors. The towers are still being funded. The research on what tower blocks do to the human spirit is extensive, consistent, and ignored.</p>`,
+ src:"The Uglification of the West, Part I, §VIII"},
+
+{slug:"a-shiller-flat-100-years", type:"lectio", f:"A", rare:1, title:"The Chart That Should End the Argument",
+ body:`<p>When Robert Shiller prepared the 2005 edition of <em>Irrational Exuberance</em>, he discovered that no long-run home price series existed <em>in any country.</em> He built one with Karl Case using repeat-sales methodology. The result:</p>
+<p>Real (inflation-adjusted) U.S. home prices showed <em>virtually no increase from 1890 to the late 1990s.</em> A hundred and ten years of flat. Then, beginning around 1997, prices climbed unprecedentedly, peaked in 2006, and collapsed into the global financial crisis.</p>
+<p>Most people assume homes appreciate as a matter of natural law. The data says otherwise: building costs are flat, land is a small component of most home prices, and structures depreciate. There is no fundamental reason for sustained real appreciation. We built a global crisis on a belief that was false by a century of its own measurement.</p>`,
+ src:"When Markets Aren't Efficient, §3.1"},
+
+{slug:"a-emh-not-useless", type:"lectio", f:"A", title:"EMH: Right Idea, Wrong Deployment",
+ body:`<blockquote>The problem is not that EMH is useless. As a benchmark and as a description of short-run information processing in liquid markets, it has real explanatory power. The problem is what happens when policy is built on the assumption that EMH holds in markets where it demonstrably does not.</blockquote>
+<p>The deregulatory consensus of 1980–2007 was built largely on the assumption that financial markets were efficient enough to be left alone. The housing market behaved nothing like EMH predicts, and the 2008 crisis erased an estimated <em>$8 trillion</em> in U.S. household wealth. Treating a model as descriptive rather than aspirational has real economic costs.</p>`,
+ src:"When Markets Aren't Efficient, §2"},
+
+{slug:"a-housing-structural-failures", type:"lectio", f:"A", title:"Why Housing Fails EMH, Structurally",
+ body:`<p>Housing is uniquely vulnerable to behavioral failure for structural reasons:</p>
+<p><strong>No short selling.</strong> In stocks, skeptics can short overvalued securities and push prices toward fundamentals. In housing, no such mechanism exists. Pessimists can only refrain from buying.</p>
+<p><strong>Infrequent transactions.</strong> Most households buy a home a few times in their lives. They cannot develop expertise through repetition.</p>
+<p><strong>No long-term data in public discourse.</strong> Newspapers do not publish century-long price series. Buyers see recent appreciation and assume it is normal.</p>
+<p>Combine these with the universal cognitive biases — wishful thinking, extrapolation, narrative contagion — and you get precisely the kind of bubble-and-crash cycle EMH says cannot happen.</p>`,
+ src:"When Markets Aren't Efficient, §4"},
+
+{slug:"a-shiller-humans-big-mistakes", type:"sententia", f:"A",
+ body:{latin:"Humans make big mistakes.", english:"Millions of people are all thinking the same thing. — Robert Shiller"}},
+
+{slug:"a-the-right-standard-meta", type:"lectio", f:"A", title:"The Right Standard — for any argument",
+ body:`<p>What should you aim for, when making an argument you expect serious opponents to attack?</p>
+<p>Not that no reasonable person can deny the conclusion. Few interesting arguments achieve that standard. Not that your rhetoric is irresistible. Rhetoric is irresistible only to the already-persuaded.</p>
+<p>Aim for this: that the person who denies the conclusion must, by denying it, accept a specific, identifiable, and substantial metaphysical, empirical, or practical commitment. Convert the refusal from a free move into a priced one. Make the ledger visible.</p>
+<p>By that standard, most of what passes for philosophical rebuttal is actually just the refusal to be billed.</p>`,
+ src:"after the preface and §8 of The Argument from Derivative Existence"},
+
+{slug:"a-honest-remainder", type:"lectio", f:"A", title:"The Honest Remainder",
+ body:`<p>A rhetorical habit worth stealing: at the end of each defense, write out the <em>honest remainder</em> — the price your position still owes, the reasonable objection you have not fully answered, the move the opponent still has.</p>
+<p>Three things happen. (1) You stop overstating. (2) Smart opponents stop looking for the hidden weakness because you've already pointed to it. (3) You keep the respect of readers who were not going to be fooled anyway.</p>
+<p>The confidence-language that fills most polemic — "fails," "decisive," "the answer is" — buys apparent strength at the cost of real credibility. State what the argument gives. State what it does not give. Then stop.</p>`,
+ src:"method, after The Argument from Derivative Existence"},
+
+{slug:"a-every-tradition-great", type:"lectio", f:"A", title:"What Was Lost — The List",
+ body:`<p>Any account of the Western artistic tradition that does not pause to name what it produced treats it as an abstraction. The list is partial, but the magnitude it conveys is not negotiable:</p>
+<p>The Parthenon. The Pantheon's unreinforced concrete dome. The mosaics of Ravenna. The rose window of Chartres. Giotto's Arena Chapel. Brunelleschi's dome. Donatello's David. Leonardo's Last Supper. Michelangelo's Pietà and Sistine ceiling. Raphael's School of Athens. Palestrina's Missa Papae Marcelli. Shakespeare's complete works. Monteverdi's Orfeo. Vermeer's Girl with a Pearl Earring. Bach's Well-Tempered Clavier and Mass in B Minor. Mozart's Don Giovanni and Requiem. Beethoven's Ninth. Schubert's Winterreise. Brahms's symphonies. Constable's Hay Wain. Turner's late seascapes.</p>
+<p>This is what the twentieth-century avant-garde announced was dead, bourgeois, oppressive, and ready for replacement. The question of this essay is: who told it that, why, and by what mechanisms was the replacement enforced?</p>`,
+ src:"The Uglification of the West, Part I, §I"},
+
+{slug:"a-poll-productive-shorts", type:"suffragium", f:"A",
+ title:"Was it a program?",
+ body:`<p>You've now read a run of my own writing. The thesis cuts across my essays: the collapse of beauty, the capture of institutions, the erosion of charity, the housing bubble — I argue these were not organic cultural evolutions but <em>deliberate programs</em>, documented in the perpetrators' own words. What's your read?</p>`,
+ opts:["Yes, almost all of it. The programs were explicit and I just hadn't been shown.","Partly. Some of what you call program is just drift, bias, or market failure.","No. You're imposing agency on diffuse processes."]},
+
+// =============== MORE NEGOTIUM — Finance / Operators / Decision ===============
+
+{slug:"n-munger-latticework", type:"lectio", f:"N", title:"The Latticework",
+ body:`<p>Munger's actual investing method, which he describes more than his famous one-liners: build a <em>latticework</em> of mental models drawn from every major discipline, and hang the facts of the business on it.</p>
+<p>Not just finance. <strong>Psychology</strong> (incentive-caused bias, social proof, authority). <strong>Biology</strong> (natural selection as competitive dynamic). <strong>Thermodynamics</strong> (entropy, systems). <strong>Mathematics</strong> (compounding, permutations, probability). <strong>Microeconomics</strong> (scale, moats).</p>
+<p>Most investors fail not because they lack information but because they have the same three models the rest of the market has. The lattice is the differentiator. Build it in your twenties.</p>`,
+ src:"after Charlie Munger, Poor Charlie's Almanack"},
+
+{slug:"n-porter-five-forces", type:"lectio", f:"N", title:"Porter's Five Forces, Compressed",
+ body:`<p>Michael Porter's one great idea: an industry's long-run profitability is set by five forces, not by how fast it's growing.</p>
+<p><strong>Rivalry</strong> among existing competitors. <strong>New entrants</strong> able to enter. <strong>Substitutes</strong> buyers can switch to. <strong>Buyer power</strong> (concentration, switching costs). <strong>Supplier power</strong> (critical inputs, few suppliers).</p>
+<p>When all five are weak — think Google in search, Intuit in SMB tax, Visa in payments — margins are extraordinary and stable. When any one is strong, margins collapse to the cost of capital. Growth is irrelevant; airlines grew for fifty years with cumulative losses.</p>
+<p>Before investing, before founding, ask the five. Then ask which one you'd most need to be wrong about.</p>`,
+ src:"after Michael Porter, Competitive Strategy (1980)"},
+
+{slug:"n-q-moat-type", type:"quaestio", f:"N",
+ title:"What Kind of Moat?",
+ body:`<p>A company has 40% gross margins, grows 15% annually, and has held market share for a decade. Buffett asks: <em>what kind of moat?</em> If you can't name the specific moat type, you don't know what you own.</p>`,
+ opts:["Brand loyalty","Network effects","Switching costs","Economies of scale","You should be able to say which — and if you can't, you don't actually understand the business"],
+ correct:4,
+ reveal:`<p>The point of the question isn't to pick one. It's that <em>a durable 40% gross margin with 15% growth is a textbook case of a moat</em>, and if you're invested without knowing which structural force protects those margins, you can't tell when it's eroding.</p>
+<p>The five main moat types: <strong>intangibles</strong> (brand, patents, regulatory licenses); <strong>switching costs</strong> (hard or expensive to leave); <strong>network effects</strong> (value scales with users); <strong>cost advantage</strong> (structural, not temporary); <strong>efficient scale</strong> (market only supports one or two players). Name the moat before you buy the stock.</p>`,
+ src:"Buffett + Pat Dorsey, The Little Book That Builds Wealth"},
+
+{slug:"n-sowell-trade-offs", type:"lectio", f:"N", title:"There Are No Solutions",
+ body:`<blockquote>There are no solutions. There are only trade-offs.</blockquote>
+<p>Sowell's compressed economics in a sentence. Any policy, any strategic choice, any resource allocation — framed as a <em>solution</em> instead of a trade-off, hides its costs. The costs don't disappear; they migrate.</p>
+<p>Minimum wage laws don't solve low wages; they trade higher pay for some against unemployment for others. Rent control doesn't solve housing; it trades below-market rent for existing tenants against housing scarcity for everyone else. Diversification doesn't solve risk; it trades upside for downside protection.</p>
+<p>The right question is never "does it work?" It's "what does it cost, and who pays?"</p>`,
+ src:"after Thomas Sowell"},
+
+{slug:"n-kelly-criterion", type:"lectio", f:"N", title:"How Much to Bet",
+ body:`<p>You have a positive-expected-value bet. How much of your capital should you put on it?</p>
+<p>The Kelly criterion gives the mathematically optimal fraction: <strong>f = (bp − q) / b</strong>, where b is the net odds, p is probability of winning, q is probability of losing. For a 2:1 payoff bet at 60% probability, you bet 40% of bankroll.</p>
+<p>Nobody except a few professional gamblers and the occasional hedge fund actually bets full Kelly. Why? Because Kelly maximizes <em>geometric growth</em> given <em>known</em> probabilities. Your probability estimates have errors. Full Kelly is wildly volatile. Most practitioners bet <em>half-Kelly</em> or <em>quarter-Kelly</em> — accepting slower growth for much lower variance and robustness to being wrong about p.</p>
+<p>Buffett sizes positions this way, roughly. He has never said so. He doesn't need to.</p>`,
+ src:"John Kelly (1956); applied by Thorp, Buffett, et al."},
+
+{slug:"n-q-base-rates", type:"quaestio", f:"N",
+ title:"Mammograms",
+ body:`<p>Classic base-rate problem. A disease affects 1% of women over 40. A mammogram has an 80% true positive rate (catches 80% of actual cases) and a 10% false positive rate. A woman tests positive. What's the probability she actually has the disease?</p>`,
+ opts:["80%","Around 50%","Around 7%"],
+ correct:2,
+ reveal:`<p>Bayes: of 1,000 women, 10 have it. Of those 10, 8 test positive (true positives). Of the 990 who don't, 99 test positive (false positives). So 8 of 107 positive tests reflect real disease. <strong>About 7%.</strong></p>
+<p>Doctors asked this question routinely answer 80%. So do investors evaluating analyst recommendations, VC pitches, and startup pivots. Base rate neglect is the single most reliable analytical error. The fix: write down the base rate before you touch the evidence.</p>`,
+ src:"Kahneman + Tversky; see also Gigerenzer, Reckoning With Risk"},
+
+{slug:"n-drucker-useless", type:"sententia", f:"N",
+ body:{latin:"Nihil tam inutile quam efficaciter facere quod omnino facere non debet.", english:"There is nothing so useless as doing efficiently that which should not be done at all. — Peter Drucker"}},
+
+{slug:"n-thiel-what-truth", type:"suffragium", f:"N",
+ title:"Thiel's Contrarian Question",
+ body:`<p>Peter Thiel's interview question: <em>what important truth do very few people agree with you on?</em> Most answers are not actually contrarian; they're mainstream positions dressed as transgressions. A real answer should feel uncomfortable to say. What's yours?</p>`,
+ opts:["I have a real one and it costs me socially to hold it","I have one but I'm not sure I'd stake career on it","I thought I had one but it turns out most people secretly agree"]},
+
+{slug:"n-christensen-100-percent", type:"lectio", f:"N", title:"100% Is Easier Than 98%",
+ body:`<p>Clayton Christensen, in one of his most-cited passages: <strong>100% of the time is easier than 98% of the time.</strong></p>
+<p>If you have decided never to lie on expense reports, you don't deliberate when the gray-area situation arises. If you're at 98% — "almost always" — every single situation requires fresh deliberation, with the full weight of the specific temptation. The marginal cost of each exception feels small. The cumulative cost is a character.</p>
+<p>Rules you keep absolutely are not rigidity. They are the opposite: they free the mind from endless re-litigation of what you already decided. Pick the few that matter and never bend them. On the rest, flex.</p>`,
+ src:"Clayton Christensen, How Will You Measure Your Life?"},
+
+{slug:"n-taleb-via-negativa", type:"lectio", f:"N", title:"Via Negativa",
+ body:`<p>Taleb's practical maxim, borrowed from theology: <em>improve by removal</em>, not by addition.</p>
+<p>Health: the gains from <em>stopping</em> smoking, sugar, late nights are larger and more reliable than any supplement you can add. Investing: avoiding ruin, overvalued fads, and leverage matters more than finding the next winner. Writing: cutting bad sentences improves the piece more than adding good ones.</p>
+<p>Addition requires luck (did you add the right thing?). Removal is deterministic (the harm is gone). In a world of uncertainty, the asymmetry favors subtraction. Build negative lists — things you will not do, buy, read, agree to — before positive ones.</p>`,
+ src:"Nassim Taleb, Antifragile"},
 
 ];
 
