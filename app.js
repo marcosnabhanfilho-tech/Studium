@@ -157,8 +157,17 @@ function shuffleFair(folios){
   }
   return groups.flat();
 }
+function hasLangContent(f, lang){
+  if(lang !== "pt") return true; // English always available
+  // In PT mode, a folio only counts if it has Portuguese content.
+  return !!(f.body_pt || f.pairs_pt || f.items_pt);
+}
 function pool(){
-  return state.filter==="ALL" ? POOL : POOL.filter(f=>f.f===state.filter);
+  let base = state.filter==="ALL" ? POOL : POOL.filter(f=>f.f===state.filter);
+  // CRITICAL: in Portuguese mode, strictly filter to folios that have PT translations
+  // so the user never sees a mix of PT and EN. User explicitly asked for this.
+  if(state.lang === "pt") base = base.filter(f => hasLangContent(f, "pt"));
+  return base;
 }
 function nextFolio(){
   if(ptr >= order.length){ order = shuffleFair(pool()); ptr = 0; }
@@ -173,18 +182,26 @@ function seenInFaculty(code){
   let n = 0; POOL.forEach(f=>{ if(f.f===code && state.seen[f.slug]) n++; }); return n;
 }
 const WING_ORDER = ["A","I","T","F","O","N","P","C","H"];
+// Return the count of folios available in the current language for a faculty.
+function facTotalForLang(code){
+  return POOL.filter(f => f.f === code && hasLangContent(f, state.lang)).length;
+}
+function poolTotalForLang(){
+  return POOL.filter(f => hasLangContent(f, state.lang)).length;
+}
 function renderChips(){
-  // Render into the DRAWER's fac grid, since the topbar chips are gone.
   const grid = document.getElementById("menu-fac-grid");
   if(!grid) return;
   const totalSeen = Object.keys(state.seen).filter(k=>!k.includes(":")&&!k.startsWith("_")).length;
   const omniaLabel = t("omnia", "Omnia · all wings");
   const seenLabel = t("seen", "seen");
-  let html = `<button class="menu-fac ${state.filter==="ALL"?"active":""}" data-f="ALL" style="flex:1 1 100%"><span class="mfn">${esc(omniaLabel)}</span><span class="mfp">${totalSeen} / ${POOL.length} ${esc(seenLabel)}</span></button>`;
+  const poolTotal = poolTotalForLang();
+  let html = `<button class="menu-fac ${state.filter==="ALL"?"active":""}" data-f="ALL" style="flex:1 1 100%"><span class="mfn">${esc(omniaLabel)}</span><span class="mfp">${totalSeen} / ${poolTotal} ${esc(seenLabel)}</span></button>`;
   for(const k of WING_ORDER){
     if(!FAC[k]) continue;
-    const s = seenInFaculty(k), tn = FACTOTAL[k] || 0;
-    if(tn === 0) continue;
+    const tn = facTotalForLang(k);
+    if(tn === 0) continue; // Hide wings with no folios in current language
+    const s = seenInFaculty(k);
     const complete = s>=tn;
     html += `<button class="menu-fac ${state.filter===k?"active":""} ${complete?"complete":""}" data-f="${k}"><span class="mfn">${esc(FAC[k].name)}</span><span class="mfp">${s} / ${tn}${complete?" ✦":""}</span></button>`;
   }
@@ -193,11 +210,17 @@ function renderChips(){
 function setFilter(code){
   if(state.filter === code) return;
   state.filter = code;
+  rebuildReel();
+  renderChips();
+}
+// Full reel rebuild: wipe DOM, reshuffle, re-render from the top in the current language.
+// Called when the filter changes OR when the language changes mid-session.
+function rebuildReel(){
   const reel = $("#reel");
+  if(!reel) return;
   reel.innerHTML = "";
   seq = 0; ptr = 0; order = shuffleFair(pool());
-  appendSlides(6);
-  renderChips();
+  appendSlides(8);
   reel.scrollTop = 0;
 }
 
@@ -704,8 +727,9 @@ function renderWings(){
   let html = "";
   for(const k of WING_ORDER){
     if(!FAC[k]) continue;
-    const s = seenInFaculty(k), tn = FACTOTAL[k] || 0;
+    const tn = facTotalForLang(k);
     if(tn === 0) continue;
+    const s = seenInFaculty(k);
     const ratio = tn ? s/tn : 0;
     const deg = DEGREES[Math.min(Math.floor(ratio * DEGREES.length), DEGREES.length-1)];
     html += `<div class="wi">
@@ -776,7 +800,11 @@ function initDailyChooser(){
 
   const grid = document.getElementById("daily-grid");
   const order = ["ALL","A","I","T","F","O","N","P","C","H"];
-  grid.innerHTML = order.map(k=>{
+  grid.innerHTML = order.filter(k=>{
+    // Hide wings that have no content in the current language.
+    if(k === "ALL") return true;
+    return facTotalForLang(k) > 0;
+  }).map(k=>{
     const name = k === "ALL" ? t("omnia","Omnia · all wings") : FAC[k].name;
     const desc = t("daily_desc_"+k, "");
     const cls = k === "ALL" ? "omnia" : (k === "A" ? "arsenal" : "");
@@ -806,26 +834,27 @@ function initDailyChooser(){
 }
 
 // ============== LANGUAGE CHOOSER (first launch only) ==============
+// Callback receives `changed` boolean: true if the user picked a language
+// (so the caller should rebuild the reel), false if we skipped the modal
+// because the language was already set and no change happened.
 function initLanguageChooser(onDone){
   const modal = document.getElementById("lang-modal");
-  if(!modal){ onDone && onDone(); return; }
+  if(!modal){ onDone && onDone(false); return; }
 
-  // If already set (localStorage or detected prior), skip
+  // If already set, skip the modal
   let hasLang = false;
   try{ hasLang = !!localStorage.getItem("studium_lang"); }catch(e){}
-  if(hasLang){ applyI18n(); onDone && onDone(); return; }
+  if(hasLang){ applyI18n(); onDone && onDone(false); return; }
 
-  // Detect browser hint but still show the chooser once
-  if(!state.lang){
-    const nav = (navigator.language || "en").toLowerCase();
-    state.lang = nav.startsWith("pt") ? "pt" : "en";
-  }
+  const priorLang = state.lang;
   applyI18n();
 
   const grid = modal.querySelector(".lang-grid");
   grid.addEventListener("click", e=>{
     const b = e.target.closest("button[data-lang]"); if(!b) return;
-    state.lang = b.dataset.lang === "pt" ? "pt" : "en";
+    const next = b.dataset.lang === "pt" ? "pt" : "en";
+    const changed = next !== priorLang;
+    state.lang = next;
     saveLang();
     applyI18n();
     renderChips();
@@ -833,7 +862,7 @@ function initLanguageChooser(onDone){
     modal.classList.remove("open");
     sndSeal();
     haptic(16);
-    onDone && onDone();
+    onDone && onDone(changed);
   });
 
   modal.classList.add("open");
@@ -1160,8 +1189,11 @@ async function init(){
   renderMenuLang();
 
   // Flow: language first (one-time), then daily topic.
-  initLanguageChooser(()=>{
-    renderChips();        // refresh with (possibly) translated omnia label
+  // CRITICAL: if the user picks a language in the chooser, the 8 slides already
+  // rendered are in the old language. Rebuild the reel so the whole app is in one language.
+  initLanguageChooser((changed)=>{
+    renderChips();            // refresh with translated omnia label
+    if(changed) rebuildReel(); // user picked in the modal; existing slides are stale
     initDailyChooser();
   });
 
@@ -1169,13 +1201,22 @@ async function init(){
   const mlg = document.getElementById("menu-lang-grid");
   if(mlg) mlg.addEventListener("click", e=>{
     const b = e.target.closest("button[data-lang]"); if(!b) return;
-    state.lang = b.dataset.lang === "pt" ? "pt" : "en";
+    const next = b.dataset.lang === "pt" ? "pt" : "en";
+    if(next === state.lang){ closeMenu(); return; }
+    state.lang = next;
     saveLang();
     applyI18n();
     renderMenuLang();
     renderChips();
-    if(document.querySelector(".view-rule")) renderRuleView();
+    // Rebuild the reel so every slide in view uses the newly selected language.
+    // Without this, old slides keep their original language and the app is mixed.
+    rebuildReel();
+    if(document.querySelector(".view.open")){
+      // If a view (Rule / Thesaurus / Wings) is open, re-render it in the new language too
+      renderRuleView(); renderThesaurus(); renderWings();
+    }
     toast(state.lang === "pt" ? "Idioma: Português" : "Language: English");
+    closeMenu();
   });
 
   // Service worker: on activate, auto-reload the page so new cache takes effect
