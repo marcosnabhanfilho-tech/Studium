@@ -138,6 +138,7 @@ body.chrome-hidden .sframe{ padding-top:calc(36px + var(--sat-top)); }
 .slide[data-fac="P"] .sframe{border-left:2px solid rgba(107,74,125,.4)}
 .slide[data-fac="C"] .sframe{border-left:2px solid rgba(201,184,148,.3)}
 .slide[data-fac="H"] .sframe{border-left:2px solid rgba(184,97,61,.3)}
+.slide[data-fac="A"] .sframe{border-left:3px solid var(--gold)}
 
 .slide.aurum .sframe{
   background:
