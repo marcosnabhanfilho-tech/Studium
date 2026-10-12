@@ -18,20 +18,57 @@ const esc = s => String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replac
 const pad = n => String(n).padStart(2,"0");
 const todayKey = d => { d=d||new Date(); return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate()); };
 const roman = n => { const m=[[1000,"M"],[900,"CM"],[500,"D"],[400,"CD"],[100,"C"],[90,"XC"],[50,"L"],[40,"XL"],[10,"X"],[9,"IX"],[5,"V"],[4,"IV"],[1,"I"]]; let o=""; for(const [v,s] of m){ while(n>=v){ o+=s; n-=v; } } return o||"·"; };
+function shuffledIdx(n){ const a = Array.from({length:n},(_,i)=>i); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
 
 // ============== STATE ==============
 let state = {
-  user:null, filter:"ALL",
+  user:null, filter:"ALL", lang:"en",
   seen:{}, saved:{}, votes:{}, dayCount:0,
   sound:true, dirty:{seen:[], saved:[], unsaved:[], votes:[]}
 };
 
+// ============== I18N ==============
+function t(k, fallback){
+  const dict = (typeof I18N !== "undefined" && I18N[state.lang]) || (typeof I18N !== "undefined" && I18N.en) || {};
+  return dict[k] || fallback || k;
+}
+function applyI18n(root){
+  const dict = (typeof I18N !== "undefined" && I18N[state.lang]) || null;
+  if(!dict) return;
+  (root || document).querySelectorAll('[data-i18n]').forEach(el=>{
+    const key = el.dataset.i18n;
+    if(dict[key]) el.textContent = dict[key];
+  });
+  // About body prose
+  const ab = document.getElementById("about-body");
+  if(ab){
+    if(state.lang === "pt"){
+      ab.innerHTML = `<p><strong>Studium Generale</strong> é o nome medieval de uma universidade — um studium aberto a estudiosos de todo lugar. Este aqui é uma lectio em rolagem: deslize pelos fólios tirados de Aquino, Chesterton, Newman, Scruton, Mises, Hayek, Buffett, Munger, Vermeer, Caravaggio, Mozart, Doyle, Burke — e dos seus próprios ensaios do Arsenal.</p>
+      <p>Um fólio que você vê fica permanentemente guardado na sua Ala. Toque duas vezes para colocá-lo no Thesaurus. Dez fólios por dia cumprem a Regra. Não há rolagem infinita — quando a Regra do dia é cumprida, o trabalho terminou.</p>
+      <p class="motto">Nulla dies sine linea.<br>Sapientis est ordinare.</p>`;
+    } else {
+      ab.innerHTML = `<p><strong>Studium Generale</strong> is the medieval name for a university — a studium open to scholars from everywhere. This one is a reel: swipe through folios drawn from Aquinas, Chesterton, Newman, Scruton, Mises, Hayek, Buffett, Munger, Vermeer, Caravaggio, Mozart, Doyle, Burke — and your own Arsenal essays.</p>
+      <p>A folio you view is permanently added to its Wing. Double-tap to keep one in your Thesaurus. Finish ten folios in a day to keep the Rule. There is no infinite scroll — once the Rule is kept, the day's work is done.</p>
+      <p class="motto">Nulla dies sine linea.<br>Sapientis est ordinare.</p>`;
+    }
+  }
+  // HTML lang attribute
+  document.documentElement.setAttribute("lang", state.lang);
+  // Refresh dynamic UI bits that aren't data-i18n-tagged
+  if(window._refreshDrawerSnd) window._refreshDrawerSnd();
+}
+
 const LOCAL_KEY = "studium_local_v1";
 function loadLocal(){
   try{ const v = localStorage.getItem(LOCAL_KEY); if(v){ Object.assign(state, JSON.parse(v)); } }catch(e){}
+  // Lang stored separately so it survives seen/saved resets
+  try{ const l = localStorage.getItem("studium_lang"); if(l === "en" || l === "pt") state.lang = l; }catch(e){}
 }
 function saveLocal(){
   try{ localStorage.setItem(LOCAL_KEY, JSON.stringify({seen:state.seen, saved:state.saved, votes:state.votes, sound:state.sound})); }catch(e){}
+}
+function saveLang(){
+  try{ localStorage.setItem("studium_lang", state.lang); }catch(e){}
 }
 
 // ============== TOAST ==============
@@ -77,20 +114,40 @@ const haptic = n => { if(navigator.vibrate) try{ navigator.vibrate(n); }catch(e)
 const POOL = FOLIOS.slice();
 let order = [], ptr = 0, seq = 0;
 
-function shuffleFair(arr){
-  // Fisher-Yates then nudge same-faculty adjacencies
-  const a = arr.slice();
-  for(let i=a.length-1;i>0;i--){ const j = Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; }
-  for(let i=1;i<a.length;i++){
-    if(a[i].f === a[i-1].f){
-      for(let j=i+1;j<a.length;j++){
-        if(a[j].f !== a[i-1].f && (i+1>=a.length || a[j].f !== a[i+1].f)){
-          [a[i],a[j]]=[a[j],a[i]]; break;
+// Group folios so that any multi-step series (e.g. a painting walkthrough)
+// stays contiguous. shuffleFair swaps GROUPS, not individuals, then flattens.
+function groupBySeries(folios){
+  const seen = new Set();
+  const groups = [];
+  folios.forEach(f=>{
+    if(f.series){
+      if(seen.has(f.series)) return;
+      seen.add(f.series);
+      const members = folios.filter(g=>g.series===f.series).sort((a,b)=>(a.step||0)-(b.step||0));
+      groups.push(members);
+    } else {
+      groups.push([f]);
+    }
+  });
+  return groups;
+}
+function shuffleFair(folios){
+  // Group → shuffle groups → then nudge same-faculty adjacencies (except within a series)
+  const groups = groupBySeries(folios);
+  for(let i=groups.length-1;i>0;i--){ const j = Math.floor(Math.random()*(i+1)); [groups[i],groups[j]]=[groups[j],groups[i]]; }
+  // Nudge adjacency on the first folio of each group
+  for(let i=1;i<groups.length;i++){
+    if(groups[i][0].f === groups[i-1][groups[i-1].length-1].f){
+      for(let j=i+1;j<groups.length;j++){
+        const prevFac = groups[i-1][groups[i-1].length-1].f;
+        const nextFac = (i+1<groups.length) ? groups[i+1][0].f : null;
+        if(groups[j][0].f !== prevFac && (nextFac === null || groups[j][0].f !== nextFac)){
+          [groups[i],groups[j]]=[groups[j],groups[i]]; break;
         }
       }
     }
   }
-  return a;
+  return groups.flat();
 }
 function pool(){
   return state.filter==="ALL" ? POOL : POOL.filter(f=>f.f===state.filter);
@@ -107,16 +164,21 @@ POOL.forEach(f=>{ FACTOTAL[f.f] = (FACTOTAL[f.f]||0)+1; });
 function seenInFaculty(code){
   let n = 0; POOL.forEach(f=>{ if(f.f===code && state.seen[f.slug]) n++; }); return n;
 }
+const WING_ORDER = ["A","I","T","F","O","N","P","C","H"];
 function renderChips(){
   // Render into the DRAWER's fac grid, since the topbar chips are gone.
   const grid = document.getElementById("menu-fac-grid");
   if(!grid) return;
   const totalSeen = Object.keys(state.seen).filter(k=>!k.includes(":")&&!k.startsWith("_")).length;
-  let html = `<button class="menu-fac ${state.filter==="ALL"?"active":""}" data-f="ALL" style="flex:1 1 100%"><span class="mfn">Omnia · all</span><span class="mfp">${totalSeen} / ${POOL.length} seen</span></button>`;
-  for(const k of ["A","T","F","O","N","P","C","H"]){
-    const s = seenInFaculty(k), t = FACTOTAL[k];
-    const complete = s>=t;
-    html += `<button class="menu-fac ${state.filter===k?"active":""} ${complete?"complete":""}" data-f="${k}"><span class="mfn">${FAC[k].name}</span><span class="mfp">${s} / ${t}${complete?" ✦":""}</span></button>`;
+  const omniaLabel = t("omnia", "Omnia · all wings");
+  const seenLabel = t("seen", "seen");
+  let html = `<button class="menu-fac ${state.filter==="ALL"?"active":""}" data-f="ALL" style="flex:1 1 100%"><span class="mfn">${esc(omniaLabel)}</span><span class="mfp">${totalSeen} / ${POOL.length} ${esc(seenLabel)}</span></button>`;
+  for(const k of WING_ORDER){
+    if(!FAC[k]) continue;
+    const s = seenInFaculty(k), tn = FACTOTAL[k] || 0;
+    if(tn === 0) continue;
+    const complete = s>=tn;
+    html += `<button class="menu-fac ${state.filter===k?"active":""} ${complete?"complete":""}" data-f="${k}"><span class="mfn">${esc(FAC[k].name)}</span><span class="mfp">${s} / ${tn}${complete?" ✦":""}</span></button>`;
   }
   grid.innerHTML = html;
 }
@@ -143,9 +205,11 @@ function railHTML(slug){
 
 function classifyDensity(folio){
   // Heuristic for the short/medium/long typography tiers.
-  if(folio.type === "sententia") return "short";                 // axioms always short
-  if(folio.type === "visio" || folio.ytId) return "long";        // videos always long
-  if(folio.img) return "medium";                                 // images give structure
+  if(folio.type === "sententia") return "short";
+  if(folio.type === "pictura") return "medium";    // image dominates; caption is medium
+  if(folio.type === "ludus") return "medium";      // game is the main surface
+  if(folio.type === "visio" || folio.ytId) return "long";
+  if(folio.img) return "medium";
   if(folio.type === "quaestio" || folio.type === "exercitium") return "medium";
   if(folio.type === "suffragium") return "medium";
   const raw = typeof folio.body === "string" ? folio.body : "";
@@ -173,7 +237,84 @@ function slideHTML(folio){
 
   const fac = FAC[folio.f];
   const gold = folio.rare ? " aurum" : "";
-  const typLabel = {lectio:"Lectio",opus:"Opus",visio:"Visio",quaestio:"Quaestio",exercitium:"Exercitium",suffragium:"Suffragium"}[folio.type] || folio.type;
+  const typLabel = {lectio:"Lectio",opus:"Opus",visio:"Visio",quaestio:"Quaestio",exercitium:"Exercitium",suffragium:"Suffragium",sententia:"Sententia",pictura:"Pictura",ludus:"Ludus"}[folio.type] || folio.type;
+
+  // Sententia — body is {latin, english}; render centered like an axiom but with faculty + rail + source
+  if(folio.type === "sententia" && folio.body && typeof folio.body === "object"){
+    return `<section class="slide ax${gold}" data-slug="${folio.slug}" data-type="sententia" data-fac="${folio.f}">
+      <div class="sframe">
+        <div class="s-top" style="width:100%"><span class="s-fac">${esc(fac.name)}</span><span class="s-typ">${esc(typLabel)}${folio.rare?" · gold leaf":""}</span></div>
+        <div class="ax-lat">${esc(folio.body.latin || "")}</div>
+        <div class="ax-en">${esc(folio.body.english || "")}</div>
+        <div class="ax-orn">❧ ❧ ❧</div>
+        <div class="s-src" style="margin-top:28px;border-top:none">— ${esc(folio.src||"")}</div>
+      </div>
+      ${railHTML(folio.slug)}
+    </section>`;
+  }
+
+  // Pictura — a Google-Arts-style walkthrough panel: big image, zoom to detail, caption.
+  if(folio.type === "pictura"){
+    const z = folio.zoom || {x:50, y:50, scale:1};
+    const dots = Array.from({length:folio.steps||1}, (_,i) =>
+      `<span class="${(i+1)===(folio.step||1) ? 'on':''}"></span>`).join("");
+    return `<section class="slide pictura${gold}" data-slug="${folio.slug}" data-type="pictura" data-fac="${folio.f}" data-series="${esc(folio.series||'')}">
+      <div class="sframe">
+        <div class="pictura-box">
+          <img src="${folio.img}" alt="${esc(folio.title)}" loading="lazy"
+            style="--zx:${z.x}%; --zy:${z.y}%; --zs:${z.scale};"
+            onerror="this.parentElement.style.background='#1E293B'">
+          <div class="pic-step">${esc(fac.name)} · ${folio.step||1} / ${folio.steps||1}</div>
+          <div class="pic-dots">${dots}</div>
+        </div>
+        <h2>${esc(folio.title)}</h2>
+        <div class="s-body">${folio.body}</div>
+        <div class="s-src">— ${esc(folio.src||"")}</div>
+      </div>
+      ${railHTML(folio.slug)}
+    </section>`;
+  }
+
+  // Ludus — interactive game (match | sort). State is on the DOM element itself.
+  if(folio.type === "ludus"){
+    const mode = folio.mode || "match";
+    let gameHTML = "";
+    if(mode === "match" && folio.pairs){
+      // Build two columns of taps. Shuffle each independently by generating a shuffled index order.
+      const n = folio.pairs.length;
+      const leftOrder = shuffledIdx(n), rightOrder = shuffledIdx(n);
+      gameHTML = `<div class="ludus-match" data-slug="${folio.slug}">
+        <div class="lm-col lm-q">${
+          leftOrder.map(i => `<button class="lm-item" data-side="q" data-idx="${i}">${esc(folio.pairs[i].q)}</button>`).join("")
+        }</div>
+        <div class="lm-col lm-a">${
+          rightOrder.map(i => `<button class="lm-item" data-side="a" data-idx="${i}">${esc(folio.pairs[i].a)}</button>`).join("")
+        }</div>
+      </div>
+      <div class="ludus-score">0 / ${n}</div>
+      <div class="ludus-win">${esc(t("correct_label","Correct"))} ✦</div>`;
+    } else if(mode === "sort" && folio.items){
+      const n = folio.items.length;
+      const order = shuffledIdx(n);
+      gameHTML = `<div class="ludus-sort" data-slug="${folio.slug}">
+        <div class="ls-items">${
+          order.map(i => `<button class="ls-item" data-idx="${i}" data-year="${folio.items[i].year}"><span class="ls-num">·</span><span class="ls-lbl">${esc(folio.items[i].label)}</span></button>`).join("")
+        }</div>
+        <button class="btn ls-reset" style="margin-top:14px;display:none">${esc(t("play_again","Play again"))}</button>
+      </div>
+      <div class="ludus-win" style="margin-top:14px">${esc(t("correct_label","Correct"))} ✦</div>`;
+    }
+    return `<section class="slide ludus medium${gold}" data-slug="${folio.slug}" data-type="ludus" data-mode="${mode}" data-fac="${folio.f}">
+      <div class="sframe">
+        <div class="s-top"><span class="s-fac">${esc(fac.name)}</span><span class="s-typ">${esc(typLabel)}${folio.rare?" · gold leaf":""}</span></div>
+        <h2>${esc(folio.title)}</h2>
+        <div class="s-body">${folio.body}</div>
+        ${gameHTML}
+        <div class="s-src">— ${esc(folio.src||"")}</div>
+      </div>
+      ${railHTML(folio.slug)}
+    </section>`;
+  }
 
   let fig = "";
   if(folio.img){
@@ -274,7 +415,10 @@ function checkWingCompletion(facCode){
   const total = FACTOTAL[facCode];
   if(seen >= total && !state.seen["_wing_"+facCode]){
     state.seen["_wing_"+facCode] = 1;
-    toast(FAC[facCode].name + " perlecta ✦ — a wing complete");
+    const msg = state.lang === "pt"
+      ? FAC[facCode].name + " perlecta ✦ — ala completa"
+      : FAC[facCode].name + " perlecta ✦ — a wing complete";
+    toast(msg);
     sndWing();
     haptic([30, 60, 30]);
     const f = $("#seal-flash"); f.classList.remove("go"); void f.offsetWidth; f.classList.add("go");
@@ -530,10 +674,10 @@ function updateMenuCounts(){
 function renderThesaurus(){
   const list = $("#thes-list");
   const items = Object.entries(state.saved).sort((a,b)=>b[1].when - a[1].when);
-  if(!items.length){ list.innerHTML = `<div class="tempty">Nothing kept yet. Double-tap a folio that strikes you.</div>`; return; }
+  if(!items.length){ list.innerHTML = `<div class="tempty">${esc(t("thesaurus_empty","Nothing kept yet. Double-tap a folio that strikes you."))}</div>`; return; }
   list.innerHTML = items.map(([slug, s])=>`
     <div class="ti" data-slug="${slug}">
-      <div class="ti-fac">${esc(FAC[s.fac].name)}</div>
+      <div class="ti-fac">${esc(FAC[s.fac] ? FAC[s.fac].name : s.fac)}</div>
       <div class="ti-t">${esc(s.title)}</div>
       <div class="ti-s">— ${esc(s.src||"")}</div>
     </div>`).join("");
@@ -543,12 +687,14 @@ function degreeFor(ratio){ return DEGREES[Math.min(Math.floor(ratio * DEGREES.le
 function renderWings(){
   const list = $("#wings-list");
   let html = "";
-  for(const k of ["A","T","F","O","N","P","C","H"]){
-    const s = seenInFaculty(k), t = FACTOTAL[k];
-    const ratio = t ? s/t : 0;
+  for(const k of WING_ORDER){
+    if(!FAC[k]) continue;
+    const s = seenInFaculty(k), tn = FACTOTAL[k] || 0;
+    if(tn === 0) continue;
+    const ratio = tn ? s/tn : 0;
     const deg = DEGREES[Math.min(Math.floor(ratio * DEGREES.length), DEGREES.length-1)];
     html += `<div class="wi">
-      <div class="wi-h"><div class="wi-n">${esc(FAC[k].name)}</div><div class="wi-p">${s} / ${t}${s>=t?' ✦':''}</div></div>
+      <div class="wi-h"><div class="wi-n">${esc(FAC[k].name)}</div><div class="wi-p">${s} / ${tn}${s>=tn?' ✦':''}</div></div>
       <div class="wi-bar"><div style="width:${(ratio*100).toFixed(0)}%"></div></div>
       <div class="wi-deg">${esc(deg)}</div>
     </div>`;
@@ -560,20 +706,29 @@ function renderRuleView(){
   const n = state.dayCount;
   const pct = Math.min(n/RULE_TARGET*100, 100);
   const kept = n >= RULE_TARGET;
+  const nSaved = Object.keys(state.saved).length;
+  const nSeen = Object.keys(state.seen).filter(k=>!k.includes(":") && !k.startsWith("_")).length;
+  const foliosWord = state.lang === "pt" ? "fólios" : "folios";
+  const keptLine = state.lang === "pt"
+    ? `${nSaved} ${foliosWord} guardados ao todo.`
+    : `${nSaved} ${foliosWord} kept, all time.`;
+  const seenLine = state.lang === "pt"
+    ? `${nSeen} / ${POOL.length} ${foliosWord} vistos ao todo.`
+    : `${nSeen} / ${POOL.length} ${foliosWord} seen, all time.`;
   el.innerHTML = `
     <div class="rule-office">
-      <h4>Today's Rule</h4>
-      <div class="r-sub">Read ten folios to keep the Rule for today. Lapses are redeemable by double effort within three days — no shame in a missed day.</div>
-      <div class="r-prog"><span>${n} / ${RULE_TARGET}</span><span class="r-count">${kept ? "KEPT ✦" : "OPEN"}</span></div>
-      <div class="wi-bar" style="margin-top:10px"><div style="width:${pct}%; background:${kept?'var(--gold)':'var(--gold2)'}"></div></div>
+      <h4>${esc(t("rule_title","Today's Rule"))}</h4>
+      <div class="r-sub">${esc(t("rule_sub","Read ten folios to keep the Rule for today."))}</div>
+      <div class="r-prog"><span>${n} / ${RULE_TARGET}</span><span class="r-count">${kept ? esc(t("rule_kept","KEPT ✦")) : esc(t("rule_open","OPEN"))}</span></div>
+      <div class="wi-bar" style="margin-top:10px"><div style="width:${pct}%; background:${kept?'var(--pulse)':'var(--pulse2)'}"></div></div>
     </div>
     <div class="rule-office">
-      <h4>The Thesaurus</h4>
-      <div class="r-sub">${Object.keys(state.saved).length} folios kept, all time.</div>
+      <h4>${esc(t("thes_the","The Thesaurus"))}</h4>
+      <div class="r-sub">${keptLine}</div>
     </div>
     <div class="rule-office">
-      <h4>The Studium</h4>
-      <div class="r-sub">${Object.keys(state.seen).filter(k=>!k.includes(":") && !k.startsWith("_")).length} / ${POOL.length} folios seen, all time.</div>
+      <h4>${esc(t("the_studium","The Studium"))}</h4>
+      <div class="r-sub">${seenLine}</div>
     </div>
   `;
 }
@@ -582,18 +737,6 @@ function renderRuleView(){
 // On app launch: once per day, show a modal asking which wing to study today.
 // The choice sets the filter and is remembered for the day in localStorage.
 const DAILY_KEY = "studium_daily_choice";
-
-const DAILY_DESCRIPTIONS = {
-  "ALL": "Everything — a fair rotation across all wings",
-  "A":   "Your own essays — Arsenal · verbatim passages from what you wrote",
-  "T":   "Theology & metaphysics — Aquinas, Chesterton, Newman, the Church",
-  "F":   "Finance & markets — Buffett, Munger, EMH, behavioral",
-  "O":   "Austrian economics — Mises, Hayek, Rothbard, time preference",
-  "N":   "Nature of man — political philosophy, culture, demographics",
-  "P":   "Perception — Holmes, Doyle, close reading, the trained eye",
-  "C":   "Culture & aesthetics — Scruton, Vermeer, Caravaggio, Mozart",
-  "H":   "History — Burke, revolutions, counter-revolutions, the long war"
-};
 
 function dailyChoiceToday(){
   try{
@@ -612,17 +755,15 @@ function initDailyChooser(){
 
   const prior = dailyChoiceToday();
   if(prior){
-    // Already chose today — apply silently and skip the modal
     if(prior !== state.filter) setFilter(prior);
     return;
   }
 
-  // Build buttons: Omnia on top, Arsenal (A) next, then alphabetical
   const grid = document.getElementById("daily-grid");
-  const order = ["ALL","A","T","F","O","N","P","C","H"];
+  const order = ["ALL","A","I","T","F","O","N","P","C","H"];
   grid.innerHTML = order.map(k=>{
-    const name = k === "ALL" ? "Omnia · all wings" : FAC[k].name;
-    const desc = DAILY_DESCRIPTIONS[k] || "";
+    const name = k === "ALL" ? t("omnia","Omnia · all wings") : FAC[k].name;
+    const desc = t("daily_desc_"+k, "");
     const cls = k === "ALL" ? "omnia" : (k === "A" ? "arsenal" : "");
     return `<button data-f="${k}" class="${cls}"><span class="dn">${esc(name)}</span><span class="dd">${esc(desc)}</span></button>`;
   }).join("");
@@ -636,8 +777,8 @@ function initDailyChooser(){
     sndSeal();
     haptic(16);
     setTimeout(()=>{
-      const name = f === "ALL" ? "Omnia" : FAC[f].name;
-      toast("Today: " + name);
+      const name = f === "ALL" ? t("omnia","Omnia") : FAC[f].name;
+      toast(t("today_label","Today") + ": " + name);
     }, 300);
   });
 
@@ -646,8 +787,173 @@ function initDailyChooser(){
     modal.classList.remove("open");
   };
 
-  // Open the modal
   modal.classList.add("open");
+}
+
+// ============== LANGUAGE CHOOSER (first launch only) ==============
+function initLanguageChooser(onDone){
+  const modal = document.getElementById("lang-modal");
+  if(!modal){ onDone && onDone(); return; }
+
+  // If already set (localStorage or detected prior), skip
+  let hasLang = false;
+  try{ hasLang = !!localStorage.getItem("studium_lang"); }catch(e){}
+  if(hasLang){ applyI18n(); onDone && onDone(); return; }
+
+  // Detect browser hint but still show the chooser once
+  if(!state.lang){
+    const nav = (navigator.language || "en").toLowerCase();
+    state.lang = nav.startsWith("pt") ? "pt" : "en";
+  }
+  applyI18n();
+
+  const grid = modal.querySelector(".lang-grid");
+  grid.addEventListener("click", e=>{
+    const b = e.target.closest("button[data-lang]"); if(!b) return;
+    state.lang = b.dataset.lang === "pt" ? "pt" : "en";
+    saveLang();
+    applyI18n();
+    renderChips();
+    renderMenuLang();
+    modal.classList.remove("open");
+    sndSeal();
+    haptic(16);
+    onDone && onDone();
+  });
+
+  modal.classList.add("open");
+}
+
+function renderMenuLang(){
+  const grid = document.getElementById("menu-lang-grid");
+  if(!grid) return;
+  const langs = [{k:"en", n:"English", d:"EN"},{k:"pt", n:"Português", d:"PT"}];
+  grid.innerHTML = langs.map(L =>
+    `<button class="menu-fac ${state.lang===L.k?'active':''}" data-lang="${L.k}" style="flex:1 1 calc(50% - 3px)">
+      <span class="mfn">${esc(L.n)}</span><span class="mfp">${L.d}</span>
+    </button>`).join("");
+}
+
+// ============== LUDUS — MATCH mode ==============
+function handleMatchTap(btn){
+  const parent = btn.closest(".ludus-match");
+  const side = btn.dataset.side;
+  const idx = parseInt(btn.dataset.idx, 10);
+
+  // Already a selection on the same side? Toggle, don't check.
+  const prevSame = parent.querySelector(`.lm-item.selected[data-side="${side}"]`);
+  if(prevSame){
+    prevSame.classList.remove("selected");
+    if(prevSame === btn) return; // deselect-only on same tap
+  }
+
+  // Mark selected
+  btn.classList.add("selected");
+
+  // Is there a selection on the OTHER side?
+  const otherSide = side === "q" ? "a" : "q";
+  const otherSel = parent.querySelector(`.lm-item.selected[data-side="${otherSide}"]`);
+  if(!otherSel) return;
+
+  const otherIdx = parseInt(otherSel.dataset.idx, 10);
+  if(idx === otherIdx){
+    // Correct match
+    btn.classList.remove("selected"); otherSel.classList.remove("selected");
+    btn.classList.add("locked"); otherSel.classList.add("locked");
+    sndSeal(); haptic(12);
+    updateMatchScore(parent);
+  } else {
+    // Wrong — brief shake, then deselect both
+    btn.classList.add("wrong"); otherSel.classList.add("wrong");
+    haptic(25);
+    setTimeout(()=>{
+      btn.classList.remove("wrong", "selected");
+      otherSel.classList.remove("wrong", "selected");
+    }, 500);
+  }
+}
+function updateMatchScore(parent){
+  const scoreEl = parent.parentElement.querySelector(".ludus-score");
+  const total = parent.querySelectorAll(".lm-q .lm-item").length;
+  const done = parent.querySelectorAll(".lm-q .lm-item.locked").length;
+  if(scoreEl) scoreEl.textContent = done + " / " + total;
+  if(done === total){
+    const winEl = parent.parentElement.querySelector(".ludus-win");
+    if(winEl){ winEl.classList.add("on"); winEl.textContent = "✦ " + t("perfect","Perfect") + " ✦"; }
+    sndWing(); haptic([30,60,30]);
+    const flash = $("#seal-flash"); flash.classList.remove("go"); void flash.offsetWidth; flash.classList.add("go");
+  }
+}
+
+// ============== LUDUS — SORT mode ==============
+function handleSortTap(btn){
+  const parent = btn.closest(".ludus-sort");
+  const picked = parent.querySelectorAll(".ls-item.picked");
+  const rank = picked.length + 1;
+  btn.classList.add("picked");
+  btn.querySelector(".ls-num").textContent = rank;
+  haptic(10);
+  // All picked? Reveal.
+  const total = parent.querySelectorAll(".ls-item").length;
+  if(rank === total){
+    revealSort(parent);
+  }
+}
+function revealSort(parent){
+  const items = Array.from(parent.querySelectorAll(".ls-item"));
+  // Group them by their picked-order (which equals the number in .ls-num 1..n)
+  const byPickOrder = items.slice().sort((a,b)=>{
+    const na = parseInt(a.querySelector(".ls-num").textContent, 10) || 999;
+    const nb = parseInt(b.querySelector(".ls-num").textContent, 10) || 999;
+    return na - nb;
+  });
+  // Correct order = ascending year
+  const byYear = items.slice().sort((a,b)=> parseInt(a.dataset.year,10) - parseInt(b.dataset.year,10));
+  let allOk = true;
+  byPickOrder.forEach((el, i)=>{
+    if(el === byYear[i]) el.classList.add("result-ok");
+    else { el.classList.add("result-bad"); allOk = false; }
+  });
+  // Reveal the correct year on each
+  items.forEach(el=>{
+    const y = el.dataset.year;
+    if(!el.querySelector(".ls-year")){
+      const yearSpan = document.createElement("span");
+      yearSpan.className = "ls-year";
+      yearSpan.style.marginLeft = "auto";
+      yearSpan.style.fontSize = ".82rem";
+      yearSpan.style.color = "var(--ink3)";
+      yearSpan.style.fontStyle = "italic";
+      yearSpan.textContent = y;
+      el.appendChild(yearSpan);
+    }
+  });
+  const reset = parent.querySelector(".ls-reset");
+  if(reset) reset.style.display = "block";
+  const winEl = parent.parentElement.querySelector(".ludus-win");
+  if(allOk){
+    if(winEl){ winEl.classList.add("on"); winEl.textContent = "✦ " + t("perfect","Perfect") + " ✦"; }
+    sndWing(); haptic([30,60,30]);
+    const flash = $("#seal-flash"); flash.classList.remove("go"); void flash.offsetWidth; flash.classList.add("go");
+  } else {
+    sndSeal();
+    haptic([25,40,25]);
+  }
+}
+function handleSortReset(btn){
+  const parent = btn.closest(".ludus-sort");
+  // Rebuild the item list in a NEW shuffle, cleaning all state
+  const items = Array.from(parent.querySelectorAll(".ls-item"));
+  const originals = items.map(el => ({idx: el.dataset.idx, year: el.dataset.year, label: el.querySelector(".ls-lbl").textContent}));
+  const order = shuffledIdx(originals.length);
+  const container = parent.querySelector(".ls-items");
+  container.innerHTML = order.map(i => {
+    const o = originals[i];
+    return `<button class="ls-item" data-idx="${o.idx}" data-year="${o.year}"><span class="ls-num">·</span><span class="ls-lbl">${esc(o.label)}</span></button>`;
+  }).join("");
+  btn.style.display = "none";
+  const winEl = parent.parentElement.querySelector(".ludus-win");
+  if(winEl) winEl.classList.remove("on");
 }
 
 // ============== INIT ==============
@@ -716,6 +1022,14 @@ async function init(){
       vote(po.dataset.slug, parseInt(po.dataset.i, 10));
       return;
     }
+    // --- LUDUS MATCH ---
+    const lm = e.target.closest(".ludus-match .lm-item:not(.locked)");
+    if(lm){ handleMatchTap(lm); return; }
+    // --- LUDUS SORT ---
+    const ls = e.target.closest(".ludus-sort .ls-item:not(.picked)");
+    if(ls){ handleSortTap(ls); return; }
+    const lsReset = e.target.closest(".ls-reset");
+    if(lsReset){ handleSortReset(lsReset); return; }
     // Save/share
     const sv = e.target.closest(".rb.save");
     if(sv){ toggleSave(sv.dataset.slug, false); return; }
@@ -728,9 +1042,22 @@ async function init(){
     handleTap(e);
   });
 
-  // Floating hamburger — the only visible chrome; opens the drawer directly
+  // Floating hamburger — the only visible chrome; opens the drawer directly.
+  // Stop propagation so the document-level "tap outside closes" handler can't
+  // see this same event and close the menu we just opened.
   const fm = $("#float-menu");
-  if(fm) fm.onclick = openMenu;
+  if(fm){
+    fm.addEventListener("click", e=>{
+      e.stopPropagation();
+      openMenu();
+    });
+    // iOS Safari: a tap during scroll-snap can be eaten; this restores it.
+    fm.addEventListener("touchend", e=>{
+      e.stopPropagation();
+      e.preventDefault();
+      openMenu();
+    }, {passive:false});
+  }
 
   // Hidden top bar (reachable only inside the drawer via "Change wing" — we keep its buttons wired in case)
   $("#menu-btn").onclick = openMenu;
@@ -749,7 +1076,7 @@ async function init(){
   // Drawer sound toggle (the one actually reachable since topbar is hidden)
   const drawerSnd = document.getElementById("drawer-snd");
   function refreshDrawerSnd(){
-    if(drawerSnd) drawerSnd.textContent = state.sound ? "♪ Sound: on" : "♪ Sound: off";
+    if(drawerSnd) drawerSnd.textContent = state.sound ? t("menu_sound_on","♪ Sound: on") : t("menu_sound_off","♪ Sound: off");
   }
   refreshDrawerSnd();
   if(drawerSnd) drawerSnd.onclick = ()=>{
@@ -758,6 +1085,8 @@ async function init(){
     refreshDrawerSnd();
     if(state.sound) sndSeal();
   };
+  // Expose so applyI18n can refresh too
+  window._refreshDrawerSnd = refreshDrawerSnd;
 
   // Audio unlock on first gesture
   document.addEventListener("pointerdown", ()=>audio(), {once:true, passive:true});
@@ -782,7 +1111,7 @@ async function init(){
     setFilter(c.dataset.f);
     renderChips();
     closeMenu();
-    toast(c.dataset.f === "ALL" ? "Omnia — all wings" : FAC[c.dataset.f].name);
+    toast(c.dataset.f === "ALL" ? t("omnia","Omnia — all wings") : FAC[c.dataset.f].name);
   });
 
   // Auth modal
@@ -790,12 +1119,15 @@ async function init(){
   $("#auth-skip").onclick = ()=> $("#auth-modal").classList.remove("open");
   $("#email-in").addEventListener("keydown", e=>{ if(e.key === "Enter") sendMagicLink(); });
 
-  // Tap outside menu closes it
+  // Tap outside menu closes it — must exempt BOTH the hidden-topbar menu-btn
+  // and the floating hamburger, or the open() bubbles into this handler and closes it instantly.
   document.addEventListener("click", e=>{
     const menu = $("#menu");
-    if(menu.classList.contains("open") && !e.target.closest("#menu") && !e.target.closest("#menu-btn")){
-      menu.classList.remove("open");
-    }
+    if(!menu.classList.contains("open")) return;
+    if(e.target.closest("#menu")) return;
+    if(e.target.closest("#menu-btn")) return;
+    if(e.target.closest("#float-menu")) return;
+    menu.classList.remove("open");
   });
 
   // Thesaurus item -> toast its title (future: jump to slide)
@@ -809,7 +1141,27 @@ async function init(){
   });
 
   initChrome();
-  initDailyChooser();
+  applyI18n();
+  renderMenuLang();
+
+  // Flow: language first (one-time), then daily topic.
+  initLanguageChooser(()=>{
+    renderChips();        // refresh with (possibly) translated omnia label
+    initDailyChooser();
+  });
+
+  // Drawer language picker — user can switch mid-session
+  const mlg = document.getElementById("menu-lang-grid");
+  if(mlg) mlg.addEventListener("click", e=>{
+    const b = e.target.closest("button[data-lang]"); if(!b) return;
+    state.lang = b.dataset.lang === "pt" ? "pt" : "en";
+    saveLang();
+    applyI18n();
+    renderMenuLang();
+    renderChips();
+    if(document.querySelector(".view-rule")) renderRuleView();
+    toast(state.lang === "pt" ? "Idioma: Português" : "Language: English");
+  });
 
   // Service worker: on activate, auto-reload the page so new cache takes effect
   if("serviceWorker" in navigator){
