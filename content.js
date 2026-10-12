@@ -9,7 +9,132 @@ const FAC = {
   N: {name:"Negotium", color:"#D4A574"},
   P: {name:"Pulchrum", color:"#C9A6D4"},
   C: {name:"Perceptio", color:"#9DB4C0"},
-  H: {name:"Historia", color:"#B5856A"}
+  H: {name:"Historia", color:"#B5856A"},
+  I: {name:"Imagines", color:"#A78BFA"}
+};
+
+// ============ I18N — UI strings, EN & PT ============
+const I18N = {
+  en: {
+    appTitle: "Studium Generale",
+    motto: "a scroll that forms you",
+    chooseLang: "Choose language",
+    chooseLangSub: "You can change this anytime from the menu.",
+    continue: "Continue",
+    dailyGreet: "Studium Generale",
+    dailyQ: "What do you want to study today?",
+    dailySub: "Pick a wing. You can switch inside the menu whenever you like.",
+    dailySkip: "Skip — surprise me",
+    today: "Today",
+    menu_lectio: "▸ Lectio",
+    menu_thesaurus: "✦ Thesaurus",
+    menu_wings: "◇ Wings · progress",
+    menu_rule: "⚑ The Rule · today",
+    menu_about: "¶ About",
+    menu_changewing: "Change wing",
+    menu_lang: "Language",
+    menu_sound_on: "♪ Sound: on",
+    menu_sound_off: "♪ Sound: off",
+    rail_keep: "keep",
+    rail_share: "share",
+    rule_title: "Today's Rule",
+    rule_sub: "Read ten folios to keep the Rule for today. Lapses are redeemable by double effort within three days — no shame in a missed day.",
+    rule_kept: "KEPT ✦",
+    rule_open: "OPEN",
+    thesaurus_title: "Thesaurus",
+    thesaurus_sub: "What you have kept. Double-tap any folio in the Reel to keep it.",
+    thesaurus_empty: "Nothing kept yet. Double-tap a folio that strikes you.",
+    wings_title: "The Wings",
+    wings_sub: "Every folio you have seen is permanently collected. Finish a wing for its degree.",
+    thes_the: "The Thesaurus",
+    the_studium: "The Studium",
+    omnia: "Omnia · all wings",
+    seen: "seen",
+    today_label: "Today",
+    begin: "Begin",
+    next: "Next →",
+    play_again: "Play again",
+    correct_label: "Correct",
+    wrong_label: "Not quite",
+    perfect: "Perfect",
+    final_score: "Your score",
+    reveal_more: "Reveal more",
+    reveal: "Reveal",
+    scroll_to_zoom: "Scroll to look closer →",
+    detail: "Detail",
+    sign_in_sync: "Sign in to sync",
+    sign_out: "Sign out",
+    daily_desc_ALL: "Everything — a fair rotation across all wings",
+    daily_desc_A:   "Your own essays — Arsenal · verbatim passages from what you wrote",
+    daily_desc_T:   "Theologia — Aquinas, Chesterton, Newman, the Church",
+    daily_desc_F:   "Philosophia — the questions underneath everything",
+    daily_desc_O:   "Oeconomia — Mises, Hayek, Rothbard, time preference",
+    daily_desc_N:   "Negotium — Buffett, Munger, finance, operators",
+    daily_desc_P:   "Pulchrum — Scruton, Vermeer, Caravaggio, Mozart",
+    daily_desc_C:   "Perceptio — Holmes, Doyle, close reading, the trained eye",
+    daily_desc_H:   "Historia — Burke, revolutions, the long war",
+    daily_desc_I:   "Imagines — read a painting the way they used to be read"
+  },
+  pt: {
+    appTitle: "Studium Generale",
+    motto: "um pergaminho que te forma",
+    chooseLang: "Escolha o idioma",
+    chooseLangSub: "Você pode mudar a qualquer momento pelo menu.",
+    continue: "Continuar",
+    dailyGreet: "Studium Generale",
+    dailyQ: "O que você quer estudar hoje?",
+    dailySub: "Escolha uma ala. Pode trocar pelo menu quando quiser.",
+    dailySkip: "Pular — me surpreenda",
+    today: "Hoje",
+    menu_lectio: "▸ Lectio",
+    menu_thesaurus: "✦ Thesaurus",
+    menu_wings: "◇ Alas · progresso",
+    menu_rule: "⚑ A Regra · hoje",
+    menu_about: "¶ Sobre",
+    menu_changewing: "Trocar de ala",
+    menu_lang: "Idioma",
+    menu_sound_on: "♪ Som: ligado",
+    menu_sound_off: "♪ Som: desligado",
+    rail_keep: "guardar",
+    rail_share: "compartilhar",
+    rule_title: "Regra de Hoje",
+    rule_sub: "Leia dez fólios para cumprir a Regra de hoje. Faltas se resgatam com esforço dobrado em três dias — sem vergonha por um dia perdido.",
+    rule_kept: "CUMPRIDA ✦",
+    rule_open: "ABERTA",
+    thesaurus_title: "Thesaurus",
+    thesaurus_sub: "O que você guardou. Toque duas vezes em um fólio para guardá-lo.",
+    thesaurus_empty: "Nada guardado ainda. Toque duas vezes em um fólio que te atingir.",
+    wings_title: "As Alas",
+    wings_sub: "Cada fólio visto é coletado para sempre. Termine uma ala para o seu grau.",
+    thes_the: "O Thesaurus",
+    the_studium: "O Studium",
+    omnia: "Omnia · todas as alas",
+    seen: "vistos",
+    today_label: "Hoje",
+    begin: "Começar",
+    next: "Próximo →",
+    play_again: "Jogar de novo",
+    correct_label: "Certo",
+    wrong_label: "Não é bem isso",
+    perfect: "Perfeito",
+    final_score: "Sua pontuação",
+    reveal_more: "Revelar mais",
+    reveal: "Revelar",
+    scroll_to_zoom: "Role para olhar mais de perto →",
+    detail: "Detalhe",
+    sign_in_sync: "Entrar para sincronizar",
+    sign_out: "Sair",
+    daily_desc_ALL: "Tudo — um rodízio justo entre todas as alas",
+    daily_desc_A:   "Seus próprios ensaios — Arsenal · passagens dos textos que você escreveu",
+    daily_desc_T:   "Theologia — Aquino, Chesterton, Newman, a Igreja",
+    daily_desc_F:   "Philosophia — as perguntas por baixo de tudo",
+    daily_desc_O:   "Oeconomia — Mises, Hayek, Rothbard, preferência temporal",
+    daily_desc_N:   "Negotium — Buffett, Munger, finanças, operadores",
+    daily_desc_P:   "Pulchrum — Scruton, Vermeer, Caravaggio, Mozart",
+    daily_desc_C:   "Perceptio — Holmes, Doyle, leitura atenta, o olho treinado",
+    daily_desc_H:   "Historia — Burke, revoluções, a longa guerra",
+    daily_desc_I:   "Imagines — leia um quadro como se lia antigamente"
+  }
 };
 
 // Public-domain painting URLs via Wikimedia Commons Special:FilePath
@@ -815,6 +940,174 @@ const FOLIOS = [
 ];
 
 // Separate axiom pool — inserted every 8th slot
+// ================================================================
+// IMAGINES — "How to read a painting"
+// Each walkthrough is a SERIES of 5 pictura folios. They play as a
+// group: zoom(1x whole) → zoom to detail 1 → detail 2 → detail 3 → detail 4.
+// The pool() grouper keeps a series contiguous.
+// ================================================================
+
+const IMAGINES = [
+  // ===== VERMEER — Woman Holding a Balance (c. 1662-64) =====
+  {slug:"i-ver-bal-01", type:"pictura", f:"I", series:"vermeer_balance", step:1, steps:5,
+   img:IMG.vermeer_balance, zoom:{x:50, y:50, scale:1},
+   title:"The Whole · Woman Holding a Balance",
+   body:`<p>Before you look at any part, look at the whole. A woman stands by a window, calm, in late pregnancy, holding an empty balance between her finger and thumb. On the wall behind her — a <em>Last Judgment</em>. On the table — gold, pearls, a mirror.</p>
+<p>Everything in this painting is weighed. The pearls will be weighed. The balance pans are empty — nothing is on them yet. Behind her, Christ is weighing souls. The woman stands at the exact axis of the painting. She is the <strong>fulcrum</strong>. Look longer.</p>`,
+   src:"Vermeer, c. 1662-64 · National Gallery, Washington"},
+
+  {slug:"i-ver-bal-02", type:"pictura", f:"I", series:"vermeer_balance", step:2, steps:5,
+   img:IMG.vermeer_balance, zoom:{x:38, y:52, scale:2.4},
+   title:"The Balance",
+   body:`<p>The pans are empty. This is the painting's quiet puzzle. For centuries scholars assumed she was weighing pearls — and then noticed the pans contain nothing. She is weighing <em>potential</em>: holding the instrument steady before anything is placed on it.</p>
+<p>Her hand is relaxed. The finger-and-thumb grip is the exact gesture a jeweler uses. Vermeer painted this with the kind of attention that only a man who had held such an instrument himself could paint.</p>`,
+   src:"Vermeer, detail · the balance"},
+
+  {slug:"i-ver-bal-03", type:"pictura", f:"I", series:"vermeer_balance", step:3, steps:5,
+   img:IMG.vermeer_balance, zoom:{x:50, y:26, scale:2.6},
+   title:"The Face",
+   body:`<p>She is looking down. Her eyes are nearly closed. This is not vacancy — it is <strong>recollection</strong>, the medieval contemplative pose. The light from the window falls on her forehead, catches on the gold border of her headdress, and dies on her collar.</p>
+<p>Vermeer paints the exact edge where light stops being light and starts being dark. He is the greatest painter of that edge in Western art.</p>`,
+   src:"Vermeer, detail · the face"},
+
+  {slug:"i-ver-bal-04", type:"pictura", f:"I", series:"vermeer_balance", step:4, steps:5,
+   img:IMG.vermeer_balance, zoom:{x:72, y:38, scale:2.3},
+   title:"The Last Judgment",
+   body:`<p>Over her shoulder, a painting-within-the-painting: Christ enthroned, dividing the saved from the damned. The <em>top</em> of the balance she holds in her hand aligns, almost exactly, with Christ's heart in the painting behind her.</p>
+<p>This is Vermeer telling you what the picture is <strong>about</strong>. Every mortal weighing — of a pearl, of a coin, of the day's work — happens under a greater weighing. She stands between the two. So do you.</p>`,
+   src:"Vermeer, detail · the painting behind her"},
+
+  {slug:"i-ver-bal-05", type:"pictura", f:"I", series:"vermeer_balance", step:5, steps:5, rare:1,
+   img:IMG.vermeer_balance, zoom:{x:36, y:72, scale:2.9},
+   title:"What Is On the Table",
+   body:`<p>Gold chains spilled across the table. Pearls loose in their open boxes. A mirror — the symbol of vanity in Dutch painting. These are the things of the world, lovingly rendered, beautifully lit.</p>
+<p>Vermeer is not saying they are bad. He is saying they are to be <em>weighed</em>. The pearls catch the window-light with a specificity that proves he loved them — and the balance in her hand says: this love must be measured against the other weighing, the one behind her.</p>
+<p>You have now read a painting. The whole, the hand, the face, the painting behind her, the table. This is what the eye does when it is taught.</p>`,
+   src:"Vermeer · the whole, finally seen"},
+
+  // ===== CARAVAGGIO — Calling of St Matthew (1599-1600) =====
+  {slug:"i-car-mat-01", type:"pictura", f:"I", series:"caravaggio_matthew", step:1, steps:5,
+   img:IMG.caravaggio_matthew, zoom:{x:50, y:50, scale:1},
+   title:"The Whole · The Calling of St Matthew",
+   body:`<p>A tax-collector's office. Four men counting money at a table. Two figures walk in from the right — barely visible, in shadow. One of them raises a hand.</p>
+<p>A beam of light enters with them. It is impossibly directed — not from a window, not natural. It falls across the room and lands on one specific face. That face is Matthew's.</p>
+<p>In the next four panels we will go to: the hand that calls, the hand that answers, the money being left behind, and the light that explains it all.</p>`,
+   src:"Caravaggio, 1599-1600 · Contarelli Chapel, Rome"},
+
+  {slug:"i-car-mat-02", type:"pictura", f:"I", series:"caravaggio_matthew", step:2, steps:5,
+   img:IMG.caravaggio_matthew, zoom:{x:78, y:46, scale:2.7},
+   title:"The Hand That Calls",
+   body:`<p>Christ's arm extends across the shadow. The hand is a direct quotation of Michelangelo's <em>Creation of Adam</em> on the Sistine ceiling — the same languid finger. Caravaggio knew exactly what he was doing. He is saying: a new creation is happening, right now, in this tax office.</p>
+<p>The old creation gave life to the body. This one gives life to the soul. Same gesture, four generations apart.</p>`,
+   src:"Caravaggio, detail · Christ's hand (echoing Michelangelo)"},
+
+  {slug:"i-car-mat-03", type:"pictura", f:"I", series:"caravaggio_matthew", step:3, steps:5,
+   img:IMG.caravaggio_matthew, zoom:{x:42, y:50, scale:2.5},
+   title:"The Hand That Answers",
+   body:`<p>Matthew points. But to whom? For four centuries scholars have argued: at himself (astonished — <em>me?</em>), or at the young man beside him (<em>him? not me</em>).</p>
+<p>Caravaggio left it deliberately unresolved. The ambiguity is the point. The call is <strong>always</strong> felt first as a mistake — <em>surely you don't mean me</em>. The hand is the exact pictorial equivalent of that moment.</p>`,
+   src:"Caravaggio, detail · Matthew's gesture — the unresolved pointing"},
+
+  {slug:"i-car-mat-04", type:"pictura", f:"I", series:"caravaggio_matthew", step:4, steps:5,
+   img:IMG.caravaggio_matthew, zoom:{x:30, y:76, scale:2.8},
+   title:"What Is Being Left Behind",
+   body:`<p>Coins. Stacked, counted, catalogued. The two men on the left are still looking at them — they haven't noticed the Christ yet. They are still inside the old life.</p>
+<p>Matthew will stand up. He will leave this. The money will stay on the table. Caravaggio is not moralizing; he is simply painting the <em>exact instant</em> at which a man's attention leaves one world for another. The coins don't know yet. The counters don't know yet. Matthew is already somewhere else.</p>`,
+   src:"Caravaggio, detail · the coins that will be left"},
+
+  {slug:"i-car-mat-05", type:"pictura", f:"I", series:"caravaggio_matthew", step:5, steps:5, rare:1,
+   img:IMG.caravaggio_matthew, zoom:{x:85, y:28, scale:2.1},
+   title:"The Light",
+   body:`<p>Caravaggio invented a kind of light the Renaissance did not have. It does not illuminate the scene — it <em>interrogates</em> it. It picks out one face and leaves the rest in doubt.</p>
+<p>This is called <em>tenebrism</em> — the dramatic emergence of figures from near-black. But the theological point is older. It is John 1:5: <em>the light shines in the darkness, and the darkness has not comprehended it.</em> The men in shadow are the darkness. The light has walked in. One face has turned toward it. The painting is the exact instant of that turning.</p>
+<p>Now scroll back up to the first panel. You will see the whole picture differently. That is what reading a painting means.</p>`,
+   src:"Caravaggio · the light that explains everything"}
+];
+
+// ================================================================
+// LUDUS — interactive games, one every ~12 slides.
+// Two modes right now: "match" (pair quotes to authors) and "sort"
+// (put items in chronological order). The slide builder gives each
+// mode its own interaction.
+// ================================================================
+
+const LUDI = [
+  // ===== THEOLOGY — Author Match =====
+  {slug:"lu-theo-authors", type:"ludus", mode:"match", f:"T", rare:1,
+   title:"Ludus · Who Said It?",
+   body:`<p>Tap a quote, then tap the author. Four pairs. See how many you get on the first try.</p>`,
+   pairs:[
+     {q:"Our hearts are restless until they rest in Thee.", a:"Augustine"},
+     {q:"I believe so that I may understand.", a:"Anselm"},
+     {q:"Grace does not destroy nature but perfects it.", a:"Aquinas"},
+     {q:"When men stop believing in God, they believe in anything.", a:"Chesterton"}
+   ],
+   src:"Author Match · Theologia"},
+
+  // ===== ECONOMICS — Author Match =====
+  {slug:"lu-econ-authors", type:"ludus", mode:"match", f:"O", rare:1,
+   title:"Ludus · Who Said It?",
+   body:`<p>Four quotes, four names. Match them.</p>`,
+   pairs:[
+     {q:"Man acts to replace a less satisfactory state with a more satisfactory one.", a:"Mises"},
+     {q:"The curious task of economics is to show men how little they know about what they imagine they can design.", a:"Hayek"},
+     {q:"Price is what you pay. Value is what you get.", a:"Buffett"},
+     {q:"Show me the incentive and I'll show you the outcome.", a:"Munger"}
+   ],
+   src:"Author Match · Oeconomia / Negotium"},
+
+  // ===== HISTORY — Chronology Sort =====
+  {slug:"lu-hist-chrono", type:"ludus", mode:"sort", f:"H",
+   title:"Ludus · In What Order Did They Happen?",
+   body:`<p>Tap each one in order — oldest first. Four events of the Western story.</p>`,
+   items:[
+     {label:"Augustine finishes The City of God", year:426},
+     {label:"Luther nails up the 95 Theses", year:1517},
+     {label:"The French Revolution begins", year:1789},
+     {label:"The Berlin Wall falls", year:1989}
+   ],
+   src:"Chronology · Historia I"},
+
+  // ===== NEGOTIUM — Chronology Sort =====
+  {slug:"lu-fin-chrono", type:"ludus", mode:"sort", f:"N",
+   title:"Ludus · The Books That Shaped Markets",
+   body:`<p>Four landmark books in economics and investing — put them in the order they were published.</p>`,
+   items:[
+     {label:"Smith · Wealth of Nations", year:1776},
+     {label:"Hayek · Road to Serfdom", year:1944},
+     {label:"Mises · Human Action", year:1949},
+     {label:"Graham · The Intelligent Investor", year:1949}
+   ],
+   src:"Chronology · Negotium I · note: Human Action & Intelligent Investor both 1949 — same year counts as adjacent"},
+
+  // ===== PULCHRUM — Painter / Painting match =====
+  {slug:"lu-art-paintings", type:"ludus", mode:"match", f:"P",
+   title:"Ludus · Painter and Painting",
+   body:`<p>Four paintings, four painters. Match them.</p>`,
+   pairs:[
+     {q:"The Calling of Saint Matthew", a:"Caravaggio"},
+     {q:"Woman Holding a Balance", a:"Vermeer"},
+     {q:"The School of Athens", a:"Raphael"},
+     {q:"The Fighting Téméraire", a:"Turner"}
+   ],
+   src:"Painter Match · Pulchrum"},
+
+  // ===== ARSENAL — Thinker match =====
+  {slug:"lu-arse-match", type:"ludus", mode:"match", f:"A", rare:1,
+   title:"Ludus · Thinkers From the Arsenal",
+   body:`<p>Four claims drawn from the essays, four thinkers who said them. Match.</p>`,
+   pairs:[
+     {q:"Men have forgotten God; that is why all this has happened.", a:"Solzhenitsyn"},
+     {q:"The all-decent drapery of life is to be rudely torn off.", a:"Burke"},
+     {q:"We make men without chests and expect of them virtue.", a:"C.S. Lewis"},
+     {q:"The Christian ideal has not been tried and found wanting — it has been found difficult and left untried.", a:"Chesterton"}
+   ],
+   src:"Thinker Match · from the Arsenal essays"}
+];
+
+// Append IMAGINES + LUDI onto FOLIOS
+FOLIOS.push(...IMAGINES, ...LUDI);
+
 const AXIOM_POOL = AXIOMS;
 
 if (typeof module !== "undefined") module.exports = {FAC, FOLIOS, AXIOM_POOL, IMG, YT};
