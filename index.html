@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
-<meta name="theme-color" content="#14100C">
+<meta name="theme-color" content="#0F172A">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>Studium Generale</title>
@@ -15,7 +15,13 @@
 </head>
 <body>
 
-<!-- =========== TOP BAR =========== -->
+<!-- Thin top progress bar — ONLY static chrome -->
+<div id="rulebar"><div id="rulefill"></div></div>
+
+<!-- Floating menu button (always visible — the only visible chrome) -->
+<button id="float-menu" aria-label="Menu">☰</button>
+
+<!-- Hidden top bar — only shown when menu button tapped or from drawer -->
 <header id="topbar">
   <button id="menu-btn" aria-label="Menu">☰</button>
   <div class="brand">STVDIVM</div>
@@ -25,11 +31,8 @@
   </div>
 </header>
 
-<!-- =========== FACULTY CHIPS =========== -->
-<nav id="facbar" aria-label="Faculties"></nav>
-
-<!-- =========== RULE PROGRESS BAR =========== -->
-<div id="rulebar"><div id="rulefill"></div></div>
+<!-- Faculty chips: NO LONGER rendered as a top bar; moved into drawer -->
+<nav id="facbar" aria-hidden="true" style="display:none"></nav>
 
 <!-- =========== THE REEL =========== -->
 <main id="reel" aria-label="Lectio reel"></main>
@@ -37,6 +40,19 @@
 <!-- =========== OVERLAYS =========== -->
 <div id="seal-flash" aria-hidden="true">✦</div>
 <div id="toast" role="status" aria-live="polite"></div>
+
+<!-- =========== DAILY TOPIC CHOOSER =========== -->
+<div id="daily-modal" aria-label="Daily topic">
+  <div class="daily-wrap">
+    <div class="daily-greet">Studium Generale</div>
+    <h2 class="daily-q">What do you want to study today?</h2>
+    <p class="daily-sub">Pick a wing. You can switch inside the menu whenever you like.</p>
+    <div class="daily-grid" id="daily-grid"></div>
+    <div class="daily-foot">
+      <a id="daily-skip">Skip — surprise me</a>
+    </div>
+  </div>
+</div>
 
 <!-- Menu drawer -->
 <aside id="menu" class="drawer">
@@ -49,8 +65,13 @@
     <button data-view="rule">⚑ The Rule · today</button>
     <button data-view="about">¶ About</button>
   </nav>
+
+  <div class="menu-section-h">Change wing</div>
+  <div class="menu-fac-grid" id="menu-fac-grid"></div>
+
   <div class="menu-foot">
     <div id="auth-area"></div>
+    <button id="drawer-snd" class="sign-in-btn" style="margin-top:8px">♪ Sound: on</button>
     <div class="small">v1 · built in a weekend · all glory to God</div>
   </div>
 </aside>
@@ -79,7 +100,7 @@
 <section id="view-about" class="view">
   <header class="view-h"><button class="back">←</button><h3>About</h3></header>
   <div class="about-body">
-    <p><strong>Studium Generale</strong> is the medieval name for a university — a studium open to scholars from everywhere. This one is a reel: swipe through folios drawn from Aquinas, Chesterton, Newman, Scruton, Mises, Hayek, Buffett, Munger, Vermeer, Caravaggio, Mozart, Doyle, and Burke.</p>
+    <p><strong>Studium Generale</strong> is the medieval name for a university — a studium open to scholars from everywhere. This one is a reel: swipe through folios drawn from Aquinas, Chesterton, Newman, Scruton, Mises, Hayek, Buffett, Munger, Vermeer, Caravaggio, Mozart, Doyle, Burke, and your own Arsenal essays.</p>
     <p>A folio you view is permanently added to its Wing. Double-tap to keep one in your Thesaurus. Finish ten folios in a day to keep the Rule. There is no infinite scroll — once the Rule is kept, the day's work is done.</p>
     <p class="motto">Nulla dies sine linea.<br>Sapientis est ordinare.</p>
   </div>
