@@ -293,7 +293,11 @@ function rebuildReel(){
 function railHTML(slug){
   const saved = !!state.saved[slug];
   const voxLbl = state.lang === "pt" ? "ler" : "read";
-  return `<div class="rail">
+  // Rail is collapsible via the tiny tab on its left edge. Default open on
+  // every new slide; viewer can tap the tab to hide the three buttons when
+  // they overlap long content.
+  return `<button class="rail-tab" data-rail-toggle aria-label="Toggle action buttons">◀</button>
+  <div class="rail">
     <button class="rb save ${saved?"saved":""}" data-slug="${slug}" aria-label="Keep">✦<small>${esc(t("rail_keep","keep"))}</small></button>
     <button class="rb vox" data-slug="${slug}" aria-label="Read aloud">◉<small>${esc(voxLbl)}</small></button>
     <button class="rb share" data-slug="${slug}" aria-label="Share">↗<small>${esc(t("rail_share","share"))}</small></button>
@@ -730,7 +734,7 @@ let lastTap = 0, lastKey = null, tapStartX = 0, tapStartY = 0;
 function handleTap(e){
   const slide = e.target.closest(".slide");
   if(!slide || slide.dataset.type === "ax") return;
-  if(e.target.closest("button, .lite-yt, .poll-opt, .q-opt, .ls-item, .lm-item, .lv-opt, .la-opt, .lf-opt, .rb.vox")) return;
+  if(e.target.closest("button, .lite-yt, .poll-opt, .q-opt, .ls-item, .lm-item, .lv-opt, .la-opt, .lf-opt, .rb.vox, .rail-tab, [data-rail-toggle]")) return;
   const now = Date.now();
   if(now - lastTap < 320 && lastKey === slide.dataset.slug){
     toggleSave(slide.dataset.slug, true);
@@ -1512,6 +1516,17 @@ async function init(){
     // --- LUDUS COMPLEMENTUM (fill blank) ---
     const lf = e.target.closest(".ludus-fill:not(.done) .lf-opt");
     if(lf){ handleFillTap(lf); return; }
+    // Rail toggle (collapse/expand the action buttons)
+    const rt = e.target.closest("[data-rail-toggle]");
+    if(rt){
+      const slide = rt.closest(".slide");
+      if(slide){
+        const closed = slide.dataset.rail === "closed";
+        if(closed){ delete slide.dataset.rail; rt.textContent = "◀"; }
+        else { slide.dataset.rail = "closed"; rt.textContent = "▶"; }
+      }
+      return;
+    }
     // Save/share/vox
     const sv = e.target.closest(".rb.save");
     if(sv){ toggleSave(sv.dataset.slug, false); return; }
