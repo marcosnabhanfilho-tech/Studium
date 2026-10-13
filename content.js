@@ -10,7 +10,8 @@ const FAC = {
   P: {name:"Pulchrum", color:"#C9A6D4"},
   C: {name:"Perceptio", color:"#9DB4C0"},
   H: {name:"Historia", color:"#B5856A"},
-  I: {name:"Imagines", color:"#A78BFA"}
+  I: {name:"Imagines", color:"#A78BFA"},
+  M: {name:"Mathematica", color:"#60A5FA"}
 };
 
 // ============ I18N — UI strings, EN & PT ============
@@ -74,6 +75,7 @@ const I18N = {
     daily_desc_C:   "Perceptio — Holmes, Doyle, close reading, the trained eye",
     daily_desc_H:   "Historia — Burke, revolutions, the long war",
     daily_desc_I:   "Imagines — read a painting the way they used to be read",
+    daily_desc_M:   "Mathematica — first principles, proof, estimation, the trained quantitative mind",
     // === ONBOARDING ===
     ob_skip: "Skip",
     ob_next: "Next",
@@ -149,6 +151,7 @@ const I18N = {
     daily_desc_C:   "Perceptio — Holmes, Doyle, leitura atenta, o olho treinado",
     daily_desc_H:   "Historia — Burke, revoluções, a longa guerra",
     daily_desc_I:   "Imagines — leia um quadro como se lia antigamente",
+    daily_desc_M:   "Mathematica — primeiros princípios, prova, estimativa, a mente quantitativa treinada",
     // === ONBOARDING ===
     ob_skip: "Pular",
     ob_next: "Próximo",
@@ -196,10 +199,7 @@ const IMG = {
   mises: FP+"Ludwig_von_Mises.jpg?width=800",
   hayek: FP+"Friedrich_Hayek_portrait.jpg?width=800",
   buffett: FP+"Warren_Buffett_KU_Visit.jpg?width=800",
-  newman: FP+"CardinalNewmanJEMillais.jpg?width=800",
-  velazquez_meninas: FP+"Las_Meninas,_by_Diego_Vel%C3%A1zquez,_from_Prado_in_Google_Earth.jpg?width=1400",
-  rembrandt_prodigal: FP+"Rembrandt_Harmensz_van_Rijn_-_Return_of_the_Prodigal_Son_-_Google_Art_Project.jpg?width=1200",
-  rublev_trinity: FP+"Angelsatmamre-trinity-rublev-1410.jpg?width=1000"
+  newman: FP+"CardinalNewmanJEMillais.jpg?width=800"
 };
 
 // Curated YouTube videos — channel-page vouched, no API quota needed
@@ -4947,6 +4947,273 @@ const ARSENAL_X = [
 ];
 FOLIOS.push(...ARSENAL_X);
 
+// =========================================================================
+// WAVE 8 — IMAGINES EXPANSION (+30) — more painting walkthroughs
+// =========================================================================
+const IMAGINES_X = [
+{slug:"i-milkmaid-1", type:"lectio", f:"I", title:"Vermeer · The Milkmaid · 1",
+ body:`<p>Rijksmuseum, Amsterdam. 1658. Vermeer paints a kitchen maid pouring milk from a jug into an earthenware bowl. 45.5 × 41 cm — smaller than a tabloid newspaper.</p>
+<p>Begin where the light enters. Upper left, a window. Watch how it falls, in that specific angle, across her forehead, the lip of the jug, the folds of her blue apron. There is no second light source. Vermeer gives us a scene the sun could actually make.</p>`,
+ src:"Johannes Vermeer, The Milkmaid, c. 1658, Rijksmuseum",
+ title_pt:"Vermeer · A Leiteira · 1",
+ body_pt:`<p>Rijksmuseum, Amsterdã. 1658. Vermeer pinta uma empregada de cozinha vertendo leite de um jarro numa tigela de barro. 45,5 × 41 cm — menor que um jornal tabloide.</p>
+<p>Comece por onde a luz entra. Canto superior esquerdo, uma janela. Veja como ela cai, nesse ângulo preciso, sobre a testa dela, a borda do jarro, as pregas do avental azul. Não há segunda fonte de luz. Vermeer nos dá uma cena que o sol de fato poderia fazer.</p>`,
+ src_pt:"Johannes Vermeer, A Leiteira, c. 1658, Rijksmuseum"},
+
+{slug:"i-milkmaid-2", type:"lectio", f:"I", title:"Vermeer · The Milkmaid · 2",
+ body:`<p>Now the bread. Four or five hunks on the wicker tray at the lower left. The crusts are not painted uniformly. Vermeer dotted them with tiny points of light — the French call this <em>pointillé</em>. The eye reads them as glint on crust before it names what they are. Three hundred and sixty years before Seurat.</p>
+<p>Look again at the stream of milk. It is one continuous unbroken line down to the bowl. Hold your eye on it for ten seconds. Vermeer made time stop by painting a single second you can look at for an hour.</p>`,
+ src:"Vermeer, The Milkmaid, detail",
+ title_pt:"Vermeer · A Leiteira · 2",
+ body_pt:`<p>Agora o pão. Quatro ou cinco pedaços na cesta de palha, à esquerda em baixo. As cascas não estão pintadas por igual. Vermeer salpicou-as com pequenos pontos de luz — os franceses chamam isto de <em>pointillé</em>. O olho os lê como brilho de casca antes de nomear o que são. Trezentos e sessenta anos antes de Seurat.</p>
+<p>Volte ao fio de leite. É uma só linha contínua, sem quebras, até a tigela. Fixe o olho nela por dez segundos. Vermeer fez o tempo parar pintando um único segundo que você pode olhar por uma hora.</p>`,
+ src_pt:"Vermeer, A Leiteira, detalhe"},
+
+{slug:"i-milkmaid-3", type:"lectio", f:"I", title:"Vermeer · The Milkmaid · 3",
+ body:`<p>Behind her, a plain wall. Look closely. Two nails and their shadows. One small gap where the plaster has fallen away. Nothing more. Vermeer paints that wall for weeks of his life, giving it the dignity of a face.</p>
+<p>The point of the wall is to not distract. Which is also the point of a kitchen maid: to not distract. The painting is a thesis about dignity in ordinary labor, delivered to Protestant Delft in a Catholic man's language of attention.</p>`,
+ src:"Vermeer, The Milkmaid, background wall",
+ title_pt:"Vermeer · A Leiteira · 3",
+ body_pt:`<p>Atrás dela, uma parede simples. Olhe de perto. Dois pregos e suas sombras. Uma pequena brecha onde o reboco caiu. Nada mais. Vermeer pinta essa parede por semanas da sua vida, dando-lhe a dignidade de um rosto.</p>
+<p>A finalidade da parede é não distrair. O que é também a finalidade de uma criada de cozinha: não distrair. O quadro é uma tese sobre a dignidade do trabalho ordinário, entregue à Delft protestante na linguagem da atenção de um homem católico.</p>`,
+ src_pt:"Vermeer, A Leiteira, parede de fundo"},
+
+{slug:"i-milkmaid-4", type:"lectio", f:"I", title:"Vermeer · The Milkmaid · 4",
+ body:`<p>Below, hidden against the baseboard, a <em>Delft tile</em>. On the tile, a tiny image: a Cupid with a bow. Vermeer painted it so small most viewers never see it. But it is there. The quiet labor of this kitchen, the painting says, happens inside the longer story of love — the household stands on it the way the wall stands on the tile.</p>`,
+ src:"Vermeer, The Milkmaid, Delft tile detail",
+ title_pt:"Vermeer · A Leiteira · 4",
+ body_pt:`<p>Em baixo, encostado no rodapé, um <em>azulejo de Delft</em>. No azulejo, uma imagem minúscula: um Cupido com arco. Vermeer o pintou tão pequeno que a maioria dos espectadores nunca o vê. Mas está lá. O trabalho silencioso desta cozinha, diz o quadro, acontece dentro de uma história mais longa — a do amor; a casa se apoia nele como a parede se apoia no azulejo.</p>`,
+ src_pt:"Vermeer, A Leiteira, detalhe do azulejo de Delft"},
+
+{slug:"i-milkmaid-5", type:"lectio", f:"I", title:"Vermeer · The Milkmaid · 5",
+ body:`<p>Last look. Step back. The whole picture is a vertical composition built on a diagonal — her head, the stream of milk, the bread, the Cupid tile. Follow the line. You end at the foot. It is the Christian composition for a worker: the Head above, the body serving, nothing of the person left out.</p>
+<p>Vermeer painted perhaps thirty-six pictures. The world agreed to make him one of the ten greatest painters who ever lived. This is one of three or four reasons why.</p>`,
+ src:"Vermeer, The Milkmaid · the whole",
+ title_pt:"Vermeer · A Leiteira · 5",
+ body_pt:`<p>Último olhar. Dê um passo atrás. O quadro inteiro é uma composição vertical construída numa diagonal — a cabeça dela, o fio de leite, o pão, o azulejo do Cupido. Siga a linha. Você termina no pé. É a composição cristã para uma trabalhadora: a Cabeça acima, o corpo servindo, nada da pessoa deixado de fora.</p>
+<p>Vermeer pintou talvez trinta e seis quadros. O mundo concordou em fazer dele um dos dez maiores pintores de todos os tempos. Esta obra é uma das três ou quatro razões.</p>`,
+ src_pt:"Vermeer, A Leiteira · o todo"},
+
+{slug:"i-matthew-1", type:"lectio", f:"I", title:"Caravaggio · Calling of Matthew · 1",
+ body:`<p>Rome, 1600. A dark tavern. Five men around a table, counting money. The light enters from the right in a single beam.</p>
+<p>At the right edge of the picture, two figures step in from off-stage. One is Peter — look at the feet, barefoot, worker's feet. The other, half-cut by the frame, is Christ. His arm extends across the room, finger pointed. The gesture, the raking light that follows the finger, the whole picture: it is noon on an ordinary workday, and the Son of God has walked into the office.</p>`,
+ src:"Caravaggio, Calling of Saint Matthew, 1599–1600, San Luigi dei Francesi, Rome",
+ title_pt:"Caravaggio · Vocação de Mateus · 1",
+ body_pt:`<p>Roma, 1600. Uma taverna escura. Cinco homens em volta de uma mesa, contando dinheiro. A luz entra pela direita num único feixe.</p>
+<p>À direita do quadro, duas figuras entram vindas de fora de cena. Uma é Pedro — veja os pés, descalços, pés de trabalhador. A outra, meio cortada pela moldura, é Cristo. Seu braço se estende pela sala, dedo apontado. O gesto, a luz rasante que segue o dedo, a imagem toda: é meio-dia num dia útil comum, e o Filho de Deus entrou no escritório.</p>`,
+ src_pt:"Caravaggio, Vocação de São Mateus, 1599–1600, San Luigi dei Francesi, Roma"},
+
+{slug:"i-matthew-2", type:"lectio", f:"I", title:"Caravaggio · Calling of Matthew · 2",
+ body:`<p>Which man at the table is Matthew? Scholars have argued four centuries. For a long time the consensus was the bearded man in the middle who seems to be pointing at himself — <em>me?</em>. More recent reading says the figure on the far left, head down, is Matthew, and the bearded man is pointing at <em>him</em>, saying <em>him?</em>.</p>
+<p>Caravaggio built the ambiguity on purpose. Either reading works. The call lands on all of us at the table; which one of us picks up his coat and walks out depends on the picture after this one. This is not it. This is the moment before.</p>`,
+ src:"Caravaggio, Calling of Saint Matthew, detail",
+ title_pt:"Caravaggio · Vocação de Mateus · 2",
+ body_pt:`<p>Qual dos homens na mesa é Mateus? Os eruditos discutem há quatro séculos. Por muito tempo, o consenso foi o barbado no meio, que parece apontar para si — <em>eu?</em>. Uma leitura mais recente diz que a figura à extrema esquerda, cabeça baixa, é Mateus, e o barbado aponta <em>para ele</em>, dizendo <em>este?</em>.</p>
+<p>Caravaggio construiu a ambiguidade de propósito. As duas leituras funcionam. O chamado cai sobre todos nós na mesa; qual de nós pega o casaco e sai depende do quadro seguinte a este. Este não é esse. Este é o momento anterior.</p>`,
+ src_pt:"Caravaggio, Vocação de São Mateus, detalhe"},
+
+{slug:"i-matthew-3", type:"lectio", f:"I", title:"Caravaggio · Calling of Matthew · 3",
+ body:`<p>The hand of Christ. Compare it to the Creation of Adam ceiling by Michelangelo in the Sistine Chapel — a five-minute walk away. The exact same gesture, same angle, same tension in the index finger. Caravaggio is quoting Michelangelo <em>on purpose</em>. The implication: the calling of Matthew is the Creation of Adam continued. The Son does with Matthew what the Father did with Adam. The creation is ongoing.</p>`,
+ src:"Caravaggio quoting Michelangelo, Creation of Adam, 1512",
+ title_pt:"Caravaggio · Vocação de Mateus · 3",
+ body_pt:`<p>A mão de Cristo. Compare com o teto da Criação de Adão de Michelangelo na Capela Sistina — a cinco minutos a pé. Exatamente o mesmo gesto, mesmo ângulo, mesma tensão no indicador. Caravaggio cita Michelangelo <em>de propósito</em>. A implicação: a vocação de Mateus é a Criação de Adão continuada. O Filho faz com Mateus o que o Pai fez com Adão. A criação prossegue.</p>`,
+ src_pt:"Caravaggio citando Michelangelo, Criação de Adão, 1512"},
+
+{slug:"i-matthew-4", type:"lectio", f:"I", title:"Caravaggio · Calling of Matthew · 4",
+ body:`<p>Look at the costumes. The men at the table are dressed in late-sixteenth-century finery — the clothes of Caravaggio's actual Rome. Christ and Peter are dressed in Biblical robes. The two eras collide in one room.</p>
+<p>Caravaggio's thesis: Christ did not visit Palestine in the year 30 and leave. He walks into every tavern in every age. The two men on the right are entering 1600s Rome because they are also, right now, entering wherever you happen to be reading this.</p>`,
+ src:"Caravaggio, costume anachronism",
+ title_pt:"Caravaggio · Vocação de Mateus · 4",
+ body_pt:`<p>Olhe os trajes. Os homens à mesa estão vestidos como fidalgos do fim do séc. XVI — as roupas da Roma real de Caravaggio. Cristo e Pedro trajam vestes bíblicas. Duas épocas colidem numa só sala.</p>
+<p>Tese de Caravaggio: Cristo não visitou a Palestina no ano 30 e foi embora. Entra em toda taverna em todo tempo. Os dois à direita entram na Roma de 1600 porque também, agora, entram onde quer que você esteja lendo isto.</p>`,
+ src_pt:"Caravaggio, anacronismo de trajes"},
+
+{slug:"i-matthew-5", type:"lectio", f:"I", title:"Caravaggio · Calling of Matthew · 5",
+ body:`<p>Last. The chapel is dark. Caravaggio chose black for most of the canvas. The light that falls on Matthew comes from above and behind Christ. It is not sunlight — the chapel's one window is in the wrong place. It is a light the painting invents.</p>
+<p>Caravaggio does this throughout his work. He never paints halos. He paints the light that would make a halo necessary. The invisibility of grace, made visible as photons.</p>`,
+ src:"Caravaggio, Calling of Saint Matthew · the light",
+ title_pt:"Caravaggio · Vocação de Mateus · 5",
+ body_pt:`<p>Por fim. A capela é escura. Caravaggio escolheu o preto para a maior parte da tela. A luz que cai sobre Mateus vem de cima e por detrás de Cristo. Não é a luz do sol — a única janela da capela está no lugar errado. É uma luz que a pintura inventa.</p>
+<p>Caravaggio faz isso em toda a sua obra. Nunca pinta auréolas. Pinta a luz que tornaria a auréola necessária. A invisibilidade da graça tornada visível como fótons.</p>`,
+ src_pt:"Caravaggio, Vocação de São Mateus · a luz"},
+
+{slug:"i-meninas-1", type:"lectio", f:"I", title:"Velázquez · Las Meninas · 1",
+ body:`<p>Madrid, 1656. Velázquez has set up his easel in a room of the royal palace. The infanta Margarita, five years old, stands in the center of the room surrounded by her maids of honor (<em>meninas</em>), a dwarf, a dog. The painter himself stands at the left, brush in hand, looking out at us. Enormous canvas, over three meters tall.</p>
+<p>Look where everyone is looking. They are all looking at us. We are not spectators. We are what they are painting.</p>`,
+ src:"Diego Velázquez, Las Meninas, 1656, Museo del Prado",
+ title_pt:"Velázquez · As Meninas · 1",
+ body_pt:`<p>Madri, 1656. Velázquez montou o cavalete numa sala do palácio real. A infanta Margarita, cinco anos, está ao centro cercada por suas aias (<em>meninas</em>), um anão, um cão. O próprio pintor está à esquerda, pincel na mão, olhando para fora, para nós. Tela enorme, mais de três metros de altura.</p>
+<p>Veja para onde todos olham. Todos olham para nós. Não somos espectadores. Somos o que eles estão pintando.</p>`,
+ src_pt:"Diego Velázquez, As Meninas, 1656, Museu do Prado"},
+
+{slug:"i-meninas-2", type:"lectio", f:"I", title:"Velázquez · Las Meninas · 2",
+ body:`<p>Back wall. A dim mirror. In the mirror, two faces: the king Philip IV and his queen Mariana. They are standing where we are standing. We are the king and queen. Or we are seeing the king and queen reflected because we are standing beside them.</p>
+<p>Foucault wrote a famous twenty pages on this painting. His claim: the painting is the beginning of modern self-consciousness in art, because for the first time the viewer is also inside the picture, and the picture knows it.</p>`,
+ src:"Velázquez, Las Meninas, mirror detail; Michel Foucault, The Order of Things (1966)",
+ title_pt:"Velázquez · As Meninas · 2",
+ body_pt:`<p>Parede do fundo. Um espelho embaçado. No espelho, dois rostos: o rei Filipe IV e a rainha Mariana. Estão de pé onde estamos de pé. Somos o rei e a rainha. Ou estamos vendo o rei e a rainha refletidos porque estamos de pé ao lado deles.</p>
+<p>Foucault escreveu umas célebres vinte páginas sobre este quadro. Sua tese: este quadro é o começo da autoconsciência moderna na arte, porque, pela primeira vez, o espectador também está dentro do quadro, e o quadro sabe disso.</p>`,
+ src_pt:"Velázquez, As Meninas, detalhe do espelho; Michel Foucault, As Palavras e as Coisas (1966)"},
+
+{slug:"i-meninas-3", type:"lectio", f:"I", title:"Velázquez · Las Meninas · 3",
+ body:`<p>Look at the painter at the left. On his chest: the red cross of the Order of Santiago, the highest honor the Spanish crown could give a nobleman. Velázquez did not have it when he started this painting. He received it two years before his death, in 1659.</p>
+<p>Legend has it the king himself painted the cross onto the canvas with his own hand. Whether true or legend, the painting is a story about painting: Velázquez has put himself at the heart of a royal family portrait, as a servant who is also a nobleman, both at once. The whole career is here in one picture.</p>`,
+ src:"Velázquez, Las Meninas · the self-portrait",
+ title_pt:"Velázquez · As Meninas · 3",
+ body_pt:`<p>Olhe para o pintor à esquerda. Sobre o peito: a cruz vermelha da Ordem de Santiago, a mais alta honraria que a Coroa espanhola podia conceder a um fidalgo. Velázquez não a possuía quando começou este quadro. Recebeu-a dois anos antes de morrer, em 1659.</p>
+<p>Reza a lenda que o próprio rei pintou a cruz na tela com a sua mão. Verdade ou lenda, o quadro é uma história sobre pintura: Velázquez se pôs no coração de um retrato da família real, como criado que é também fidalgo, as duas coisas ao mesmo tempo. A carreira inteira está num só quadro.</p>`,
+ src_pt:"Velázquez, As Meninas · o autorretrato"},
+
+{slug:"i-meninas-4", type:"lectio", f:"I", title:"Velázquez · Las Meninas · 4",
+ body:`<p>The canvas Velázquez is painting is turned away from us. We see only its back. What is on it? We cannot know. The painting we are looking at is nested around the painting we cannot see. The one visible to us is the one that cannot be seen; the one visible to the painter is the one we cannot know.</p>
+<p>Four hundred years later, this reversal is still the subject of every doctoral thesis someone writes about this picture.</p>`,
+ src:"Velázquez, Las Meninas · the hidden canvas",
+ title_pt:"Velázquez · As Meninas · 4",
+ body_pt:`<p>A tela que Velázquez pinta está voltada para o outro lado. Vemos só o seu verso. O que há sobre ela? Não podemos saber. O quadro que olhamos está aninhado em torno do quadro que não podemos ver. O que é visível para nós é o que não pode ser visto; o que é visível para o pintor é o que não podemos saber.</p>
+<p>Quatrocentos anos depois, essa inversão ainda é tema de toda tese de doutorado escrita sobre este quadro.</p>`,
+ src_pt:"Velázquez, As Meninas · a tela escondida"},
+
+{slug:"i-meninas-5", type:"lectio", f:"I", title:"Velázquez · Las Meninas · 5",
+ body:`<p>Step back. The whole picture is a Baroque trompe l'oeil of relations. Who paints whom? Who looks at whom? Who is the viewer? Who is the painted?</p>
+<p>Velázquez has made a picture in which every social relation of his monarchy — king and painter, patron and servant, viewer and viewed — is pulled into one geometric puzzle. Four hundred years of commentators have tried to solve it. It is unsolvable, which is why they keep trying. The best pictures are the ones that outlive their puzzles.</p>`,
+ src:"Velázquez, Las Meninas · the whole",
+ title_pt:"Velázquez · As Meninas · 5",
+ body_pt:`<p>Um passo atrás. O quadro inteiro é um trompe l'oeil barroco de relações. Quem pinta quem? Quem olha quem? Quem é o espectador? Quem é o pintado?</p>
+<p>Velázquez fez um quadro em que toda relação social da sua monarquia — rei e pintor, patrono e servo, espectador e visto — é puxada para um enigma geométrico. Quatro séculos de comentadores tentaram resolvê-lo. É insolúvel; por isso continuam tentando. Os melhores quadros são os que sobrevivem aos próprios enigmas.</p>`,
+ src_pt:"Velázquez, As Meninas · o todo"},
+
+{slug:"i-prodigal-1", type:"lectio", f:"I", title:"Rembrandt · Prodigal Son · 1",
+ body:`<p>Hermitage, St Petersburg. 1669. Rembrandt is sixty-three, bankrupt, outliving his wife and most of his children. He paints a father embracing a kneeling son. The canvas is 262 × 206 cm — floor to ceiling in a modest room.</p>
+<p>Start with the son. His head is shaved — a convict's crop. His feet are bare, one calloused and one worn through its sandal. On his left hip he still carries the sword he took to war, which the parable does not mention but Rembrandt invents. He has come home with nothing but a weapon.</p>`,
+ src:"Rembrandt van Rijn, The Return of the Prodigal Son, c. 1669, Hermitage",
+ title_pt:"Rembrandt · O Filho Pródigo · 1",
+ body_pt:`<p>Hermitage, São Petersburgo. 1669. Rembrandt tem sessenta e três anos, está falido, sobreviveu à esposa e à maioria dos filhos. Pinta um pai abraçando um filho ajoelhado. A tela mede 262 × 206 cm — do chão ao teto de uma sala comum.</p>
+<p>Comece pelo filho. A cabeça está raspada — corte de preso. Os pés estão descalços, um calejado, o outro furando a sandália. No quadril esquerdo ele ainda carrega a espada com que foi à guerra, que a parábola não menciona mas Rembrandt inventa. Voltou para casa sem nada senão uma arma.</p>`,
+ src_pt:"Rembrandt van Rijn, O Retorno do Filho Pródigo, c. 1669, Hermitage"},
+
+{slug:"i-prodigal-2", type:"lectio", f:"I", title:"Rembrandt · Prodigal Son · 2",
+ body:`<p>Now the father. He bends forward with his head above the son's. His face is lit, exhausted, blind — Rembrandt gives him the drooping eyes of near-blindness, which the parable also does not mention. The father has been watching the horizon until his sight gave out.</p>
+<p>His hands are on the son's shoulders. Look at them. They do not match. The one on our left is young, broad, strong. The one on our right is older, lined, delicate. The maternal hand and the paternal hand are both present on the father, because God's embrace is both at once.</p>`,
+ src:"Rembrandt, Prodigal Son · the father's hands",
+ title_pt:"Rembrandt · O Filho Pródigo · 2",
+ body_pt:`<p>Agora o pai. Debruça-se com a cabeça acima da do filho. Seu rosto está iluminado, exausto, cego — Rembrandt lhe dá as pálpebras caídas de quem está quase cego, o que a parábola também não menciona. O pai esteve olhando o horizonte até a vista acabar.</p>
+<p>As mãos estão sobre os ombros do filho. Olhe-as. Não são iguais. A da nossa esquerda é jovem, larga, forte. A da nossa direita é mais velha, estriada, delicada. A mão materna e a mão paterna estão as duas presentes no pai, porque o abraço de Deus é as duas coisas ao mesmo tempo.</p>`,
+ src_pt:"Rembrandt, O Filho Pródigo · as mãos do pai"},
+
+{slug:"i-prodigal-3", type:"lectio", f:"I", title:"Rembrandt · Prodigal Son · 3",
+ body:`<p>Right side, standing erect, is the elder son. Red cloak, folded arms, no part of him touching his father or his brother. He is still outside the embrace. Rembrandt gives him the whole right half of the canvas and refuses to resolve his face.</p>
+<p>The parable's quietest horror: the elder son is you if you have been diligent for the wrong reasons. He has worked faithfully for his father and in that very work has lost his father. The painting makes you worry whether <em>he</em> will come inside the embrace before the father dies.</p>`,
+ src:"Rembrandt, Prodigal Son · the elder brother",
+ title_pt:"Rembrandt · O Filho Pródigo · 3",
+ body_pt:`<p>À direita, em pé, está o irmão mais velho. Capa vermelha, braços cruzados, nenhuma parte dele tocando o pai ou o irmão. Ainda está fora do abraço. Rembrandt lhe dá toda a metade direita da tela e se recusa a resolver seu rosto.</p>
+<p>O horror mais silencioso da parábola: o irmão mais velho é você se foi diligente pelas razões erradas. Trabalhou fielmente para o pai e, nesse próprio trabalho, perdeu o pai. O quadro te faz temer que <em>ele</em> entre no abraço antes de o pai morrer.</p>`,
+ src_pt:"Rembrandt, O Filho Pródigo · o irmão mais velho"},
+
+{slug:"i-prodigal-4", type:"lectio", f:"I", title:"Rembrandt · Prodigal Son · 4",
+ body:`<p>Henri Nouwen wrote an entire book, <em>The Return of the Prodigal Son</em> (1992), after a year sitting in front of this painting in the Hermitage. His thesis: a Christian life has three stages. First we are the younger son, running away. Then we come home, kneeling. Then — the hard part — we must become the father: the one who waits, embraces, pays the cost of welcoming home a child who has nothing to give back.</p>
+<p>Most people, Nouwen says, never make it to the third stage. The painting is a map of all three.</p>`,
+ src:"Henri Nouwen, The Return of the Prodigal Son (1992)",
+ title_pt:"Rembrandt · O Filho Pródigo · 4",
+ body_pt:`<p>Henri Nouwen escreveu um livro inteiro, <em>O Regresso do Filho Pródigo</em> (1992), depois de passar um ano sentado diante deste quadro no Hermitage. Sua tese: a vida cristã tem três estágios. Primeiro somos o filho mais novo, fugindo. Depois voltamos para casa, de joelhos. Então — a parte difícil — temos de nos tornar o pai: aquele que espera, abraça, paga o custo de receber de volta um filho que não tem nada para devolver.</p>
+<p>A maior parte, diz Nouwen, nunca chega ao terceiro estágio. O quadro é mapa dos três.</p>`,
+ src_pt:"Henri Nouwen, O Regresso do Filho Pródigo (1992)"},
+
+{slug:"i-prodigal-5", type:"lectio", f:"I", title:"Rembrandt · Prodigal Son · 5",
+ body:`<p>Last look. Rembrandt painted this the year he died, in a house he no longer owned, after burying his son Titus the year before. Every image he made of a father embracing a son after Titus is the father Rembrandt did not get to be.</p>
+<p>The painting is autobiography disguised as parable. It is also, for anyone who has lost a child or lost a parent, the picture Christianity actually hands to you in your worst hour. If you have never cried in front of a painting, this is the one that will do it.</p>`,
+ src:"Rembrandt, The Return of the Prodigal Son · the whole",
+ title_pt:"Rembrandt · O Filho Pródigo · 5",
+ body_pt:`<p>Último olhar. Rembrandt pintou-o no ano em que morreu, numa casa que já não era sua, depois de enterrar o filho Tito no ano anterior. Toda imagem que ele fez de um pai abraçando um filho depois de Tito é o pai que Rembrandt não teve tempo de ser.</p>
+<p>O quadro é autobiografia disfarçada em parábola. É também, para quem perdeu um filho ou um pai, o quadro que o cristianismo de fato entrega a você na sua pior hora. Se você nunca chorou diante de uma pintura, é este que fará isso.</p>`,
+ src_pt:"Rembrandt, O Retorno do Filho Pródigo · o todo"},
+
+{slug:"i-arnolfini-1", type:"lectio", f:"I", title:"Van Eyck · Arnolfini · 1",
+ body:`<p>Bruges, 1434. Jan van Eyck. 82 × 60 cm. A merchant and his wife stand in a bedroom with their shoes off and their hands joined. Oil paint had been invented in Flanders about a generation before. Van Eyck shows what it can do: every bristle of a dog, every tile, every bead of amber, every candle flame — all painted at a resolution that would not be matched by any other medium for 500 years.</p>`,
+ src:"Jan van Eyck, Portrait of Giovanni Arnolfini and his Wife, 1434, National Gallery, London",
+ title_pt:"Van Eyck · Arnolfini · 1",
+ body_pt:`<p>Bruges, 1434. Jan van Eyck. 82 × 60 cm. Um mercador e sua esposa estão em pé num quarto, descalços, de mãos dadas. A tinta a óleo fora inventada em Flandres cerca de uma geração antes. Van Eyck mostra o que ela pode fazer: cada pelo de um cão, cada azulejo, cada contas de âmbar, cada chama de vela — tudo pintado numa resolução que nenhum outro meio igualaria por 500 anos.</p>`,
+ src_pt:"Jan van Eyck, Retrato de Giovanni Arnolfini e sua Esposa, 1434, National Gallery, Londres"},
+
+{slug:"i-arnolfini-2", type:"lectio", f:"I", title:"Van Eyck · Arnolfini · 2",
+ body:`<p>The woman. Her green dress drapes forward over her belly. Is she pregnant? Art historians argue. The consensus leans no — it is the fashion of the time, in which unmarried and married women alike piled fabric at the belly to simulate the shape. The gesture by which she lifts the dress is both decorous and prosperous: look how much cloth I can waste.</p>`,
+ src:"Van Eyck, Arnolfini · the dress",
+ title_pt:"Van Eyck · Arnolfini · 2",
+ body_pt:`<p>A mulher. O vestido verde drapeja à frente, sobre a barriga. Está grávida? Os historiadores da arte discutem. O consenso tende ao não — é a moda da época, em que mulheres solteiras e casadas acumulavam tecido na barriga para simular a forma. O gesto com que ela ergue o vestido é ao mesmo tempo decoroso e próspero: olhem quanto tecido posso desperdiçar.</p>`,
+ src_pt:"Van Eyck, Arnolfini · o vestido"},
+
+{slug:"i-arnolfini-3", type:"lectio", f:"I", title:"Van Eyck · Arnolfini · 3",
+ body:`<p>Back wall. A convex mirror. Perfectly round. In the mirror, the room reversed. And two more figures — one in red, one in blue — standing where we are standing. The painting is giving us the vantage point of two witnesses to the scene we are observing.</p>
+<p>Above the mirror, in careful cursive Latin: <em>Johannes de eyck fuit hic 1434</em>. "Jan van Eyck was here. 1434." The painter is the witness. The painting is a legal document.</p>`,
+ src:"Van Eyck, Arnolfini · the mirror",
+ title_pt:"Van Eyck · Arnolfini · 3",
+ body_pt:`<p>Parede do fundo. Um espelho convexo. Perfeitamente redondo. No espelho, o quarto invertido. E mais duas figuras — uma de vermelho, outra de azul — paradas onde estamos. O quadro nos dá a vista de duas testemunhas da cena que observamos.</p>
+<p>Acima do espelho, em cursiva latina cuidadosa: <em>Johannes de eyck fuit hic 1434</em>. "Jan van Eyck esteve aqui. 1434." O pintor é a testemunha. O quadro é documento jurídico.</p>`,
+ src_pt:"Van Eyck, Arnolfini · o espelho"},
+
+{slug:"i-arnolfini-4", type:"lectio", f:"I", title:"Van Eyck · Arnolfini · 4",
+ body:`<p>Erwin Panofsky, 1934, argued the painting is a legal record of a <em>per verba de praesenti</em> marriage — the kind Catholic couples could still contract without a priest, before Trent in 1545 required clergy for valid matrimony. The joined hands, the removed shoes (standing on holy ground), the single candle burning in daylight (God the witness), the mirror with the painter's signature above it (two human witnesses), the dog (fidelity): every element is a legal checkbox.</p>
+<p>Later scholars doubt the full theory. But the painting is doing <em>something</em> solemn and documentary that mere portraiture never attempted. It is the only painting whose legal status is still argued over.</p>`,
+ src:"Erwin Panofsky, Jan van Eyck's Arnolfini Portrait (1934)",
+ title_pt:"Van Eyck · Arnolfini · 4",
+ body_pt:`<p>Erwin Panofsky, em 1934, defendeu que o quadro é registro legal de um casamento <em>per verba de praesenti</em> — do tipo que casais católicos ainda podiam contrair sem padre, antes de Trento (1545) exigir clérigo para a validade do matrimônio. Mãos dadas, sapatos removidos (terreno sagrado), uma única vela acesa à luz do dia (Deus como testemunha), o espelho com a assinatura do pintor acima (duas testemunhas humanas), o cão (fidelidade): cada elemento é um item do contrato.</p>
+<p>Especialistas posteriores duvidam da teoria inteira. Mas o quadro faz <em>algo</em> solene e documental que o mero retrato jamais tentou. É o único quadro cujo estatuto jurídico ainda se discute.</p>`,
+ src_pt:"Erwin Panofsky, Jan van Eyck's Arnolfini Portrait (1934)"},
+
+{slug:"i-arnolfini-5", type:"lectio", f:"I", title:"Van Eyck · Arnolfini · 5",
+ body:`<p>Step back. The painting is an opening manifesto for Northern European art. Where Italy would paint gods and heroes in open air, Flanders would paint burghers in their bedrooms. Where Italy wanted ideal bodies, Flanders wanted real faces. Where Italy wanted narrative, Flanders wanted inventory — the catalog of a life well made.</p>
+<p>Five hundred years of Dutch and Flemish painting flow out of this one small picture. Vermeer is a great-grandchild. Rembrandt is a cousin. The whole quiet, bourgeois, interior tradition — the opposite of Rome's altars — begins here.</p>`,
+ src:"Van Eyck, Arnolfini · the whole",
+ title_pt:"Van Eyck · Arnolfini · 5",
+ body_pt:`<p>Um passo atrás. O quadro é manifesto de abertura da arte do norte da Europa. Enquanto a Itália pintaria deuses e heróis ao ar livre, Flandres pintaria burgueses em seus quartos. Enquanto a Itália queria corpos ideais, Flandres queria rostos reais. Enquanto a Itália queria narrativa, Flandres queria inventário — o catálogo de uma vida bem feita.</p>
+<p>Quinhentos anos de pintura holandesa e flamenga saem deste pequeno quadro. Vermeer é bisneto. Rembrandt é primo. Toda a tradição silenciosa, burguesa, interior — o oposto dos altares de Roma — começa aqui.</p>`,
+ src_pt:"Van Eyck, Arnolfini · o todo"},
+
+{slug:"i-trinity-1", type:"lectio", f:"I", title:"Rublev · Trinity · 1",
+ body:`<p>Russia, c. 1411. 142 × 114 cm, egg tempera on wood. Andrei Rublev, a monk at the Trinity Monastery of St. Sergius, paints three angels seated around a table. The scene is Genesis 18 — Abraham entertained three strangers at Mamre who turned out to be the Lord — but Rublev leaves Abraham out. Only the three remain.</p>
+<p>The icon is read right-to-left in the direction of a bow. Begin with the right angel. His head inclines toward the center. His cloak is green, the color of the Spirit who gives life.</p>`,
+ src:"Andrei Rublev, The Hospitality of Abraham (The Trinity), c. 1411, Tretyakov Gallery, Moscow",
+ title_pt:"Rublev · Trindade · 1",
+ body_pt:`<p>Rússia, c. 1411. 142 × 114 cm, têmpera de ovo sobre madeira. Andrei Rublev, monge no Mosteiro da Trindade de São Sérgio, pinta três anjos sentados em volta de uma mesa. A cena é Gênesis 18 — Abraão hospedou três forasteiros em Mamre que se mostraram o Senhor — mas Rublev omite Abraão. Só os três permanecem.</p>
+<p>O ícone se lê da direita para a esquerda, na direção de uma reverência. Comece pelo anjo da direita. A cabeça se inclina para o centro. O manto é verde, a cor do Espírito que dá vida.</p>`,
+ src_pt:"Andrei Rublev, A Hospitalidade de Abraão (A Trindade), c. 1411, Galeria Tretyakov, Moscou"},
+
+{slug:"i-trinity-2", type:"lectio", f:"I", title:"Rublev · Trinity · 2",
+ body:`<p>Center. The Son. Dark red robe (the humanity he will take) with a blue cloak (his divinity) over his left shoulder. He blesses the chalice on the table with two fingers. The chalice holds a tiny lamb's head — the Lamb slain. The Father is to his right; the Spirit to his left; the Son inclines his own head toward the Father, assenting.</p>
+<p>The whole icon is the Trinity in council about the Incarnation. The Son is agreeing, with his bowed head, to leave this circle and become the Lamb in the cup.</p>`,
+ src:"Rublev, Trinity · the Son",
+ title_pt:"Rublev · Trindade · 2",
+ body_pt:`<p>Centro. O Filho. Veste vermelho escuro (a humanidade que assumirá) com manto azul (sua divindade) sobre o ombro esquerdo. Abençoa com dois dedos o cálice na mesa. O cálice tem uma minúscula cabeça de cordeiro — o Cordeiro imolado. O Pai está à sua direita; o Espírito à sua esquerda; o Filho inclina a cabeça para o Pai, consentindo.</p>
+<p>O ícone inteiro é a Trindade em concílio sobre a Encarnação. O Filho concorda, com a cabeça inclinada, em deixar este círculo e tornar-se o Cordeiro no cálice.</p>`,
+ src_pt:"Rublev, Trindade · o Filho"},
+
+{slug:"i-trinity-3", type:"lectio", f:"I", title:"Rublev · Trinity · 3",
+ body:`<p>Left. The Father. His robe is a pale shimmering gold (the uncreated light). He blesses the cup toward which the Son is bending. His posture is the quietest of the three — he receives the gift of the Son's assent and the Spirit's going-forth.</p>
+<p>Note what Rublev does not do: he gives the Father no beard, no throne, no greater size. The three figures are indistinguishable by rank. Only their <em>relations</em> differ. The Trinity, Rublev insists in paint, is the three persons as pure relations — not three gods of ascending importance.</p>`,
+ src:"Rublev, Trinity · the Father",
+ title_pt:"Rublev · Trindade · 3",
+ body_pt:`<p>Esquerda. O Pai. A sua veste é um dourado pálido e lustroso (a luz incriada). Abençoa o cálice para o qual o Filho se inclina. A sua postura é a mais silenciosa das três — recebe o dom do consentimento do Filho e do envio do Espírito.</p>
+<p>Note o que Rublev não faz: não dá barba ao Pai, nem trono, nem tamanho maior. As três figuras são indistinguíveis em categoria. Só suas <em>relações</em> diferem. A Trindade, insiste Rublev em pintura, é três pessoas como puras relações — não três deuses em ordem de importância.</p>`,
+ src_pt:"Rublev, Trindade · o Pai"},
+
+{slug:"i-trinity-4", type:"lectio", f:"I", title:"Rublev · Trinity · 4",
+ body:`<p>The circle. Follow the heads: Spirit (right), Son (center), Father (left). Their inclinations form an arc that returns on itself. The three sit at a square table whose near side is open — the only unoccupied seat in the icon is directly across from the Son. That seat is for the viewer.</p>
+<p>Rublev painted a Trinity you can sit down with. The icon is an invitation.</p>`,
+ src:"Rublev, Trinity · the open seat",
+ title_pt:"Rublev · Trindade · 4",
+ body_pt:`<p>O círculo. Siga as cabeças: Espírito (direita), Filho (centro), Pai (esquerda). As inclinações formam um arco que volta a si. Os três se sentam a uma mesa quadrada cujo lado próximo está aberto — o único lugar desocupado no ícone está diretamente defronte ao Filho. Esse lugar é do espectador.</p>
+<p>Rublev pintou uma Trindade com que você pode se sentar. O ícone é um convite.</p>`,
+ src_pt:"Rublev, Trindade · o lugar aberto"},
+
+{slug:"i-trinity-5", type:"lectio", f:"I", title:"Rublev · Trinity · 5",
+ body:`<p>Last look. The icon is reversed perspective — the lines converge <em>toward</em> the viewer, not away from. The farther into the icon you look, the wider it gets. Byzantine icons are not windows looking into another world; they are windows the other world looks out of, into ours.</p>
+<p>Which is why icons are not decorated, kissed, incensed. They are venerated. Not as idols. As portals. Rublev's three angels have been looking out at Orthodox worshippers for 614 years, waiting for them to take the open seat.</p>`,
+ src:"Rublev, Trinity · the whole",
+ title_pt:"Rublev · Trindade · 5",
+ body_pt:`<p>Último olhar. O ícone tem perspectiva invertida — as linhas convergem <em>para</em> o espectador, não para longe dele. Quanto mais fundo você olha no ícone, mais largo ele fica. Ícones bizantinos não são janelas que olham para outro mundo; são janelas pelas quais o outro mundo olha para o nosso.</p>
+<p>É por isso que ícones não são decorados, são beijados, são incensados. São venerados. Não como ídolos. Como portais. Os três anjos de Rublev olham para fora, para os fiéis ortodoxos, há 614 anos, à espera de que tomem o lugar aberto.</p>`,
+ src_pt:"Rublev, Trindade · o todo"}
+];
+FOLIOS.push(...IMAGINES_X);
 
 // WAVE 8 — top-up F (+2), O (+8), C (+3) to clear 50 each
 const TOPUP = [
@@ -5101,320 +5368,253 @@ const PULCHRUM_X2 = [
 ];
 FOLIOS.push(...PULCHRUM_X2);
 
-// ================================================================
-// WAVE X — IMAGINES PROPER (v11.1) — six painting walkthroughs,
-// 5 panels each, pictura type with real zoom coordinates.
-// Milkmaid · Calling of Matthew · Las Meninas · Prodigal Son ·
-// Arnolfini · Rublev's Trinity.
-// ================================================================
-const IMAGINES_PROPER = [
-// ===== VERMEER · THE MILKMAID =====
-{slug:"i-mlk-01", type:"pictura", f:"I", series:"vermeer_milkmaid", step:1, steps:5,
- img:IMG.vermeer_milkmaid, zoom:{x:50, y:50, scale:1},
- title:"The Whole · The Milkmaid",
- title_pt:"O Todo · A Leiteira",
- body:`<p>Rijksmuseum, Amsterdam. 1658. 45 by 41 centimetres — smaller than a tabloid. A kitchen maid pours milk from a jug into a bowl. Nothing else happens.</p>
-<p>Vermeer painted this scene for weeks. The world agreed, over 350 years, to make him one of the ten greatest painters who ever lived. This small canvas is one of three reasons why. Begin by looking at the whole, then let the eye discover it part by part.</p>`,
- body_pt:`<p>Rijksmuseum, Amsterdã. 1658. 45 por 41 centímetros — menor que um jornal tabloide. Uma criada de cozinha derrama leite de um jarro numa tigela. Nada mais acontece.</p>
-<p>Vermeer pintou essa cena por semanas. O mundo concordou, ao longo de 350 anos, em fazê-lo um dos dez maiores pintores de todos os tempos. Esta pequena tela é uma de três razões. Comece olhando o todo, depois deixe o olho descobri-lo parte por parte.</p>`,
- src:"Johannes Vermeer, c. 1658 · Rijksmuseum, Amsterdam"},
+// =============== MATHEMATICA ===============
+// Critical thinking through mathematical structure: interpretation, modeling,
+// restructuring, verification. Science-based, high-density, bilingual.
+const MATHEMATICA = [
 
-{slug:"i-mlk-02", type:"pictura", f:"I", series:"vermeer_milkmaid", step:2, steps:5,
- img:IMG.vermeer_milkmaid, zoom:{x:28, y:28, scale:2.4},
- title:"The Window",
- title_pt:"A Janela",
- body:`<p>Upper left. The window. There is no second light source in the painting; everything you see is lit by that one window, in the specific slant of a specific morning. Vermeer gives us a scene the sun could actually make.</p>
-<p>Watch how the light falls — on the folds of her blue apron, on the lip of the jug, on the far wall where it is already dim. The quality of a Vermeer is not what he paints; it is the exact angle at which a particular daylight hits it.</p>`,
- body_pt:`<p>Canto superior esquerdo. A janela. Não há segunda fonte de luz no quadro; tudo o que você vê é iluminado por essa única janela, no ângulo específico de uma manhã específica. Vermeer nos dá uma cena que o sol de fato poderia fazer.</p>
-<p>Veja como a luz cai — nas pregas do avental azul, na borda do jarro, na parede distante onde já está escurecendo. A qualidade de um Vermeer não é o que ele pinta; é o ângulo exato em que uma luz do dia específica o atinge.</p>`,
- src:"Vermeer, Milkmaid · the light"},
+{slug:"m-first-principles", type:"lectio", f:"M", rare:1, title:"First Principles · The Only Reliable Starting Point",
+ body:`<p>Aristotle: the first principles of a science are the indemonstrable starting points from which everything else is derived. In modern language: strip a problem of its inherited assumptions until you reach statements that cannot be reduced further without leaving the domain.</p>
+<p>Elon Musk restates the same move for engineering: do not reason by analogy ("this is how it has always been done"); reason from the physics. The cost of a battery is not "what the market charges"; it is the sum of the costs of its elemental constituents at commodity prices, plus the energy and labor required to assemble them. Everything else is margin, inefficiency, or both.</p>
+<p>The critical habit is the same in every field: name the assumptions, test whether they are necessary, and rebuild from the ones that survive. Most bad solutions are good solutions to the wrong problem — a problem that still carries unnecessary constraints.</p>`,
+ src:"Aristotle, Posterior Analytics; Musk, interviews on first-principles thinking",
+ title_pt:"Primeiros Princípios · O Único Ponto de Partida Confiável",
+ body_pt:`<p>Aristóteles: os primeiros princípios de uma ciência são os pontos de partida indemonstráveis a partir dos quais tudo o resto se deriva. Em linguagem moderna: despoje um problema de suas pressuposições herdadas até chegar a afirmações que não podem ser reduzidas sem sair do domínio.</p>
+<p>Elon Musk reformula o mesmo movimento para a engenharia: não raciocine por analogia ("é assim que sempre se fez"); raciocine a partir da física. O custo de uma bateria não é "o que o mercado cobra"; é a soma dos custos de seus constituintes elementares a preços de commodity, mais a energia e o trabalho necessários para montá-los. Todo o resto é margem, ineficiência, ou ambos.</p>
+<p>O hábito crítico é o mesmo em qualquer campo: nomeie as pressuposições, teste se são necessárias, e reconstrua a partir das que sobrevivem. A maioria das soluções ruins são soluções boas para o problema errado — um problema que ainda carrega restrições desnecessárias.</p>`,
+ src_pt:"Aristóteles, Segundos Analíticos; Musk, entrevistas sobre primeiros princípios"
+},
 
-{slug:"i-mlk-03", type:"pictura", f:"I", series:"vermeer_milkmaid", step:3, steps:5,
- img:IMG.vermeer_milkmaid, zoom:{x:38, y:70, scale:2.6},
- title:"The Bread",
- title_pt:"O Pão",
- body:`<p>Lower left. Four or five hunks of bread on a wicker tray. Look at the crusts. Vermeer dotted them with tiny points of pure white paint — the French call this <em>pointillé</em>. The eye reads them as glint on crust before it names what they are.</p>
-<p>Three hundred and sixty years before Seurat. Vermeer invented pointillism to catch morning light on a loaf and used it only on this painting. He never did it again.</p>`,
- body_pt:`<p>Canto inferior esquerdo. Quatro ou cinco pedaços de pão numa cesta de palha. Olhe para as cascas. Vermeer salpicou-as com minúsculos pontos de tinta branca pura — os franceses chamam isto de <em>pointillé</em>. O olho os lê como brilho na casca antes de nomear o que são.</p>
-<p>Trezentos e sessenta anos antes de Seurat. Vermeer inventou o pontilhismo para captar a luz da manhã num pão e usou-o só neste quadro. Nunca mais o repetiu.</p>`,
- src:"Vermeer, Milkmaid · detail of the bread"},
+{slug:"m-fermi", type:"lectio", f:"M", title:"Fermi Estimation · How to Think When You Have Almost No Data",
+ body:`<p>Enrico Fermi's classroom method: estimate any quantity by decomposing it into factors you can roughly know, then multiply. How many piano tuners in Chicago? Number of pianos × tunings per year × time per tuning ÷ hours a tuner works. Each factor is uncertain by a factor of two; the product is still within an order of magnitude of the truth.</p>
+<p>The point is not accuracy. The point is that the act of decomposition forces you to reveal which quantities actually drive the answer and which are noise. Most people refuse to estimate because they fear being wrong. The Fermi habit treats "wrong by a factor of three" as success and "I have no idea" as failure.</p>
+<p>In decision-making under uncertainty this is decisive: an order-of-magnitude map of the problem is worth more than a precise answer to a misframed question.</p>`,
+ src:"Fermi problems tradition; Weinstein & Adam, Guesstimation (2008)",
+ title_pt:"Estimativa de Fermi · Como Pensar Quando Você Quase Não Tem Dados",
+ body_pt:`<p>Método de sala de aula de Enrico Fermi: estime qualquer quantidade decompondo-a em fatores que você possa conhecer aproximadamente, depois multiplique. Quantos afinadores de piano em Chicago? Número de pianos × afinações por ano × tempo por afinação ÷ horas que um afinador trabalha. Cada fator é incerto por um fator de dois; o produto ainda fica dentro de uma ordem de magnitude da verdade.</p>
+<p>O ponto não é a precisão. O ponto é que o ato de decompor força você a revelar quais quantidades realmente dirigem a resposta e quais são ruído. A maioria das pessoas se recusa a estimar porque teme estar errada. O hábito de Fermi trata "errado por um fator de três" como sucesso e "não faço ideia" como fracasso.</p>
+<p>Na tomada de decisão sob incerteza isso é decisivo: um mapa de ordem de magnitude do problema vale mais do que uma resposta precisa a uma pergunta mal formulada.</p>`,
+ src_pt:"Tradição dos problemas de Fermi; Weinstein & Adam, Guesstimation (2008)"
+},
 
-{slug:"i-mlk-04", type:"pictura", f:"I", series:"vermeer_milkmaid", step:4, steps:5,
- img:IMG.vermeer_milkmaid, zoom:{x:46, y:48, scale:2.8},
- title:"The Stream of Milk",
- title_pt:"O Fio de Leite",
- body:`<p>The exact centre of the painting. A single unbroken line of milk descends from the jug into the bowl. Hold your eye on it for ten seconds. The stream is not drawn with a line; it is painted with light, which is why it looks liquid.</p>
-<p>Vermeer made time stop by painting a single second you can look at for an hour. The whole picture is organised around this one quiet action — the pouring, the gravity, the small inheritance of each day.</p>`,
- body_pt:`<p>O centro exato do quadro. Uma única linha contínua de leite desce do jarro para a tigela. Fixe o olho nela por dez segundos. O fio não é desenhado com linha; é pintado com luz, por isso parece líquido.</p>
-<p>Vermeer fez o tempo parar pintando um único segundo que você pode olhar por uma hora. O quadro inteiro se organiza em torno desta única ação silenciosa — o verter, a gravidade, a pequena herança de cada dia.</p>`,
- src:"Vermeer, Milkmaid · the stream"},
+{slug:"m-counterexample", type:"lectio", f:"M", title:"The Counterexample · The Fastest Way to Kill a Bad Claim",
+ body:`<p>A universal claim ("all X are Y") is destroyed by a single counterexample. A single positive instance does nothing to a universal claim. This asymmetry is the most under-used tool in ordinary reasoning.</p>
+<p>When someone asserts a pattern, the trained mind does not first look for confirming cases. It asks: what would falsify this? If I cannot invent a plausible counterexample, the claim may be robust. If I can, the claim is already dead — or at least needs a narrower scope.</p>
+<p>Mathematicians internalize this so deeply that "proof by exhaustion of cases" and "search for the minimal counterexample" become automatic. The same reflex applied to policy, management, and personal judgment eliminates a large fraction of confident nonsense.</p>`,
+ src:"Standard mathematical method; Popper's falsifiability is the philosophical cousin",
+ title_pt:"O Contraexemplo · A Forma Mais Rápida de Matar uma Afirmação Ruim",
+ body_pt:`<p>Uma afirmação universal ("todo X é Y") é destruída por um único contraexemplo. Uma única instância positiva não faz nada a uma afirmação universal. Essa assimetria é a ferramenta mais subutilizada no raciocínio ordinário.</p>
+<p>Quando alguém afirma um padrão, a mente treinada não procura primeiro casos confirmadores. Pergunta: o que falsificaria isto? Se eu não consigo inventar um contraexemplo plausível, a afirmação pode ser robusta. Se consigo, a afirmação já está morta — ou pelo menos precisa de um escopo mais estreito.</p>
+<p>Matemáticos internalizam isso tão profundamente que "prova por exaustão de casos" e "busca do contraexemplo mínimo" se tornam automáticos. O mesmo reflexo aplicado a política, gestão e juízo pessoal elimina uma grande fração de nonsense confiante.</p>`,
+ src_pt:"Método matemático padrão; a falseabilidade de Popper é a prima filosófica"
+},
 
-{slug:"i-mlk-05", type:"pictura", f:"I", series:"vermeer_milkmaid", step:5, steps:5, rare:1,
- img:IMG.vermeer_milkmaid, zoom:{x:36, y:90, scale:3.2},
- title:"The Cupid Tile",
- title_pt:"O Azulejo do Cupido",
- body:`<p>Below, against the baseboard, hidden where most viewers never look: a Delft tile. On the tile, a tiny image of a Cupid with a bow. Vermeer painted it so small that the Rijksmuseum catalogue did not note it for a hundred years.</p>
-<p>But it is there. The quiet labour of this kitchen, the painting says, happens inside the longer story of love — the household stands on it the way the wall stands on the tile. Now step back. The whole picture, after what you have seen, is a different painting.</p>`,
- body_pt:`<p>Abaixo, encostado no rodapé, escondido onde a maioria dos espectadores jamais olha: um azulejo de Delft. No azulejo, uma imagem minúscula de um Cupido com arco. Vermeer o pintou tão pequeno que o catálogo do Rijksmuseum levou cem anos para notá-lo.</p>
-<p>Mas está lá. O trabalho silencioso desta cozinha, diz o quadro, acontece dentro de uma história mais longa — a do amor; a casa se apoia nela como a parede se apoia no azulejo. Dê um passo atrás. O quadro inteiro, depois do que você viu, é outro quadro.</p>`,
- src:"Vermeer, Milkmaid · the Cupid tile"},
+{slug:"m-invariant", type:"lectio", f:"M", title:"Invariants · What Does Not Change",
+ body:`<p>In any complex system the useful questions are often not "what is happening?" but "what is conserved?" Energy, momentum, parity, information, charge — physics advances by discovering quantities that remain constant under transformation.</p>
+<p>The same habit transfers. In an argument: what is the quantity that both sides are actually disputing, and what is merely a change of coordinates? In a business: what metric is invariant under the usual accounting tricks? In a personal decision: what will still be true about me after this choice that was true before it?</p>
+<p>Finding the invariant collapses the search space. Everything that is not conserved can be ignored for the purpose of the decision at hand.</p>`,
+ src:"Noether's theorem (symmetry ↔ conservation); practical transfer to decision analysis",
+ title_pt:"Invariantes · O Que Não Muda",
+ body_pt:`<p>Em qualquer sistema complexo as perguntas úteis muitas vezes não são "o que está acontecendo?" mas "o que se conserva?" Energia, momento, paridade, informação, carga — a física avança descobrindo quantidades que permanecem constantes sob transformação.</p>
+<p>O mesmo hábito transfere. Num argumento: qual é a quantidade que ambos os lados estão realmente disputando, e o que é mera mudança de coordenadas? Num negócio: qual métrica é invariante sob os truques contábeis usuais? Numa decisão pessoal: o que continuará verdadeiro a meu respeito depois desta escolha que já era verdadeiro antes?</p>
+<p>Encontrar o invariante colapsa o espaço de busca. Tudo o que não se conserva pode ser ignorado para o propósito da decisão em questão.</p>`,
+ src_pt:"Teorema de Noether (simetria ↔ conservação); transferência prática para análise de decisão"
+},
 
-// ===== CARAVAGGIO · CALLING OF MATTHEW =====
-{slug:"i-cal-01", type:"pictura", f:"I", series:"caravaggio_matthew", step:1, steps:5,
- img:IMG.caravaggio_matthew, zoom:{x:50, y:50, scale:1},
- title:"The Whole · The Calling of Matthew",
- title_pt:"O Todo · A Vocação de Mateus",
- body:`<p>Rome, 1600. San Luigi dei Francesi, the French church, Contarelli Chapel. Caravaggio has painted a dark tavern. Five men around a table counting money. The light enters from the right in a single beam.</p>
-<p>You are standing in the chapel, three meters from the canvas. It is lit, now as then, by a window above and to the right. The light in the painting matches the light in the room. Caravaggio knew where the window was.</p>`,
- body_pt:`<p>Roma, 1600. San Luigi dei Francesi, a igreja francesa, Capela Contarelli. Caravaggio pintou uma taverna escura. Cinco homens em volta de uma mesa contando dinheiro. A luz entra pela direita num único feixe.</p>
-<p>Você está na capela, a três metros da tela. Está iluminada, agora como então, por uma janela acima e à direita. A luz no quadro combina com a luz na sala. Caravaggio sabia onde estava a janela.</p>`,
- src:"Caravaggio, 1599–1600 · San Luigi dei Francesi, Rome"},
+{slug:"m-dimensional", type:"lectio", f:"M", title:"Dimensional Analysis · The Sanity Check That Costs Nothing",
+ body:`<p>Every physical quantity carries units. An equation that equates meters to seconds is not merely wrong; it is meaningless. Bridgman's dimensional analysis formalizes the observation: any valid formula must be homogeneous in dimensions. If the dimensions do not match, the derivation has already failed.</p>
+<p>The habit generalizes. Before accepting a numerical claim, ask what units the answer should have. "The project will save $2.3 million" — per year? over the lifetime? in nominal or present-value dollars? "Risk of 0.4" — probability? expected loss in dollars? ratio of two rates? Ambiguous units are a leading indicator of confused thinking.</p>
+<p>Five seconds of dimensional checking catch errors that hours of algebra miss.</p>`,
+ src:"P. W. Bridgman, Dimensional Analysis (1922); standard engineering practice",
+ title_pt:"Análise Dimensional · O Teste de Sanidade Que Não Custa Nada",
+ body_pt:`<p>Toda quantidade física carrega unidades. Uma equação que iguala metros a segundos não é meramente errada; é sem sentido. A análise dimensional de Bridgman formaliza a observação: qualquer fórmula válida deve ser homogênea em dimensões. Se as dimensões não batem, a derivação já falhou.</p>
+<p>O hábito generaliza. Antes de aceitar uma afirmação numérica, pergunte que unidades a resposta deveria ter. "O projeto vai economizar US$ 2,3 milhões" — por ano? ao longo da vida útil? em dólares nominais ou a valor presente? "Risco de 0,4" — probabilidade? perda esperada em dólares? razão de duas taxas? Unidades ambíguas são um indicador líder de pensamento confuso.</p>
+<p>Cinco segundos de verificação dimensional pegam erros que horas de álgebra deixam passar.</p>`,
+ src_pt:"P. W. Bridgman, Dimensional Analysis (1922); prática padrão de engenharia"
+},
 
-{slug:"i-cal-02", type:"pictura", f:"I", series:"caravaggio_matthew", step:2, steps:5,
- img:IMG.caravaggio_matthew, zoom:{x:80, y:48, scale:2.4},
- title:"The Hand of Christ",
- title_pt:"A Mão de Cristo",
- body:`<p>Right edge. Two figures step in from off-stage. One is Peter — barefoot, worker's feet. The other, half-cut by the frame, is Christ. His arm extends across the room.</p>
-<p>Look at that hand. Compare it, in your head, to the hand of God in Michelangelo's Creation of Adam on the Sistine ceiling — a five-minute walk from this chapel. Caravaggio quoted the gesture exactly. The implication: the calling of Matthew is the Creation of Adam continued. The Son does with Matthew what the Father did with Adam. The creation is ongoing.</p>`,
- body_pt:`<p>Borda direita. Duas figuras entram vindas de fora de cena. Uma é Pedro — descalço, pés de trabalhador. A outra, meio cortada pelo quadro, é Cristo. O braço se estende pela sala.</p>
-<p>Olhe para essa mão. Compare, na cabeça, com a mão de Deus na Criação de Adão de Michelangelo no teto da Sistina — a cinco minutos a pé desta capela. Caravaggio citou o gesto exatamente. A implicação: a vocação de Mateus é a Criação de Adão continuada. O Filho faz com Mateus o que o Pai fez com Adão. A criação prossegue.</p>`,
- src:"Caravaggio quoting Michelangelo"},
+{slug:"m-working-backwards", type:"lectio", f:"M", title:"Working Backwards · From the Desired End",
+ body:`<p>Polya's advice in <em>How to Solve It</em>: if you cannot solve the problem as stated, work backwards from the goal. Assume the answer exists and ask what must be true immediately before it. Repeat until you reach something you already know.</p>
+<p>The method is older than Polya — Euclid used it; so did the inventors of dynamic programming. In ordinary life it looks like: "I need the report by Friday. Therefore the draft must be finished by Wednesday. Therefore the data pull must happen Monday." The chain of necessary predecessors is often shorter and clearer than the forward plan.</p>
+<p>Most people plan only forwards. The second pass, from the end, routinely exposes missing prerequisites and impossible timelines that the forward plan never noticed.</p>`,
+ src:"G. Pólya, How to Solve It (1945)",
+ title_pt:"Trabalhar de Trás para Frente · A Partir do Fim Desejado",
+ body_pt:`<p>Conselho de Pólya em <em>A Arte de Resolver Problemas</em>: se você não consegue resolver o problema como está enunciado, trabalhe de trás para frente a partir do objetivo. Assuma que a resposta existe e pergunte o que deve ser verdadeiro imediatamente antes dela. Repita até chegar a algo que você já sabe.</p>
+<p>O método é mais antigo que Pólya — Euclides o usava; também os inventores da programação dinâmica. Na vida ordinária parece: "Preciso do relatório até sexta. Portanto o rascunho deve estar pronto na quarta. Portanto a extração de dados deve acontecer na segunda." A cadeia de predecessores necessários é muitas vezes mais curta e clara do que o plano para frente.</p>
+<p>A maioria das pessoas planeja só para frente. A segunda passagem, a partir do fim, expõe rotineiramente pré-requisitos faltantes e prazos impossíveis que o plano para frente nunca notou.</p>`,
+ src_pt:"G. Pólya, A Arte de Resolver Problemas (1945)"
+},
 
-{slug:"i-cal-03", type:"pictura", f:"I", series:"caravaggio_matthew", step:3, steps:5,
- img:IMG.caravaggio_matthew, zoom:{x:38, y:48, scale:2.4},
- title:"Which One Is Matthew?",
- title_pt:"Qual Deles É Mateus?",
- body:`<p>Scholars have argued four centuries. For a long time the consensus was the bearded man in the middle who seems to point at himself — <em>me?</em>. More recent reading says the figure at the far end, head bent over the coins, is Matthew, and the bearded man is pointing at <em>him</em>, saying <em>him?</em>.</p>
-<p>Caravaggio built the ambiguity on purpose. Either reading works. The call lands on all of us at the table; which one of us picks up his coat and walks out depends on the next painting, which Caravaggio did not paint. This is the moment before.</p>`,
- body_pt:`<p>Os eruditos discutem há quatro séculos. Por muito tempo, o consenso foi o barbado no meio que parece apontar para si — <em>eu?</em>. Uma leitura mais recente diz que a figura na ponta, de cabeça baixa sobre as moedas, é Mateus, e o barbado aponta <em>para ele</em>, dizendo <em>este?</em>.</p>
-<p>Caravaggio construiu a ambiguidade de propósito. As duas leituras funcionam. O chamado cai sobre todos nós à mesa; qual de nós pega o casaco e sai depende do quadro seguinte, que Caravaggio não pintou. Este é o momento anterior.</p>`,
- src:"Caravaggio, Calling of Matthew · the table"},
+{slug:"m-expected-value", type:"lectio", f:"M", title:"Expected Value · The Only Honest Way to Weigh Uncertain Outcomes",
+ body:`<p>When outcomes are uncertain, the rational quantity to maximize is not the most likely outcome, nor the best possible outcome, but the probability-weighted average of all outcomes: expected value.</p>
+<p>A decision that has a 10% chance of +$1M and a 90% chance of –$50k has expected value +$55k. Refusing it because "it might lose money" is a category error — you have already accounted for the loss in the average. The same arithmetic applies to career moves, experiments, and asymmetric bets.</p>
+<p>The psychological barrier is that expected value is invisible. You never observe the average; you observe one draw. The trained mind nevertheless acts on the average, because over a sequence of independent decisions the law of large numbers turns the invisible average into visible results.</p>`,
+ src:"Bernoulli (1738); modern decision theory; Taleb on asymmetry",
+ title_pt:"Valor Esperado · A Única Forma Honesta de Pesar Resultados Incertos",
+ body_pt:`<p>Quando os resultados são incertos, a quantidade racional a maximizar não é o resultado mais provável, nem o melhor resultado possível, mas a média ponderada por probabilidade de todos os resultados: valor esperado.</p>
+<p>Uma decisão com 10% de chance de +US$ 1M e 90% de chance de –US$ 50k tem valor esperado +US$ 55k. Recusá-la porque "pode perder dinheiro" é um erro de categoria — você já contabilizou a perda na média. A mesma aritmética se aplica a mudanças de carreira, experimentos e apostas assimétricas.</p>
+<p>A barreira psicológica é que o valor esperado é invisível. Você nunca observa a média; observa um sorteio. A mente treinada age mesmo assim sobre a média, porque sobre uma sequência de decisões independentes a lei dos grandes números transforma a média invisível em resultados visíveis.</p>`,
+ src_pt:"Bernoulli (1738); teoria da decisão moderna; Taleb sobre assimetria"
+},
 
-{slug:"i-cal-04", type:"pictura", f:"I", series:"caravaggio_matthew", step:4, steps:5,
- img:IMG.caravaggio_matthew, zoom:{x:30, y:62, scale:2.5},
- title:"The Costumes",
- title_pt:"Os Trajes",
- body:`<p>Look at the men at the table. They are dressed in late-sixteenth-century Roman finery — plumed caps, striped silk, swords on the belt. The clothes of Caravaggio's actual Rome, year 1600.</p>
-<p>Christ and Peter, by contrast, wear Biblical robes. Two eras collide in one room. Caravaggio's thesis: Christ did not visit Palestine in the year 30 and leave. He walks into every tavern in every age. The two men on the right are entering 1600s Rome because they are also, right now, entering wherever you happen to be reading this.</p>`,
- body_pt:`<p>Olhe os homens à mesa. Estão vestidos como fidalgos romanos do fim do séc. XVI — gorros com plumas, seda listrada, espadas na cintura. As roupas da Roma real de Caravaggio, ano 1600.</p>
-<p>Cristo e Pedro, por contraste, trajam vestes bíblicas. Duas épocas colidem numa só sala. Tese de Caravaggio: Cristo não visitou a Palestina no ano 30 e foi embora. Entra em toda taverna em toda época. Os dois à direita entram na Roma de 1600 porque também, agora, entram onde quer que você esteja lendo isto.</p>`,
- src:"Caravaggio, costume anachronism"},
+{slug:"m-bayes", type:"lectio", f:"M", title:"Bayes · Updating, Not Starting Over",
+ body:`<p>Bayes' rule is the only coherent way to revise a belief in light of new evidence. Prior odds × likelihood ratio = posterior odds. The mathematics is elementary; the psychological discipline is not.</p>
+<p>Most people treat each new piece of evidence as a fresh start: "given this fact, what do I now think?" The Bayesian asks: "given what I already believed, how much should this fact move me?" A surprising result from a noisy test should move you less than the same result from a precise test. Base rates matter. Sample size matters.</p>
+<p>The practical payoff is calibration. People who update by Bayes end up less surprised by reality, because their beliefs already contained the possibility of the data they eventually saw.</p>`,
+ src:"Bayes (1763); Laplace; modern treatments in Kahneman, Thinking Fast and Slow (ch. on base rates)",
+ title_pt:"Bayes · Atualizar, Não Recomeçar",
+ body_pt:`<p>A regra de Bayes é a única forma coerente de revisar uma crença à luz de nova evidência. Odds a priori × razão de verossimilhança = odds a posteriori. A matemática é elementar; a disciplina psicológica não é.</p>
+<p>A maioria das pessoas trata cada nova evidência como um recomeço: "dado este fato, o que eu penso agora?" O bayesiano pergunta: "dado o que eu já acreditava, quanto este fato deve me mover?" Um resultado surpreendente de um teste ruidoso deve movê-lo menos do que o mesmo resultado de um teste preciso. Taxas-base importam. Tamanho da amostra importa.</p>
+<p>O ganho prático é a calibração. Pessoas que atualizam por Bayes acabam menos surpresas com a realidade, porque suas crenças já continham a possibilidade dos dados que finalmente viram.</p>`,
+ src_pt:"Bayes (1763); Laplace; tratamentos modernos em Kahneman, Rápido e Devagar (cap. sobre taxas-base)"
+},
 
-{slug:"i-cal-05", type:"pictura", f:"I", series:"caravaggio_matthew", step:5, steps:5, rare:1,
- img:IMG.caravaggio_matthew, zoom:{x:65, y:30, scale:2.2},
- title:"The Light That Isn't There",
- title_pt:"A Luz Que Não Está Lá",
- body:`<p>Last. Look where the light comes from. Follow the beam back. It enters from upper right, behind Christ's head, and it is wrong — the one actual window in the chapel is on the wrong wall. This light does not match the room. It is a light the painting invents.</p>
-<p>Caravaggio does this throughout his work. He never paints haloes. He paints the light that would make a halo necessary. The invisibility of grace, made visible as photons. This is why his Christ needs no gold crown: the only crown is the lamp of raking light that singles him out from the dim.</p>`,
- body_pt:`<p>Por fim. Veja de onde vem a luz. Siga o feixe para trás. Entra pelo canto superior direito, atrás da cabeça de Cristo, e está errada — a única janela real da capela está na parede errada. Esta luz não combina com a sala. É uma luz que o quadro inventa.</p>
-<p>Caravaggio faz isso em toda a sua obra. Nunca pinta auréolas. Pinta a luz que tornaria a auréola necessária. A invisibilidade da graça tornada visível como fótons. Por isso o seu Cristo não precisa de coroa de ouro: a única coroa é a lâmpada de luz rasante que o destaca do escuro.</p>`,
- src:"Caravaggio, Calling of Matthew · the light"},
+{slug:"m-proof-structure", type:"lectio", f:"M", title:"The Architecture of a Proof",
+ body:`<p>A mathematical proof is not a list of true statements. It is a directed graph of implications that begins at the axioms (or previously established theorems) and ends at the claim. Every edge must be a licensed inference rule.</p>
+<p>The same architecture applies to any rigorous argument. State the premises explicitly. State the inference steps. State the conclusion. If any premise is contested, the argument does not fail — it simply becomes conditional: "if these are granted, then the conclusion follows." Most public disagreements are not about the inference steps; they are about unstated premises that one side treats as obvious and the other does not.</p>
+<p>Making the structure visible is half the work of critical thinking.</p>`,
+ src:"Standard mathematical practice; Toulmin's model of argument is the rhetorical analogue",
+ title_pt:"A Arquitetura de uma Prova",
+ body_pt:`<p>Uma prova matemática não é uma lista de afirmações verdadeiras. É um grafo dirigido de implicações que começa nos axiomas (ou teoremas previamente estabelecidos) e termina na afirmação. Toda aresta deve ser uma regra de inferência licenciada.</p>
+<p>A mesma arquitetura se aplica a qualquer argumento rigoroso. Enuncie as premissas explicitamente. Enuncie os passos de inferência. Enuncie a conclusão. Se alguma premissa é contestada, o argumento não falha — simplesmente se torna condicional: "se estas forem concedidas, então a conclusão se segue." A maioria das discordâncias públicas não é sobre os passos de inferência; é sobre premissas não enunciadas que um lado trata como óbvias e o outro não.</p>
+<p>Tornar a estrutura visível é metade do trabalho do pensamento crítico.</p>`,
+ src_pt:"Prática matemática padrão; o modelo de argumento de Toulmin é o análogo retórico"
+},
 
-// ===== VELAZQUEZ · LAS MENINAS =====
-{slug:"i-men-01", type:"pictura", f:"I", series:"velazquez_meninas", step:1, steps:5,
- img:IMG.velazquez_meninas, zoom:{x:50, y:50, scale:1},
- title:"The Whole · Las Meninas",
- title_pt:"O Todo · As Meninas",
- body:`<p>Madrid, 1656. Prado, 318 by 276 centimetres — over three metres tall. Velázquez has set up his easel in a room of the royal palace. The infanta Margarita, five years old, stands at the centre of the room surrounded by her maids of honour (<em>meninas</em>), two dwarves, and a dog. The painter himself stands at the left, brush in hand, looking out at us.</p>
-<p>Look where everyone is looking. They are all looking at us. We are not spectators. We are what they are painting.</p>`,
- body_pt:`<p>Madri, 1656. Prado, 318 por 276 centímetros — mais de três metros de altura. Velázquez montou o cavalete numa sala do palácio real. A infanta Margarita, cinco anos, ao centro, cercada pelas aias (<em>meninas</em>), dois anões, e um cão. O próprio pintor está à esquerda, pincel na mão, olhando para fora, para nós.</p>
-<p>Veja para onde todos olham. Todos olham para nós. Não somos espectadores. Somos o que eles estão pintando.</p>`,
- src:"Diego Velázquez, Las Meninas, 1656 · Museo del Prado, Madrid"},
+{slug:"m-extremal", type:"lectio", f:"M", title:"Extremal Thinking · Look at the Boundary",
+ body:`<p>When a problem is continuous and difficult in the middle, examine the extremes. What happens if the variable is zero? If it is infinite? If the constraint is removed entirely? The behavior at the boundary often reveals the shape of the interior solution and exposes assumptions that only look reasonable in the "normal" range.</p>
+<p>Engineers do this with limiting cases. Economists do it with corner solutions. Mathematicians do it with the method of continuity and with proofs by considering the maximal or minimal element.</p>
+<p>In ordinary decisions: "What if I had unlimited time?" "What if I had to decide in five minutes?" "What if the downside were ten times larger?" The answers at the extremes frequently change the ranking of the options in the middle.</p>`,
+ src:"Standard technique in analysis, optimization, and physics; transfer to practical reasoning",
+ title_pt:"Pensamento Extremal · Olhe a Fronteira",
+ body_pt:`<p>Quando um problema é contínuo e difícil no meio, examine os extremos. O que acontece se a variável for zero? Se for infinita? Se a restrição for removida por completo? O comportamento na fronteira frequentemente revela a forma da solução interior e expõe pressuposições que só parecem razoáveis na faixa "normal".</p>
+<p>Engenheiros fazem isso com casos-limite. Economistas com soluções de canto. Matemáticos com o método da continuidade e com provas considerando o elemento maximal ou minimal.</p>
+<p>Em decisões ordinárias: "E se eu tivesse tempo ilimitado?" "E se eu tivesse que decidir em cinco minutos?" "E se o lado negativo fosse dez vezes maior?" As respostas nos extremos frequentemente mudam o ranking das opções no meio.</p>`,
+ src_pt:"Técnica padrão em análise, otimização e física; transferência para o raciocínio prático"
+},
 
-{slug:"i-men-02", type:"pictura", f:"I", series:"velazquez_meninas", step:2, steps:5,
- img:IMG.velazquez_meninas, zoom:{x:45, y:50, scale:2.3},
- title:"The Infanta",
- title_pt:"A Infanta",
- body:`<p>Centre of the painting. Margarita Teresa, five years old, future Holy Roman Empress, in a stiff silver gown. One lady-in-waiting kneels to offer her water from a red cup; the other curtseys. The dog in front has had enough and is being half-roused by the dwarf's foot.</p>
-<p>She looks straight out of the canvas at us — her parents, we discover in a moment. The entire court orbits her. She is five. She does not know that she will die at twenty-one in Vienna, married to her own uncle, having never recovered from her sixth pregnancy. Velázquez knew none of that either. But something in the painting is holding her against the time he could not see.</p>`,
- body_pt:`<p>Centro do quadro. Margarita Teresa, cinco anos, futura imperatriz do Sacro Império, num vestido prateado armado. Uma aia se ajoelha oferecendo-lhe água numa taça vermelha; a outra faz reverência. O cão à frente já se cansou e é meio despertado pelo pé do anão.</p>
-<p>Olha diretamente para fora da tela para nós — seus pais, descobriremos num instante. A corte inteira orbita em torno dela. Tem cinco anos. Não sabe que vai morrer aos vinte e um em Viena, casada com o próprio tio, sem jamais se recuperar da sexta gravidez. Velázquez também não sabia. Mas algo no quadro a segura contra o tempo que ele não podia ver.</p>`,
- src:"Velázquez, Las Meninas · the infanta"},
+{slug:"m-model-error", type:"lectio", f:"M", title:"All Models Are Wrong · Some Are Useful",
+ body:`<p>Box's aphorism is not an invitation to relativism. It is a demand for explicitness about the domain of validity. A linear approximation is excellent near the point of expansion and disastrous far away. A normal distribution is a good model for measurement error and a catastrophic model for financial returns in the tails.</p>
+<p>The critical move is to ask, of every model you use: under what conditions does it break? What is the characteristic scale at which the neglected terms become first-order? If you cannot answer, you do not understand the model — you are merely operating it.</p>
+<p>People who treat models as reality are surprised by reality. People who treat models as maps with known scale and projection errors are merely updated.</p>`,
+ src:"George Box (1976); Taleb on the ludic fallacy; standard scientific practice",
+ title_pt:"Todos os Modelos Estão Errados · Alguns São Úteis",
+ body_pt:`<p>O aforismo de Box não é um convite ao relativismo. É uma exigência de explicitação sobre o domínio de validade. Uma aproximação linear é excelente perto do ponto de expansão e desastrosa longe dele. Uma distribuição normal é um bom modelo para erro de medição e um modelo catastrófico para retornos financeiros nas caudas.</p>
+<p>O movimento crítico é perguntar, de todo modelo que você usa: sob que condições ele quebra? Qual é a escala característica em que os termos negligenciados se tornam de primeira ordem? Se você não consegue responder, não compreende o modelo — apenas o opera.</p>
+<p>Pessoas que tratam modelos como realidade são surpreendidas pela realidade. Pessoas que tratam modelos como mapas com escala e erros de projeção conhecidos são meramente atualizadas.</p>`,
+ src_pt:"George Box (1976); Taleb sobre a falácia lúdica; prática científica padrão"
+},
 
-{slug:"i-men-03", type:"pictura", f:"I", series:"velazquez_meninas", step:3, steps:5,
- img:IMG.velazquez_meninas, zoom:{x:50, y:28, scale:3.0},
- title:"The Mirror",
- title_pt:"O Espelho",
- body:`<p>Back wall. A dim mirror. Not an object you notice at first glance. In the mirror, two faces: the king Philip IV and his queen Mariana. They are standing where <em>we</em> are standing.</p>
-<p>Which means we are the king and queen. Or — scholars still argue — we are seeing them reflected because we are standing beside them, as courtiers would. Foucault wrote twenty famous pages on the question. The painting is the beginning of modern self-consciousness in art, because for the first time the viewer is also inside the picture, and the picture knows it.</p>`,
- body_pt:`<p>Parede do fundo. Um espelho embaçado. Não é objeto que se note à primeira vista. No espelho, dois rostos: o rei Filipe IV e a rainha Mariana. Estão parados onde <em>nós</em> estamos.</p>
-<p>O que significa que somos o rei e a rainha. Ou — os estudiosos ainda discutem — estamos vendo os reis refletidos porque estamos de pé ao lado deles, como cortesãos. Foucault escreveu umas célebres vinte páginas sobre a questão. O quadro é o começo da autoconsciência moderna na arte, porque, pela primeira vez, o espectador também está dentro do quadro, e o quadro sabe disso.</p>`,
- src:"Velázquez, Las Meninas · the mirror"},
+{slug:"m-q-fermi-piano", type:"quaestio", f:"M",
+ title:"How many piano tuners?",
+ body:`<p>Fermi's classic: estimate the number of full-time piano tuners in a city of 4 million people. Which decomposition is the most useful starting point?</p>`,
+ opts:["Count music schools and multiply by staff","Estimate pianos × tunings/year × hours/tuning ÷ hours a tuner works per year","Survey a sample of neighborhoods and extrapolate","Look up the number in the yellow pages and adjust for the informal sector"],
+ correct:1,
+ reveal:`<p>The second path forces you to confront every major source of uncertainty and still yields an order-of-magnitude answer. The others either require data you do not have or hide the structure of the problem.</p>`,
+ src:"Fermi problems tradition",
+ title_pt:"Quantos afinadores de piano?",
+ body_pt:`<p>O clássico de Fermi: estime o número de afinadores de piano em tempo integral numa cidade de 4 milhões de habitantes. Qual decomposição é o ponto de partida mais útil?</p>`,
+ opts_pt:["Contar escolas de música e multiplicar pelo quadro de funcionários","Estimar pianos × afinações/ano × horas/afinação ÷ horas que um afinador trabalha por ano","Pesquisar uma amostra de bairros e extrapolar","Consultar as páginas amarelas e ajustar pelo setor informal"],
+ reveal_pt:`<p>O segundo caminho força você a confrontar toda fonte importante de incerteza e ainda assim produz uma resposta de ordem de magnitude. Os outros ou exigem dados que você não tem ou escondem a estrutura do problema.</p>`,
+ src_pt:"Tradição dos problemas de Fermi"
+},
 
-{slug:"i-men-04", type:"pictura", f:"I", series:"velazquez_meninas", step:4, steps:5,
- img:IMG.velazquez_meninas, zoom:{x:16, y:40, scale:2.4},
- title:"The Painter",
- title_pt:"O Pintor",
- body:`<p>Far left. Velázquez himself. Palette in his left hand, brush raised in the right, pausing in the middle of a stroke to look up at — us, the king and queen. He is working on a huge canvas whose back is turned to us.</p>
-<p>On his chest: the red cross of the Order of Santiago, the highest honour the Spanish crown could give a nobleman. Velázquez did not have it when he started this painting. He received it two years before his death, in 1659. Legend has it the king himself painted the cross onto the canvas with his own hand, over Velázquez's own cross-less chest, after the painter died. Whether true or legend, the painting is the story of a servant who became a nobleman because he painted this well.</p>`,
- body_pt:`<p>Extrema esquerda. Velázquez em pessoa. Paleta na mão esquerda, pincel erguido na direita, pausando no meio de uma pincelada para olhar para cima — para nós, o rei e a rainha. Está trabalhando numa tela enorme cujo verso está voltado para nós.</p>
-<p>Sobre o peito: a cruz vermelha da Ordem de Santiago, a mais alta honraria que a Coroa espanhola podia conceder a um fidalgo. Velázquez não a tinha quando começou este quadro. Recebeu-a dois anos antes de morrer, em 1659. Reza a lenda que o próprio rei pintou a cruz na tela com a sua mão, sobre o peito então sem cruz de Velázquez, depois que o pintor morreu. Verdade ou lenda, o quadro é a história de um criado que se tornou fidalgo porque pintou tão bem.</p>`,
- src:"Velázquez, Las Meninas · the painter"},
+{slug:"m-q-counterexample", type:"quaestio", f:"M",
+ title:"Destroy the claim",
+ body:`<p>"Every successful company has a strong corporate culture." What is the most efficient critical move?</p>`,
+ opts:["Collect more examples of successful companies with strong cultures","Find one successful company that demonstrably lacks a strong culture","Argue that culture is hard to measure","Ask whether success causes culture or culture causes success"],
+ correct:1,
+ reveal:`<p>A single clear counterexample falsifies the universal claim. The other moves are useful later (for refined, non-universal versions of the claim), but they are slower. The trained reflex is to reach for the counterexample first.</p>`,
+ src:"Mathematical method applied to ordinary claims",
+ title_pt:"Destrua a afirmação",
+ body_pt:`<p>"Toda empresa bem-sucedida tem uma cultura corporativa forte." Qual é o movimento crítico mais eficiente?</p>`,
+ opts_pt:["Coletar mais exemplos de empresas bem-sucedidas com culturas fortes","Encontrar uma empresa bem-sucedida que demonstravelmente careça de cultura forte","Argumentar que cultura é difícil de medir","Perguntar se o sucesso causa a cultura ou a cultura causa o sucesso"],
+ reveal_pt:`<p>Um único contraexemplo claro falsifica a afirmação universal. Os outros movimentos são úteis depois (para versões refinadas, não-universais, da afirmação), mas são mais lentos. O reflexo treinado é ir atrás do contraexemplo primeiro.</p>`,
+ src_pt:"Método matemático aplicado a afirmações ordinárias"
+},
 
-{slug:"i-men-05", type:"pictura", f:"I", series:"velazquez_meninas", step:5, steps:5, rare:1,
- img:IMG.velazquez_meninas, zoom:{x:50, y:50, scale:1.0},
- title:"The Puzzle That Will Not Solve",
- title_pt:"O Enigma Que Não Se Resolve",
- body:`<p>Step back. The whole picture is a Baroque trompe-l'oeil of relations. Who paints whom? Who looks at whom? Where is the easel's canvas pointed? Why does the mirror reflect the king and queen but not the painting the painter is making?</p>
-<p>Four hundred years later, every attempt to work out the exact geometry contradicts another. The painting cannot be solved. Velázquez left a puzzle in the Prado for painters to visit, and they do. Picasso made fifty-eight copies of it in a single summer trying to understand it. He never did. The best pictures are the ones that outlive their puzzles.</p>`,
- body_pt:`<p>Dê um passo atrás. O quadro inteiro é um trompe-l'oeil barroco de relações. Quem pinta quem? Quem olha quem? Para onde aponta a tela no cavalete? Por que o espelho reflete o rei e a rainha, mas não o quadro que o pintor está fazendo?</p>
-<p>Quatrocentos anos depois, toda tentativa de resolver a geometria contradiz outra. O quadro não pode ser resolvido. Velázquez deixou um enigma no Prado para os pintores visitarem, e eles visitam. Picasso fez cinquenta e oito cópias dele num só verão tentando entendê-lo. Nunca entendeu. Os melhores quadros são os que sobrevivem aos próprios enigmas.</p>`,
- src:"Velázquez, Las Meninas · the whole"},
+{slug:"m-q-expected-value", type:"quaestio", f:"M",
+ title:"The asymmetric bet",
+ body:`<p>You are offered a bet: 1% chance of winning $10,000, 99% chance of losing $50. The expected value is positive. Why do most people still refuse?</p>`,
+ opts:["They correctly compute that the expected value is actually negative","They overweight the probability of the loss relative to its magnitude (or underweight the rare gain)","The bet violates the axioms of expected-utility theory","They lack the capital to absorb the loss"],
+ correct:1,
+ reveal:`<p>Expected value is +$50.50. The refusal is a psychological overweighting of the salient loss, not a calculation error. In a sequence of many independent such bets the law of large numbers would make the refusal costly. For a single bet the utility of the loss may still dominate if the decision-maker is near a ruin threshold — which is a different, and legitimate, calculation.</p>`,
+ src:"Prospect theory (Kahneman & Tversky); expected-value arithmetic",
+ title_pt:"A aposta assimétrica",
+ body_pt:`<p>Oferecem-lhe uma aposta: 1% de chance de ganhar US$ 10.000, 99% de chance de perder US$ 50. O valor esperado é positivo. Por que a maioria das pessoas ainda recusa?</p>`,
+ opts_pt:["Elas calculam corretamente que o valor esperado é na verdade negativo","Elas superponderam a probabilidade da perda em relação à sua magnitude (ou subponderam o ganho raro)","A aposta viola os axiomas da teoria da utilidade esperada","Elas carecem de capital para absorver a perda"],
+ reveal_pt:`<p>O valor esperado é +US$ 50,50. A recusa é uma superponderação psicológica da perda saliente, não um erro de cálculo. Numa sequência de muitas apostas independentes desse tipo a lei dos grandes números tornaria a recusa custosa. Para uma única aposta a utilidade da perda ainda pode dominar se o decisor estiver perto de um limiar de ruína — o que é um cálculo diferente, e legítimo.</p>`,
+ src_pt:"Teoria do prospecto (Kahneman & Tversky); aritmética do valor esperado"
+},
 
-// ===== REMBRANDT · THE PRODIGAL SON =====
-{slug:"i-prd-01", type:"pictura", f:"I", series:"rembrandt_prodigal", step:1, steps:5,
- img:IMG.rembrandt_prodigal, zoom:{x:50, y:50, scale:1},
- title:"The Whole · The Prodigal Son",
- title_pt:"O Todo · O Filho Pródigo",
- body:`<p>Hermitage, Saint Petersburg. 1669. 262 by 206 centimetres — floor to ceiling in a modest room. Rembrandt is sixty-three, bankrupt, outliving his wife and most of his children. He paints a father embracing a kneeling son.</p>
-<p>This is the last large painting he finishes. He will be dead within the year. The whole weight of a long life is in this canvas, which is why no reproduction prepares you for standing in front of it.</p>`,
- body_pt:`<p>Hermitage, São Petersburgo. 1669. 262 por 206 centímetros — do chão ao teto de uma sala comum. Rembrandt tem sessenta e três anos, está falido, sobreviveu à esposa e à maioria dos filhos. Pinta um pai abraçando um filho ajoelhado.</p>
-<p>É o último grande quadro que termina. Estará morto antes do ano acabar. Todo o peso de uma vida longa está nessa tela, e é por isso que nenhuma reprodução te prepara para estar diante dela.</p>`,
- src:"Rembrandt van Rijn, c. 1669 · Hermitage, Saint Petersburg"},
+{slug:"m-q-bayes-base", type:"quaestio", f:"M",
+ title:"The base-rate trap",
+ body:`<p>A test for a rare disease (1 in 1,000) is 99% accurate in both directions. You test positive. What is the approximate probability you have the disease?</p>`,
+ opts:["99%","About 50%","About 9%","About 1%"],
+ correct:2,
+ reveal:`<p>Out of 1,000 people, 1 has the disease and tests positive. Of the 999 healthy, about 10 test positive (1% false-positive rate). So roughly 1 in 11 positives is a true positive ≈ 9%. Base rates dominate when the condition is rare. Ignoring them is the most common quantitative error in medical and legal reasoning.</p>`,
+ src:"Classic Bayes problem; Kahneman & Tversky base-rate neglect",
+ title_pt:"A armadilha da taxa-base",
+ body_pt:`<p>Um teste para uma doença rara (1 em 1.000) é 99% preciso nas duas direções. Você testa positivo. Qual é a probabilidade aproximada de você ter a doença?</p>`,
+ opts_pt:["99%","Cerca de 50%","Cerca de 9%","Cerca de 1%"],
+ reveal_pt:`<p>De 1.000 pessoas, 1 tem a doença e testa positivo. Das 999 saudáveis, cerca de 10 testam positivo (taxa de falso-positivo de 1%). Portanto, aproximadamente 1 em 11 positivos é um verdadeiro positivo ≈ 9%. As taxas-base dominam quando a condição é rara. Ignorá-las é o erro quantitativo mais comum no raciocínio médico e jurídico.</p>`,
+ src_pt:"Problema clássico de Bayes; negligência de taxa-base de Kahneman & Tversky"
+},
 
-{slug:"i-prd-02", type:"pictura", f:"I", series:"rembrandt_prodigal", step:2, steps:5,
- img:IMG.rembrandt_prodigal, zoom:{x:36, y:72, scale:2.6},
- title:"The Son's Feet",
- title_pt:"Os Pés do Filho",
- body:`<p>Lower centre. Look at the son's feet. His head is shaved — a convict's crop. One foot is calloused and bare; the other wears a sandal worn through its sole. On his left hip he still carries the sword he took to war, which the parable does not mention but Rembrandt invents.</p>
-<p>He has come home with nothing but a weapon. Rembrandt painted him from the back — we do not see his face — because we are not supposed to see it. The son's face is for the father.</p>`,
- body_pt:`<p>Parte inferior central. Olhe os pés do filho. A cabeça está raspada — corte de preso. Um pé é calejado e descalço; o outro usa uma sandália com a sola já furada. No quadril esquerdo ele ainda carrega a espada com que foi à guerra, que a parábola não menciona mas Rembrandt inventa.</p>
-<p>Voltou para casa sem nada senão uma arma. Rembrandt pintou-o pelas costas — não vemos o seu rosto — porque não devemos vê-lo. O rosto do filho é para o pai.</p>`,
- src:"Rembrandt, Prodigal · the son's feet"},
+{slug:"m-sent-polya", type:"sententia", f:"M", title:"Pólya · The First Rule",
+ body:`<blockquote>The first rule of discovery is to have brains and good luck. The second rule of discovery is to sit tight and wait till you get a bright idea.</blockquote>
+<p>Pólya immediately adds the practical corollary: the bright idea is more likely to arrive if you have prepared the ground by understanding the problem, drawing a figure, and introducing suitable notation. Waiting is not passive.</p>`,
+ src:"G. Pólya, How to Solve It (1945)",
+ title_pt:"Pólya · A Primeira Regra",
+ body_pt:`<blockquote>A primeira regra da descoberta é ter cérebro e boa sorte. A segunda regra da descoberta é ficar quieto e esperar até ter uma ideia brilhante.</blockquote>
+<p>Pólya acrescenta imediatamente o corolário prático: a ideia brilhante tem mais chance de chegar se você preparou o terreno compreendendo o problema, desenhando uma figura e introduzindo notação adequada. Esperar não é passivo.</p>`,
+ src_pt:"G. Pólya, A Arte de Resolver Problemas (1945)"
+},
 
-{slug:"i-prd-03", type:"pictura", f:"I", series:"rembrandt_prodigal", step:3, steps:5,
- img:IMG.rembrandt_prodigal, zoom:{x:38, y:38, scale:2.5},
- title:"The Hands",
- title_pt:"As Mãos",
- body:`<p>The father's hands on the son's shoulders. Look at them carefully. They do not match. The one on our left is young, broad, strong — a labourer's hand. The one on our right is older, lined, delicate — a woman's hand.</p>
-<p>Rembrandt painted them as a pair on purpose. The father is both father and mother. God's embrace is both at once. Nouwen wrote a whole book, <em>The Return of the Prodigal Son</em>, after a year sitting in front of this painting. The hands were his central discovery. Few painters paint theology directly. Rembrandt painted a dogma into a pair of hands.</p>`,
- body_pt:`<p>As mãos do pai sobre os ombros do filho. Olhe-as com atenção. Não são iguais. A da nossa esquerda é jovem, larga, forte — mão de trabalhador. A da nossa direita é mais velha, estriada, delicada — mão de mulher.</p>
-<p>Rembrandt pintou-as como par de propósito. O pai é pai e mãe. O abraço de Deus é as duas coisas ao mesmo tempo. Nouwen escreveu um livro inteiro, <em>O Regresso do Filho Pródigo</em>, depois de um ano sentado diante deste quadro. As mãos foram sua descoberta central. Poucos pintores pintam teologia diretamente. Rembrandt pintou um dogma num par de mãos.</p>`,
- src:"Rembrandt, Prodigal · the father's hands"},
+{slug:"m-sent-hamming", type:"sententia", f:"M", title:"Hamming · The Door",
+ body:`<blockquote>The purpose of computing is insight, not numbers.</blockquote>
+<p>Richard Hamming's reminder that the output of a calculation is valuable only insofar as it changes what you understand. A number that does not alter a decision or a model is decoration.</p>`,
+ src:"Richard Hamming, The Art of Doing Science and Engineering (1997)",
+ title_pt:"Hamming · A Porta",
+ body_pt:`<blockquote>O propósito do cálculo é a compreensão, não os números.</blockquote>
+<p>Lembrete de Richard Hamming de que a saída de um cálculo só é valiosa na medida em que muda o que você compreende. Um número que não altera uma decisão ou um modelo é decoração.</p>`,
+ src_pt:"Richard Hamming, The Art of Doing Science and Engineering (1997)"
+},
 
-{slug:"i-prd-04", type:"pictura", f:"I", series:"rembrandt_prodigal", step:4, steps:5,
- img:IMG.rembrandt_prodigal, zoom:{x:40, y:22, scale:2.6},
- title:"The Father's Face",
- title_pt:"O Rosto do Pai",
- body:`<p>Now the father. He bends forward with his head above the son's. His face is lit, exhausted — Rembrandt gives him the drooping eyes of near-blindness, which the parable does not mention. The father has been watching the horizon until his sight gave out.</p>
-<p>The forgiveness is not in the words we remember from Luke's gospel. It is in the way an old man's spine bends when the child he gave up on walks back into the yard. Rembrandt painted this a year after burying his own son Titus. The father in the painting is the father Rembrandt did not get to be.</p>`,
- body_pt:`<p>Agora o pai. Debruça-se com a cabeça acima da do filho. O rosto está iluminado, exausto — Rembrandt lhe dá as pálpebras caídas de quem está quase cego, o que a parábola não menciona. O pai esteve olhando o horizonte até a vista acabar.</p>
-<p>O perdão não está nas palavras que lembramos do evangelho de Lucas. Está no modo como a coluna de um velho se curva quando o filho que ele desistiu de esperar volta ao pátio. Rembrandt pintou isto um ano depois de enterrar o próprio filho Tito. O pai no quadro é o pai que Rembrandt não teve tempo de ser.</p>`,
- src:"Rembrandt, Prodigal · the father's face"},
+{slug:"m-sent-feynman", type:"sententia", f:"M", title:"Feynman · The Key to Science",
+ body:`<blockquote>It does not make any difference how beautiful your guess is... If it disagrees with experiment, it is wrong.</blockquote>
+<p>The sentence is absolute. No amount of elegance, consensus, or prior investment rescues a claim that fails the data. The trained mind treats disagreement with experiment as terminal, not as a temporary inconvenience.</p>`,
+ src:"Richard Feynman, The Character of Physical Law (1965)",
+ title_pt:"Feynman · A Chave da Ciência",
+ body_pt:`<blockquote>Não importa quão bela seja a sua conjectura... Se ela discorda da experiência, está errada.</blockquote>
+<p>A frase é absoluta. Nenhuma quantidade de elegância, consenso ou investimento prévio salva uma afirmação que falha nos dados. A mente treinada trata a discordância com a experiência como terminal, não como inconveniente temporário.</p>`,
+ src_pt:"Richard Feynman, The Character of Physical Law (1965)"
+},
 
-{slug:"i-prd-05", type:"pictura", f:"I", series:"rembrandt_prodigal", step:5, steps:5, rare:1,
- img:IMG.rembrandt_prodigal, zoom:{x:72, y:38, scale:2.0},
- title:"The Elder Brother",
- title_pt:"O Irmão Mais Velho",
- body:`<p>Right side, standing erect in red. The elder son. Arms folded. No part of him touching his father or his brother. He is still outside the embrace. Rembrandt gives him the whole right half of the canvas and refuses to resolve his face.</p>
-<p>This is the parable's quietest horror. The elder son is you if you have been diligent for the wrong reasons. He has worked faithfully for his father and in that very work has lost him. The painting makes you worry whether <em>he</em> will come inside the embrace before the father dies.</p>
-<p>The parable in Luke ends without telling us. Rembrandt also leaves it unresolved. On purpose.</p>`,
- body_pt:`<p>Direita, em pé, de vermelho. O irmão mais velho. Braços cruzados. Nenhuma parte dele tocando o pai ou o irmão. Ainda está fora do abraço. Rembrandt lhe dá toda a metade direita da tela e se recusa a resolver o seu rosto.</p>
-<p>É o horror mais silencioso da parábola. O irmão mais velho é você se foi diligente pelas razões erradas. Trabalhou fielmente para o pai e, nesse mesmo trabalho, o perdeu. O quadro te faz temer que <em>ele</em> entre no abraço antes de o pai morrer.</p>
-<p>A parábola em Lucas termina sem nos dizer. Rembrandt também deixa em aberto. De propósito.</p>`,
- src:"Rembrandt, Prodigal · the elder brother"},
+{slug:"m-abstraction", type:"lectio", f:"M", title:"Abstraction · Throw Away the Right Details",
+ body:`<p>Mathematical abstraction is the art of discarding every property of an object that is irrelevant to the question at hand, until only the structure that matters remains. A graph is not a diagram of cities; it is a set of vertices and edges. Once the irrelevant geometry is gone, theorems about connectivity become visible.</p>
+<p>The same skill is the core of modeling any real problem. The question is never "what is the complete description?" It is "which features, if changed, would change the answer I care about?" Everything else is noise that slows the mind.</p>
+<p>Bad modelers keep too much. Good modelers throw away aggressively and then check, at the end, whether any discarded feature would have altered the conclusion. The check is cheap; the clarity is expensive and worth it.</p>`,
+ src:"Standard mathematical practice; transfer to modeling in science and decision-making",
+ title_pt:"Abstração · Descarte os Detalhes Certos",
+ body_pt:`<p>A abstração matemática é a arte de descartar toda propriedade de um objeto que seja irrelevante para a pergunta em questão, até restar apenas a estrutura que importa. Um grafo não é um diagrama de cidades; é um conjunto de vértices e arestas. Uma vez que a geometria irrelevante some, teoremas sobre conectividade se tornam visíveis.</p>
+<p>A mesma habilidade é o núcleo de modelar qualquer problema real. A pergunta nunca é "qual é a descrição completa?" É "quais características, se mudadas, mudariam a resposta que me importa?" Todo o resto é ruído que retarda a mente.</p>
+<p>Maus modeladores guardam demais. Bons modeladores descartam de forma agressiva e depois verificam, no fim, se alguma característica descartada teria alterado a conclusão. A verificação é barata; a clareza é cara e vale a pena.</p>`,
+ src_pt:"Prática matemática padrão; transferência para modelagem em ciência e tomada de decisão"
+},
 
-// ===== VAN EYCK · ARNOLFINI =====
-{slug:"i-arn-01", type:"pictura", f:"I", series:"van_eyck_arnolfini", step:1, steps:5,
- img:IMG.van_eyck_arnolfini, zoom:{x:50, y:50, scale:1},
- title:"The Whole · The Arnolfini Portrait",
- title_pt:"O Todo · O Retrato dos Arnolfini",
- body:`<p>Bruges, 1434. 82 by 60 centimetres. Oil paint has just been invented in Flanders. Jan van Eyck shows you what it can do.</p>
-<p>A merchant and his wife stand in a bedroom. Shoes off. Hands joined. Every bristle of the dog, every bead of amber, every candle flame, every tile — painted at a resolution that would not be matched by any other medium for 500 years. Begin by looking at the whole, then let the eye find the clues.</p>`,
- body_pt:`<p>Bruges, 1434. 82 por 60 centímetros. A tinta a óleo acabou de ser inventada em Flandres. Jan van Eyck te mostra o que ela sabe fazer.</p>
-<p>Um mercador e sua esposa estão em pé num quarto. Sapatos no chão. Mãos dadas. Cada pelo do cão, cada conta de âmbar, cada chama de vela, cada azulejo — pintado numa resolução que nenhum outro meio igualaria por 500 anos. Comece pelo todo, depois deixe o olho achar as pistas.</p>`,
- src:"Jan van Eyck, Portrait of Giovanni Arnolfini and his Wife, 1434 · National Gallery, London"},
+{slug:"m-restructure", type:"lectio", f:"M", title:"Restructuring the Problem · The Move Before the Solution",
+ body:`<p>Most hard problems are hard in their original formulation. The skilled solver's first act is not to attack the problem but to rewrite it: change variables, switch to a dual formulation, exploit symmetry, reduce dimension, or translate the question into a domain where existing tools apply.</p>
+<p>In linear algebra this is choosing a better basis. In physics it is choosing a better coordinate system. In everyday reasoning it is asking "what is the real decision here?" until the original statement is revealed as a special case of a clearer one.</p>
+<p>The time spent restructuring is almost always repaid by the simplicity of the subsequent solution. People who skip the step and "just start solving" spend longer and produce weaker answers.</p>`,
+ src:"Pólya; standard practice in pure and applied mathematics",
+ title_pt:"Reestruturar o Problema · O Movimento Antes da Solução",
+ body_pt:`<p>A maioria dos problemas difíceis é difícil na formulação original. O primeiro ato do resolvedor habilidoso não é atacar o problema, mas reescrevê-lo: mudar variáveis, passar a uma formulação dual, explorar simetria, reduzir dimensão, ou traduzir a pergunta para um domínio onde ferramentas existentes se aplicam.</p>
+<p>Na álgebra linear isso é escolher uma base melhor. Na física, escolher um sistema de coordenadas melhor. No raciocínio cotidiano, perguntar "qual é a decisão real aqui?" até que o enunciado original se revele um caso especial de um mais claro.</p>
+<p>O tempo gasto em reestruturar é quase sempre recompensado pela simplicidade da solução subsequente. Pessoas que pulam o passo e "simplesmente começam a resolver" gastam mais tempo e produzem respostas mais fracas.</p>`,
+ src_pt:"Pólya; prática padrão em matemática pura e aplicada"
+}
 
-{slug:"i-arn-02", type:"pictura", f:"I", series:"van_eyck_arnolfini", step:2, steps:5,
- img:IMG.van_eyck_arnolfini, zoom:{x:48, y:50, scale:2.4},
- title:"The Hands",
- title_pt:"As Mãos",
- body:`<p>Centre. His right hand is raised, palm forward, as if swearing an oath. Her right hand rests lightly on his left, which is extended, open, receiving.</p>
-<p>Erwin Panofsky, in 1934, argued the whole painting is a legal record of a <em>per verba de praesenti</em> marriage — the kind Catholic couples could contract without a priest, before Trent in 1545 required clergy for valid matrimony. The raised hand is the oath. The joined hands are the covenant. The removed shoes (visible in the lower corners) mean they are standing on holy ground. Later scholars doubt the full theory. But something solemn and documentary is happening in this bedroom.</p>`,
- body_pt:`<p>Centro. A mão direita dele está erguida, palma à frente, como quem jura. A mão direita dela repousa levemente sobre a esquerda dele, que está estendida, aberta, recebendo.</p>
-<p>Erwin Panofsky, em 1934, defendeu que o quadro inteiro é registro jurídico de um casamento <em>per verba de praesenti</em> — do tipo que casais católicos podiam contrair sem padre, antes de Trento (1545) exigir clérigo para a validade. A mão erguida é o juramento. As mãos dadas são o pacto. Os sapatos retirados (visíveis nos cantos inferiores) significam que estão em terreno sagrado. Especialistas posteriores duvidam da teoria inteira. Mas algo solene e documental acontece neste quarto.</p>`,
- src:"Van Eyck, Arnolfini · the joined hands"},
-
-{slug:"i-arn-03", type:"pictura", f:"I", series:"van_eyck_arnolfini", step:3, steps:5,
- img:IMG.van_eyck_arnolfini, zoom:{x:50, y:50, scale:3.4},
- title:"The Mirror",
- title_pt:"O Espelho",
- body:`<p>Back wall. A perfectly round convex mirror. Zoom in. In the glass, the whole room appears, reversed — and two more figures stand where <em>we</em> are standing. One in red, one in blue. The painting is giving us the vantage point of two witnesses to the scene we are observing.</p>
-<p>Above the mirror, in careful cursive Latin: <em>Johannes de eyck fuit hic 1434.</em> "Jan van Eyck was here. 1434." The painter is the witness. The painting is a legal document. No other painter in Europe signed a picture that way for a hundred years.</p>`,
- body_pt:`<p>Parede do fundo. Um espelho convexo perfeitamente redondo. Dê zoom. No vidro, o quarto inteiro aparece invertido — e mais duas figuras estão paradas onde <em>nós</em> estamos. Uma de vermelho, outra de azul. O quadro nos dá a vista de duas testemunhas da cena que observamos.</p>
-<p>Acima do espelho, em cursiva latina cuidadosa: <em>Johannes de eyck fuit hic 1434.</em> "Jan van Eyck esteve aqui. 1434." O pintor é a testemunha. O quadro é documento jurídico. Nenhum outro pintor da Europa assinaria um quadro assim por cem anos.</p>`,
- src:"Van Eyck, Arnolfini · the mirror and the signature"},
-
-{slug:"i-arn-04", type:"pictura", f:"I", series:"van_eyck_arnolfini", step:4, steps:5,
- img:IMG.van_eyck_arnolfini, zoom:{x:70, y:48, scale:2.8},
- title:"The Dress",
- title_pt:"O Vestido",
- body:`<p>Her green dress drapes forward over her belly in heavy folds. Is she pregnant? Art historians argue. The consensus leans no — it is the fashion of the time, in which unmarried and married women alike piled fabric at the belly to simulate the shape.</p>
-<p>The gesture by which she lifts the dress is both decorous and prosperous: look how much cloth I can afford to waste. The dress itself was worth more than a modest house. Van Eyck painted every fold at a resolution the dress-maker's own hands could not have improved. The painting is a brag about Flemish wealth and an inventory of a specific bride's trousseau.</p>`,
- body_pt:`<p>O vestido verde dela drapeja à frente sobre a barriga em pregas pesadas. Está grávida? Os historiadores da arte discutem. O consenso tende ao não — é a moda da época, em que mulheres solteiras e casadas acumulavam tecido na barriga para simular a forma.</p>
-<p>O gesto com que ela ergue o vestido é ao mesmo tempo decoroso e próspero: olhem quanto tecido posso desperdiçar. O vestido em si valia mais do que uma casa modesta. Van Eyck pintou cada prega numa resolução que as próprias mãos da costureira não poderiam melhorar. O quadro é uma ostentação da riqueza flamenga e um inventário do enxoval de uma noiva específica.</p>`,
- src:"Van Eyck, Arnolfini · the green dress"},
-
-{slug:"i-arn-05", type:"pictura", f:"I", series:"van_eyck_arnolfini", step:5, steps:5, rare:1,
- img:IMG.van_eyck_arnolfini, zoom:{x:50, y:76, scale:3.0},
- title:"The Dog",
- title_pt:"O Cão",
- body:`<p>Lower centre, between them. A small terrier. Alert, bright-eyed, each whisker painted. In the vocabulary of Netherlandish painting, a dog in a marriage portrait signifies one thing: <em>fidelity</em>. Latin for dog, <em>canis</em>, next to Latin for faithful, <em>fidelis</em>. The word Fido comes from here.</p>
-<p>Step back now. What van Eyck has made is a legal document, a brag, a bridal inventory, a theological statement, and the first great painting of ordinary bourgeois life in the North. Five hundred years of Dutch and Flemish painting flow out of this one small picture. Vermeer is a great-grandchild. Rembrandt is a cousin. The whole quiet, interior tradition — the opposite of Rome's altars — begins here.</p>`,
- body_pt:`<p>Parte inferior central, entre os dois. Um pequeno terrier. Alerta, olhos vivos, cada bigode pintado. No vocabulário da pintura dos Países Baixos, um cão num retrato de casamento significa uma coisa: <em>fidelidade</em>. Latim para cão, <em>canis</em>, perto de latim para fiel, <em>fidelis</em>. O nome Fido vem daí.</p>
-<p>Dê um passo atrás agora. O que van Eyck fez é documento jurídico, ostentação, inventário nupcial, afirmação teológica, e o primeiro grande quadro da vida burguesa ordinária no norte. Quinhentos anos de pintura holandesa e flamenga saem deste pequeno quadro. Vermeer é bisneto. Rembrandt é primo. Toda a tradição silenciosa e interior — o oposto dos altares de Roma — começa aqui.</p>`,
- src:"Van Eyck, Arnolfini · the dog"},
-
-// ===== RUBLEV · THE TRINITY =====
-{slug:"i-rub-01", type:"pictura", f:"I", series:"rublev_trinity", step:1, steps:5,
- img:IMG.rublev_trinity, zoom:{x:50, y:50, scale:1},
- title:"The Whole · Rublev's Trinity",
- title_pt:"O Todo · A Trindade de Rublev",
- body:`<p>Russia, c. 1411. 142 by 114 centimetres, egg tempera on wood. Andrei Rublev, a monk at the Trinity Monastery of Saint Sergius, paints three angels seated around a table. The scene is Genesis 18 — Abraham entertained three strangers at Mamre who turned out to be the Lord — but Rublev leaves Abraham out. Only the three remain.</p>
-<p>For six centuries this icon has been read as the clearest visual theology of the Trinity ever made. It is also the only painting of the Trinity the Orthodox Church counts as fully canonical. Begin by looking at the whole.</p>`,
- body_pt:`<p>Rússia, c. 1411. 142 por 114 centímetros, têmpera de ovo sobre madeira. Andrei Rublev, monge no Mosteiro da Trindade de São Sérgio, pinta três anjos sentados em volta de uma mesa. A cena é Gênesis 18 — Abraão hospedou três forasteiros em Mamre que se revelaram o Senhor — mas Rublev omite Abraão. Só os três permanecem.</p>
-<p>Por seis séculos este ícone foi lido como a teologia visual mais clara da Trindade jamais feita. É também o único quadro da Trindade que a Igreja Ortodoxa conta como plenamente canônico. Comece olhando o todo.</p>`,
- src:"Andrei Rublev, The Hospitality of Abraham (The Trinity), c. 1411 · Tretyakov Gallery, Moscow"},
-
-{slug:"i-rub-02", type:"pictura", f:"I", series:"rublev_trinity", step:2, steps:5,
- img:IMG.rublev_trinity, zoom:{x:50, y:40, scale:2.0},
- title:"The Centre · The Son",
- title_pt:"O Centro · O Filho",
- body:`<p>Middle angel. The Son. Dark red robe — the humanity he will take — with a blue cloak over his left shoulder — his divinity. He blesses the chalice on the table with two fingers. The chalice holds a tiny lamb's head — the Lamb slain.</p>
-<p>The icon is the Trinity in council about the Incarnation. The Son is agreeing, with his bowed head, to leave this circle and become the Lamb in the cup. Everything else in the icon is organised around that silent consent.</p>`,
- body_pt:`<p>Anjo do meio. O Filho. Veste vermelho escuro — a humanidade que assumirá — com manto azul sobre o ombro esquerdo — a sua divindade. Abençoa com dois dedos o cálice na mesa. O cálice tem uma cabeça de cordeiro minúscula — o Cordeiro imolado.</p>
-<p>O ícone é a Trindade em concílio sobre a Encarnação. O Filho concorda, com a cabeça inclinada, em deixar este círculo e tornar-se o Cordeiro no cálice. Todo o resto no ícone se organiza em torno desse consentimento silencioso.</p>`,
- src:"Rublev, Trinity · the Son"},
-
-{slug:"i-rub-03", type:"pictura", f:"I", series:"rublev_trinity", step:3, steps:5,
- img:IMG.rublev_trinity, zoom:{x:28, y:34, scale:2.1},
- title:"The Father",
- title_pt:"O Pai",
- body:`<p>Left angel. The Father. His robe is a pale shimmering gold — the uncreated light. He blesses the cup toward which the Son is bending. His posture is the quietest of the three; he receives the gift of the Son's assent and sends out the Spirit.</p>
-<p>Note what Rublev does <em>not</em> do. He gives the Father no beard, no throne, no greater size. The three figures are indistinguishable by rank. Only their relations differ. The Trinity, Rublev insists in paint, is three persons as pure relations — not three gods of ascending importance.</p>`,
- body_pt:`<p>Anjo da esquerda. O Pai. A veste é um dourado pálido e lustroso — a luz incriada. Abençoa o cálice para o qual o Filho se inclina. A sua postura é a mais silenciosa das três; recebe o dom do consentimento do Filho e envia o Espírito.</p>
-<p>Note o que Rublev <em>não</em> faz. Não dá barba ao Pai, nem trono, nem tamanho maior. As três figuras são indistinguíveis em categoria. Só as relações diferem. A Trindade, insiste Rublev em pintura, é três pessoas como puras relações — não três deuses em ordem de importância.</p>`,
- src:"Rublev, Trinity · the Father"},
-
-{slug:"i-rub-04", type:"pictura", f:"I", series:"rublev_trinity", step:4, steps:5,
- img:IMG.rublev_trinity, zoom:{x:72, y:36, scale:2.1},
- title:"The Spirit",
- title_pt:"O Espírito",
- body:`<p>Right angel. The Spirit. Green cloak — the colour of the giver of life, the colour of growing things. His head inclines toward the centre, following the arc the three heads form together.</p>
-<p>Follow their inclinations as a line. Spirit (right) bends toward Son (centre); Son bends toward Father (left); Father receives. The arc returns on itself. A circle without a visible edge. The icon is a geometry lesson about perichoresis — the Greek word for the mutual indwelling of the three persons, which no theology lecture ever managed to say as clearly as this painting.</p>`,
- body_pt:`<p>Anjo da direita. O Espírito. Manto verde — a cor do doador da vida, a cor do que cresce. A cabeça se inclina para o centro, seguindo o arco que as três cabeças formam juntas.</p>
-<p>Siga as inclinações como uma linha. Espírito (direita) se inclina para o Filho (centro); Filho se inclina para o Pai (esquerda); o Pai recebe. O arco volta a si. Um círculo sem borda visível. O ícone é uma aula de geometria sobre a pericorese — a palavra grega para a inabitação mútua das três pessoas, que nenhuma aula de teologia jamais soube dizer tão claramente quanto este quadro.</p>`,
- src:"Rublev, Trinity · the Spirit"},
-
-{slug:"i-rub-05", type:"pictura", f:"I", series:"rublev_trinity", step:5, steps:5, rare:1,
- img:IMG.rublev_trinity, zoom:{x:50, y:72, scale:2.4},
- title:"The Open Seat",
- title_pt:"O Lugar Aberto",
- body:`<p>Lower centre. The near side of the table. Look carefully. There is no fourth angel. There is a space. The three sit at a square table whose near side is open, and the only unoccupied seat in the icon is directly across from the Son.</p>
-<p>That seat is for the viewer. Rublev painted a Trinity you can sit down with. The icon is an invitation. Which is why icons are not decorated, kissed, incensed; they are venerated. Not as idols. As portals. Rublev's three angels have been looking out at Orthodox worshippers for 614 years, waiting for them to take the open seat.</p>`,
- body_pt:`<p>Parte inferior central. O lado próximo da mesa. Olhe com atenção. Não há quarto anjo. Há um espaço. Os três se sentam a uma mesa quadrada cujo lado próximo está aberto, e o único lugar desocupado no ícone está diretamente defronte ao Filho.</p>
-<p>Esse lugar é do espectador. Rublev pintou uma Trindade com que você pode se sentar. O ícone é um convite. Por isso ícones não são decorados, são beijados, são incensados; são venerados. Não como ídolos. Como portais. Os três anjos de Rublev olham para fora, para os fiéis ortodoxos, há 614 anos, à espera de que tomem o lugar aberto.</p>`,
- src:"Rublev, Trinity · the open seat"}
 ];
-FOLIOS.push(...IMAGINES_PROPER);
+FOLIOS.push(...MATHEMATICA);
 if (typeof module !== "undefined") module.exports = {FAC, FOLIOS, AXIOM_POOL, IMG, YT};
