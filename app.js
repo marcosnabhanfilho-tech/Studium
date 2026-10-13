@@ -246,7 +246,7 @@ POOL.forEach(f=>{ FACTOTAL[f.f] = (FACTOTAL[f.f]||0)+1; });
 function seenInFaculty(code){
   let n = 0; POOL.forEach(f=>{ if(f.f===code && state.seen[f.slug]) n++; }); return n;
 }
-const WING_ORDER = ["A","I","T","F","O","N","P","C","H"];
+const WING_ORDER = ["A","I","T","F","O","N","P","C","H","M"];
 // Return the count of folios available in the current language for a faculty.
 function facTotalForLang(code){
   return POOL.filter(f => f.f === code && hasLangContent(f, state.lang)).length;
