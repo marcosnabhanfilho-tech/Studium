@@ -293,38 +293,11 @@ function rebuildReel(){
 function railHTML(slug){
   const saved = !!state.saved[slug];
   const voxLbl = state.lang === "pt" ? "ler" : "read";
-  // The rail auto-fades after a few seconds of no interaction, TikTok-style,
-  // and snaps back to full opacity on any tap. The fade timer is set per-slide
-  // on first view and reset on every pointer event over the slide.
   return `<div class="rail">
     <button class="rb save ${saved?"saved":""}" data-slug="${slug}" aria-label="Keep">✦<small>${esc(t("rail_keep","keep"))}</small></button>
     <button class="rb vox" data-slug="${slug}" aria-label="Read aloud">◉<small>${esc(voxLbl)}</small></button>
     <button class="rb share" data-slug="${slug}" aria-label="Share">↗<small>${esc(t("rail_share","share"))}</small></button>
   </div>`;
-}
-
-// ============== RAIL AUTO-FADE ==============
-// After RAIL_IDLE_MS of no interaction on a slide, fade its rail down to
-// ~20% opacity. Any pointer activity on the slide restores it to full.
-const RAIL_IDLE_MS = 3000;
-const _railTimers = new WeakMap();
-function wakeRail(slide){
-  if(!slide) return;
-  const rail = slide.querySelector(":scope > .rail");
-  if(!rail) return;
-  rail.classList.remove("faded");
-  const prev = _railTimers.get(slide);
-  if(prev) clearTimeout(prev);
-  const t = setTimeout(()=>{ rail.classList.add("faded"); _railTimers.delete(slide); }, RAIL_IDLE_MS);
-  _railTimers.set(slide, t);
-}
-function sleepRail(slide){
-  // Called when a slide leaves view — stop its timer; it will restart on return.
-  if(!slide) return;
-  const prev = _railTimers.get(slide);
-  if(prev){ clearTimeout(prev); _railTimers.delete(slide); }
-  const rail = slide.querySelector(":scope > .rail");
-  if(rail) rail.classList.remove("faded");
 }
 
 // ============== VOX — SpeechSynthesis narration ==============
@@ -1468,14 +1441,9 @@ async function init(){
         if(en.target.dataset.type === "suffragium" && state.votes[slug] !== undefined){
           renderTallies(slug);
         }
-        // Rail auto-fade: show on entry, fade after idle.
-        wakeRail(en.target);
-      } else if(en.intersectionRatio < 0.2){
-        // Stop the fade timer for folios that have left view.
-        sleepRail(en.target);
       }
     });
-  }, { threshold:[0, 0.2, 0.55, 0.9] });
+  }, { threshold:[0, 0.55, 0.9] });
 
 
   endIO = new IntersectionObserver(entries=>{
@@ -1606,19 +1574,6 @@ async function init(){
 
   // Audio unlock on first gesture
   document.addEventListener("pointerdown", ()=>audio(), {once:true, passive:true});
-
-  // Rail auto-fade: any pointer tap on a slide (or page-pager scroll) wakes
-  // its rail back to full opacity and resets its idle timer.
-  reel.addEventListener("pointerdown", (e)=>{
-    const slide = e.target.closest(".slide");
-    if(slide) wakeRail(slide);
-  }, {passive:true});
-  reel.addEventListener("scroll", ()=>{
-    // Horizontal pager scroll inside a slide — wake that slide's rail.
-    const slide = document.elementFromPoint(window.innerWidth/2, window.innerHeight/2);
-    const parent = slide && slide.closest(".slide");
-    if(parent) wakeRail(parent);
-  }, {passive:true, capture:true});
 
   // Menu actions
   $$("#menu .menu-list button").forEach(b=>{
