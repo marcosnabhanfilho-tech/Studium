@@ -709,6 +709,90 @@ body.chrome-shown #topbar{transform:translateY(0);opacity:1;pointer-events:auto}
 .ls-reset{margin-top:12px;max-width:none}
 
 /* ================================================================
+   LUDUS — new modes (v11): veritas, attributio, complementum
+   ================================================================ */
+
+/* VERITAS — two cards side by side; tap the real one */
+.ludus-veritas{display:grid;grid-template-columns:1fr;gap:12px;margin:12px 0}
+.lv-opt{
+  border:1px solid var(--ink3);background:rgba(241,245,249,.03);
+  color:var(--ink1);padding:16px 14px;border-radius:12px;
+  font-family:var(--display);font-size:1.02rem;line-height:1.4;
+  text-align:left;cursor:pointer;transition:all .18s ease;
+  min-height:70px;
+}
+.lv-opt:not(:disabled):active{transform:scale(.98)}
+.lv-opt:not(:disabled):hover{border-color:var(--pulse);background:rgba(163,230,53,.06)}
+.lv-opt.lv-real{border-color:var(--pulse);background:rgba(163,230,53,.14);color:var(--pulse);box-shadow:0 0 14px rgba(163,230,53,.25)}
+.lv-opt.lv-fake{border-color:var(--ox);background:rgba(248,113,113,.08);color:var(--ox);opacity:.75}
+.lv-reveal{display:none;margin-top:8px;font-style:italic;color:var(--ink3);font-size:.88rem;text-align:right}
+.lv-reveal.on{display:block;animation:fadeIn .5s ease}
+
+/* ATTRIBUTIO — gauntlet, one quote at a time, two authors */
+.ludus-attrib{margin:12px 0;position:relative}
+.la-progress{font-variant:small-caps;letter-spacing:.14em;color:var(--ink3);font-size:.72rem;text-align:center;margin-bottom:10px}
+.la-quote{
+  border:1px solid var(--ink3);border-left:3px solid var(--gold);
+  background:rgba(241,245,249,.04);padding:18px 16px;border-radius:10px;
+  font-family:var(--display);font-style:italic;font-size:1.05rem;line-height:1.45;
+  color:var(--ink1);min-height:88px;margin-bottom:14px;text-align:center;
+  display:flex;align-items:center;justify-content:center;
+}
+.la-opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.la-opt{
+  border:1px solid var(--ink3);background:rgba(241,245,249,.03);color:var(--ink1);
+  padding:14px 10px;border-radius:10px;font-family:var(--display);font-weight:600;
+  font-size:1rem;cursor:pointer;transition:all .18s ease;
+}
+.la-opt:not(:disabled):active{transform:scale(.96)}
+.la-opt:not(:disabled):hover{border-color:var(--pulse);color:var(--pulse)}
+.la-reset{margin-top:12px;max-width:none}
+.la-flash{
+  position:absolute;left:50%;top:48%;transform:translate(-50%,-50%);
+  font-size:2.6rem;font-weight:600;opacity:0;pointer-events:none;
+  transition:opacity .18s ease;z-index:4;
+}
+.la-flash.show{opacity:1}
+.la-flash.ok{color:var(--pulse);text-shadow:0 0 20px var(--pulse-glow)}
+.la-flash.bad{color:var(--ox);text-shadow:0 0 20px rgba(248,113,113,.4)}
+
+/* COMPLEMENTUM — passage with one word blanked, four options */
+.ludus-fill{margin:12px 0}
+.lf-passage{
+  border:1px solid var(--ink3);border-left:3px solid var(--gold);
+  background:rgba(241,245,249,.04);padding:16px 14px;border-radius:10px;
+  font-family:var(--display);font-style:italic;font-size:1.02rem;line-height:1.55;
+  color:var(--ink1);margin-bottom:14px;
+}
+.lf-blank{
+  display:inline-block;min-width:84px;text-align:center;
+  color:var(--gold);border-bottom:1.5px solid var(--gold);
+  font-style:normal;font-weight:600;padding:0 4px;
+}
+.lf-blank.ok{color:var(--pulse);border-color:var(--pulse)}
+.lf-blank.bad{color:var(--ox);border-color:var(--ox)}
+.lf-opts{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.lf-opt{
+  border:1px solid var(--ink3);background:rgba(241,245,249,.03);color:var(--ink1);
+  padding:12px 10px;border-radius:10px;font-family:var(--display);font-weight:600;
+  font-size:1rem;cursor:pointer;transition:all .18s ease;
+}
+.lf-opt:not(:disabled):active{transform:scale(.96)}
+.lf-opt:not(:disabled):hover{border-color:var(--pulse);color:var(--pulse)}
+.lf-opt.ok{border-color:var(--pulse);background:rgba(163,230,53,.14);color:var(--pulse);box-shadow:0 0 10px rgba(163,230,53,.22)}
+.lf-opt.bad{border-color:var(--ox);background:rgba(248,113,113,.08);color:var(--ox)}
+.lf-reveal{display:none;margin-top:10px;font-style:italic;color:var(--ink3);font-size:.86rem;text-align:right}
+.lf-reveal.on{display:block;animation:fadeIn .5s ease}
+
+/* VOX — narration button pulse while reading */
+.rb.vox.on{color:var(--pulse);border-color:var(--pulse);background:rgba(163,230,53,.14);box-shadow:0 0 18px var(--pulse-glow);animation:voxPulse 1.6s ease-in-out infinite}
+.rb.vox.on small{color:var(--pulse2)}
+@keyframes voxPulse{
+  0%,100%{box-shadow:0 0 12px var(--pulse-glow)}
+  50%{box-shadow:0 0 22px var(--pulse-glow)}
+}
+
+/* ================================================================
    ONBOARDING — four-step first-launch coachmark
    ================================================================ */
 #onboarding{
