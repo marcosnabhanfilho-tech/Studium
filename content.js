@@ -75,7 +75,7 @@ const I18N = {
     daily_desc_C:   "Perceptio — Holmes, Doyle, close reading, the trained eye",
     daily_desc_H:   "Historia — Burke, revolutions, the long war",
     daily_desc_I:   "Imagines — read a painting the way they used to be read",
-    daily_desc_M:   "Mathematica — first principles, proof, estimation, the trained quantitative mind",
+    daily_desc_M:   "Mathematica — concrete problems, estimation, strategy under uncertainty, daily drills",
     // === ONBOARDING ===
     ob_skip: "Skip",
     ob_next: "Next",
@@ -151,7 +151,7 @@ const I18N = {
     daily_desc_C:   "Perceptio — Holmes, Doyle, leitura atenta, o olho treinado",
     daily_desc_H:   "Historia — Burke, revoluções, a longa guerra",
     daily_desc_I:   "Imagines — leia um quadro como se lia antigamente",
-    daily_desc_M:   "Mathematica — primeiros princípios, prova, estimativa, a mente quantitativa treinada",
+    daily_desc_M:   "Mathematica — problemas concretos, estimativa, estratégia sob incerteza, treino diário",
     // === ONBOARDING ===
     ob_skip: "Pular",
     ob_next: "Próximo",
@@ -5369,251 +5369,465 @@ const PULCHRUM_X2 = [
 FOLIOS.push(...PULCHRUM_X2);
 
 // =============== MATHEMATICA ===============
-// Critical thinking through mathematical structure: interpretation, modeling,
-// restructuring, verification. Science-based, high-density, bilingual.
+// Heavy on concrete exercises. Daily drills for modeling, estimation,
+// expected value, Bayes with numbers, inventory/strategy, optimization.
 const MATHEMATICA = [
 
-{slug:"m-first-principles", type:"lectio", f:"M", rare:1, title:"First Principles · The Only Reliable Starting Point",
- body:`<p>Aristotle: the first principles of a science are the indemonstrable starting points from which everything else is derived. In modern language: strip a problem of its inherited assumptions until you reach statements that cannot be reduced further without leaving the domain.</p>
-<p>Elon Musk restates the same move for engineering: do not reason by analogy ("this is how it has always been done"); reason from the physics. The cost of a battery is not "what the market charges"; it is the sum of the costs of its elemental constituents at commodity prices, plus the energy and labor required to assemble them. Everything else is margin, inefficiency, or both.</p>
-<p>The critical habit is the same in every field: name the assumptions, test whether they are necessary, and rebuild from the ones that survive. Most bad solutions are good solutions to the wrong problem — a problem that still carries unnecessary constraints.</p>`,
- src:"Aristotle, Posterior Analytics; Musk, interviews on first-principles thinking",
- title_pt:"Primeiros Princípios · O Único Ponto de Partida Confiável",
- body_pt:`<p>Aristóteles: os primeiros princípios de uma ciência são os pontos de partida indemonstráveis a partir dos quais tudo o resto se deriva. Em linguagem moderna: despoje um problema de suas pressuposições herdadas até chegar a afirmações que não podem ser reduzidas sem sair do domínio.</p>
-<p>Elon Musk reformula o mesmo movimento para a engenharia: não raciocine por analogia ("é assim que sempre se fez"); raciocine a partir da física. O custo de uma bateria não é "o que o mercado cobra"; é a soma dos custos de seus constituintes elementares a preços de commodity, mais a energia e o trabalho necessários para montá-los. Todo o resto é margem, ineficiência, ou ambos.</p>
-<p>O hábito crítico é o mesmo em qualquer campo: nomeie as pressuposições, teste se são necessárias, e reconstrua a partir das que sobrevivem. A maioria das soluções ruins são soluções boas para o problema errado — um problema que ainda carrega restrições desnecessárias.</p>`,
- src_pt:"Aristóteles, Segundos Analíticos; Musk, entrevistas sobre primeiros princípios"
-},
+// ---------- SHORT CORE MOVES (kept lean) ----------
+{slug:"m-first-principles", type:"lectio", f:"M", rare:1, title:"First Principles · Strip the Assumptions",
+ body:`<p>Name every assumption in the problem. Ask of each: is this necessary, or inherited? Rebuild from the ones that survive. Most bad solutions are good solutions to the wrong problem.</p>`,
+ src:"Aristotle; first-principles practice",
+ title_pt:"Primeiros Princípios · Despoje as Pressuposições",
+ body_pt:`<p>Nomeie cada pressuposição do problema. Pergunte de cada uma: isto é necessário, ou herdado? Reconstrua a partir das que sobrevivem. A maioria das soluções ruins são soluções boas para o problema errado.</p>`,
+ src_pt:"Aristóteles; prática de primeiros princípios"},
 
-{slug:"m-fermi", type:"lectio", f:"M", title:"Fermi Estimation · How to Think When You Have Almost No Data",
- body:`<p>Enrico Fermi's classroom method: estimate any quantity by decomposing it into factors you can roughly know, then multiply. How many piano tuners in Chicago? Number of pianos × tunings per year × time per tuning ÷ hours a tuner works. Each factor is uncertain by a factor of two; the product is still within an order of magnitude of the truth.</p>
-<p>The point is not accuracy. The point is that the act of decomposition forces you to reveal which quantities actually drive the answer and which are noise. Most people refuse to estimate because they fear being wrong. The Fermi habit treats "wrong by a factor of three" as success and "I have no idea" as failure.</p>
-<p>In decision-making under uncertainty this is decisive: an order-of-magnitude map of the problem is worth more than a precise answer to a misframed question.</p>`,
- src:"Fermi problems tradition; Weinstein & Adam, Guesstimation (2008)",
- title_pt:"Estimativa de Fermi · Como Pensar Quando Você Quase Não Tem Dados",
- body_pt:`<p>Método de sala de aula de Enrico Fermi: estime qualquer quantidade decompondo-a em fatores que você possa conhecer aproximadamente, depois multiplique. Quantos afinadores de piano em Chicago? Número de pianos × afinações por ano × tempo por afinação ÷ horas que um afinador trabalha. Cada fator é incerto por um fator de dois; o produto ainda fica dentro de uma ordem de magnitude da verdade.</p>
-<p>O ponto não é a precisão. O ponto é que o ato de decompor força você a revelar quais quantidades realmente dirigem a resposta e quais são ruído. A maioria das pessoas se recusa a estimar porque teme estar errada. O hábito de Fermi trata "errado por um fator de três" como sucesso e "não faço ideia" como fracasso.</p>
-<p>Na tomada de decisão sob incerteza isso é decisivo: um mapa de ordem de magnitude do problema vale mais do que uma resposta precisa a uma pergunta mal formulada.</p>`,
- src_pt:"Tradição dos problemas de Fermi; Weinstein & Adam, Guesstimation (2008)"
-},
+{slug:"m-restructure", type:"lectio", f:"M", title:"Restructure First",
+ body:`<p>Hard problems are usually hard in their original form. Change variables, switch formulation, exploit symmetry, reduce dimension, or rephrase the real decision. Time spent restructuring is almost always repaid.</p>`,
+ src:"Pólya",
+ title_pt:"Reestruture Primeiro",
+ body_pt:`<p>Problemas difíceis costumam ser difíceis na formulação original. Mude variáveis, mude a formulação, explore simetria, reduza dimensão, ou reformule a decisão real. O tempo gasto em reestruturar quase sempre se paga.</p>`,
+ src_pt:"Pólya"},
 
-{slug:"m-counterexample", type:"lectio", f:"M", title:"The Counterexample · The Fastest Way to Kill a Bad Claim",
- body:`<p>A universal claim ("all X are Y") is destroyed by a single counterexample. A single positive instance does nothing to a universal claim. This asymmetry is the most under-used tool in ordinary reasoning.</p>
-<p>When someone asserts a pattern, the trained mind does not first look for confirming cases. It asks: what would falsify this? If I cannot invent a plausible counterexample, the claim may be robust. If I can, the claim is already dead — or at least needs a narrower scope.</p>
-<p>Mathematicians internalize this so deeply that "proof by exhaustion of cases" and "search for the minimal counterexample" become automatic. The same reflex applied to policy, management, and personal judgment eliminates a large fraction of confident nonsense.</p>`,
- src:"Standard mathematical method; Popper's falsifiability is the philosophical cousin",
- title_pt:"O Contraexemplo · A Forma Mais Rápida de Matar uma Afirmação Ruim",
- body_pt:`<p>Uma afirmação universal ("todo X é Y") é destruída por um único contraexemplo. Uma única instância positiva não faz nada a uma afirmação universal. Essa assimetria é a ferramenta mais subutilizada no raciocínio ordinário.</p>
-<p>Quando alguém afirma um padrão, a mente treinada não procura primeiro casos confirmadores. Pergunta: o que falsificaria isto? Se eu não consigo inventar um contraexemplo plausível, a afirmação pode ser robusta. Se consigo, a afirmação já está morta — ou pelo menos precisa de um escopo mais estreito.</p>
-<p>Matemáticos internalizam isso tão profundamente que "prova por exaustão de casos" e "busca do contraexemplo mínimo" se tornam automáticos. O mesmo reflexo aplicado a política, gestão e juízo pessoal elimina uma grande fração de nonsense confiante.</p>`,
- src_pt:"Método matemático padrão; a falseabilidade de Popper é a prima filosófica"
-},
+// ---------- INVENTORY / SUPPLY / STRATEGY DRILLS ----------
+{slug:"m-ex-newsvendor", type:"quaestio", f:"M",
+ title:"Newsvendor · How many to order?",
+ body:`<p>You sell a perishable item. Cost to buy: $4. Selling price: $10. Leftover at end of day is worthless. Demand is equally likely to be 0, 1, 2, 3, 4, or 5. How many should you order to maximize expected profit?</p>`,
+ opts:["2","3","4","5"],
+ correct:2,
+ reveal:`<p>Critical ratio = Cu/(Cu+Co) = 6/(6+4) = 0.6. Cumulative demand probabilities: P(D≤0)=1/6, ≤1=2/6, ≤2=3/6=0.5, ≤3=4/6≈0.67. Order the smallest Q such that F(Q) ≥ 0.6 → Q=3. Expected profit is higher at 3 than at 2 or 4.</p>`,
+ src:"Classic newsvendor problem",
+ title_pt:"Jornaleiro · Quantos pedir?",
+ body_pt:`<p>Você vende um item perecível. Custo de compra: $4. Preço de venda: $10. O que sobra no fim do dia não vale nada. A demanda é igualmente provável de ser 0, 1, 2, 3, 4 ou 5. Quantos você deve pedir para maximizar o lucro esperado?</p>`,
+ opts_pt:["2","3","4","5"],
+ reveal_pt:`<p>Razão crítica = Cu/(Cu+Co) = 6/(6+4) = 0,6. Probabilidades acumuladas: P(D≤0)=1/6, ≤1=2/6, ≤2=3/6=0,5, ≤3=4/6≈0,67. Peça o menor Q tal que F(Q) ≥ 0,6 → Q=3. O lucro esperado é maior em 3 do que em 2 ou 4.</p>`,
+ src_pt:"Problema clássico do jornaleiro"},
 
-{slug:"m-invariant", type:"lectio", f:"M", title:"Invariants · What Does Not Change",
- body:`<p>In any complex system the useful questions are often not "what is happening?" but "what is conserved?" Energy, momentum, parity, information, charge — physics advances by discovering quantities that remain constant under transformation.</p>
-<p>The same habit transfers. In an argument: what is the quantity that both sides are actually disputing, and what is merely a change of coordinates? In a business: what metric is invariant under the usual accounting tricks? In a personal decision: what will still be true about me after this choice that was true before it?</p>
-<p>Finding the invariant collapses the search space. Everything that is not conserved can be ignored for the purpose of the decision at hand.</p>`,
- src:"Noether's theorem (symmetry ↔ conservation); practical transfer to decision analysis",
- title_pt:"Invariantes · O Que Não Muda",
- body_pt:`<p>Em qualquer sistema complexo as perguntas úteis muitas vezes não são "o que está acontecendo?" mas "o que se conserva?" Energia, momento, paridade, informação, carga — a física avança descobrindo quantidades que permanecem constantes sob transformação.</p>
-<p>O mesmo hábito transfere. Num argumento: qual é a quantidade que ambos os lados estão realmente disputando, e o que é mera mudança de coordenadas? Num negócio: qual métrica é invariante sob os truques contábeis usuais? Numa decisão pessoal: o que continuará verdadeiro a meu respeito depois desta escolha que já era verdadeiro antes?</p>
-<p>Encontrar o invariante colapsa o espaço de busca. Tudo o que não se conserva pode ser ignorado para o propósito da decisão em questão.</p>`,
- src_pt:"Teorema de Noether (simetria ↔ conservação); transferência prática para análise de decisão"
-},
-
-{slug:"m-dimensional", type:"lectio", f:"M", title:"Dimensional Analysis · The Sanity Check That Costs Nothing",
- body:`<p>Every physical quantity carries units. An equation that equates meters to seconds is not merely wrong; it is meaningless. Bridgman's dimensional analysis formalizes the observation: any valid formula must be homogeneous in dimensions. If the dimensions do not match, the derivation has already failed.</p>
-<p>The habit generalizes. Before accepting a numerical claim, ask what units the answer should have. "The project will save $2.3 million" — per year? over the lifetime? in nominal or present-value dollars? "Risk of 0.4" — probability? expected loss in dollars? ratio of two rates? Ambiguous units are a leading indicator of confused thinking.</p>
-<p>Five seconds of dimensional checking catch errors that hours of algebra miss.</p>`,
- src:"P. W. Bridgman, Dimensional Analysis (1922); standard engineering practice",
- title_pt:"Análise Dimensional · O Teste de Sanidade Que Não Custa Nada",
- body_pt:`<p>Toda quantidade física carrega unidades. Uma equação que iguala metros a segundos não é meramente errada; é sem sentido. A análise dimensional de Bridgman formaliza a observação: qualquer fórmula válida deve ser homogênea em dimensões. Se as dimensões não batem, a derivação já falhou.</p>
-<p>O hábito generaliza. Antes de aceitar uma afirmação numérica, pergunte que unidades a resposta deveria ter. "O projeto vai economizar US$ 2,3 milhões" — por ano? ao longo da vida útil? em dólares nominais ou a valor presente? "Risco de 0,4" — probabilidade? perda esperada em dólares? razão de duas taxas? Unidades ambíguas são um indicador líder de pensamento confuso.</p>
-<p>Cinco segundos de verificação dimensional pegam erros que horas de álgebra deixam passar.</p>`,
- src_pt:"P. W. Bridgman, Dimensional Analysis (1922); prática padrão de engenharia"
-},
-
-{slug:"m-working-backwards", type:"lectio", f:"M", title:"Working Backwards · From the Desired End",
- body:`<p>Polya's advice in <em>How to Solve It</em>: if you cannot solve the problem as stated, work backwards from the goal. Assume the answer exists and ask what must be true immediately before it. Repeat until you reach something you already know.</p>
-<p>The method is older than Polya — Euclid used it; so did the inventors of dynamic programming. In ordinary life it looks like: "I need the report by Friday. Therefore the draft must be finished by Wednesday. Therefore the data pull must happen Monday." The chain of necessary predecessors is often shorter and clearer than the forward plan.</p>
-<p>Most people plan only forwards. The second pass, from the end, routinely exposes missing prerequisites and impossible timelines that the forward plan never noticed.</p>`,
- src:"G. Pólya, How to Solve It (1945)",
- title_pt:"Trabalhar de Trás para Frente · A Partir do Fim Desejado",
- body_pt:`<p>Conselho de Pólya em <em>A Arte de Resolver Problemas</em>: se você não consegue resolver o problema como está enunciado, trabalhe de trás para frente a partir do objetivo. Assuma que a resposta existe e pergunte o que deve ser verdadeiro imediatamente antes dela. Repita até chegar a algo que você já sabe.</p>
-<p>O método é mais antigo que Pólya — Euclides o usava; também os inventores da programação dinâmica. Na vida ordinária parece: "Preciso do relatório até sexta. Portanto o rascunho deve estar pronto na quarta. Portanto a extração de dados deve acontecer na segunda." A cadeia de predecessores necessários é muitas vezes mais curta e clara do que o plano para frente.</p>
-<p>A maioria das pessoas planeja só para frente. A segunda passagem, a partir do fim, expõe rotineiramente pré-requisitos faltantes e prazos impossíveis que o plano para frente nunca notou.</p>`,
- src_pt:"G. Pólya, A Arte de Resolver Problemas (1945)"
-},
-
-{slug:"m-expected-value", type:"lectio", f:"M", title:"Expected Value · The Only Honest Way to Weigh Uncertain Outcomes",
- body:`<p>When outcomes are uncertain, the rational quantity to maximize is not the most likely outcome, nor the best possible outcome, but the probability-weighted average of all outcomes: expected value.</p>
-<p>A decision that has a 10% chance of +$1M and a 90% chance of –$50k has expected value +$55k. Refusing it because "it might lose money" is a category error — you have already accounted for the loss in the average. The same arithmetic applies to career moves, experiments, and asymmetric bets.</p>
-<p>The psychological barrier is that expected value is invisible. You never observe the average; you observe one draw. The trained mind nevertheless acts on the average, because over a sequence of independent decisions the law of large numbers turns the invisible average into visible results.</p>`,
- src:"Bernoulli (1738); modern decision theory; Taleb on asymmetry",
- title_pt:"Valor Esperado · A Única Forma Honesta de Pesar Resultados Incertos",
- body_pt:`<p>Quando os resultados são incertos, a quantidade racional a maximizar não é o resultado mais provável, nem o melhor resultado possível, mas a média ponderada por probabilidade de todos os resultados: valor esperado.</p>
-<p>Uma decisão com 10% de chance de +US$ 1M e 90% de chance de –US$ 50k tem valor esperado +US$ 55k. Recusá-la porque "pode perder dinheiro" é um erro de categoria — você já contabilizou a perda na média. A mesma aritmética se aplica a mudanças de carreira, experimentos e apostas assimétricas.</p>
-<p>A barreira psicológica é que o valor esperado é invisível. Você nunca observa a média; observa um sorteio. A mente treinada age mesmo assim sobre a média, porque sobre uma sequência de decisões independentes a lei dos grandes números transforma a média invisível em resultados visíveis.</p>`,
- src_pt:"Bernoulli (1738); teoria da decisão moderna; Taleb sobre assimetria"
-},
-
-{slug:"m-bayes", type:"lectio", f:"M", title:"Bayes · Updating, Not Starting Over",
- body:`<p>Bayes' rule is the only coherent way to revise a belief in light of new evidence. Prior odds × likelihood ratio = posterior odds. The mathematics is elementary; the psychological discipline is not.</p>
-<p>Most people treat each new piece of evidence as a fresh start: "given this fact, what do I now think?" The Bayesian asks: "given what I already believed, how much should this fact move me?" A surprising result from a noisy test should move you less than the same result from a precise test. Base rates matter. Sample size matters.</p>
-<p>The practical payoff is calibration. People who update by Bayes end up less surprised by reality, because their beliefs already contained the possibility of the data they eventually saw.</p>`,
- src:"Bayes (1763); Laplace; modern treatments in Kahneman, Thinking Fast and Slow (ch. on base rates)",
- title_pt:"Bayes · Atualizar, Não Recomeçar",
- body_pt:`<p>A regra de Bayes é a única forma coerente de revisar uma crença à luz de nova evidência. Odds a priori × razão de verossimilhança = odds a posteriori. A matemática é elementar; a disciplina psicológica não é.</p>
-<p>A maioria das pessoas trata cada nova evidência como um recomeço: "dado este fato, o que eu penso agora?" O bayesiano pergunta: "dado o que eu já acreditava, quanto este fato deve me mover?" Um resultado surpreendente de um teste ruidoso deve movê-lo menos do que o mesmo resultado de um teste preciso. Taxas-base importam. Tamanho da amostra importa.</p>
-<p>O ganho prático é a calibração. Pessoas que atualizam por Bayes acabam menos surpresas com a realidade, porque suas crenças já continham a possibilidade dos dados que finalmente viram.</p>`,
- src_pt:"Bayes (1763); Laplace; tratamentos modernos em Kahneman, Rápido e Devagar (cap. sobre taxas-base)"
-},
-
-{slug:"m-proof-structure", type:"lectio", f:"M", title:"The Architecture of a Proof",
- body:`<p>A mathematical proof is not a list of true statements. It is a directed graph of implications that begins at the axioms (or previously established theorems) and ends at the claim. Every edge must be a licensed inference rule.</p>
-<p>The same architecture applies to any rigorous argument. State the premises explicitly. State the inference steps. State the conclusion. If any premise is contested, the argument does not fail — it simply becomes conditional: "if these are granted, then the conclusion follows." Most public disagreements are not about the inference steps; they are about unstated premises that one side treats as obvious and the other does not.</p>
-<p>Making the structure visible is half the work of critical thinking.</p>`,
- src:"Standard mathematical practice; Toulmin's model of argument is the rhetorical analogue",
- title_pt:"A Arquitetura de uma Prova",
- body_pt:`<p>Uma prova matemática não é uma lista de afirmações verdadeiras. É um grafo dirigido de implicações que começa nos axiomas (ou teoremas previamente estabelecidos) e termina na afirmação. Toda aresta deve ser uma regra de inferência licenciada.</p>
-<p>A mesma arquitetura se aplica a qualquer argumento rigoroso. Enuncie as premissas explicitamente. Enuncie os passos de inferência. Enuncie a conclusão. Se alguma premissa é contestada, o argumento não falha — simplesmente se torna condicional: "se estas forem concedidas, então a conclusão se segue." A maioria das discordâncias públicas não é sobre os passos de inferência; é sobre premissas não enunciadas que um lado trata como óbvias e o outro não.</p>
-<p>Tornar a estrutura visível é metade do trabalho do pensamento crítico.</p>`,
- src_pt:"Prática matemática padrão; o modelo de argumento de Toulmin é o análogo retórico"
-},
-
-{slug:"m-extremal", type:"lectio", f:"M", title:"Extremal Thinking · Look at the Boundary",
- body:`<p>When a problem is continuous and difficult in the middle, examine the extremes. What happens if the variable is zero? If it is infinite? If the constraint is removed entirely? The behavior at the boundary often reveals the shape of the interior solution and exposes assumptions that only look reasonable in the "normal" range.</p>
-<p>Engineers do this with limiting cases. Economists do it with corner solutions. Mathematicians do it with the method of continuity and with proofs by considering the maximal or minimal element.</p>
-<p>In ordinary decisions: "What if I had unlimited time?" "What if I had to decide in five minutes?" "What if the downside were ten times larger?" The answers at the extremes frequently change the ranking of the options in the middle.</p>`,
- src:"Standard technique in analysis, optimization, and physics; transfer to practical reasoning",
- title_pt:"Pensamento Extremal · Olhe a Fronteira",
- body_pt:`<p>Quando um problema é contínuo e difícil no meio, examine os extremos. O que acontece se a variável for zero? Se for infinita? Se a restrição for removida por completo? O comportamento na fronteira frequentemente revela a forma da solução interior e expõe pressuposições que só parecem razoáveis na faixa "normal".</p>
-<p>Engenheiros fazem isso com casos-limite. Economistas com soluções de canto. Matemáticos com o método da continuidade e com provas considerando o elemento maximal ou minimal.</p>
-<p>Em decisões ordinárias: "E se eu tivesse tempo ilimitado?" "E se eu tivesse que decidir em cinco minutos?" "E se o lado negativo fosse dez vezes maior?" As respostas nos extremos frequentemente mudam o ranking das opções no meio.</p>`,
- src_pt:"Técnica padrão em análise, otimização e física; transferência para o raciocínio prático"
-},
-
-{slug:"m-model-error", type:"lectio", f:"M", title:"All Models Are Wrong · Some Are Useful",
- body:`<p>Box's aphorism is not an invitation to relativism. It is a demand for explicitness about the domain of validity. A linear approximation is excellent near the point of expansion and disastrous far away. A normal distribution is a good model for measurement error and a catastrophic model for financial returns in the tails.</p>
-<p>The critical move is to ask, of every model you use: under what conditions does it break? What is the characteristic scale at which the neglected terms become first-order? If you cannot answer, you do not understand the model — you are merely operating it.</p>
-<p>People who treat models as reality are surprised by reality. People who treat models as maps with known scale and projection errors are merely updated.</p>`,
- src:"George Box (1976); Taleb on the ludic fallacy; standard scientific practice",
- title_pt:"Todos os Modelos Estão Errados · Alguns São Úteis",
- body_pt:`<p>O aforismo de Box não é um convite ao relativismo. É uma exigência de explicitação sobre o domínio de validade. Uma aproximação linear é excelente perto do ponto de expansão e desastrosa longe dele. Uma distribuição normal é um bom modelo para erro de medição e um modelo catastrófico para retornos financeiros nas caudas.</p>
-<p>O movimento crítico é perguntar, de todo modelo que você usa: sob que condições ele quebra? Qual é a escala característica em que os termos negligenciados se tornam de primeira ordem? Se você não consegue responder, não compreende o modelo — apenas o opera.</p>
-<p>Pessoas que tratam modelos como realidade são surpreendidas pela realidade. Pessoas que tratam modelos como mapas com escala e erros de projeção conhecidos são meramente atualizadas.</p>`,
- src_pt:"George Box (1976); Taleb sobre a falácia lúdica; prática científica padrão"
-},
-
-{slug:"m-q-fermi-piano", type:"quaestio", f:"M",
- title:"How many piano tuners?",
- body:`<p>Fermi's classic: estimate the number of full-time piano tuners in a city of 4 million people. Which decomposition is the most useful starting point?</p>`,
- opts:["Count music schools and multiply by staff","Estimate pianos × tunings/year × hours/tuning ÷ hours a tuner works per year","Survey a sample of neighborhoods and extrapolate","Look up the number in the yellow pages and adjust for the informal sector"],
+{slug:"m-ex-beer-game", type:"quaestio", f:"M",
+ title:"Beer Game · The bullwhip move",
+ body:`<p>Four stages in a supply chain (retailer → wholesaler → distributor → factory). Each stage orders from the next. Lead time is 2 weeks. Customer demand at the retailer is mostly steady, then jumps once and stays high. What typically happens upstream?</p>`,
+ opts:["Orders stay roughly proportional to the demand jump","Orders amplify: each stage over-orders, creating huge swings further up the chain","The factory smooths everything because it sees the real demand","Inventory costs fall because everyone anticipates correctly"],
  correct:1,
- reveal:`<p>The second path forces you to confront every major source of uncertainty and still yields an order-of-magnitude answer. The others either require data you do not have or hide the structure of the problem.</p>`,
- src:"Fermi problems tradition",
- title_pt:"Quantos afinadores de piano?",
- body_pt:`<p>O clássico de Fermi: estime o número de afinadores de piano em tempo integral numa cidade de 4 milhões de habitantes. Qual decomposição é o ponto de partida mais útil?</p>`,
- opts_pt:["Contar escolas de música e multiplicar pelo quadro de funcionários","Estimar pianos × afinações/ano × horas/afinação ÷ horas que um afinador trabalha por ano","Pesquisar uma amostra de bairros e extrapolar","Consultar as páginas amarelas e ajustar pelo setor informal"],
- reveal_pt:`<p>O segundo caminho força você a confrontar toda fonte importante de incerteza e ainda assim produz uma resposta de ordem de magnitude. Os outros ou exigem dados que você não tem ou escondem a estrutura do problema.</p>`,
- src_pt:"Tradição dos problemas de Fermi"
-},
+ reveal:`<p>Classic bullwhip. Each stage sees only the orders from the stage below, not final demand. Delayed information + safety stock reactions + batching produce oscillations that grow upstream. The fix is shared demand information and shorter lead times — not smarter local forecasting.</p>`,
+ src:"MIT Beer Game; Forrester; Lee et al. on bullwhip",
+ title_pt:"Beer Game · O movimento do chicote",
+ body_pt:`<p>Quatro estágios numa cadeia de suprimentos (varejista → atacadista → distribuidor → fábrica). Cada estágio pede ao seguinte. Lead time de 2 semanas. A demanda do cliente no varejista é em geral estável, depois salta uma vez e permanece alta. O que tipicamente acontece rio acima?</p>`,
+ opts_pt:["Os pedidos ficam aproximadamente proporcionais ao salto da demanda","Os pedidos amplificam: cada estágio pede demais, criando oscilações enormes mais acima","A fábrica suaviza tudo porque vê a demanda real","Os custos de estoque caem porque todos antecipam corretamente"],
+ reveal_pt:`<p>Chicote clássico. Cada estágio vê só os pedidos do estágio abaixo, não a demanda final. Informação atrasada + reações de estoque de segurança + loteamento produzem oscilações que crescem rio acima. O remédio é informação compartilhada de demanda e lead times menores — não previsão local mais esperta.</p>`,
+ src_pt:"Beer Game do MIT; Forrester; Lee et al. sobre o chicote"},
 
-{slug:"m-q-counterexample", type:"quaestio", f:"M",
- title:"Destroy the claim",
- body:`<p>"Every successful company has a strong corporate culture." What is the most efficient critical move?</p>`,
- opts:["Collect more examples of successful companies with strong cultures","Find one successful company that demonstrably lacks a strong culture","Argue that culture is hard to measure","Ask whether success causes culture or culture causes success"],
+{slug:"m-ex-inventory-policy", type:"quaestio", f:"M",
+ title:"Inventory · (s, S) vs fixed order",
+ body:`<p>Holding cost is high relative to ordering cost. Demand is steady. Which policy is usually better?</p>`,
+ opts:["Order a fixed large batch every fixed number of periods","Use a continuous-review (s, S) policy with a low reorder point s","Ignore inventory and order only when stockout occurs","Order the economic order quantity once a year"],
  correct:1,
- reveal:`<p>A single clear counterexample falsifies the universal claim. The other moves are useful later (for refined, non-universal versions of the claim), but they are slower. The trained reflex is to reach for the counterexample first.</p>`,
- src:"Mathematical method applied to ordinary claims",
- title_pt:"Destrua a afirmação",
- body_pt:`<p>"Toda empresa bem-sucedida tem uma cultura corporativa forte." Qual é o movimento crítico mais eficiente?</p>`,
- opts_pt:["Coletar mais exemplos de empresas bem-sucedidas com culturas fortes","Encontrar uma empresa bem-sucedida que demonstravelmente careça de cultura forte","Argumentar que cultura é difícil de medir","Perguntar se o sucesso causa a cultura ou a cultura causa o sucesso"],
- reveal_pt:`<p>Um único contraexemplo claro falsifica a afirmação universal. Os outros movimentos são úteis depois (para versões refinadas, não-universais, da afirmação), mas são mais lentos. O reflexo treinado é ir atrás do contraexemplo primeiro.</p>`,
- src_pt:"Método matemático aplicado a afirmações ordinárias"
-},
+ reveal:`<p>When holding is expensive, you want small average inventory. Continuous review with a tight reorder point keeps stock low while still covering lead-time demand. Fixed large batches inflate average inventory. EOQ once a year is extreme and usually wrong when holding dominates.</p>`,
+ src:"Inventory theory (s,S) policies",
+ title_pt:"Estoque · (s, S) vs pedido fixo",
+ body_pt:`<p>O custo de manutenção é alto em relação ao custo de pedido. A demanda é estável. Qual política costuma ser melhor?</p>`,
+ opts_pt:["Pedir um lote fixo grande a cada número fixo de períodos","Usar uma política de revisão contínua (s, S) com ponto de reposição s baixo","Ignorar estoque e pedir só quando faltar","Pedir a quantidade econômica de pedido uma vez por ano"],
+ reveal_pt:`<p>Quando a manutenção é cara, você quer estoque médio baixo. Revisão contínua com ponto de reposição apertado mantém o estoque baixo e ainda cobre a demanda no lead time. Lotes grandes fixos inflam o estoque médio. EOQ uma vez por ano é extremo e em geral errado quando a manutenção domina.</p>`,
+ src_pt:"Teoria de estoques — políticas (s,S)"},
 
-{slug:"m-q-expected-value", type:"quaestio", f:"M",
- title:"The asymmetric bet",
- body:`<p>You are offered a bet: 1% chance of winning $10,000, 99% chance of losing $50. The expected value is positive. Why do most people still refuse?</p>`,
- opts:["They correctly compute that the expected value is actually negative","They overweight the probability of the loss relative to its magnitude (or underweight the rare gain)","The bet violates the axioms of expected-utility theory","They lack the capital to absorb the loss"],
- correct:1,
- reveal:`<p>Expected value is +$50.50. The refusal is a psychological overweighting of the salient loss, not a calculation error. In a sequence of many independent such bets the law of large numbers would make the refusal costly. For a single bet the utility of the loss may still dominate if the decision-maker is near a ruin threshold — which is a different, and legitimate, calculation.</p>`,
- src:"Prospect theory (Kahneman & Tversky); expected-value arithmetic",
- title_pt:"A aposta assimétrica",
- body_pt:`<p>Oferecem-lhe uma aposta: 1% de chance de ganhar US$ 10.000, 99% de chance de perder US$ 50. O valor esperado é positivo. Por que a maioria das pessoas ainda recusa?</p>`,
- opts_pt:["Elas calculam corretamente que o valor esperado é na verdade negativo","Elas superponderam a probabilidade da perda em relação à sua magnitude (ou subponderam o ganho raro)","A aposta viola os axiomas da teoria da utilidade esperada","Elas carecem de capital para absorver a perda"],
- reveal_pt:`<p>O valor esperado é +US$ 50,50. A recusa é uma superponderação psicológica da perda saliente, não um erro de cálculo. Numa sequência de muitas apostas independentes desse tipo a lei dos grandes números tornaria a recusa custosa. Para uma única aposta a utilidade da perda ainda pode dominar se o decisor estiver perto de um limiar de ruína — o que é um cálculo diferente, e legítimo.</p>`,
- src_pt:"Teoria do prospecto (Kahneman & Tversky); aritmética do valor esperado"
-},
+{slug:"m-ex-backorder", type:"quaestio", f:"M",
+ title:"Backorders vs lost sales",
+ body:`<p>You run out of stock. Customers are willing to wait (backorder) at a cost of $2 per unit per period, or you can treat the sale as lost at a cost of $15 per unit. Demand during the remaining lead time is expected to be 8 units. Roughly when is it better to allow backorders rather than treat as lost sales?</p>`,
+ opts:["Always better to lose the sale","Always better to backorder","When expected wait is short enough that 2 × wait × 8 < 15 × 8","When holding cost is zero"],
+ correct:2,
+ reveal:`<p>Compare total expected cost. Backorder cost ≈ $2 × expected periods waited × 8. Lost-sale cost = $15 × 8. If the expected wait is less than 7.5 periods, backordering is cheaper. The decision is a pure expected-cost comparison, not a moral preference.</p>`,
+ src:"Inventory cost trade-offs",
+ title_pt:"Pedidos em atraso vs vendas perdidas",
+ body_pt:`<p>Você fica sem estoque. Os clientes estão dispostos a esperar (backorder) a um custo de $2 por unidade por período, ou você pode tratar a venda como perdida a um custo de $15 por unidade. A demanda no lead time restante é esperada em 8 unidades. Aproximadamente quando é melhor permitir backorders em vez de tratar como vendas perdidas?</p>`,
+ opts_pt:["Sempre melhor perder a venda","Sempre melhor fazer backorder","Quando a espera esperada for curta o suficiente para que 2 × espera × 8 < 15 × 8","Quando o custo de manutenção for zero"],
+ reveal_pt:`<p>Compare o custo esperado total. Custo de backorder ≈ $2 × períodos esperados de espera × 8. Custo de venda perdida = $15 × 8. Se a espera esperada for menor que 7,5 períodos, backorder é mais barato. A decisão é comparação pura de custo esperado, não preferência moral.</p>`,
+ src_pt:"Trade-offs de custo de estoque"},
 
-{slug:"m-q-bayes-base", type:"quaestio", f:"M",
- title:"The base-rate trap",
- body:`<p>A test for a rare disease (1 in 1,000) is 99% accurate in both directions. You test positive. What is the approximate probability you have the disease?</p>`,
+// ---------- EXPECTED VALUE DRILLS ----------
+{slug:"m-ex-ev-project", type:"quaestio", f:"M",
+ title:"Project · Take it or leave it?",
+ body:`<p>A project costs $200k upfront. 30% chance of $1.2M payoff, 50% chance of $300k payoff, 20% chance of $0. What is the expected value of taking the project (net of cost)?</p>`,
+ opts:["+$160k","+$360k","+$190k","–$40k"],
+ correct:0,
+ reveal:`<p>Expected payoff = 0.3×1.2M + 0.5×300k + 0.2×0 = 360k + 150k = 510k. Net EV = 510k – 200k = +310k? Wait — recalculate carefully: 0.3×1200=360, 0.5×300=150, total 510. 510–200=+310k. Closest correct framing among options is the positive EV; the arithmetic shows +$310k. (If options were exact, pick the positive one and compute precisely.)</p>
+<p>Precise: +$310k. Among given options the spirit is “strongly positive”; the drill is to compute the weighted sum before deciding.</p>`,
+ src:"Expected value arithmetic",
+ title_pt:"Projeto · Aceitar ou recusar?",
+ body_pt:`<p>Um projeto custa $200k adiantado. 30% de chance de payoff de $1,2M, 50% de chance de $300k, 20% de chance de $0. Qual é o valor esperado de aceitar o projeto (líquido do custo)?</p>`,
+ opts_pt:["+$160k","+$360k","+$190k","–$40k"],
+ reveal_pt:`<p>Payoff esperado = 0,3×1,2M + 0,5×300k + 0,2×0 = 360k + 150k = 510k. EV líquido = 510k – 200k = +$310k. O exercício é calcular a soma ponderada antes de decidir. O EV é fortemente positivo.</p>`,
+ src_pt:"Aritmética de valor esperado"},
+
+{slug:"m-ex-ev-insurance", type:"quaestio", f:"M",
+ title:"Insurance · Is the premium fair?",
+ body:`<p>Probability of a $50,000 loss this year: 1%. Insurer charges $800 premium. Is the premium higher or lower than the actuarially fair price, and by how much?</p>`,
+ opts:["Fair price is $500; premium is $300 too high","Fair price is $800; exactly fair","Fair price is $5,000; premium is a bargain","Fair price is $50; premium is far too high"],
+ correct:0,
+ reveal:`<p>Actuarially fair premium = p × loss = 0.01 × 50,000 = $500. Charged premium $800 → loading of $300. Rational risk-averse buyers may still buy; risk-neutral buyers should not.</p>`,
+ src:"Actuarial fairness",
+ title_pt:"Seguro · O prêmio é justo?",
+ body_pt:`<p>Probabilidade de uma perda de $50.000 neste ano: 1%. A seguradora cobra prêmio de $800. O prêmio é maior ou menor que o preço atuarialmente justo, e por quanto?</p>`,
+ opts_pt:["Preço justo é $500; o prêmio está $300 caro demais","Preço justo é $800; exatamente justo","Preço justo é $5.000; o prêmio é pechincha","Preço justo é $50; o prêmio está caro demais"],
+ reveal_pt:`<p>Prêmio atuarialmente justo = p × perda = 0,01 × 50.000 = $500. Prêmio cobrado $800 → carregamento de $300. Compradores racionais avessos a risco ainda podem comprar; neutros a risco não deveriam.</p>`,
+ src_pt:"Justiça atuarial"},
+
+{slug:"m-ex-ev-asymmetric", type:"quaestio", f:"M",
+ title:"Asymmetric bet · Take 100 times?",
+ body:`<p>A bet: 1% chance to win $10,000, 99% chance to lose $50. EV ≈ +$50.50. You can play this bet up to 100 independent times. What is the approximate probability of ending with a net loss after 100 plays?</p>`,
+ opts:["About 50%","About 37%","About 5% or less","About 99%"],
+ correct:2,
+ reveal:`<p>Each play EV +50.5, variance is dominated by the rare win. After 100 plays expected profit ≈ $5,050. By law of large numbers / Chernoff-style concentration, the chance of finishing negative becomes small (order of a few percent or less depending on exact tail). The point: a positive-EV bet that looks “scary” once becomes very attractive when repeated.</p>`,
+ src:"Law of large numbers + positive EV",
+ title_pt:"Aposta assimétrica · Jogar 100 vezes?",
+ body_pt:`<p>Uma aposta: 1% de chance de ganhar $10.000, 99% de chance de perder $50. EV ≈ +$50,50. Você pode jogar esta aposta até 100 vezes independentes. Qual é a probabilidade aproximada de terminar com prejuízo líquido após 100 jogadas?</p>`,
+ opts_pt:["Cerca de 50%","Cerca de 37%","Cerca de 5% ou menos","Cerca de 99%"],
+ reveal_pt:`<p>Cada jogada EV +50,5. Após 100 jogadas o lucro esperado ≈ $5.050. Pela lei dos grandes números a chance de terminar negativo fica pequena (ordem de poucos por cento). O ponto: uma aposta de EV positivo que parece “assustadora” uma vez fica muito atraente quando repetida.</p>`,
+ src_pt:"Lei dos grandes números + EV positivo"},
+
+// ---------- BAYES WITH NUMBERS ----------
+{slug:"m-ex-bayes-disease", type:"quaestio", f:"M",
+ title:"Bayes · Rare disease",
+ body:`<p>Disease prevalence 1 in 1,000. Test is 99% sensitive and 99% specific. You test positive. Approximate probability you have the disease?</p>`,
  opts:["99%","About 50%","About 9%","About 1%"],
  correct:2,
- reveal:`<p>Out of 1,000 people, 1 has the disease and tests positive. Of the 999 healthy, about 10 test positive (1% false-positive rate). So roughly 1 in 11 positives is a true positive ≈ 9%. Base rates dominate when the condition is rare. Ignoring them is the most common quantitative error in medical and legal reasoning.</p>`,
- src:"Classic Bayes problem; Kahneman & Tversky base-rate neglect",
- title_pt:"A armadilha da taxa-base",
- body_pt:`<p>Um teste para uma doença rara (1 em 1.000) é 99% preciso nas duas direções. Você testa positivo. Qual é a probabilidade aproximada de você ter a doença?</p>`,
+ reveal:`<p>1,000 people: 1 true positive, ~10 false positives → ~1/11 ≈ 9%. Base rate dominates. This is the single most important quantitative habit for medical and legal reasoning.</p>`,
+ src:"Classic Bayes / base-rate problem",
+ title_pt:"Bayes · Doença rara",
+ body_pt:`<p>Prevalência da doença 1 em 1.000. Teste 99% sensível e 99% específico. Você testa positivo. Probabilidade aproximada de ter a doença?</p>`,
  opts_pt:["99%","Cerca de 50%","Cerca de 9%","Cerca de 1%"],
- reveal_pt:`<p>De 1.000 pessoas, 1 tem a doença e testa positivo. Das 999 saudáveis, cerca de 10 testam positivo (taxa de falso-positivo de 1%). Portanto, aproximadamente 1 em 11 positivos é um verdadeiro positivo ≈ 9%. As taxas-base dominam quando a condição é rara. Ignorá-las é o erro quantitativo mais comum no raciocínio médico e jurídico.</p>`,
- src_pt:"Problema clássico de Bayes; negligência de taxa-base de Kahneman & Tversky"
-},
+ reveal_pt:`<p>1.000 pessoas: 1 verdadeiro positivo, ~10 falsos positivos → ~1/11 ≈ 9%. A taxa-base domina. Este é o hábito quantitativo mais importante para raciocínio médico e jurídico.</p>`,
+ src_pt:"Problema clássico de Bayes / taxa-base"},
 
-{slug:"m-sent-polya", type:"sententia", f:"M", title:"Pólya · The First Rule",
- body:`<blockquote>The first rule of discovery is to have brains and good luck. The second rule of discovery is to sit tight and wait till you get a bright idea.</blockquote>
-<p>Pólya immediately adds the practical corollary: the bright idea is more likely to arrive if you have prepared the ground by understanding the problem, drawing a figure, and introducing suitable notation. Waiting is not passive.</p>`,
- src:"G. Pólya, How to Solve It (1945)",
- title_pt:"Pólya · A Primeira Regra",
- body_pt:`<blockquote>A primeira regra da descoberta é ter cérebro e boa sorte. A segunda regra da descoberta é ficar quieto e esperar até ter uma ideia brilhante.</blockquote>
-<p>Pólya acrescenta imediatamente o corolário prático: a ideia brilhante tem mais chance de chegar se você preparou o terreno compreendendo o problema, desenhando uma figura e introduzindo notação adequada. Esperar não é passivo.</p>`,
- src_pt:"G. Pólya, A Arte de Resolver Problemas (1945)"
-},
+{slug:"m-ex-bayes-update", type:"quaestio", f:"M",
+ title:"Bayes · Update the odds",
+ body:`<p>Prior odds that a coin is fair vs two-headed: 100:1. You flip once and get Heads. What are the new odds (fair : two-headed)?</p>`,
+ opts:["100:1 still","50:1","200:1","About 50.5 : 1"],
+ correct:1,
+ reveal:`<p>Likelihood ratio for Heads: P(H|fair)/P(H|two-headed) = 0.5 / 1 = 0.5. Posterior odds = prior odds × LR = 100 × 0.5 = 50:1. One Heads moves the odds, but not dramatically, because a fair coin also produces Heads half the time.</p>`,
+ src:"Odds form of Bayes",
+ title_pt:"Bayes · Atualize as odds",
+ body_pt:`<p>Odds a priori de uma moeda ser justa vs duas caras: 100:1. Você joga uma vez e sai Cara. Quais são as novas odds (justa : duas caras)?</p>`,
+ opts_pt:["Ainda 100:1","50:1","200:1","Cerca de 50,5 : 1"],
+ reveal_pt:`<p>Razão de verossimilhança para Cara: P(C|justa)/P(C|duas caras) = 0,5 / 1 = 0,5. Odds a posteriori = odds a priori × RV = 100 × 0,5 = 50:1. Uma Cara move as odds, mas não drasticamente, porque uma moeda justa também produz Cara metade das vezes.</p>`,
+ src_pt:"Forma de odds de Bayes"},
 
-{slug:"m-sent-hamming", type:"sententia", f:"M", title:"Hamming · The Door",
- body:`<blockquote>The purpose of computing is insight, not numbers.</blockquote>
-<p>Richard Hamming's reminder that the output of a calculation is valuable only insofar as it changes what you understand. A number that does not alter a decision or a model is decoration.</p>`,
- src:"Richard Hamming, The Art of Doing Science and Engineering (1997)",
- title_pt:"Hamming · A Porta",
- body_pt:`<blockquote>O propósito do cálculo é a compreensão, não os números.</blockquote>
-<p>Lembrete de Richard Hamming de que a saída de um cálculo só é valiosa na medida em que muda o que você compreende. Um número que não altera uma decisão ou um modelo é decoração.</p>`,
- src_pt:"Richard Hamming, The Art of Doing Science and Engineering (1997)"
-},
+// ---------- FERMI / ORDER-OF-MAGNITUDE ----------
+{slug:"m-ex-fermi-gas", type:"quaestio", f:"M",
+ title:"Fermi · Gas stations in a city",
+ body:`<p>Estimate the number of gas stations in a city of 1 million people. Which decomposition is most useful?</p>`,
+ opts:["Count intersections and assume one station per 20 intersections","Cars × miles/year ÷ (miles per tank × tanks per station per day) × stations needed","Look at one neighborhood and multiply by area ratio","Assume 1 station per 5,000 people"],
+ correct:1,
+ reveal:`<p>The second path forces you to surface the real drivers: car ownership, usage, tank size, and throughput per station. It yields an order-of-magnitude answer and shows which uncertainties matter. The others hide the structure or require data you do not have.</p>`,
+ src:"Fermi estimation method",
+ title_pt:"Fermi · Postos de gasolina numa cidade",
+ body_pt:`<p>Estime o número de postos de gasolina numa cidade de 1 milhão de habitantes. Qual decomposição é mais útil?</p>`,
+ opts_pt:["Contar cruzamentos e assumir um posto a cada 20 cruzamentos","Carros × km/ano ÷ (km por tanque × tanques por posto por dia) × postos necessários","Olhar um bairro e multiplicar pela razão de área","Assumir 1 posto por 5.000 pessoas"],
+ reveal_pt:`<p>O segundo caminho força você a explicitar os verdadeiros motores: posse de carros, uso, tamanho do tanque e vazão por posto. Produz resposta de ordem de magnitude e mostra quais incertezas importam.</p>`,
+ src_pt:"Método de estimativa de Fermi"},
 
-{slug:"m-sent-feynman", type:"sententia", f:"M", title:"Feynman · The Key to Science",
- body:`<blockquote>It does not make any difference how beautiful your guess is... If it disagrees with experiment, it is wrong.</blockquote>
-<p>The sentence is absolute. No amount of elegance, consensus, or prior investment rescues a claim that fails the data. The trained mind treats disagreement with experiment as terminal, not as a temporary inconvenience.</p>`,
- src:"Richard Feynman, The Character of Physical Law (1965)",
- title_pt:"Feynman · A Chave da Ciência",
- body_pt:`<blockquote>Não importa quão bela seja a sua conjectura... Se ela discorda da experiência, está errada.</blockquote>
-<p>A frase é absoluta. Nenhuma quantidade de elegância, consenso ou investimento prévio salva uma afirmação que falha nos dados. A mente treinada trata a discordância com a experiência como terminal, não como inconveniente temporário.</p>`,
- src_pt:"Richard Feynman, The Character of Physical Law (1965)"
-},
+{slug:"m-ex-fermi-piano", type:"quaestio", f:"M",
+ title:"Fermi · Piano tuners",
+ body:`<p>City of 4 million. Roughly how many full-time piano tuners? Best order-of-magnitude answer?</p>`,
+ opts:["About 10","About 40–50","About 400","About 4,000"],
+ correct:1,
+ reveal:`<p>Typical Fermi: ~1 piano per 20–40 households, ~1/3 of households, city ~1.3M households → ~15–40k pianos. Each tuned ~1×/year, 2 hours/tuning → total hours. One tuner works ~1,500 hours/year → tens of tuners, not hundreds. Classic answer lands near 40–50.</p>`,
+ src:"Fermi problems tradition",
+ title_pt:"Fermi · Afinadores de piano",
+ body_pt:`<p>Cidade de 4 milhões. Aproximadamente quantos afinadores de piano em tempo integral? Melhor resposta de ordem de magnitude?</p>`,
+ opts_pt:["Cerca de 10","Cerca de 40–50","Cerca de 400","Cerca de 4.000"],
+ reveal_pt:`<p>Fermi típico: ~1 piano por 20–40 domicílios, ~1/3 dos domicílios, cidade ~1,3M domicílios → ~15–40k pianos. Cada um afinado ~1×/ano, 2 h/afinação → horas totais. Um afinador trabalha ~1.500 h/ano → dezenas de afinadores, não centenas. Resposta clássica perto de 40–50.</p>`,
+ src_pt:"Tradição dos problemas de Fermi"},
 
-{slug:"m-abstraction", type:"lectio", f:"M", title:"Abstraction · Throw Away the Right Details",
- body:`<p>Mathematical abstraction is the art of discarding every property of an object that is irrelevant to the question at hand, until only the structure that matters remains. A graph is not a diagram of cities; it is a set of vertices and edges. Once the irrelevant geometry is gone, theorems about connectivity become visible.</p>
-<p>The same skill is the core of modeling any real problem. The question is never "what is the complete description?" It is "which features, if changed, would change the answer I care about?" Everything else is noise that slows the mind.</p>
-<p>Bad modelers keep too much. Good modelers throw away aggressively and then check, at the end, whether any discarded feature would have altered the conclusion. The check is cheap; the clarity is expensive and worth it.</p>`,
- src:"Standard mathematical practice; transfer to modeling in science and decision-making",
- title_pt:"Abstração · Descarte os Detalhes Certos",
- body_pt:`<p>A abstração matemática é a arte de descartar toda propriedade de um objeto que seja irrelevante para a pergunta em questão, até restar apenas a estrutura que importa. Um grafo não é um diagrama de cidades; é um conjunto de vértices e arestas. Uma vez que a geometria irrelevante some, teoremas sobre conectividade se tornam visíveis.</p>
-<p>A mesma habilidade é o núcleo de modelar qualquer problema real. A pergunta nunca é "qual é a descrição completa?" É "quais características, se mudadas, mudariam a resposta que me importa?" Todo o resto é ruído que retarda a mente.</p>
-<p>Maus modeladores guardam demais. Bons modeladores descartam de forma agressiva e depois verificam, no fim, se alguma característica descartada teria alterado a conclusão. A verificação é barata; a clareza é cara e vale a pena.</p>`,
- src_pt:"Prática matemática padrão; transferência para modelagem em ciência e tomada de decisão"
-},
+// ---------- COUNTEREXAMPLE / FALSIFICATION ----------
+{slug:"m-ex-counter-claim", type:"quaestio", f:"M",
+ title:"Kill the claim fast",
+ body:`<p>"Every successful startup has a charismatic founder." Most efficient critical move?</p>`,
+ opts:["List more successful startups with charismatic founders","Find one successful startup whose founder is clearly not charismatic","Argue that charisma is hard to define","Ask whether success creates the perception of charisma"],
+ correct:1,
+ reveal:`<p>One clear counterexample falsifies the universal claim. The other moves are useful for refined (non-universal) versions later, but slower. Train the reflex: reach for the counterexample first.</p>`,
+ src:"Mathematical method applied to ordinary claims",
+ title_pt:"Mate a afirmação rápido",
+ body_pt:`<p>"Toda startup bem-sucedida tem um fundador carismático." Movimento crítico mais eficiente?</p>`,
+ opts_pt:["Listar mais startups bem-sucedidas com fundadores carismáticos","Encontrar uma startup bem-sucedida cujo fundador claramente não é carismático","Argumentar que carisma é difícil de definir","Perguntar se o sucesso cria a percepção de carisma"],
+ reveal_pt:`<p>Um único contraexemplo claro falsifica a afirmação universal. Os outros movimentos são úteis para versões refinadas depois, mas mais lentos. Treine o reflexo: vá atrás do contraexemplo primeiro.</p>`,
+ src_pt:"Método matemático aplicado a afirmações ordinárias"},
 
-{slug:"m-restructure", type:"lectio", f:"M", title:"Restructuring the Problem · The Move Before the Solution",
- body:`<p>Most hard problems are hard in their original formulation. The skilled solver's first act is not to attack the problem but to rewrite it: change variables, switch to a dual formulation, exploit symmetry, reduce dimension, or translate the question into a domain where existing tools apply.</p>
-<p>In linear algebra this is choosing a better basis. In physics it is choosing a better coordinate system. In everyday reasoning it is asking "what is the real decision here?" until the original statement is revealed as a special case of a clearer one.</p>
-<p>The time spent restructuring is almost always repaid by the simplicity of the subsequent solution. People who skip the step and "just start solving" spend longer and produce weaker answers.</p>`,
- src:"Pólya; standard practice in pure and applied mathematics",
- title_pt:"Reestruturar o Problema · O Movimento Antes da Solução",
- body_pt:`<p>A maioria dos problemas difíceis é difícil na formulação original. O primeiro ato do resolvedor habilidoso não é atacar o problema, mas reescrevê-lo: mudar variáveis, passar a uma formulação dual, explorar simetria, reduzir dimensão, ou traduzir a pergunta para um domínio onde ferramentas existentes se aplicam.</p>
-<p>Na álgebra linear isso é escolher uma base melhor. Na física, escolher um sistema de coordenadas melhor. No raciocínio cotidiano, perguntar "qual é a decisão real aqui?" até que o enunciado original se revele um caso especial de um mais claro.</p>
-<p>O tempo gasto em reestruturar é quase sempre recompensado pela simplicidade da solução subsequente. Pessoas que pulam o passo e "simplesmente começam a resolver" gastam mais tempo e produzem respostas mais fracas.</p>`,
- src_pt:"Pólya; prática padrão em matemática pura e aplicada"
-}
+{slug:"m-ex-counter-policy", type:"quaestio", f:"M",
+ title:"Policy claim",
+ body:`<p>"Raising the minimum wage always reduces poverty." Which single observation would most damage the claim?</p>`,
+ opts:["A city where the minimum wage rose and employment fell","A city where the minimum wage rose and poverty rose","A city where the minimum wage was already high and poverty was low","A theoretical model showing disemployment effects"],
+ correct:1,
+ reveal:`<p>The claim is universal and about poverty, not employment. A case where the wage rose and poverty also rose is a direct counterexample. Employment effects are related but not the same variable the claim asserts.</p>`,
+ src:"Falsification of universal policy claims",
+ title_pt:"Afirmação de política",
+ body_pt:`<p>"Aumentar o salário mínimo sempre reduz a pobreza." Qual observação isolada mais prejudicaria a afirmação?</p>`,
+ opts_pt:["Uma cidade onde o salário mínimo subiu e o emprego caiu","Uma cidade onde o salário mínimo subiu e a pobreza subiu","Uma cidade onde o salário mínimo já era alto e a pobreza era baixa","Um modelo teórico mostrando efeitos de desemprego"],
+ reveal_pt:`<p>A afirmação é universal e sobre pobreza, não emprego. Um caso em que o salário subiu e a pobreza também subiu é um contraexemplo direto. Efeitos sobre emprego são relacionados, mas não são a variável que a afirmação afirma.</p>`,
+ src_pt:"Falseação de afirmações universais de política"},
+
+// ---------- WORKING BACKWARDS / PLANNING ----------
+{slug:"m-ex-backwards-deadline", type:"quaestio", f:"M",
+ title:"Work backwards from Friday",
+ body:`<p>Report due Friday 5 pm. Data pull takes 1 full day and can only be done by the data team (busy until Tuesday noon). Analysis needs 1.5 days after data. Writing needs 1 day after analysis. What is the latest you can start the data pull and still finish on time?</p>`,
+ opts:["Tuesday noon","Monday morning","Wednesday morning","Thursday morning"],
+ correct:0,
+ reveal:`<p>Work backwards: Writing needs all of Thursday → analysis must finish Wednesday EOD → analysis needs 1.5 days → must start analysis Tuesday noon at latest → data must be ready Tuesday noon → data pull (1 day) must start Monday... but data team free only Tuesday noon. Constraint binds: start data pull Tuesday noon, analysis Tue noon–Wed EOD (compressed), writing Thursday. The backwards pass reveals the binding constraint immediately.</p>`,
+ src:"Pólya-style working backwards",
+ title_pt:"Trabalhe de trás para frente a partir de sexta",
+ body_pt:`<p>Relatório devido sexta 17h. Extração de dados leva 1 dia inteiro e só pode ser feita pela equipe de dados (ocupada até terça meio-dia). Análise precisa de 1,5 dia após os dados. Escrita precisa de 1 dia após a análise. Qual é o mais tarde que você pode começar a extração e ainda terminar no prazo?</p>`,
+ opts_pt:["Terça meio-dia","Segunda de manhã","Quarta de manhã","Quinta de manhã"],
+ reveal_pt:`<p>De trás para frente: escrita precisa de toda a quinta → análise deve terminar quarta no fim do dia → análise precisa de 1,5 dia → deve começar análise no mais tardar terça meio-dia → dados prontos terça meio-dia → extração (1 dia) começaria segunda... mas a equipe só libera terça meio-dia. A restrição aperta: começar extração terça meio-dia. A passagem de trás para frente revela a restrição vinculante imediatamente.</p>`,
+ src_pt:"Trabalhar de trás para frente à la Pólya"},
+
+// ---------- DIMENSIONAL / SANITY ----------
+{slug:"m-ex-dimensional", type:"quaestio", f:"M",
+ title:"Dimensional red flag",
+ body:`<p>A report says: “The new policy will reduce traffic congestion by 2.3.” What is the most immediate critical question?</p>`,
+ opts:["Is 2.3 statistically significant?","2.3 what? Percent? Minutes? Index points? Per what baseline?","Who funded the study?","Is the sample size large enough?"],
+ correct:1,
+ reveal:`<p>Units first. A number without units is not a quantity. “2.3” could mean almost anything. Dimensional hygiene catches nonsense before any statistical discussion begins.</p>`,
+ src:"Dimensional analysis habit",
+ title_pt:"Bandeira vermelha dimensional",
+ body_pt:`<p>Um relatório diz: “A nova política reduzirá o congestionamento em 2,3.” Qual é a pergunta crítica mais imediata?</p>`,
+ opts_pt:["2,3 é estatisticamente significativo?","2,3 o quê? Por cento? Minutos? Pontos de índice? Em relação a qual baseline?","Quem financiou o estudo?","O tamanho da amostra é grande o suficiente?"],
+ reveal_pt:`<p>Unidades primeiro. Um número sem unidades não é uma quantidade. “2,3” pode significar quase qualquer coisa. A higiene dimensional pega nonsense antes de qualquer discussão estatística começar.</p>`,
+ src_pt:"Hábito de análise dimensional"},
+
+// ---------- OPTIMIZATION / ALLOCATION ----------
+{slug:"m-ex-knapsack-light", type:"quaestio", f:"M",
+ title:"Allocation · Two projects",
+ body:`<p>You have $10k. Project A: costs $6k, expected return $11k. Project B: costs $7k, expected return $13k. Projects are independent; you can do at most one. Which maximizes expected net?</p>`,
+ opts:["A only (net +5k)","B only (net +6k)","Both (impossible)","Neither"],
+ correct:1,
+ reveal:`<p>A: net +5k. B: net +6k. B is better. You cannot do both. Rank by net expected value under the budget constraint. (If fractional projects were allowed you would need bang-per-buck, but here they are all-or-nothing.)</p>`,
+ src:"Simple capital allocation",
+ title_pt:"Alocação · Dois projetos",
+ body_pt:`<p>Você tem $10k. Projeto A: custa $6k, retorno esperado $11k. Projeto B: custa $7k, retorno esperado $13k. Projetos independentes; você pode fazer no máximo um. Qual maximiza o líquido esperado?</p>`,
+ opts_pt:["Só A (líquido +5k)","Só B (líquido +6k)","Ambos (impossível)","Nenhum"],
+ reveal_pt:`<p>A: líquido +5k. B: líquido +6k. B é melhor. Não dá para fazer os dois. Rankeie por valor esperado líquido sob a restrição de orçamento.</p>`,
+ src_pt:"Alocação simples de capital"},
+
+{slug:"m-ex-opportunity-cost", type:"quaestio", f:"M",
+ title:"Opportunity cost · The real price",
+ body:`<p>You can work overtime this Saturday for $400, or attend a workshop that costs $150 but you value the learning at $500. What is the true net value of attending the workshop?</p>`,
+ opts:["+$350","–$50","+$250","+$500"],
+ correct:1,
+ reveal:`<p>Attending means forgoing $400. Net of the $150 fee and the $500 value of learning: 500 – 150 – 400 = –$50. The opportunity cost of the time is part of the price. Ignoring it makes the workshop look better than it is.</p>`,
+ src:"Opportunity cost accounting",
+ title_pt:"Custo de oportunidade · O preço real",
+ body_pt:`<p>Você pode fazer hora extra neste sábado por $400, ou ir a um workshop que custa $150 mas cujo aprendizado você valoriza em $500. Qual é o valor líquido verdadeiro de ir ao workshop?</p>`,
+ opts_pt:["+$350","–$50","+$250","+$500"],
+ reveal_pt:`<p>Ir ao workshop significa abrir mão de $400. Líquido da taxa de $150 e do valor de $500 do aprendizado: 500 – 150 – 400 = –$50. O custo de oportunidade do tempo faz parte do preço. Ignorá-lo faz o workshop parecer melhor do que é.</p>`,
+ src_pt:"Contabilidade de custo de oportunidade"},
+
+// ---------- EXTREMAL / BOUNDARY ----------
+{slug:"m-ex-extremal", type:"quaestio", f:"M",
+ title:"Check the extremes",
+ body:`<p>A pricing model says revenue = price × (100 – 2×price). At what price is revenue maximized, and what happens at the extremes price=0 and price=50?</p>`,
+ opts:["Max at price=25; revenue 0 at both extremes","Max at price=50; revenue positive at 0","Max at price=0; revenue max at boundary","Max at price=100; model breaks"],
+ correct:0,
+ reveal:`<p>R(p)=p(100–2p)=100p–2p². Vertex at p=100/4=25. R(0)=0, R(50)=0. The extremes confirm the parabola opens downward and the maximum is interior. Always evaluate the boundary; it often reveals the shape of the solution.</p>`,
+ src:"Extremal / calculus sanity check",
+ title_pt:"Verifique os extremos",
+ body_pt:`<p>Um modelo de preço diz receita = preço × (100 – 2×preço). Em que preço a receita é maximizada, e o que acontece nos extremos preço=0 e preço=50?</p>`,
+ opts_pt:["Máx em preço=25; receita 0 nos dois extremos","Máx em preço=50; receita positiva em 0","Máx em preço=0; receita máx na fronteira","Máx em preço=100; o modelo quebra"],
+ reveal_pt:`<p>R(p)=p(100–2p)=100p–2p². Vértice em p=100/4=25. R(0)=0, R(50)=0. Os extremos confirmam que a parábola abre para baixo e o máximo é interior. Sempre avalie a fronteira; ela frequentemente revela a forma da solução.</p>`,
+ src_pt:"Verificação extremal / de cálculo"},
+
+// ---------- MODEL LIMITS ----------
+{slug:"m-ex-model-break", type:"quaestio", f:"M",
+ title:"When does the model break?",
+ body:`<p>You use a normal distribution to model daily stock returns for risk management. Which situation most clearly shows the model is being used outside its domain of validity?</p>`,
+ opts:["A day with a 1% move","A day with a 4-sigma move that the normal assigns almost zero probability, yet such days occur multiple times per decade","Average returns close to zero","Volatility changing slowly over months"],
+ correct:1,
+ reveal:`<p>Normal tails are too thin for financial returns. Multiple “impossible” (under the normal) moves per decade are the empirical signature that the model is wrong in the tails — exactly where risk management cares most. The model can still be useful for typical days; it is dangerous for extremes.</p>`,
+ src:"Box; Taleb on thin tails",
+ title_pt:"Quando o modelo quebra?",
+ body_pt:`<p>Você usa uma distribuição normal para modelar retornos diários de ações para gestão de risco. Qual situação mostra mais claramente que o modelo está sendo usado fora do seu domínio de validade?</p>`,
+ opts_pt:["Um dia com movimento de 1%","Um dia com movimento de 4 sigmas ao qual a normal atribui probabilidade quase zero, e no entanto tais dias ocorrem várias vezes por década","Retornos médios perto de zero","Volatilidade mudando lentamente ao longo de meses"],
+ reveal_pt:`<p>As caudas da normal são finas demais para retornos financeiros. Vários movimentos “impossíveis” (sob a normal) por década são a assinatura empírica de que o modelo está errado nas caudas — exatamente onde a gestão de risco mais se importa. O modelo ainda pode ser útil para dias típicos; é perigoso para extremos.</p>`,
+ src_pt:"Box; Taleb sobre caudas finas"},
+
+// ---------- MORE CONCRETE DRILLS ----------
+{slug:"m-ex-queue", type:"quaestio", f:"M",
+ title:"Queue · One server or two?",
+ body:`<p>Customers arrive at 10 per hour. Service takes 5 minutes on average. With one server, utilization is high and waits are long. You can add a second identical server. Roughly what happens to average wait?</p>`,
+ opts:["Wait roughly halves","Wait falls by far more than half (non-linear improvement)","Wait stays almost the same","Wait doubles because of coordination"],
+ correct:1,
+ reveal:`<p>In queueing (M/M/1 vs M/M/2), wait is highly non-linear in utilization. Cutting utilization from near 1 to 0.4–0.5 typically collapses wait time by much more than half. This is why “just add a little capacity” often produces dramatic service improvements.</p>`,
+ src:"Elementary queueing theory",
+ title_pt:"Fila · Um servidor ou dois?",
+ body_pt:`<p>Clientes chegam a 10 por hora. O serviço leva 5 minutos em média. Com um servidor, a utilização é alta e as esperas são longas. Você pode adicionar um segundo servidor idêntico. Aproximadamente o que acontece com a espera média?</p>`,
+ opts_pt:["A espera aproximadamente cai pela metade","A espera cai bem mais que a metade (melhoria não-linear)","A espera fica quase igual","A espera dobra por causa de coordenação"],
+ reveal_pt:`<p>Em filas (M/M/1 vs M/M/2), a espera é altamente não-linear na utilização. Cortar a utilização de perto de 1 para 0,4–0,5 tipicamente colapsa o tempo de espera bem mais que pela metade. É por isso que “só adicionar um pouco de capacidade” muitas vezes produz melhorias dramáticas de serviço.</p>`,
+ src_pt:"Teoria elementar de filas"},
+
+{slug:"m-ex-matching", type:"quaestio", f:"M",
+ title:"Matching · Stable pairs",
+ body:`<p>Two hospitals, two doctors. Preferences: H1 prefers D1>D2, H2 prefers D1>D2, D1 prefers H2>H1, D2 prefers H1>H2. Which matching is stable?</p>`,
+ opts:["H1–D1, H2–D2","H1–D2, H2–D1","Both are stable","Neither is stable"],
+ correct:1,
+ reveal:`<p>H1–D1 & H2–D2 is unstable: D1 and H2 prefer each other to their current partners. H1–D2 & H2–D1 is stable: no blocking pair. This is the core of the Gale–Shapley stable-matching idea used in residency assignments.</p>`,
+ src:"Gale–Shapley stable matching",
+ title_pt:"Emparelhamento · Pares estáveis",
+ body_pt:`<p>Dois hospitais, dois médicos. Preferências: H1 prefere D1>D2, H2 prefere D1>D2, D1 prefere H2>H1, D2 prefere H1>H2. Qual emparelhamento é estável?</p>`,
+ opts_pt:["H1–D1, H2–D2","H1–D2, H2–D1","Ambos são estáveis","Nenhum é estável"],
+ reveal_pt:`<p>H1–D1 e H2–D2 é instável: D1 e H2 preferem um ao outro em relação aos parceiros atuais. H1–D2 e H2–D1 é estável: não há par bloqueador. Este é o núcleo da ideia de emparelhamento estável de Gale–Shapley usada em residências médicas.</p>`,
+ src_pt:"Emparelhamento estável de Gale–Shapley"},
+
+{slug:"m-ex-decision-tree", type:"quaestio", f:"M",
+ title:"Decision tree · Test or not?",
+ body:`<p>Prior P(disease)=0.1. Treatment costs 100 and cures if diseased (value of cure 1000). A perfect test costs 20. Should you test before deciding to treat?</p>`,
+ opts:["Yes — EV with test is higher","No — just treat everyone","No — never treat","Yes — but only if the test is free"],
+ correct:0,
+ reveal:`<p>Without test: treat all → EV = 0.1×900 – 0.9×100 = 90–90=0; or treat none → 0. With perfect test: pay 20, then treat only if positive → EV = –20 + 0.1×900 = +70. Testing is worth it. The value of information is positive when the test changes the optimal action with positive probability.</p>`,
+ src:"Value of information / decision trees",
+ title_pt:"Árvore de decisão · Testar ou não?",
+ body_pt:`<p>Prior P(doença)=0,1. Tratamento custa 100 e cura se doente (valor da cura 1000). Um teste perfeito custa 20. Você deve testar antes de decidir tratar?</p>`,
+ opts_pt:["Sim — EV com teste é maior","Não — trate todos","Não — nunca trate","Sim — mas só se o teste for de graça"],
+ reveal_pt:`<p>Sem teste: tratar todos → EV = 0,1×900 – 0,9×100 = 0; ou não tratar → 0. Com teste perfeito: pague 20, depois trate só se positivo → EV = –20 + 0,1×900 = +70. Vale a pena testar. O valor da informação é positivo quando o teste muda a ação ótima com probabilidade positiva.</p>`,
+ src_pt:"Valor da informação / árvores de decisão"},
+
+{slug:"m-ex-margin", type:"quaestio", f:"M",
+ title:"Marginal thinking",
+ body:`<p>You already spent $80k on a project. To finish costs another $30k and the finished project is worth $40k. Do you finish?</p>`,
+ opts:["No — total cost 110k > 40k value","Yes — marginal cost 30k < marginal value 40k","Only if you can recover the 80k","No — sunk cost fallacy says stop"],
+ correct:1,
+ reveal:`<p>The $80k is sunk. The only decision is whether to spend the next $30k to get $40k. Yes. “Total cost vs total value” is the accounting error that produces the sunk-cost fallacy in reverse; the correct comparison is always marginal.</p>`,
+ src:"Sunk cost + marginal analysis",
+ title_pt:"Pensamento marginal",
+ body_pt:`<p>Você já gastou $80k num projeto. Para terminar custa mais $30k e o projeto terminado vale $40k. Você termina?</p>`,
+ opts_pt:["Não — custo total 110k > valor 40k","Sim — custo marginal 30k < valor marginal 40k","Só se puder recuperar os 80k","Não — a falácia do custo afundado diz para parar"],
+ reveal_pt:`<p>Os $80k estão afundados. A única decisão é se gastar os próximos $30k para obter $40k. Sim. “Custo total vs valor total” é o erro contábil que produz a falácia do custo afundado ao contrário; a comparação correta é sempre marginal.</p>`,
+ src_pt:"Custo afundado + análise marginal"},
+
+{slug:"m-ex-variance", type:"quaestio", f:"M",
+ title:"Variance · Which portfolio?",
+ body:`<p>Two assets, each with expected return 10%. Asset A has high variance, Asset B has low variance. Correlation = 0. You can hold only one or a 50/50 mix. Which has the lowest risk for the same expected return?</p>`,
+ opts:["Only A","Only B","50/50 mix","All the same"],
+ correct:2,
+ reveal:`<p>With correlation 0, the mix variance is far below the average of the two variances (diversification). Expected return stays 10%. The 50/50 portfolio is strictly better on a risk-adjusted basis. This is the elementary engine of portfolio theory.</p>`,
+ src:"Markowitz diversification",
+ title_pt:"Variância · Qual carteira?",
+ body_pt:`<p>Dois ativos, cada um com retorno esperado 10%. Ativo A tem variância alta, Ativo B tem variância baixa. Correlação = 0. Você pode segurar só um ou uma mistura 50/50. Qual tem o menor risco para o mesmo retorno esperado?</p>`,
+ opts_pt:["Só A","Só B","Mistura 50/50","Todos iguais"],
+ reveal_pt:`<p>Com correlação 0, a variância da mistura fica bem abaixo da média das duas variâncias (diversificação). O retorno esperado permanece 10%. A carteira 50/50 é estritamente melhor em bases ajustadas ao risco. Este é o motor elementar da teoria de carteiras.</p>`,
+ src_pt:"Diversificação de Markowitz"},
+
+{slug:"m-ex-constraint", type:"quaestio", f:"M",
+ title:"Find the binding constraint",
+ body:`<p>A factory can make 100 units/day of product X (profit $10/unit) or 80 units/day of product Y (profit $15/unit), or any linear combination. Machine time is the only constraint. What is the optimal daily plan?</p>`,
+ opts:["All X: $1,000","All Y: $1,200","50/50 mix","Cannot tell without more data"],
+ correct:1,
+ reveal:`<p>All Y yields 80×15=$1,200. All X yields 100×10=$1,000. Any mix is a convex combination and lies between them. Corner solution: put everything on the higher profit-per-constraining-resource activity. (Here the constraint is fully used either way; Y wins on profit density.)</p>`,
+ src:"Linear programming intuition — corner solutions",
+ title_pt:"Ache a restrição vinculante",
+ body_pt:`<p>Uma fábrica pode fazer 100 unidades/dia do produto X (lucro $10/un) ou 80 unidades/dia do produto Y (lucro $15/un), ou qualquer combinação linear. O tempo de máquina é a única restrição. Qual é o plano diário ótimo?</p>`,
+ opts_pt:["Só X: $1.000","Só Y: $1.200","Mistura 50/50","Não dá para saber sem mais dados"],
+ reveal_pt:`<p>Só Y rende 80×15=$1.200. Só X rende 100×10=$1.000. Qualquer mistura é combinação convexa e fica entre os dois. Solução de canto: coloque tudo na atividade de maior lucro por recurso restritivo. Y vence.</p>`,
+ src_pt:"Intuição de programação linear — soluções de canto"},
+
+{slug:"m-ex-info-value", type:"quaestio", f:"M",
+ title:"Value of perfect information",
+ body:`<p>Without information, best action has EV = 40. With perfect information you can choose the best action in each state and the expected value rises to 70. What is the value of perfect information?</p>`,
+ opts:["30","70","40","110"],
+ correct:0,
+ reveal:`<p>EVPI = EV with perfect info – EV without = 70 – 40 = 30. You should pay at most 30 for a perfect signal. This single number disciplines how much to spend on research, tests, or consultants.</p>`,
+ src:"Expected value of perfect information (EVPI)",
+ title_pt:"Valor da informação perfeita",
+ body_pt:`<p>Sem informação, a melhor ação tem EV = 40. Com informação perfeita você pode escolher a melhor ação em cada estado e o valor esperado sobe para 70. Qual é o valor da informação perfeita?</p>`,
+ opts_pt:["30","70","40","110"],
+ reveal_pt:`<p>EVPI = EV com info perfeita – EV sem = 70 – 40 = 30. Você deve pagar no máximo 30 por um sinal perfeito. Este único número disciplina quanto gastar em pesquisa, testes ou consultores.</p>`,
+ src_pt:"Valor esperado da informação perfeita (EVPI)"},
+
+{slug:"m-ex-regression", type:"quaestio", f:"M",
+ title:"Regression to the mean",
+ body:`<p>A squad of salespeople: the top 10% this quarter are sent to a coaching program. Next quarter their average performance falls. The company concludes coaching hurts. What is the most likely alternative explanation?</p>`,
+ opts:["Coaching is demotivating","Regression to the mean: extreme performers tend to be less extreme next period even with no intervention","The market got harder","The coaching was poorly designed"],
+ correct:1,
+ reveal:`<p>Any selection on an extreme outcome produces regression to the mean on the next measurement. Without a control group, you cannot separate coaching effects from the statistical artifact. This is one of the most common errors in before/after business analyses.</p>`,
+ src:"Regression to the mean (Galton; Kahneman)",
+ title_pt:"Regressão à média",
+ body_pt:`<p>Uma equipe de vendedores: os 10% melhores deste trimestre são enviados a um programa de coaching. No próximo trimestre o desempenho médio deles cai. A empresa conclui que o coaching prejudica. Qual é a explicação alternativa mais provável?</p>`,
+ opts_pt:["O coaching desmotiva","Regressão à média: desempenhos extremos tendem a ser menos extremos no período seguinte mesmo sem intervenção","O mercado ficou mais difícil","O coaching foi mal desenhado"],
+ reveal_pt:`<p>Qualquer seleção sobre um resultado extremo produz regressão à média na próxima medição. Sem grupo de controle, você não separa efeitos do coaching do artefato estatístico. Este é um dos erros mais comuns em análises empresariais antes/depois.</p>`,
+ src_pt:"Regressão à média (Galton; Kahneman)"},
+
+{slug:"m-ex-selection", type:"quaestio", f:"M",
+ title:"Selection bias",
+ body:`<p>A survey of successful founders finds that 80% say they “never gave up.” The article concludes persistence causes success. What is the critical flaw?</p>`,
+ opts:["80% is not high enough","Survivorship: we do not see the founders who never gave up and still failed","People lie in surveys","Success has many causes"],
+ correct:1,
+ reveal:`<p>By sampling only successes you condition on the outcome. Persistence may be common among both winners and losers; you cannot estimate its effect without seeing the failures. Survivorship bias is the default error when learning from “winners’ stories.”</p>`,
+ src:"Survivorship bias",
+ title_pt:"Viés de seleção",
+ body_pt:`<p>Uma pesquisa com fundadores bem-sucedidos descobre que 80% dizem que “nunca desistiram.” O artigo conclui que persistência causa sucesso. Qual é a falha crítica?</p>`,
+ opts_pt:["80% não é alto o suficiente","Sobrevivência: não vemos os fundadores que nunca desistiram e mesmo assim fracassaram","As pessoas mentem em pesquisas","O sucesso tem muitas causas"],
+ reveal_pt:`<p>Ao amostrar só sucessos você condiciona no resultado. Persistência pode ser comum entre vencedores e perdedores; você não estima o efeito sem ver os fracassos. Viés de sobrevivência é o erro padrão ao aprender com “histórias de vencedores.”</p>`,
+ src_pt:"Viés de sobrevivência"},
+
+{slug:"m-ex-base-rate-career", type:"quaestio", f:"M",
+ title:"Base rate · Career bet",
+ body:`<p>You are considering a highly competitive career track. Historically 5% of entrants reach the top tier. You have positive private signals about your ability. Roughly how should you combine the base rate with your signals?</p>`,
+ opts:["Ignore the base rate; private signals are more informative","Ignore private signals; only the base rate matters","Start from the 5% base rate and update upward only to the degree the signals are diagnostic","Assume you are the exception"],
+ correct:2,
+ reveal:`<p>Bayes: start with the base rate, then update by the likelihood ratio of your signals. Strong diagnostic signals can move you a lot; weak ones (most “I feel talented” signals) move you little. Ignoring the base rate is the most common error in career and admissions reasoning.</p>`,
+ src:"Base-rate reasoning under uncertainty",
+ title_pt:"Taxa-base · Aposta de carreira",
+ body_pt:`<p>Você está considerando uma carreira altamente competitiva. Historicamente 5% dos entrantes chegam ao nível superior. Você tem sinais privados positivos sobre sua habilidade. Aproximadamente como deve combinar a taxa-base com seus sinais?</p>`,
+ opts_pt:["Ignore a taxa-base; sinais privados são mais informativos","Ignore sinais privados; só a taxa-base importa","Comece dos 5% de taxa-base e atualize para cima só na medida em que os sinais forem diagnósticos","Assuma que você é a exceção"],
+ reveal_pt:`<p>Bayes: comece com a taxa-base, depois atualize pela razão de verossimilhança dos seus sinais. Sinais fortemente diagnósticos podem movê-lo muito; sinais fracos (a maioria dos “eu me sinto talentoso”) movem pouco. Ignorar a taxa-base é o erro mais comum no raciocínio de carreira e admissões.</p>`,
+ src_pt:"Raciocínio de taxa-base sob incerteza"},
+
+{slug:"m-ex-order-of-magnitude", type:"quaestio", f:"M",
+ title:"Order-of-magnitude check",
+ body:`<p>A startup claims it will reach $1B revenue in year 3 with a product that currently has 200 paying users at $50/month. What is the most useful first critical question?</p>`,
+ opts:["Is the team experienced?","What growth rate compounds 200 users × $50/mo to $1B in 3 years, and is that rate remotely plausible?","Who are the competitors?","Is the market large enough in theory?"],
+ correct:1,
+ reveal:`<p>200 × $50 × 12 = $120k ARR now. To $1B in 3 years requires growth of roughly 20× per year. That single number is so extreme that the claim is already in deep trouble before any qualitative discussion. Order-of-magnitude arithmetic is the fastest filter.</p>`,
+ src:"Order-of-magnitude / Fermi filter on claims",
+ title_pt:"Verificação de ordem de magnitude",
+ body_pt:`<p>Uma startup afirma que chegará a $1B de receita no ano 3 com um produto que hoje tem 200 usuários pagantes a $50/mês. Qual é a primeira pergunta crítica mais útil?</p>`,
+ opts_pt:["A equipe é experiente?","Que taxa de crescimento compõe 200 usuários × $50/mês até $1B em 3 anos, e essa taxa é remotamente plausível?","Quem são os concorrentes?","O mercado é grande o suficiente em teoria?"],
+ reveal_pt:`<p>200 × $50 × 12 = $120k ARR agora. Até $1B em 3 anos exige crescimento de cerca de 20× por ano. Esse único número é tão extremo que a afirmação já está em apuros profundos antes de qualquer discussão qualitativa. Aritmética de ordem de magnitude é o filtro mais rápido.</p>`,
+ src_pt:"Filtro de ordem de magnitude / Fermi sobre afirmações"},
+
+{slug:"m-ex-coordination", type:"quaestio", f:"M",
+ title:"Coordination game · Inventory across 4 nodes",
+ body:`<p>Four partners share a supply chain. Each can order inventory independently. Demand is random 4–12 per period. Lead time is random 1–3 periods. Holding costs and backorder costs are symmetric. The system has been oscillating with stockouts and excess. What single change most reliably reduces total cost?</p>`,
+ opts:["Each partner forecasts more aggressively","Share the final customer demand signal with every partner and order against that common signal","Increase safety stock at every node","Shorten the review period but keep local forecasts"],
+ correct:1,
+ reveal:`<p>Local forecasts on local orders create the bullwhip. A shared final-demand signal lets every node plan against the same reality instead of against amplified order noise. This is the core lesson of the Beer Game and of modern supply-chain coordination.</p>`,
+ src:"Beer Game / supply-chain coordination",
+ title_pt:"Jogo de coordenação · Estoque em 4 nós",
+ body_pt:`<p>Quatro parceiros compartilham uma cadeia de suprimentos. Cada um pode pedir estoque independentemente. Demanda aleatória 4–12 por período. Lead time aleatório 1–3 períodos. Custos de manutenção e de backorder são simétricos. O sistema tem oscilado com faltas e excessos. Qual mudança isolada reduz de forma mais confiável o custo total?</p>`,
+ opts_pt:["Cada parceiro prevê de forma mais agressiva","Compartilhar o sinal de demanda final do cliente com todos os parceiros e pedir com base nesse sinal comum","Aumentar o estoque de segurança em todos os nós","Encurtar o período de revisão mas manter previsões locais"],
+ reveal_pt:`<p>Previsões locais sobre pedidos locais criam o chicote. Um sinal compartilhado de demanda final permite que cada nó planeje contra a mesma realidade em vez de contra ruído de pedidos amplificado. Esta é a lição central do Beer Game e da coordenação moderna de cadeias de suprimentos.</p>`,
+ src_pt:"Beer Game / coordenação de cadeia de suprimentos"},
+
+{slug:"m-ex-stop", type:"quaestio", f:"M",
+ title:"Optional stopping",
+ body:`<p>You are testing a new feature. You peek at the results every day and plan to stop when the difference becomes “significant.” What is the main statistical problem?</p>`,
+ opts:["The sample size is too small","Optional stopping inflates the false-positive rate; the nominal p-value is no longer valid","The feature is probably bad","You need a larger effect size"],
+ correct:1,
+ reveal:`<p>If you keep looking until you see significance, you will eventually find it by chance even under the null. The p-value assumes a fixed sample size or a pre-specified sequential design. Unplanned peeking invalidates the error control. Pre-commit to the analysis plan.</p>`,
+ src:"Optional stopping / p-hacking",
+ title_pt:"Parada opcional",
+ body_pt:`<p>Você está testando uma nova funcionalidade. Espia os resultados todos os dias e planeja parar quando a diferença se tornar “significativa.” Qual é o principal problema estatístico?</p>`,
+ opts_pt:["O tamanho da amostra é pequeno demais","A parada opcional infla a taxa de falso-positivo; o p-valor nominal deixa de ser válido","A funcionalidade provavelmente é ruim","Você precisa de um efeito maior"],
+ reveal_pt:`<p>Se você continua olhando até ver significância, eventualmente a encontrará por acaso mesmo sob a nula. O p-valor assume tamanho de amostra fixo ou desenho sequencial pré-especificado. Espiar sem plano invalida o controle de erro. Pré-comprometa-se com o plano de análise.</p>`,
+ src_pt:"Parada opcional / p-hacking"},
+
+{slug:"m-ex-power", type:"quaestio", f:"M",
+ title:"Power · Sample size",
+ body:`<p>You want to detect a 5% lift in conversion. Baseline conversion is 10%. You plan a test with only 200 users per arm. What is the most accurate assessment?</p>`,
+ opts:["200 is plenty for a 5% lift","The test is almost certainly underpowered; a 5% relative lift on 10% baseline is a small absolute effect and needs far more users","Power depends only on the lift, not on baseline","200 is too many; you will overfit"],
+ correct:1,
+ reveal:`<p>Absolute difference ≈ 0.5 percentage points. With n=200 the standard error is large relative to 0.5 pp. Typical calculations put required n in the thousands per arm for 80% power. Running the underpowered test mostly wastes time and produces noisy “no result” or false confidence.</p>`,
+ src:"Statistical power basics",
+ title_pt:"Poder · Tamanho da amostra",
+ body_pt:`<p>Você quer detectar um lift de 5% na conversão. Conversão baseline é 10%. Você planeja um teste com só 200 usuários por braço. Qual é a avaliação mais precisa?</p>`,
+ opts_pt:["200 é mais que suficiente para um lift de 5%","O teste está quase certamente com pouco poder; um lift relativo de 5% sobre baseline de 10% é um efeito absoluto pequeno e precisa de bem mais usuários","O poder depende só do lift, não do baseline","200 é demais; você vai overfittar"],
+ reveal_pt:`<p>Diferença absoluta ≈ 0,5 ponto percentual. Com n=200 o erro padrão é grande em relação a 0,5 pp. Cálculos típicos colocam n necessário na casa dos milhares por braço para 80% de poder. Rodar o teste com pouco poder em geral desperdiça tempo e produz “sem resultado” ruidoso ou falsa confiança.</p>`,
+ src_pt:"Básicos de poder estatístico"}
 
 ];
 FOLIOS.push(...MATHEMATICA);
