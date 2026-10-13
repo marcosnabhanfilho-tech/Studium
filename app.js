@@ -292,10 +292,77 @@ function rebuildReel(){
 // ============== RAIL ==============
 function railHTML(slug){
   const saved = !!state.saved[slug];
+  const voxLbl = state.lang === "pt" ? "ler" : "read";
   return `<div class="rail">
-    <button class="rb save ${saved?"saved":""}" data-slug="${slug}" aria-label="Keep">✦<small>keep</small></button>
-    <button class="rb share" data-slug="${slug}" aria-label="Share">↗<small>share</small></button>
+    <button class="rb save ${saved?"saved":""}" data-slug="${slug}" aria-label="Keep">✦<small>${esc(t("rail_keep","keep"))}</small></button>
+    <button class="rb vox" data-slug="${slug}" aria-label="Read aloud">◉<small>${esc(voxLbl)}</small></button>
+    <button class="rb share" data-slug="${slug}" aria-label="Share">↗<small>${esc(t("rail_share","share"))}</small></button>
   </div>`;
+}
+
+// ============== VOX — SpeechSynthesis narration ==============
+// On-device TTS. One utterance at a time; tapping ◉ again stops it.
+// Picks the best available voice for the current language.
+const VOX = { utter:null, slug:null, btn:null };
+function voxStop(){
+  try{ window.speechSynthesis.cancel(); }catch(e){}
+  if(VOX.btn) VOX.btn.classList.remove("on");
+  VOX.utter = null; VOX.slug = null; VOX.btn = null;
+}
+function voxText(slide){
+  // Collect readable text from every page of this folio.
+  if(!slide) return "";
+  const parts = [];
+  const title = slide.querySelector("h2");
+  if(title) parts.push(title.textContent.trim());
+  slide.querySelectorAll(".page .s-body").forEach(sb => {
+    // Replace block tags with sentence breaks so the TTS phrases.
+    const clone = sb.cloneNode(true);
+    clone.querySelectorAll("br").forEach(b => b.replaceWith(". "));
+    parts.push(clone.textContent.replace(/\s+/g," ").trim());
+  });
+  return parts.filter(Boolean).join(". ");
+}
+function voxPick(lang){
+  if(!("speechSynthesis" in window)) return null;
+  const voices = window.speechSynthesis.getVoices() || [];
+  const want = lang === "pt" ? ["pt-BR","pt-PT","pt"] : ["en-US","en-GB","en-AU","en"];
+  for(const w of want){
+    const v = voices.find(v => v.lang && v.lang.toLowerCase().startsWith(w.toLowerCase()));
+    if(v) return v;
+  }
+  return voices[0] || null;
+}
+function voxToggle(btn){
+  if(!("speechSynthesis" in window)){
+    toast(state.lang === "pt" ? "Narração indisponível neste navegador" : "Narration not available in this browser");
+    return;
+  }
+  const slide = btn.closest(".slide");
+  const slug = btn.dataset.slug;
+  // Tapping the same button again stops.
+  if(VOX.slug === slug && window.speechSynthesis.speaking){
+    voxStop();
+    return;
+  }
+  voxStop();
+  const text = voxText(slide);
+  if(!text) return;
+  const u = new SpeechSynthesisUtterance(text);
+  const v = voxPick(state.lang);
+  if(v){ u.voice = v; u.lang = v.lang; }
+  else { u.lang = state.lang === "pt" ? "pt-BR" : "en-US"; }
+  u.rate = 0.95; u.pitch = 1.0; u.volume = 1.0;
+  u.onend = ()=>{ if(VOX.btn) VOX.btn.classList.remove("on"); VOX.utter = null; VOX.slug = null; VOX.btn = null; };
+  u.onerror = u.onend;
+  VOX.utter = u; VOX.slug = slug; VOX.btn = btn;
+  btn.classList.add("on");
+  try{ window.speechSynthesis.speak(u); }catch(e){ voxStop(); }
+}
+// Some browsers load voices async — warm the list after first user gesture.
+if("speechSynthesis" in window){
+  try{ window.speechSynthesis.getVoices(); }catch(e){}
+  window.speechSynthesis.addEventListener && window.speechSynthesis.addEventListener("voiceschanged", ()=>{});
 }
 
 
@@ -372,12 +439,16 @@ function slideHTML(folio){
     </section>`;
   }
 
-  // Ludus — interactive game (match | sort). State is on the DOM element itself.
+  // Ludus — interactive game (match | sort | veritas | attributio | complementum).
   if(folio.type === "ludus"){
     const mode = folio.mode || "match";
     let gameHTML = "";
     const pairs = L(folio, "pairs") || folio.pairs;
     const items = L(folio, "items") || folio.items;
+    const quotes = L(folio, "quotes") || folio.quotes;   // for attributio
+    const authors = L(folio, "authors") || folio.authors; // for attributio
+    const twins  = L(folio, "twins") || folio.twins;      // for veritas: [{real, fake, src?}, ...]
+    const fills  = L(folio, "fills") || folio.fills;      // for complementum: [{before, after, correct, opts, src}]
     if(mode === "match" && pairs){
       const n = pairs.length;
       const leftOrder = shuffledIdx(n), rightOrder = shuffledIdx(n);
@@ -401,6 +472,51 @@ function slideHTML(folio){
         <button class="btn ls-reset" style="margin-top:14px;display:none">${esc(t("play_again","Play again"))}</button>
       </div>
       <div class="ludus-win" style="margin-top:14px">${esc(t("correct_label","Correct"))} ✦</div>`;
+    } else if(mode === "veritas" && twins){
+      // VERITAS — real quote vs plausible fake. One pair; two cards; tap the real one.
+      const w = twins[0] || {};
+      const flip = Math.random() < 0.5; // randomize which side is real
+      const real = w.real || "";
+      const fake = w.fake || "";
+      const srcLine = w.src ? `<div class="lv-src">— ${escOpt(w.src)}</div>` : "";
+      const left  = flip ? real : fake;
+      const right = flip ? fake : real;
+      const realSide = flip ? "L" : "R";
+      gameHTML = `<div class="ludus-veritas" data-slug="${folio.slug}" data-real="${realSide}">
+        <button class="lv-opt" data-side="L">${escOpt(left)}</button>
+        <button class="lv-opt" data-side="R">${escOpt(right)}</button>
+        <div class="lv-reveal">${srcLine}</div>
+      </div>
+      <div class="ludus-win" style="margin-top:12px">${esc(t("correct_label","Correct"))} ✦</div>`;
+    } else if(mode === "attributio" && quotes && authors){
+      // ATTRIBUTIO — gauntlet. For each quote, swipe/tap one of two authors.
+      const n = quotes.length;
+      const order = shuffledIdx(n);
+      const [A, B] = authors; // exactly two
+      gameHTML = `<div class="ludus-attrib" data-slug="${folio.slug}" data-order="${order.join(',')}" data-i="0" data-score="0">
+        <div class="la-progress"><span class="la-i">1</span> / ${n}</div>
+        <div class="la-quote">${escOpt(quotes[order[0]].q)}</div>
+        <div class="la-opts">
+          <button class="la-opt" data-author="${esc(A)}">${esc(A)}</button>
+          <button class="la-opt" data-author="${esc(B)}">${esc(B)}</button>
+        </div>
+        <div class="la-flash"></div>
+      </div>
+      <div class="ludus-win" style="margin-top:12px">${esc(t("correct_label","Correct"))} ✦</div>`;
+    } else if(mode === "complementum" && fills){
+      // COMPLEMENTUM — fill the keystone word.
+      const f = fills[0] || {};
+      const optsArr = (f.opts||[]).slice();
+      const order = shuffledIdx(optsArr.length);
+      const correctLabel = f.correct || "";
+      gameHTML = `<div class="ludus-fill" data-slug="${folio.slug}" data-correct="${esc(correctLabel)}">
+        <div class="lf-passage">${escOpt(f.before||"")} <span class="lf-blank">______</span> ${escOpt(f.after||"")}</div>
+        <div class="lf-opts">${
+          order.map(i => `<button class="lf-opt" data-val="${esc(optsArr[i])}">${escOpt(optsArr[i])}</button>`).join("")
+        }</div>
+        <div class="lf-reveal"></div>
+      </div>
+      <div class="ludus-win" style="margin-top:12px">${esc(t("correct_label","Correct"))} ✦</div>`;
     }
     return `<section class="slide ludus medium${gold}" data-slug="${folio.slug}" data-type="ludus" data-mode="${mode}" data-fac="${folio.f}" data-pages="1">
       <div class="pager"><div class="page first last">
@@ -467,12 +583,14 @@ function slideHTML(folio){
   // Decide pagination. Only long lectio / opus get paginated. Images, interactive elements,
   // and short content stay as one page so structure doesn't fragment.
   const canPaginate = (folio.type === "lectio" || folio.type === "opus") && !folio.img;
-  // Conservative word counts (page has NO vertical scroll, so content must fit).
-  // First page has title + s-top eating room; later pages have the whole screen for text.
-  const firstMax = 90;
-  const restMax = 140;
+  // v11: symmetric 170/170 — the first page carries full content before the continuation.
+  // A short body (< 220 words total) skips pagination entirely and sits on one page.
+  const firstMax = 170;
+  const restMax  = 170;
+  // Measure total body words so very-short "long"-classified folios don't fragment.
+  const _bodyWords = (bodyHTML||"").replace(/<[^>]+>/g," ").replace(/\s+/g," ").trim().split(" ").filter(Boolean).length;
   let pages;
-  if(canPaginate && density === "long"){
+  if(canPaginate && density === "long" && _bodyWords > 220){
     pages = paginateBody(bodyHTML, firstMax, restMax);
   } else {
     pages = [bodyHTML];
@@ -612,7 +730,7 @@ let lastTap = 0, lastKey = null, tapStartX = 0, tapStartY = 0;
 function handleTap(e){
   const slide = e.target.closest(".slide");
   if(!slide || slide.dataset.type === "ax") return;
-  if(e.target.closest("button, .lite-yt, .poll-opt, .q-opt, .ls-item, .lm-item")) return;
+  if(e.target.closest("button, .lite-yt, .poll-opt, .q-opt, .ls-item, .lm-item, .lv-opt, .la-opt, .lf-opt, .rb.vox")) return;
   const now = Date.now();
   if(now - lastTap < 320 && lastKey === slide.dataset.slug){
     toggleSave(slide.dataset.slug, true);
@@ -1169,6 +1287,138 @@ function handleSortReset(btn){
   if(winEl) winEl.classList.remove("on");
 }
 
+// ============== LUDUS — VERITAS (real vs fake quote) ==============
+function handleVeritasTap(btn){
+  const parent = btn.closest(".ludus-veritas");
+  if(parent.classList.contains("done")) return;
+  parent.classList.add("done");
+  const realSide = parent.dataset.real;
+  const picked = btn.dataset.side;
+  const correct = picked === realSide;
+  parent.querySelectorAll(".lv-opt").forEach(b => {
+    b.disabled = true;
+    if(b.dataset.side === realSide) b.classList.add("lv-real");
+    else b.classList.add("lv-fake");
+  });
+  parent.querySelector(".lv-reveal").classList.add("on");
+  const winEl = parent.parentElement.querySelector(".ludus-win");
+  if(correct){
+    if(winEl){ winEl.classList.add("on"); winEl.textContent = "✦ " + t("perfect","Perfect") + " ✦"; }
+    sndWing(); haptic([30,60,30]);
+    const flash = $("#seal-flash"); if(flash){ flash.classList.remove("go"); void flash.offsetWidth; flash.classList.add("go"); }
+  } else {
+    if(winEl){ winEl.classList.add("on"); winEl.textContent = t("wrong_label","Not quite"); }
+    sndSeal(); haptic([25,40,25]);
+  }
+}
+
+// ============== LUDUS — ATTRIBUTIO (gauntlet) ==============
+function handleAttribTap(btn){
+  const parent = btn.closest(".ludus-attrib");
+  if(parent.classList.contains("done")) return;
+  const slug = parent.dataset.slug;
+  const folio = (typeof FOLIOS !== "undefined") ? FOLIOS.find(x => x.slug === slug) : null;
+  if(!folio) return;
+  const quotes = L(folio,"quotes") || folio.quotes || [];
+  const order  = parent.dataset.order.split(",").map(x => parseInt(x,10));
+  let i = parseInt(parent.dataset.i, 10);
+  let score = parseInt(parent.dataset.score, 10);
+  const cur = quotes[order[i]];
+  const chosen = btn.dataset.author;
+  const correct = (cur && (cur.a === chosen));
+  // Flash feedback
+  const flash = parent.querySelector(".la-flash");
+  flash.textContent = correct ? "✦" : "✗";
+  flash.className = "la-flash " + (correct ? "ok" : "bad") + " show";
+  if(correct){ score += 1; sndTick(); haptic(10); }
+  else{ sndSeal(); haptic(20); }
+  parent.dataset.score = String(score);
+  i += 1;
+  parent.dataset.i = String(i);
+  setTimeout(()=>{
+    flash.classList.remove("show");
+    if(i >= order.length){
+      // Done — show final score
+      parent.classList.add("done");
+      const n = order.length;
+      const qEl = parent.querySelector(".la-quote");
+      const pEl = parent.querySelector(".la-progress");
+      const oEl = parent.querySelector(".la-opts");
+      qEl.innerHTML = `<strong>${score} / ${n}</strong><br><span style="font-size:.85em;color:var(--ink3)">${esc(t("final_score","Your score"))}</span>`;
+      pEl.textContent = n + " / " + n;
+      oEl.innerHTML = `<button class="btn la-reset">${esc(t("play_again","Play again"))}</button>`;
+      const winEl = parent.parentElement.querySelector(".ludus-win");
+      if(winEl){
+        winEl.classList.add("on");
+        winEl.textContent = (score === n) ? ("✦ " + t("perfect","Perfect") + " ✦") : (score + " / " + n);
+      }
+      if(score === n){
+        sndWing(); haptic([30,60,30]);
+        const sf = $("#seal-flash"); if(sf){ sf.classList.remove("go"); void sf.offsetWidth; sf.classList.add("go"); }
+      }
+    } else {
+      // Next quote
+      parent.querySelector(".la-i").textContent = (i+1);
+      parent.querySelector(".la-quote").textContent = (quotes[order[i]].q || "");
+    }
+  }, 420);
+}
+function handleAttribReset(btn){
+  const parent = btn.closest(".ludus-attrib");
+  if(!parent) return;
+  const slug = parent.dataset.slug;
+  const folio = (typeof FOLIOS !== "undefined") ? FOLIOS.find(x => x.slug === slug) : null;
+  if(!folio) return;
+  const quotes = L(folio,"quotes") || folio.quotes || [];
+  const authors = L(folio,"authors") || folio.authors || [];
+  const [A, B] = authors;
+  const n = quotes.length;
+  const order = shuffledIdx(n);
+  parent.dataset.order = order.join(",");
+  parent.dataset.i = "0";
+  parent.dataset.score = "0";
+  parent.classList.remove("done");
+  parent.querySelector(".la-progress").innerHTML = `<span class="la-i">1</span> / ${n}`;
+  parent.querySelector(".la-quote").textContent = quotes[order[0]].q || "";
+  parent.querySelector(".la-opts").innerHTML =
+    `<button class="la-opt" data-author="${esc(A)}">${esc(A)}</button>
+     <button class="la-opt" data-author="${esc(B)}">${esc(B)}</button>`;
+  const winEl = parent.parentElement.querySelector(".ludus-win");
+  if(winEl){ winEl.classList.remove("on"); winEl.textContent = esc(t("correct_label","Correct")) + " ✦"; }
+}
+
+// ============== LUDUS — COMPLEMENTUM (fill the keystone) ==============
+function handleFillTap(btn){
+  const parent = btn.closest(".ludus-fill");
+  if(parent.classList.contains("done")) return;
+  parent.classList.add("done");
+  const correct = parent.dataset.correct;
+  const chosen = btn.dataset.val;
+  const ok = (chosen === correct);
+  // Mark the blank with the correct word, highlight choice
+  const blank = parent.querySelector(".lf-blank");
+  if(blank){ blank.textContent = correct; blank.classList.add(ok ? "ok" : "bad"); }
+  parent.querySelectorAll(".lf-opt").forEach(b => {
+    b.disabled = true;
+    if(b.dataset.val === correct) b.classList.add("ok");
+    else if(b === btn) b.classList.add("bad");
+  });
+  const reveal = parent.querySelector(".lf-reveal");
+  const slug = parent.dataset.slug;
+  const folio = (typeof FOLIOS !== "undefined") ? FOLIOS.find(x => x.slug === slug) : null;
+  const srcLine = folio && (L(folio,"fills") || folio.fills) && (L(folio,"fills") || folio.fills)[0] && (L(folio,"fills") || folio.fills)[0].src;
+  if(reveal && srcLine){ reveal.innerHTML = `— ${escOpt(srcLine)}`; reveal.classList.add("on"); }
+  const winEl = parent.parentElement.querySelector(".ludus-win");
+  if(ok){
+    if(winEl){ winEl.classList.add("on"); winEl.textContent = "✦ " + t("perfect","Perfect") + " ✦"; }
+    sndWing(); haptic([30,60,30]);
+    const flash = $("#seal-flash"); if(flash){ flash.classList.remove("go"); void flash.offsetWidth; flash.classList.add("go"); }
+  } else {
+    if(winEl){ winEl.classList.add("on"); winEl.textContent = t("wrong_label","Not quite"); }
+    sndSeal(); haptic([25,40,25]);
+  }
+}
+
 // ============== INIT ==============
 async function init(){
   loadLocal();
@@ -1180,12 +1430,12 @@ async function init(){
         markSeen(en.target);
         sndTick();
         // Reset the folio's horizontal pager to page 1 whenever it enters view.
-        // Without this, a half-scrolled pager from an earlier visit would land the
-        // user mid-folio and prevent them from scrolling further.
         const pager = en.target.querySelector(".pager");
         if(pager && pager.scrollLeft !== 0){
           pager.scrollLeft = 0;
         }
+        // Stop vox narration if we scrolled away from the folio being read.
+        if(VOX.slug && VOX.slug !== en.target.dataset.slug) voxStop();
         // auto-render poll tallies for voted polls
         const slug = en.target.dataset.slug;
         if(en.target.dataset.type === "suffragium" && state.votes[slug] !== undefined){
@@ -1251,9 +1501,22 @@ async function init(){
     if(ls){ handleSortTap(ls); return; }
     const lsReset = e.target.closest(".ls-reset");
     if(lsReset){ handleSortReset(lsReset); return; }
-    // Save/share
+    // --- LUDUS VERITAS (real vs fake quote) ---
+    const lv = e.target.closest(".ludus-veritas:not(.done) .lv-opt");
+    if(lv){ handleVeritasTap(lv); return; }
+    // --- LUDUS ATTRIBUTIO (gauntlet) ---
+    const la = e.target.closest(".ludus-attrib:not(.done) .la-opt");
+    if(la){ handleAttribTap(la); return; }
+    const laR = e.target.closest(".la-reset");
+    if(laR){ handleAttribReset(laR); return; }
+    // --- LUDUS COMPLEMENTUM (fill blank) ---
+    const lf = e.target.closest(".ludus-fill:not(.done) .lf-opt");
+    if(lf){ handleFillTap(lf); return; }
+    // Save/share/vox
     const sv = e.target.closest(".rb.save");
     if(sv){ toggleSave(sv.dataset.slug, false); return; }
+    const vx = e.target.closest(".rb.vox");
+    if(vx){ voxToggle(vx); return; }
     const sh = e.target.closest(".rb.share");
     if(sh){ shareFolio(sh.dataset.slug); return; }
     // YouTube upgrade
