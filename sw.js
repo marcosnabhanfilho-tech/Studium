@@ -1,4 +1,4 @@
-const CACHE = "studium-v11.1-rail";
+const CACHE = "studium-v11.2-autofade";
 const SHELL = ["./", "./index.html", "./styles.css", "./app.js", "./content.js", "./manifest.webmanifest"];
 self.addEventListener("install", e=>{
   e.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL)).then(()=>self.skipWaiting()));
