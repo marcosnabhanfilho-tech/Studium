@@ -1,4 +1,4 @@
-const CACHE = "studium-v12.2-audio-root";
+const CACHE = "studium-v12.4-audio-passthrough";
 const SHELL = ["./", "./index.html", "./styles.css", "./app.js", "./content.js", "./manifest.webmanifest"];
 self.addEventListener("install", e=>{
   e.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL)).then(()=>self.skipWaiting()));
@@ -11,6 +11,12 @@ self.addEventListener("activate", e=>{
 });
 self.addEventListener("fetch", e=>{
   const url = new URL(e.request.url);
+  // Audio/video need Range requests for streaming — let the browser fetch directly.
+  // Also skip anything that includes a Range header (defensive).
+  if(/\.(mp3|ogg|wav|m4a|aac|flac|mp4|webm)$/i.test(url.pathname) ||
+     e.request.headers.get("range")){
+    return;
+  }
   if(url.hostname.includes("supabase.co") || url.hostname.includes("youtube.com") ||
      url.hostname.includes("ytimg.com") || url.hostname.includes("youtube-nocookie.com") ||
      url.hostname.includes("googleapis.com")){
@@ -23,7 +29,7 @@ self.addEventListener("fetch", e=>{
     })));
     return;
   }
-  // Same-origin shell: NETWORK-FIRST now (was cache-first). Fresh updates take effect immediately.
+  // Same-origin shell: network-first, cache fallback.
   if(url.origin === location.origin){
     e.respondWith(
       fetch(e.request).then(r=>{
