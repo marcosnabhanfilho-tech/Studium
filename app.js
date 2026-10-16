@@ -423,7 +423,9 @@ function ambToggle(btn){
   const slug = btn.dataset.slug;
   const file = btn.dataset.audio;
   if(!file) return;
-  if(AMB.slug === slug && AMB.el && !AMB.el.paused){
+  // Same folio tapped again → always stop. Not using .paused as the gate
+  // because it lies during fade-ins and on some mobile browsers.
+  if(AMB.slug === slug && AMB.el){
     ambStop();
     return;
   }
@@ -439,7 +441,6 @@ function ambToggle(btn){
   a.play().then(()=>{
     AMB.slug = slug; AMB.btn = btn;
     btn.classList.add("on");
-    // Fade to ~35% volume over ~600ms.
     const target = 0.35;
     const step = target / 12;
     if(AMB.fadeIn) clearInterval(AMB.fadeIn);
@@ -448,8 +449,18 @@ function ambToggle(btn){
       if(a.volume >= target - 0.001){ clearInterval(AMB.fadeIn); AMB.fadeIn = null; }
     }, 50);
   }).catch(err => {
-    toast(state.lang === "pt" ? "Áudio indisponível (verifique o arquivo)" : "Audio unavailable (check file)");
+    const name = (err && err.name) || "Error";
+    const msg = (err && err.message) || String(err);
+    console.error("[amb] play failed for", a.src, "->", name, msg);
+    toast((state.lang === "pt" ? "Áudio: " : "Audio: ") + name + " · " + msg.slice(0,60));
   });
+  a.onerror = () => {
+    const mediaErr = a.error, code = mediaErr && mediaErr.code;
+    const names = {1:"ABORTED", 2:"NETWORK", 3:"DECODE", 4:"NOT_SUPPORTED"};
+    console.error("[amb] media error for", a.src, "code=", code, names[code]);
+    toast((state.lang === "pt" ? "Áudio falhou: " : "Audio failed: ") + (names[code]||"unknown") + " · " + a.src.split("/").pop());
+    if(AMB.btn) AMB.btn.classList.remove("on");
+  };
 }
 
 function classifyDensity(folio){
