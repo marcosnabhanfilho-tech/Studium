@@ -430,7 +430,9 @@ function ambToggle(btn){
   ambStop();
   const a = AMB.el || new Audio();
   AMB.el = a;
-  a.src = "audio/" + file;
+  // Files sit at the repo root alongside index.html — no subfolder.
+  // Change to "audio/" + file if you later move them into an /audio/ folder.
+  a.src = file;
   a.loop = true;
   a.preload = "auto";
   a.volume = 0;
