@@ -290,14 +290,43 @@ function rebuildReel(){
 }
 
 // ============== RAIL ==============
-function railHTML(slug){
+function railHTML(slug, folio){
   const saved = !!state.saved[slug];
   const voxLbl = state.lang === "pt" ? "ler" : "read";
+  const ambLbl = state.lang === "pt" ? "música" : "music";
+  const audio = folio && folio.audio;
+  const ambBtn = audio
+    ? `<button class="rb amb" data-slug="${slug}" data-audio="${esc(audio)}" aria-label="Play music">♪<small>${esc(ambLbl)}</small></button>`
+    : "";
   return `<div class="rail">
     <button class="rb save ${saved?"saved":""}" data-slug="${slug}" aria-label="Keep">✦<small>${esc(t("rail_keep","keep"))}</small></button>
     <button class="rb vox" data-slug="${slug}" aria-label="Read aloud">◉<small>${esc(voxLbl)}</small></button>
+    ${ambBtn}
     <button class="rb share" data-slug="${slug}" aria-label="Share">↗<small>${esc(t("rail_share","share"))}</small></button>
   </div>`;
+}
+
+// ============== RAIL AUTO-FADE (TikTok-style) ==============
+// After RAIL_IDLE_MS of no interaction, fade the rail to ~15% opacity.
+// Any pointer activity on the slide restores it to full. Timer is per-slide.
+const RAIL_IDLE_MS = 3000;
+const _railTimers = new WeakMap();
+function wakeRail(slide){
+  if(!slide) return;
+  const rail = slide.querySelector(":scope > .rail");
+  if(!rail) return;
+  rail.classList.remove("faded");
+  const prev = _railTimers.get(slide);
+  if(prev) clearTimeout(prev);
+  const t = setTimeout(()=>{ rail.classList.add("faded"); _railTimers.delete(slide); }, RAIL_IDLE_MS);
+  _railTimers.set(slide, t);
+}
+function sleepRail(slide){
+  if(!slide) return;
+  const prev = _railTimers.get(slide);
+  if(prev){ clearTimeout(prev); _railTimers.delete(slide); }
+  const rail = slide.querySelector(":scope > .rail");
+  if(rail) rail.classList.remove("faded");
 }
 
 // ============== VOX — SpeechSynthesis narration ==============
@@ -365,6 +394,61 @@ if("speechSynthesis" in window){
   window.speechSynthesis.addEventListener && window.speechSynthesis.addEventListener("voiceschanged", ()=>{});
 }
 
+// ============== AMBIENT — real audio playback (sacred / classical) ==============
+// Folios that declare an `audio: "filename.mp3"` property get a small ♪ icon
+// in their rail. Tapping it plays the file from ./audio/ (same-origin, cached
+// by the service worker). One ambient at a time. Fades in / fades out gently.
+const AMB = { el:null, slug:null, btn:null, fadeIn:null, fadeOut:null };
+function ambStop(){
+  const a = AMB.el;
+  if(!a){ AMB.btn && AMB.btn.classList.remove("on"); AMB.slug = null; AMB.btn = null; return; }
+  if(AMB.fadeIn){ clearInterval(AMB.fadeIn); AMB.fadeIn = null; }
+  if(AMB.fadeOut){ clearInterval(AMB.fadeOut); AMB.fadeOut = null; }
+  // Fade out over ~500ms then pause.
+  const step = a.volume / 10;
+  AMB.fadeOut = setInterval(()=>{
+    a.volume = Math.max(0, a.volume - step);
+    if(a.volume <= 0.001){
+      clearInterval(AMB.fadeOut); AMB.fadeOut = null;
+      try{ a.pause(); a.currentTime = 0; }catch(e){}
+    }
+  }, 50);
+  if(AMB.btn) AMB.btn.classList.remove("on");
+  AMB.btn = null;
+  AMB.slug = null;
+}
+function ambToggle(btn){
+  const slide = btn.closest(".slide");
+  if(!slide) return;
+  const slug = btn.dataset.slug;
+  const file = btn.dataset.audio;
+  if(!file) return;
+  if(AMB.slug === slug && AMB.el && !AMB.el.paused){
+    ambStop();
+    return;
+  }
+  ambStop();
+  const a = AMB.el || new Audio();
+  AMB.el = a;
+  a.src = "audio/" + file;
+  a.loop = true;
+  a.preload = "auto";
+  a.volume = 0;
+  a.play().then(()=>{
+    AMB.slug = slug; AMB.btn = btn;
+    btn.classList.add("on");
+    // Fade to ~35% volume over ~600ms.
+    const target = 0.35;
+    const step = target / 12;
+    if(AMB.fadeIn) clearInterval(AMB.fadeIn);
+    AMB.fadeIn = setInterval(()=>{
+      a.volume = Math.min(target, a.volume + step);
+      if(a.volume >= target - 0.001){ clearInterval(AMB.fadeIn); AMB.fadeIn = null; }
+    }, 50);
+  }).catch(err => {
+    toast(state.lang === "pt" ? "Áudio indisponível (verifique o arquivo)" : "Audio unavailable (check file)");
+  });
+}
 
 function classifyDensity(folio){
   // Heuristic for the short/medium/long typography tiers.
@@ -413,7 +497,7 @@ function slideHTML(folio){
         <div class="ax-orn">❧ ❧ ❧</div>
         <div class="s-src" style="margin-top:28px;border-top:none">— ${esc(L(folio,"src")||"")}</div>
       </div></div>
-      ${railHTML(folio.slug)}
+      ${railHTML(folio.slug, folio)}
     </section>`;
   }
 
@@ -435,7 +519,7 @@ function slideHTML(folio){
         <div class="s-body">${L(folio,"body")}</div>
         <div class="s-src">— ${esc(L(folio,"src")||"")}</div>
       </div></div>
-      ${railHTML(folio.slug)}
+      ${railHTML(folio.slug, folio)}
     </section>`;
   }
 
@@ -526,7 +610,7 @@ function slideHTML(folio){
         ${gameHTML}
         <div class="s-src">— ${esc(L(folio,"src")||"")}</div>
       </div></div>
-      ${railHTML(folio.slug)}
+      ${railHTML(folio.slug, folio)}
     </section>`;
   }
 
@@ -621,7 +705,7 @@ function slideHTML(folio){
   return `<section class="slide ${density}${gold}" data-slug="${folio.slug}" data-type="${folio.type}" data-fac="${folio.f}" data-pages="${pages.length}">
     <div class="pager">${pagerHTML}</div>
     ${dotsHTML}
-    ${railHTML(folio.slug)}
+    ${railHTML(folio.slug, folio)}
   </section>`;
 }
 
@@ -730,7 +814,7 @@ let lastTap = 0, lastKey = null, tapStartX = 0, tapStartY = 0;
 function handleTap(e){
   const slide = e.target.closest(".slide");
   if(!slide || slide.dataset.type === "ax") return;
-  if(e.target.closest("button, .lite-yt, .poll-opt, .q-opt, .ls-item, .lm-item, .lv-opt, .la-opt, .lf-opt, .rb.vox")) return;
+  if(e.target.closest("button, .lite-yt, .poll-opt, .q-opt, .ls-item, .lm-item, .lv-opt, .la-opt, .lf-opt, .rb.vox, .rb.amb")) return;
   const now = Date.now();
   if(now - lastTap < 320 && lastKey === slide.dataset.slug){
     toggleSave(slide.dataset.slug, true);
@@ -1436,14 +1520,20 @@ async function init(){
         }
         // Stop vox narration if we scrolled away from the folio being read.
         if(VOX.slug && VOX.slug !== en.target.dataset.slug) voxStop();
+        // Stop ambient audio when leaving its folio.
+        if(AMB.slug && AMB.slug !== en.target.dataset.slug) ambStop();
         // auto-render poll tallies for voted polls
         const slug = en.target.dataset.slug;
         if(en.target.dataset.type === "suffragium" && state.votes[slug] !== undefined){
           renderTallies(slug);
         }
+        // Rail auto-fade: show on entry, fade after idle.
+        wakeRail(en.target);
+      } else if(en.intersectionRatio < 0.2){
+        sleepRail(en.target);
       }
     });
-  }, { threshold:[0, 0.55, 0.9] });
+  }, { threshold:[0, 0.2, 0.55, 0.9] });
 
 
   endIO = new IntersectionObserver(entries=>{
@@ -1512,11 +1602,13 @@ async function init(){
     // --- LUDUS COMPLEMENTUM (fill blank) ---
     const lf = e.target.closest(".ludus-fill:not(.done) .lf-opt");
     if(lf){ handleFillTap(lf); return; }
-    // Save/share/vox
+    // Save/share/vox/amb
     const sv = e.target.closest(".rb.save");
     if(sv){ toggleSave(sv.dataset.slug, false); return; }
     const vx = e.target.closest(".rb.vox");
     if(vx){ voxToggle(vx); return; }
+    const am = e.target.closest(".rb.amb");
+    if(am){ ambToggle(am); return; }
     const sh = e.target.closest(".rb.share");
     if(sh){ shareFolio(sh.dataset.slug); return; }
     // YouTube upgrade
@@ -1574,6 +1666,17 @@ async function init(){
 
   // Audio unlock on first gesture
   document.addEventListener("pointerdown", ()=>audio(), {once:true, passive:true});
+
+  // Rail auto-fade: any tap on a slide, or horizontal page scroll, wakes its rail.
+  reel.addEventListener("pointerdown", (e)=>{
+    const slide = e.target.closest(".slide");
+    if(slide) wakeRail(slide);
+  }, {passive:true});
+  reel.addEventListener("scroll", ()=>{
+    const el = document.elementFromPoint(window.innerWidth/2, window.innerHeight/2);
+    const slide = el && el.closest(".slide");
+    if(slide) wakeRail(slide);
+  }, {passive:true, capture:true});
 
   // Menu actions
   $$("#menu .menu-list button").forEach(b=>{
