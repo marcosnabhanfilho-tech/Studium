@@ -232,7 +232,12 @@ function pool(){
   // CRITICAL: in Portuguese mode, strictly filter to folios that have PT translations
   // so the user never sees a mix of PT and EN. User explicitly asked for this.
   if(state.lang === "pt") base = base.filter(f => hasLangContent(f, "pt"));
-  return base;
+  // v13 — NO REPEATS in the feed. Show only unseen folios. If the user has
+  // actually seen them all (great problem to have), roll the full pool over
+  // and start fresh. To see a folio again on purpose, open it from the
+  // Thesaurus (jumpToFolio bypasses this pool entirely).
+  const unseen = base.filter(f => !state.seen[f.slug]);
+  return unseen.length ? unseen : base;
 }
 function nextFolio(){
   if(ptr >= order.length){ order = shuffleFair(pool()); ptr = 0; }
