@@ -893,12 +893,38 @@ async function renderTallies(slug){
 }
 
 // ============== YOUTUBE (lite -> real embed on tap) ==============
+// v13.1 — three real fixes rolled together:
+//   (1) autoplay=1 + mute=1. Muted autoplay is allowed on every browser once
+//       the user has tapped. Un-muted plays once the user unmutes.
+//   (2) autoplay in the `allow` attribute (was missing — some embeds silently
+//       refuse to start without it).
+//   (3) youtube.com instead of youtube-nocookie.com. Nocookie is stricter
+//       with embed permissions on Shorts; youtube.com honors the creator's
+//       setting exactly and no more.
+//   (4) loop=1 + playlist=ID on Shorts — makes them loop the way they do on YT.
+//   (5) a persistent "Open in YouTube" overlay in the corner of the player.
+//       If the video is genuinely unembeddable (creator disabled embedding),
+//       YouTube shows "Video unavailable" inside the iframe and the user has
+//       one tap to the real thing instead of a dead-end.
 function upgradeYT(el){
   const id = el.dataset.yt;
   if(!id) return;
-  // Load the iframe WITHOUT autoplay. User taps YouTube's own play button once loaded.
-  // This is the single most-reliable mobile embed path — autoplay triggers "video unavailable" on iOS.
-  el.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${id}?playsinline=1&rel=0&modestbranding=1&enablejsapi=0" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen loading="lazy"></iframe>`;
+  const isShort = el.dataset.short === "1";
+  const loopParams = isShort ? `&loop=1&playlist=${id}` : "";
+  const src = `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&playsinline=1&rel=0&modestbranding=1${loopParams}`;
+  const outUrl = `https://youtube.com/${isShort ? "shorts/" : "watch?v="}${id}`;
+  el.innerHTML = `
+    <iframe
+      src="${src}"
+      allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+      allowfullscreen
+      frameborder="0"
+      loading="lazy"></iframe>
+    <a class="yt-open-in-yt"
+       href="${outUrl}"
+       target="_blank"
+       rel="noopener"
+       onclick="event.stopPropagation()">${esc(state.lang==="pt"?"Abrir no YouTube":"Open in YouTube")} ↗</a>`;
 }
 
 // ============== PERSIST TO SUPABASE ==============
