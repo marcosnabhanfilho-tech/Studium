@@ -257,8 +257,7 @@ const FOLIOS = [
  title_pt: "O Coração Inquieto",
  body_pt: "<p>Tu nos fizeste para Ti, Senhor, e inquieto está o nosso coração até que repouse em Ti.</p><p>Agostinho escreveu isto nas primeiras linhas das <em>Confissões</em>, em cerca de 397 d.C. Dezesseis séculos depois, continua sendo o diagnóstico mais preciso do mal-estar moderno disponível. O ser humano não é um animal altamente organizado que invenciona Deus para se consolar. É uma criatura feita por Deus para Deus, com uma inquietação em seu centro que nada finito pode preencher. Testamos a tese ao escala.</p><p>O resultado está nos dados da civilização pós-cristã: a mais secular geração da história ocidental é também, por larga margem, a mais ansiosa, a mais deprimida, a mais só. Agostinho estava certo. O coração humano foi construído de uma certa maneira. Não dá para argumentar com a sua natureza por 1600 anos sem resultado.</p>",
  src_pt: "Agostinho, Confissões I.1 (tr. Pusey)"
-,
- audio:"dulcis-jesu.mp3"},
+},
 
 {slug:"five-ways", type:"lectio", f:"T", title:"The Five Ways, in one breath",
  body:`<p>Aquinas offers five converging arguments for God's existence — none a probability guess, each a demonstration from a feature of the world no one denies:</p>
@@ -774,8 +773,7 @@ const FOLIOS = [
  title_pt: "Mozart · Ave Verum Corpus",
  body_pt: "<p>46 compassos. 4 minutos. Composto em junho de 1791 para o professor de música de um pequeno vilarejo austríaco. Mozart morreria 6 meses depois.</p>\n<p>Nada aqui aponta para o compositor. Nenhum truque, nenhuma modulação exibicionista. Um texto eucarístico medieval cantado como se cantado por alguém que já viu o outro lado.</p>",
  src_pt: "W. A. Mozart, Ave Verum Corpus K. 618 (1791)"
-,
- audio:"mozart-sonata11-andante.mp3"},
+},
 
 {slug:"beauty-poll", type:"suffragium", f:"P",
  title:"In the eye of the beholder?",
@@ -2468,8 +2466,7 @@ const THEOLOGIA_X = [
  ],
  reveal_pt:`<p>Trento, Sessão XIII (1551): "faz-se uma conversão de toda a substância do pão no corpo… conversão que a Igreja Católica chama, com propriedade, Transubstanciação."</p>
 <p>Os acidentes — aparência, sabor, peso — continuam pão. A substância, o que a coisa <em>é</em> no sentido aristotélico, é agora Cristo. Um católico mastigando a hóstia não mastiga Cristo na sua humanidade; a humanidade não está sob o modo dos acidentes. Ele recebe, realmente, o Cristo inteiro.</p>`,
- src_pt:"Concílio de Trento, Sessão XIII, cânon 2",
- audio:"ubi-caritas.mp3"},
+ src_pt:"Concílio de Trento, Sessão XIII, cânon 2"},
 
 {slug:"t-filioque", type:"lectio", f:"T", title:"Filioque · A Word That Split a World",
  body:`<p>The Nicene Creed as recited in East and West differs by one Latin word: <em>Filioque</em>. "And from the Son." The East says the Spirit proceeds from the Father. The West says the Spirit proceeds from the Father <em>and the Son</em>.</p>
@@ -2506,8 +2503,7 @@ const THEOLOGIA_X = [
 <p><strong>Imaculada Conceição</strong> (1854, Pio IX): preservada do pecado original desde o primeiro instante de sua existência, por aplicação antecipada dos méritos de Cristo.</p>
 <p><strong>Assunção</strong> (1950, Pio XII): levada em corpo e alma ao céu ao fim de sua vida terrena.</p>
 <p>Cada dogma é definido apenas quando é negado. O tempo é reativo. O conteúdo é tão antigo quanto os apóstolos.</p>`,
- src_pt:"Concílios de Éfeso, de Latrão; Ineffabilis Deus (1854); Munificentissimus Deus (1950)",
- audio:"regina-caeli.mp3"},
+ src_pt:"Concílios de Éfeso, de Latrão; Ineffabilis Deus (1854); Munificentissimus Deus (1950)"},
 
 {slug:"t-chesterton-paradox", type:"sententia", f:"T", title:"Chesterton on Orthodoxy",
  body:`<blockquote>The orthodox Church was never respectable… If it had been, the Church would never have been there at all.<br>— Orthodoxy, VI</blockquote>
@@ -2516,8 +2512,7 @@ const THEOLOGIA_X = [
  title_pt:"Chesterton Sobre a Ortodoxia",
  body_pt:`<blockquote>A Igreja ortodoxa nunca foi respeitável… Se o tivesse sido, a Igreja nunca teria existido.<br>— Ortodoxia, VI</blockquote>
 <p>O ponto de Chesterton: a Igreja pareceu ridícula a toda época que ela salvou. Cada época julgou-se o teste final da Igreja; em cada época foi ao contrário.</p>`,
- src_pt:"G. K. Chesterton, Ortodoxia, VI (1908)",
- audio:"mozart-alla-turca.mp3"},
+ src_pt:"G. K. Chesterton, Ortodoxia, VI (1908)"},
 
 {slug:"t-wrestle-matter", type:"lectio", f:"T", title:"Why Catholicism Loves Matter",
  body:`<p>Water does something at Baptism. Oil does something at Confirmation. Bread does something at Mass. A ring does something at a wedding. Catholicism refuses the ancient temptation to say that stuff is beneath Spirit.</p>
@@ -2627,6 +2622,17 @@ const THEOLOGIA_X = [
  body_pt:`<blockquote>Ouvir a confissão de freiras é como morrer apedrejado por pipoca.<br>— Fulton Sheen</blockquote>
 <p>Sheen podia ser mortalmente sério; podia também ser o clérigo mais divertido da televisão americana por vinte anos. A combinação não é acidente. É o estilo católico.</p>`,
  src_pt:"Fulton J. Sheen, Life Is Worth Living (DuMont, 1951–57)"},
+{slug:"t-sheen-church-world", type:"visio", f:"T", ytId:"TU1p7Ye9Ppk", ytShort:false,
+ title:"Sheen · If the Church Changed, What Would Be the Difference?",
+ body:`<p>A three-minute Fulton Sheen argument, delivered on American television in the 1950s and still unanswered sixty years later.</p>
+<p>The move: every generation asks the Church to update her doctrines to match the spirit of the age. Sheen's reply is a question — if the Church agreed, what would be the difference between the Church and the world? A Church that always says what the culture already says is not a Church. It is a mirror.</p>
+<p>The strength of the argument is that it does not defend any particular doctrine. It defends the <em>structure</em> of a doctrinal institution. A thermometer that matches the room temperature is not a thermometer; it is a piece of furniture.</p>`,
+ src:"Fulton J. Sheen · Life Is Worth Living (DuMont / ABC, 1951–57)",
+ title_pt:"Sheen · Se a Igreja Mudasse, Qual Seria a Diferença?",
+ body_pt:`<p>Um argumento de três minutos de Fulton Sheen, pronunciado na televisão americana nos anos 1950 e ainda não respondido sessenta anos depois.</p>
+<p>O movimento: cada geração pede à Igreja que atualize suas doutrinas para combinar com o espírito dos tempos. A resposta de Sheen é uma pergunta — se a Igreja concordasse, qual seria a diferença entre a Igreja e o mundo? Uma Igreja que sempre diz o que a cultura já diz não é Igreja. É espelho.</p>
+<p>A força do argumento é que não defende nenhuma doutrina particular. Defende a <em>estrutura</em> de uma instituição doutrinal. Um termômetro que coincide com a temperatura do quarto não é termômetro; é peça de mobília.</p>`,
+ src_pt:"Fulton J. Sheen · Life Is Worth Living (DuMont / ABC, 1951–57)"},
 
 {slug:"t-everlasting-man", type:"lectio", f:"T", title:"Chesterton's Cave",
  body:`<p>Chesterton: before Christmas, imagine standing outside Bethlehem on an ordinary night in some year of the reign of Augustus. There is a cave used for livestock. In the cave is a carpenter, his very young wife, and her first child, newly born on straw.</p>
@@ -3746,8 +3752,7 @@ const PULCHRUM_X = [
  title_pt:"Giotto · A Lamentação",
  body_pt:`<p>Pádua, 1305. Capela Scrovegni. Giotto pinta Cristo morto e inclina a imagem inteira do vertical. Maria se curva até o rosto dele. João joga os braços para trás. Até os anjos, meio escondidos no céu, se contorcem. Nada na pintura bizantina teve essa licença de luto.</p>
 <p>Os montes se inclinam para a cabeça de Cristo. A composição é geológica; a própria terra pende em sua direção. A pintura ocidental aprende a sentir nesta parede.</p>`,
- src_pt:"Giotto, Lamentação, 1305, Capela degli Scrovegni, Pádua",
- audio:"bach-goldberg-aria.mp3"},
+ src_pt:"Giotto, Lamentação, 1305, Capela degli Scrovegni, Pádua"},
 
 {slug:"p-botticelli-primavera", type:"lectio", f:"P", title:"Botticelli · Primavera",
  body:`<p>Nine figures in an orange grove. Right to left: Zephyr seizes the nymph Chloris; she becomes Flora in a flowered dress; Venus stands at the center with Cupid; the Three Graces dance; Mercury parts the clouds. Spring is read not left-to-right but as a transformation unfolding over the whole canvas at once.</p>
@@ -3864,8 +3869,7 @@ const PULCHRUM_X = [
  title_pt:"Bach · Paixão Segundo São Mateus",
  body_pt:`<p>Sexta-feira Santa, 1727, Leipzig. Bach dispõe dois coros, duas orquestras, solistas, corais e três horas para recontar Mateus 26–27. Não é ópera — ópera era proibida no culto luterano — mas uma forma litúrgica que, por acaso, contém a música mais forte do século.</p>
 <p>A ária de contralto <em>Erbarme dich, mein Gott</em> ("Tem piedade, meu Deus") vem depois da negação de Pedro. Um único violino chora por sete minutos. Mendelssohn ressuscitou a obra inteira em 1829; sem essa execução, o Bach que temos não existiria na forma em que ele existe.</p>`,
- src_pt:"J. S. Bach, Paixão Segundo São Mateus, BWV 244 (1727)",
- audio:"bach-goldberg-aria.mp3"},
+ src_pt:"J. S. Bach, Paixão Segundo São Mateus, BWV 244 (1727)"},
 
 {slug:"p-mozart-requiem", type:"lectio", f:"P", title:"Mozart · The Requiem",
  body:`<p>Vienna, July 1791. A stranger in grey commissions a requiem Mass, pays half in advance, refuses to leave a name. Mozart, dying without knowing it, works on the piece through the autumn. He completes the <em>Introit</em>, most of the <em>Kyrie</em>, the sequence through <em>Lacrimosa</em> (eight bars), and sketches for the rest.</p>
@@ -3876,8 +3880,7 @@ const PULCHRUM_X = [
  body_pt:`<p>Viena, julho de 1791. Um estranho de cinza encomenda uma Missa de Réquiem, paga metade adiantado, recusa dar o nome. Mozart, moribundo sem saber, trabalha na peça pelo outono. Completa o <em>Introito</em>, a maior parte do <em>Kyrie</em>, a sequência até o <em>Lacrimosa</em> (oito compassos), e esboços para o resto.</p>
 <p>Em 5 de dezembro, morre. Seu aluno Süssmayr termina a obra para a viúva Constanze, que precisava do cachê. O estranho acabou se revelando um aristocrata chamado Walsegg, que planejava passar o Réquiem como obra sua em memória da esposa morta.</p>
 <p>O que sobrevive de puro Mozart no Réquiem já basta.</p>`,
- src_pt:"W. A. Mozart, Réquiem em Ré menor, K. 626 (1791)",
- audio:"dies-irae.mp3"},
+ src_pt:"W. A. Mozart, Réquiem em Ré menor, K. 626 (1791)"},
 
 {slug:"p-beethoven-late", type:"lectio", f:"P", title:"Beethoven · The Late Quartets",
  body:`<p>Last six years of his life. Totally deaf. Beethoven wrote five quartets, Opus 127, 130, 131, 132, 135, and the <em>Grosse Fuge</em>. Nobody understood them at the time. His contemporaries thought he had finally gone mad. Stravinsky called them, a century later, "contemporary forever."</p>
@@ -3913,8 +3916,7 @@ const PULCHRUM_X = [
  title_pt:"Dies Irae",
  body_pt:`<p>Escrito no século XIII, provavelmente por Tomás de Celano. Poema latino do séc. XIII sobre o Dia da Ira, cantado na Missa de Réquiem. A melodia do canto, quatro frases que sobem e descem, é um dos temas mais citados da música ocidental: Berlioz, Liszt, Rachmaninoff, Saint-Saëns, John Williams. O pavor mora no próprio canto.</p>
 <p>O Vaticano II retirou a sequência do Réquiem ordinário. O Missal de 1962 a conserva. Ouvi-la bem cantada, à luz de velas, em latim, é por si só um argumento.</p>`,
- src_pt:"Tomás de Celano (atrib.), Dies Irae, c. 1260",
- audio:"dies-irae.mp3"},
+ src_pt:"Tomás de Celano (atrib.), Dies Irae, c. 1260"},
 
 {slug:"p-vermeer-view", type:"lectio", f:"P", title:"Vermeer · View of Delft",
  body:`<p>Proust called this painting "the most beautiful picture in the world." He traveled to The Hague to see it twice. The second visit killed him — he collapsed in front of it. In <em>In Search of Lost Time</em> the writer Bergotte dies before this picture noticing the "little patch of yellow wall."</p>
@@ -3923,8 +3925,7 @@ const PULCHRUM_X = [
  title_pt:"Vermeer · Vista de Delft",
  body_pt:`<p>Proust chamou este quadro de "o mais belo do mundo". Viajou a Haia para vê-lo duas vezes. A segunda visita o matou — caiu diante dele. Em <em>Em Busca do Tempo Perdido</em>, o escritor Bergotte morre diante desta pintura reparando na "pequena mancha de parede amarela".</p>
 <p>O que há para ver? Uma silhueta de cidade atravessando um canal. Nuvens. Duas mulheres no primeiro plano, mal pintadas. E uma parede que capta o sol com uma qualidade de luz que nenhum pintor igualou. Vermeer trabalhou em Delft a vida toda e pintou talvez trinta e seis quadros sobreviventes. Este é O quadro.</p>`,
- src_pt:"Johannes Vermeer, Vista de Delft, c. 1661, Mauritshuis, Haia",
- audio:"vivaldi-winter-largo.mp3"},
+ src_pt:"Johannes Vermeer, Vista de Delft, c. 1661, Mauritshuis, Haia"},
 
 {slug:"p-canaletto", type:"lectio", f:"P", title:"Canaletto · The Honest Camera",
  body:`<p>Venice, 1730s. Canaletto paints the Grand Canal with such topographic exactness that modern Venetians use his vedute to date the restoration of specific buildings. He worked with a camera obscura. His paintings are not photographs — he moved buildings around for composition — but they are architecture made visible with a precision no English Grand Tourist could resist buying.</p>
@@ -4023,8 +4024,7 @@ const PULCHRUM_X = [
  title_pt:"Salve Regina",
  body_pt:`<p>Século XII, provavelmente de Hermano de Reichenau, monge paralítico de nascença que escreveu o hino de uma cadeira da qual não podia sair. Cantado em Completas (oração da noite) em mosteiros católicos há 900 anos. A última linha, "<em>O clemens, O pia, O dulcis Virgo Maria</em>", é a última frase cantada na vida de um frade dominicano, pelos irmãos em torno do leito de morte.</p>
 <p>Se nunca o ouviu em tom simples, cantado por homens, numa sala de pedra, deixe este ser o primeiro canto que você escuta de propósito. Não vai esquecer.</p>`,
- src_pt:"Hermano de Reichenau, Salve Regina, c. 1054",
- audio:"salve-regina.mp3"},
+ src_pt:"Hermano de Reichenau, Salve Regina, c. 1054"},
 
 {slug:"p-cologne-cathedral", type:"lectio", f:"P", title:"Cologne · 632 Years",
  body:`<p>Begun in 1248. Finished in 1880. 632 years. Twelve generations of masons died on the scaffolding. The medieval drawings for the façade were lost; found again in 1814 in two separate caches by two unconnected archivists; the drawings matched perfectly across the five hundred years of their separation.</p>
@@ -4346,8 +4346,7 @@ const PERCEPTIO_X = [
  title_pt:"Weil · A Atenção É Oração",
  body_pt:`<p>Simone Weil, 1942: "A atenção absolutamente pura é oração." Para Weil, que era filósofa e mística, a atenção não era técnica cognitiva. Era o ato moral mais profundo: deixar que algo distinto de você preencha sua consciência sem apropriá-lo.</p>
 <p>A criança faminta ao seu lado não é atendida quando você resolve a situação dela, mas quando você a deixa estar presente sem desviar o olhar. A oração, do mesmo modo, não é técnica para obter resposta; é a atenção de uma criatura na presença de seu Criador. Todo o resto — rotinas monásticas, exercícios respiratórios, exame de consciência — é andaime para produzir um minuto disto.</p>`,
- src_pt:"Simone Weil, A Atenção e a Vontade (1942); Gravidade e Graça",
- audio:"chopin-butterfly.mp3"},
+ src_pt:"Simone Weil, A Atenção e a Vontade (1942); Gravidade e Graça"},
 
 {slug:"c-ex-counting", type:"exercitium", f:"C", title:"The Counting Drill",
  body:`<p>Walk home by your usual route. Count the number of red cars you pass. Report the number at the end.</p>
@@ -5585,851 +5584,4 @@ const MATHEMATICA = [
 
 ];
 FOLIOS.push(...MATHEMATICA);
-
-// ================================================================
-// IMAGINES v12 — four new painting walkthroughs
-// Milkmaid · Las Meninas · Prodigal Son · Rublev Trinity
-// Each: pictura type, img, zoom coordinates, 5 panels.
-// Brings total paintings to 8 (with Vermeer Balance, Caravaggio Matthew,
-// Fra Angelico Annunciation, Van Eyck Arnolfini).
-// ================================================================
-const IMAGINES_V12 = [
-// ===== VERMEER · THE MILKMAID =====
-{slug:"i-mlk-01", type:"pictura", f:"I", series:"vermeer_milkmaid", step:1, steps:5,
- img:IMG.vermeer_milkmaid, zoom:{x:50, y:50, scale:1},
- title:"The Whole · The Milkmaid",
- title_pt:"O Todo · A Leiteira",
- body:`<p>Rijksmuseum, Amsterdam. 1658. 45 by 41 centimetres — smaller than a tabloid. A kitchen maid pours milk from a jug into a bowl. Nothing else happens.</p>
-<p>Vermeer painted this scene for weeks. 350 years later, the world agreed to make him one of the ten greatest painters who ever lived. This small canvas is one reason why. Start with the whole; let the eye find the parts.</p>`,
- body_pt:`<p>Rijksmuseum, Amsterdã. 1658. 45 por 41 centímetros — menor que um jornal. Uma criada de cozinha derrama leite de um jarro numa tigela. Nada mais acontece.</p>
-<p>Vermeer pintou essa cena por semanas. 350 anos depois, o mundo concordou em fazê-lo um dos dez maiores pintores de todos os tempos. Esta pequena tela é uma das razões. Comece pelo todo; deixe o olho descobrir as partes.</p>`,
- src:"Johannes Vermeer, c. 1658 · Rijksmuseum, Amsterdam"},
-
-{slug:"i-mlk-02", type:"pictura", f:"I", series:"vermeer_milkmaid", step:2, steps:5,
- img:IMG.vermeer_milkmaid, zoom:{x:28, y:28, scale:2.4},
- title:"The Window",
- title_pt:"A Janela",
- body:`<p>Upper left. There is only one light source in the whole painting; everything you see is lit by that single window on that specific morning. Vermeer gives us a scene the sun could actually make.</p>
-<p>Watch the light fall — on the folds of her blue apron, on the lip of the jug, on the far wall where it has already begun to dim. A Vermeer is never about what he paints; it is about the exact angle at which a particular daylight hits it.</p>`,
- body_pt:`<p>Canto superior esquerdo. Há uma única fonte de luz no quadro inteiro; tudo o que você vê é iluminado por essa janela, naquela manhã específica. Vermeer nos dá uma cena que o sol de fato poderia fazer.</p>
-<p>Veja a luz cair — nas pregas do avental azul, na borda do jarro, na parede distante onde já começou a escurecer. Um Vermeer nunca é sobre o que ele pinta; é sobre o ângulo exato em que uma luz do dia específica o atinge.</p>`,
- src:"Vermeer, Milkmaid · the light"},
-
-{slug:"i-mlk-03", type:"pictura", f:"I", series:"vermeer_milkmaid", step:3, steps:5,
- img:IMG.vermeer_milkmaid, zoom:{x:36, y:72, scale:2.6},
- title:"The Bread",
- title_pt:"O Pão",
- body:`<p>Lower left. A wicker basket of hunks of bread. Look at the crusts: Vermeer dotted them with tiny points of pure white — <em>pointillé</em>. The eye reads them as glint on crust before it names what they are.</p>
-<p>360 years before Seurat. Vermeer invented pointillism to catch morning light on a loaf, and used it only on this painting. He never did it again.</p>`,
- body_pt:`<p>Canto inferior esquerdo. Uma cesta de palha com pedaços de pão. Olhe para as cascas: Vermeer salpicou-as com pequenos pontos de branco puro — <em>pointillé</em>. O olho os lê como brilho na casca antes de nomear o que são.</p>
-<p>360 anos antes de Seurat. Vermeer inventou o pontilhismo para captar a luz da manhã num pão, e só o usou neste quadro. Nunca mais o repetiu.</p>`,
- src:"Vermeer, Milkmaid · detail of the bread"},
-
-{slug:"i-mlk-04", type:"pictura", f:"I", series:"vermeer_milkmaid", step:4, steps:5,
- img:IMG.vermeer_milkmaid, zoom:{x:46, y:48, scale:2.8},
- title:"The Stream of Milk",
- title_pt:"O Fio de Leite",
- body:`<p>The exact centre of the painting. A single unbroken line of milk descends from jug to bowl. Hold your eye on it for ten seconds. The stream is not drawn with a line; it is painted with <em>light</em>, which is why it looks liquid.</p>
-<p>Vermeer made time stop by painting a single second you can look at for an hour. The whole picture is organised around this one quiet action.</p>`,
- body_pt:`<p>O centro exato do quadro. Uma única linha contínua de leite desce do jarro para a tigela. Fixe o olho nela por dez segundos. O fio não é desenhado com linha; é pintado com <em>luz</em>, por isso parece líquido.</p>
-<p>Vermeer fez o tempo parar pintando um único segundo que você pode olhar por uma hora. O quadro inteiro se organiza em torno desta única ação silenciosa.</p>`,
- src:"Vermeer, Milkmaid · the stream"},
-
-{slug:"i-mlk-05", type:"pictura", f:"I", series:"vermeer_milkmaid", step:5, steps:5, rare:1,
- img:IMG.vermeer_milkmaid, zoom:{x:36, y:90, scale:3.2},
- title:"The Cupid Tile",
- title_pt:"O Azulejo do Cupido",
- body:`<p>Below, against the baseboard, hidden where almost no viewer looks: a Delft tile. On the tile, a tiny image of Cupid with a bow. Vermeer painted it so small the Rijksmuseum catalogue did not note it for a hundred years.</p>
-<p>But it is there. The quiet labour of this kitchen, the painting says, happens inside the longer story of love — the household stands on it the way the wall stands on the tile. Now step back. The whole picture, after what you have seen, is a different painting.</p>`,
- body_pt:`<p>Em baixo, encostado no rodapé, escondido onde quase ninguém olha: um azulejo de Delft. No azulejo, uma imagem minúscula de Cupido com arco. Vermeer o pintou tão pequeno que o catálogo do Rijksmuseum levou cem anos para notá-lo.</p>
-<p>Mas está lá. O trabalho silencioso desta cozinha, diz o quadro, acontece dentro de uma história mais longa — a do amor; a casa se apoia nela como a parede se apoia no azulejo. Dê um passo atrás. O quadro inteiro, depois do que você viu, é outro quadro.</p>`,
- src:"Vermeer, Milkmaid · the Cupid tile"},
-
-// ===== VELAZQUEZ · LAS MENINAS =====
-{slug:"i-men-01", type:"pictura", f:"I", series:"velazquez_meninas", step:1, steps:5,
- img:IMG.velazquez_meninas, zoom:{x:50, y:50, scale:1},
- title:"The Whole · Las Meninas",
- title_pt:"O Todo · As Meninas",
- body:`<p>Madrid, 1656. Prado, 318 by 276 centimetres — over three metres tall. Velázquez has set up his easel in a room of the royal palace. The infanta Margarita, five years old, stands at the centre surrounded by her maids of honour, two dwarves, and a dog. The painter himself stands at the left, brush in hand, looking out at us.</p>
-<p>Look where everyone is looking. They are all looking at us. We are not spectators. We are what they are painting.</p>`,
- body_pt:`<p>Madri, 1656. Prado, 318 por 276 cm — mais de três metros de altura. Velázquez montou o cavalete numa sala do palácio real. A infanta Margarita, cinco anos, ao centro, cercada pelas aias, dois anões, e um cão. O pintor em pessoa está à esquerda, pincel na mão, olhando para fora, para nós.</p>
-<p>Veja para onde todos olham. Olham para nós. Não somos espectadores. Somos o que eles estão pintando.</p>`,
- src:"Diego Velázquez, Las Meninas, 1656 · Museo del Prado, Madrid"},
-
-{slug:"i-men-02", type:"pictura", f:"I", series:"velazquez_meninas", step:2, steps:5,
- img:IMG.velazquez_meninas, zoom:{x:45, y:50, scale:2.3},
- title:"The Infanta",
- title_pt:"A Infanta",
- body:`<p>Centre of the painting. Margarita Teresa, five years old, future Holy Roman Empress, in a stiff silver gown. One lady-in-waiting kneels to offer her water from a red cup; the other curtseys. The dog in front has had enough and is being half-roused by the dwarf's foot.</p>
-<p>She looks straight out of the canvas at her parents — at us. The entire court orbits her. She is five. She does not know she will die at twenty-one in Vienna, married to her own uncle. Velázquez knew none of that. But something in the painting is holding her against the time he could not see.</p>`,
- body_pt:`<p>Centro do quadro. Margarita Teresa, cinco anos, futura imperatriz do Sacro Império, num vestido prateado armado. Uma aia se ajoelha oferecendo água numa taça vermelha; a outra faz reverência. O cão à frente já se cansou e é meio despertado pelo pé do anão.</p>
-<p>Olha diretamente para fora da tela para os pais — para nós. A corte inteira orbita em torno dela. Tem cinco anos. Não sabe que vai morrer aos vinte e um em Viena, casada com o próprio tio. Velázquez não sabia. Mas algo no quadro a segura contra o tempo que ele não podia ver.</p>`,
- src:"Velázquez, Las Meninas · the infanta"},
-
-{slug:"i-men-03", type:"pictura", f:"I", series:"velazquez_meninas", step:3, steps:5,
- img:IMG.velazquez_meninas, zoom:{x:50, y:30, scale:3.0},
- title:"The Mirror",
- title_pt:"O Espelho",
- body:`<p>Back wall. A dim mirror. Not an object you notice at first glance. In the mirror, two faces: King Philip IV and Queen Mariana. They are standing where <em>we</em> are standing.</p>
-<p>Which means we are the king and queen. Or — scholars still argue — we are seeing them reflected because we are standing beside them, as courtiers would. Foucault wrote twenty famous pages on the question. The painting is the beginning of modern self-consciousness in art, because for the first time the viewer is also inside the picture, and the picture knows it.</p>`,
- body_pt:`<p>Parede do fundo. Um espelho embaçado. Não é objeto que se note à primeira vista. No espelho, dois rostos: o rei Filipe IV e a rainha Mariana. Estão parados onde <em>nós</em> estamos.</p>
-<p>O que significa que somos o rei e a rainha. Ou — os estudiosos ainda discutem — estamos vendo os reis refletidos porque estamos de pé ao lado deles, como cortesãos. Foucault escreveu umas célebres vinte páginas sobre a questão. O quadro é o começo da autoconsciência moderna na arte, porque, pela primeira vez, o espectador também está dentro do quadro, e o quadro sabe disso.</p>`,
- src:"Velázquez, Las Meninas · the mirror"},
-
-{slug:"i-men-04", type:"pictura", f:"I", series:"velazquez_meninas", step:4, steps:5,
- img:IMG.velazquez_meninas, zoom:{x:16, y:40, scale:2.4},
- title:"The Painter",
- title_pt:"O Pintor",
- body:`<p>Far left. Velázquez himself. Palette in his left hand, brush raised in the right, pausing in the middle of a stroke to look up at us.</p>
-<p>On his chest: the red cross of the Order of Santiago, the highest honour the Spanish crown could give a nobleman. Velázquez did not have it when he started this painting. He received it in 1659. Legend has it the king himself painted the cross onto the canvas with his own hand, after the painter died. Whether true or legend, the painting is the story of a servant who became a nobleman because he painted this well.</p>`,
- body_pt:`<p>Extrema esquerda. Velázquez em pessoa. Paleta na mão esquerda, pincel erguido na direita, pausando no meio de uma pincelada para olhar para nós.</p>
-<p>Sobre o peito: a cruz vermelha da Ordem de Santiago, a mais alta honraria que a Coroa espanhola podia conceder a um fidalgo. Velázquez não a tinha quando começou este quadro. Recebeu-a em 1659. Reza a lenda que o próprio rei pintou a cruz na tela com a sua mão, depois que o pintor morreu. Verdade ou lenda, o quadro é a história de um criado que se tornou fidalgo porque pintou tão bem.</p>`,
- src:"Velázquez, Las Meninas · the painter"},
-
-{slug:"i-men-05", type:"pictura", f:"I", series:"velazquez_meninas", step:5, steps:5, rare:1,
- img:IMG.velazquez_meninas, zoom:{x:50, y:50, scale:1.0},
- title:"The Puzzle That Will Not Solve",
- title_pt:"O Enigma Que Não Se Resolve",
- body:`<p>Step back. The whole picture is a Baroque trompe-l'oeil of relations. Who paints whom? Who looks at whom? Where is the easel's canvas pointed? Why does the mirror reflect the king and queen but not the painting the painter is making?</p>
-<p>Four hundred years later, every attempt to work out the exact geometry contradicts another. The painting cannot be solved. Picasso made fifty-eight copies in a single summer trying to understand it. He never did. The best pictures are the ones that outlive their puzzles.</p>`,
- body_pt:`<p>Dê um passo atrás. O quadro inteiro é um trompe-l'oeil barroco de relações. Quem pinta quem? Quem olha quem? Para onde aponta a tela no cavalete? Por que o espelho reflete o rei e a rainha, mas não o quadro que o pintor está fazendo?</p>
-<p>Quatrocentos anos depois, toda tentativa de resolver a geometria contradiz outra. O quadro não pode ser resolvido. Picasso fez cinquenta e oito cópias dele num só verão tentando entendê-lo. Nunca entendeu. Os melhores quadros são os que sobrevivem aos próprios enigmas.</p>`,
- src:"Velázquez, Las Meninas · the whole"},
-
-// ===== REMBRANDT · THE PRODIGAL SON =====
-{slug:"i-prd-01", type:"pictura", f:"I", series:"rembrandt_prodigal", step:1, steps:5,
- img:IMG.rembrandt_prodigal, zoom:{x:50, y:50, scale:1},
- title:"The Whole · The Prodigal Son",
- title_pt:"O Todo · O Filho Pródigo",
- body:`<p>Hermitage, Saint Petersburg. 1669. 262 by 206 cm — floor to ceiling in a modest room. Rembrandt is sixty-three, bankrupt, outliving his wife and most of his children. He paints a father embracing a kneeling son.</p>
-<p>This is the last large painting he finishes. He will be dead within the year. The weight of a long life is in this canvas, which is why no reproduction prepares you for standing before it.</p>`,
- body_pt:`<p>Hermitage, São Petersburgo. 1669. 262 por 206 cm — do chão ao teto de uma sala comum. Rembrandt tem sessenta e três anos, está falido, sobreviveu à esposa e à maioria dos filhos. Pinta um pai abraçando um filho ajoelhado.</p>
-<p>É o último grande quadro que termina. Estará morto antes do ano acabar. O peso de uma vida longa está nessa tela, e é por isso que nenhuma reprodução te prepara para estar diante dela.</p>`,
- src:"Rembrandt van Rijn, c. 1669 · Hermitage, Saint Petersburg",
- audio:"bach-goldberg-aria.mp3"},
-
-{slug:"i-prd-02", type:"pictura", f:"I", series:"rembrandt_prodigal", step:2, steps:5,
- img:IMG.rembrandt_prodigal, zoom:{x:36, y:72, scale:2.6},
- title:"The Son's Feet",
- title_pt:"Os Pés do Filho",
- body:`<p>Lower centre. Look at the son's feet. His head is shaved — a convict's crop. One foot is calloused and bare; the other wears a sandal worn through its sole. On his left hip he still carries the sword he took to war, which the parable does not mention but Rembrandt invents.</p>
-<p>He has come home with nothing but a weapon. Rembrandt painted him from the back — we do not see his face — because we are not supposed to. The son's face is for the father.</p>`,
- body_pt:`<p>Parte inferior central. Olhe os pés do filho. A cabeça está raspada — corte de preso. Um pé é calejado e descalço; o outro usa uma sandália com a sola já furada. No quadril esquerdo ele ainda carrega a espada com que foi à guerra, que a parábola não menciona mas Rembrandt inventa.</p>
-<p>Voltou para casa sem nada senão uma arma. Rembrandt pintou-o pelas costas — não vemos o seu rosto — porque não devemos. O rosto do filho é para o pai.</p>`,
- src:"Rembrandt, Prodigal · the son's feet"},
-
-{slug:"i-prd-03", type:"pictura", f:"I", series:"rembrandt_prodigal", step:3, steps:5,
- img:IMG.rembrandt_prodigal, zoom:{x:40, y:38, scale:2.5},
- title:"The Hands",
- title_pt:"As Mãos",
- body:`<p>The father's hands on the son's shoulders. Look carefully. They do not match. The one on our left is young, broad, strong — a labourer's hand. The one on our right is older, lined, delicate — a woman's hand.</p>
-<p>Rembrandt painted them as a pair on purpose. The father is both father and mother. God's embrace is both at once. Henri Nouwen wrote a whole book, <em>The Return of the Prodigal Son</em>, after a year sitting in front of this painting. The hands were his central discovery. Few painters paint theology directly. Rembrandt painted a dogma into a pair of hands.</p>`,
- body_pt:`<p>As mãos do pai sobre os ombros do filho. Olhe com atenção. Não são iguais. A da nossa esquerda é jovem, larga, forte — mão de trabalhador. A da nossa direita é mais velha, estriada, delicada — mão de mulher.</p>
-<p>Rembrandt pintou-as como par de propósito. O pai é pai e mãe. O abraço de Deus é as duas coisas ao mesmo tempo. Henri Nouwen escreveu um livro inteiro, <em>O Regresso do Filho Pródigo</em>, depois de um ano sentado diante deste quadro. As mãos foram sua descoberta central. Poucos pintores pintam teologia diretamente. Rembrandt pintou um dogma num par de mãos.</p>`,
- src:"Rembrandt, Prodigal · the father's hands"},
-
-{slug:"i-prd-04", type:"pictura", f:"I", series:"rembrandt_prodigal", step:4, steps:5,
- img:IMG.rembrandt_prodigal, zoom:{x:42, y:22, scale:2.6},
- title:"The Father's Face",
- title_pt:"O Rosto do Pai",
- body:`<p>The father bends forward with his head above the son's. His face is lit, exhausted — Rembrandt gives him the drooping eyes of near-blindness, which the parable does not mention. The father has been watching the horizon until his sight gave out.</p>
-<p>The forgiveness is not in the words we remember from Luke's gospel. It is in the way an old man's spine bends when the child he gave up on walks back into the yard. Rembrandt painted this a year after burying his own son Titus. The father in the painting is the father Rembrandt did not get to be.</p>`,
- body_pt:`<p>O pai se debruça com a cabeça acima da do filho. O rosto está iluminado, exausto — Rembrandt lhe dá as pálpebras caídas de quem está quase cego, o que a parábola não menciona. O pai esteve olhando o horizonte até a vista acabar.</p>
-<p>O perdão não está nas palavras que lembramos do evangelho de Lucas. Está no modo como a coluna de um velho se curva quando o filho que ele desistiu de esperar volta ao pátio. Rembrandt pintou isto um ano depois de enterrar o próprio filho Tito. O pai no quadro é o pai que Rembrandt não teve tempo de ser.</p>`,
- src:"Rembrandt, Prodigal · the father's face"},
-
-{slug:"i-prd-05", type:"pictura", f:"I", series:"rembrandt_prodigal", step:5, steps:5, rare:1,
- img:IMG.rembrandt_prodigal, zoom:{x:72, y:38, scale:2.0},
- title:"The Elder Brother",
- title_pt:"O Irmão Mais Velho",
- body:`<p>Right side, standing erect in red. The elder son. Arms folded. No part of him touching his father or his brother. He is still outside the embrace. Rembrandt gives him the whole right half of the canvas and refuses to resolve his face.</p>
-<p>This is the parable's quietest horror. The elder son is you if you have been diligent for the wrong reasons. He has worked faithfully for his father and in that very work has lost him. The painting makes you worry whether <em>he</em> will come inside the embrace before the father dies. Luke's parable ends without telling us. Rembrandt also leaves it unresolved. On purpose.</p>`,
- body_pt:`<p>Direita, em pé, de vermelho. O irmão mais velho. Braços cruzados. Nenhuma parte dele tocando o pai ou o irmão. Ainda está fora do abraço. Rembrandt lhe dá toda a metade direita da tela e se recusa a resolver o seu rosto.</p>
-<p>É o horror mais silencioso da parábola. O irmão mais velho é você se foi diligente pelas razões erradas. Trabalhou fielmente para o pai e, nesse mesmo trabalho, o perdeu. O quadro te faz temer que <em>ele</em> entre no abraço antes de o pai morrer. A parábola em Lucas termina sem nos dizer. Rembrandt também deixa em aberto. De propósito.</p>`,
- src:"Rembrandt, Prodigal · the elder brother"},
-
-// ===== RUBLEV · THE TRINITY =====
-{slug:"i-rub-01", type:"pictura", f:"I", series:"rublev_trinity", step:1, steps:5,
- img:IMG.rublev_trinity, zoom:{x:50, y:50, scale:1},
- title:"The Whole · Rublev's Trinity",
- title_pt:"O Todo · A Trindade de Rublev",
- body:`<p>Russia, c. 1411. 142 by 114 centimetres, egg tempera on wood. Andrei Rublev, a monk at the Trinity Monastery of Saint Sergius, paints three angels seated around a table. The scene is Genesis 18 — Abraham entertained three strangers at Mamre who turned out to be the Lord — but Rublev leaves Abraham out. Only the three remain.</p>
-<p>For six centuries this icon has been read as the clearest visual theology of the Trinity ever made.</p>`,
- body_pt:`<p>Rússia, c. 1411. 142 por 114 cm, têmpera de ovo sobre madeira. Andrei Rublev, monge no Mosteiro da Trindade de São Sérgio, pinta três anjos sentados em volta de uma mesa. A cena é Gênesis 18 — Abraão hospedou três forasteiros em Mamre que se revelaram o Senhor — mas Rublev omite Abraão. Só os três permanecem.</p>
-<p>Por seis séculos este ícone foi lido como a teologia visual mais clara da Trindade jamais feita.</p>`,
- src:"Andrei Rublev, The Hospitality of Abraham (The Trinity), c. 1411 · Tretyakov Gallery, Moscow",
- audio:"salve-regina.mp3"},
-
-{slug:"i-rub-02", type:"pictura", f:"I", series:"rublev_trinity", step:2, steps:5,
- img:IMG.rublev_trinity, zoom:{x:50, y:40, scale:2.0},
- title:"The Centre · The Son",
- title_pt:"O Centro · O Filho",
- body:`<p>Middle angel. The Son. Dark red robe — the humanity he will take — with a blue cloak over his left shoulder — his divinity. He blesses the chalice on the table with two fingers. The chalice holds a tiny lamb's head — the Lamb slain.</p>
-<p>The icon is the Trinity in council about the Incarnation. The Son is agreeing, with his bowed head, to leave this circle and become the Lamb in the cup. Everything else in the icon is organised around that silent consent.</p>`,
- body_pt:`<p>Anjo do meio. O Filho. Veste vermelho escuro — a humanidade que assumirá — com manto azul sobre o ombro esquerdo — a sua divindade. Abençoa com dois dedos o cálice na mesa. O cálice tem uma cabeça de cordeiro minúscula — o Cordeiro imolado.</p>
-<p>O ícone é a Trindade em concílio sobre a Encarnação. O Filho concorda, com a cabeça inclinada, em deixar este círculo e tornar-se o Cordeiro no cálice. Todo o resto no ícone se organiza em torno desse consentimento silencioso.</p>`,
- src:"Rublev, Trinity · the Son"},
-
-{slug:"i-rub-03", type:"pictura", f:"I", series:"rublev_trinity", step:3, steps:5,
- img:IMG.rublev_trinity, zoom:{x:28, y:34, scale:2.1},
- title:"The Father",
- title_pt:"O Pai",
- body:`<p>Left angel. The Father. His robe is a pale shimmering gold — the uncreated light. He blesses the cup toward which the Son is bending. His posture is the quietest of the three; he receives the gift of the Son's assent and sends out the Spirit.</p>
-<p>Note what Rublev does <em>not</em> do. He gives the Father no beard, no throne, no greater size. The three figures are indistinguishable by rank. Only their relations differ. The Trinity, Rublev insists in paint, is three persons as pure relations — not three gods of ascending importance.</p>`,
- body_pt:`<p>Anjo da esquerda. O Pai. A veste é um dourado pálido e lustroso — a luz incriada. Abençoa o cálice para o qual o Filho se inclina. A sua postura é a mais silenciosa das três; recebe o dom do consentimento do Filho e envia o Espírito.</p>
-<p>Note o que Rublev <em>não</em> faz. Não dá barba ao Pai, nem trono, nem tamanho maior. As três figuras são indistinguíveis em categoria. Só as relações diferem. A Trindade, insiste Rublev em pintura, é três pessoas como puras relações — não três deuses em ordem de importância.</p>`,
- src:"Rublev, Trinity · the Father"},
-
-{slug:"i-rub-04", type:"pictura", f:"I", series:"rublev_trinity", step:4, steps:5,
- img:IMG.rublev_trinity, zoom:{x:72, y:36, scale:2.1},
- title:"The Spirit",
- title_pt:"O Espírito",
- body:`<p>Right angel. The Spirit. Green cloak — the colour of the giver of life, the colour of growing things. His head inclines toward the centre, following the arc the three heads form together.</p>
-<p>Follow the inclinations as a line. Spirit (right) bends toward Son (centre); Son bends toward Father (left); Father receives. The arc returns on itself. A circle without a visible edge. The icon is a geometry lesson about perichoresis — the Greek word for the mutual indwelling of the three persons, which no theology lecture ever managed to say as clearly as this painting.</p>`,
- body_pt:`<p>Anjo da direita. O Espírito. Manto verde — a cor do doador da vida, a cor do que cresce. A cabeça se inclina para o centro, seguindo o arco que as três cabeças formam juntas.</p>
-<p>Siga as inclinações como uma linha. Espírito (direita) se inclina para o Filho (centro); Filho se inclina para o Pai (esquerda); o Pai recebe. O arco volta a si. Um círculo sem borda visível. O ícone é uma aula de geometria sobre a pericorese — a palavra grega para a inabitação mútua das três pessoas, que nenhuma aula de teologia jamais soube dizer tão claramente quanto este quadro.</p>`,
- src:"Rublev, Trinity · the Spirit"},
-
-{slug:"i-rub-05", type:"pictura", f:"I", series:"rublev_trinity", step:5, steps:5, rare:1,
- img:IMG.rublev_trinity, zoom:{x:50, y:72, scale:2.4},
- title:"The Open Seat",
- title_pt:"O Lugar Aberto",
- body:`<p>Lower centre. The near side of the table. Look carefully. There is no fourth angel. There is a space. The three sit at a square table whose near side is open, and the only unoccupied seat in the icon is directly across from the Son.</p>
-<p>That seat is for the viewer. Rublev painted a Trinity you can sit down with. The icon is an invitation. Which is why icons are not decorated, kissed, incensed; they are venerated. Not as idols. As portals. Rublev's three angels have been looking out at Orthodox worshippers for 615 years, waiting for them to take the open seat.</p>`,
- body_pt:`<p>Parte inferior central. O lado próximo da mesa. Olhe com atenção. Não há quarto anjo. Há um espaço. Os três se sentam a uma mesa quadrada cujo lado próximo está aberto, e o único lugar desocupado no ícone está diretamente defronte ao Filho.</p>
-<p>Esse lugar é do espectador. Rublev pintou uma Trindade com que você pode se sentar. O ícone é um convite. Por isso ícones não são decorados, são beijados, são incensados; são venerados. Não como ídolos. Como portais. Os três anjos de Rublev olham para fora, para os fiéis ortodoxos, há 615 anos, à espera de que tomem o lugar aberto.</p>`,
- src:"Rublev, Trinity · the open seat"}
-];
-FOLIOS.push(...IMAGINES_V12);
-
-// =============================================================
-// v13 WAVE — fresh content across every faculty. Bilingual.
-// Themes: saints with real stakes, Catholic & science surprises,
-// economic black swans, lesser-known thinkers, aesthetic moments,
-// perception drills, historical pivots, Marcos's own essays.
-// =============================================================
-
-// New IMG entries for the new painting walkthrough
-IMG.latour_magdalene = FP+"Georges_de_La_Tour_-_The_Repentant_Magdalen_-_Google_Art_Project.jpg?width=1200";
-
-const V13 = [
-// ================================================================
-// THEOLOGIA — saints with real stakes
-// ================================================================
-{slug:"t-kolbe", type:"lectio", f:"T", rare:1, title:"Kolbe · The Exchange at Auschwitz",
- body:`<p>July 1941. Auschwitz, Block 14. Ten men are picked at random to starve to death in reprisal for an escape. One of them, Franciszek Gajowniczek, cries out: "My wife, my children." Maximilian Kolbe, Franciscan priest, prisoner number 16670, steps out of the line and says: "I am a Catholic priest. Let me take his place. I have no wife or children."</p>
-<p>The guard, Karl Fritzsch, agrees. Kolbe goes to the starvation bunker. Two weeks later he is still alive and leading hymns for the dying around him. On August 14 he is given a lethal injection of carbolic acid. He raises his left arm for the needle.</p>
-<p>Gajowniczek lived until 1995 and attended Kolbe's canonization in 1982. He never missed an anniversary of August 14.</p>`,
- src:"Auschwitz camp records; John Paul II, Veritatis Splendor (1993)",
- title_pt:"Kolbe · A Troca em Auschwitz",
- body_pt:`<p>Julho de 1941. Auschwitz, Bloco 14. Dez homens são escolhidos ao acaso para morrer de fome em represália por uma fuga. Um deles, Franciszek Gajowniczek, grita: "Minha esposa, meus filhos." Maximiliano Kolbe, padre franciscano, prisioneiro número 16670, sai da fila e diz: "Sou padre católico. Deixe-me tomar o lugar dele. Não tenho esposa nem filhos."</p>
-<p>O guarda, Karl Fritzsch, concorda. Kolbe vai para o bunker da fome. Duas semanas depois ainda está vivo, conduzindo hinos para os moribundos ao redor. Em 14 de agosto recebe uma injeção letal de ácido carbólico. Ergue o braço esquerdo para a agulha.</p>
-<p>Gajowniczek viveu até 1995 e esteve presente à canonização de Kolbe em 1982. Nunca perdeu um aniversário do dia 14 de agosto.</p>`,
- src_pt:"Arquivos do campo de Auschwitz; João Paulo II, Veritatis Splendor (1993)"},
-
-{slug:"t-edith-stein", type:"lectio", f:"T", title:"Edith Stein · From Phenomenology to the Oven",
- body:`<p>Edith Stein was Husserl's finest student. She had earned her doctorate in philosophy summa cum laude at Freiburg in 1916, a Jewish woman in a field where women were barely tolerated. In 1921 she read the autobiography of Teresa of Ávila in a single night and said at dawn: "This is the truth."</p>
-<p>She was baptized in 1922, entered Carmel in 1933 as Sister Teresa Benedicta of the Cross, and in 1942 was arrested by the Gestapo in a Dutch convent in retaliation for the Dutch bishops condemning Nazi anti-Semitism. She was gassed at Auschwitz on August 9, 1942. Her last reported words to her sister Rosa as they entered the camp: "Come, we are going for our people."</p>`,
- src:"Edith Stein, Life in a Jewish Family; John Paul II, Spes Aedificandi (1999)",
- title_pt:"Edith Stein · Da Fenomenologia ao Forno",
- body_pt:`<p>Edith Stein foi a melhor aluna de Husserl. Doutorou-se em filosofia summa cum laude em Freiburg em 1916, uma mulher judia num campo que mal tolerava mulheres. Em 1921 leu a autobiografia de Teresa de Ávila numa noite e disse ao amanhecer: "Isto é a verdade."</p>
-<p>Foi batizada em 1922, entrou no Carmelo em 1933 como Irmã Teresa Benedita da Cruz, e em 1942 foi presa pela Gestapo num convento holandês em represália pela condenação do anti-semitismo nazi pelos bispos holandeses. Foi gaseada em Auschwitz em 9 de agosto de 1942. As últimas palavras relatadas à irmã Rosa ao entrarem no campo: "Vem, vamos pelo nosso povo."</p>`,
- src_pt:"Edith Stein, Vida numa Família Judia; João Paulo II, Spes Aedificandi (1999)"},
-
-{slug:"t-bakhita", type:"lectio", f:"T", title:"Bakhita · Slave to Saint",
- body:`<p>Josephine Bakhita was kidnapped in Darfur at age seven by Arab slavers in 1876. The trauma was so severe she forgot her own name — "Bakhita" ("the fortunate one") was what her captors called her, mockingly. She was sold five times, beaten, tattooed with 114 cuts rubbed with salt, and in 1883 purchased by an Italian consul.</p>
-<p>Taken to Italy, she met the Canossian Sisters in 1888. She asked to be baptized. The Italian courts ruled in 1889 that slavery was illegal in Italy and she had been free for years without knowing it. She remained with the sisters until her death in 1947, reportedly whispering to her master in her last hours: "I am going slowly, slowly to the eternal..."</p>
-<p>Canonized by John Paul II in 2000. Patron saint of Sudan and of human trafficking survivors.</p>`,
- src:"Josephine Bakhita, Storia Meravigliosa; Benedict XVI, Spe Salvi §3 (2007)",
- title_pt:"Bakhita · Da Escravidão à Santidade",
- body_pt:`<p>Josefina Bakhita foi raptada no Darfur aos sete anos, em 1876, por escravagistas árabes. O trauma foi tão severo que ela esqueceu o próprio nome — "Bakhita" ("a afortunada") era como os captores a chamavam, em deboche. Foi vendida cinco vezes, espancada, tatuada com 114 cortes esfregados com sal, e em 1883 comprada por um cônsul italiano.</p>
-<p>Levada para a Itália, conheceu as irmãs canossianas em 1888. Pediu o batismo. Em 1889 os tribunais italianos decidiram que a escravidão era ilegal na Itália e que ela estava livre havia anos sem saber. Permaneceu com as irmãs até morrer em 1947, murmurando ao seu mestre nas últimas horas: "Estou indo devagar, devagar para o eterno..."</p>
-<p>Canonizada por João Paulo II em 2000. Padroeira do Sudão e das vítimas de tráfico humano.</p>`,
- src_pt:"Josefina Bakhita, Storia Meravigliosa; Bento XVI, Spe Salvi §3 (2007)"},
-
-{slug:"t-miguel-pro", type:"lectio", f:"T", title:"Miguel Pro · Viva Cristo Rey",
- body:`<p>Mexico, 1927. The Calles government has outlawed public Catholicism. Priests are executed on sight. Father Miguel Pro, a Jesuit, has been celebrating Mass in disguises — mechanic, taxi driver, beggar — for a year.</p>
-<p>He is arrested on November 18 on a false accusation. On November 23 he is marched to the firing-squad courtyard. The government has invited photographers to document the execution as a warning. Pro refuses the blindfold, extends his arms as if crucified, and shouts: "¡Viva Cristo Rey!" The photos appeared in every Mexican newspaper the next day. The regime had wanted to humiliate Catholicism; it had produced the century's most photographed Catholic martyr.</p>
-<p>Beatified in 1988. His tomb in Mexico City is a pilgrimage site.</p>`,
- src:"Mexican state archives, November 1927; Graham Greene, The Lawless Roads (1939)",
- title_pt:"Miguel Pro · Viva Cristo Rei",
- body_pt:`<p>México, 1927. O governo Calles criminalizou o catolicismo público. Padres são executados à primeira vista. O padre Miguel Pro, jesuíta, celebra Missa há um ano em disfarces — mecânico, taxista, mendigo.</p>
-<p>É preso em 18 de novembro por acusação falsa. Em 23 de novembro é levado ao pátio do pelotão de fuzilamento. O governo convidou fotógrafos para documentar a execução como advertência. Pro recusa a venda, estende os braços como crucificado e grita: "¡Viva Cristo Rey!" As fotografias saíram em todos os jornais mexicanos no dia seguinte. O regime quis humilhar o catolicismo; produziu o mártir católico mais fotografado do século.</p>
-<p>Beatificado em 1988. Seu túmulo na Cidade do México é destino de peregrinação.</p>`,
- src_pt:"Arquivos do Estado mexicano, nov. 1927; Graham Greene, The Lawless Roads (1939)"},
-
-{slug:"t-guadalupe-tilma", type:"lectio", f:"T", rare:1, title:"Guadalupe · The Tilma",
- body:`<p>Mexico City, 1531. Juan Diego's cactus-fibre cloak (a <em>tilma</em>) carries an image of a dark-skinned Virgin that appeared when he opened it before the bishop. The tilma should have disintegrated within 20 years. It is 495 years old and unprotected from air pollution until 1993.</p>
-<p>Three separate scientific examinations — Richard Kuhn (1936, Nobel laureate), Philip Callahan (NASA infrared, 1979), José Aste Tonsmann (digital analysis of the eyes, 1979) — each concluded the image cannot be explained by known pigments, that the reflection in the Virgin's pupils contains 13 human figures (including Juan Diego presenting the tilma), and that the stars on the cloak match the sky as it appeared over Mexico City on December 12, 1531.</p>
-<p>The Catholic Church has not required belief in any of this. It makes the puzzle, not the devotion, optional.</p>`,
- src:"Callahan & Smith, The Tilma under Infrared Radiation (1981); Aste Tonsmann, Los ojos de la Virgen de Guadalupe (1998)",
- title_pt:"Guadalupe · A Tilma",
- body_pt:`<p>Cidade do México, 1531. O manto de fibras de cacto (<em>tilma</em>) de Juan Diego carrega a imagem de uma Virgem de pele escura que apareceu quando ele o abriu diante do bispo. A tilma devia ter se desintegrado em 20 anos. Tem 495 anos, sem proteção contra a poluição atmosférica até 1993.</p>
-<p>Três exames científicos independentes — Richard Kuhn (1936, Nobel), Philip Callahan (infravermelho da NASA, 1979), José Aste Tonsmann (análise digital dos olhos, 1979) — concluíram que a imagem não pode ser explicada por pigmentos conhecidos, que o reflexo nas pupilas da Virgem contém 13 figuras humanas (incluindo Juan Diego apresentando a tilma) e que as estrelas no manto correspondem ao céu de 12 de dezembro de 1531 sobre a Cidade do México.</p>
-<p>A Igreja Católica não exige fé em nada disto. Deixa o enigma, não a devoção, como opcional.</p>`,
- src_pt:"Callahan & Smith, The Tilma under Infrared Radiation (1981); Aste Tonsmann, Los ojos de la Virgen de Guadalupe (1998)"},
-
-{slug:"t-shroud-turin", type:"lectio", f:"T", title:"The Shroud of Turin · What Isn't Explained",
- body:`<p>A 14-foot linen cloth bears the double image — front and back — of a crucified man. The image is a negative (reversed as a photograph) which no one noticed until Secondo Pia photographed it in 1898. The 1988 carbon-14 dating assigned it to 1260-1390. Subsequent studies (Rogers 2005, Fanti 2013) suggested the sample tested was from a medieval patch; raw linen fibres from the center dated roughly to the first century.</p>
-<p>What remains unexplained: the image has no pigment, is purely superficial (one fibril deep), contains pollen from Palestine and Turkey, matches wounds from Roman flagrum and crucifixion in anatomically correct detail, and shows coin impressions over the eyes consistent with Pontius Pilate's Jerusalem mint. No art-historical replication has reproduced these features.</p>
-<p>Catholic position: the Church makes no judgment. It is called <em>an image</em>, not a relic.</p>`,
- src:"Rogers, Studies on the Radiocarbon Sample from the Shroud of Turin (2005); John Paul II address, 24 May 1998",
- title_pt:"O Sudário de Turim · O Que Não É Explicado",
- body_pt:`<p>Um pano de linho de 4,3 metros carrega a imagem dupla — frente e costas — de um homem crucificado. A imagem é um negativo (invertida como foto), o que ninguém notou até Secondo Pia a fotografar em 1898. A datação por carbono-14 de 1988 atribuiu-a a 1260-1390. Estudos posteriores (Rogers 2005, Fanti 2013) indicaram que a amostra testada era de um remendo medieval; fibras cruas do centro dataram aproximadamente do primeiro século.</p>
-<p>O que permanece inexplicado: a imagem não tem pigmento, é puramente superficial (uma fibrila de profundidade), contém pólen da Palestina e Turquia, combina com ferimentos de flagrum romano e crucificação em detalhe anatomicamente correto, e mostra impressões de moedas sobre os olhos consistentes com a cunhagem de Pôncio Pilatos em Jerusalém. Nenhuma replicação histórico-artística reproduziu estes traços.</p>
-<p>Posição católica: a Igreja não emite julgamento. É chamada <em>uma imagem</em>, não uma relíquia.</p>`,
- src_pt:"Rogers, Studies on the Radiocarbon Sample from the Shroud of Turin (2005); João Paulo II, discurso 24 mai. 1998"},
-
-{slug:"t-lanciano", type:"lectio", f:"T", title:"Lanciano · The Host That Became Flesh",
- body:`<p>750 AD, the Church of San Francesco in Lanciano, Italy. A Basilian monk celebrating Mass is tormented by doubts about the Real Presence. At the words of consecration, he reports, the bread becomes visible flesh and the wine becomes blood in five coagulated globules. The relic has been preserved for 1,275 years.</p>
-<p>In 1971 Professor Odoardo Linoli, chair of anatomy at the University of Siena, conducted the first scientific examination. His findings: the flesh is cardiac muscle tissue (specifically myocardium, the muscle of the heart wall), human, blood type AB. The five globules of blood weigh exactly the same despite being different sizes. Same blood type. No preservatives.</p>
-<p>The AB blood type match with samples taken from the Shroud of Turin is independent corroboration or coincidence. Science has described what is there; theology decides what it is.</p>`,
- src:"Odoardo Linoli, Quaderni Sclavo di Diagnostica Clinica e di Laboratorio, 1971",
- title_pt:"Lanciano · A Hóstia Que Se Tornou Carne",
- body_pt:`<p>750 d.C., Igreja de São Francisco em Lanciano, Itália. Um monge basiliano celebrando Missa é atormentado por dúvidas sobre a Presença Real. Nas palavras da consagração, relata ele, o pão torna-se carne visível e o vinho torna-se sangue em cinco glóbulos coagulados. A relíquia foi preservada por 1.275 anos.</p>
-<p>Em 1971 o professor Odoardo Linoli, titular de anatomia na Universidade de Siena, realizou o primeiro exame científico. Suas conclusões: a carne é tecido muscular cardíaco (especificamente miocárdio, o músculo da parede do coração), humano, tipo sanguíneo AB. Os cinco glóbulos de sangue pesam exatamente o mesmo, apesar de terem tamanhos diferentes. Mesmo tipo sanguíneo. Sem conservantes.</p>
-<p>A correspondência do tipo sanguíneo AB com amostras do Sudário de Turim é corroboração independente ou coincidência. A ciência descreveu o que está ali; a teologia decide o que é.</p>`,
- src_pt:"Odoardo Linoli, Quaderni Sclavo di Diagnostica Clinica e di Laboratorio, 1971"},
-
-{slug:"t-more-silence", type:"lectio", f:"T", title:"Thomas More · The Silence",
- body:`<p>England, 1535. Thomas More has resigned the Lord Chancellorship rather than sign the Oath of Supremacy that would declare Henry VIII head of the Church of England. His defense at trial: silence under the law means consent. He has never spoken against the oath.</p>
-<p>The prosecutor, Richard Rich, perjures himself to secure the conviction. At sentencing, More finally speaks: "I die the King's good servant, but God's first." On the scaffold on July 6, he jokes to the executioner about his beard — "my beard is innocent of treason, let it not be cut."</p>
-<p>His daughter Margaret retrieved his head from London Bridge and kept it until her death, buried with it in her arms. The Church canonized him in 1935, patron of lawyers and statesmen.</p>`,
- src:"William Roper, The Life of Sir Thomas More (1557); Robert Bolt, A Man for All Seasons (1960)",
- title_pt:"Thomas More · O Silêncio",
- body_pt:`<p>Inglaterra, 1535. Thomas More renunciou ao cargo de Lorde Chanceler em vez de assinar o Juramento de Supremacia que declararia Henrique VIII chefe da Igreja da Inglaterra. Sua defesa no julgamento: o silêncio na lei significa consentimento. Ele nunca falou contra o juramento.</p>
-<p>O promotor, Richard Rich, cometeu perjúrio para obter a condenação. Na sentença, More finalmente fala: "Morro bom servo do Rei, mas de Deus primeiro." No cadafalso, em 6 de julho, graceja com o executor sobre a barba — "minha barba é inocente de traição, não a cortem."</p>
-<p>Sua filha Margaret recuperou a cabeça dele da Ponte de Londres e manteve-a até a morte, enterrada com ela nos braços. A Igreja o canonizou em 1935, padroeiro de advogados e estadistas.</p>`,
- src_pt:"William Roper, The Life of Sir Thomas More (1557); Robert Bolt, A Man for All Seasons (1960)"},
-
-{slug:"t-lemaitre", type:"lectio", f:"T", rare:1, title:"Lemaître · The Priest Who Invented the Big Bang",
- body:`<p>1927. Georges Lemaître, a Belgian Catholic priest with a doctorate in physics, publishes a paper in an obscure Belgian journal proposing that the universe is expanding from a single original moment — what he calls the "primeval atom" or "cosmic egg."</p>
-<p>Hubble publishes the observational data in 1929 that would seem to confirm this. Einstein, who had rejected Lemaître's work in 1927 ("your calculations are correct, your physics is abominable"), stands and applauds after Lemaître's 1933 lecture at Mount Wilson. Fred Hoyle coins the term "Big Bang" in 1949 as mockery; the name sticks.</p>
-<p>Lemaître kept physics and theology separate on principle: "The Christian researcher has to master and apply with sagacity the technique appropriate to his problem. His investigative means are the same as those of his non-believer colleague. He has also, in some sense, the same freedom of spirit, for the details of creation are nowhere described in our books." The man who first proposed the Big Bang was ordained a priest four years earlier.</p>`,
- src:"Georges Lemaître, Un Univers Homogène, 1927; letters to Einstein; Dominique Lambert, Lemaître biography (2000)",
- title_pt:"Lemaître · O Padre Que Inventou o Big Bang",
- body_pt:`<p>1927. Georges Lemaître, padre católico belga com doutorado em física, publica num obscuro periódico belga uma hipótese de que o universo está em expansão a partir de um instante original — o que ele chama de "átomo primitivo" ou "ovo cósmico".</p>
-<p>Hubble publica os dados observacionais em 1929 que parecem confirmar isto. Einstein, que havia rejeitado o trabalho de Lemaître em 1927 ("seus cálculos estão corretos, sua física é abominável"), levanta-se e aplaude após a conferência de Lemaître em Mount Wilson em 1933. Fred Hoyle cunha o termo "Big Bang" em 1949 como zombaria; o nome pega.</p>
-<p>Lemaître mantinha física e teologia separadas por princípio: "O pesquisador cristão deve dominar e aplicar com sagacidade a técnica própria do seu problema. Seus meios de investigação são os mesmos do colega não crente. Também tem, em certo sentido, a mesma liberdade de espírito, pois os detalhes da criação não estão descritos em nossos livros em parte alguma." O homem que primeiro propôs o Big Bang havia sido ordenado padre quatro anos antes.</p>`,
- src_pt:"Georges Lemaître, Un Univers Homogène, 1927; cartas a Einstein; Dominique Lambert, biografia de Lemaître (2000)"},
-
-{slug:"t-mendel", type:"lectio", f:"T", title:"Mendel · The Monk Who Founded Genetics",
- body:`<p>Brno, Moravia, 1856-1863. Gregor Mendel, Augustinian friar and abbot, spends eight years in the monastery garden cross-breeding 28,000 pea plants. He identifies the mathematical ratios governing inheritance — the 3:1 segregation that would be called Mendel's First Law.</p>
-<p>His paper is published in 1866 in the obscure proceedings of the Brno Natural History Society. Darwin owned a copy. It sat uncut on his shelf. Nobody reads it. Mendel dies in 1884 an unknown provincial abbot. In 1900, three European botanists (de Vries, Correns, von Tschermak) independently rediscover his laws and credit him posthumously.</p>
-<p>The entire science of genetics — including the double helix a century later — rests on patterns a Catholic friar had worked out in a cloister garden and that the scientific establishment ignored for 34 years.</p>`,
- src:"Gregor Mendel, Versuche über Pflanzen-Hybriden (1866); Vítězslav Orel, Mendel (1996)",
- title_pt:"Mendel · O Monge Que Fundou a Genética",
- body_pt:`<p>Brno, Morávia, 1856-1863. Gregor Mendel, frade agostiniano e abade, passa oito anos no jardim do mosteiro cruzando 28.000 plantas de ervilha. Identifica as razões matemáticas que governam a hereditariedade — a segregação 3:1 que seria chamada Primeira Lei de Mendel.</p>
-<p>Seu artigo é publicado em 1866 nos obscuros anais da Sociedade de História Natural de Brno. Darwin tinha uma cópia. Ficou na prateleira dele sem ser cortada. Ninguém a leu. Mendel morreu em 1884, um abade provincial desconhecido. Em 1900, três botânicos europeus (de Vries, Correns, von Tschermak) redescobriram independentemente suas leis e creditaram-no postumamente.</p>
-<p>Toda a ciência da genética — incluindo a dupla hélice um século depois — repousa sobre padrões que um frade católico tinha resolvido num jardim claustral e que o estabelecimento científico ignorou por 34 anos.</p>`,
- src_pt:"Gregor Mendel, Versuche über Pflanzen-Hybriden (1866); Vítězslav Orel, Mendel (1996)"},
-
-// ================================================================
-// PHILOSOPHIA — overlooked thinkers
-// ================================================================
-{slug:"f-taylor-secular", type:"lectio", f:"F", title:"Taylor · The Immanent Frame",
- body:`<p>Charles Taylor's <em>A Secular Age</em> (2007) makes a quiet claim that reorganises the whole modern debate about religion: we did not get the secular age by proving God does not exist. We got it by building an "immanent frame" — a system of institutions, practices, and plausibility structures within which transcendence is <em>optional</em>. The frame can be closed (no transcendence recognised) or open (held in reserve), but it is the same frame.</p>
-<p>What this explains: why intelligent, serious atheists and intelligent, serious believers do not persuade each other. They are not reasoning from different premises. They are living inside the same frame and holding it open or closed on grounds that are ultimately pre-philosophical — temperament, story, formation. The modern dispute looks like a disagreement about evidence. It is really a disagreement about a background of plausibility.</p>`,
- src:"Charles Taylor, A Secular Age (2007), ch. 15",
- title_pt:"Taylor · O Quadro Imanente",
- body_pt:`<p><em>Uma Era Secular</em> de Charles Taylor (2007) faz uma alegação discreta que reorganiza todo o debate moderno sobre a religião: não chegamos à era secular provando que Deus não existe. Chegamos construindo um "quadro imanente" — um sistema de instituições, práticas e estruturas de plausibilidade dentro do qual a transcendência é <em>opcional</em>. O quadro pode estar fechado (nenhuma transcendência reconhecida) ou aberto (mantida em reserva), mas é o mesmo quadro.</p>
-<p>O que isto explica: por que ateus sérios e crentes sérios, ambos inteligentes, não se convencem. Não estão raciocinando a partir de premissas diferentes. Estão vivendo dentro do mesmo quadro e mantendo-o aberto ou fechado por razões em última análise pré-filosóficas — temperamento, narrativa, formação. A disputa moderna parece desacordo sobre evidência. É, na verdade, desacordo sobre um fundo de plausibilidade.</p>`,
- src_pt:"Charles Taylor, Uma Era Secular (2007), cap. 15"},
-
-{slug:"f-girard-mimesis", type:"lectio", f:"F", title:"Girard · Desire Is Borrowed",
- body:`<p>René Girard's lifetime thesis: we do not desire objects directly. We desire what others desire. Desire is <em>mimetic</em>, triangular — subject, model, object — and the object matters less than the model. You don't want the toy; you want the toy the other child wanted.</p>
-<p>Consequences unfold in three acts. (1) Rivalry: two mimetic desires converge on the same object and become enemies. (2) The scapegoat mechanism: as rivalry spreads, a society resolves it by converging on a victim whose sacrifice restores peace — temporarily. (3) The Gospel: for the first time in history, a founding story is told <em>from the victim's point of view</em> and the mechanism is exposed. Christianity is not another religion; it is the anti-sacrificial text that makes future sacrificial cultures impossible to sustain honestly.</p>
-<p>Girard was a literary critic who read the Bible as unfolding this truth. His theory explains social media better than most sociology.</p>`,
- src:"René Girard, Things Hidden Since the Foundation of the World (1978); I See Satan Fall Like Lightning (1999)",
- title_pt:"Girard · O Desejo É Emprestado",
- body_pt:`<p>A tese de toda a vida de René Girard: não desejamos objetos diretamente. Desejamos o que os outros desejam. O desejo é <em>mimético</em>, triangular — sujeito, modelo, objeto — e o objeto importa menos que o modelo. Você não quer o brinquedo; você quer o brinquedo que a outra criança quis.</p>
-<p>As consequências se desdobram em três atos. (1) Rivalidade: dois desejos miméticos convergem para o mesmo objeto e se tornam inimigos. (2) O mecanismo do bode expiatório: ao se alastrar a rivalidade, uma sociedade a resolve convergindo sobre uma vítima cujo sacrifício restaura a paz — temporariamente. (3) O Evangelho: pela primeira vez na história, uma narrativa fundante é contada <em>do ponto de vista da vítima</em>, e o mecanismo é exposto. O cristianismo não é mais uma religião; é o texto antissacrificial que torna futuras culturas sacrificiais impossíveis de sustentar honestamente.</p>
-<p>Girard foi crítico literário que leu a Bíblia como desdobramento desta verdade. Sua teoria explica as redes sociais melhor do que a maior parte da sociologia.</p>`,
- src_pt:"René Girard, Coisas Ocultas Desde a Fundação do Mundo (1978); Vejo Satanás Cair como Raio (1999)"},
-
-{slug:"f-pieper-happiness", type:"lectio", f:"F", title:"Pieper · The Cardinal Virtues",
- body:`<p>Josef Pieper on the four cardinal virtues: prudence, justice, fortitude, temperance. The sequence is not arbitrary. Prudence is the "mother of all virtues" because it is the one that <em>sees</em> what the others should do. Justice directs us toward others. Fortitude bears suffering for what is right. Temperance orders us within.</p>
-<p>What makes Pieper's version unlike modern self-help: the virtues are not techniques to be mastered. They are capacities of a soul properly open to reality. A prudent man does not calculate better; he perceives better. He sees the situation as it is, not as he would like it to be. The modern caricature of prudence as cunning calculation is exactly the opposite of what Aquinas and Pieper meant. Prudence is the moral form of attention.</p>`,
- src:"Josef Pieper, The Four Cardinal Virtues (1966)",
- title_pt:"Pieper · As Virtudes Cardeais",
- body_pt:`<p>Josef Pieper sobre as quatro virtudes cardeais: prudência, justiça, fortaleza, temperança. A sequência não é arbitrária. A prudência é a "mãe de todas as virtudes" porque é a que <em>vê</em> o que as outras devem fazer. A justiça nos dirige aos outros. A fortaleza suporta o sofrimento pelo que é correto. A temperança nos ordena por dentro.</p>
-<p>O que distingue a versão de Pieper do self-help moderno: as virtudes não são técnicas a serem dominadas. São capacidades de uma alma devidamente aberta à realidade. O homem prudente não calcula melhor; percebe melhor. Vê a situação como ela é, não como gostaria que fosse. A caricatura moderna da prudência como cálculo astuto é exatamente o oposto do que Aquino e Pieper queriam dizer. A prudência é a forma moral da atenção.</p>`,
- src_pt:"Josef Pieper, As Virtudes Cardeais (1966)"},
-
-{slug:"f-kirk-imagination", type:"lectio", f:"F", title:"Kirk · The Moral Imagination",
- body:`<p>Russell Kirk borrowed the phrase from Burke. The <em>moral imagination</em> is the faculty that lets a human being see himself as more than an animal with appetites — that sees the hidden dignity of persons and the depths of their obligations to one another.</p>
-<p>Its two enemies, Kirk said, are the <em>idyllic imagination</em> (the Rousseauean fantasy that humans are good until society ruins them) and the <em>diabolic imagination</em> (the fantasy that cruelty and transgression are liberating). Serious literature, serious religion, and serious law all serve the moral imagination; mass entertainment, political ideology, and advertising mostly serve the other two.</p>
-<p>The civilizational test, in Kirk's hands: what is the ratio of your culture's output that feeds the moral imagination versus its competitors? Measure it. The number is embarrassing.</p>`,
- src:"Russell Kirk, Enemies of the Permanent Things (1969); Burke, Reflections (1790)",
- title_pt:"Kirk · A Imaginação Moral",
- body_pt:`<p>Russell Kirk tomou a expressão emprestada de Burke. A <em>imaginação moral</em> é a faculdade que permite a um ser humano ver-se como mais do que um animal com apetites — que vê a dignidade oculta das pessoas e a profundidade de suas obrigações mútuas.</p>
-<p>Seus dois inimigos, dizia Kirk, são a <em>imaginação idílica</em> (a fantasia rousseauniana de que os humanos são bons até que a sociedade os arruíne) e a <em>imaginação diabólica</em> (a fantasia de que a crueldade e a transgressão são libertadoras). A literatura séria, a religião séria e o direito sério servem todos à imaginação moral; o entretenimento de massa, a ideologia política e a publicidade servem, na maior parte, às outras duas.</p>
-<p>O teste civilizacional, nas mãos de Kirk: qual é a proporção da produção da sua cultura que alimenta a imaginação moral versus seus concorrentes? Meça-a. O número é constrangedor.</p>`,
- src_pt:"Russell Kirk, Enemies of the Permanent Things (1969); Burke, Reflexões (1790)"},
-
-{slug:"f-reid-sense", type:"lectio", f:"F", title:"Reid · The Sanity of Common Sense",
- body:`<p>Thomas Reid, 18th-century Scottish philosopher, replied to Hume's scepticism with a sentence that should be tattooed on every philosopher: <em>"If a man could get an argument, however subtle, to persuade him that he did not exist, and to make him act accordingly, we should think him mad."</em></p>
-<p>Reid's school of Common Sense Realism did not argue with Hume's logic. It simply observed that any philosophy that ends in sincerely doubting your own body, your mother's existence, or that the sun will rise has disqualified itself. A sound proof of an insane conclusion refutes the proof, not reality.</p>
-<p>Modern philosophy, trained by Descartes to treat common sense as naive, forgot this move. Reid is the quiet corrective. He is more use to the serious thinker than Kant.</p>`,
- src:"Thomas Reid, Essays on the Intellectual Powers of Man (1785)",
- title_pt:"Reid · A Sanidade do Senso Comum",
- body_pt:`<p>Thomas Reid, filósofo escocês do séc. XVIII, respondeu ao ceticismo de Hume com uma frase que todo filósofo devia tatuar: <em>"Se um homem pudesse obter um argumento, por mais sutil, que o persuadisse de que não existe, e o fizesse agir conforme, deveríamos julgá-lo louco."</em></p>
-<p>A escola do Realismo do Senso Comum de Reid não discutiu com a lógica de Hume. Apenas observou que qualquer filosofia que termine duvidando sinceramente do próprio corpo, da existência da mãe ou de que o sol nasce, se desqualificou. Uma prova sólida de uma conclusão insana refuta a prova, não a realidade.</p>
-<p>A filosofia moderna, treinada por Descartes a tratar o senso comum como ingênuo, esqueceu este movimento. Reid é o corretivo discreto. É mais útil ao pensador sério do que Kant.</p>`,
- src_pt:"Thomas Reid, Essays on the Intellectual Powers of Man (1785)"},
-
-{slug:"f-dialogue-chesterton-nietzsche", type:"lectio", f:"F", title:"Chesterton vs Nietzsche",
- body:`<blockquote>The madman is not the man who has lost his reason. The madman is the man who has lost everything except his reason. — Chesterton</blockquote>
-<blockquote>I am no man, I am dynamite. — Nietzsche</blockquote>
-<p>Two men born within a decade of each other, both wrestling with the modern crisis, reaching opposite verdicts. Nietzsche sees the death of God and calls for the Übermensch. Chesterton sees the same horizon and calls for the ordinary man, baptised. Nietzsche ends in an asylum in Weimar, writing letters signed "Dionysus" and "The Crucified One." Chesterton ends with a cigar in a London garden, having become fat and famous and converted.</p>
-<p>The dialogue is not fair to Nietzsche — he is the more penetrating mind, and he saw something real. But it is not fair to Chesterton either, because Chesterton's cheerful sanity is the harder achievement. One of them described the sickness; the other survived it.</p>`,
- src:"G. K. Chesterton, Orthodoxy (1908); Friedrich Nietzsche, Ecce Homo (1888)",
- title_pt:"Chesterton vs Nietzsche",
- body_pt:`<blockquote>O louco não é aquele que perdeu a razão. O louco é aquele que perdeu tudo menos a razão. — Chesterton</blockquote>
-<blockquote>Eu não sou homem, sou dinamite. — Nietzsche</blockquote>
-<p>Dois homens nascidos a uma década um do outro, ambos lutando com a crise moderna, chegando a veredictos opostos. Nietzsche vê a morte de Deus e convoca o Übermensch. Chesterton vê o mesmo horizonte e convoca o homem comum, batizado. Nietzsche termina num hospício em Weimar, escrevendo cartas assinadas "Dionísio" e "O Crucificado". Chesterton termina com um charuto num jardim de Londres, gordo, famoso e convertido.</p>
-<p>O diálogo não é justo com Nietzsche — ele é a mente mais penetrante, e viu algo real. Mas também não é justo com Chesterton, porque a sanidade alegre de Chesterton é a conquista mais difícil. Um deles descreveu a doença; o outro sobreviveu a ela.</p>`,
- src_pt:"G. K. Chesterton, Ortodoxia (1908); Friedrich Nietzsche, Ecce Homo (1888)"},
-
-{slug:"f-oakeshott-rationalism", type:"lectio", f:"F", title:"Oakeshott · Against Rationalism in Politics",
- body:`<p>Michael Oakeshott, 1947, published the essay that explained twentieth-century politics better than any statistic. The "rationalist in politics" is the man who believes that political problems can be solved by applying general principles derived from reason alone — ignoring the <em>practical knowledge</em> that cannot be written in a book and that is only acquired by inhabiting a tradition.</p>
-<p>His analogy: cooking. A cookbook gives you technical knowledge — ingredients, times, procedures. But no one becomes a good cook from a cookbook. The <em>practical knowledge</em> — when to add the next thing, how to tell by smell, what the recipe does not say — is picked up from someone who already has it. Reduce cooking to the cookbook alone and you get bad cooking.</p>
-<p>Reduce politics to the manifesto alone and you get the twentieth century.</p>`,
- src:"Michael Oakeshott, Rationalism in Politics (1947)",
- title_pt:"Oakeshott · Contra o Racionalismo em Política",
- body_pt:`<p>Michael Oakeshott, 1947, publicou o ensaio que explicou a política do século XX melhor do que qualquer estatística. O "racionalista em política" é o homem que acredita que problemas políticos podem ser resolvidos aplicando princípios gerais derivados apenas da razão — ignorando o <em>saber prático</em> que não pode ser escrito num livro e que só é adquirido habitando uma tradição.</p>
-<p>Sua analogia: a cozinha. Um livro de receitas dá saber técnico — ingredientes, tempos, procedimentos. Mas ninguém se torna bom cozinheiro por um livro de receitas. O <em>saber prático</em> — quando acrescentar a próxima coisa, como saber pelo cheiro, o que a receita não diz — é apanhado de alguém que já o tem. Reduza a cozinha ao livro de receitas sozinho e você terá cozinha ruim.</p>
-<p>Reduza a política ao manifesto sozinho e você terá o século XX.</p>`,
- src_pt:"Michael Oakeshott, Rationalism in Politics (1947)"},
-
-// ================================================================
-// OECONOMIA — black swans + Austrians
-// ================================================================
-{slug:"o-nixon-shock", type:"lectio", f:"O", rare:1, title:"The Nixon Shock · August 15, 1971",
- body:`<p>Sunday evening, August 15, 1971. President Nixon preempts <em>Bonanza</em> on NBC to announce a 90-day wage and price freeze, a 10% import tariff, and — the real announcement — that the United States will no longer honor the Bretton Woods agreement. The dollar will not be redeemed in gold. The gold window is closed.</p>
-<p>From that evening to this, no major currency on earth is backed by anything but the trust in its issuer. We live in what Austrian economists call the "pure fiat" era. Every price you have ever seen has been quoted in a monetary unit that is, by design, inflating. The US dollar has lost about 86% of its purchasing power since that Sunday.</p>
-<p>The decision was framed as a temporary emergency measure. Fifty-five years later it is still in force. Austrians predicted every consequence in real time and were ignored. They are still being ignored.</p>`,
- src:"Nixon's televised address, 15 August 1971; Jeffrey Garten, Three Days at Camp David (2021)",
- title_pt:"O Choque Nixon · 15 de Agosto de 1971",
- body_pt:`<p>Domingo à noite, 15 de agosto de 1971. O presidente Nixon interrompe <em>Bonanza</em> na NBC para anunciar um congelamento de preços e salários de 90 dias, uma tarifa de importação de 10%, e — o anúncio verdadeiro — que os Estados Unidos deixarão de honrar o acordo de Bretton Woods. O dólar não será mais convertido em ouro. A janela do ouro está fechada.</p>
-<p>Daquela noite até hoje, nenhuma grande moeda da Terra está lastreada por nada além da confiança em seu emissor. Vivemos no que os economistas austríacos chamam de era "fiduciária pura". Todo preço que você já viu foi cotado numa unidade monetária que, por desenho, está inflacionando. O dólar americano perdeu cerca de 86% do poder de compra desde aquele domingo.</p>
-<p>A decisão foi apresentada como medida de emergência temporária. Cinquenta e cinco anos depois ainda está em vigor. Os austríacos previram cada consequência em tempo real e foram ignorados. Continuam sendo ignorados.</p>`,
- src_pt:"Discurso televisionado de Nixon, 15 ago. 1971; Jeffrey Garten, Three Days at Camp David (2021)"},
-
-{slug:"o-weimar", type:"lectio", f:"O", title:"Weimar · A Loaf of Bread for 200 Billion Marks",
- body:`<p>1923. Germany is paying war reparations by printing money. January: a loaf of bread costs 250 marks. November: the same loaf costs 200,000,000,000 marks. Workers are paid twice a day, running immediately from the office to buy anything before the next price adjustment. Restaurants show prices on chalkboards updated hourly. Children play with bundles of marks as building blocks because they are cheaper than toy blocks.</p>
-<p>A barrel of marks is stolen from outside a shop — the thieves dump the marks on the pavement and take the barrel. By December the mark is replaced by the Rentenmark, each new unit worth one trillion of the old. The savings of a middle class built over three generations are erased in six months.</p>
-<p>Hitler's beer hall putsch is in November 1923, during the final weeks of the hyperinflation. The timing is not coincidence. Inflation is not an economic accident; it is a political act with political consequences.</p>`,
- src:"Adam Fergusson, When Money Dies (1975); Reichsbank weekly reports, 1923",
- title_pt:"Weimar · Um Pão por 200 Bilhões de Marcos",
- body_pt:`<p>1923. A Alemanha paga reparações de guerra imprimindo dinheiro. Janeiro: um pão custa 250 marcos. Novembro: o mesmo pão custa 200.000.000.000 marcos. Os trabalhadores recebem duas vezes por dia, correndo imediatamente do escritório para comprar qualquer coisa antes do próximo ajuste de preço. Restaurantes mostram preços em quadros negros atualizados a cada hora. Crianças brincam com maços de marcos como blocos de construção, porque são mais baratos do que blocos de brinquedo.</p>
-<p>Um barril de marcos é roubado diante de uma loja — os ladrões jogam os marcos na calçada e levam o barril. Em dezembro o marco é substituído pelo Rentenmark, cada nova unidade valendo um trilhão da antiga. As poupanças de uma classe média construídas em três gerações são apagadas em seis meses.</p>
-<p>O putsch da cervejaria de Hitler ocorre em novembro de 1923, nas semanas finais da hiperinflação. O tempo não é coincidência. A inflação não é um acidente econômico; é um ato político com consequências políticas.</p>`,
- src_pt:"Adam Fergusson, When Money Dies (1975); relatórios semanais do Reichsbank, 1923"},
-
-{slug:"o-argentina-2001", type:"lectio", f:"O", title:"Argentina · The Corralito of 2001",
- body:`<p>December 1, 2001. The Argentine government, drowning in debt, freezes all bank deposits. Citizens are permitted to withdraw 250 pesos a week. The scheme is called <em>el corralito</em> — "the little corral." By December 20 there are tanks in the Plaza de Mayo, the president has fled Casa Rosada in a helicopter, and the country burns through five presidents in two weeks.</p>
-<p>The peso, pegged 1:1 to the dollar since 1991, devalues to 4:1 overnight. Middle-class savings denominated in dollars are converted to pesos at the old rate, then held until the new rate is announced — a 75% wealth transfer from savers to the state, executed in 48 hours and legal in Argentina.</p>
-<p>What is forbidden: taking out dollars. What is permitted: trusting the government. Austrian prediction, 1991, by Jesús Huerta de Soto: a currency board without a fiscal anchor is a bomb with a long fuse.</p>`,
- src:"Paul Blustein, And the Money Kept Rolling In (2005); Argentine Central Bank archives",
- title_pt:"Argentina · O Corralito de 2001",
- body_pt:`<p>1 de dezembro de 2001. O governo argentino, afogado em dívida, congela todos os depósitos bancários. Os cidadãos podem retirar 250 pesos por semana. O esquema é chamado <em>el corralito</em> — "o curralzinho". Em 20 de dezembro há tanques na Praça de Maio, o presidente fugiu da Casa Rosada de helicóptero, e o país queima cinco presidentes em duas semanas.</p>
-<p>O peso, atrelado 1:1 ao dólar desde 1991, desvaloriza para 4:1 de um dia para o outro. Poupanças de classe média denominadas em dólares são convertidas em pesos à taxa antiga, depois retidas até o anúncio da nova taxa — uma transferência de riqueza de 75% dos poupadores para o Estado, executada em 48 horas e legal na Argentina.</p>
-<p>O que é proibido: retirar dólares. O que é permitido: confiar no governo. Previsão austríaca, 1991, de Jesús Huerta de Soto: um currency board sem âncora fiscal é uma bomba com pavio longo.</p>`,
- src_pt:"Paul Blustein, And the Money Kept Rolling In (2005); arquivos do Banco Central argentino"},
-
-{slug:"o-mississippi-bubble", type:"lectio", f:"O", title:"John Law · The First Modern Bubble",
- body:`<p>Paris, 1718-1720. John Law, Scottish gambler and economist, convinces Regent Philippe II to let him run the royal finances. His scheme: a joint-stock company (the Mississippi Company) with monopoly over French Louisiana trade, backed by banknotes issued by his bank, redeemable in silver.</p>
-<p>Shares rise from 500 livres to 10,000 livres in 18 months. The French word <em>millionnaire</em> is coined to describe the new rich. Then in May 1720 Law's Louisiana colony is revealed to have about 500 miserable settlers in a mosquito swamp. Share price collapses. The paper money is rapidly revealed to be unredeemable. By December 1720 France is in ruin; Law flees to Venice and dies there in poverty in 1729.</p>
-<p>Three centuries later we still call the pattern a "bubble." Law invented the modern central bank, the public stock market, and inflation. He also invented the way they end.</p>`,
- src:"Antoin Murphy, John Law: Economic Theorist and Policy-Maker (1997)",
- title_pt:"John Law · A Primeira Bolha Moderna",
- body_pt:`<p>Paris, 1718-1720. John Law, apostador e economista escocês, convence o Regente Filipe II a lhe confiar as finanças reais. Seu esquema: uma sociedade por ações (a Companhia do Mississippi) com monopólio sobre o comércio da Luisiana francesa, lastreada por cédulas emitidas pelo seu banco, resgatáveis em prata.</p>
-<p>As ações sobem de 500 livres a 10.000 livres em 18 meses. A palavra francesa <em>millionnaire</em> é cunhada para descrever os novos-ricos. Então, em maio de 1720, descobre-se que a colônia da Luisiana de Law tem cerca de 500 colonos miseráveis num pântano de mosquitos. O preço das ações desaba. O papel-moeda é rapidamente revelado como irresgatável. Em dezembro de 1720 a França está arruinada; Law foge para Veneza, onde morre em pobreza em 1729.</p>
-<p>Três séculos depois ainda chamamos o padrão de "bolha". Law inventou o banco central moderno, o mercado de ações público e a inflação. Também inventou como eles terminam.</p>`,
- src_pt:"Antoin Murphy, John Law: Economic Theorist and Policy-Maker (1997)"},
-
-{slug:"o-zimbabwe", type:"lectio", f:"O", title:"Zimbabwe · The Hundred Trillion Dollar Note",
- body:`<p>2007-2009. The Reserve Bank of Zimbabwe issues the 100 trillion dollar banknote — followed by 50 trillion and 10 trillion denominations. By November 2008, peak monthly inflation reaches an estimated 79,600,000,000%. Prices double roughly every 24 hours.</p>
-<p>A loaf of bread costs 1,000,000,000,000 Zimbabwe dollars. Shoppers wheel currency in wheelbarrows. Bus fare must be paid at the start of the journey because the fare at the end will be different. In April 2009 the Zimbabwe dollar is formally abandoned; the country uses US dollars, South African rand, and eventually a basket of foreign currencies.</p>
-<p>The 100-trillion-dollar note is now a tourist souvenir. It sells on eBay for about $15 US — the first time in the currency's life that the paper is worth more than the number printed on it.</p>`,
- src:"Reserve Bank of Zimbabwe monthly reports 2007-2009; Steve Hanke, Studies in Applied Economics",
- title_pt:"Zimbábue · A Nota de Cem Trilhões de Dólares",
- body_pt:`<p>2007-2009. O Banco Central do Zimbábue emite a nota de 100 trilhões de dólares — seguida de denominações de 50 trilhões e 10 trilhões. Em novembro de 2008, o pico mensal da inflação atinge uma estimativa de 79.600.000.000%. Os preços dobram aproximadamente a cada 24 horas.</p>
-<p>Um pão custa 1.000.000.000.000 dólares zimbabuanos. Compradores levam a moeda em carrinhos de mão. A tarifa do ônibus tem de ser paga no início da viagem, porque a tarifa no fim será diferente. Em abril de 2009 o dólar zimbabuano é formalmente abandonado; o país usa dólares americanos, rands sul-africanos, e por fim uma cesta de moedas estrangeiras.</p>
-<p>A nota de 100 trilhões é agora uma lembrança turística. Vende no eBay por cerca de US$ 15 — a primeira vez na vida da moeda em que o papel vale mais do que o número impresso nele.</p>`,
- src_pt:"Relatórios mensais do Banco Central do Zimbábue 2007-2009; Steve Hanke, Studies in Applied Economics"},
-
-{slug:"o-sennholz", type:"sententia", f:"O", title:"Sennholz · The Printer",
- body:`<blockquote>A government cannot create wealth. A government, in a certain mood, can print paper. Printing paper is not creating wealth, no matter how many zeros you put on the paper.<br>— Hans Sennholz</blockquote>
-<p>Hans Sennholz was the first PhD student Mises ever supervised. He spent his career teaching this one sentence in a dozen rephrasings. Half a century after his lectures, every central banker on earth still misses the point. The paper and the wealth are not the same thing. The printer can multiply one; nobody can multiply the other.</p>`,
- src:"Hans Sennholz, Age of Inflation (1979)",
- title_pt:"Sennholz · A Impressora",
- body_pt:`<blockquote>Um governo não pode criar riqueza. Um governo, em certo humor, pode imprimir papel. Imprimir papel não é criar riqueza, não importa quantos zeros se coloquem no papel.<br>— Hans Sennholz</blockquote>
-<p>Hans Sennholz foi o primeiro doutorando que Mises orientou. Passou a carreira ensinando esta única frase em uma dúzia de reformulações. Meio século depois de suas aulas, todo banqueiro central do mundo ainda perde o ponto. O papel e a riqueza não são a mesma coisa. A impressora pode multiplicar um; ninguém pode multiplicar o outro.</p>`,
- src_pt:"Hans Sennholz, Age of Inflation (1979)"},
-
-// ================================================================
-// NEGOTIUM — legendary business stories
-// ================================================================
-{slug:"n-simons-medallion", type:"lectio", f:"N", rare:1, title:"Jim Simons · The Impossible Fund",
- body:`<p>Jim Simons was a Cold War code-breaker and a geometry professor who left academic mathematics in 1978 to start a hedge fund. Renaissance Technologies' Medallion Fund has returned, after fees, approximately 39% per year since 1988 — roughly five times the long-run S&P 500 — with only one losing year in that period. No other fund in history has produced numbers remotely close.</p>
-<p>The fund has been closed to outside investors since 1993. It is run entirely by employees — mathematicians, physicists, speech-recognition specialists — none of whom have standard finance degrees. The core insight is reportedly that markets contain thousands of tiny patterns that appear only in massive statistical data and that each lasts a short time. The fund finds them and trades them before they decay.</p>
-<p>The Efficient Market Hypothesis says this should be impossible. Simons retired a billionaire. The theory is still taught.</p>`,
- src:"Gregory Zuckerman, The Man Who Solved the Market (2019)",
- title_pt:"Jim Simons · O Fundo Impossível",
- body_pt:`<p>Jim Simons foi um criptógrafo da Guerra Fria e um professor de geometria que saiu da matemática acadêmica em 1978 para fundar um hedge fund. O Medallion Fund da Renaissance Technologies retornou, após taxas, aproximadamente 39% ao ano desde 1988 — cerca de cinco vezes o S&P 500 no longo prazo — com apenas um ano de perda no período. Nenhum outro fundo da história produziu números sequer próximos.</p>
-<p>O fundo está fechado a investidores externos desde 1993. É gerido inteiramente por funcionários — matemáticos, físicos, especialistas em reconhecimento de voz — nenhum deles com formação-padrão em finanças. A intuição central, segundo relatos, é que os mercados contêm milhares de pequenos padrões que só aparecem em dados estatísticos massivos e que cada um dura pouco tempo. O fundo os encontra e opera antes que decaiam.</p>
-<p>A Hipótese dos Mercados Eficientes diz que isto deveria ser impossível. Simons aposentou-se bilionário. A teoria continua sendo ensinada.</p>`,
- src_pt:"Gregory Zuckerman, The Man Who Solved the Market (2019)"},
-
-{slug:"n-sees-candies", type:"lectio", f:"N", title:"See's Candies · Buffett's Hinge Deal",
- body:`<p>1972. Berkshire Hathaway pays $25 million for See's Candies — a California confectionery with $4.2 million of tangible book value. Charlie Munger has to convince Buffett to do it. Buffett later admits he almost walked away because the seller wanted $30 million; he was prepared to kill the deal over the $5 million.</p>
-<p>From 1972 to 2019, See's generated approximately $2 billion of cumulative pre-tax earnings with minimal reinvestment. Buffett has called it "the dream business" — because its brand strength, not its machines or inventory, is what produces the earnings. The $25 million purchase has returned over 8,000% in pre-tax earnings alone, without counting the ability to redirect that cash into Coca-Cola, GEICO, American Express, and the rest of the Berkshire portfolio.</p>
-<p>The lesson Buffett credits to this deal: pay up for quality. The $5 million he almost walked away from would have cost tens of billions in opportunity. The quality premium is the cheapest line item in the universe.</p>`,
- src:"Berkshire Hathaway annual letters, 1972–2019",
- title_pt:"See's Candies · O Negócio que Dobrou Buffett",
- body_pt:`<p>1972. A Berkshire Hathaway paga US$ 25 milhões pela See's Candies — uma confeitaria da Califórnia com US$ 4,2 milhões de valor contábil tangível. Charlie Munger tem de convencer Buffett a fazer o negócio. Buffett admitiu depois que quase desistiu porque o vendedor queria US$ 30 milhões; estava pronto a abandonar pelos US$ 5 milhões.</p>
-<p>De 1972 a 2019, a See's gerou aproximadamente US$ 2 bilhões de lucros antes de impostos acumulados, com reinvestimento mínimo. Buffett chamou-a de "o negócio dos sonhos" — porque é a força da marca, não as máquinas ou o estoque, que produz o lucro. A compra de US$ 25 milhões retornou mais de 8.000% apenas em lucros antes de impostos, sem contar a capacidade de redirecionar esse caixa para Coca-Cola, GEICO, American Express e o resto do portfólio Berkshire.</p>
-<p>A lição que Buffett credita a este negócio: pague pela qualidade. Os US$ 5 milhões dos quais quase desistiu teriam custado dezenas de bilhões em oportunidade. O prêmio pela qualidade é a linha mais barata do universo.</p>`,
- src_pt:"Cartas anuais da Berkshire Hathaway, 1972–2019"},
-
-{slug:"n-burry-big-short", type:"lectio", f:"N", title:"Michael Burry · The Big Short",
- body:`<p>2005. Michael Burry, a one-eyed former neurologist with Asperger's running a small hedge fund in Cupertino, reads mortgage-backed security prospectuses for weeks. He concludes that the subprime loans backing most of them will default en masse when teaser rates reset in 2007.</p>
-<p>He goes to Goldman Sachs and asks them to invent a credit default swap on mortgage-backed securities — a contract that pays him if the mortgages fail. Goldman thinks it is free money for them. They write him $1.9 billion worth. Burry's investors revolt: he is paying premiums on a bet that has not paid off for 18 months. He blocks their withdrawals by invoking a clause in his contract.</p>
-<p>2007-2008. The mortgages default. Burry's fund returns 489% that year. Scion Capital earns $725 million. Burry then quits the hedge-fund business, saying it is not worth the people. The movie <em>The Big Short</em> (2015) condenses the story.</p>`,
- src:"Michael Lewis, The Big Short (2010)",
- title_pt:"Michael Burry · O Grande Short",
- body_pt:`<p>2005. Michael Burry, ex-neurologista caolho com síndrome de Asperger administrando um pequeno hedge fund em Cupertino, lê prospectos de títulos lastreados em hipotecas por semanas. Conclui que os empréstimos subprime que respaldam a maioria entrarão em default em massa quando as taxas introdutórias se reajustarem em 2007.</p>
-<p>Vai ao Goldman Sachs e lhes pede que inventem um credit default swap sobre títulos lastreados em hipotecas — um contrato que lhe paga se as hipotecas quebrarem. O Goldman acha que é dinheiro grátis para eles. Vendem-lhe US$ 1,9 bilhão. Os investidores de Burry se revoltam: ele paga prêmios numa aposta que não pagou nada por 18 meses. Ele bloqueia os saques invocando uma cláusula do contrato.</p>
-<p>2007-2008. As hipotecas quebram. O fundo de Burry retorna 489% no ano. A Scion Capital ganha US$ 725 milhões. Burry então sai do negócio de hedge fund, dizendo que não vale pelas pessoas. O filme <em>A Grande Aposta</em> (2015) condensa a história.</p>`,
- src_pt:"Michael Lewis, A Grande Aposta (2010)"},
-
-{slug:"n-ibm-handoff", type:"lectio", f:"N", title:"The IBM Handoff · August 12, 1981",
- body:`<p>IBM is building its first personal computer under crushing time pressure — 12 months from concept to shelf. To save time, two of the critical components are outsourced: the microprocessor goes to Intel, the operating system goes to a 24-year-old named Bill Gates in Seattle. IBM doesn't bother to secure exclusivity on either.</p>
-<p>Gates buys the rights to an existing OS called QDOS for $75,000, licenses it to IBM as PC-DOS, and keeps the right to sell it to anyone else as MS-DOS. Intel keeps the right to sell its 8088 chip to anyone else. Within three years, Compaq and other "IBM-compatible" clones — running MS-DOS on Intel chips — are outselling IBM.</p>
-<p>IBM invented the PC. Intel and Microsoft owned it. By 1995 Microsoft was worth more than IBM. The hardest decision in corporate history was the one IBM did not notice it was making on August 12, 1981.</p>`,
- src:"Robert X. Cringely, Accidental Empires (1992); Paul Carroll, Big Blues (1993)",
- title_pt:"A Entrega da IBM · 12 de Agosto de 1981",
- body_pt:`<p>A IBM está construindo seu primeiro computador pessoal sob esmagadora pressão de tempo — 12 meses do conceito à prateleira. Para ganhar tempo, dois componentes críticos são terceirizados: o microprocessador vai para a Intel, o sistema operacional vai para um jovem de 24 anos chamado Bill Gates em Seattle. A IBM não se dá ao trabalho de garantir exclusividade em nenhum dos dois.</p>
-<p>Gates compra os direitos de um SO existente chamado QDOS por US$ 75.000, licencia-o à IBM como PC-DOS, e mantém o direito de vendê-lo a qualquer outro como MS-DOS. A Intel mantém o direito de vender seu chip 8088 a qualquer outro. Em três anos, a Compaq e outros clones "IBM-compatíveis" — rodando MS-DOS em chips Intel — vendem mais do que a IBM.</p>
-<p>A IBM inventou o PC. Intel e Microsoft tomaram posse dele. Em 1995 a Microsoft valia mais do que a IBM. A decisão mais difícil da história corporativa foi aquela que a IBM não percebeu estar tomando em 12 de agosto de 1981.</p>`,
- src_pt:"Robert X. Cringely, Accidental Empires (1992); Paul Carroll, Big Blues (1993)"},
-
-{slug:"n-christensen-bedside", type:"lectio", f:"N", title:"Christensen's Bedside Revelation",
- body:`<p>Clay Christensen, Harvard Business School professor and author of <em>The Innovator's Dilemma</em>, was diagnosed with cancer at 59. The treatment left him bed-ridden for months. He had spent his career teaching executives to measure everything. Now, in bed, he asked himself what he had actually measured in his own life.</p>
-<p>He noticed he had measured his career in dollars, titles, publications. He had not measured his marriage, his children, his faith, the people he had quietly helped. Nobody at his funeral would talk about his dollars; they would talk about the measurements he had neglected.</p>
-<p>From that bedside he wrote <em>How Will You Measure Your Life?</em> (2012) — a short book in the same taxonomy as his business books, but applied where the math is harder. The most quoted line: "It's easier to hold to your principles 100% of the time than it is to hold to them 98% of the time."</p>`,
- src:"Clayton Christensen, How Will You Measure Your Life? (2012)",
- title_pt:"A Revelação de Christensen no Leito",
- body_pt:`<p>Clay Christensen, professor da Harvard Business School e autor de <em>O Dilema do Inovador</em>, foi diagnosticado com câncer aos 59. O tratamento o deixou acamado por meses. Ele passou a carreira ensinando executivos a medir tudo. Agora, na cama, perguntou a si mesmo o que de fato tinha medido na própria vida.</p>
-<p>Percebeu que tinha medido a carreira em dólares, cargos, publicações. Não tinha medido o casamento, os filhos, a fé, as pessoas que silenciosamente ajudou. Ninguém no seu funeral falaria dos dólares; falariam das medições que ele havia negligenciado.</p>
-<p>Daquele leito escreveu <em>Como Medirá Sua Vida?</em> (2012) — um livro curto na mesma taxonomia dos livros de negócios, mas aplicada onde a matemática é mais difícil. A linha mais citada: "É mais fácil manter seus princípios 100% das vezes do que 98% das vezes."</p>`,
- src_pt:"Clayton Christensen, Como Medirá Sua Vida? (2012)"},
-
-// ================================================================
-// PULCHRUM — aesthetic moments
-// ================================================================
-{slug:"p-allegri-miserere", type:"lectio", f:"P", title:"Allegri · The Sistine Secret",
- body:`<p>Gregorio Allegri's <em>Miserere mei, Deus</em>, composed around 1638 for the Sistine Chapel, was the single most jealously guarded piece of music in Europe for 150 years. Papal decree forbade any copy from leaving the chapel; it was sung only during Holy Week by the papal choir, under candlelight dimmed to blackness, and excommunication awaited any singer who transcribed it from memory.</p>
-<p>1770. A 14-year-old visitor hears it twice during Holy Week and, back at the Roman inn that evening, writes out the entire nine-voice score from memory. The boy is Mozart. His father writes home to Salzburg about the feat. The pope, when he learns, does not excommunicate the child — he summons him and awards him a Papal knighthood.</p>
-<p>The piece has been on open sheet music ever since. The single most famous note — the top C — is probably a 19th-century misreading of the original. The mistake is now canonical because it is more beautiful than what Allegri wrote. Sometimes error improves on genius.</p>`,
- src:"Mozart letters, April 1770; Chandos edition commentary",
- audio:"salve-regina.mp3",
- title_pt:"Allegri · O Segredo da Sistina",
- body_pt:`<p>O <em>Miserere mei, Deus</em> de Gregorio Allegri, composto por volta de 1638 para a Capela Sistina, foi a peça musical mais ciosamente guardada da Europa por 150 anos. Decreto papal proibia qualquer cópia de sair da capela; só era cantada durante a Semana Santa pelo coro papal, à luz de velas reduzida a trevas, e excomunhão esperava qualquer cantor que a transcrevesse de memória.</p>
-<p>1770. Um visitante de 14 anos a ouve duas vezes durante a Semana Santa e, de volta à estalagem romana naquela noite, escreve a partitura inteira de nove vozes de memória. O menino é Mozart. O pai escreve para Salzburg sobre o feito. O papa, quando sabe, não excomunga a criança — o convoca e lhe confere uma cavalaria papal.</p>
-<p>A peça está em partitura aberta desde então. A nota mais famosa — o dó agudo — é provavelmente má leitura do século XIX do original. O erro agora é canônico porque é mais belo do que o que Allegri escreveu. Às vezes o erro aperfeiçoa o gênio.</p>`,
- src_pt:"Cartas de Mozart, abr. 1770; comentário da edição Chandos"},
-
-{slug:"p-la-tour-candle", type:"lectio", f:"P", title:"La Tour · The Candle",
- body:`<p>Georges de La Tour, Lorraine, 1640s. He painted almost nothing but candlelight for twenty years. One figure, often female, often biblical, always in a dim room with one visible flame. The light models the face and the hand around it, and the rest of the world is dark.</p>
-<p>His <em>Magdalene with the Smoking Flame</em>, <em>Education of the Virgin</em>, <em>Christ in the Carpenter's Shop</em>, <em>Repentant Magdalene</em> — all run the same visual argument. Grace is a single flame; the rest of reality is not visible by its own light. Caravaggio invented tenebrism; La Tour quieted it.</p>
-<p>Forgotten until 1915, when a Louvre curator stumbled on a La Tour sold as a Vermeer forgery. Now one of the most reproduced Catholic artists of the 17th century, with one of the smallest extant corpora — about 40 paintings survive.</p>`,
- src:"Pierre Rosenberg, Georges de La Tour (Hazan, 2016)",
- title_pt:"La Tour · A Vela",
- body_pt:`<p>Georges de La Tour, Lorena, anos 1640. Pintou quase nada além de luz de vela por vinte anos. Uma figura, muitas vezes feminina, muitas vezes bíblica, sempre numa sala escura com uma única chama visível. A luz modela o rosto e a mão em torno dela, e o resto do mundo é escuridão.</p>
-<p>Sua <em>Madalena da Chama Enfumaçada</em>, <em>Educação da Virgem</em>, <em>Cristo na Oficina do Carpinteiro</em>, <em>Madalena Arrependida</em> — todas correm o mesmo argumento visual. A graça é uma única chama; o resto da realidade não é visível por luz própria. Caravaggio inventou o tenebrismo; La Tour o silenciou.</p>
-<p>Esquecido até 1915, quando um curador do Louvre tropeçou num La Tour vendido como falsificação de Vermeer. Hoje um dos artistas católicos mais reproduzidos do séc. XVII, com um dos corpora existentes mais pequenos — sobrevivem cerca de 40 quadros.</p>`,
- src_pt:"Pierre Rosenberg, Georges de La Tour (Hazan, 2016)"},
-
-{slug:"p-caravaggio-judith", type:"lectio", f:"P", title:"Caravaggio · Judith",
- body:`<p>Rome, c. 1599. Caravaggio paints Judith beheading Holofernes mid-cut. The composition is unprecedented in Western art: the saint does the work with her own arms, not in retrospect, not after; she is doing it right now, with a face of focused revulsion. The old servant beside her holds the cloth to catch the head, mouth open in the kind of grimace Caravaggio knew from watching surgery.</p>
-<p>Holofernes is still alive in the painting. His eyes have begun to roll, blood arcs from the neck, the mouth is open in the first sound of the scream that will not finish. Caravaggio had seen men die. The painting knows what a dying man's face does, and what killing someone does to the killer's face. Judith's beauty is intact. Her composure is cracking.</p>
-<p>400 years later, Artemisia Gentileschi — the first great female painter of the Baroque, who was raped by her tutor Agostino Tassi and painted Judith obsessively afterwards — turned this painting into her lifetime subject. Caravaggio handed her the knife.</p>`,
- src:"Caravaggio, Judith Beheading Holofernes, c. 1599, Palazzo Barberini, Rome",
- title_pt:"Caravaggio · Judite",
- body_pt:`<p>Roma, c. 1599. Caravaggio pinta Judite decapitando Holofernes no meio do corte. A composição é inédita na arte ocidental: a santa faz o trabalho com os próprios braços, não em retrospecto, não depois; está fazendo agora, com rosto de repulsa focada. A velha serva ao seu lado segura o pano para pegar a cabeça, boca aberta no tipo de careta que Caravaggio conhecia de assistir a cirurgias.</p>
-<p>Holofernes ainda está vivo no quadro. Os olhos começaram a revirar, o sangue jorra do pescoço, a boca está aberta no primeiro som do grito que não vai terminar. Caravaggio tinha visto homens morrer. O quadro sabe o que faz o rosto de um moribundo, e o que matar alguém faz ao rosto do assassino. A beleza de Judite está intacta. O seu autodomínio está rachando.</p>
-<p>400 anos depois, Artemisia Gentileschi — a primeira grande pintora do Barroco, estuprada pelo tutor Agostino Tassi e que pintou Judite obsessivamente depois — fez deste quadro o tema de toda a sua vida. Caravaggio pôs-lhe a faca na mão.</p>`,
- src_pt:"Caravaggio, Judite Decapitando Holofernes, c. 1599, Palazzo Barberini, Roma"},
-
-{slug:"p-parmigianino-neck", type:"lectio", f:"P", title:"Parmigianino · The Long Neck",
- body:`<p>Parmigianino's <em>Madonna with the Long Neck</em>, 1540, in the Uffizi. The Virgin's neck is a column. The infant Christ is twice the normal size of a baby, draped limp across her knees in a pose that quotes Michelangelo's <em>Pietà</em> but of the living, not the dead. A single column, no church, stretches behind her — unfinished at the top. In the lower corner, a tiny prophet unrolls a scroll nobody will read.</p>
-<p>This is Mannerism at its most daring. Parmigianino is painting not the Madonna but a dream of the Madonna — stretched, impossible, somehow more holy than a correct proportion would be. Four centuries later he still looks modern. He died at 37 obsessed with alchemy; he had stopped painting.</p>`,
- src:"Parmigianino, Madonna with the Long Neck, 1540, Uffizi, Florence",
- title_pt:"Parmigianino · O Pescoço Longo",
- body_pt:`<p>A <em>Madona do Pescoço Longo</em> de Parmigianino, 1540, na Uffizi. O pescoço da Virgem é uma coluna. O menino Cristo é duas vezes o tamanho normal de um bebê, estendido lânguido sobre o seu joelho numa pose que cita a <em>Pietà</em> de Michelangelo mas do vivo, não do morto. Uma única coluna, nenhuma igreja, estende-se atrás dela — inacabada no topo. No canto inferior, um profeta minúsculo desenrola um pergaminho que ninguém vai ler.</p>
-<p>Isto é o Maneirismo no seu mais ousado. Parmigianino pinta não a Madona, mas um sonho da Madona — alongada, impossível, de algum modo mais santa do que seria uma proporção correta. Quatro séculos depois ainda parece moderno. Morreu aos 37 obcecado com alquimia; havia parado de pintar.</p>`,
- src_pt:"Parmigianino, Madona do Pescoço Longo, 1540, Uffizi, Florença"},
-
-{slug:"p-victimae", type:"sententia", f:"P", title:"Victimae Paschali Laudes",
- body:`<blockquote>Mors et vita duello conflixere mirando: dux vitae mortuus, regnat vivus.<br><em>Death and life have fought a wondrous duel: the author of life, dead, now reigns, alive.</em></blockquote>
-<p>The Easter Sequence, c. 1040, by Wipo of Burgundy. One of only four medieval sequences retained in the Roman Missal after Trent. Sung at Easter Mass for a thousand years. The two antithetical lines describe the entire paschal mystery with the economy of a theorem.</p>`,
- src:"Wipo of Burgundy, Victimae Paschali Laudes, c. 1040",
- audio:"regina-caeli.mp3",
- title_pt:"Victimae Paschali Laudes",
- body_pt:`<blockquote>Mors et vita duello conflixere mirando: dux vitae mortuus, regnat vivus.<br><em>A morte e a vida travaram um duelo admirável: o autor da vida, morto, agora reina, vivo.</em></blockquote>
-<p>A Sequência Pascal, c. 1040, de Wipo da Borgonha. Uma das quatro únicas sequências medievais retidas no Missal Romano após Trento. Cantada na Missa pascal por mil anos. Os dois versos antitéticos descrevem todo o mistério pascal com a economia de um teorema.</p>`,
- src_pt:"Wipo da Borgonha, Victimae Paschali Laudes, c. 1040"},
-
-{slug:"p-stjohn-cell", type:"lectio", f:"P", title:"John of the Cross · The Toledo Cell",
- body:`<p>Toledo, 1577. John of the Cross is 35, a Carmelite reformer whose own order has turned on him. He is kidnapped by his fellow Calced Carmelites, locked in a six-by-ten foot cell with no window, and whipped weekly for nine months.</p>
-<p>In that darkness, without pen or paper for most of it, he composes in his head the poems that will become the <em>Dark Night of the Soul</em>, the <em>Spiritual Canticle</em>, and the <em>Living Flame of Love</em>. On the night of August 15, 1578, by the light of a half-moon through a slit in the wall, he unravels threads from the cover of a water jug, braids them into a rope, and climbs down the exterior wall of the monastery into the streets of Toledo.</p>
-<p>He is still cold. He will die at 49 of erysipelas in poverty. The poems written in that cell are now the summit of the Spanish lyric. The Holy See made him a Doctor of the Church in 1926.</p>`,
- src:"Gerald Brenan, St John of the Cross (1973); Crisógono de Jesús, Vida de San Juan de la Cruz (1946)",
- title_pt:"João da Cruz · A Cela de Toledo",
- body_pt:`<p>Toledo, 1577. João da Cruz tem 35 anos, um carmelita reformador cuja própria ordem se voltou contra ele. É raptado pelos confrades carmelitas calçados, trancado numa cela de dois por três metros sem janela, e açoitado semanalmente por nove meses.</p>
-<p>Nessa escuridão, sem pena ou papel na maior parte do tempo, compõe de cabeça os poemas que se tornarão a <em>Noite Escura da Alma</em>, o <em>Cântico Espiritual</em> e a <em>Chama Viva do Amor</em>. Na noite de 15 de agosto de 1578, à luz de meia-lua por uma fresta na parede, desfia fios da capa de uma bilha de água, trança-os numa corda e desce o muro exterior do mosteiro para as ruas de Toledo.</p>
-<p>Ainda está com frio. Morrerá aos 49 de erisipela, em pobreza. Os poemas escritos naquela cela são hoje o cume da lírica espanhola. A Santa Sé o fez Doutor da Igreja em 1926.</p>`,
- src_pt:"Gerald Brenan, San Juan de la Cruz (1973); Crisógono de Jesús, Vida de San Juan de la Cruz (1946)"},
-
-// ================================================================
-// PERCEPTIO — drills and illusions
-// ================================================================
-{slug:"c-checkerboard", type:"exercitium", f:"C", title:"The Shadow That Isn't",
- body:`<p>Edward Adelson, MIT, 1995. He drew a checkerboard with a green cylinder casting a shadow across it. Two squares — one marked A, one marked B — are labeled. A looks like a dark square; B looks like a light square in shadow.</p>
-<p>They are identical. Exact same RGB value. Every viewer who runs this test says Adelson has lied until they cover the rest of the image with a strip of paper and see for themselves that A and B are the same gray.</p>`,
- reveal:`<p>What you see is not pixel brightness. Your visual system corrects for shadow — it tries to tell you what the material <em>would</em> be if the shadow were removed. For almost every task in life this is a feature. For judging reality precisely, it is a lie your eye tells on your behalf.</p>
-<p>Every "I saw it with my own eyes" has this layer in it. Trust eyewitness testimony accordingly.</p>`,
- src:"Edward H. Adelson, Checkershadow illusion, MIT Perceptual Science Group, 1995",
- title_pt:"A Sombra Que Não É",
- body_pt:`<p>Edward Adelson, MIT, 1995. Desenhou um tabuleiro de xadrez com um cilindro verde lançando uma sombra sobre ele. Dois quadrados — um marcado A, outro B — são rotulados. A parece um quadrado escuro; B parece um quadrado claro na sombra.</p>
-<p>São idênticos. Exatamente o mesmo valor RGB. Todo espectador que corre este teste diz que Adelson mentiu até cobrir o resto da imagem com uma tira de papel e ver por si mesmo que A e B são o mesmo cinza.</p>`,
- reveal_pt:`<p>O que você vê não é o brilho do pixel. O seu sistema visual corrige a sombra — tenta dizer-lhe o que o material <em>seria</em> se a sombra fosse retirada. Para quase toda tarefa da vida isso é uma vantagem. Para julgar a realidade com precisão, é uma mentira que o seu olho conta em seu nome.</p>
-<p>Todo "eu vi com meus próprios olhos" tem esta camada. Trate o testemunho ocular com desconfiança proporcional.</p>`,
- src_pt:"Edward H. Adelson, Checkershadow illusion, MIT Perceptual Science Group, 1995"},
-
-{slug:"c-dress", type:"lectio", f:"C", title:"The Dress · 2015",
- body:`<p>February 2015. A photograph of a dress posted to Tumblr by a woman in Scotland tears the internet apart overnight. About 57% of viewers see it as white and gold. About 43% see it as blue and black. There are no shades of grey — people see one or the other, confidently, and cannot shift.</p>
-<p>The dress is actually blue and black (verified from the manufacturer). The photograph was taken against a strong yellow light source. Your brain's automatic color-correction either assumes the dress is in yellow light (then it corrects to white and gold) or in blue shadow (then it corrects to blue and black). Which assumption your brain makes depends on your personal history of light — mostly whether you are a morning person or a night person.</p>
-<p>This is the most convincing single demonstration that reality as you see it is a <em>model</em> your brain is running, not pixels it is receiving. Your argument with the other camp cannot be won by better eyesight. You are literally running different models.</p>`,
- src:"Lafer-Sousa, Hermann & Conway, Current Biology (2015)",
- title_pt:"O Vestido · 2015",
- body_pt:`<p>Fevereiro de 2015. Uma foto de um vestido postada no Tumblr por uma mulher na Escócia rasga a internet de um dia para o outro. Cerca de 57% dos espectadores o veem como branco e dourado. Cerca de 43% o veem como azul e preto. Não há tons de cinza — as pessoas veem um ou outro, com confiança, e não conseguem mudar.</p>
-<p>O vestido é, de fato, azul e preto (verificado pelo fabricante). A foto foi tirada contra uma fonte de luz amarela forte. A correção automática de cor do seu cérebro ou supõe que o vestido está em luz amarela (então corrige para branco e dourado) ou em sombra azul (então corrige para azul e preto). Qual suposição seu cérebro faz depende da sua história pessoal de luz — basicamente se você é pessoa de manhã ou de noite.</p>
-<p>Esta é a demonstração mais convincente de que a realidade como você a vê é um <em>modelo</em> que o seu cérebro está rodando, não pixels que está recebendo. A sua discussão com o outro grupo não pode ser ganha com melhor visão. Vocês estão literalmente rodando modelos diferentes.</p>`,
- src_pt:"Lafer-Sousa, Hermann & Conway, Current Biology (2015)"},
-
-{slug:"c-inattentional", type:"exercitium", f:"C", title:"Inattentional Blindness · Your Own Hand",
- body:`<p>Right now, look at your left hand (if you're right-handed) or your right hand (if you're left-handed). The one you use less. How many freckles, scars, moles, or marks does it have, exactly? Which knuckle is biggest? Where is the longest vein? Are the lines on the palm continuous or broken?</p>
-<p>You have carried this hand with you every waking second of your life. If you cannot answer four of those five questions without checking, you are inattentionally blind to a thing that has never been more than three feet from your eyes.</p>`,
- reveal:`<p>The point is not that your hand matters. The point is that inattentional blindness is not a bug that applies to invisible gorillas in special videos. It applies to your own body, your spouse's face, the room you are in. We walk through life with a thin cognitive summary of what is near us and never update it. When someone shows us the actual detail, it reads as new.</p>
-<p>Fix: once a week, look at one familiar thing as if you had never seen it before. One minute. The practice is called <em>beholding</em>, and the medievals used it as a form of prayer.</p>`,
- src:"Mack & Rock, Inattentional Blindness (1998); adapted drill",
- title_pt:"Cegueira por Desatenção · Sua Própria Mão",
- body_pt:`<p>Agora, olhe para sua mão esquerda (se for destro) ou direita (se for canhoto). A que você usa menos. Quantas sardas, cicatrizes, pintas ou marcas ela tem, exatamente? Qual nó dos dedos é o maior? Onde está a veia mais comprida? As linhas da palma são contínuas ou quebradas?</p>
-<p>Você carregou esta mão consigo cada segundo acordado da sua vida. Se não consegue responder quatro das cinco perguntas sem conferir, você é cego por desatenção a uma coisa que nunca esteve a mais de um metro dos seus olhos.</p>`,
- reveal_pt:`<p>O ponto não é que sua mão importe. O ponto é que a cegueira por desatenção não é um bug que se aplica a gorilas invisíveis em vídeos especiais. Aplica-se ao próprio corpo, ao rosto do cônjuge, ao cômodo em que você está. Andamos pela vida com um resumo cognitivo fino do que nos cerca e nunca o atualizamos. Quando alguém nos mostra o detalhe real, soa como novo.</p>
-<p>Cura: uma vez por semana, olhe para uma coisa familiar como se nunca a tivesse visto. Um minuto. A prática chama-se <em>contemplação</em>, e os medievais a usavam como forma de oração.</p>`,
- src_pt:"Mack & Rock, Inattentional Blindness (1998); exercício adaptado"},
-
-{slug:"c-spotlight", type:"lectio", f:"C", title:"The Spotlight Effect",
- body:`<p>Thomas Gilovich, Cornell, 2000. He had subjects wear an embarrassing Barry Manilow t-shirt into a room of strangers, then estimate how many of the strangers had noticed. Average estimate: 50%. Actual: 23%. Repeated with social gaffes, with awkward comments, with people they were sure had seen them trip — the subjects overestimated how much they stood out by a factor of two.</p>
-<p>The <em>spotlight effect</em>: we are the central characters of our own lives, so we feel permanently observed. The strangers around us are the central characters of theirs. They barely noticed you. They did not notice what you were wearing, did not catch the awkward sentence, did not see you trip. This is not consolation. This is calibration. Your social fear is miscalibrated by exactly 2×.</p>`,
- src:"Gilovich, Medvec & Savitsky, Journal of Personality and Social Psychology (2000)",
- title_pt:"O Efeito Holofote",
- body_pt:`<p>Thomas Gilovich, Cornell, 2000. Fez com que sujeitos entrassem numa sala de estranhos com uma camiseta embaraçosa de Barry Manilow, depois estimassem quantos dos estranhos teriam notado. Estimativa média: 50%. Real: 23%. Repetido com gafes sociais, comentários constrangedores, pessoas que eles tinham certeza de que os tinham visto tropeçar — os sujeitos superestimaram o quanto se destacavam por um fator de dois.</p>
-<p>O <em>efeito holofote</em>: somos o personagem central da própria vida, por isso nos sentimos permanentemente observados. Os estranhos à nossa volta são os personagens centrais das suas. Eles mal te notaram. Não notaram o que você vestia, não captaram a frase constrangedora, não te viram tropeçar. Isto não é consolo. É calibração. Seu medo social está mal calibrado em exatamente 2×.</p>`,
- src_pt:"Gilovich, Medvec & Savitsky, Journal of Personality and Social Psychology (2000)"},
-
-{slug:"c-stroop", type:"exercitium", f:"C", title:"Stroop · Fight Your Own Brain",
- body:`<p>Classic experiment, J. Ridley Stroop, 1935. Read these color words out loud, as fast as you can:</p>
-<p><strong>RED · GREEN · BLUE · YELLOW · ORANGE</strong></p>
-<p>Now say the color of the ink of each word, as fast as you can:</p>
-<p><span style="color:#00AA66">RED</span> · <span style="color:#F87171">GREEN</span> · <span style="color:#FACC15">BLUE</span> · <span style="color:#A78BFA">YELLOW</span> · <span style="color:#60A5FA">ORANGE</span></p>`,
- reveal:`<p>The second task takes you about 50% longer than the first. The word is read automatically by System 1 and competes with the color, which must be named deliberately by System 2. Every tenth of a second of slowness is the sound of your prefrontal cortex wrestling your reading reflex.</p>
-<p>The Stroop effect is the cleanest demonstration you will ever get that "I decided to do X" is not what you think it is. Your deciding system is weaker than your automatic systems. Every habit you form, formed consciously once, is being forged into something that will beat conscious decision later. Build the habits you would want to win.</p>`,
- src:"J. Ridley Stroop, Journal of Experimental Psychology (1935)",
- title_pt:"Stroop · Lute Contra Seu Próprio Cérebro",
- body_pt:`<p>Experiência clássica, J. Ridley Stroop, 1935. Leia estas palavras de cor em voz alta, o mais rápido que puder:</p>
-<p><strong>VERMELHO · VERDE · AZUL · AMARELO · LARANJA</strong></p>
-<p>Agora diga a cor da tinta de cada palavra, o mais rápido que puder:</p>
-<p><span style="color:#00AA66">VERMELHO</span> · <span style="color:#F87171">VERDE</span> · <span style="color:#FACC15">AZUL</span> · <span style="color:#A78BFA">AMARELO</span> · <span style="color:#60A5FA">LARANJA</span></p>`,
- reveal_pt:`<p>A segunda tarefa demora cerca de 50% mais do que a primeira. A palavra é lida automaticamente pelo Sistema 1 e compete com a cor, que deve ser nomeada deliberadamente pelo Sistema 2. Cada décimo de segundo de lentidão é o som do seu córtex pré-frontal lutando com seu reflexo de leitura.</p>
-<p>O efeito Stroop é a demonstração mais limpa que você terá de que "eu decidi fazer X" não é o que você pensa. Seu sistema de decisão é mais fraco que seus sistemas automáticos. Todo hábito que você forma, formado conscientemente uma vez, está sendo forjado em algo que vai vencer a decisão consciente depois. Construa os hábitos que você quer que vençam.</p>`,
- src_pt:"J. Ridley Stroop, Journal of Experimental Psychology (1935)"},
-
-{slug:"c-dunning-kruger", type:"lectio", f:"C", title:"Dunning-Kruger · The Unknown Known",
- body:`<p>David Dunning and Justin Kruger, Cornell, 1999. They tested subjects on logic, grammar, and humor, then asked each one to estimate where they ranked. The weakest performers (bottom quartile) estimated they were in the 62nd percentile. The strongest (top quartile) estimated they were in the 72nd. Both groups were wrong; the asymmetry was predictable.</p>
-<p>The weak don't know they are weak because the skill that would tell them they are weak is the same skill they lack. The strong assume others know what they know — the "expert underestimate." The entire competence landscape has this bend built into it.</p>
-<p>Operative rule: ask yourself honestly where you rank, then move your answer one quartile in the right direction. If you are confident you are in the top 10%, you're in the top 20%. If you are sure you are mediocre, you are probably better than that. The direction of error is not random.</p>`,
- src:"Kruger & Dunning, Journal of Personality and Social Psychology (1999)",
- title_pt:"Dunning-Kruger · O Conhecido Desconhecido",
- body_pt:`<p>David Dunning e Justin Kruger, Cornell, 1999. Testaram sujeitos em lógica, gramática e humor, depois pediram a cada um que estimasse onde se classificava. Os de pior desempenho (quartil inferior) estimaram estar no percentil 62. Os melhores (quartil superior) estimaram estar no 72. Ambos os grupos erraram; a assimetria era previsível.</p>
-<p>Os fracos não sabem que são fracos porque a habilidade que lhes diria que são fracos é a mesma que lhes falta. Os fortes supõem que os outros sabem o que eles sabem — a "subestimação do perito". Toda a paisagem de competência tem esta curva embutida.</p>
-<p>Regra operativa: pergunte-se honestamente onde você se classifica, depois mova sua resposta um quartil na direção certa. Se tem certeza de estar no top 10%, está no top 20%. Se tem certeza de ser mediano, provavelmente é melhor. A direção do erro não é aleatória.</p>`,
- src_pt:"Kruger & Dunning, Journal of Personality and Social Psychology (1999)"},
-
-// ================================================================
-// HISTORIA — overlooked pivots
-// ================================================================
-{slug:"h-malta-1565", type:"lectio", f:"H", rare:1, title:"The Great Siege of Malta · 1565",
- body:`<p>Suleiman the Magnificent sends 40,000 Ottoman troops to take the small island of Malta, held by 500 Knights of St. John and 6,000 Maltese militia. Grand Master Jean Parisot de Valette, 70 years old, defends it. The siege lasts from May 18 to September 11, 1565. Nearly four months of unbroken artillery bombardment, nineteen assaults.</p>
-<p>At Fort St. Elmo alone, the Ottomans lose approximately 6,000 men to take a position defended by about 1,500. When they finally capture it, Turgut Reis — the legendary corsair commanding the siege — has been killed by a stone splinter. The main fort, Birgu, holds. On September 7, Spanish relief lands at Mellieha. The Ottomans retreat on September 11 with about 25,000 dead.</p>
-<p>Voltaire: "Nothing is better known than the siege of Malta." He was writing in 1756 and already it was fading. The Mediterranean turned on this siege. Had Malta fallen, the Ottoman fleet would have wintered within striking range of Sicily and Rome.</p>`,
- src:"Ernle Bradford, The Great Siege (1961); Francisco Balbi di Correggio, Diario (1568)",
- title_pt:"O Grande Cerco de Malta · 1565",
- body_pt:`<p>Solimão, o Magnífico, envia 40.000 soldados otomanos para tomar a pequena ilha de Malta, defendida por 500 Cavaleiros de São João e 6.000 milicianos malteses. O grão-mestre Jean Parisot de Valette, 70 anos, a defende. O cerco dura de 18 de maio a 11 de setembro de 1565. Quase quatro meses de bombardeio ininterrupto, dezenove assaltos.</p>
-<p>Só no Forte de Santo Elmo, os otomanos perdem cerca de 6.000 homens para tomar uma posição defendida por aproximadamente 1.500. Quando enfim o capturam, Turgut Reis — o lendário corsário que comandava o cerco — foi morto por uma lasca de pedra. O forte principal, Birgu, resiste. Em 7 de setembro, o socorro espanhol desembarca em Mellieha. Os otomanos retiram-se em 11 de setembro com cerca de 25.000 mortos.</p>
-<p>Voltaire: "Nada é mais conhecido do que o cerco de Malta." Escrevia em 1756 e já se desvanecia. O Mediterrâneo virou-se neste cerco. Se Malta tivesse caído, a frota otomana teria invernado a distância de ataque da Sicília e de Roma.</p>`,
- src_pt:"Ernle Bradford, The Great Siege (1961); Francisco Balbi di Correggio, Diario (1568)"},
-
-{slug:"h-foucauld", type:"lectio", f:"H", title:"Charles de Foucauld · Hermit of the Hoggar",
- body:`<p>Paris, 1886. Charles de Foucauld is 28, a French cavalry officer who has resigned his commission to live on a dissolute inheritance. He walks into a Paris confessional, makes his first confession in thirteen years, and walks out a different person. He trains as a Trappist, then as a hermit, and in 1901 he moves to the Tamanrasset oasis in the Algerian Hoggar — alone, Catholic, surrounded by the Muslim Tuareg.</p>
-<p>He never baptises anyone. He never argues. He translates Tuareg poetry and compiles the first Tuareg-French dictionary. He lives on dates and millet. He writes to a friend: "I want to shout the gospel from the rooftops not with my words but with my life."</p>
-<p>December 1, 1916. A raiding party, confused about who he was, drags him from his hut, binds him, and after some hours of standing him in the sun, shoots him by accident when the raiders panic. Beatified in 2005. Canonized by Francis in 2022. He had told his Muslim neighbours that his religion was love; they buried him in a shallow grave and prayed over it.</p>`,
- src:"Jean-Jacques Antier, Charles de Foucauld (1997)",
- title_pt:"Charles de Foucauld · Eremita do Hoggar",
- body_pt:`<p>Paris, 1886. Charles de Foucauld tem 28 anos, um oficial de cavalaria francês que renunciou à comissão para viver de uma herança dissipada. Entra num confessionário parisiense, faz a primeira confissão em treze anos, e sai outra pessoa. Treina-se como trapista, depois como eremita, e em 1901 muda-se para o oásis de Tamanrasset, no Hoggar argelino — sozinho, católico, cercado pelos tuaregues muçulmanos.</p>
-<p>Nunca batiza ninguém. Nunca discute. Traduz poesia tuaregue e compila o primeiro dicionário tuaregue-francês. Vive de tâmaras e milhete. Escreve a um amigo: "Quero gritar o evangelho dos telhados não com minhas palavras, mas com minha vida."</p>
-<p>1 de dezembro de 1916. Um bando de assaltantes, confuso sobre quem ele era, arrasta-o para fora da cabana, amarra-o, e após algumas horas de pé ao sol, atira nele por acidente, quando os assaltantes entram em pânico. Beatificado em 2005. Canonizado por Francisco em 2022. Dizia aos seus vizinhos muçulmanos que sua religião era o amor; eles o enterraram em sepultura rasa e rezaram sobre ela.</p>`,
- src_pt:"Jean-Jacques Antier, Charles de Foucauld (1997)"},
-
-{slug:"h-mincemeat", type:"lectio", f:"H", title:"Operation Mincemeat · 1943",
- body:`<p>April 1943. The Allies plan to invade Sicily. The Germans know they are planning <em>something</em> in the Mediterranean and will reinforce whichever target they identify. British intelligence runs the most audacious deception operation of the war.</p>
-<p>They acquire the body of a homeless Welshman who committed suicide by rat poison. They dress him in a Royal Marine officer's uniform, gave him an identity ("Major William Martin"), a fiancée (a stock photo from a London intelligence secretary), unpaid bills in his wallet to make him look real, and a briefcase chained to his wrist containing plans for an Allied invasion of Greece and Sardinia. They drop the body from a submarine off the Spanish coast.</p>
-<p>Franco's pro-German Spanish officers find him, photograph the documents, pass them to Berlin. Hitler reinforces Greece and Sardinia with two panzer divisions pulled from Sicily. The Allies land in Sicily on July 9 against light opposition. 160,000 Allied lives are saved by a corpse nobody had loved.</p>`,
- src:"Ewen Montagu, The Man Who Never Was (1953); Ben Macintyre, Operation Mincemeat (2010)",
- title_pt:"Operação Mincemeat · 1943",
- body_pt:`<p>Abril de 1943. Os Aliados planejam invadir a Sicília. Os alemães sabem que planejam <em>alguma coisa</em> no Mediterrâneo e reforçarão o alvo que identificarem. A inteligência britânica conduz a operação de dissimulação mais audaciosa da guerra.</p>
-<p>Adquirem o corpo de um sem-teto galês que se suicidou com veneno de rato. Vestem-no com uniforme de oficial dos Fuzileiros Navais Reais, dão-lhe identidade ("Major William Martin"), noiva (foto de arquivo de uma secretária de inteligência londrina), contas em atraso na carteira para que parecesse real, e uma maleta acorrentada ao pulso com planos para uma invasão aliada da Grécia e da Sardenha. Lançam o corpo de um submarino ao largo da costa espanhola.</p>
-<p>Oficiais espanhóis pró-Alemanha de Franco o encontram, fotografam os documentos, passam a Berlim. Hitler reforça Grécia e Sardenha com duas divisões panzer retiradas da Sicília. Os Aliados desembarcam na Sicília em 9 de julho contra oposição leve. 160.000 vidas aliadas são salvas por um cadáver que ninguém havia amado.</p>`,
- src_pt:"Ewen Montagu, The Man Who Never Was (1953); Ben Macintyre, Operation Mincemeat (2010)"},
-
-{slug:"h-christmas-truce", type:"lectio", f:"H", title:"The Christmas Truce · 1914",
- body:`<p>December 24, 1914. Along a sector of the Western Front near Ypres, German troops put candles on the parapets of their trenches and begin singing <em>Stille Nacht</em>. British troops answer with carols of their own. By Christmas Day, soldiers in a dozen places along the line climb out of the trenches, meet in no-man's-land, exchange buttons and cigarettes, show photographs of families. In a few places they play football.</p>
-<p>The high command of both sides was horrified. By December 26, officers are threatening courts-martial. The war resumed and would not stop for four more years. Nothing like the Truce would happen again in any twentieth-century war.</p>
-<p>Benedict XV had called for a Christmas ceasefire. Both governments had refused. The soldiers imposed it themselves for a day, then obeyed orders to kill each other again. The gap between the men who fight wars and the men who decide them is the Truce's permanent lesson.</p>`,
- src:"Stanley Weintraub, Silent Night (2001); diaries and letters of participants, Imperial War Museum",
- title_pt:"A Trégua de Natal · 1914",
- body_pt:`<p>24 de dezembro de 1914. Num setor da Frente Ocidental perto de Ypres, tropas alemãs colocam velas nos parapeitos das trincheiras e começam a cantar <em>Stille Nacht</em>. Tropas britânicas respondem com seus próprios cânticos. No Natal, soldados em uma dezena de locais ao longo da linha sobem das trincheiras, encontram-se na terra de ninguém, trocam botões e cigarros, mostram fotos de família. Em alguns lugares jogam futebol.</p>
-<p>O alto comando dos dois lados horrorizou-se. Em 26 de dezembro, oficiais ameaçam cortes marciais. A guerra retomou e não pararia por mais quatro anos. Nada como a Trégua aconteceria novamente em nenhuma guerra do século XX.</p>
-<p>Bento XV tinha pedido cessar-fogo de Natal. Os dois governos recusaram. Os soldados o impuseram por si mesmos por um dia, depois obedeceram ordens de matar-se outra vez. A distância entre os homens que lutam guerras e os homens que as decidem é a lição permanente da Trégua.</p>`,
- src_pt:"Stanley Weintraub, Silent Night (2001); diários e cartas dos participantes, Imperial War Museum"},
-
-{slug:"h-vieira", type:"lectio", f:"H", title:"António Vieira · The Jesuit of Two Hemispheres",
- body:`<p>António Vieira, Portuguese Jesuit born 1608 in Lisbon, moves to Brazil at age six and never fits either country afterwards. He becomes the most important Catholic preacher of the seventeenth century, personal confessor to King João IV of Portugal, and tireless defender of the Brazilian Indians and African slaves against the plantation lobby.</p>
-<p>His <em>Sermon of the Mandrake</em> (1653), preached in São Luís do Maranhão, is still assigned in Portuguese literature courses. His public denunciation of the Portuguese Inquisition's persecution of "New Christian" Jewish converts got him condemned by that same Inquisition in 1665 and silenced for two years. Freed, he moved permanently to Bahia and wrote until his death in 1697.</p>
-<p>Fernando Pessoa called him "the Emperor of the Portuguese language." His case files on behalf of indigenous rights are still read in Brazilian law schools. Marcos probably has this one from school.</p>`,
- src:"Thomas Cohen, The Fire of Tongues (1998); João Lúcio de Azevedo, História de António Vieira (1918)",
- title_pt:"António Vieira · O Jesuíta dos Dois Hemisférios",
- body_pt:`<p>António Vieira, jesuíta português nascido em 1608 em Lisboa, muda-se para o Brasil aos seis anos e nunca mais se encaixa em nenhum dos dois países. Torna-se o mais importante pregador católico do século XVII, confessor pessoal do rei D. João IV de Portugal, e incansável defensor dos índios brasileiros e dos escravos africanos contra o lobby das plantações.</p>
-<p>Seu <em>Sermão da Mandrágora</em> (1653), pregado em São Luís do Maranhão, ainda é leitura obrigatória em cursos de literatura portuguesa. Sua denúncia pública da perseguição da Inquisição portuguesa aos cristãos-novos de origem judaica fez com que a mesma Inquisição o condenasse em 1665 e o silenciasse por dois anos. Libertado, mudou-se definitivamente para a Bahia e escreveu até morrer em 1697.</p>
-<p>Fernando Pessoa chamou-o de "o Imperador da língua portuguesa". Seus memoriais em defesa dos direitos indígenas ainda são lidos em faculdades de direito no Brasil.</p>`,
- src_pt:"Thomas Cohen, The Fire of Tongues (1998); João Lúcio de Azevedo, História de António Vieira (1918)"},
-
-{slug:"h-cristiada", type:"lectio", f:"H", title:"La Cristiada · Mexico, 1926-1929",
- body:`<p>1926. The Mexican government, under President Plutarco Elías Calles, enforces anti-clerical laws that close all monasteries, deport all foreign priests, require Mexican priests to register with the state, and ban public religious processions, religious schooling, and even the wearing of clerical clothing in public.</p>
-<p>In response, between 1926 and 1929, roughly 50,000 rural Catholics — most of them campesinos with no military training — take up arms. They are called the <em>Cristeros</em>, after their battle cry "<em>Viva Cristo Rey</em>." They fight the federal army to a stalemate.</p>
-<p>The war ends in 1929 by compromise brokered by the U.S. ambassador. Most of the laws remained on the books but were unenforced. About 90,000 total deaths. Twenty-five Cristero martyrs were canonized by John Paul II in 2000. Graham Greene's 1940 novel <em>The Power and the Glory</em> is set in this era. The last Cristero veterans were still alive in Jalisco villages when the Church announced the canonizations.</p>`,
- src:"Jean Meyer, La Cristiada (1973); Robert Royal, The Catholic Martyrs of the Twentieth Century (2000)",
- title_pt:"La Cristiada · México, 1926-1929",
- body_pt:`<p>1926. O governo mexicano, sob o presidente Plutarco Elías Calles, impõe leis anticlericais que fecham todos os mosteiros, deportam todos os padres estrangeiros, exigem que os padres mexicanos se registrem junto ao Estado, e banem procissões religiosas públicas, ensino religioso, e até o uso de roupa clerical em público.</p>
-<p>Em resposta, entre 1926 e 1929, cerca de 50.000 católicos rurais — a maioria camponeses sem treino militar — pegam em armas. São chamados <em>Cristeros</em>, do grito de guerra "<em>Viva Cristo Rey</em>". Combatem o exército federal até o impasse.</p>
-<p>A guerra termina em 1929 por acordo mediado pelo embaixador americano. A maior parte das leis permaneceu nos livros, mas sem aplicação. Cerca de 90.000 mortes no total. Vinte e cinco mártires cristeros foram canonizados por João Paulo II em 2000. O romance de Graham Greene, <em>O Poder e a Glória</em> (1940), ambienta-se nesta época. Os últimos veteranos cristeros ainda estavam vivos em vilarejos de Jalisco quando a Igreja anunciou as canonizações.</p>`,
- src_pt:"Jean Meyer, La Cristiada (1973); Robert Royal, The Catholic Martyrs of the Twentieth Century (2000)"},
-
-// ================================================================
-// ARSENAL — more from Marcos's essays + Marcos's tone
-// ================================================================
-{slug:"a-sword-christendom", type:"lectio", f:"A", title:"The Sword and the Christendom",
- body:`<p>Marcos's <em>Art of War / Sword of Christendom</em> runs the hypothesis few serious writers now defend openly: that Christianity is not merely compatible with martial virtue but required it for its own survival — and that the forgetting of this fact is why Western Christianity now has no strategic imagination left.</p>
-<p>The data he marshals is unflattering to the comfortable: the Church survived Rome's collapse by producing fighting men (Charles Martel at Tours, the Templars in Outremer, Don Juan at Lepanto, Sobieski at Vienna). It was tamed inside each polity it entered precisely by those men. Remove the martial frame and Christianity becomes humanitarianism; humanitarianism is not durable in history because it has no weapon against predators and no edge against softness.</p>
-<p>The essay is not a brief for war. It is a brief for the <em>structure of defence</em> that any serious civilization carries inside its religious imagination. Those who abandoned it have a 50-year countdown running.</p>`,
- src:"Marcos Nabhan, Art of War / Sword of Christendom, Part I",
- title_pt:"A Espada e a Cristandade",
- body_pt:`<p>A <em>Arte da Guerra / Espada da Cristandade</em> de Marcos corre a hipótese que poucos escritores sérios defendem abertamente hoje: que o cristianismo não é meramente compatível com a virtude marcial, mas a exigiu para a própria sobrevivência — e que o esquecimento desse fato é por que o cristianismo ocidental já não tem imaginação estratégica.</p>
-<p>Os dados que ele arregimenta são desagradáveis aos confortáveis: a Igreja sobreviveu ao colapso de Roma produzindo homens de armas (Charles Martel em Tours, os Templários no Outremer, Dom João em Lepanto, Sobieski em Viena). Foi domada em cada polis em que entrou precisamente por esses homens. Retire o quadro marcial e o cristianismo torna-se humanitarismo; o humanitarismo não é durável na história porque não tem arma contra predadores e nem fio contra a moleza.</p>
-<p>O ensaio não é uma defesa da guerra. É uma defesa da <em>estrutura de defesa</em> que toda civilização séria carrega dentro de sua imaginação religiosa. Os que a abandonaram têm uma contagem regressiva de 50 anos rodando.</p>`,
- src_pt:"Marcos Nabhan, Arte da Guerra / Espada da Cristandade, Parte I"},
-
-{slug:"a-hrp-opening", type:"lectio", f:"A", title:"Human Relations Playbook · The Opening Rule",
- body:`<p>The first rule of Marcos's <em>Complete Human Relations Playbook</em> is deceptively simple: <strong>never say the second sentence until you have heard the other person's first.</strong></p>
-<p>In practice this means: resist the reflex to continue your point when the other person opens their mouth. Let them finish. Let them finish <em>again</em> after you think they are done. Then — and only then — say your next sentence, and let it be shaped by what they just said, not by what you had queued up.</p>
-<p>95% of all conversational damage, the Playbook argues, happens because one person said their next sentence before hearing the other person's first. Negotiation, dating, parenting, sales, pastoral counseling, and diplomacy are all the same practice done at different stakes. The rule is the entire playbook in one line, and the rest of the book is why the rule is so hard.</p>`,
- src:"Marcos Nabhan, The Complete Human Relations Playbook — Definitive Edition",
- title_pt:"Playbook das Relações Humanas · A Regra Inicial",
- body_pt:`<p>A primeira regra do <em>Complete Human Relations Playbook</em> de Marcos é enganosamente simples: <strong>nunca diga a segunda frase até ter ouvido a primeira da outra pessoa.</strong></p>
-<p>Na prática, isto significa: resista ao reflexo de continuar o seu argumento quando a outra pessoa abre a boca. Deixe-a terminar. Deixe-a terminar <em>de novo</em> depois que você achou que terminou. Então — e só então — diga sua próxima frase, e deixe-a ser moldada pelo que ela acabou de dizer, não pelo que você tinha enfileirado.</p>
-<p>95% de todo o dano conversacional, argumenta o Playbook, acontece porque uma pessoa disse a próxima frase antes de ouvir a primeira da outra. Negociação, namoro, paternidade, vendas, aconselhamento pastoral e diplomacia são todos a mesma prática feita com apostas diferentes. A regra é o playbook inteiro numa linha, e o resto do livro é por que a regra é tão difícil.</p>`,
- src_pt:"Marcos Nabhan, O Playbook Completo das Relações Humanas — Edição Definitiva"},
-
-{slug:"a-all-args", type:"sententia", f:"A", title:"The All Arguments",
- body:`<blockquote>Any argument that would persuade a serious person of a serious conclusion requires exactly one of three things: a shared premise, a demonstration of the other's inconsistency, or a change in what the other finds beautiful.<br>— Marcos Nabhan, ALL_ARGUMENTS</blockquote>
-<p>The rest is theater. The skill of argument is not making the proof tighter. It is finding which of the three the current conversation actually hinges on.</p>`,
- src:"Marcos Nabhan, ALL_ARGUMENTS",
- title_pt:"Os Todos os Argumentos",
- body_pt:`<blockquote>Qualquer argumento que persuada uma pessoa séria de uma conclusão séria exige exatamente uma de três coisas: uma premissa partilhada, uma demonstração da inconsistência do outro, ou uma mudança naquilo que o outro acha belo.<br>— Marcos Nabhan, ALL_ARGUMENTS</blockquote>
-<p>O resto é teatro. A habilidade do argumento não é apertar a prova. É descobrir qual das três a conversa atual de fato pede.</p>`,
- src_pt:"Marcos Nabhan, ALL_ARGUMENTS"},
-
-// ================================================================
-// IMAGINES — one new painting walkthrough: La Tour's Magdalene
-// ================================================================
-{slug:"i-mag-01", type:"pictura", f:"I", series:"latour_magdalene", step:1, steps:5,
- img:IMG.latour_magdalene, zoom:{x:50, y:50, scale:1},
- title:"The Whole · The Repentant Magdalene",
- title_pt:"O Todo · A Madalena Penitente",
- audio:"dulcis-jesu.mp3",
- body:`<p>Georges de La Tour, c. 1640. Paris, National Gallery of Art (Washington). 113 by 92 cm. A woman sits at a table in near-darkness. Her hand rests on a skull in her lap. A single candle burns on the table, reflected in a mirror. She is looking at the mirror but not at her own face.</p>
-<p>La Tour painted Mary Magdalene four times, each with a candle, each with a skull, each with a hand touching something. He was the painter who said everything serious in 17th-century France could be said by one flame and one still body.</p>`,
- body_pt:`<p>Georges de La Tour, c. 1640. Paris, National Gallery of Art (Washington). 113 por 92 cm. Uma mulher está sentada a uma mesa em quase trevas. A mão dela repousa sobre um crânio no colo. Uma única vela queima na mesa, refletida num espelho. Ela olha para o espelho mas não para o próprio rosto.</p>
-<p>La Tour pintou Maria Madalena quatro vezes, cada uma com uma vela, cada uma com um crânio, cada uma com uma mão tocando alguma coisa. Foi o pintor que disse que tudo o que é sério na França do século XVII podia ser dito por uma chama e um corpo imóvel.</p>`,
- src:"Georges de La Tour, The Repentant Magdalene, c. 1640, National Gallery of Art, Washington"},
-
-{slug:"i-mag-02", type:"pictura", f:"I", series:"latour_magdalene", step:2, steps:5,
- img:IMG.latour_magdalene, zoom:{x:35, y:55, scale:2.4},
- title:"The Skull",
- title_pt:"O Crânio",
- body:`<p>The hand rests on the skull. The skull rests on her thigh. In Catholic contemplative tradition this is <em>memento mori</em> — remember that you will die. But La Tour's Magdalene is not frightened by it. Her fingers are relaxed. She is not performing penance. She is <em>thinking about something</em> with the skull in her lap, the way you might think with a hand on your dog's head.</p>
-<p>Death is not here as warning but as frame. The next 48 hours of your life are not infinitely important if you will be dead in 20 years. Nor are they trivially unimportant. The Magdalene has arrived at the correct ratio. Nothing in the painting is panicked. The skull is a thinking tool.</p>`,
- body_pt:`<p>A mão repousa no crânio. O crânio repousa na coxa dela. Na tradição contemplativa católica isto é <em>memento mori</em> — lembra-te de que vais morrer. Mas a Madalena de La Tour não está apavorada com isto. Seus dedos estão relaxados. Não encena penitência. Está <em>pensando em alguma coisa</em> com o crânio no colo, do mesmo jeito que você pensa com a mão na cabeça do cão.</p>
-<p>A morte não está aqui como advertência, mas como moldura. As próximas 48 horas da sua vida não são infinitamente importantes se você vai estar morto em 20 anos. Nem são trivialmente sem importância. A Madalena chegou à proporção correta. Nada no quadro está em pânico. O crânio é uma ferramenta de pensamento.</p>`,
- src:"La Tour, Magdalene · the skull"},
-
-{slug:"i-mag-03", type:"pictura", f:"I", series:"latour_magdalene", step:3, steps:5,
- img:IMG.latour_magdalene, zoom:{x:70, y:40, scale:2.6},
- title:"The Flame",
- title_pt:"A Chama",
- body:`<p>A single wax candle. The flame is painted with three horizontal bands — the bluish base, the yellow body, the smoky tip. La Tour painted flames better than any artist before or since. His candles do not light the room the way real candles light rooms; they light the souls in the room the way real grace does.</p>
-<p>Notice what the flame is doing: it is both the source of all visible light and <em>the only thing being actively consumed</em> in the painting. Everything else is still. The flame is burning itself away to let her see. Grace is costly. The candle in a La Tour is theology in wax.</p>`,
- body_pt:`<p>Uma única vela de cera. A chama é pintada com três faixas horizontais — a base azulada, o corpo amarelo, a ponta fumegante. La Tour pintou chamas melhor do que qualquer artista antes ou depois. Suas velas não iluminam a sala como as velas reais iluminam salas; iluminam as almas na sala como a graça real ilumina.</p>
-<p>Repare no que a chama está fazendo: é ao mesmo tempo a fonte de toda luz visível e <em>a única coisa sendo ativamente consumida</em> no quadro. Tudo o mais está imóvel. A chama se queima a si mesma para que ela veja. A graça é custosa. A vela num La Tour é teologia em cera.</p>`,
- src:"La Tour, Magdalene · the flame"},
-
-{slug:"i-mag-04", type:"pictura", f:"I", series:"latour_magdalene", step:4, steps:5,
- img:IMG.latour_magdalene, zoom:{x:58, y:50, scale:2.8},
- title:"The Mirror",
- title_pt:"O Espelho",
- body:`<p>The mirror on the table. She looks at it. She does not see her face in it — the mirror catches only the flame. She is looking at the fire, not at herself. The mirror has been inverted: it is no longer a vanity object but a focusing lens that shows her what she cannot see directly.</p>
-<p>In a vanitas painting of this period, a mirror usually shouts "all is vanity" while the model stares at her beauty. La Tour has turned the convention inside out. The mirror has stopped reflecting the self and reflects only what she is contemplating. The soul that has understood <em>memento mori</em> stops looking at itself and starts looking at the flame it will one day become.</p>`,
- body_pt:`<p>O espelho sobre a mesa. Ela olha para ele. Não vê o próprio rosto nele — o espelho capta apenas a chama. Está olhando para o fogo, não para si. O espelho foi invertido: já não é objeto de vaidade, é lente de foco que lhe mostra o que ela não pode ver diretamente.</p>
-<p>Num quadro de vanitas desta época, um espelho normalmente grita "tudo é vaidade" enquanto a modelo olha para a própria beleza. La Tour virou a convenção do avesso. O espelho parou de refletir o eu e reflete apenas o que ela contempla. A alma que entendeu o <em>memento mori</em> para de olhar para si e começa a olhar para a chama em que um dia se tornará.</p>`,
- src:"La Tour, Magdalene · the mirror"},
-
-{slug:"i-mag-05", type:"pictura", f:"I", series:"latour_magdalene", step:5, steps:5, rare:1,
- img:IMG.latour_magdalene, zoom:{x:40, y:28, scale:2.4},
- title:"The Face We Don't See",
- title_pt:"O Rosto Que Não Vemos",
- body:`<p>Last. We never see her face full-on. The light catches her hair, her neck, the side of her forehead. The eye itself is in shadow. La Tour refuses to tell us whether she is weeping, smiling, resolute, or merely tired.</p>
-<p>This is a 17th-century painter making the move a 20th-century filmmaker would call restraint. You are given enough to know she is interior. You are given exactly nothing that would let you psychologize her into a Hallmark card. Mary Magdalene, saint of the Catholic Church, witness of the Resurrection, is here reduced to a hand, a skull, a flame, and a mirror. Everything else is her private business with God, and La Tour has politely closed the door.</p>
-<p>Now step back. What has the painting given you in 15 minutes? The posture of the examined life. Keep it.</p>`,
- body_pt:`<p>Por último. Nunca vemos o rosto dela de frente. A luz pega o cabelo, o pescoço, o lado da testa. O próprio olho está na sombra. La Tour recusa-se a nos dizer se ela está chorando, sorrindo, resoluta, ou simplesmente cansada.</p>
-<p>É um pintor do séc. XVII fazendo o movimento que um cineasta do séc. XX chamaria de contenção. Você recebe o suficiente para saber que ela é interior. Não recebe exatamente nada que lhe permita psicologizá-la num cartão. Maria Madalena, santa da Igreja Católica, testemunha da Ressurreição, é aqui reduzida a uma mão, um crânio, uma chama e um espelho. Tudo o mais é assunto privado dela com Deus, e La Tour fechou educadamente a porta.</p>
-<p>Agora dê um passo atrás. O que o quadro lhe deu em 15 minutos? A postura da vida examinada. Guarde-a.</p>`,
- src:"La Tour, Magdalene · the whole"}
-
-];
-FOLIOS.push(...V13);
 if (typeof module !== "undefined") module.exports = {FAC, FOLIOS, AXIOM_POOL, IMG, YT};
