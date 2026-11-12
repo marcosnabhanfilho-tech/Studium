@@ -2624,14 +2624,10 @@ const THEOLOGIA_X = [
  src_pt:"Fulton J. Sheen, Life Is Worth Living (DuMont, 1951–57)"},
 {slug:"t-sheen-church-world", type:"visio", f:"T", ytId:"TU1p7Ye9Ppk", ytShort:false,
  title:"Sheen · If the Church Changed, What Would Be the Difference?",
- body:`<p>A three-minute Fulton Sheen argument, delivered on American television in the 1950s and still unanswered sixty years later.</p>
-<p>The move: every generation asks the Church to update her doctrines to match the spirit of the age. Sheen's reply is a question — if the Church agreed, what would be the difference between the Church and the world? A Church that always says what the culture already says is not a Church. It is a mirror.</p>
-<p>The strength of the argument is that it does not defend any particular doctrine. It defends the <em>structure</em> of a doctrinal institution. A thermometer that matches the room temperature is not a thermometer; it is a piece of furniture.</p>`,
+ body:"Three minutes from 1950s television, still unanswered. A thermometer that matches the room temperature is not a thermometer.",
  src:"Fulton J. Sheen · Life Is Worth Living (DuMont / ABC, 1951–57)",
  title_pt:"Sheen · Se a Igreja Mudasse, Qual Seria a Diferença?",
- body_pt:`<p>Um argumento de três minutos de Fulton Sheen, pronunciado na televisão americana nos anos 1950 e ainda não respondido sessenta anos depois.</p>
-<p>O movimento: cada geração pede à Igreja que atualize suas doutrinas para combinar com o espírito dos tempos. A resposta de Sheen é uma pergunta — se a Igreja concordasse, qual seria a diferença entre a Igreja e o mundo? Uma Igreja que sempre diz o que a cultura já diz não é Igreja. É espelho.</p>
-<p>A força do argumento é que não defende nenhuma doutrina particular. Defende a <em>estrutura</em> de uma instituição doutrinal. Um termômetro que coincide com a temperatura do quarto não é termômetro; é peça de mobília.</p>`,
+ body_pt:"Três minutos da televisão dos anos 1950, ainda não respondidos. Um termômetro que coincide com a temperatura do quarto não é termômetro.",
  src_pt:"Fulton J. Sheen · Life Is Worth Living (DuMont / ABC, 1951–57)"},
 
 {slug:"t-everlasting-man", type:"lectio", f:"T", title:"Chesterton's Cave",
