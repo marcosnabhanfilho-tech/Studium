@@ -2630,6 +2630,39 @@ const THEOLOGIA_X = [
  body_pt:"Três minutos da televisão dos anos 1950, ainda não respondidos. Um termômetro que coincide com a temperatura do quarto não é termômetro.",
  src_pt:"Fulton J. Sheen · Life Is Worth Living (DuMont / ABC, 1951–57)"},
 
+// =============== VIDEOS · non-religious wave (v13.7) ===============
+{slug:"f-jobs-stanford", type:"visio", f:"F", ytId:"jiHZqamCD8c", ytShort:false,
+ title:"Jobs · Stanford Commencement, 2005",
+ body:"Fifteen minutes on three stories — connecting the dots, loving what you do, and death as the best invention of life. One of the great commencement speeches ever given.",
+ src:"Steve Jobs · Stanford University, 12 June 2005",
+ title_pt:"Jobs · Formatura de Stanford, 2005",
+ body_pt:"Quinze minutos sobre três histórias — unir os pontos, amar o que você faz, e a morte como a melhor invenção da vida. Um dos grandes discursos de formatura de todos os tempos.",
+ src_pt:"Steve Jobs · Universidade Stanford, 12 de junho de 2005"},
+
+{slug:"c-feynman-why", type:"visio", f:"C", ytId:"MO0r930Sn_8", ytShort:false,
+ title:"Feynman · On \"Why?\" Questions",
+ body:"A journalist asks Feynman how magnets work. His answer turns the question inside out: every \"why\" eventually meets a floor you have to accept. Watch a Nobel-laureate physicist show what it looks like to <em>actually</em> know what you don't know.",
+ src:"Richard Feynman · BBC Horizon, \"Fun to Imagine\", 1983",
+ title_pt:"Feynman · Sobre Perguntas \"Por quê?\"",
+ body_pt:"Um jornalista pergunta a Feynman como ímãs funcionam. Sua resposta vira a pergunta do avesso: todo \"por quê\" eventualmente encontra um chão que você tem que aceitar. Veja um físico laureado com o Nobel mostrar o que é <em>realmente</em> saber o que você não sabe.",
+ src_pt:"Richard Feynman · BBC Horizon, \"Fun to Imagine\", 1983"},
+
+{slug:"p-yoyoma-notre-dame", type:"visio", f:"P", ytId:"h_wYRNoGLkU", ytShort:false,
+ title:"Yo-Yo Ma · Bach in the Rebuilt Notre-Dame",
+ body:"December 2024. Notre-Dame reopens after the fire. Yo-Yo Ma walks into the nave with a cello and plays the Prelude from the First Bach Suite. Three hundred years of music, nine hundred years of stone, five years of rebuilding — one moment.",
+ src:"J.S. Bach · Cello Suite No. 1 in G Major, BWV 1007, Prélude · Notre-Dame de Paris, 7 Dec 2024",
+ title_pt:"Yo-Yo Ma · Bach na Notre-Dame Reconstruída",
+ body_pt:"Dezembro de 2024. Notre-Dame reabre após o incêndio. Yo-Yo Ma entra na nave com um violoncelo e toca o Prelúdio da Primeira Suíte de Bach. Trezentos anos de música, novecentos anos de pedra, cinco anos de reconstrução — um momento.",
+ src_pt:"J.S. Bach · Suíte para Violoncelo No. 1 em Sol Maior, BWV 1007, Prélude · Notre-Dame de Paris, 7 dez 2024"},
+
+{slug:"m-3b1b-calculus", type:"visio", f:"M", ytId:"WUvTyaaNkzM", ytShort:false,
+ title:"3Blue1Brown · The Essence of Calculus",
+ body:"Grant Sanderson shows what calculus is <em>actually</em> doing — the moment you see the circle unroll into a triangle, the fundamental theorem stops being a formula and becomes obvious. The animation does what a textbook can't.",
+ src:"3Blue1Brown · Essence of Calculus, Chapter 1 (2017)",
+ title_pt:"3Blue1Brown · A Essência do Cálculo",
+ body_pt:"Grant Sanderson mostra o que o cálculo <em>realmente</em> está fazendo — no momento em que você vê o círculo se desenrolar em um triângulo, o teorema fundamental deixa de ser uma fórmula e se torna óbvio. A animação faz o que um livro-texto não pode.",
+ src_pt:"3Blue1Brown · Essence of Calculus, Capítulo 1 (2017)"},
+
 {slug:"t-everlasting-man", type:"lectio", f:"T", title:"Chesterton's Cave",
  body:`<p>Chesterton: before Christmas, imagine standing outside Bethlehem on an ordinary night in some year of the reign of Augustus. There is a cave used for livestock. In the cave is a carpenter, his very young wife, and her first child, newly born on straw.</p>
 <p>Nothing visible marks this as the hinge of history. But Chesterton insists: it is the moment when a God who had been very far off entered the smallest and dirtiest and most private corner of the world. The entire shape of Christianity — its love of the particular, its distrust of the merely large — begins here.</p>
