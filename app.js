@@ -236,7 +236,17 @@ function hasLangContent(f, lang){
   return !!(f.body_pt || f.pairs_pt || f.items_pt);
 }
 function pool(){
-  let base = state.filter==="ALL" ? POOL : POOL.filter(f=>f.f===state.filter);
+  // v13.13 — filter can be "ALL" or an array of faculty codes (multi-select).
+  let base;
+  if(filterIsAll()){
+    base = POOL;
+  } else if(Array.isArray(state.filter)){
+    const set = new Set(state.filter);
+    base = POOL.filter(f => set.has(f.f));
+  } else {
+    // Legacy single-string filter
+    base = POOL.filter(f => f.f === state.filter);
+  }
   // v13.10 — ALWAYS filter by language (both EN and PT modes), so video folios
   // whose audio is in the wrong language are hidden regardless of text translations.
   base = base.filter(f => hasLangContent(f, state.lang));
@@ -267,6 +277,17 @@ function facTotalForLang(code){
 function poolTotalForLang(){
   return POOL.filter(f => hasLangContent(f, state.lang)).length;
 }
+// v13.13 — state.filter is either "ALL" or a non-empty array of faculty codes.
+// Helper: is this faculty currently selected?
+function filterIncludes(k){
+  if(state.filter === "ALL") return true;
+  if(Array.isArray(state.filter)) return state.filter.includes(k);
+  // Legacy: single-string filter (older saved state)
+  return state.filter === k;
+}
+function filterIsAll(){
+  return state.filter === "ALL" || (Array.isArray(state.filter) && state.filter.length === 0);
+}
 function renderChips(){
   const grid = document.getElementById("menu-fac-grid");
   if(!grid) return;
@@ -274,20 +295,37 @@ function renderChips(){
   const omniaLabel = t("omnia", "Omnia · all wings");
   const seenLabel = t("seen", "seen");
   const poolTotal = poolTotalForLang();
-  let html = `<button class="menu-fac ${state.filter==="ALL"?"active":""}" data-f="ALL" style="flex:1 1 100%"><span class="mfn">${esc(omniaLabel)}</span><span class="mfp">${totalSeen} / ${poolTotal} ${esc(seenLabel)}</span></button>`;
+  let html = `<button class="menu-fac ${filterIsAll()?"active":""}" data-f="ALL" style="flex:1 1 100%"><span class="mfn">${esc(omniaLabel)}</span><span class="mfp">${totalSeen} / ${poolTotal} ${esc(seenLabel)}</span></button>`;
   for(const k of WING_ORDER){
     if(!FAC[k]) continue;
     const tn = facTotalForLang(k);
     if(tn === 0) continue; // Hide wings with no folios in current language
     const s = seenInFaculty(k);
     const complete = s>=tn;
-    html += `<button class="menu-fac ${state.filter===k?"active":""} ${complete?"complete":""}" data-f="${k}"><span class="mfn">${esc(FAC[k].name)}</span><span class="mfp">${s} / ${tn}${complete?" ✦":""}</span></button>`;
+    const isActive = !filterIsAll() && filterIncludes(k);
+    html += `<button class="menu-fac ${isActive?"active":""} ${complete?"complete":""}" data-f="${k}"><span class="mfn">${esc(FAC[k].name)}</span><span class="mfp">${s} / ${tn}${complete?" ✦":""}</span></button>`;
   }
   grid.innerHTML = html;
 }
+// v13.13 — multi-select: clicking a faculty toggles it in/out of the selection.
+// Clicking ALL clears the selection (back to showing everything).
 function setFilter(code){
-  if(state.filter === code) return;
-  state.filter = code;
+  if(code === "ALL"){
+    if(state.filter === "ALL") return;
+    state.filter = "ALL";
+  } else {
+    // Normalize current filter to an array for toggling.
+    let arr;
+    if(state.filter === "ALL") arr = [];
+    else if(Array.isArray(state.filter)) arr = state.filter.slice();
+    else arr = [state.filter]; // legacy single-string
+    if(arr.includes(code)){
+      arr = arr.filter(c=>c!==code);
+    } else {
+      arr.push(code);
+    }
+    state.filter = arr.length === 0 ? "ALL" : arr;
+  }
   rebuildReel();
   renderChips();
 }
@@ -1185,7 +1223,13 @@ function initDailyChooser(onDone){
 
   const prior = dailyChoiceToday();
   if(prior){
-    if(prior !== state.filter) setFilter(prior);
+    // v13.13 — daily chooser HARD-SETS to one wing (not toggle).
+    const target = prior === "ALL" ? "ALL" : [prior];
+    if(JSON.stringify(state.filter) !== JSON.stringify(target)){
+      state.filter = target;
+      rebuildReel();
+      renderChips();
+    }
     onDone && onDone();
     return;
   }
@@ -1207,7 +1251,13 @@ function initDailyChooser(onDone){
     const b = e.target.closest("button[data-f]"); if(!b) return;
     const f = b.dataset.f;
     recordDailyChoice(f);
-    if(f !== state.filter) setFilter(f);
+    // v13.13 — daily chooser HARD-SETS the single wing (not multi-toggle).
+    const target = f === "ALL" ? "ALL" : [f];
+    if(JSON.stringify(state.filter) !== JSON.stringify(target)){
+      state.filter = target;
+      rebuildReel();
+      renderChips();
+    }
     modal.classList.remove("open");
     sndSeal();
     haptic(16);
@@ -1781,14 +1831,27 @@ async function init(){
   // View back buttons
   $$(".view .back").forEach(b=> b.onclick = closeAllViews);
 
-  // Drawer faculty filter chips
+  // Drawer faculty filter chips — v13.13: multi-select.
+  // Tapping ALL clears and closes the menu. Tapping a faculty toggles it
+  // in/out of the selection and leaves the menu open so you can stack more.
   const mfg = document.getElementById("menu-fac-grid");
   if(mfg) mfg.addEventListener("click", e=>{
     const c = e.target.closest(".menu-fac"); if(!c) return;
-    setFilter(c.dataset.f);
+    const code = c.dataset.f;
+    setFilter(code);
     renderChips();
-    closeMenu();
-    toast(c.dataset.f === "ALL" ? t("omnia","Omnia — all wings") : FAC[c.dataset.f].name);
+    if(code === "ALL"){
+      closeMenu();
+      toast(t("omnia","Omnia — all wings"));
+    } else {
+      // Keep menu open so user can pick more. Toast reflects the new selection.
+      if(filterIsAll()){
+        toast(t("omnia","Omnia — all wings"));
+      } else if(Array.isArray(state.filter)){
+        const names = state.filter.map(k=>FAC[k]?.name || k).join(" · ");
+        toast(names);
+      }
+    }
   });
 
   // Auth modal
