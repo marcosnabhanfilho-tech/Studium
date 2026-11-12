@@ -1,4 +1,4 @@
-const CACHE = "studium-v13.9-video-wave";
+const CACHE = "studium-v13.12-fill-screen";
 const SHELL = ["./", "./index.html", "./styles.css", "./app.js", "./content.js", "./manifest.webmanifest"];
 self.addEventListener("install", e=>{
   e.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL)).then(()=>self.skipWaiting()));
