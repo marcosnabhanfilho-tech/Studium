@@ -910,15 +910,26 @@ function upgradeYT(el){
   const id = el.dataset.yt;
   if(!id) return;
   const isShort = el.dataset.short === "1";
-  const loopParams = isShort ? `&loop=1&playlist=${id}` : "";
-  const src = `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&playsinline=1&rel=0&modestbranding=1${loopParams}`;
+  // v13.3 — mirror YouTube's recommended Share→Embed iframe as closely as possible.
+  //   - no autoplay/mute parameters (they cause some videos to return
+  //     "Video unavailable" even when embedding is allowed)
+  //   - referrerpolicy="strict-origin-when-cross-origin" is required by
+  //     YouTube's modern embed-auth path
+  //   - the `allow` list matches YouTube's own recommendation verbatim
+  //   - user taps once on the thumbnail (to load), then once on YouTube's
+  //     own play button inside the iframe (to start). Slightly worse UX than
+  //     auto-start, but videos actually play.
+  const loopParams = isShort ? `?loop=1&playlist=${id}` : "";
+  const src = `https://www.youtube.com/embed/${id}${loopParams}`;
   const outUrl = `https://youtube.com/${isShort ? "shorts/" : "watch?v="}${id}`;
   el.innerHTML = `
     <iframe
       src="${src}"
-      allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
-      allowfullscreen
+      title="YouTube video player"
       frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
       loading="lazy"></iframe>
     <a class="yt-open-in-yt"
        href="${outUrl}"
