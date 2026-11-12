@@ -922,15 +922,12 @@ function upgradeYT(el){
   //   - the `allow` list matches YouTube's own recommendation verbatim
   //   - autoplay=1&mute=1 is safe now that referrer is set correctly; most
   //     mobile browsers allow muted autoplay from a user gesture (the tap)
-  // v13.5 — use youtube-nocookie.com (YouTube's "privacy-enhanced" embed domain).
-  // The standard youtube.com/embed endpoint runs anti-abuse validation that can
-  // kill a cross-origin embed mid-stream ("Video unavailable" after 2-3 seconds),
-  // and once it flags an origin, subsequent embeds from the same page also fail.
-  // youtube-nocookie.com skips most of that. Same video, same code, far more
-  // permissive. playsinline removed — it conflicts with the nocookie embed auth.
+  // v13.6 — youtube-nocookie.com for permissive embed, no more "Open in YouTube"
+  // overlay (it was blocking YouTube's own "tap to unmute" button in the top-right
+  // corner when autoplay=mute was on). YouTube's own "Video unavailable" screen
+  // already provides a Watch-on-YouTube link, so our overlay was redundant.
   const loopExtra = isShort ? `&loop=1&playlist=${id}` : "";
   const src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&mute=1&rel=0&modestbranding=1${loopExtra}`;
-  const outUrl = `https://youtube.com/${isShort ? "shorts/" : "watch?v="}${id}`;
   el.innerHTML = `
     <iframe
       src="${src}"
@@ -939,12 +936,7 @@ function upgradeYT(el){
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       referrerpolicy="strict-origin-when-cross-origin"
       allowfullscreen
-      loading="lazy"></iframe>
-    <a class="yt-open-in-yt"
-       href="${outUrl}"
-       target="_blank"
-       rel="noopener"
-       onclick="event.stopPropagation()">${esc(state.lang==="pt"?"Abrir no YouTube":"Open in YouTube")} ↗</a>`;
+      loading="lazy"></iframe>`;
 }
 
 // ============== PERSIST TO SUPABASE ==============
