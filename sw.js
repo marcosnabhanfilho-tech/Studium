@@ -1,4 +1,4 @@
-const CACHE = "studium-v13.4-yt-reclick";
+const CACHE = "studium-v13.5-nocookie";
 const SHELL = ["./", "./index.html", "./styles.css", "./app.js", "./content.js", "./manifest.webmanifest"];
 self.addEventListener("install", e=>{
   e.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL)).then(()=>self.skipWaiting()));
