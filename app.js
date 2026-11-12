@@ -909,18 +909,21 @@ async function renderTallies(slug){
 function upgradeYT(el){
   const id = el.dataset.yt;
   if(!id) return;
+  // v13.4 — bail if already upgraded. Without this, every re-click (including
+  // on YouTube's own play button inside the iframe, which is a descendant of
+  // the .lite-yt we listen on) wipes and re-loads the iframe, so the user
+  // can never actually start the video manually. With autoplay=1 this bug
+  // was invisible; without it, it's a dead player.
+  if(el.querySelector("iframe")) return;
   const isShort = el.dataset.short === "1";
-  // v13.3 — mirror YouTube's recommended Share→Embed iframe as closely as possible.
-  //   - no autoplay/mute parameters (they cause some videos to return
-  //     "Video unavailable" even when embedding is allowed)
-  //   - referrerpolicy="strict-origin-when-cross-origin" is required by
-  //     YouTube's modern embed-auth path
+  // v13.3/13.4 — mirror YouTube's recommended Share→Embed iframe closely.
+  //   - referrerpolicy="strict-origin-when-cross-origin" is REQUIRED by
+  //     YouTube's modern embed-auth path (fixes "Video unavailable")
   //   - the `allow` list matches YouTube's own recommendation verbatim
-  //   - user taps once on the thumbnail (to load), then once on YouTube's
-  //     own play button inside the iframe (to start). Slightly worse UX than
-  //     auto-start, but videos actually play.
-  const loopParams = isShort ? `?loop=1&playlist=${id}` : "";
-  const src = `https://www.youtube.com/embed/${id}${loopParams}`;
+  //   - autoplay=1&mute=1 is safe now that referrer is set correctly; most
+  //     mobile browsers allow muted autoplay from a user gesture (the tap)
+  const loopExtra = isShort ? `&loop=1&playlist=${id}` : "";
+  const src = `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&playsinline=1&rel=0&modestbranding=1${loopExtra}`;
   const outUrl = `https://youtube.com/${isShort ? "shorts/" : "watch?v="}${id}`;
   el.innerHTML = `
     <iframe
