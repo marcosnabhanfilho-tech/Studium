@@ -2901,13 +2901,7 @@ const THEOLOGIA_X = [
  body_pt:"Todos os seis episódios da série da BBC de 1983, gravados na casa de Feynman em Altadena. Fogo, elásticos, ímãs, átomos, como as coisas realmente são. A melhor hora de intuição física já filmada.",
  src_pt:"Richard Feynman · BBC / Christopher Sykes · 1983"},
 
-{slug:"c-feynman-pleasure", type:"visio", f:"C", ytId:"7XA_NVn7XnE", ytShort:false,
- title:"The Pleasure of Finding Things Out",
- body:"BBC Horizon, 1981. Feynman on his father teaching him the difference between knowing a bird's name and knowing the bird. On honors, on doubt, on why not knowing doesn't scare him. The best interview ever recorded with a scientist.",
- src:"Richard Feynman · BBC Horizon · 1981",
- title_pt:"O Prazer de Descobrir as Coisas",
- body_pt:"BBC Horizon, 1981. Feynman sobre seu pai ensinando-lhe a diferença entre saber o nome de um pássaro e conhecer o pássaro. Sobre honrarias, sobre dúvida, sobre por que não saber não o assusta. A melhor entrevista já gravada com um cientista.",
- src_pt:"Richard Feynman · BBC Horizon · 1981"},
+// (removed c-feynman-pleasure · strong atheist tone)
 
 // --- MATHEMATICA ---
 {slug:"m-veritasium-godel", type:"visio", f:"M", ytId:"HeQX2HjkcNo", ytShort:false,
@@ -2935,13 +2929,7 @@ const THEOLOGIA_X = [
  body_pt:"Rice Stadium, 12 de setembro de 1962. JFK estabelece a meta da Lua \"não porque sejam fáceis, mas porque são difíceis,\" incluindo a frase \"Por que Rice joga contra Texas?\" A melhor declaração de ambição civilizacional da história americana.",
  src_pt:"John F. Kennedy · Universidade Rice · 12 set 1962"},
 
-{slug:"h-reagan-wall", type:"visio", f:"H", ytId:"Ts3KzfIYVmQ", ytShort:false,
- title:"Mr. Gorbachev, Tear Down This Wall",
- body:"Brandenburg Gate, 12 Jun 1987. The line State Department advisers called \"outlandish and provocative\" and tried seven times to cut. The Wall fell 29 months later.",
- src:"Ronald Reagan · CBS News archive · 1987",
- title_pt:"Sr. Gorbachev, Derrube Este Muro",
- body_pt:"Portão de Brandemburgo, 12 de junho de 1987. A frase que assessores do Departamento de Estado chamaram de \"ultrajante e provocadora\" e tentaram cortar sete vezes. O Muro caiu 29 meses depois.",
- src_pt:"Ronald Reagan · arquivo CBS News · 1987"},
+// (removed h-reagan-wall · uploader disabled embedding)
 
 {slug:"h-vdh-farmer", type:"visio", f:"H", ytId:"U9o-68M0bCU", ytShort:false,
  title:"The Classicist Who Never Left the Farm",
