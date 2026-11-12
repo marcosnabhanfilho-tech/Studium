@@ -141,12 +141,17 @@ body.chrome-shown #topbar{transform:translateY(0);opacity:1;pointer-events:auto}
   position:relative;
   display:flex;flex-direction:column;
   justify-content:center;
-  padding:calc(68px + var(--sat-top)) 22px calc(88px + var(--sat-bot)) 22px;
+  /* v13.12 — padding tightened from 68/88 to 44/50 (saves ~62px of vertical
+     whitespace) now that the side rail auto-fades and no longer competes with
+     text for space. Reclaimed space plus larger font sizes below = text fills
+     the viewport instead of floating in a small centered block. */
+  padding:calc(44px + var(--sat-top)) 22px calc(50px + var(--sat-bot)) 22px;
   /* HARD rule: no vertical scroll inside a page. Horizontal pagination handles
-     long text; vertical scroll is reserved for moving between folios.
-     This fixes the dual-scroll problem the user reported. */
+     long text; vertical scroll is reserved for moving between folios. */
   overflow:hidden;
 }
+/* Pictura pages keep more bottom room for the caption + source line. */
+.slide.pictura .page{padding:calc(44px + var(--sat-top)) 22px calc(68px + var(--sat-bot)) 22px}
 
 /* Density tiers — how to vertically align content in a page */
 .slide.short .page,
@@ -242,23 +247,23 @@ body.chrome-shown #topbar{transform:translateY(0);opacity:1;pointer-events:auto}
   margin:4px 0 16px;color:var(--cream);
 }
 
-/* ---- SHORT folios ---- */
-.slide.short h2{font-size:clamp(2.1rem, 7.2vw, 2.95rem);text-align:center;margin-bottom:22px;line-height:1.1}
-.slide.short .s-body{font-size:clamp(1.3rem, 4.2vw, 1.5rem);text-align:center;line-height:1.5}
-.slide.short .s-body blockquote{font-size:clamp(1.6rem, 5.4vw, 2.1rem);border-left:none;padding:0;text-align:center;margin:10px 0 18px;line-height:1.25}
+/* ---- SHORT folios ---- v13.12: bumped ~12-15% to fill reclaimed vertical space */
+.slide.short h2{font-size:clamp(2.35rem, 8vw, 3.25rem);text-align:center;margin-bottom:24px;line-height:1.08}
+.slide.short .s-body{font-size:clamp(1.48rem, 4.8vw, 1.72rem);text-align:center;line-height:1.5}
+.slide.short .s-body blockquote{font-size:clamp(1.82rem, 6.1vw, 2.4rem);border-left:none;padding:0;text-align:center;margin:12px 0 20px;line-height:1.22}
 .slide.short .s-top{justify-content:center;gap:16px}
-.slide.short .s-src{text-align:center;margin-top:24px;font-size:.88rem}
+.slide.short .s-src{text-align:center;margin-top:28px;font-size:.92rem}
 
-/* ---- MEDIUM folios ---- */
-.slide.medium h2{font-size:clamp(1.75rem, 5.4vw, 2.3rem)}
-.slide.medium .s-body{font-size:clamp(1.08rem, 3.1vw, 1.22rem);line-height:1.54}
-.slide.medium .s-body blockquote{font-size:clamp(1.33rem, 4.1vw, 1.58rem)}
+/* ---- MEDIUM folios ---- v13.12: bumped ~15% */
+.slide.medium h2{font-size:clamp(1.98rem, 6vw, 2.6rem);margin-bottom:20px}
+.slide.medium .s-body{font-size:clamp(1.22rem, 3.6vw, 1.4rem);line-height:1.55}
+.slide.medium .s-body blockquote{font-size:clamp(1.5rem, 4.6vw, 1.8rem)}
 
-/* ---- LONG folios ---- */
-.slide.long h2{font-size:clamp(1.5rem, 4.6vw, 1.85rem);margin-bottom:14px}
-.slide.long .s-body{font-size:clamp(1.02rem, 2.9vw, 1.12rem);line-height:1.52}
-.slide.long .s-body p{margin-bottom:9px}
-.slide.long .s-body blockquote{font-size:clamp(1.18rem, 3.6vw, 1.38rem);margin-bottom:12px}
+/* ---- LONG folios ---- v13.12: bumped ~13% so dense pages read comfortably */
+.slide.long h2{font-size:clamp(1.7rem, 5.2vw, 2.1rem);margin-bottom:16px}
+.slide.long .s-body{font-size:clamp(1.16rem, 3.3vw, 1.28rem);line-height:1.56}
+.slide.long .s-body p{margin-bottom:10px}
+.slide.long .s-body blockquote{font-size:clamp(1.34rem, 4.1vw, 1.56rem);margin-bottom:14px}
 
 /* Drop cap */
 .slide.medium .s-body blockquote + p::first-letter,
