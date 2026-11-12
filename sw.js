@@ -1,4 +1,4 @@
-const CACHE = "studium-v13.2-sheen";
+const CACHE = "studium-v13.3-yt-referrer";
 const SHELL = ["./", "./index.html", "./styles.css", "./app.js", "./content.js", "./manifest.webmanifest"];
 self.addEventListener("install", e=>{
   e.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL)).then(()=>self.skipWaiting()));
