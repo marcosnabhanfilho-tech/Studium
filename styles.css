@@ -234,6 +234,10 @@ body.chrome-shown #topbar{transform:translateY(0);opacity:1;pointer-events:auto}
   font-family:var(--display);font-weight:600;line-height:1.1;
   color:var(--ink);margin-bottom:18px;flex-shrink:0;letter-spacing:-.005em;
   text-align:center;
+  /* v13.13 — let long titles break cleanly instead of overflowing the viewport
+     (fixes "Centesimus Annus · The Free Economy" and "The Fighting Temeraire"
+     showing only half the title on narrow phones). */
+  overflow-wrap:break-word;word-break:normal;hyphens:auto;max-width:100%;
 }
 .slide.aurum h2{color:var(--gold);text-shadow:0 1px 20px rgba(250,204,21,.15)}
 
@@ -247,20 +251,20 @@ body.chrome-shown #topbar{transform:translateY(0);opacity:1;pointer-events:auto}
   margin:4px 0 16px;color:var(--cream);
 }
 
-/* ---- SHORT folios ---- v13.12: bumped ~12-15% to fill reclaimed vertical space */
-.slide.short h2{font-size:clamp(2.35rem, 8vw, 3.25rem);text-align:center;margin-bottom:24px;line-height:1.08}
+/* ---- SHORT folios ---- v13.13: dropped h2 min so long titles fit on narrow phones */
+.slide.short h2{font-size:clamp(1.85rem, 7.2vw, 3.05rem);text-align:center;margin-bottom:24px;line-height:1.1}
 .slide.short .s-body{font-size:clamp(1.48rem, 4.8vw, 1.72rem);text-align:center;line-height:1.5}
-.slide.short .s-body blockquote{font-size:clamp(1.82rem, 6.1vw, 2.4rem);border-left:none;padding:0;text-align:center;margin:12px 0 20px;line-height:1.22}
+.slide.short .s-body blockquote{font-size:clamp(1.65rem, 5.8vw, 2.25rem);border-left:none;padding:0;text-align:center;margin:12px 0 20px;line-height:1.22}
 .slide.short .s-top{justify-content:center;gap:16px}
 .slide.short .s-src{text-align:center;margin-top:28px;font-size:.92rem}
 
-/* ---- MEDIUM folios ---- v13.12: bumped ~15% */
-.slide.medium h2{font-size:clamp(1.98rem, 6vw, 2.6rem);margin-bottom:20px}
+/* ---- MEDIUM folios ---- v13.13: dropped h2 min so long titles fit */
+.slide.medium h2{font-size:clamp(1.6rem, 5.4vw, 2.45rem);margin-bottom:20px}
 .slide.medium .s-body{font-size:clamp(1.22rem, 3.6vw, 1.4rem);line-height:1.55}
 .slide.medium .s-body blockquote{font-size:clamp(1.5rem, 4.6vw, 1.8rem)}
 
-/* ---- LONG folios ---- v13.12: bumped ~13% so dense pages read comfortably */
-.slide.long h2{font-size:clamp(1.7rem, 5.2vw, 2.1rem);margin-bottom:16px}
+/* ---- LONG folios ---- v13.13: dropped h2 min */
+.slide.long h2{font-size:clamp(1.42rem, 4.6vw, 2rem);margin-bottom:16px}
 .slide.long .s-body{font-size:clamp(1.16rem, 3.3vw, 1.28rem);line-height:1.56}
 .slide.long .s-body p{margin-bottom:10px}
 .slide.long .s-body blockquote{font-size:clamp(1.34rem, 4.1vw, 1.56rem);margin-bottom:14px}
