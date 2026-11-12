@@ -223,15 +223,23 @@ function shuffleFair(folios){
   return groups.flat();
 }
 function hasLangContent(f, lang){
-  if(lang !== "pt") return true; // English always available
-  // In PT mode, a folio only counts if it has Portuguese content.
+  // v13.10 — Video folios are gated by their AUDIO language, not their text.
+  // videoLang: "en" English only (default), "pt" Portuguese only, "all" both
+  // (non-verbal content: pure music, instrumental, etc.). This way an English
+  // Sowell clip doesn't appear in PT mode just because title/body are translated.
+  if(f.type === "visio"){
+    const vl = f.videoLang || "en";
+    return vl === "all" || vl === lang;
+  }
+  // Text folios: English is universal; PT requires translated fields.
+  if(lang !== "pt") return true;
   return !!(f.body_pt || f.pairs_pt || f.items_pt);
 }
 function pool(){
   let base = state.filter==="ALL" ? POOL : POOL.filter(f=>f.f===state.filter);
-  // CRITICAL: in Portuguese mode, strictly filter to folios that have PT translations
-  // so the user never sees a mix of PT and EN. User explicitly asked for this.
-  if(state.lang === "pt") base = base.filter(f => hasLangContent(f, "pt"));
+  // v13.10 — ALWAYS filter by language (both EN and PT modes), so video folios
+  // whose audio is in the wrong language are hidden regardless of text translations.
+  base = base.filter(f => hasLangContent(f, state.lang));
   // v13 — NO REPEATS in the feed. Show only unseen folios. If the user has
   // actually seen them all (great problem to have), roll the full pool over
   // and start fresh. To see a folio again on purpose, open it from the
@@ -251,7 +259,7 @@ POOL.forEach(f=>{ FACTOTAL[f.f] = (FACTOTAL[f.f]||0)+1; });
 function seenInFaculty(code){
   let n = 0; POOL.forEach(f=>{ if(f.f===code && state.seen[f.slug]) n++; }); return n;
 }
-const WING_ORDER = ["A","I","T","F","O","N","P","C","H","M"];
+const WING_ORDER = ["A","I","T","F","O","N","P","C","H","M","X"];
 // Return the count of folios available in the current language for a faculty.
 function facTotalForLang(code){
   return POOL.filter(f => f.f === code && hasLangContent(f, state.lang)).length;
