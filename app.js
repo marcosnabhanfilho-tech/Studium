@@ -731,8 +731,22 @@ function slideHTML(folio){
 let viewIO = null, endIO = null;
 function appendSlides(n){
   const reel = $("#reel");
+  // v13.8 — collect slugs already in the DOM so we never append a duplicate
+  // that's still physically present in the reel (even a series member — if its
+  // slug is literally already shown, don't re-show it right now). This is the
+  // direct fix for the "many repeated folios" complaint.
+  const inDom = new Set();
+  reel.querySelectorAll(".slide").forEach(s=>{ if(s.dataset.slug) inDom.add(s.dataset.slug); });
   let html = "";
-  for(let i=0;i<n;i++) html += slideHTML(nextFolio());
+  let picked = 0, safety = 0;
+  while(picked < n && safety < n * 8){
+    const f = nextFolio();
+    safety++;
+    if(inDom.has(f.slug)) continue;           // skip if already on screen
+    inDom.add(f.slug);
+    html += slideHTML(f);
+    picked++;
+  }
   const tmp = document.createElement("div");
   tmp.innerHTML = html;
   const added = [];
@@ -922,12 +936,10 @@ function upgradeYT(el){
   //   - the `allow` list matches YouTube's own recommendation verbatim
   //   - autoplay=1&mute=1 is safe now that referrer is set correctly; most
   //     mobile browsers allow muted autoplay from a user gesture (the tap)
-  // v13.6 — youtube-nocookie.com for permissive embed, no more "Open in YouTube"
-  // overlay (it was blocking YouTube's own "tap to unmute" button in the top-right
-  // corner when autoplay=mute was on). YouTube's own "Video unavailable" screen
-  // already provides a Watch-on-YouTube link, so our overlay was redundant.
+  // v13.8 — enablejsapi=1 so we can postMessage pauseVideo when the slide
+  // scrolls off (prevents audio bleeding into the next folio).
   const loopExtra = isShort ? `&loop=1&playlist=${id}` : "";
-  const src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&mute=1&rel=0&modestbranding=1${loopExtra}`;
+  const src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&mute=1&rel=0&modestbranding=1&enablejsapi=1${loopExtra}`;
   el.innerHTML = `
     <iframe
       src="${src}"
@@ -937,6 +949,15 @@ function upgradeYT(el){
       referrerpolicy="strict-origin-when-cross-origin"
       allowfullscreen
       loading="lazy"></iframe>`;
+}
+// v13.8 — pause any YouTube iframes inside a slide that just scrolled off.
+// Uses the YouTube iframe API's postMessage protocol (enablejsapi=1 required,
+// which upgradeYT sets). Safe to call on a slide with no iframe.
+function pauseSlideVideos(slide){
+  if(!slide) return;
+  slide.querySelectorAll(".lite-yt iframe").forEach(f=>{
+    try{ f.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*'); }catch(e){}
+  });
 }
 
 // ============== PERSIST TO SUPABASE ==============
@@ -1564,9 +1585,12 @@ async function init(){
   loadLocal();
 
   // Observers
+  // v13.8 — lower the markSeen threshold from 0.55 to 0.3 so fast scrolls
+  // still mark a folio as seen (prevents it coming back in the next pool roll).
+  // Also pause YouTube iframes on scroll-off so audio doesn't bleed over.
   viewIO = new IntersectionObserver(entries=>{
     entries.forEach(en=>{
-      if(en.isIntersecting && en.intersectionRatio > 0.55){
+      if(en.isIntersecting && en.intersectionRatio > 0.3){
         markSeen(en.target);
         sndTick();
         // Reset the folio's horizontal pager to page 1 whenever it enters view.
@@ -1587,9 +1611,11 @@ async function init(){
         wakeRail(en.target);
       } else if(en.intersectionRatio < 0.2){
         sleepRail(en.target);
+        // v13.8 — pause any YouTube video in this slide so sound doesn't bleed.
+        pauseSlideVideos(en.target);
       }
     });
-  }, { threshold:[0, 0.2, 0.55, 0.9] });
+  }, { threshold:[0, 0.2, 0.3, 0.55, 0.9] });
 
 
   endIO = new IntersectionObserver(entries=>{
