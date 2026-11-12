@@ -11,7 +11,11 @@ const FAC = {
   C: {name:"Perceptio", color:"#9DB4C0"},
   H: {name:"Historia", color:"#B5856A"},
   I: {name:"Imagines", color:"#A78BFA"},
-  M: {name:"Mathematica", color:"#60A5FA"}
+  M: {name:"Mathematica", color:"#60A5FA"},
+  // v13.11 — Testing wing. Holds new video folios awaiting embed verification.
+  // Filter to this wing in the drawer, scroll through, flag any that fail,
+  // Claude removes failures and promotes passers to their real faculty.
+  X: {name:"Testing", color:"#f0a040"}
 };
 
 // ============ I18N — UI strings, EN & PT ============
@@ -2647,7 +2651,7 @@ const THEOLOGIA_X = [
  body_pt:"Um jornalista pergunta a Feynman como ímãs funcionam. Sua resposta vira a pergunta do avesso: todo \"por quê\" eventualmente encontra um chão que você tem que aceitar. Veja um físico laureado com o Nobel mostrar o que é <em>realmente</em> saber o que você não sabe.",
  src_pt:"Richard Feynman · BBC Horizon, \"Fun to Imagine\", 1983"},
 
-{slug:"p-yoyoma-notre-dame", type:"visio", f:"P", ytId:"h_wYRNoGLkU", ytShort:false,
+{slug:"p-yoyoma-notre-dame", type:"visio", f:"P", ytId:"h_wYRNoGLkU", ytShort:false, videoLang:"all",
  title:"Yo-Yo Ma · Bach in the Rebuilt Notre-Dame",
  body:"December 2024. Notre-Dame reopens after the fire. Yo-Yo Ma walks into the nave with a cello and plays the Prelude from the First Bach Suite. Three hundred years of music, nine hundred years of stone, five years of rebuilding — one moment.",
  src:"J.S. Bach · Cello Suite No. 1 in G Major, BWV 1007, Prélude · Notre-Dame de Paris, 7 Dec 2024",
@@ -2768,26 +2772,26 @@ const THEOLOGIA_X = [
 
 {slug:"o-sowell-poverty", type:"visio", f:"O", ytId:"oqmF2hIs4es", ytShort:true,
  title:"Sowell · Poverty Isn't the Puzzle",
- body:"Sowell in archival footage with Peter Robinson: poverty is humanity's default state. It needs no explanation. What needs explaining is prosperity.",
+ body:"Poverty is humanity's default. Prosperity is what needs explaining.",
  src:"Thomas Sowell · Hoover Institution",
  title_pt:"Sowell · Pobreza Não É o Enigma",
- body_pt:"Sowell em imagens de arquivo com Peter Robinson: a pobreza é o estado padrão da humanidade. Não precisa de explicação. O que precisa de explicação é a prosperidade.",
+ body_pt:"A pobreza é o padrão da humanidade. A prosperidade é o que precisa de explicação.",
  src_pt:"Thomas Sowell · Hoover Institution"},
 
 {slug:"o-sowell-market-corrects", type:"visio", f:"O", ytId:"8AJsJp14TD4", ytShort:true,
  title:"Sowell · The Market Corrects Itself",
- body:"Markets adjust faster on their own than politicians can intervene. Hayek's knowledge problem, under sixty seconds.",
+ body:"Markets adjust faster than any politician can intervene.",
  src:"Thomas Sowell · Hoover Institution",
  title_pt:"Sowell · O Mercado Se Corrige Sozinho",
- body_pt:"Mercados se ajustam sozinhos mais rápido do que políticos conseguem intervir. O problema do conhecimento de Hayek, em menos de sessenta segundos.",
+ body_pt:"Mercados se ajustam mais rápido do que qualquer político consegue intervir.",
  src_pt:"Thomas Sowell · Hoover Institution"},
 
 {slug:"o-sowell-govt-rescues", type:"visio", f:"O", ytId:"hQo9G-enQOE", ytShort:true,
  title:"When Government Rescues, Who Pays?",
- body:"Sowell on how government intervention in economic crises tends to prolong them. The 1930s are his evidence.",
+ body:"Government intervention in crises tends to prolong them. The 1930s are the evidence.",
  src:"Thomas Sowell · Hoover Institution, #SowellSunday",
  title_pt:"Quando o Governo Resgata, Quem Paga?",
- body_pt:"Sowell sobre como a intervenção governamental em crises econômicas tende a prolongá-las. Os anos 1930 são sua evidência.",
+ body_pt:"A intervenção do governo em crises tende a prolongá-las. Os anos 1930 são a evidência.",
  src_pt:"Thomas Sowell · Hoover Institution, #SowellSunday"},
 
 {slug:"o-sowell-social-justice", type:"visio", f:"O", ytId:"pn2gda_phAA", ytShort:false,
@@ -2840,7 +2844,7 @@ const THEOLOGIA_X = [
  src_pt:"Nassim Nicholas Taleb · Talks at Google · 2018"},
 
 // --- PULCHRUM ---
-{slug:"p-hahn-sarabande", type:"visio", f:"P", ytId:"WI3f63QvW8I", ytShort:false,
+{slug:"p-hahn-sarabande", type:"visio", f:"P", ytId:"WI3f63QvW8I", ytShort:false, videoLang:"all",
  title:"Hilary Hahn · Bach's D-Minor Sarabande",
  body:"The Sarabande from Bach's Partita No. 2, BWV 1004, played live as an encore at the Alte Oper Frankfurt in May 2025. Near-vocal restraint. A natural companion to Yo-Yo Ma at Notre-Dame.",
  src:"Hilary Hahn · hr-Sinfonieorchester · 9 May 2025",
