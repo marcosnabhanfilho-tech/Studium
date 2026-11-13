@@ -18,6 +18,9 @@ const FAC = {
   // Testing wing. Holds new video folios awaiting embed verification.
   // Filter to this wing in the drawer, scroll through, flag any that fail,
   // Claude removes failures and promotes passers to their real faculty.
+  // v13.18 — Literature wing. Classic lit, Western canon, Catholic fiction,
+  // readings, lectures, and series of shorts tied to specific works.
+  L: {name:"Literature", name_en:"Literature",   name_pt:"Literatura",   color:"#D4A5A5"},
   X: {name:"Testing",    name_en:"Testing",      name_pt:"Testes",       color:"#f0a040"}
 };
 
@@ -3096,7 +3099,7 @@ const THEOLOGIA_X = [
  body_pt:"O encantamento infantil diante do mar. Habitar o mundo em vez de apenas usá-lo.",
  src_pt:"Roger Scruton · Regent College"},
 
-{slug:"x-taleb-hammurabi", type:"visio", f:"F", ytId:"0Uc4DI-BF28", ytShort:false,
+{slug:"x-taleb-hammurabi", type:"visio", f:"F", ytId:"0Uc4DI-BF28", ytShort:false, series:"taleb-hammurabi-pair", step:2,
  title:"Taleb · Hammurabi and Skin in the Game",
  body:"The builder who imposes risk should share it. A 3,800-year-old principle.",
  src:"Nassim Taleb · Stanford eCorner",
@@ -6311,4 +6314,538 @@ const MATHEMATICA = [
 
 ];
 FOLIOS.push(...MATHEMATICA);
+
+// =============== LITERATURE (v13.18) ===============
+// New wing (code "L"). Classic Western canon with a Catholic/conservative lean.
+const LITERATURE = [
+
+{slug:"l-dante-selva-oscura", type:"opus", f:"L",
+ title:"Midway in Our Life's Journey",
+ body:`<blockquote>Nel mezzo del cammin di nostra vita mi ritrovai per una selva oscura, ché la diritta via era smarrita.</blockquote>
+<p>Dante opens the <em>Commedia</em> at thirty-five — the midpoint of the biblical threescore and ten. The pilgrim is already lost before Virgil appears. You cannot find the path by walking faster. You have to descend first.</p>`,
+ src:"Dante · Inferno I.1-3 (1320)",
+ title_pt:"No Meio do Caminho de Nossa Vida",
+ body_pt:`<blockquote>Nel mezzo del cammin di nostra vita mi ritrovai per una selva oscura, ché la diritta via era smarrita.</blockquote>
+<p>Dante abre a <em>Comédia</em> aos trinta e cinco — meio do setenta bíblico. O peregrino já está perdido antes que Virgílio apareça. Você não encontra o caminho andando mais rápido. Tem que descer primeiro.</p>`,
+ src_pt:"Dante · Inferno I.1-3 (1320)"},
+
+{slug:"l-augustine-restless", type:"sententia", f:"L", rare:1,
+ title:"Restless Until They Rest in Thee",
+ body:{
+   latin:"Fecisti nos ad te et inquietum est cor nostrum donec requiescat in te.",
+   english:"You have made us for yourself, and our heart is restless until it rests in you."
+ },
+ src:"Augustine · Confessions I.1 (c. 400 AD)",
+ title_pt:"Inquieto Até Descansar em Ti",
+ body_pt:{
+   latin:"Fecisti nos ad te et inquietum est cor nostrum donec requiescat in te.",
+   english:"Fizeste-nos para Ti, e inquieto está o nosso coração enquanto não descansar em Ti."
+ },
+ src_pt:"Agostinho · Confissões I.1 (c. 400 d.C.)"},
+
+{slug:"l-tolstoy-families", type:"opus", f:"L",
+ title:"Tolstoy · Opening Line",
+ body:`<blockquote>All happy families are alike; every unhappy family is unhappy in its own way.</blockquote>
+<p>One sentence of diagnosis. Happiness converges on a small set of conditions — fidelity, forgiveness, work, faith. Unhappiness has a thousand failure modes. Tolstoy's whole novel is the demonstration.</p>`,
+ src:"Leo Tolstoy · Anna Karenina, opening line (1877)",
+ title_pt:"Tolstói · Primeira Linha",
+ body_pt:`<blockquote>Todas as famílias felizes se parecem; cada família infeliz é infeliz à sua maneira.</blockquote>
+<p>Uma frase de diagnóstico. A felicidade converge em um pequeno conjunto de condições — fidelidade, perdão, trabalho, fé. A infelicidade tem mil modos de fracasso. Todo o romance de Tolstói é a demonstração.</p>`,
+ src_pt:"Liev Tolstói · Anna Karênina, primeira linha (1877)"},
+
+{slug:"l-dostoevsky-zosima", type:"opus", f:"L",
+ title:"Love in Action",
+ body:`<blockquote>Love in action is a harsh and dreadful thing compared with love in dreams.</blockquote>
+<p>Father Zosima, to a woman who asks how she might know if her faith is real. She wants to love humanity. She fears she would run from the sickbed. Zosima does not reassure her. He tells her the truth: love in dreams is a transaction with your own self-image. Love in action is harsh because it strips that away.</p>`,
+ src:"Dostoevsky · The Brothers Karamazov II.4 (1880)",
+ title_pt:"O Amor em Ação",
+ body_pt:`<blockquote>O amor em ação é uma coisa dura e terrível comparado ao amor em sonhos.</blockquote>
+<p>O padre Zósimo, a uma mulher que pergunta se sua fé é verdadeira. Ela quer amar a humanidade. Teme que fugiria do leito do enfermo. Zósimo não a consola. Diz a verdade: o amor em sonhos é uma transação com a própria autoimagem. O amor em ação é duro porque arranca isso.</p>`,
+ src_pt:"Dostoiévski · Os Irmãos Karamázov II.4 (1880)"},
+
+{slug:"l-chesterton-fairy-tales", type:"opus", f:"L",
+ title:"Why Fairy Tales Are True",
+ body:`<blockquote>Fairy tales do not tell children the dragons exist. Children already know that dragons exist. Fairy tales tell children the dragons can be killed.</blockquote>
+<p>Chesterton's defense of the moral imagination. A sanitized, Pelagian childhood pretends evil is a misunderstanding. The old stories — the ones adults now find "disturbing" — do the harder work: they tell the truth about what children already fear, and then give them the knight.</p>`,
+ src:"G. K. Chesterton · Tremendous Trifles (1909, paraphrasing)",
+ title_pt:"Por Que Contos de Fadas São Verdadeiros",
+ body_pt:`<blockquote>Os contos de fadas não dizem às crianças que dragões existem. As crianças já sabem disso. Os contos de fadas dizem às crianças que dragões podem ser mortos.</blockquote>
+<p>A defesa de Chesterton da imaginação moral. Uma infância sanitizada e pelagiana finge que o mal é um mal-entendido. As histórias antigas — as mesmas que os adultos hoje acham "perturbadoras" — fazem o trabalho mais duro: dizem a verdade sobre o que a criança já teme, e então dão o cavaleiro.</p>`,
+ src_pt:"G. K. Chesterton · Tremendous Trifles (1909, paráfrase)"},
+
+{slug:"l-oconnor-grace", type:"opus", f:"L",
+ title:"O'Connor · Grace Changes Us",
+ body:`<blockquote>I have found that violence is strangely capable of returning my characters to reality and preparing them to accept their moment of grace.</blockquote>
+<p>Flannery O'Connor explaining why her stories end the way they do. For a comfortable modern reader, grace rarely arrives through comfort. It arrives when the self-protection fails. The Misfit shoots the grandmother before she can say anything true. Then she says it.</p>`,
+ src:"Flannery O'Connor · Mystery and Manners (1969)",
+ title_pt:"O'Connor · A Graça Nos Transforma",
+ body_pt:`<blockquote>Descobri que a violência é estranhamente capaz de devolver meus personagens à realidade e prepará-los para aceitar seu momento de graça.</blockquote>
+<p>Flannery O'Connor explicando por que suas histórias terminam como terminam. Para o leitor moderno confortável, a graça raramente chega pelo conforto. Chega quando a autodefesa falha. O Fora-da-Lei atira na avó antes que ela diga qualquer coisa verdadeira. Então ela diz.</p>`,
+ src_pt:"Flannery O'Connor · Mystery and Manners (1969)"},
+
+{slug:"l-lewis-great-divorce", type:"opus", f:"L",
+ title:"Lewis · The Great Divorce",
+ body:`<blockquote>There are only two kinds of people in the end: those who say to God, "Thy will be done," and those to whom God says, in the end, "Thy will be done."</blockquote>
+<p>C. S. Lewis's compact statement of hell. Not fire but consent. In <em>The Great Divorce</em>, the damned take a bus from hell to the outskirts of heaven, and most of them, offered reality, choose to go back. They want to be left alone with their grievances. Hell is the respect paid to that choice.</p>`,
+ src:"C. S. Lewis · The Great Divorce (1945)",
+ title_pt:"Lewis · O Grande Divórcio",
+ body_pt:`<blockquote>Há, no fim, apenas dois tipos de pessoa: as que dizem a Deus "seja feita a tua vontade," e aquelas a quem Deus diz, no fim, "seja feita a tua vontade."</blockquote>
+<p>A declaração compacta de C. S. Lewis sobre o inferno. Não fogo, mas consentimento. Em <em>O Grande Divórcio</em>, os danados tomam um ônibus do inferno para os arredores do céu, e a maioria, diante da realidade, escolhe voltar. Querem ficar a sós com seus ressentimentos. O inferno é o respeito que se paga a essa escolha.</p>`,
+ src_pt:"C. S. Lewis · O Grande Divórcio (1945)"},
+
+{slug:"l-hamlet-to-be", type:"opus", f:"L",
+ title:"Hamlet · To Be, or Not to Be",
+ body:`<blockquote>To be, or not to be — that is the question: Whether 'tis nobler in the mind to suffer the slings and arrows of outrageous fortune, or to take arms against a sea of troubles and, by opposing, end them.</blockquote>
+<p>The most paraphrased speech in English literature. Not "should I kill myself" — that's the TikTok reading. Hamlet is weighing endurance against action. To be = to endure what fortune gives you. Not to be = to take arms, which in his case means revenge, which risks damnation. The whole play is this hesitation.</p>`,
+ src:"William Shakespeare · Hamlet III.i (c. 1600)",
+ title_pt:"Hamlet · Ser ou Não Ser",
+ body_pt:`<blockquote>Ser ou não ser — eis a questão: Se é mais nobre à alma suportar as pedras e flechas da fortuna ultrajante, ou tomar armas contra um mar de aflições e, enfrentando-as, acabar com elas.</blockquote>
+<p>O discurso mais parafraseado da literatura inglesa. Não "devo me matar" — essa é a leitura de TikTok. Hamlet pesa resistência contra ação. Ser = suportar o que a fortuna dá. Não ser = tomar armas, o que no caso dele significa vingança, que arrisca condenação. A peça inteira é essa hesitação.</p>`,
+ src_pt:"William Shakespeare · Hamlet III.i (c. 1600)"},
+
+{slug:"l-tolkien-eucatastrophe", type:"lectio", f:"L",
+ title:"Tolkien · The Eucatastrophe",
+ body:`<p>Tolkien coined the word in a 1947 essay, "On Fairy-Stories." He said every good tale contains a <em>turn</em> — the sudden, unexpected reversal that pierces the reader with joy sharp as grief. Not a happy ending bolted on. A joy that only lands because the darkness was real.</p>
+<p>His example was the Resurrection. The Gospel, he argued, is a fairy tale that enters history — the <em>eucatastrophe</em> of human history. Every lesser story that moves us is reaching toward it, whether the author knows it or not.</p>
+<p>Which is why <em>The Lord of the Rings</em> ends the way it does. Frodo does not succeed by heroism. He fails on the edge of Mount Doom. The ring is destroyed anyway — by Gollum, by providence, by a mercy Bilbo once showed. The eagles come, because they always come. That is not sentimentality. That is the structure of Christian hope.</p>`,
+ src:"J. R. R. Tolkien · On Fairy-Stories (1947)",
+ title_pt:"Tolkien · A Eucatástrofe",
+ body_pt:`<p>Tolkien cunhou a palavra em um ensaio de 1947, "On Fairy-Stories." Disse que toda boa história contém uma <em>virada</em> — o inversão súbita e inesperada que atravessa o leitor com uma alegria tão aguda quanto dor. Não um final feliz pregado por fora. Uma alegria que só pousa porque a escuridão era real.</p>
+<p>Seu exemplo era a Ressurreição. O Evangelho, ele argumentou, é um conto de fadas que entra na história — a <em>eucatástrofe</em> da história humana. Toda história menor que nos comove está tateando em direção a ela, saiba o autor ou não.</p>
+<p>É por isso que <em>O Senhor dos Anéis</em> termina como termina. Frodo não vence por heroísmo. Falha na beira da Montanha da Perdição. O anel é destruído mesmo assim — por Gollum, pela providência, por uma misericórdia que Bilbo um dia mostrou. As águias vêm, porque sempre vêm. Isso não é sentimentalismo. É a estrutura da esperança cristã.</p>`,
+ src_pt:"J. R. R. Tolkien · On Fairy-Stories (1947)"},
+
+{slug:"l-percy-lost-cosmos", type:"lectio", f:"L",
+ title:"Percy · Lost in the Cosmos",
+ body:`<p>Walker Percy was a Southern Catholic novelist and a trained physician. His diagnosis of modernity in <em>Lost in the Cosmos</em>: man is the only creature that can be at home nowhere. A deer has no selfhood problem. A deer is simply a deer.</p>
+<p>The modern person, armed with science that explains everything except himself, encounters a mystery the Greeks never faced: the mystery of being the observer, not the observed. The self cannot be objectified. The methods that know the atom cannot know you.</p>
+<p>Percy thought the response was not more introspection but more contact — with reality, with other persons, with liturgy. The self is restored by being drawn out of itself. The Confessional, he said, is not a therapy session. The direction of motion is opposite.</p>`,
+ src:"Walker Percy · Lost in the Cosmos (1983)",
+ title_pt:"Percy · Perdido no Cosmos",
+ body_pt:`<p>Walker Percy foi um romancista católico sulista e médico. Seu diagnóstico da modernidade em <em>Perdido no Cosmos</em>: o homem é a única criatura que pode não estar em casa em lugar nenhum. Um veado não tem problema de identidade. Um veado é simplesmente um veado.</p>
+<p>A pessoa moderna, armada de uma ciência que explica tudo exceto a si mesma, encontra um mistério que os gregos não enfrentaram: o mistério de ser o observador, não o observado. O eu não pode ser objetivado. Os métodos que conhecem o átomo não podem conhecer você.</p>
+<p>Percy achava que a resposta não é mais introspecção, mas mais contato — com a realidade, com outras pessoas, com a liturgia. O eu se restaura ao ser tirado de si. O confessionário, dizia, não é sessão de terapia. A direção do movimento é oposta.</p>`,
+ src_pt:"Walker Percy · Perdido no Cosmos (1983)"}
+
+];
+FOLIOS.push(...LITERATURE);
+
+// =============== ARCHITECTURE (v13.18) — added to Imagines (I) ===============
+const ARCHITECTURE = [
+
+{slug:"i-chartres-blue", type:"lectio", f:"I", rare:1,
+ title:"Chartres · The Blue That Cannot Be Made",
+ body:`<p>Walk into Chartres Cathedral at midday and the whole nave is drowned in a cobalt-indigo light. The blue of the twelfth-century windows — <em>bleu de Chartres</em> — has never been reproduced. Chemists have tried. The formula was lost, probably with the master glaziers in the fourteenth century.</p>
+<p>What you see is not decoration. Gothic glass was theology made visible: light passing <em>through</em> matter without destroying it, the way the Logos took flesh. The thirteenth-century viewer did not need the metaphor explained. He knelt in it.</p>`,
+ src:"Chartres Cathedral · 1194-1220, Île-de-France",
+ title_pt:"Chartres · O Azul Que Não Se Faz",
+ body_pt:`<p>Entre na Catedral de Chartres ao meio-dia e a nave inteira está afogada em uma luz cobalto-índigo. O azul dos vitrais do século XII — <em>bleu de Chartres</em> — nunca foi reproduzido. Químicos tentaram. A fórmula se perdeu, provavelmente com os mestres vidreiros do século XIV.</p>
+<p>O que você vê não é decoração. O vidro gótico era teologia tornada visível: luz passando <em>através</em> da matéria sem destruí-la, como o Verbo assumiu a carne. O espectador do século XIII não precisava que a metáfora fosse explicada. Ajoelhava-se nela.</p>`,
+ src_pt:"Catedral de Chartres · 1194-1220, Île-de-France"},
+
+{slug:"i-hagia-sophia-dome", type:"lectio", f:"I",
+ title:"Hagia Sophia · The Floating Dome",
+ body:`<p>When Justinian consecrated it in 537 AD, Procopius said the dome "seems not to rest upon solid masonry, but to cover the space with its golden hemisphere suspended from Heaven." The builders had solved a problem no one had solved before: how to place a circular dome on a square base.</p>
+<p>The answer was the <em>pendentive</em> — a curved triangular section that transfers the dome's weight down to four piers at the corners. Between the piers, forty windows ring the base of the dome. Light pours in horizontally, under the mass. The dome appears to levitate.</p>
+<p>The engineering is Byzantine. The effect is theological: the heavens, holding themselves up, over the worshipper.</p>`,
+ src:"Hagia Sophia · Constantinople, 537 AD · Isidore of Miletus & Anthemius of Tralles",
+ title_pt:"Santa Sofia · A Cúpula Flutuante",
+ body_pt:`<p>Quando Justiniano a consagrou em 537 d.C., Procópio disse que a cúpula "parece não repousar sobre alvenaria sólida, mas cobrir o espaço com seu hemisfério dourado suspenso do Céu." Os construtores haviam resolvido um problema que ninguém resolvera antes: como pousar uma cúpula circular sobre uma base quadrada.</p>
+<p>A resposta foi a <em>pendentiva</em> — uma seção triangular curva que transfere o peso da cúpula a quatro pilares nos cantos. Entre os pilares, quarenta janelas cercam a base. A luz entra horizontalmente, por baixo da massa. A cúpula parece levitar.</p>
+<p>A engenharia é bizantina. O efeito é teológico: os céus, sustentando-se, sobre o adorador.</p>`,
+ src_pt:"Santa Sofia · Constantinopla, 537 d.C. · Isidoro de Mileto & Antêmio de Trales"},
+
+{slug:"i-pantheon-oculus", type:"opus", f:"I",
+ title:"The Pantheon · Hole in the Sky",
+ body:`<blockquote>The oculus is nine meters wide. It is not glazed. Rain falls through it. Snow falls through it. On 21 April — the traditional founding day of Rome — the midday sun strikes directly on the doorway above the main entrance.</blockquote>
+<p>Hadrian's Pantheon (c. 125 AD) was the largest unreinforced concrete dome in the world for over 1,300 years. The Romans knew what they were doing with concrete; we forgot it when the Empire fell and did not re-learn it until the nineteenth century. The oculus is not a flaw. It is the only light source. The dome is the sky; the oculus is the sun.</p>`,
+ src:"The Pantheon · Rome, c. 125 AD",
+ title_pt:"O Panteão · Buraco no Céu",
+ body_pt:`<blockquote>O óculo tem nove metros de largura. Não é envidraçado. A chuva passa por ele. A neve passa por ele. Em 21 de abril — dia tradicional da fundação de Roma — o sol do meio-dia incide diretamente sobre a soleira da entrada principal.</blockquote>
+<p>O Panteão de Adriano (c. 125 d.C.) foi a maior cúpula de concreto não reforçado do mundo por mais de 1.300 anos. Os romanos sabiam o que faziam com concreto; esquecemos quando o Império caiu e só reaprendemos no século XIX. O óculo não é um defeito. É a única fonte de luz. A cúpula é o céu; o óculo é o sol.</p>`,
+ src_pt:"O Panteão · Roma, c. 125 d.C."},
+
+{slug:"i-st-peters-dome", type:"lectio", f:"I", rare:1,
+ title:"St. Peter's Dome · Michelangelo",
+ body:`<p>Michelangelo was seventy-one when he took over the design of St. Peter's in 1546. He worked without pay for seventeen years, until his death. The dome is his answer to Brunelleschi's in Florence, and to the Pantheon.</p>
+<p>At 136 meters, it is the tallest dome in the world. Bramante had proposed a hemisphere. Michelangelo gave it an upward stretch — slightly pointed, like an ovoid — so the eye is drawn through the structure rather than contained by it. Inside, standing under the oculus, the inscription in gold on the frieze encircles the viewer: TU ES PETRUS. "Thou art Peter, and upon this rock I will build my Church."</p>
+<p>The building is an argument. The gesture is upward.</p>`,
+ src:"St. Peter's Basilica · Rome, completed 1626 · Michelangelo, Bernini, Maderno",
+ title_pt:"A Cúpula de São Pedro · Michelangelo",
+ body_pt:`<p>Michelangelo tinha setenta e um anos quando assumiu o projeto de São Pedro em 1546. Trabalhou sem pagamento por dezessete anos, até sua morte. A cúpula é sua resposta à de Brunelleschi em Florença, e ao Panteão.</p>
+<p>Com 136 metros, é a cúpula mais alta do mundo. Bramante propusera uma hemisfera. Michelangelo deu-lhe um alongamento para cima — levemente ponteaguda, como ovoide — para que o olho seja atraído através da estrutura em vez de contido por ela. Por dentro, sob o óculo, a inscrição dourada no friso envolve o espectador: TU ES PETRUS. "Tu és Pedro, e sobre esta pedra edificarei a minha Igreja."</p>
+<p>O edifício é um argumento. O gesto é para cima.</p>`,
+ src_pt:"Basílica de São Pedro · Roma, concluída em 1626 · Michelangelo, Bernini, Maderno"},
+
+{slug:"i-why-modernism-lost-beauty", type:"lectio", f:"I",
+ title:"Why Modernism Lost Beauty",
+ body:`<p>For roughly 2,500 years, the West built things that people wanted to look at. Then, around 1920, it stopped.</p>
+<p>The modernist argument was that ornament was dishonest. "Form follows function." A building should express its structural truth, nothing more. In practice this produced the glass box, the concrete slab, the brutalist slab. The honest expression of a steel frame is a steel frame.</p>
+<p>The classical argument was always that <em>we are the function</em>. A building is for people, and people are not steel frames. A classical cornice is not a lie about the roof; it is a truth about the eye. Scruton put it this way: the ornament is there because, without it, the building does not know how to end. You cannot look at it without flinching.</p>
+<p>The next century of architecture is being quietly won back by people who noticed.</p>`,
+ src:"After Roger Scruton · The Classical Vernacular (1994) and Why Beauty Matters (2009)",
+ title_pt:"Por Que o Modernismo Perdeu a Beleza",
+ body_pt:`<p>Por cerca de 2.500 anos, o Ocidente construiu coisas que as pessoas queriam olhar. Então, por volta de 1920, parou.</p>
+<p>O argumento modernista era que o ornamento era desonesto. "A forma segue a função." Um edifício deveria expressar sua verdade estrutural, nada mais. Na prática, isso produziu a caixa de vidro, a laje de concreto, a laje brutalista. A expressão honesta de uma estrutura de aço é uma estrutura de aço.</p>
+<p>O argumento clássico sempre foi que <em>nós somos a função</em>. Um edifício é para pessoas, e pessoas não são estruturas de aço. Uma cornija clássica não é uma mentira sobre o telhado; é uma verdade sobre o olho. Scruton disse: o ornamento está ali porque, sem ele, o edifício não sabe como terminar. Você não consegue olhar sem se encolher.</p>
+<p>O próximo século da arquitetura está sendo discretamente recuperado pelas pessoas que perceberam.</p>`,
+ src_pt:"Depois de Roger Scruton · The Classical Vernacular (1994) e Why Beauty Matters (2009)"}
+
+];
+FOLIOS.push(...ARCHITECTURE);
+
+// =============== PAIRED COMMENTARY (v13.18) ===============
+// Experiment: a short commentary folio placed just before a video so the user
+// enters the video with a frame, not indifferent. Uses `series` to keep the
+// two contiguous in the feed. Expand this pattern to more videos based on
+// how it reads. Start with one: Taleb on Hammurabi (x-taleb-hammurabi).
+const PAIRS = [
+
+{slug:"l-pair-hammurabi-framing", type:"lectio", f:"F", series:"taleb-hammurabi-pair", step:1,
+ title:"Before Taleb · Hammurabi and the Natural Law",
+ body:`<p>The video you are about to watch has Taleb quoting Hammurabi's Code: if a builder builds a house and it collapses and kills the owner, the builder is put to death. Taleb loves it because it imposes <em>skin in the game</em>. He is right, but his reason is not the deepest reason.</p>
+<p>The deepest reason is older than Hammurabi. Aquinas, following Aristotle, taught that justice is giving to each what is due — not merely enforcing symmetry of risk, but conforming human law to a real moral order the lawgiver did not invent. The builder owes the owner a sound house because the house is actually meant to shelter a life. Risk-symmetry is a mechanism; <em>justice</em> is why the mechanism is good.</p>
+<p>Watch Taleb next. He is a great diagnostician of our age. But hear him as a modern echo of a natural-law tradition he does not fully name.</p>`,
+ src:"Studium · commentary pairing with Taleb's Stanford eCorner talk",
+ title_pt:"Antes de Taleb · Hamurabi e a Lei Natural",
+ body_pt:`<p>O vídeo que você está prestes a assistir tem Taleb citando o Código de Hamurabi: se um construtor constrói uma casa e ela desaba e mata o dono, o construtor é morto. Taleb adora porque impõe <em>pele em jogo</em>. Ele tem razão, mas não é a razão mais profunda.</p>
+<p>A razão mais profunda é mais antiga que Hamurabi. Aquino, seguindo Aristóteles, ensinou que justiça é dar a cada um o que é devido — não meramente impor simetria de risco, mas conformar a lei humana a uma ordem moral real que o legislador não inventou. O construtor deve ao dono uma casa sólida porque a casa de fato se destina a abrigar uma vida. Simetria de risco é mecanismo; <em>justiça</em> é por que o mecanismo é bom.</p>
+<p>Agora assista Taleb. Ele é um grande diagnosticador da nossa era. Mas ouça-o como um eco moderno de uma tradição de lei natural que ele não nomeia por inteiro.</p>`,
+ src_pt:"Studium · comentário emparelhado à palestra de Taleb no Stanford eCorner"}
+
+];
+FOLIOS.push(...PAIRS);
+
+// =============== TESTING BATCH 2 (v13.19) — Nov 13 PM wave ===============
+// 40 shorts across Painting, Architecture, Literature from museum &
+// institutional channels. All tagged f:"X" (Testing) pending verification.
+// Promote to I (Imagines) / L (Literature) after yt-check.html passes them.
+const TESTING_V2 = [
+
+// --- PAINTING (→ I when promoted) ---
+{slug:"x-zurbaran-sculptural", type:"visio", f:"X", ytId:"QbuzQGIGYuY", ytShort:true,
+ title:"Zurbarán · Painted Like Sculpture",
+ body:"The physical presence of his saints compared to carved stone.",
+ src:"The National Gallery, London",
+ title_pt:"Zurbarán · Pintado Como Escultura",
+ body_pt:"A presença física de seus santos comparada à pedra talhada.",
+ src_pt:"The National Gallery, Londres"},
+
+{slug:"x-zurbaran-fabrics", type:"visio", f:"X", ytId:"E2Pf4RTdKHc", ytShort:true,
+ title:"Zurbarán · The Fabrics of His Saints",
+ body:"Close attention to cloth makes his handling of texture suddenly visible.",
+ src:"The National Gallery, London",
+ title_pt:"Zurbarán · Os Tecidos de Seus Santos",
+ body_pt:"Atenção aos panos revela sua maestria com textura.",
+ src_pt:"The National Gallery, Londres"},
+
+{slug:"x-zurbaran-margaret", type:"visio", f:"X", ytId:"CkjyKeti150", ytShort:true,
+ title:"Zurbarán · Saint Margaret of Antioch",
+ body:"Richard Jacques on one specific seventeenth-century saint painting.",
+ src:"Athena Art Foundation",
+ title_pt:"Zurbarán · Santa Margarida de Antioquia",
+ body_pt:"Richard Jacques sobre uma pintura específica do século XVII.",
+ src_pt:"Athena Art Foundation"},
+
+{slug:"x-mantegna-gethsemane", type:"visio", f:"X", ytId:"6iCGohBmVTY", ytShort:true,
+ title:"Mantegna · Agony in the Garden",
+ body:"Sleeping disciples and sharply cut rocks: the drama at Gethsemane, visible.",
+ src:"Richard Jacques · Athena Art Foundation",
+ title_pt:"Mantegna · Agonia no Jardim",
+ body_pt:"Discípulos adormecidos e rochas cortantes: o drama do Getsêmani, visível.",
+ src_pt:"Richard Jacques · Athena Art Foundation"},
+
+{slug:"x-elgreco-disrobing", type:"visio", f:"X", ytId:"f2CIrlIK6bA", ytShort:true,
+ title:"El Greco · The Disrobing of Christ",
+ body:"Morgan Haigh on his favorite Passion painting.",
+ src:"Athena Art Foundation",
+ title_pt:"El Greco · O Despojamento de Cristo",
+ body_pt:"Morgan Haigh sobre sua pintura favorita da Paixão.",
+ src_pt:"Athena Art Foundation"},
+
+{slug:"x-rubens-innocents", type:"visio", f:"X", ytId:"9MROX-W2dDo", ytShort:true,
+ title:"Rubens · Massacre of the Innocents",
+ body:"Amanda Bradley Petitgas on a biblical painting most people only hear about.",
+ src:"Athena Art Foundation",
+ title_pt:"Rubens · O Massacre dos Inocentes",
+ body_pt:"Amanda Bradley Petitgas sobre uma pintura bíblica pouco vista.",
+ src_pt:"Athena Art Foundation"},
+
+{slug:"x-murillo-shepherds", type:"visio", f:"X", ytId:"s5Oqi0W5wXk", ytShort:true,
+ title:"Murillo · Adoration of the Shepherds",
+ body:"Xavier Bray: the shepherd's dirty foot, humble offerings, the child's brilliant light.",
+ src:"The Wallace Collection",
+ title_pt:"Murillo · Adoração dos Pastores",
+ body_pt:"Xavier Bray: o pé sujo do pastor, as ofertas humildes, a luz brilhante da criança.",
+ src_pt:"The Wallace Collection"},
+
+{slug:"x-preti-cana", type:"visio", f:"X", ytId:"6E4yi8srykQ", ytShort:true,
+ title:"Preti · The Marriage at Cana",
+ body:"A curator and conservator on storytelling and technique in one miracle scene.",
+ src:"The National Gallery, London",
+ title_pt:"Preti · As Bodas de Caná",
+ body_pt:"Uma curadora e um restaurador sobre narrativa e técnica numa cena de milagre.",
+ src_pt:"The National Gallery, Londres"},
+
+{slug:"x-juan-zurbaran-lemons", type:"visio", f:"X", ytId:"4a9wJB5Q_Ig", ytShort:true,
+ title:"Juan de Zurbarán · The Basket of Lemons",
+ body:"Siân Walters treats the fruit as spiritual symbol, not decoration.",
+ src:"The National Gallery, London",
+ title_pt:"Juan de Zurbarán · A Cesta de Limões",
+ body_pt:"Siân Walters trata a fruta como símbolo espiritual, não decoração.",
+ src_pt:"The National Gallery, Londres"},
+
+{slug:"x-vermeer-love-letter", type:"visio", f:"X", ytId:"Y5E2eKBcV6U", ytShort:true,
+ title:"Vermeer · The Love Letter",
+ body:"Interrupted music, body language, composition: the scene's uncertainty, staged.",
+ src:"Robert Fucci · The Frick Collection",
+ title_pt:"Vermeer · A Carta de Amor",
+ body_pt:"Música interrompida, linguagem corporal, composição: a incerteza da cena, encenada.",
+ src_pt:"Robert Fucci · The Frick Collection"},
+
+{slug:"x-vermeer-mistress-maid", type:"visio", f:"X", ytId:"ypOP8a1f6Nw", ytShort:true,
+ title:"Vermeer · Mistress and Maid",
+ body:"The woman's paused pen, the maid's entrance. Psychological tension made concrete.",
+ src:"The Frick Collection",
+ title_pt:"Vermeer · Senhora e Criada",
+ body_pt:"A caneta suspensa, a entrada da criada. A tensão psicológica tornada concreta.",
+ src_pt:"The Frick Collection"},
+
+{slug:"x-vermeer-woman-writing", type:"visio", f:"X", ytId:"-DokBrWQK0U", ytShort:true,
+ title:"Vermeer · Woman Writing a Letter with Her Maid",
+ body:"Robert Fucci reads gestures and symbols rather than just the famous light.",
+ src:"Robert Fucci · The Frick Collection",
+ title_pt:"Vermeer · Mulher Escrevendo uma Carta com Sua Criada",
+ body_pt:"Robert Fucci lê gestos e símbolos, não só a luz famosa.",
+ src_pt:"Robert Fucci · The Frick Collection"},
+
+{slug:"x-rembrandt-night-watch", type:"visio", f:"X", ytId:"Co1BfNWHHU4", ytShort:true,
+ title:"Rembrandt · The Night Watch",
+ body:"Light, movement, depth: the compositional choices that make it not a lineup.",
+ src:"Rijksmuseum, Amsterdam",
+ title_pt:"Rembrandt · A Ronda Noturna",
+ body_pt:"Luz, movimento, profundidade: as escolhas que fazem dele mais que uma formação.",
+ src_pt:"Rijksmuseum, Amsterdã"},
+
+{slug:"x-veronese-virtue-vice", type:"visio", f:"X", ytId:"EnPoXMifq30", ytShort:true,
+ title:"Veronese · Virtue and Vice",
+ body:"Earthy browns for Virtue, ornate dress and a dagger for Vice. Colors as argument.",
+ src:"The Frick Collection",
+ title_pt:"Veronese · Virtude e Vício",
+ body_pt:"Marrons terrosos para a Virtude, vestido ornamentado e adaga para o Vício. Cores como argumento.",
+ src_pt:"The Frick Collection"},
+
+{slug:"x-vandyck-noblewoman", type:"visio", f:"X", ytId:"WfSSInZNeeQ", ytShort:true,
+ title:"Van Dyck · A Genoese Noblewoman",
+ body:"Ian Wardropper on a full-length portrait — dress, architecture, presence.",
+ src:"The Frick Collection",
+ title_pt:"Van Dyck · Uma Nobre Genovesa",
+ body_pt:"Ian Wardropper sobre um retrato de corpo inteiro — vestido, arquitetura, presença.",
+ src_pt:"The Frick Collection"},
+
+{slug:"x-giorgione-philosophers", type:"visio", f:"X", ytId:"JLtYJUTUfbw", ytShort:true,
+ title:"Giorgione · The Three Philosophers",
+ body:"Magi? Thales, Pherecydes, Pythagoras? Xavier Salomon on an unresolved painting.",
+ src:"Xavier Salomon · The Frick Collection",
+ title_pt:"Giorgione · Os Três Filósofos",
+ body_pt:"Magos? Tales, Ferécides, Pitágoras? Xavier Salomon sobre uma pintura sem resposta.",
+ src_pt:"Xavier Salomon · The Frick Collection"},
+
+{slug:"x-raphael-madonna", type:"visio", f:"X", ytId:"ilMAomDrskk", ytShort:true,
+ title:"Raphael · The Dark-Haired Madonna",
+ body:"Not blonde. Simple clothes, seated on the ground, a tree stump for a throne.",
+ src:"The Metropolitan Museum of Art",
+ title_pt:"Rafael · A Madonna Morena",
+ body_pt:"Não loura. Roupas simples, sentada no chão, um toco de árvore por trono.",
+ src_pt:"The Metropolitan Museum of Art"},
+
+{slug:"x-pintoricchio-penelope", type:"visio", f:"X", ytId:"RBguQzb3UZM", ytShort:true,
+ title:"Pintoricchio · The Odyssey in One Painting",
+ body:"Emily Hauser finds Circe, the Sirens, the Phaeacians, and the bow — in one scene.",
+ src:"The National Gallery, London",
+ title_pt:"Pintoricchio · A Odisseia em Um Quadro",
+ body_pt:"Emily Hauser encontra Circe, as Sereias, os Feácios e o arco — numa só cena.",
+ src_pt:"The National Gallery, Londres"},
+
+// --- ARCHITECTURE (→ I when promoted) ---
+{slug:"x-gothic-cathedrals", type:"visio", f:"X", ytId:"0MBW0stZyyU", ytShort:true,
+ title:"The Great Gothic Cathedrals",
+ body:"A practicing architect's tour of the actual buildings, not the style label.",
+ src:"Manuel Bravo",
+ title_pt:"As Grandes Catedrais Góticas",
+ body_pt:"O passeio de um arquiteto pelos edifícios reais, não pelo rótulo estilístico.",
+ src_pt:"Manuel Bravo"},
+
+{slug:"x-stjohns-chapel", type:"visio", f:"X", ytId:"RujMVFt0aYk", ytShort:true,
+ title:"St John's Chapel · Norman Sacred Space",
+ body:"An actual medieval chapel inside the Tower of London, not a reconstruction.",
+ src:"Alfred Hawkins · Historic Royal Palaces",
+ title_pt:"Capela de São João · Espaço Sacro Normando",
+ body_pt:"Uma capela medieval real dentro da Torre de Londres, não uma reconstrução.",
+ src_pt:"Alfred Hawkins · Historic Royal Palaces"},
+
+{slug:"x-whitetower-doorway", type:"visio", f:"X", ytId:"7tq64KXYCmA", ytShort:true,
+ title:"The White Tower · An Eleventh-Century Doorway",
+ body:"A surviving drawbar socket reveals how an 11th-century space was actually used.",
+ src:"Historic Royal Palaces",
+ title_pt:"A Torre Branca · Uma Porta do Século XI",
+ body_pt:"Um encaixe sobrevivente de tranca revela como um espaço do séc. XI era usado.",
+ src_pt:"Historic Royal Palaces"},
+
+{slug:"x-roman-arches", type:"visio", f:"X", ytId:"cc61Wk6paW4", ytShort:true,
+ title:"Roman Triumphal Arches, Reborn",
+ body:"The specific form that passed from Rome into the Renaissance.",
+ src:"Manuel Bravo",
+ title_pt:"Arcos Triunfais Romanos, Renascidos",
+ body_pt:"A forma específica que passou de Roma para o Renascimento.",
+ src_pt:"Manuel Bravo"},
+
+{slug:"x-medieval-walls", type:"visio", f:"X", ytId:"z_RFcXtfeTs", ytShort:true,
+ title:"The Scale of Medieval Walls",
+ body:"Preserved walled cities — the architecture of a whole settlement, not a monument.",
+ src:"Manuel Bravo",
+ title_pt:"A Escala das Muralhas Medievais",
+ body_pt:"Cidades muradas preservadas — a arquitetura de uma povoação inteira.",
+ src_pt:"Manuel Bravo"},
+
+{slug:"x-roman-aqueducts", type:"visio", f:"X", ytId:"4lbmlkrU0wU", ytShort:true,
+ title:"Roman Aqueducts, Still Standing",
+ body:"Actual European examples. Roman engineering as a visible fact.",
+ src:"Manuel Bravo",
+ title_pt:"Aquedutos Romanos, Ainda de Pé",
+ body_pt:"Exemplos reais na Europa. A engenharia romana como fato visível.",
+ src_pt:"Manuel Bravo"},
+
+{slug:"x-hotel-tassel", type:"visio", f:"X", ytId:"hkwKtjvXKLM", ytShort:true,
+ title:"Hôtel Tassel · Iron Meets Ornament",
+ body:"The exposed riveted beam, the coordinated metalwork and mosaic. Art Nouveau in one house.",
+ src:"HENI Talks",
+ title_pt:"Hôtel Tassel · Ferro Encontra Ornamento",
+ body_pt:"A viga rebitada exposta, o metal e o mosaico coordenados. Art Nouveau em uma casa.",
+ src_pt:"HENI Talks"},
+
+{slug:"x-hotel-solvay", type:"visio", f:"X", ytId:"KMOJa0J8fmk", ytShort:true,
+ title:"Hôtel Solvay · Modern Materials, Exuberant Decoration",
+ body:"The proof that technological innovation does not require rejecting ornament.",
+ src:"HENI Talks",
+ title_pt:"Hôtel Solvay · Materiais Modernos, Decoração Exuberante",
+ body_pt:"A prova de que inovação técnica não exige rejeitar o ornamento.",
+ src_pt:"HENI Talks"},
+
+{slug:"x-hotel-vaneetvelde", type:"visio", f:"X", ytId:"vkvC9tBn_tY", ytShort:true,
+ title:"Hôtel van Eetvelde · A Petrified Forest",
+ body:"Nature-inspired forms designed to make the inhabitant feel at home.",
+ src:"HENI Talks",
+ title_pt:"Hôtel van Eetvelde · Uma Floresta Petrificada",
+ body_pt:"Formas inspiradas na natureza para fazer o habitante se sentir em casa.",
+ src_pt:"HENI Talks"},
+
+{slug:"x-wren-great-model", type:"visio", f:"X", ytId:"yCHOvTBbtD0", ytShort:true,
+ title:"Wren · The Great Model of St Paul's",
+ body:"The cathedral Charles II almost approved, preserved as a wooden model.",
+ src:"St Paul's Cathedral, London",
+ title_pt:"Wren · O Grande Modelo de São Paulo",
+ body_pt:"A catedral que Charles II quase aprovou, preservada em modelo de madeira.",
+ src_pt:"Catedral de São Paulo, Londres"},
+
+// --- LITERATURE (→ L when promoted) ---
+{slug:"x-prospero-revels", type:"visio", f:"X", ytId:"OX7c_6L_zDY", ytShort:true,
+ title:"Shakespeare · Our Revels Now Are Ended",
+ body:"Ferdy Roberts performs Prospero's farewell at the Globe. Illusion and mortal life.",
+ src:"Shakespeare's Globe · The Tempest, IV.i",
+ title_pt:"Shakespeare · Nossos Divertimentos Terminaram",
+ body_pt:"Ferdy Roberts interpreta o adeus de Próspero no Globe. Ilusão e vida mortal.",
+ src_pt:"Shakespeare's Globe · A Tempestade, IV.i"},
+
+{slug:"x-hamlet-globe", type:"visio", f:"X", ytId:"594IVii_KFc", ytShort:true,
+ title:"Hamlet · To Be or Not to Be (Full)",
+ body:"The Globe performs the whole speech — not just the opening line.",
+ src:"Shakespeare's Globe · Hamlet, III.i",
+ title_pt:"Hamlet · Ser ou Não Ser (Íntegra)",
+ body_pt:"O Globe interpreta o discurso inteiro — não só a primeira linha.",
+ src_pt:"Shakespeare's Globe · Hamlet, III.i"},
+
+{slug:"x-odyssey-papyrus", type:"visio", f:"X", ytId:"tFraUExwOZg", ytShort:true,
+ title:"An Odyssey Papyrus, 2,000 Years Old",
+ body:"Three textual differences from modern editions, visible on the weave itself.",
+ src:"The Metropolitan Museum of Art",
+ title_pt:"Um Papiro da Odisseia, 2000 Anos",
+ body_pt:"Três diferenças textuais da edição moderna, visíveis no próprio tecido.",
+ src_pt:"The Metropolitan Museum of Art"},
+
+{slug:"x-austen-marriage-plots", type:"visio", f:"X", ytId:"xlLts5IRmm4", ytShort:false,
+ title:"Austen · Why the Marriage Plot Matters",
+ body:"Kathryn Sutherland: the heroine's choice of husband determines more than romance.",
+ src:"The British Library",
+ title_pt:"Austen · Por Que o Casamento Importa",
+ body_pt:"Kathryn Sutherland: a escolha do marido determina mais do que o romance.",
+ src_pt:"The British Library"},
+
+{slug:"x-chesterton-wonder", type:"visio", f:"X", ytId:"8OFELkr6iwc", ytShort:true,
+ title:"Chesterton · Full of Wonder",
+ body:"Joseph Pearce ends with \"wonderful\" unpacked as \"full of wonder.\" The whole view.",
+ src:"Joseph Pearce · TAN Books",
+ title_pt:"Chesterton · Cheio de Maravilha",
+ body_pt:"Joseph Pearce desvenda \"wonderful\" como \"cheio de maravilha.\" A visão inteira.",
+ src_pt:"Joseph Pearce · TAN Books"},
+
+{slug:"x-tolkien-catholic", type:"visio", f:"X", ytId:"XyzEwJDnw6Y", ytShort:true,
+ title:"Tolkien · The Lord of the Rings Is Catholic",
+ body:"Not biographical trivia. The novel's religious character, direct from a Tolkien scholar.",
+ src:"Joseph Pearce · TAN Books",
+ title_pt:"Tolkien · O Senhor dos Anéis É Católico",
+ body_pt:"Não trivia biográfico. O caráter religioso do romance, de um estudioso de Tolkien.",
+ src_pt:"Joseph Pearce · TAN Books"},
+
+{slug:"x-dante-beyond-inferno", type:"visio", f:"X", ytId:"gScdKjv7gR8", ytShort:true,
+ title:"Dante · Read Beyond the Inferno",
+ body:"Pearce on the mistake of stopping at the first canticle. Purgatory and Paradise matter.",
+ src:"Joseph Pearce · TAN Books",
+ title_pt:"Dante · Leia Além do Inferno",
+ body_pt:"Pearce sobre o erro de parar na primeira cântica. Purgatório e Paraíso importam.",
+ src_pt:"Joseph Pearce · TAN Books"},
+
+{slug:"x-chesterton-controversialist", type:"visio", f:"X", ytId:"EkEHkES1aPg", ytShort:true,
+ title:"Chesterton · The Controversialist With No Enemies",
+ body:"How to argue vigorously without destroying the friendship.",
+ src:"Joseph Pearce · TAN Books",
+ title_pt:"Chesterton · O Polemista Sem Inimigos",
+ body_pt:"Como debater com vigor sem destruir a amizade.",
+ src_pt:"Joseph Pearce · TAN Books"},
+
+{slug:"x-sleepy-hollow-opening", type:"visio", f:"X", ytId:"cRFgz1qhzEs", ytShort:true,
+ title:"Irving · The Opening of Sleepy Hollow",
+ body:"Kevin Slack reads the first paragraphs, not the famous chase.",
+ src:"Hillsdale College",
+ title_pt:"Irving · O Começo de Sleepy Hollow",
+ body_pt:"Kevin Slack lê os primeiros parágrafos, não a perseguição famosa.",
+ src_pt:"Hillsdale College"},
+
+{slug:"x-katrina-van-tassel", type:"visio", f:"X", ytId:"au6fRoM_bPs", ytShort:true,
+ title:"Sleepy Hollow · Katrina Is Not a Prize",
+ body:"She handles her suitors deliberately. Irving did not write a passive heroine.",
+ src:"Kevin Slack · Hillsdale College",
+ title_pt:"Sleepy Hollow · Katrina Não É um Prêmio",
+ body_pt:"Ela maneja os pretendentes de propósito. Irving não escreveu uma heroína passiva.",
+ src_pt:"Kevin Slack · Hillsdale College"},
+
+{slug:"x-headless-horseman", type:"visio", f:"X", ytId:"9bezAVTxWmY", ytShort:true,
+ title:"The Headless Horseman's Real History",
+ body:"Irving gives the ghost a Revolutionary War biography. The setting matters.",
+ src:"Kevin Slack · Hillsdale College",
+ title_pt:"A História Real do Cavaleiro Sem Cabeça",
+ body_pt:"Irving dá ao fantasma uma biografia da Guerra Revolucionária. O cenário importa.",
+ src_pt:"Kevin Slack · Hillsdale College"},
+
+{slug:"x-brontes-miniatures", type:"visio", f:"X", ytId:"ylLv-vkKuWo", ytShort:false,
+ title:"The Brontës' Miniature Magazines",
+ body:"Fiona Bruce holds a tiny handwritten magazine the sisters made as children.",
+ src:"The British Library",
+ title_pt:"As Revistinhas das Brontës",
+ body_pt:"Fiona Bruce segura uma pequenina revista manuscrita que as irmãs fizeram na infância.",
+ src_pt:"The British Library"}
+
+];
+FOLIOS.push(...TESTING_V2);
+
 if (typeof module !== "undefined") module.exports = {FAC, FOLIOS, AXIOM_POOL, IMG, YT};
