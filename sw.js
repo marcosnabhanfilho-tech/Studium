@@ -1,4 +1,4 @@
-const CACHE = "studium-v13.16-testing-batch";
+const CACHE = "studium-v13.17-promoted";
 const SHELL = ["./", "./index.html", "./styles.css", "./app.js", "./content.js", "./manifest.webmanifest"];
 self.addEventListener("install", e=>{
   e.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL)).then(()=>self.skipWaiting()));
