@@ -222,6 +222,13 @@ function shuffleFair(folios){
   }
   return groups.flat();
 }
+// v13.15 — faculty name resolved against the active language.
+function facName(k){
+  const f = FAC[k];
+  if(!f) return k;
+  const key = "name_" + (state.lang || "en");
+  return f[key] || f.name_en || f.name || k;
+}
 function hasLangContent(f, lang){
   // v13.10 — Video folios are gated by their AUDIO language, not their text.
   // videoLang: "en" English only (default), "pt" Portuguese only, "all" both
@@ -303,7 +310,7 @@ function renderChips(){
     const s = seenInFaculty(k);
     const complete = s>=tn;
     const isActive = !filterIsAll() && filterIncludes(k);
-    html += `<button class="menu-fac ${isActive?"active":""} ${complete?"complete":""}" data-f="${k}"><span class="mfn">${esc(FAC[k].name)}</span><span class="mfp">${s} / ${tn}${complete?" ✦":""}</span></button>`;
+    html += `<button class="menu-fac ${isActive?"active":""} ${complete?"complete":""}" data-f="${k}"><span class="mfn">${esc(facName(k))}</span><span class="mfp">${s} / ${tn}${complete?" ✦":""}</span></button>`;
   }
   grid.innerHTML = html;
 }
@@ -555,7 +562,7 @@ function slideHTML(folio){
     const bodyObj = L(folio, "body") || folio.body;
     return `<section class="slide ax${gold}" data-slug="${folio.slug}" data-type="sententia" data-fac="${folio.f}" data-pages="1">
       <div class="pager"><div class="page first last">
-        <div class="s-top" style="width:100%"><span class="s-fac">${esc(fac.name)}</span><span class="s-typ">${esc(typLabel)}${folio.rare?" · gold leaf":""}</span></div>
+        <div class="s-top" style="width:100%"><span class="s-fac">${esc(facName(folio.f))}</span><span class="s-typ">${esc(typLabel)}${folio.rare?" · gold leaf":""}</span></div>
         <div class="ax-lat">${esc(bodyObj.latin || "")}</div>
         <div class="ax-en">${esc(bodyObj.english || "")}</div>
         <div class="ax-orn">❧ ❧ ❧</div>
@@ -576,7 +583,7 @@ function slideHTML(folio){
           <img src="${folio.img}" alt="${esc(L(folio,"title"))}" loading="lazy"
             style="--zx:${z.x}%; --zy:${z.y}%; --zs:${z.scale};"
             onerror="this.parentElement.style.background='#1E293B'">
-          <div class="pic-step">${esc(fac.name)} · ${folio.step||1} / ${folio.steps||1}</div>
+          <div class="pic-step">${esc(facName(folio.f))} · ${folio.step||1} / ${folio.steps||1}</div>
           <div class="pic-dots">${dots}</div>
         </div>
         <h2>${esc(L(folio,"title"))}</h2>
@@ -668,7 +675,7 @@ function slideHTML(folio){
     }
     return `<section class="slide ludus medium${gold}" data-slug="${folio.slug}" data-type="ludus" data-mode="${mode}" data-fac="${folio.f}" data-pages="1">
       <div class="pager"><div class="page first last">
-        <div class="s-top"><span class="s-fac">${esc(fac.name)}</span><span class="s-typ">${esc(typLabel)}${folio.rare?" · gold leaf":""}</span></div>
+        <div class="s-top"><span class="s-fac">${esc(facName(folio.f))}</span><span class="s-typ">${esc(typLabel)}${folio.rare?" · gold leaf":""}</span></div>
         <h2>${esc(L(folio,"title"))}</h2>
         <div class="s-body">${L(folio,"body")}</div>
         ${gameHTML}
@@ -728,23 +735,25 @@ function slideHTML(folio){
   }
 
   const density = classifyDensity(folio);
-  // Decide pagination. Only long lectio / opus get paginated. Images, interactive elements,
-  // and short content stay as one page so structure doesn't fragment.
+  // v13.15 — Overflow fix: with the bigger fonts from v13.12, medium-tier folios
+  // (Cialdini on Reciprocity, Centesimus Annus · The Free Economy, Hayek Knowledge
+  // Problem, etc.) no longer fit on one page but the old logic only paginated
+  // long-tier folios over 220 words. Now we paginate BOTH medium and long when
+  // they exceed ~130 words. Images and interactive elements still skip
+  // pagination so structure doesn't fragment.
   const canPaginate = (folio.type === "lectio" || folio.type === "opus") && !folio.img;
-  // v11: symmetric 170/170 — the first page carries full content before the continuation.
-  // A short body (< 220 words total) skips pagination entirely and sits on one page.
-  const firstMax = 170;
-  const restMax  = 170;
-  // Measure total body words so very-short "long"-classified folios don't fragment.
+  // Pages hold ~115 words comfortably at the new font sizes (down from 170).
+  const firstMax = 115;
+  const restMax  = 115;
   const _bodyWords = (bodyHTML||"").replace(/<[^>]+>/g," ").replace(/\s+/g," ").trim().split(" ").filter(Boolean).length;
   let pages;
-  if(canPaginate && density === "long" && _bodyWords > 220){
+  if(canPaginate && (density === "long" || density === "medium") && _bodyWords > 130){
     pages = paginateBody(bodyHTML, firstMax, restMax);
   } else {
     pages = [bodyHTML];
   }
 
-  const sTopHTML = `<div class="s-top"><span class="s-fac">${esc(fac.name)}</span><span class="s-typ">${esc(typLabel)}${folio.rare?" · gold leaf":""}</span></div>`;
+  const sTopHTML = `<div class="s-top"><span class="s-fac">${esc(facName(folio.f))}</span><span class="s-typ">${esc(typLabel)}${folio.rare?" · gold leaf":""}</span></div>`;
   const titleHTML = `<h2>${esc(L(folio,"title"))}</h2>`;
   const srcHTML   = `<div class="s-src">— ${esc(L(folio,"src")||"")}</div>`;
 
@@ -852,8 +861,8 @@ function checkWingCompletion(facCode){
   if(seen >= total && !state.seen["_wing_"+facCode]){
     state.seen["_wing_"+facCode] = 1;
     const msg = state.lang === "pt"
-      ? FAC[facCode].name + " perlecta ✦ — ala completa"
-      : FAC[facCode].name + " perlecta ✦ — a wing complete";
+      ? facName(facCode) + " perlecta ✦ — ala completa"
+      : facName(facCode) + " perlecta ✦ — a wing complete";
     toast(msg);
     sndWing();
     haptic([30, 60, 30]);
@@ -1158,7 +1167,7 @@ function renderThesaurus(){
   if(!items.length){ list.innerHTML = `<div class="tempty">${esc(t("thesaurus_empty","Nothing kept yet. Double-tap a folio that strikes you."))}</div>`; return; }
   list.innerHTML = items.map(([slug, s])=>`
     <div class="ti" data-slug="${slug}">
-      <div class="ti-fac">${esc(FAC[s.fac] ? FAC[s.fac].name : s.fac)}</div>
+      <div class="ti-fac">${esc(FAC[s.fac] ? facName(s.fac) : s.fac)}</div>
       <div class="ti-t">${esc(s.title)}</div>
       <div class="ti-s">— ${esc(s.src||"")}</div>
     </div>`).join("");
@@ -1176,7 +1185,7 @@ function renderWings(){
     const ratio = tn ? s/tn : 0;
     const deg = DEGREES[Math.min(Math.floor(ratio * DEGREES.length), DEGREES.length-1)];
     html += `<div class="wi">
-      <div class="wi-h"><div class="wi-n">${esc(FAC[k].name)}</div><div class="wi-p">${s} / ${tn}${s>=tn?' ✦':''}</div></div>
+      <div class="wi-h"><div class="wi-n">${esc(facName(k))}</div><div class="wi-p">${s} / ${tn}${s>=tn?' ✦':''}</div></div>
       <div class="wi-bar"><div style="width:${(ratio*100).toFixed(0)}%"></div></div>
       <div class="wi-deg">${esc(deg)}</div>
     </div>`;
@@ -1255,7 +1264,7 @@ function initDailyChooser(onDone){
     if(k === "ALL") return true;
     return facTotalForLang(k) > 0;
   }).map(k=>{
-    const name = k === "ALL" ? t("omnia","Omnia · all wings") : FAC[k].name;
+    const name = k === "ALL" ? t("omnia","Omnia · all wings") : facName(k);
     const desc = t("daily_desc_"+k, "");
     const cls = k === "ALL" ? "omnia" : (k === "A" ? "arsenal" : "");
     return `<button data-f="${k}" class="${cls}"><span class="dn">${esc(name)}</span><span class="dd">${esc(desc)}</span></button>`;
@@ -1276,7 +1285,7 @@ function initDailyChooser(onDone){
     sndSeal();
     haptic(16);
     setTimeout(()=>{
-      const name = f === "ALL" ? t("omnia","Omnia") : FAC[f].name;
+      const name = f === "ALL" ? t("omnia","Omnia") : facName(f);
       toast(t("today_label","Today") + ": " + name);
     }, 300);
     onDone && onDone();
@@ -1818,6 +1827,40 @@ async function init(){
   // Expose so applyI18n can refresh too
   window._refreshDrawerSnd = refreshDrawerSnd;
 
+  // v13.16 — Reset everything. Wipes local progress: seen, saved, votes,
+  // daily choice, obscured intro, filter, and the lang pref. User confirms
+  // twice because this can't be undone from the UI.
+  const drawerReset = document.getElementById("drawer-reset");
+  if(drawerReset) drawerReset.onclick = ()=>{
+    const msg1 = state.lang === "pt"
+      ? "Resetar tudo? Isto apaga todo o seu progresso (fólios vistos, salvos, votos). Esta ação não pode ser desfeita."
+      : "Reset everything? This wipes all your progress (seen folios, saved items, votes). This cannot be undone.";
+    if(!confirm(msg1)) return;
+    const msg2 = state.lang === "pt"
+      ? "Tem certeza mesmo? Último aviso."
+      : "Really sure? Last chance.";
+    if(!confirm(msg2)) return;
+    // Clear in-memory state
+    state.seen = {};
+    state.saved = {};
+    state.votes = {};
+    state.dayCount = 0;
+    state.filter = "ALL";
+    state.dirty = { seen: [], saved: [], votes: [] };
+    // Clear localStorage keys we own
+    try{
+      localStorage.removeItem(LOCAL_KEY);
+      localStorage.removeItem(DAILY_KEY);
+      localStorage.removeItem(OB_KEY);
+    }catch(e){}
+    saveLocal();
+    // Rebuild from scratch
+    closeMenu();
+    rebuildReel();
+    renderChips();
+    toast(state.lang === "pt" ? "Tudo resetado ✦" : "Reset complete ✦");
+  };
+
   // Audio unlock on first gesture
   document.addEventListener("pointerdown", ()=>audio(), {once:true, passive:true});
 
@@ -1862,7 +1905,7 @@ async function init(){
       if(filterIsAll()){
         toast(t("omnia","Omnia — all wings"));
       } else if(Array.isArray(state.filter)){
-        const names = state.filter.map(k=>FAC[k]?.name || k).join(" · ");
+        const names = state.filter.map(k=>facName(k)).join(" · ");
         toast(names);
       }
     }
