@@ -6523,7 +6523,7 @@ FOLIOS.push(...PAIRS);
 const TESTING_V2 = [
 
 // --- PAINTING (→ I when promoted) ---
-{slug:"x-zurbaran-sculptural", type:"visio", f:"X", ytId:"QbuzQGIGYuY", ytShort:true,
+{slug:"x-zurbaran-sculptural", type:"visio", f:"I", ytId:"QbuzQGIGYuY", ytShort:true,
  title:"Zurbarán · Painted Like Sculpture",
  body:"The physical presence of his saints compared to carved stone.",
  src:"The National Gallery, London",
@@ -6531,7 +6531,7 @@ const TESTING_V2 = [
  body_pt:"A presença física de seus santos comparada à pedra talhada.",
  src_pt:"The National Gallery, Londres"},
 
-{slug:"x-zurbaran-fabrics", type:"visio", f:"X", ytId:"E2Pf4RTdKHc", ytShort:true,
+{slug:"x-zurbaran-fabrics", type:"visio", f:"I", ytId:"E2Pf4RTdKHc", ytShort:true,
  title:"Zurbarán · The Fabrics of His Saints",
  body:"Close attention to cloth makes his handling of texture suddenly visible.",
  src:"The National Gallery, London",
@@ -6539,7 +6539,7 @@ const TESTING_V2 = [
  body_pt:"Atenção aos panos revela sua maestria com textura.",
  src_pt:"The National Gallery, Londres"},
 
-{slug:"x-zurbaran-margaret", type:"visio", f:"X", ytId:"CkjyKeti150", ytShort:true,
+{slug:"x-zurbaran-margaret", type:"visio", f:"I", ytId:"CkjyKeti150", ytShort:true,
  title:"Zurbarán · Saint Margaret of Antioch",
  body:"Richard Jacques on one specific seventeenth-century saint painting.",
  src:"Athena Art Foundation",
@@ -6547,7 +6547,7 @@ const TESTING_V2 = [
  body_pt:"Richard Jacques sobre uma pintura específica do século XVII.",
  src_pt:"Athena Art Foundation"},
 
-{slug:"x-mantegna-gethsemane", type:"visio", f:"X", ytId:"6iCGohBmVTY", ytShort:true,
+{slug:"x-mantegna-gethsemane", type:"visio", f:"I", ytId:"6iCGohBmVTY", ytShort:true,
  title:"Mantegna · Agony in the Garden",
  body:"Sleeping disciples and sharply cut rocks: the drama at Gethsemane, visible.",
  src:"Richard Jacques · Athena Art Foundation",
@@ -6555,7 +6555,7 @@ const TESTING_V2 = [
  body_pt:"Discípulos adormecidos e rochas cortantes: o drama do Getsêmani, visível.",
  src_pt:"Richard Jacques · Athena Art Foundation"},
 
-{slug:"x-elgreco-disrobing", type:"visio", f:"X", ytId:"f2CIrlIK6bA", ytShort:true,
+{slug:"x-elgreco-disrobing", type:"visio", f:"I", ytId:"f2CIrlIK6bA", ytShort:true,
  title:"El Greco · The Disrobing of Christ",
  body:"Morgan Haigh on his favorite Passion painting.",
  src:"Athena Art Foundation",
@@ -6563,7 +6563,7 @@ const TESTING_V2 = [
  body_pt:"Morgan Haigh sobre sua pintura favorita da Paixão.",
  src_pt:"Athena Art Foundation"},
 
-{slug:"x-rubens-innocents", type:"visio", f:"X", ytId:"9MROX-W2dDo", ytShort:true,
+{slug:"x-rubens-innocents", type:"visio", f:"I", ytId:"9MROX-W2dDo", ytShort:true,
  title:"Rubens · Massacre of the Innocents",
  body:"Amanda Bradley Petitgas on a biblical painting most people only hear about.",
  src:"Athena Art Foundation",
@@ -6571,7 +6571,7 @@ const TESTING_V2 = [
  body_pt:"Amanda Bradley Petitgas sobre uma pintura bíblica pouco vista.",
  src_pt:"Athena Art Foundation"},
 
-{slug:"x-murillo-shepherds", type:"visio", f:"X", ytId:"s5Oqi0W5wXk", ytShort:true,
+{slug:"x-murillo-shepherds", type:"visio", f:"I", ytId:"s5Oqi0W5wXk", ytShort:true,
  title:"Murillo · Adoration of the Shepherds",
  body:"Xavier Bray: the shepherd's dirty foot, humble offerings, the child's brilliant light.",
  src:"The Wallace Collection",
@@ -6579,7 +6579,7 @@ const TESTING_V2 = [
  body_pt:"Xavier Bray: o pé sujo do pastor, as ofertas humildes, a luz brilhante da criança.",
  src_pt:"The Wallace Collection"},
 
-{slug:"x-preti-cana", type:"visio", f:"X", ytId:"6E4yi8srykQ", ytShort:true,
+{slug:"x-preti-cana", type:"visio", f:"I", ytId:"6E4yi8srykQ", ytShort:true,
  title:"Preti · The Marriage at Cana",
  body:"A curator and conservator on storytelling and technique in one miracle scene.",
  src:"The National Gallery, London",
@@ -6587,7 +6587,7 @@ const TESTING_V2 = [
  body_pt:"Uma curadora e um restaurador sobre narrativa e técnica numa cena de milagre.",
  src_pt:"The National Gallery, Londres"},
 
-{slug:"x-juan-zurbaran-lemons", type:"visio", f:"X", ytId:"4a9wJB5Q_Ig", ytShort:true,
+{slug:"x-juan-zurbaran-lemons", type:"visio", f:"I", ytId:"4a9wJB5Q_Ig", ytShort:true,
  title:"Juan de Zurbarán · The Basket of Lemons",
  body:"Siân Walters treats the fruit as spiritual symbol, not decoration.",
  src:"The National Gallery, London",
@@ -6595,7 +6595,7 @@ const TESTING_V2 = [
  body_pt:"Siân Walters trata a fruta como símbolo espiritual, não decoração.",
  src_pt:"The National Gallery, Londres"},
 
-{slug:"x-vermeer-love-letter", type:"visio", f:"X", ytId:"Y5E2eKBcV6U", ytShort:true,
+{slug:"x-vermeer-love-letter", type:"visio", f:"I", ytId:"Y5E2eKBcV6U", ytShort:true,
  title:"Vermeer · The Love Letter",
  body:"Interrupted music, body language, composition: the scene's uncertainty, staged.",
  src:"Robert Fucci · The Frick Collection",
@@ -6603,7 +6603,7 @@ const TESTING_V2 = [
  body_pt:"Música interrompida, linguagem corporal, composição: a incerteza da cena, encenada.",
  src_pt:"Robert Fucci · The Frick Collection"},
 
-{slug:"x-vermeer-mistress-maid", type:"visio", f:"X", ytId:"ypOP8a1f6Nw", ytShort:true,
+{slug:"x-vermeer-mistress-maid", type:"visio", f:"I", ytId:"ypOP8a1f6Nw", ytShort:true,
  title:"Vermeer · Mistress and Maid",
  body:"The woman's paused pen, the maid's entrance. Psychological tension made concrete.",
  src:"The Frick Collection",
@@ -6611,7 +6611,7 @@ const TESTING_V2 = [
  body_pt:"A caneta suspensa, a entrada da criada. A tensão psicológica tornada concreta.",
  src_pt:"The Frick Collection"},
 
-{slug:"x-vermeer-woman-writing", type:"visio", f:"X", ytId:"-DokBrWQK0U", ytShort:true,
+{slug:"x-vermeer-woman-writing", type:"visio", f:"I", ytId:"-DokBrWQK0U", ytShort:true,
  title:"Vermeer · Woman Writing a Letter with Her Maid",
  body:"Robert Fucci reads gestures and symbols rather than just the famous light.",
  src:"Robert Fucci · The Frick Collection",
@@ -6619,7 +6619,7 @@ const TESTING_V2 = [
  body_pt:"Robert Fucci lê gestos e símbolos, não só a luz famosa.",
  src_pt:"Robert Fucci · The Frick Collection"},
 
-{slug:"x-rembrandt-night-watch", type:"visio", f:"X", ytId:"Co1BfNWHHU4", ytShort:true,
+{slug:"x-rembrandt-night-watch", type:"visio", f:"I", ytId:"Co1BfNWHHU4", ytShort:true,
  title:"Rembrandt · The Night Watch",
  body:"Light, movement, depth: the compositional choices that make it not a lineup.",
  src:"Rijksmuseum, Amsterdam",
@@ -6627,7 +6627,7 @@ const TESTING_V2 = [
  body_pt:"Luz, movimento, profundidade: as escolhas que fazem dele mais que uma formação.",
  src_pt:"Rijksmuseum, Amsterdã"},
 
-{slug:"x-veronese-virtue-vice", type:"visio", f:"X", ytId:"EnPoXMifq30", ytShort:true,
+{slug:"x-veronese-virtue-vice", type:"visio", f:"I", ytId:"EnPoXMifq30", ytShort:true,
  title:"Veronese · Virtue and Vice",
  body:"Earthy browns for Virtue, ornate dress and a dagger for Vice. Colors as argument.",
  src:"The Frick Collection",
@@ -6635,7 +6635,7 @@ const TESTING_V2 = [
  body_pt:"Marrons terrosos para a Virtude, vestido ornamentado e adaga para o Vício. Cores como argumento.",
  src_pt:"The Frick Collection"},
 
-{slug:"x-vandyck-noblewoman", type:"visio", f:"X", ytId:"WfSSInZNeeQ", ytShort:true,
+{slug:"x-vandyck-noblewoman", type:"visio", f:"I", ytId:"WfSSInZNeeQ", ytShort:true,
  title:"Van Dyck · A Genoese Noblewoman",
  body:"Ian Wardropper on a full-length portrait — dress, architecture, presence.",
  src:"The Frick Collection",
@@ -6643,7 +6643,7 @@ const TESTING_V2 = [
  body_pt:"Ian Wardropper sobre um retrato de corpo inteiro — vestido, arquitetura, presença.",
  src_pt:"The Frick Collection"},
 
-{slug:"x-giorgione-philosophers", type:"visio", f:"X", ytId:"JLtYJUTUfbw", ytShort:true,
+{slug:"x-giorgione-philosophers", type:"visio", f:"I", ytId:"JLtYJUTUfbw", ytShort:true,
  title:"Giorgione · The Three Philosophers",
  body:"Magi? Thales, Pherecydes, Pythagoras? Xavier Salomon on an unresolved painting.",
  src:"Xavier Salomon · The Frick Collection",
@@ -6651,7 +6651,7 @@ const TESTING_V2 = [
  body_pt:"Magos? Tales, Ferécides, Pitágoras? Xavier Salomon sobre uma pintura sem resposta.",
  src_pt:"Xavier Salomon · The Frick Collection"},
 
-{slug:"x-raphael-madonna", type:"visio", f:"X", ytId:"ilMAomDrskk", ytShort:true,
+{slug:"x-raphael-madonna", type:"visio", f:"I", ytId:"ilMAomDrskk", ytShort:true,
  title:"Raphael · The Dark-Haired Madonna",
  body:"Not blonde. Simple clothes, seated on the ground, a tree stump for a throne.",
  src:"The Metropolitan Museum of Art",
@@ -6659,7 +6659,7 @@ const TESTING_V2 = [
  body_pt:"Não loura. Roupas simples, sentada no chão, um toco de árvore por trono.",
  src_pt:"The Metropolitan Museum of Art"},
 
-{slug:"x-pintoricchio-penelope", type:"visio", f:"X", ytId:"RBguQzb3UZM", ytShort:true,
+{slug:"x-pintoricchio-penelope", type:"visio", f:"I", ytId:"RBguQzb3UZM", ytShort:true,
  title:"Pintoricchio · The Odyssey in One Painting",
  body:"Emily Hauser finds Circe, the Sirens, the Phaeacians, and the bow — in one scene.",
  src:"The National Gallery, London",
@@ -6668,7 +6668,7 @@ const TESTING_V2 = [
  src_pt:"The National Gallery, Londres"},
 
 // --- ARCHITECTURE (→ I when promoted) ---
-{slug:"x-gothic-cathedrals", type:"visio", f:"X", ytId:"0MBW0stZyyU", ytShort:true,
+{slug:"x-gothic-cathedrals", type:"visio", f:"I", ytId:"0MBW0stZyyU", ytShort:true,
  title:"The Great Gothic Cathedrals",
  body:"A practicing architect's tour of the actual buildings, not the style label.",
  src:"Manuel Bravo",
@@ -6676,7 +6676,7 @@ const TESTING_V2 = [
  body_pt:"O passeio de um arquiteto pelos edifícios reais, não pelo rótulo estilístico.",
  src_pt:"Manuel Bravo"},
 
-{slug:"x-stjohns-chapel", type:"visio", f:"X", ytId:"RujMVFt0aYk", ytShort:true,
+{slug:"x-stjohns-chapel", type:"visio", f:"I", ytId:"RujMVFt0aYk", ytShort:true,
  title:"St John's Chapel · Norman Sacred Space",
  body:"An actual medieval chapel inside the Tower of London, not a reconstruction.",
  src:"Alfred Hawkins · Historic Royal Palaces",
@@ -6684,7 +6684,7 @@ const TESTING_V2 = [
  body_pt:"Uma capela medieval real dentro da Torre de Londres, não uma reconstrução.",
  src_pt:"Alfred Hawkins · Historic Royal Palaces"},
 
-{slug:"x-whitetower-doorway", type:"visio", f:"X", ytId:"7tq64KXYCmA", ytShort:true,
+{slug:"x-whitetower-doorway", type:"visio", f:"I", ytId:"7tq64KXYCmA", ytShort:true,
  title:"The White Tower · An Eleventh-Century Doorway",
  body:"A surviving drawbar socket reveals how an 11th-century space was actually used.",
  src:"Historic Royal Palaces",
@@ -6692,7 +6692,7 @@ const TESTING_V2 = [
  body_pt:"Um encaixe sobrevivente de tranca revela como um espaço do séc. XI era usado.",
  src_pt:"Historic Royal Palaces"},
 
-{slug:"x-roman-arches", type:"visio", f:"X", ytId:"cc61Wk6paW4", ytShort:true,
+{slug:"x-roman-arches", type:"visio", f:"I", ytId:"cc61Wk6paW4", ytShort:true,
  title:"Roman Triumphal Arches, Reborn",
  body:"The specific form that passed from Rome into the Renaissance.",
  src:"Manuel Bravo",
@@ -6700,7 +6700,7 @@ const TESTING_V2 = [
  body_pt:"A forma específica que passou de Roma para o Renascimento.",
  src_pt:"Manuel Bravo"},
 
-{slug:"x-medieval-walls", type:"visio", f:"X", ytId:"z_RFcXtfeTs", ytShort:true,
+{slug:"x-medieval-walls", type:"visio", f:"I", ytId:"z_RFcXtfeTs", ytShort:true,
  title:"The Scale of Medieval Walls",
  body:"Preserved walled cities — the architecture of a whole settlement, not a monument.",
  src:"Manuel Bravo",
@@ -6708,7 +6708,7 @@ const TESTING_V2 = [
  body_pt:"Cidades muradas preservadas — a arquitetura de uma povoação inteira.",
  src_pt:"Manuel Bravo"},
 
-{slug:"x-roman-aqueducts", type:"visio", f:"X", ytId:"4lbmlkrU0wU", ytShort:true,
+{slug:"x-roman-aqueducts", type:"visio", f:"I", ytId:"4lbmlkrU0wU", ytShort:true,
  title:"Roman Aqueducts, Still Standing",
  body:"Actual European examples. Roman engineering as a visible fact.",
  src:"Manuel Bravo",
@@ -6716,7 +6716,7 @@ const TESTING_V2 = [
  body_pt:"Exemplos reais na Europa. A engenharia romana como fato visível.",
  src_pt:"Manuel Bravo"},
 
-{slug:"x-hotel-tassel", type:"visio", f:"X", ytId:"hkwKtjvXKLM", ytShort:true,
+{slug:"x-hotel-tassel", type:"visio", f:"I", ytId:"hkwKtjvXKLM", ytShort:true,
  title:"Hôtel Tassel · Iron Meets Ornament",
  body:"The exposed riveted beam, the coordinated metalwork and mosaic. Art Nouveau in one house.",
  src:"HENI Talks",
@@ -6724,7 +6724,7 @@ const TESTING_V2 = [
  body_pt:"A viga rebitada exposta, o metal e o mosaico coordenados. Art Nouveau em uma casa.",
  src_pt:"HENI Talks"},
 
-{slug:"x-hotel-solvay", type:"visio", f:"X", ytId:"KMOJa0J8fmk", ytShort:true,
+{slug:"x-hotel-solvay", type:"visio", f:"I", ytId:"KMOJa0J8fmk", ytShort:true,
  title:"Hôtel Solvay · Modern Materials, Exuberant Decoration",
  body:"The proof that technological innovation does not require rejecting ornament.",
  src:"HENI Talks",
@@ -6732,7 +6732,7 @@ const TESTING_V2 = [
  body_pt:"A prova de que inovação técnica não exige rejeitar o ornamento.",
  src_pt:"HENI Talks"},
 
-{slug:"x-hotel-vaneetvelde", type:"visio", f:"X", ytId:"vkvC9tBn_tY", ytShort:true,
+{slug:"x-hotel-vaneetvelde", type:"visio", f:"I", ytId:"vkvC9tBn_tY", ytShort:true,
  title:"Hôtel van Eetvelde · A Petrified Forest",
  body:"Nature-inspired forms designed to make the inhabitant feel at home.",
  src:"HENI Talks",
@@ -6740,7 +6740,7 @@ const TESTING_V2 = [
  body_pt:"Formas inspiradas na natureza para fazer o habitante se sentir em casa.",
  src_pt:"HENI Talks"},
 
-{slug:"x-wren-great-model", type:"visio", f:"X", ytId:"yCHOvTBbtD0", ytShort:true,
+{slug:"x-wren-great-model", type:"visio", f:"I", ytId:"yCHOvTBbtD0", ytShort:true,
  title:"Wren · The Great Model of St Paul's",
  body:"The cathedral Charles II almost approved, preserved as a wooden model.",
  src:"St Paul's Cathedral, London",
@@ -6749,7 +6749,7 @@ const TESTING_V2 = [
  src_pt:"Catedral de São Paulo, Londres"},
 
 // --- LITERATURE (→ L when promoted) ---
-{slug:"x-prospero-revels", type:"visio", f:"X", ytId:"OX7c_6L_zDY", ytShort:true,
+{slug:"x-prospero-revels", type:"visio", f:"L", ytId:"OX7c_6L_zDY", ytShort:true,
  title:"Shakespeare · Our Revels Now Are Ended",
  body:"Ferdy Roberts performs Prospero's farewell at the Globe. Illusion and mortal life.",
  src:"Shakespeare's Globe · The Tempest, IV.i",
@@ -6757,7 +6757,7 @@ const TESTING_V2 = [
  body_pt:"Ferdy Roberts interpreta o adeus de Próspero no Globe. Ilusão e vida mortal.",
  src_pt:"Shakespeare's Globe · A Tempestade, IV.i"},
 
-{slug:"x-hamlet-globe", type:"visio", f:"X", ytId:"594IVii_KFc", ytShort:true,
+{slug:"x-hamlet-globe", type:"visio", f:"L", ytId:"594IVii_KFc", ytShort:true,
  title:"Hamlet · To Be or Not to Be (Full)",
  body:"The Globe performs the whole speech — not just the opening line.",
  src:"Shakespeare's Globe · Hamlet, III.i",
@@ -6765,7 +6765,7 @@ const TESTING_V2 = [
  body_pt:"O Globe interpreta o discurso inteiro — não só a primeira linha.",
  src_pt:"Shakespeare's Globe · Hamlet, III.i"},
 
-{slug:"x-odyssey-papyrus", type:"visio", f:"X", ytId:"tFraUExwOZg", ytShort:true,
+{slug:"x-odyssey-papyrus", type:"visio", f:"L", ytId:"tFraUExwOZg", ytShort:true,
  title:"An Odyssey Papyrus, 2,000 Years Old",
  body:"Three textual differences from modern editions, visible on the weave itself.",
  src:"The Metropolitan Museum of Art",
@@ -6773,7 +6773,7 @@ const TESTING_V2 = [
  body_pt:"Três diferenças textuais da edição moderna, visíveis no próprio tecido.",
  src_pt:"The Metropolitan Museum of Art"},
 
-{slug:"x-austen-marriage-plots", type:"visio", f:"X", ytId:"xlLts5IRmm4", ytShort:false,
+{slug:"x-austen-marriage-plots", type:"visio", f:"L", ytId:"xlLts5IRmm4", ytShort:false,
  title:"Austen · Why the Marriage Plot Matters",
  body:"Kathryn Sutherland: the heroine's choice of husband determines more than romance.",
  src:"The British Library",
@@ -6781,7 +6781,7 @@ const TESTING_V2 = [
  body_pt:"Kathryn Sutherland: a escolha do marido determina mais do que o romance.",
  src_pt:"The British Library"},
 
-{slug:"x-chesterton-wonder", type:"visio", f:"X", ytId:"8OFELkr6iwc", ytShort:true,
+{slug:"x-chesterton-wonder", type:"visio", f:"L", ytId:"8OFELkr6iwc", ytShort:true,
  title:"Chesterton · Full of Wonder",
  body:"Joseph Pearce ends with \"wonderful\" unpacked as \"full of wonder.\" The whole view.",
  src:"Joseph Pearce · TAN Books",
@@ -6789,7 +6789,7 @@ const TESTING_V2 = [
  body_pt:"Joseph Pearce desvenda \"wonderful\" como \"cheio de maravilha.\" A visão inteira.",
  src_pt:"Joseph Pearce · TAN Books"},
 
-{slug:"x-tolkien-catholic", type:"visio", f:"X", ytId:"XyzEwJDnw6Y", ytShort:true,
+{slug:"x-tolkien-catholic", type:"visio", f:"L", ytId:"XyzEwJDnw6Y", ytShort:true,
  title:"Tolkien · The Lord of the Rings Is Catholic",
  body:"Not biographical trivia. The novel's religious character, direct from a Tolkien scholar.",
  src:"Joseph Pearce · TAN Books",
@@ -6797,7 +6797,7 @@ const TESTING_V2 = [
  body_pt:"Não trivia biográfico. O caráter religioso do romance, de um estudioso de Tolkien.",
  src_pt:"Joseph Pearce · TAN Books"},
 
-{slug:"x-dante-beyond-inferno", type:"visio", f:"X", ytId:"gScdKjv7gR8", ytShort:true,
+{slug:"x-dante-beyond-inferno", type:"visio", f:"L", ytId:"gScdKjv7gR8", ytShort:true,
  title:"Dante · Read Beyond the Inferno",
  body:"Pearce on the mistake of stopping at the first canticle. Purgatory and Paradise matter.",
  src:"Joseph Pearce · TAN Books",
@@ -6805,7 +6805,7 @@ const TESTING_V2 = [
  body_pt:"Pearce sobre o erro de parar na primeira cântica. Purgatório e Paraíso importam.",
  src_pt:"Joseph Pearce · TAN Books"},
 
-{slug:"x-chesterton-controversialist", type:"visio", f:"X", ytId:"EkEHkES1aPg", ytShort:true,
+{slug:"x-chesterton-controversialist", type:"visio", f:"L", ytId:"EkEHkES1aPg", ytShort:true,
  title:"Chesterton · The Controversialist With No Enemies",
  body:"How to argue vigorously without destroying the friendship.",
  src:"Joseph Pearce · TAN Books",
@@ -6813,7 +6813,7 @@ const TESTING_V2 = [
  body_pt:"Como debater com vigor sem destruir a amizade.",
  src_pt:"Joseph Pearce · TAN Books"},
 
-{slug:"x-sleepy-hollow-opening", type:"visio", f:"X", ytId:"cRFgz1qhzEs", ytShort:true,
+{slug:"x-sleepy-hollow-opening", type:"visio", f:"L", ytId:"cRFgz1qhzEs", ytShort:true, series:"sleepy-hollow", step:1,
  title:"Irving · The Opening of Sleepy Hollow",
  body:"Kevin Slack reads the first paragraphs, not the famous chase.",
  src:"Hillsdale College",
@@ -6821,7 +6821,7 @@ const TESTING_V2 = [
  body_pt:"Kevin Slack lê os primeiros parágrafos, não a perseguição famosa.",
  src_pt:"Hillsdale College"},
 
-{slug:"x-katrina-van-tassel", type:"visio", f:"X", ytId:"au6fRoM_bPs", ytShort:true,
+{slug:"x-katrina-van-tassel", type:"visio", f:"L", ytId:"au6fRoM_bPs", ytShort:true, series:"sleepy-hollow", step:2,
  title:"Sleepy Hollow · Katrina Is Not a Prize",
  body:"She handles her suitors deliberately. Irving did not write a passive heroine.",
  src:"Kevin Slack · Hillsdale College",
@@ -6829,7 +6829,7 @@ const TESTING_V2 = [
  body_pt:"Ela maneja os pretendentes de propósito. Irving não escreveu uma heroína passiva.",
  src_pt:"Kevin Slack · Hillsdale College"},
 
-{slug:"x-headless-horseman", type:"visio", f:"X", ytId:"9bezAVTxWmY", ytShort:true,
+{slug:"x-headless-horseman", type:"visio", f:"L", ytId:"9bezAVTxWmY", ytShort:true, series:"sleepy-hollow", step:3,
  title:"The Headless Horseman's Real History",
  body:"Irving gives the ghost a Revolutionary War biography. The setting matters.",
  src:"Kevin Slack · Hillsdale College",
@@ -6837,7 +6837,7 @@ const TESTING_V2 = [
  body_pt:"Irving dá ao fantasma uma biografia da Guerra Revolucionária. O cenário importa.",
  src_pt:"Kevin Slack · Hillsdale College"},
 
-{slug:"x-brontes-miniatures", type:"visio", f:"X", ytId:"ylLv-vkKuWo", ytShort:false,
+{slug:"x-brontes-miniatures", type:"visio", f:"L", ytId:"ylLv-vkKuWo", ytShort:false,
  title:"The Brontës' Miniature Magazines",
  body:"Fiona Bruce holds a tiny handwritten magazine the sisters made as children.",
  src:"The British Library",
