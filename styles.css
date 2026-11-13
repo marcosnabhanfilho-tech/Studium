@@ -258,16 +258,18 @@ body.chrome-shown #topbar{transform:translateY(0);opacity:1;pointer-events:auto}
 .slide.short .s-top{justify-content:center;gap:16px}
 .slide.short .s-src{text-align:center;margin-top:28px;font-size:.92rem}
 
-/* ---- MEDIUM folios ---- v13.13: dropped h2 min so long titles fit */
-.slide.medium h2{font-size:clamp(1.6rem, 5.4vw, 2.45rem);margin-bottom:20px}
-.slide.medium .s-body{font-size:clamp(1.22rem, 3.6vw, 1.4rem);line-height:1.55}
-.slide.medium .s-body blockquote{font-size:clamp(1.5rem, 4.6vw, 1.8rem)}
+/* ---- MEDIUM folios ---- v13.15: h2 min dropped again so even "Centesimus Annus"
+   style long titles fit on one line of narrow phones */
+.slide.medium h2{font-size:clamp(1.35rem, 5vw, 2.3rem);margin-bottom:16px}
+.slide.medium .s-body{font-size:clamp(1.18rem, 3.4vw, 1.36rem);line-height:1.52}
+.slide.medium .s-body p{margin-bottom:11px}
+.slide.medium .s-body blockquote{font-size:clamp(1.42rem, 4.4vw, 1.74rem);margin-bottom:12px}
 
-/* ---- LONG folios ---- v13.13: dropped h2 min */
-.slide.long h2{font-size:clamp(1.42rem, 4.6vw, 2rem);margin-bottom:16px}
-.slide.long .s-body{font-size:clamp(1.16rem, 3.3vw, 1.28rem);line-height:1.56}
-.slide.long .s-body p{margin-bottom:10px}
-.slide.long .s-body blockquote{font-size:clamp(1.34rem, 4.1vw, 1.56rem);margin-bottom:14px}
+/* ---- LONG folios ---- v13.15: tightened to fit paginated pages comfortably */
+.slide.long h2{font-size:clamp(1.3rem, 4.4vw, 1.92rem);margin-bottom:14px}
+.slide.long .s-body{font-size:clamp(1.12rem, 3.2vw, 1.24rem);line-height:1.53}
+.slide.long .s-body p{margin-bottom:9px}
+.slide.long .s-body blockquote{font-size:clamp(1.3rem, 4vw, 1.52rem);margin-bottom:12px}
 
 /* Drop cap */
 .slide.medium .s-body blockquote + p::first-letter,
@@ -310,7 +312,7 @@ body.chrome-shown #topbar{transform:translateY(0);opacity:1;pointer-events:auto}
   background:#000;cursor:pointer;overflow:hidden;
   box-shadow:0 2px 20px rgba(0,0,0,.7);
 }
-.lite-yt.short{aspect-ratio:9/16;max-height:72dvh}
+.lite-yt.short{aspect-ratio:9/16;max-height:82dvh}
 .lite-yt.wide{aspect-ratio:16/9;max-height:52dvh}
 .lite-yt img{width:100%;height:100%;object-fit:cover;opacity:.9}
 .lite-yt::after{
