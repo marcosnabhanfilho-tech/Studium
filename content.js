@@ -2991,7 +2991,7 @@ const THEOLOGIA_X = [
 // Tiny bodies on purpose — the video is the point.
 
 // --- THEOLOGY (Testing) ---
-{slug:"x-barron-suffering-cross", type:"visio", f:"X", ytId:"RuKUHgmYhdU", ytShort:true,
+{slug:"x-barron-suffering-cross", type:"visio", f:"T", ytId:"RuKUHgmYhdU", ytShort:true,
  title:"Barron · Suffering, Joined to the Cross",
  body:"Suffering can become participation in Christ's cross — not just endurance.",
  src:"Bishop Robert Barron",
@@ -2999,7 +2999,7 @@ const THEOLOGIA_X = [
  body_pt:"O sofrimento pode se tornar participação na cruz de Cristo — não mera resistência.",
  src_pt:"Bispo Robert Barron"},
 
-{slug:"x-barron-free-will", type:"visio", f:"X", ytId:"fod_3O9nRd0", ytShort:true,
+{slug:"x-barron-free-will", type:"visio", f:"T", ytId:"fod_3O9nRd0", ytShort:true,
  title:"Barron · Free Will Makes Love Possible",
  body:"A marionette cannot love. A person can only because they can refuse.",
  src:"Bishop Robert Barron",
@@ -3007,7 +3007,7 @@ const THEOLOGIA_X = [
  body_pt:"Uma marionete não pode amar. Uma pessoa só pode porque pode recusar.",
  src_pt:"Bispo Robert Barron"},
 
-{slug:"x-barron-mystical-body", type:"visio", f:"X", ytId:"8bEXZ68Wlvk", ytShort:true,
+{slug:"x-barron-mystical-body", type:"visio", f:"T", ytId:"8bEXZ68Wlvk", ytShort:true,
  title:"Barron · The Church Is an Organism",
  body:"Not an organization. Fulton Sheen's mystical-body theology, in one minute.",
  src:"Bishop Robert Barron · on Fulton Sheen",
@@ -3015,7 +3015,7 @@ const THEOLOGIA_X = [
  body_pt:"Não uma organização. A teologia do Corpo Místico de Fulton Sheen em um minuto.",
  src_pt:"Bispo Robert Barron · sobre Fulton Sheen"},
 
-{slug:"x-schmitz-friendship", type:"visio", f:"X", ytId:"E3iTc3cYNPo", ytShort:true,
+{slug:"x-schmitz-friendship", type:"visio", f:"T", ytId:"E3iTc3cYNPo", ytShort:true,
  title:"Schmitz · Friendship With Jesus",
  body:"Begins with the same thing every friendship does: time and attention.",
  src:"Fr. Mike Schmitz · Ascension",
@@ -3023,7 +3023,7 @@ const THEOLOGIA_X = [
  body_pt:"Começa com o mesmo que toda amizade: tempo e atenção.",
  src_pt:"Pe. Mike Schmitz · Ascension"},
 
-{slug:"x-schmitz-psalms-grief", type:"visio", f:"X", ytId:"JrpSC49M4B0", ytShort:true,
+{slug:"x-schmitz-psalms-grief", type:"visio", f:"T", ytId:"JrpSC49M4B0", ytShort:true,
  title:"Schmitz · The Psalms Make Room for Grief",
  body:"\"My one companion is darkness.\" Faithful prayer doesn't have to sound cheerful.",
  src:"Fr. Mike Schmitz · Ascension",
@@ -3031,7 +3031,7 @@ const THEOLOGIA_X = [
  body_pt:"\"Minha única companhia é a escuridão.\" A oração fiel não precisa soar alegre.",
  src_pt:"Pe. Mike Schmitz · Ascension"},
 
-{slug:"x-schmitz-repetition", type:"visio", f:"X", ytId:"5bD1GVg_hQw", ytShort:true,
+{slug:"x-schmitz-repetition", type:"visio", f:"T", ytId:"5bD1GVg_hQw", ytShort:true,
  title:"Schmitz · Repetition Belongs to Prayer",
  body:"The heavenly liturgy itself is repetition. The Rosary is not an insult to reason.",
  src:"Fr. Mike Schmitz · Ascension",
@@ -3039,7 +3039,7 @@ const THEOLOGIA_X = [
  body_pt:"A própria liturgia celeste é repetição. O Rosário não é um insulto à razão.",
  src_pt:"Pe. Mike Schmitz · Ascension"},
 
-{slug:"x-yeager-scripture", type:"visio", f:"X", ytId:"bgDFHQl6xVo", ytShort:true,
+{slug:"x-yeager-scripture", type:"visio", f:"T", ytId:"bgDFHQl6xVo", ytShort:true,
  title:"Read Scripture as a Conversation",
  body:"Read, reflect, pray — in that order. Fr. Vince Yeager's concrete method.",
  src:"St. Paul Center",
@@ -3047,7 +3047,7 @@ const THEOLOGIA_X = [
  body_pt:"Ler, refletir, rezar — nessa ordem. O método concreto do Pe. Vince Yeager.",
  src_pt:"St. Paul Center"},
 
-{slug:"x-morrow-latria", type:"visio", f:"X", ytId:"g3emMmOj3js", ytShort:true,
+{slug:"x-morrow-latria", type:"visio", f:"T", ytId:"g3emMmOj3js", ytShort:true,
  title:"Latria, Dulia, Hyperdulia",
  body:"Venerating saints is not worship. Three Greek words that end a Protestant objection.",
  src:"Jeff Morrow · St. Paul Center",
@@ -3055,7 +3055,7 @@ const THEOLOGIA_X = [
  body_pt:"Venerar santos não é adorar. Três palavras gregas que encerram uma objeção protestante.",
  src_pt:"Jeff Morrow · St. Paul Center"},
 
-{slug:"x-eucharist-beyond", type:"visio", f:"X", ytId:"DUJdf1jNfmI", ytShort:true,
+{slug:"x-eucharist-beyond", type:"visio", f:"T", ytId:"DUJdf1jNfmI", ytShort:true,
  title:"Barron · The Eucharist Sends You Out",
  body:"Not a private possession. You become a bearer of Christ's light to the world.",
  src:"Bishop Barron · National Eucharistic Revival",
@@ -3064,7 +3064,7 @@ const THEOLOGIA_X = [
  src_pt:"Bispo Barron · National Eucharistic Revival"},
 
 // --- PHILOSOPHY (Testing) ---
-{slug:"x-peterson-responsibility", type:"visio", f:"X", ytId:"1d-CRcEY41Q", ytShort:true,
+{slug:"x-peterson-responsibility", type:"visio", f:"F", ytId:"1d-CRcEY41Q", ytShort:true,
  title:"Peterson · Responsibility Deepens Meaning",
  body:"Weight can enrich a life, not just burden it. The counterintuitive move.",
  src:"Jordan B. Peterson",
@@ -3072,7 +3072,7 @@ const THEOLOGIA_X = [
  body_pt:"O peso pode enriquecer uma vida, não apenas sobrecarregá-la. O movimento contra-intuitivo.",
  src_pt:"Jordan B. Peterson"},
 
-{slug:"x-peterson-pragmatism", type:"visio", f:"X", ytId:"XpBXOEhykow", ytShort:true,
+{slug:"x-peterson-pragmatism", type:"visio", f:"F", ytId:"XpBXOEhykow", ytShort:true,
  title:"Peterson · Pragmatism Tests Truth",
  body:"William James and C. S. Peirce: truth is what survives action.",
  src:"Jordan B. Peterson",
@@ -3080,7 +3080,7 @@ const THEOLOGIA_X = [
  body_pt:"William James e C. S. Peirce: a verdade é o que sobrevive à ação.",
  src_pt:"Jordan B. Peterson"},
 
-{slug:"x-peterson-truth-burns", type:"visio", f:"X", ytId:"S53NfMx3WKo", ytShort:true,
+{slug:"x-peterson-truth-burns", type:"visio", f:"F", ytId:"S53NfMx3WKo", ytShort:true,
  title:"Peterson · Truth Liberates by Burning",
  body:"Freedom arrives through the destruction of self-deception. That's the uncomfortable part.",
  src:"Jordan B. Peterson",
@@ -3088,7 +3088,7 @@ const THEOLOGIA_X = [
  body_pt:"A liberdade chega pela destruição do autoengano. Essa é a parte desconfortável.",
  src_pt:"Jordan B. Peterson"},
 
-{slug:"x-scruton-beauty-ordinary", type:"visio", f:"X", ytId:"5zHg7vxrAlo", ytShort:false,
+{slug:"x-scruton-beauty-ordinary", type:"visio", f:"P", ytId:"5zHg7vxrAlo", ytShort:false,
  title:"Scruton · Beauty in Ordinary Life",
  body:"Childhood wonder at the sea. Inhabiting the world versus merely using it.",
  src:"Roger Scruton · Regent College",
@@ -3096,7 +3096,7 @@ const THEOLOGIA_X = [
  body_pt:"O encantamento infantil diante do mar. Habitar o mundo em vez de apenas usá-lo.",
  src_pt:"Roger Scruton · Regent College"},
 
-{slug:"x-taleb-hammurabi", type:"visio", f:"X", ytId:"0Uc4DI-BF28", ytShort:false,
+{slug:"x-taleb-hammurabi", type:"visio", f:"F", ytId:"0Uc4DI-BF28", ytShort:false,
  title:"Taleb · Hammurabi and Skin in the Game",
  body:"The builder who imposes risk should share it. A 3,800-year-old principle.",
  src:"Nassim Taleb · Stanford eCorner",
@@ -3104,7 +3104,7 @@ const THEOLOGIA_X = [
  body_pt:"Quem impõe o risco deve compartilhá-lo. Um princípio de 3.800 anos.",
  src_pt:"Nassim Taleb · Stanford eCorner"},
 
-{slug:"x-munger-grandchildren", type:"visio", f:"X", ytId:"0tqz9Nny0KM", ytShort:true,
+{slug:"x-munger-grandchildren", type:"visio", f:"F", ytId:"0tqz9Nny0KM", ytShort:true,
  title:"Munger · Bite Your Tongue",
  body:"Sometimes wisdom passes through example and silence, not advice. Even with grandchildren.",
  src:"Charlie Munger · CNBC",
@@ -3113,7 +3113,7 @@ const THEOLOGIA_X = [
  src_pt:"Charlie Munger · CNBC"},
 
 // --- ECONOMICS (Testing) ---
-{slug:"x-friedman-liberty-equality", type:"visio", f:"X", ytId:"SZpsfwR5CJo", ytShort:true,
+{slug:"x-friedman-liberty-equality", type:"visio", f:"O", ytId:"SZpsfwR5CJo", ytShort:true,
  title:"Friedman · Liberty Before Enforced Equality",
  body:"A and B decide what C must do for D. Who holds the redistributive power?",
  src:"Milton Friedman · Free to Choose",
@@ -3121,7 +3121,7 @@ const THEOLOGIA_X = [
  body_pt:"A e B decidem o que C deve fazer por D. Quem detém o poder redistributivo?",
  src_pt:"Milton Friedman · Free to Choose"},
 
-{slug:"x-friedman-bribery", type:"visio", f:"X", ytId:"4gWafxQiCNI", ytShort:true,
+{slug:"x-friedman-bribery", type:"visio", f:"O", ytId:"4gWafxQiCNI", ytShort:true,
  title:"Friedman · Fewer Permits, Less Bribery",
  body:"\"What was there to bribe a civil servant for?\" The institutional argument.",
  src:"Milton Friedman · Free to Choose",
@@ -3129,7 +3129,7 @@ const THEOLOGIA_X = [
  body_pt:"\"Para que subornar um funcionário público?\" O argumento institucional.",
  src_pt:"Milton Friedman · Free to Choose"},
 
-{slug:"x-friedman-tax-borrow-inflate", type:"visio", f:"X", ytId:"i8ir_D_X-Rg", ytShort:true,
+{slug:"x-friedman-tax-borrow-inflate", type:"visio", f:"O", ytId:"i8ir_D_X-Rg", ytShort:true,
  title:"Friedman · Three Ways to Pay",
  body:"Spending must be paid for. Taxation, borrowing, or inflation. The headline deficit is a distraction.",
  src:"Milton Friedman · Free to Choose",
@@ -3137,7 +3137,7 @@ const THEOLOGIA_X = [
  body_pt:"Gastos têm que ser pagos. Tributação, dívida, ou inflação. O déficit é uma distração.",
  src_pt:"Milton Friedman · Free to Choose"},
 
-{slug:"x-friedman-pencil", type:"visio", f:"X", ytId:"67tHtpac5ws", ytShort:false,
+{slug:"x-friedman-pencil", type:"visio", f:"O", ytId:"67tHtpac5ws", ytShort:false,
  title:"Friedman · I, Pencil",
  body:"One pencil. Strangers across continents cooperating with no one in charge. The price system, visible.",
  src:"Milton Friedman · Free to Choose",
@@ -3146,7 +3146,7 @@ const THEOLOGIA_X = [
  src_pt:"Milton Friedman · Free to Choose"},
 
 // --- BUSINESS (Testing) ---
-{slug:"x-sinek-patience", type:"visio", f:"X", ytId:"WR6EhDQaCCc", ytShort:false,
+{slug:"x-sinek-patience", type:"visio", f:"N", ytId:"WR6EhDQaCCc", ytShort:false,
  title:"Sinek · Leadership Is Patience",
  body:"Chanel's ninety-day listening rule. Institutional patience over constant intervention.",
  src:"Simon Sinek",
@@ -3154,7 +3154,7 @@ const THEOLOGIA_X = [
  body_pt:"A regra dos noventa dias de escuta da Chanel. Paciência institucional em vez de intervenção constante.",
  src_pt:"Simon Sinek"},
 
-{slug:"x-cialdini-advice-feedback", type:"visio", f:"X", ytId:"OqVYgqv3kes", ytShort:true,
+{slug:"x-cialdini-advice-feedback", type:"visio", f:"N", ytId:"OqVYgqv3kes", ytShort:true,
  title:"Cialdini · Ask for Advice, Not Feedback",
  body:"One word changes the other person from evaluator to collaborator.",
  src:"Robert Cialdini · teamcialdini",
@@ -3162,7 +3162,7 @@ const THEOLOGIA_X = [
  body_pt:"Uma palavra muda o outro de avaliador para colaborador.",
  src_pt:"Robert Cialdini · teamcialdini"},
 
-{slug:"x-cialdini-second-mint", type:"visio", f:"X", ytId:"6Fu-PXiPXX4", ytShort:true,
+{slug:"x-cialdini-second-mint", type:"visio", f:"N", ytId:"6Fu-PXiPXX4", ytShort:true,
  title:"Cialdini · The Personalized Second Mint",
  body:"The restaurant tip experiment: timing and presentation beat monetary value.",
  src:"Robert Cialdini · teamcialdini",
@@ -3171,7 +3171,7 @@ const THEOLOGIA_X = [
  src_pt:"Robert Cialdini · teamcialdini"},
 
 // --- BEAUTY (Testing) ---
-{slug:"x-mozart-papagena", type:"visio", f:"X", ytId:"tiNw0gjujps", ytShort:true,
+{slug:"x-mozart-papagena", type:"visio", f:"P", ytId:"tiNw0gjujps", ytShort:true,
  title:"Mozart · Papagena / Papageno",
  body:"A single repeated syllable becomes comic musical dialogue. The Magic Flute.",
  src:"Royal Ballet and Opera · Christina Gansch & Roderick Williams",
@@ -3180,7 +3180,7 @@ const THEOLOGIA_X = [
  body_pt:"Uma única sílaba repetida vira diálogo musical cômico. A Flauta Mágica.",
  src_pt:"Royal Ballet and Opera · Christina Gansch & Roderick Williams"},
 
-{slug:"x-tchaikovsky-mirlitons", type:"visio", f:"X", ytId:"2LmOjXbIze0", ytShort:true,
+{slug:"x-tchaikovsky-mirlitons", type:"visio", f:"P", ytId:"2LmOjXbIze0", ytShort:true,
  title:"Tchaikovsky · Dance of the Mirlitons",
  body:"Sae Maeda. Musical lightness, classical ballet technique.",
  src:"Royal Ballet and Opera",
@@ -3189,7 +3189,7 @@ const THEOLOGIA_X = [
  body_pt:"Sae Maeda. Leveza musical, técnica clássica de balé.",
  src_pt:"Royal Ballet and Opera"},
 
-{slug:"x-holbein-skull", type:"visio", f:"X", ytId:"44LZPWLDYOQ", ytShort:true,
+{slug:"x-holbein-skull", type:"visio", f:"P", ytId:"44LZPWLDYOQ", ytShort:true,
  title:"Holbein · The Distorted Skull",
  body:"The Ambassadors. A memento mori that only resolves from the right angle.",
  src:"James Payne · Great Art Explained",
@@ -3197,7 +3197,7 @@ const THEOLOGIA_X = [
  body_pt:"Os Embaixadores. Um memento mori que só se revela do ângulo certo.",
  src_pt:"James Payne · Great Art Explained"},
 
-{slug:"x-baroque-drama", type:"visio", f:"X", ytId:"rxoETUQdrvo", ytShort:true,
+{slug:"x-baroque-drama", type:"visio", f:"P", ytId:"rxoETUQdrvo", ytShort:true,
  title:"Baroque · Drama as the Point",
  body:"Theatrical light, scale, movement — the Catholic answer to the Reformation.",
  src:"James Payne · Great Art Explained",
@@ -3205,7 +3205,7 @@ const THEOLOGIA_X = [
  body_pt:"Luz teatral, escala, movimento — a resposta católica à Reforma.",
  src_pt:"James Payne · Great Art Explained"},
 
-{slug:"x-impressionism-tubes", type:"visio", f:"X", ytId:"nSB3OgUlDIo", ytShort:true,
+{slug:"x-impressionism-tubes", type:"visio", f:"P", ytId:"nSB3OgUlDIo", ytShort:true,
  title:"Why Impressionism Happened",
  body:"Portable paint tubes plus the camera. Freedom to paint outdoors changed everything.",
  src:"James Payne · Great Art Explained",
@@ -3213,7 +3213,7 @@ const THEOLOGIA_X = [
  body_pt:"Tubos portáteis de tinta e a câmera. A liberdade de pintar ao ar livre mudou tudo.",
  src_pt:"James Payne · Great Art Explained"},
 
-{slug:"x-cubism-perspectives", type:"visio", f:"X", ytId:"qHF5ZNA_gCQ", ytShort:true,
+{slug:"x-cubism-perspectives", type:"visio", f:"P", ytId:"qHF5ZNA_gCQ", ytShort:true,
  title:"Cubism · Multiple Perspectives",
  body:"The distortion is an argument. One viewpoint doesn't capture reality.",
  src:"James Payne · Great Art Explained",
@@ -3222,7 +3222,7 @@ const THEOLOGIA_X = [
  src_pt:"James Payne · Great Art Explained"},
 
 // --- PERCEPTION (Testing) ---
-{slug:"x-veritasium-wetness", type:"visio", f:"X", ytId:"DJ_5_JS9_Rs", ytShort:true,
+{slug:"x-veritasium-wetness", type:"visio", f:"C", ytId:"DJ_5_JS9_Rs", ytShort:true,
  title:"Wetness Is an Inference",
  body:"A waterproof glove in cold water. Your brain guessed.",
  src:"Derek Muller · Veritasium",
@@ -3230,7 +3230,7 @@ const THEOLOGIA_X = [
  body_pt:"Uma luva impermeável em água fria. Seu cérebro adivinhou.",
  src_pt:"Derek Muller · Veritasium"},
 
-{slug:"x-veritasium-pinhole-sun", type:"visio", f:"X", ytId:"R8oiho_gKSo", ytShort:true,
+{slug:"x-veritasium-pinhole-sun", type:"visio", f:"C", ytId:"R8oiho_gKSo", ytShort:true,
  title:"A Pinhole Projects the Sun",
  body:"Square, triangle, star-shaped holes all cast circles. The shape isn't the hole's.",
  src:"Derek Muller · Veritasium",
@@ -3238,7 +3238,7 @@ const THEOLOGIA_X = [
  body_pt:"Furos quadrados, triangulares, em estrela — todos projetam círculos. A forma não é do furo.",
  src_pt:"Derek Muller · Veritasium"},
 
-{slug:"x-newton-colors", type:"visio", f:"X", ytId:"-kwF6M4juiU", ytShort:true,
+{slug:"x-newton-colors", type:"visio", f:"C", ytId:"-kwF6M4juiU", ytShort:true,
  title:"Newton Chose Seven Colors",
  body:"To match the musical scale. The rainbow's color count is a convention.",
  src:"MinutePhysics · Henry Reich",
@@ -3246,7 +3246,7 @@ const THEOLOGIA_X = [
  body_pt:"Para combinar com a escala musical. O número de cores do arco-íris é convenção.",
  src_pt:"MinutePhysics · Henry Reich"},
 
-{slug:"x-vsauce-hybrid", type:"visio", f:"X", ytId:"-nNiTn0_41g", ytShort:true,
+{slug:"x-vsauce-hybrid", type:"visio", f:"C", ytId:"-nNiTn0_41g", ytShort:true,
  title:"Vsauce · The CLOSE / FAR Shirt",
  body:"A shirt that reads CLOSE nearby and FAR at distance. Spatial-frequency filtering, demonstrated.",
  src:"Michael Stevens · Vsauce",
@@ -3254,7 +3254,7 @@ const THEOLOGIA_X = [
  body_pt:"Uma camisa que lê PERTO de perto e LONGE à distância. Filtragem de frequência espacial, demonstrada.",
  src_pt:"Michael Stevens · Vsauce"},
 
-{slug:"x-perspective-blind", type:"visio", f:"X", ytId:"dVFhKJzNeJQ", ytShort:true,
+{slug:"x-perspective-blind", type:"visio", f:"C", ytId:"dVFhKJzNeJQ", ytShort:true,
  title:"Perspective Isn't Obvious Without Sight",
  body:"Tommy Edison, blind from birth, hears the horizon and shrinking objects for the first time.",
  src:"Tommy Edison with Michael Stevens",
@@ -3263,7 +3263,7 @@ const THEOLOGIA_X = [
  src_pt:"Tommy Edison com Michael Stevens"},
 
 // --- MATHEMATICS (Testing) ---
-{slug:"x-vsauce-gears", type:"visio", f:"X", ytId:"bKZXF-7E9f8", ytShort:true,
+{slug:"x-vsauce-gears", type:"visio", f:"M", ytId:"bKZXF-7E9f8", ytShort:true,
  title:"Vsauce · Impossible Gears",
  body:"Geneva mechanisms and nautilus gears: constant rotation into intermittent motion.",
  src:"Michael Stevens · Vsauce",
@@ -3271,7 +3271,7 @@ const THEOLOGIA_X = [
  body_pt:"Mecanismos de Genebra e engrenagens-náutilo: rotação constante virando movimento intermitente.",
  src_pt:"Michael Stevens · Vsauce"},
 
-{slug:"x-minutephysics-dimension", type:"visio", f:"X", ytId:"SJJhHknEDPY", ytShort:false,
+{slug:"x-minutephysics-dimension", type:"visio", f:"M", ytId:"SJJhHknEDPY", ytShort:false,
  title:"Dimension Is Not Just Coordinate Count",
  body:"Space-filling curves. A 1D curve can densely cover 2D space. What is dimension, really?",
  src:"MinutePhysics · Henry Reich",
@@ -3279,7 +3279,7 @@ const THEOLOGIA_X = [
  body_pt:"Curvas que preenchem o espaço. Uma curva 1D pode cobrir todo o 2D. O que é dimensão, de fato?",
  src_pt:"MinutePhysics · Henry Reich"},
 
-{slug:"x-minutephysics-time", type:"visio", f:"X", ytId:"M9sbdrPVfOQ", ytShort:false,
+{slug:"x-minutephysics-time", type:"visio", f:"M", ytId:"M9sbdrPVfOQ", ytShort:false,
  title:"Spatial Dimensions Have No Labels",
  body:"Three cups of water, one of oil. Time differs from spatial directions.",
  src:"MinutePhysics · Henry Reich",
@@ -3287,7 +3287,7 @@ const THEOLOGIA_X = [
  body_pt:"Três copos d'água, um de óleo. O tempo difere das direções espaciais.",
  src_pt:"MinutePhysics · Henry Reich"},
 
-{slug:"x-cantor-diagonal", type:"visio", f:"X", ytId:"A-QoutHCu4o", ytShort:false,
+{slug:"x-cantor-diagonal", type:"visio", f:"M", ytId:"A-QoutHCu4o", ytShort:false,
  title:"Some Infinities Are Larger",
  body:"Cantor's diagonal argument, visual. A number that escapes every proposed list.",
  src:"MinutePhysics · Henry Reich",
@@ -3296,7 +3296,7 @@ const THEOLOGIA_X = [
  src_pt:"MinutePhysics · Henry Reich"},
 
 // --- HISTORY (Testing) ---
-{slug:"x-rih-rome-citystate", type:"visio", f:"X", ytId:"XU-udrbP2Kw", ytShort:true,
+{slug:"x-rih-rome-citystate", type:"visio", f:"H", ytId:"XU-udrbP2Kw", ytShort:true,
  title:"Rome · A City-State Running an Empire",
  body:"The mismatch between rapid office turnover and vast territory. The Republic's structural crisis.",
  src:"The Rest Is History · Holland & Sandbrook",
@@ -3304,7 +3304,7 @@ const THEOLOGIA_X = [
  body_pt:"O descompasso entre a rotatividade de cargos e o território vasto. A crise estrutural da República.",
  src_pt:"The Rest Is History · Holland & Sandbrook"},
 
-{slug:"x-rih-rome-righteousness", type:"visio", f:"X", ytId:"P1Yj6tWmKIU", ytShort:true,
+{slug:"x-rih-rome-righteousness", type:"visio", f:"H", ytId:"P1Yj6tWmKIU", ytShort:true,
  title:"Rome · Conquest Against Self-Image",
  body:"Victory proved divine approval — which meant conquest kept proving Rome right.",
  src:"The Rest Is History · Holland & Sandbrook",
@@ -3312,7 +3312,7 @@ const THEOLOGIA_X = [
  body_pt:"A vitória provava aprovação divina — então a conquista continuava provando que Roma estava certa.",
  src_pt:"The Rest Is History · Holland & Sandbrook"},
 
-{slug:"x-rih-caesar-gaul", type:"visio", f:"X", ytId:"mwP8MXCyKVs", ytShort:true,
+{slug:"x-rih-caesar-gaul", type:"visio", f:"H", ytId:"mwP8MXCyKVs", ytShort:true,
  title:"Caesar in Gaul · The Numbers",
  body:"Mass killing and enslavement. But million-figure ancient estimates aren't statistics.",
  src:"The Rest Is History · Holland & Sandbrook",
@@ -3320,7 +3320,7 @@ const THEOLOGIA_X = [
  body_pt:"Massacre e escravização em massa. Mas estimativas antigas em milhões não são estatísticas.",
  src_pt:"The Rest Is History · Holland & Sandbrook"},
 
-{slug:"x-hanson-ancient-war", type:"visio", f:"X", ytId:"Hgvc6hLhvhQ", ytShort:false,
+{slug:"x-hanson-ancient-war", type:"visio", f:"H", ytId:"Hgvc6hLhvhQ", ytShort:false,
  title:"Hanson · Why Wars Begin and End",
  body:"Deterrence, asymmetric warfare, defeat — a complete argument out of ancient evidence.",
  src:"Victor Davis Hanson · Hoover Institution",
@@ -3329,7 +3329,7 @@ const THEOLOGIA_X = [
  src_pt:"Victor Davis Hanson · Hoover Institution"},
 
 // --- SPEECHES (Testing) ---
-{slug:"x-reagan-wall-alt", type:"visio", f:"X", ytId:"gZ9OyttsVMc", ytShort:true,
+{slug:"x-reagan-wall-alt", type:"visio", f:"H", ytId:"gZ9OyttsVMc", ytShort:true,
  title:"Reagan · Tear Down This Wall",
  body:"The famous line, and the tension between strong defenses and arms reduction. Official upload.",
  src:"The Ronald Reagan Presidential Library · 1987",
@@ -3337,7 +3337,7 @@ const THEOLOGIA_X = [
  body_pt:"A frase famosa, e a tensão entre defesas fortes e redução de armas. Upload oficial.",
  src_pt:"Biblioteca Presidencial Ronald Reagan · 1987"},
 
-{slug:"x-jfk-ask-not", type:"visio", f:"X", ytId:"L8l11q_MNRY", ytShort:true,
+{slug:"x-jfk-ask-not", type:"visio", f:"H", ytId:"L8l11q_MNRY", ytShort:true,
  title:"JFK · Ask Not",
  body:"The citizenship challenge — first to Americans, then to the world.",
  src:"JFK Library · Inaugural, 1961",
@@ -3345,7 +3345,7 @@ const THEOLOGIA_X = [
  body_pt:"O chamado à cidadania — primeiro aos americanos, depois ao mundo.",
  src_pt:"JFK Library · Posse, 1961"},
 
-{slug:"x-churchill-finest-hour", type:"visio", f:"X", ytId:"eajSqRP7YeE", ytShort:false,
+{slug:"x-churchill-finest-hour", type:"visio", f:"H", ytId:"eajSqRP7YeE", ytShort:false,
  title:"Churchill · Their Finest Hour",
  body:"From \"a new dark age\" to \"their finest hour.\" Rhetoric by contrast.",
  src:"Winston Churchill · British Pathé · 1940",
@@ -3353,7 +3353,7 @@ const THEOLOGIA_X = [
  body_pt:"De \"uma nova idade das trevas\" para \"sua melhor hora.\" Retórica pelo contraste.",
  src_pt:"Winston Churchill · British Pathé · 1940"},
 
-{slug:"x-mlk-mountaintop-alt", type:"visio", f:"X", ytId:"Tb9m81OwYH0", ytShort:false,
+{slug:"x-mlk-mountaintop-alt", type:"visio", f:"H", ytId:"Tb9m81OwYH0", ytShort:false,
  title:"King · The Mountaintop (Ending)",
  body:"An admission of mortality joined to an unshaken vision. The night before.",
  src:"Associated Press · Memphis, 3 April 1968",
